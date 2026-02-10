@@ -1,0 +1,169 @@
+{
+  "langCode": "en",
+  "nav": {
+    "home": "Home",
+    "training": "Training",
+    "consulting": "Consulting",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "common": {
+    "primaryCta": "Request training",
+    "secondaryCta": "Discuss a training need",
+    "learnMore": "Learn more",
+    "comingSoon": "Coming soon",
+    "languageEnglish": "English",
+    "languageHungarian": "Magyar"
+  },
+  "home": {
+    "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",
+    "heroSubtitle": "I work with mid–senior teams on DevOps, architecture, and everyday practices that reduce friction instead of adding process overhead.",
+    "problemsTitle": "Typical problems I see in engineering teams",
+    "problems": [
+      "Delivery slows down as the codebase grows; releases feel risky and fragile.",
+      "Different teams (or even individuals) follow incompatible conventions and tooling.",
+      "Architecture decisions are undocumented; new engineers have to reverse-engineer intent from code.",
+      "Infrastructure and deployment scripts are tribal knowledge instead of shared practice.",
+      "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
+    ],
+    "offeringsTitle": "Training focus areas",
+    "offerings": [
+      "Engineering practices: code review, branching, modular design, and habits that keep codebases maintainable.",
+      "DevOps fundamentals: from CI pipelines to pragmatic monitoring, focused on what your team can actually adopt.",
+      "Architecture decision records (ADR): how to capture decisions so they survive beyond the current project.",
+      "C4 diagrams: lightweight visual models that help teams reason about systems together.",
+      "Clean architecture: structuring systems so that business rules stay decoupled from frameworks and infrastructure."
+    ],
+    "whyDifferentTitle": "Why this training is different",
+    "whyDifferent": [
+      "Senior-led: you work directly with me, not with a junior trainer reading from slides.",
+      "Hands-on: we work through real examples, code, and architecture from your world.",
+      "Opinionated: I share what tends to work in practice, not just what looks nice in a slide deck.",
+      "Context-aware: formats and exercises are adapted to your team’s maturity and constraints."
+    ],
+    "talksTitle": "Conference talks and sessions",
+    "talksIntro": "To get a sense of my approach, here are a few conference talks and sessions (links will open on YouTube):",
+    "talkPlaceholder1": "YouTube talk placeholder – international conference session on practical architecture decisions.",
+    "talkPlaceholder2": "YouTube talk placeholder – talk on DevOps habits that help teams ship reliably.",
+    "ctaPrimary": "Request training",
+    "ctaSecondary": "Discuss a training need"
+  },
+  "training": {
+    "pageTitle": "Classroom training for experienced engineering teams",
+    "intro": "I run focused, classroom-style workshops for software engineering teams that already deliver value but want to do it more consistently and with less friction.",
+    "formatTitle": "Format",
+    "format": [
+      "1–3 day workshops, on-site or remote.",
+      "Small to mid-sized groups where active participation is expected.",
+      "Mix of short theory blocks, code and architecture exercises, and guided discussions.",
+      "Optionally tailored around your existing codebase, CI setup, and architecture challenges."
+    ],
+    "forWhoTitle": "Who this is for",
+    "forWho": [
+      "Mid–senior software engineers who already ship to production.",
+      "Tech leads and engineering managers responsible for standards and delivery.",
+      "Teams who feel that \"everyone does things slightly differently\" and want a shared baseline."
+    ],
+    "notForTitle": "Who this is not for",
+    "notFor": [
+      "Absolute beginners or bootcamp-style introductions to programming.",
+      "Teams looking for generic motivational talks without concrete follow-through.",
+      "Situations where there is no intent to change how the team actually works day-to-day."
+    ],
+    "topicsTitle": "Topics we can cover",
+    "topics": [
+      "Engineering practices: code review, branching strategies, definition of done, and practical quality gates.",
+      "DevOps practices: CI/CD pipelines, trunk-based vs. GitFlow in practice, and environments that support safe change.",
+      "ADRs: when to write them, what to capture, and how to keep them lightweight but useful.",
+      "C4 diagrams: using a shared visual language to reason about systems at multiple levels.",
+      "Clean architecture: boundaries, dependency rules, and patterns that keep systems adaptable."
+    ],
+    "engagementTitle": "Engagement formats",
+    "engagement": [
+      "1-day intensive: sharpening one or two focus areas for an experienced team.",
+      "2-day workshop: combining architectural topics (ADRs, C4, clean architecture) with delivery practices.",
+      "3-day deep dive: training plus guided work on your own architecture and pipelines."
+    ],
+    "outcomesTitle": "Expected outcomes",
+    "outcomes": [
+      "A shared vocabulary for architecture and practices across your team.",
+      "Clearer, documented decisions instead of implicit, person-dependent knowledge.",
+      "More predictable delivery because practices are consistent, not reinvented per feature.",
+      "Concrete next steps tailored to your context, not a generic checklist."
+    ],
+    "cta": "Discuss a training need"
+  },
+  "consulting": {
+    "pageTitle": "Consulting to support training and decisions",
+    "intro": "Training works best when it is connected to real decisions. I offer short, focused consulting engagements that build on the same principles as the workshops.",
+    "auditsTitle": "Architecture and practice audits",
+    "audits": [
+      "Review of current architecture, deployment setup, and engineering practices.",
+      "Identification of bottlenecks in delivery and areas where small changes can have large impact.",
+      "Written summary that your leadership and teams can use as a starting point for change."
+    ],
+    "decisionsTitle": "Decision support",
+    "decisions": [
+      "Facilitated sessions to structure and record key technical decisions using ADRs.",
+      "Support in comparing architecture options using clear trade-offs, not gut feeling alone.",
+      "Helping teams express risks and constraints in a way that non-technical stakeholders can work with."
+    ],
+    "mentoringTitle": "Mentoring for leads",
+    "mentoring": [
+      "1:1 or small-group mentoring for tech leads and senior engineers.",
+      "Practical discussions about how to introduce and sustain new practices in real teams.",
+      "Feedback on architecture proposals, RFCs, and rollout plans."
+    ]
+  },
+  "about": {
+    "pageTitle": "About Letscode and my work with teams",
+    "intro": "I work as a senior consultant and trainer focused on helping software engineering teams deliver reliably without losing sight of technical quality.",
+    "backgroundTitle": "Background",
+    "background": [
+      "Years of experience working with product development teams and engineering organizations.",
+      "Hands-on work across codebases, infrastructure, and delivery pipelines.",
+      "Regular speaker at meetups and conferences, with a focus on practical, experience-based talks."
+    ],
+    "approachTitle": "How I think about engineering and teams",
+    "approach": [
+      "Practices only matter if they survive everyday pressure. Anything that only works in a slide deck is not interesting.",
+      "Architecture should create options, not freeze teams into a specific framework or vendor.",
+      "Documentation should be light but reliable: ADRs and diagrams that engineers actually trust.",
+      "Good teams learn to make decisions together instead of depending on a single \"hero\" engineer."
+    ],
+    "talksTitle": "Talks and conference sessions",
+    "talksIntro": "Here are a few representative talks (replace with actual links):",
+    "talkPlaceholder1": "YouTube: talk on practical architecture decision records in real teams.",
+    "talkPlaceholder2": "YouTube: talk on introducing DevOps practices without stopping delivery.",
+    "talkPlaceholder3": "YouTube: session on C4 diagrams for everyday conversations, not big-design-up-front."
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "intro": "If you are responsible for engineering teams and want to explore training or a focused consulting engagement, feel free to reach out.",
+    "expectationsTitle": "Who should get in touch",
+    "expectations": [
+      "CTOs, VPs of Engineering, and engineering managers planning team-wide training.",
+      "Tech leads who see recurring delivery or architecture issues and want structured help to address them.",
+      "HR or L&D partners who coordinate technical training for engineering teams."
+    ],
+    "responseTitle": "What to expect",
+    "response": [
+      "I typically respond within 2–3 business days.",
+      "If I am not the right fit, I will say so directly.",
+      "If it looks like a match, we schedule a short call to understand your context before proposing any format."
+    ],
+    "formTitle": "Contact form (placeholder)",
+    "nameLabel": "Name",
+    "emailLabel": "Work email",
+    "companyLabel": "Company",
+    "messageLabel": "Short description of your context",
+    "submitLabel": "Send"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "emptyTitle": "Future insights from training and consulting work",
+    "emptyBody": "Over time I plan to share short, experience-based articles on engineering practices, architecture decisions, and how teams actually change. For now, the best way to learn more is to get in touch."
+  }
+}
+

@@ -1,0 +1,169 @@
+{
+  "langCode": "hu",
+  "nav": {
+    "home": "Kezdőlap",
+    "training": "Képzés",
+    "consulting": "Tanácsadás",
+    "about": "Rólam",
+    "contact": "Kapcsolat",
+    "blog": "Blog"
+  },
+  "common": {
+    "primaryCta": "Képzés ajánlatkérés",
+    "secondaryCta": "Beszéljünk a képzési igényről",
+    "learnMore": "További részletek",
+    "comingSoon": "Hamarosan",
+    "languageEnglish": "English",
+    "languageHungarian": "Magyar"
+  },
+  "home": {
+    "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
+    "heroSubtitle": "Közép- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
+    "problemsTitle": "Tipikus problémák, amikkel találkozom",
+    "problems": [
+      "Ahogy nő a kódbázis, lassul a szállítás; a release-ek kockázatosnak és törékenynek érződnek.",
+      "A különböző csapatok (vagy akár egyénenként) eltérő konvenciókat és eszközöket használnak.",
+      "Az architekturális döntések nincsenek leírva; az új belépőknek a kódból kell visszafejteniük a szándékot.",
+      "Az infrastruktúra és a deployment szkriptek törzsi tudáson alapulnak, nem közös gyakorlaton.",
+      "A csapat tudja, „mi lenne a jó gyakorlat”, de nyomás alatt mégsem ez valósul meg."
+    ],
+    "offeringsTitle": "Képzési fókuszterületek",
+    "offerings": [
+      "Mérnöki gyakorlatok: code review, branch-stratégiák, moduláris tervezés, és azok a szokások, amelyek fenntarthatóvá teszik a kódbázist.",
+      "DevOps alapelvek: CI pipeline-ok, pragmatikus monitorozás – a hangsúly azon, amit a csapat valóban be tud vezetni.",
+      "Architecture Decision Record (ADR): hogyan dokumentáljuk a döntéseket úgy, hogy túléljék az aktuális projektet.",
+      "C4 diagramok: könnyűsúlyú vizuális modellek, amelyek segítik a közös gondolkodást a rendszerről.",
+      "Tiszta architektúra: hogyan válasszuk szét az üzleti logikát a frameworköktől és az infrastruktúrától."
+    ],
+    "whyDifferentTitle": "Miért más ez a képzés?",
+    "whyDifferent": [
+      "Senior fókusz: közvetlenül velem dolgoztok, nem junior tréner tartja az anyagot.",
+      "Gyakorlati: valós példákon, kódon és architektúrákon dolgozunk – lehetőség szerint a ti környezetetekből.",
+      "Véleményes: azt mutatom, mi működik a gyakorlatban, nem csak azt, ami jól mutat egy prezentációban.",
+      "Kontekstuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
+    ],
+    "talksTitle": "Konferencia-előadások és sessionök",
+    "talksIntro": "Ízelítőként néhány előadás (a linkek YouTube-ra mutatnak majd):",
+    "talkPlaceholder1": "YouTube helykitöltő – nemzetközi konferencia-előadás a gyakorlati architekturális döntésekről.",
+    "talkPlaceholder2": "YouTube helykitöltő – előadás a DevOps szokásokról, amelyek valóban segítik a szállítást.",
+    "ctaPrimary": "Képzés ajánlatkérés",
+    "ctaSecondary": "Beszéljünk a képzési igényről"
+  },
+  "training": {
+    "pageTitle": "Terem- és online képzések tapasztalt fejlesztői csapatoknak",
+    "intro": "Fókuszált, workshop jellegű képzéseket tartok olyan csapatoknak, akik már szállítanak éles rendszerre, de szeretnének következetesebben és kevesebb súrlódással dolgozni.",
+    "formatTitle": "Formátum",
+    "format": [
+      "1–3 napos workshopok, személyesen vagy online.",
+      "Kisebb, aktív részvételt igénylő csoportok.",
+      "Rövid elméleti blokkok, kód- és architektúra-gyakorlatok, valamint irányított beszélgetések kombinációja.",
+      "Igény szerint a meglévő kódbázisotok, CI beállításotok és architekturális dilemmáitok köré szervezve."
+    ],
+    "forWhoTitle": "Kiknek szól?",
+    "forWho": [
+      "Közép- és senior fejlesztőknek, akik már felelnek éles rendszerekért.",
+      "Tech leaddel és engineering managerekkel, akik a csapat szintű standardekért és szállításért felelnek.",
+      "Olyan csapatoknak, ahol „mindenki kicsit máshogy csinálja”, és szükség lenne közös alapokra."
+    ],
+    "notForTitle": "Kiknek nem szól?",
+    "notFor": [
+      "Teljesen kezdő fejlesztőknek vagy bootcamp jellegű képzéseknek.",
+      "Olyan helyzeteknek, ahol csak inspiráló előadásra van igény konkrét változtatási szándék nélkül.",
+      "Olyan szervezeteknek, ahol nincs valós felhatalmazás a csapatok munkamódszereinek alakítására."
+    ],
+    "topicsTitle": "Lehetséges témák",
+    "topics": [
+      "Mérnöki gyakorlatok: code review, branch-stratégiák, definition of done, gyakorlati minőségi kapuk.",
+      "DevOps gyakorlatok: CI/CD pipeline-ok, trunk-based vs. GitFlow a gyakorlatban, olyan környezetek, amelyek támogatják a biztonságos változtatásokat.",
+      "ADR-ek: mikor érdemes írni, mit rögzítsünk, hogyan marad könnyű súlyú, de használható.",
+      "C4 diagramok: közös vizuális nyelv a rendszer különböző szintjeinek megbeszéléséhez.",
+      "Tiszta architektúra: határok, függőségi szabályok és minták, amelyek hosszú távon is mozgásteret hagynak."
+    ],
+    "engagementTitle": "Lehetséges együttműködési formák",
+    "engagement": [
+      "1 napos intenzív tréning: 1–2 fókuszterület elmélyítése tapasztalt csapatoknak.",
+      "2 napos workshop: architekturális témák (ADR, C4, tiszta architektúra) és szállítási gyakorlatok kombinációja.",
+      "3 napos mélyfúrás: képzés + közös munka a saját architektúrátokon és pipeline-jaitokon."
+    ],
+    "outcomesTitle": "Várható eredmények",
+    "outcomes": [
+      "Közös nyelv az architektúráról és a mindennapi gyakorlatokról.",
+      "Átláthatóbb, dokumentált döntések a személyfüggő, kimondatlan tudás helyett.",
+      "Kiszámíthatóbb szállítás, mert a gyakorlatok nem fejenként különböznek.",
+      "Konkrét, kontextushoz illeszkedő következő lépések, nem általános checklista."
+    ],
+    "cta": "Beszéljünk a képzési igényről"
+  },
+  "consulting": {
+    "pageTitle": "Tanácsadás a döntések és a képzések támogatására",
+    "intro": "A képzés akkor működik igazán, ha konkrét döntésekhez kapcsolódik. Rövid, fókuszált tanácsadási együttműködéseket vállalok, ugyanazon alapelvek mentén, mint a workshopok.",
+    "auditsTitle": "Architektúra- és gyakorlat-felmérés",
+    "audits": [
+      "A jelenlegi architektúra, deployment környezet és mérnöki gyakorlatok áttekintése.",
+      "A szállítási szűk keresztmetszetek és a nagy hatású, de reális változtatási pontok azonosítása.",
+      "Írásos összefoglaló, amelyre a vezetés és a csapat is tud építeni."
+    ],
+    "decisionsTitle": "Döntéstámogatás",
+    "decisions": [
+      "Facilitált sessionök kulcs technikai döntések strukturált rögzítésére ADR-ek formájában.",
+      "Segítség architekturális opciók összevetésében, világos trade-offok mentén, nem csak megérzés alapján.",
+      "Annak támogatása, hogy a kockázatokat és korlátokat a nem technikai érintettek számára is érthetően fogalmazzátok meg."
+    ],
+    "mentoringTitle": "Mentorálás leadeknek",
+    "mentoring": [
+      "1:1 vagy kis csoportos mentorálás tech leaddel és senior fejlesztők számára.",
+      "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban.",
+      "Visszajelzés architekturális javaslatokra, RFC-kre és rollout tervekhez."
+    ]
+  },
+  "about": {
+    "pageTitle": "Rólam és a Letscode-ról",
+    "intro": "Senior tanácsadóként és trénerként dolgozom, a célom pedig az, hogy a fejlesztő csapatok megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget.",
+    "backgroundTitle": "Háttér",
+    "background": [
+      "Több éves tapasztalat termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel.",
+      "Hands-on munka kódbázisokon, infrastruktúrán és szállítási pipeline-okon.",
+      "Rendszeres előadások meetupon és konferenciákon, erős gyakorlati fókuszsal."
+    ],
+    "approachTitle": "Ahogyan az engineeringről és a csapatokról gondolkodom",
+    "approach": [
+      "Az a gyakorlat számít, ami a hétköznapi nyomás alatt is működik. Ami csak prezentációban áll meg, az kevéssé érdekes.",
+      "Az architektúra feladata, hogy mozgásteret adjon, ne pedig egy konkrét frameworkhöz vagy vendorhoz láncoljon.",
+      "A dokumentáció legyen könnyű, de megbízható: olyan ADR-ek és diagramok, amelyekben a fejlesztők tényleg bíznak.",
+      "A jó csapatok közösen hoznak döntéseket, nem egyetlen „hős” fejlesztőre támaszkodnak."
+    ],
+    "talksTitle": "Előadások és sessionök",
+    "talksIntro": "Néhány jellemző előadás (később konkrét linkekkel):",
+    "talkPlaceholder1": "YouTube: előadás a gyakorlati ADR-ekről valós csapatoknál.",
+    "talkPlaceholder2": "YouTube: előadás arról, hogyan vezethetők be DevOps gyakorlatok a szállítás leállítása nélkül.",
+    "talkPlaceholder3": "YouTube: session a C4 diagramokról a mindennapi beszélgetések szolgálatában, nem big-design-up-front célra."
+  },
+  "contact": {
+    "pageTitle": "Kapcsolat",
+    "intro": "Ha engineering csapatokért felelsz, és felmerült a képzés vagy fókuszált tanácsadási együttműködés gondolata, írj bátran.",
+    "expectationsTitle": "Kiknek érdemes jelentkezni?",
+    "expectations": [
+      "CTO-knak, VP of Engineering szerepben lévőknek, engineering managereknek, akik csapat szintű képzést terveznek.",
+      "Tech leaddel, akik visszatérő szállítási vagy architekturális problémákat látnak, és strukturált segítséget keresnek.",
+      "HR vagy L&D partnereknek, akik technikai képzéseket szerveznek fejlesztő csapatoknak."
+    ],
+    "responseTitle": "Mire számíthatsz?",
+    "response": [
+      "Általában 2–3 munkanapon belül válaszolok.",
+      "Ha nem én vagyok a megfelelő választás, ezt egyenesen meg fogom írni.",
+      "Ha van közös metszet, egy rövid beszélgetést javaslok, mielőtt bármilyen formátumot ajánlanék."
+    ],
+    "formTitle": "Kapcsolati űrlap (helykitöltő)",
+    "nameLabel": "Név",
+    "emailLabel": "Munkahelyi e-mail",
+    "companyLabel": "Cég",
+    "messageLabel": "Röviden a helyzetről",
+    "submitLabel": "Küldés"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "emptyTitle": "Későbbi jegyzetek a képzési és tanácsadási munkából",
+    "emptyBody": "Idővel rövid, tapasztalati alapú írásokat tervezek megosztani mérnöki gyakorlatokról, architekturális döntésekről és csapatváltozásról. Jelenleg a legjobb, ha közvetlenül veszed fel velem a kapcsolatot."
+  }
+}
+

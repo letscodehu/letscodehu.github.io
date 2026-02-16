@@ -4,7 +4,7 @@ import AppFooter from './AppFooter.vue'
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" contenteditable="false">
     <AppHeader />
     <main class="main">
       <div class="main-inner">

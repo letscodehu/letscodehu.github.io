@@ -44,32 +44,33 @@ const isEn = currentLang.value === 'en'
           {{ t('about.talksIntro') }}
         </p>
       </header>
-      <div class="grid grid--three">
+      <div class="grid grid--two">
         <BaseCard>
-          <template #title>Talk 1</template>
+          <template #title>{{ t('about.talk1Title') }}</template>
           <p class="body">
-            {{ t('about.talkPlaceholder1') }}
+            {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
           </p>
-          <a href="#" class="talk-link">
-            {{ isEn ? 'YouTube placeholder link' : 'YouTube helykitöltő link' }}
+          <a
+            :href="t('about.talk1Url')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="talk-link"
+          >
+            {{ t('about.talk1Label') }}
           </a>
         </BaseCard>
         <BaseCard>
-          <template #title>Talk 2</template>
+          <template #title>{{ t('about.talk2Title') }}</template>
           <p class="body">
-            {{ t('about.talkPlaceholder2') }}
+            {{ t('about.talk2Description') }}
           </p>
-          <a href="#" class="talk-link">
-            {{ isEn ? 'YouTube placeholder link' : 'YouTube helykitöltő link' }}
-          </a>
-        </BaseCard>
-        <BaseCard>
-          <template #title>Talk 3</template>
-          <p class="body">
-            {{ t('about.talkPlaceholder3') }}
-          </p>
-          <a href="#" class="talk-link">
-            {{ isEn ? 'YouTube placeholder link' : 'YouTube helykitöltő link' }}
+          <a
+            :href="t('about.talk2Url')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="talk-link"
+          >
+            {{ t('about.talk2Label') }}
           </a>
         </BaseCard>
       </div>

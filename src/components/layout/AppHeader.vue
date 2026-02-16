@@ -25,7 +25,7 @@ const currentPathName = computed(() => (route.name as string) || 'home')
         :to="{ name: 'home', params: { lang: currentLang } }"
         class="brand"
       >
-        <span class="brand-name">Letscode</span>
+        <span class="brand-name">Letscode Solutions</span>
         <span class="brand-tagline">Training &amp; consulting for engineering teams</span>
       </RouterLink>
 

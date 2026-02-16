@@ -140,30 +140,36 @@ const isEn = currentLang.value === 'en'
     </header>
     <div class="talks">
       <BaseCard>
-        <template #title>Talk 1</template>
+        <template #title>{{ t('home.talk1Title') }}</template>
         <p class="body">
-          {{ t('home.talkPlaceholder1') }}
+          {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
         </p>
-        <BaseButton
-          as="a"
-          href="#"
-          variant="ghost"
+        <a
+          :href="t('home.talk1Url')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="talk-link"
         >
-          {{ isEn ? 'Open on YouTube (placeholder)' : 'Megnyitás YouTube-on (helykitöltő)' }}
-        </BaseButton>
+          <BaseButton as="span" variant="ghost">
+            {{ t('home.talk1Label') }}
+          </BaseButton>
+        </a>
       </BaseCard>
       <BaseCard>
-        <template #title>Talk 2</template>
+        <template #title>{{ t('home.talk2Title') }}</template>
         <p class="body">
-          {{ t('home.talkPlaceholder2') }}
+          {{ t('home.talk2Description') }}
         </p>
-        <BaseButton
-          as="a"
-          href="#"
-          variant="ghost"
+        <a
+          :href="t('home.talk2Url')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="talk-link"
         >
-          {{ isEn ? 'Open on YouTube (placeholder)' : 'Megnyitás YouTube-on (helykitöltő)' }}
-        </BaseButton>
+          <BaseButton as="span" variant="ghost">
+            {{ t('home.talk2Label') }}
+          </BaseButton>
+        </a>
       </BaseCard>
     </div>
   </section>
@@ -258,6 +264,13 @@ const isEn = currentLang.value === 'en'
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
   margin-top: 1.1rem;
+}
+
+.talk-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 600px) {

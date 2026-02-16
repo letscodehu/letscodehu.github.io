@@ -9,6 +9,7 @@
     "blog": "Blog"
   },
   "common": {
+    "companyName": "Letscode Solutions Kft",
     "primaryCta": "Request training",
     "secondaryCta": "Discuss a training need",
     "learnMore": "Learn more",
@@ -43,9 +44,14 @@
       "Context-aware: formats and exercises are adapted to your team’s maturity and constraints."
     ],
     "talksTitle": "Conference talks and sessions",
-    "talksIntro": "To get a sense of my approach, here are a few conference talks and sessions (links will open on YouTube):",
-    "talkPlaceholder1": "YouTube talk placeholder – international conference session on practical architecture decisions.",
-    "talkPlaceholder2": "YouTube talk placeholder – talk on DevOps habits that help teams ship reliably.",
+    "talksIntro": "To get a sense of my approach, here are a few conference talks and sessions:",
+    "talk1Title": "Architecture Decision Records (ADRs) in practice",
+    "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
+    "talk1Label": "Watch on YouTube",
+    "talk2Title": "Continuous failure – Why do we make our lives hard?",
+    "talk2Description": "On the cost of missing ADRs and documented decisions.",
+    "talk2Url": "https://vimeo.com/1102474381",
+    "talk2Label": "Watch on Vimeo",
     "ctaPrimary": "Request training",
     "ctaSecondary": "Discuss a training need"
   },
@@ -117,7 +123,7 @@
     ]
   },
   "about": {
-    "pageTitle": "About Letscode and my work with teams",
+    "pageTitle": "About Letscode Solutions and my work with teams",
     "intro": "I work as a senior consultant and trainer focused on helping software engineering teams deliver reliably without losing sight of technical quality.",
     "backgroundTitle": "Background",
     "background": [
@@ -133,10 +139,14 @@
       "Good teams learn to make decisions together instead of depending on a single \"hero\" engineer."
     ],
     "talksTitle": "Talks and conference sessions",
-    "talksIntro": "Here are a few representative talks (replace with actual links):",
-    "talkPlaceholder1": "YouTube: talk on practical architecture decision records in real teams.",
-    "talkPlaceholder2": "YouTube: talk on introducing DevOps practices without stopping delivery.",
-    "talkPlaceholder3": "YouTube: session on C4 diagrams for everyday conversations, not big-design-up-front."
+    "talksIntro": "Here are two representative talks on ADRs and documented decisions:",
+    "talk1Title": "Architecture Decision Records (ADRs) in practice",
+    "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
+    "talk1Label": "Watch on YouTube",
+    "talk2Title": "Continuous failure – Why do we make our lives hard?",
+    "talk2Description": "On the cost of missing ADRs and documented decisions.",
+    "talk2Url": "https://vimeo.com/1102474381",
+    "talk2Label": "Watch on Vimeo"
   },
   "contact": {
     "pageTitle": "Contact",

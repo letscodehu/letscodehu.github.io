@@ -9,6 +9,7 @@
     "blog": "Blog"
   },
   "common": {
+    "companyName": "Letscode Solutions Kft",
     "primaryCta": "Képzés ajánlatkérés",
     "secondaryCta": "Beszéljünk a képzési igényről",
     "learnMore": "További részletek",
@@ -43,9 +44,14 @@
       "Kontekstuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
     ],
     "talksTitle": "Konferencia-előadások és sessionök",
-    "talksIntro": "Ízelítőként néhány előadás (a linkek YouTube-ra mutatnak majd):",
-    "talkPlaceholder1": "YouTube helykitöltő – nemzetközi konferencia-előadás a gyakorlati architekturális döntésekről.",
-    "talkPlaceholder2": "YouTube helykitöltő – előadás a DevOps szokásokról, amelyek valóban segítik a szállítást.",
+    "talksIntro": "Ízelítőként két előadás az ADR-ekről és a dokumentált döntésekről:",
+    "talk1Title": "ADR-ek a gyakorlatban",
+    "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
+    "talk1Label": "Megtekintés YouTube-on",
+    "talk2Title": "Continuous failure – Miért nehezítjük meg a saját életünket?",
+    "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
+    "talk2Url": "https://vimeo.com/1102474381",
+    "talk2Label": "Megtekintés Vimeo-n",
     "ctaPrimary": "Képzés ajánlatkérés",
     "ctaSecondary": "Beszéljünk a képzési igényről"
   },
@@ -117,7 +123,7 @@
     ]
   },
   "about": {
-    "pageTitle": "Rólam és a Letscode-ról",
+    "pageTitle": "Rólam és a Letscode Solutionsról",
     "intro": "Senior tanácsadóként és trénerként dolgozom, a célom pedig az, hogy a fejlesztő csapatok megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget.",
     "backgroundTitle": "Háttér",
     "background": [
@@ -133,10 +139,14 @@
       "A jó csapatok közösen hoznak döntéseket, nem egyetlen „hős” fejlesztőre támaszkodnak."
     ],
     "talksTitle": "Előadások és sessionök",
-    "talksIntro": "Néhány jellemző előadás (később konkrét linkekkel):",
-    "talkPlaceholder1": "YouTube: előadás a gyakorlati ADR-ekről valós csapatoknál.",
-    "talkPlaceholder2": "YouTube: előadás arról, hogyan vezethetők be DevOps gyakorlatok a szállítás leállítása nélkül.",
-    "talkPlaceholder3": "YouTube: session a C4 diagramokról a mindennapi beszélgetések szolgálatában, nem big-design-up-front célra."
+    "talksIntro": "Két jellemző előadás az ADR-ekről és a dokumentált döntésekről:",
+    "talk1Title": "ADR-ek a gyakorlatban",
+    "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
+    "talk1Label": "Megtekintés YouTube-on",
+    "talk2Title": "Continuous failure – Miért nehezítjük meg a saját életünket?",
+    "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
+    "talk2Url": "https://vimeo.com/1102474381",
+    "talk2Label": "Megtekintés Vimeo-n"
   },
   "contact": {
     "pageTitle": "Kapcsolat",

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from '../../composables/useI18n'
 
-const { currentLang } = useI18n()
+const { t, currentLang } = useI18n()
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-text">
-        <span>© {{ new Date().getFullYear() }} Letscode.</span>
+        <span>© {{ new Date().getFullYear() }} {{ t('common.companyName') }}.</span>
         <span class="separator">·</span>
         <span v-if="currentLang === 'en'">
           Independent consultant and trainer for software engineering teams.

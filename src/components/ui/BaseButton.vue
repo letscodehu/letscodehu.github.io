@@ -2,7 +2,7 @@
 const props = withDefaults(
   defineProps<{
     variant?: 'primary' | 'ghost'
-    as?: 'button' | 'a'
+    as?: 'button' | 'a' | 'span'
     href?: string
   }>(),
   {

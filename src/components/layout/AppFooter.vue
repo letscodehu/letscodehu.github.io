@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '../../composables/useI18n'
+import { openCookieSettings } from '../../cookieConsent'
 
 const { t, currentLang } = useI18n()
 </script>
@@ -16,6 +17,10 @@ const { t, currentLang } = useI18n()
         <span v-else>
           Független tanácsadó és tréner szoftverfejlesztő csapatok számára.
         </span>
+        <span class="separator">·</span>
+        <button type="button" class="cookie-settings-btn" @click="openCookieSettings">
+          {{ t('cookies.settingsLink') }}
+        </button>
       </p>
     </div>
   </footer>
@@ -46,6 +51,17 @@ const { t, currentLang } = useI18n()
 
 .separator {
   opacity: 0.6;
+}
+
+.cookie-settings-btn {
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
 }
 </style>
 

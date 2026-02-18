@@ -6,44 +6,55 @@ import ConsultingPage from '../pages/ConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
+import {
+  detectBrowserLanguage,
+  type Language,
+  readStoredLanguage,
+  writeStoredLanguage,
+} from '../composables/useI18n'
 
 const childRoutes: RouteRecordRaw[] = [
-  { path: '', name: 'home', component: HomePage },
+  { path: '', name: 'home', component: HomePage, meta: { titleKey: 'nav.home' } },
   {
     path: 'training',
     name: 'training-en',
     component: TrainingPage,
     alias: 'kepzes',
+    meta: { titleKey: 'training.pageTitle' },
   },
   {
     path: 'consulting',
     name: 'consulting-en',
     component: ConsultingPage,
     alias: 'tanacsadas',
+    meta: { titleKey: 'consulting.pageTitle' },
   },
   {
     path: 'about',
     name: 'about-en',
     component: AboutPage,
     alias: 'rolam',
+    meta: { titleKey: 'about.pageTitle' },
   },
   {
     path: 'contact',
     name: 'contact-en',
     component: ContactPage,
     alias: 'kapcsolat',
+    meta: { titleKey: 'contact.pageTitle' },
   },
   {
     path: 'blog',
     name: 'blog-en',
     component: BlogPage,
+    meta: { titleKey: 'blog.pageTitle' },
   },
 ]
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/en/',
+    component: AppLayout,
   },
   {
     path: '/:lang(en|hu)',
@@ -55,5 +66,22 @@ const routes: RouteRecordRaw[] = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+router.beforeEach((to) => {
+  const languagePathMatch = to.path.match(/^\/(en|hu)(?:\/|$)/)
+  if (languagePathMatch) {
+    const languageFromPath: Language = languagePathMatch[1] === 'hu' ? 'hu' : 'en'
+    writeStoredLanguage(languageFromPath)
+    return true
+  }
+
+  const preferredLanguage = readStoredLanguage() ?? detectBrowserLanguage() ?? 'en'
+  const fullPath = to.fullPath === '/' ? '/' : to.fullPath
+
+  return {
+    path: `/${preferredLanguage}${fullPath}`,
+    replace: true,
+  }
 })
 

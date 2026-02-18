@@ -30,37 +30,44 @@ const props = withDefaults(
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.6rem 1.3rem;
+  padding: 0.64rem 1.35rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
   font-family: inherit;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease,
-    box-shadow 0.16s ease;
+  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease,
+    transform 0.16s ease;
 }
 
 .button--primary {
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.28);
 }
 
 .button--primary:hover {
   background-color: var(--color-primary-strong);
+  transform: translateY(-1px);
 }
 
 .button--ghost {
-  background-color: transparent;
+  background-color: var(--color-surface-soft);
   color: var(--color-text);
   border-color: var(--color-border-strong);
 }
 
 .button--ghost:hover {
-  border-color: var(--color-text);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
 }
 </style>
 

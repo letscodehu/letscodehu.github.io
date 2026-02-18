@@ -2,6 +2,7 @@
 import { useI18n } from '../composables/useI18n'
 import BaseButton from '../components/ui/BaseButton.vue'
 import BaseCard from '../components/ui/BaseCard.vue'
+import VideoEmbed from '../components/ui/VideoEmbed.vue'
 
 const { t, currentLang } = useI18n()
 
@@ -144,32 +145,22 @@ const isEn = currentLang.value === 'en'
         <p class="body">
           {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
         </p>
-        <a
-          :href="t('home.talk1Url')"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="talk-link"
-        >
-          <BaseButton as="span" variant="ghost">
-            {{ t('home.talk1Label') }}
-          </BaseButton>
-        </a>
+        <VideoEmbed
+          :url="t('home.talk1Url')"
+          :title="t('home.talk1Title')"
+          :link-label="t('home.talk1Label')"
+        />
       </BaseCard>
       <BaseCard>
         <template #title>{{ t('home.talk2Title') }}</template>
         <p class="body">
           {{ t('home.talk2Description') }}
         </p>
-        <a
-          :href="t('home.talk2Url')"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="talk-link"
-        >
-          <BaseButton as="span" variant="ghost">
-            {{ t('home.talk2Label') }}
-          </BaseButton>
-        </a>
+        <VideoEmbed
+          :url="t('home.talk2Url')"
+          :title="t('home.talk2Title')"
+          :link-label="t('home.talk2Label')"
+        />
       </BaseCard>
     </div>
   </section>
@@ -177,7 +168,12 @@ const isEn = currentLang.value === 'en'
 
 <style scoped>
 .hero {
-  padding-bottom: 2.5rem;
+  padding: 1.3rem 1.3rem 2.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #f9fbff 0%, #eef4ff 100%);
+  box-shadow: var(--shadow-sm);
+  padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 2.5rem;
 }
@@ -195,7 +191,7 @@ const isEn = currentLang.value === 'en'
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin: 0 0 0.75rem;
@@ -203,7 +199,7 @@ const isEn = currentLang.value === 'en'
 
 .hero-subtitle {
   margin: 0 0 1.5rem;
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--color-text-muted);
 }
 
@@ -214,12 +210,12 @@ const isEn = currentLang.value === 'en'
 }
 
 .section {
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--section-gap);
 }
 
 .section-header h2 {
   margin: 0 0 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.45rem;
 }
 
 .section-intro {
@@ -230,8 +226,8 @@ const isEn = currentLang.value === 'en'
 
 .grid {
   display: grid;
-  gap: 1.25rem;
-  margin-top: 1.1rem;
+  gap: 1.35rem;
+  margin-top: 1.15rem;
 }
 
 .grid--two {
@@ -245,7 +241,7 @@ const isEn = currentLang.value === 'en'
 .list {
   margin: 0;
   padding-left: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--color-text);
 }
 
@@ -255,27 +251,20 @@ const isEn = currentLang.value === 'en'
 
 .body {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--color-text);
 }
 
 .talks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.1rem;
-}
-
-.talk-link {
-  display: inline-block;
-  margin-top: 0.75rem;
-  text-decoration: none;
-  color: inherit;
+  gap: 1.35rem;
+  margin-top: 1.15rem;
 }
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.78rem;
   }
 }
 </style>

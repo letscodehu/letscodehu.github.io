@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
-import ContactForm from '../components/ui/ContactForm.vue'
+import CalendlyInlineWidget from '../components/ui/CalendlyInlineWidget.vue'
 
 const { t } = useI18n()
 </script>
@@ -41,7 +41,7 @@ const { t } = useI18n()
         <h2>{{ t('contact.formTitle') }}</h2>
       </header>
       <BaseCard>
-        <ContactForm />
+        <CalendlyInlineWidget url="https://calendly.com/fejlesztes-letscode/30min" />
       </BaseCard>
     </section>
   </article>
@@ -49,12 +49,12 @@ const { t } = useI18n()
 
 <style scoped>
 .page-header {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .page-title {
   margin: 0 0 0.75rem;
-  font-size: 1.6rem;
+  font-size: 1.85rem;
 }
 
 .page-intro {
@@ -65,12 +65,12 @@ const { t } = useI18n()
 }
 
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.6rem;
 }
 
 .grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 .grid--two {
@@ -80,11 +80,16 @@ const { t } = useI18n()
 .list {
   margin: 0;
   padding-left: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .list li + li {
   margin-top: 0.35rem;
+}
+
+.section-header h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
 }
 </style>
 

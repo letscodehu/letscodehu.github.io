@@ -17,6 +17,23 @@
     "languageEnglish": "English",
     "languageHungarian": "Magyar"
   },
+  "cookies": {
+    "title": "Sütiket használunk",
+    "description": "A webhely működéséhez szükséges sütik mellett opcionális analitikai és marketing sütiket is használunk.",
+    "acceptAll": "Összes elfogadása",
+    "managePreferences": "Beállítások kezelése",
+    "preferencesTitle": "Süti beállítások",
+    "preferencesDescription": "Válaszd ki, mely opcionális sütiket engedélyezed. Ezt bármikor módosíthatod a láblécben.",
+    "essentialTitle": "Szükséges sütik",
+    "essentialDescription": "Az oldal alapműködéséhez kellenek, mindig aktívak.",
+    "analyticsTitle": "Analitikai sütik",
+    "analyticsDescription": "Segítenek megérteni, hogyan használják a látogatók az oldalt (Google Analytics, Hotjar).",
+    "marketingTitle": "Marketing sütik",
+    "marketingDescription": "Marketing- és hirdetési teljesítmény mérésére szolgálnak (Facebook, LinkedIn).",
+    "savePreferences": "Beállítások mentése",
+    "settingsLink": "Süti beállítások",
+    "closeLabel": "Süti beállítások bezárása"
+  },
   "home": {
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
     "heroSubtitle": "Közép- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
@@ -150,7 +167,7 @@
   },
   "contact": {
     "pageTitle": "Kapcsolat",
-    "intro": "Ha engineering csapatokért felelsz, és felmerült a képzés vagy fókuszált tanácsadási együttműködés gondolata, írj bátran.",
+    "intro": "Ha engineering csapatokért felelsz, és felmerült a képzés vagy fókuszált tanácsadási együttműködés gondolata, foglalj egy rövid egyeztetést.",
     "expectationsTitle": "Kiknek érdemes jelentkezni?",
     "expectations": [
       "CTO-knak, VP of Engineering szerepben lévőknek, engineering managereknek, akik csapat szintű képzést terveznek.",
@@ -159,11 +176,11 @@
     ],
     "responseTitle": "Mire számíthatsz?",
     "response": [
-      "Általában 2–3 munkanapon belül válaszolok.",
-      "Ha nem én vagyok a megfelelő választás, ezt egyenesen meg fogom írni.",
-      "Ha van közös metszet, egy rövid beszélgetést javaslok, mielőtt bármilyen formátumot ajánlanék."
+      "Válassz egy megfelelő időpontot az alábbi naptárban.",
+      "A beszélgetés rövid, kötetlen egyeztetés.",
+      "Ha nem én vagyok a megfelelő választás, ezt egyenesen meg fogom írni."
     ],
-    "formTitle": "Kapcsolati űrlap (helykitöltő)",
+    "formTitle": "30 perces beszélgetés foglalása",
     "nameLabel": "Név",
     "emailLabel": "Munkahelyi e-mail",
     "companyLabel": "Cég",

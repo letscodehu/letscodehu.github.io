@@ -17,6 +17,23 @@
     "languageEnglish": "English",
     "languageHungarian": "Magyar"
   },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use essential cookies to keep the site working, and optional cookies for analytics and marketing.",
+    "acceptAll": "Accept all",
+    "managePreferences": "Manage preferences",
+    "preferencesTitle": "Cookie preferences",
+    "preferencesDescription": "Choose which optional cookies you allow. You can change this any time from the footer link.",
+    "essentialTitle": "Essential cookies",
+    "essentialDescription": "Required for basic site functionality. Always active.",
+    "analyticsTitle": "Analytics cookies",
+    "analyticsDescription": "Help us understand how the site is used (Google Analytics, Hotjar).",
+    "marketingTitle": "Marketing cookies",
+    "marketingDescription": "Used for marketing and ad performance tracking (Facebook, LinkedIn).",
+    "savePreferences": "Save preferences",
+    "settingsLink": "Cookie settings",
+    "closeLabel": "Close cookie settings"
+  },
   "home": {
     "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",
     "heroSubtitle": "I work with mid–senior teams on DevOps, architecture, and everyday practices that reduce friction instead of adding process overhead.",
@@ -150,7 +167,7 @@
   },
   "contact": {
     "pageTitle": "Contact",
-    "intro": "If you are responsible for engineering teams and want to explore training or a focused consulting engagement, feel free to reach out.",
+    "intro": "If you are responsible for engineering teams and want to explore training or focused consulting support, book a short discovery call.",
     "expectationsTitle": "Who should get in touch",
     "expectations": [
       "CTOs, VPs of Engineering, and engineering managers planning team-wide training.",
@@ -159,11 +176,11 @@
     ],
     "responseTitle": "What to expect",
     "response": [
-      "I typically respond within 2–3 business days.",
-      "If I am not the right fit, I will say so directly.",
-      "If it looks like a match, we schedule a short call to understand your context before proposing any format."
+      "Pick a suitable time in the calendar widget below.",
+      "The call is a short, no-pressure discovery conversation.",
+      "If I am not the right fit, I will say so directly."
     ],
-    "formTitle": "Contact form (placeholder)",
+    "formTitle": "Book a 30-minute call",
     "nameLabel": "Name",
     "emailLabel": "Work email",
     "companyLabel": "Company",

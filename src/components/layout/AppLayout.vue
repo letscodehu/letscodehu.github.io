@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppHeader from './AppHeader.vue'
 import AppFooter from './AppFooter.vue'
+import CookieBanner from '../ui/CookieBanner.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import AppFooter from './AppFooter.vue'
       </div>
     </main>
     <AppFooter />
+    <CookieBanner />
   </div>
 </template>
 
@@ -31,7 +33,7 @@ import AppFooter from './AppFooter.vue'
 .main-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 3rem;
+  padding: 2.8rem 1.5rem 3.25rem;
 }
 </style>
 

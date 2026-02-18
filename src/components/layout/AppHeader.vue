@@ -67,13 +67,14 @@ const currentPathName = computed(() => (route.name as string) || 'home')
 <style scoped>
 .header {
   border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg);
+  background-color: rgba(243, 246, 251, 0.9);
+  backdrop-filter: blur(8px);
 }
 
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -87,7 +88,7 @@ const currentPathName = computed(() => (route.name as string) || 'home')
 }
 
 .brand-name {
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.03em;
 }
 
@@ -108,11 +109,19 @@ const currentPathName = computed(() => (route.name as string) || 'home')
   font-size: 0.9rem;
   color: var(--color-text-muted);
   text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
 }
 
 .nav-link--active {
   color: var(--color-text);
   font-weight: 500;
+  border-color: var(--color-primary);
 }
 
 .lang-switch {

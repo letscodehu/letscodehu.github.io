@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
+import VideoEmbed from '../components/ui/VideoEmbed.vue'
 
 const { t, currentLang } = useI18n()
 const isEn = currentLang.value === 'en'
@@ -50,28 +51,22 @@ const isEn = currentLang.value === 'en'
           <p class="body">
             {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
           </p>
-          <a
-            :href="t('about.talk1Url')"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="talk-link"
-          >
-            {{ t('about.talk1Label') }}
-          </a>
+          <VideoEmbed
+            :url="t('about.talk1Url')"
+            :title="t('about.talk1Title')"
+            :link-label="t('about.talk1Label')"
+          />
         </BaseCard>
         <BaseCard>
           <template #title>{{ t('about.talk2Title') }}</template>
           <p class="body">
             {{ t('about.talk2Description') }}
           </p>
-          <a
-            :href="t('about.talk2Url')"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="talk-link"
-          >
-            {{ t('about.talk2Label') }}
-          </a>
+          <VideoEmbed
+            :url="t('about.talk2Url')"
+            :title="t('about.talk2Title')"
+            :link-label="t('about.talk2Label')"
+          />
         </BaseCard>
       </div>
     </section>
@@ -80,12 +75,12 @@ const isEn = currentLang.value === 'en'
 
 <style scoped>
 .page-header {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .page-title {
   margin: 0 0 0.75rem;
-  font-size: 1.6rem;
+  font-size: 1.85rem;
 }
 
 .page-intro {
@@ -96,12 +91,12 @@ const isEn = currentLang.value === 'en'
 }
 
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.6rem;
 }
 
 .section-header h2 {
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .section-intro {
@@ -112,7 +107,7 @@ const isEn = currentLang.value === 'en'
 
 .grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 .grid--two {
@@ -126,7 +121,7 @@ const isEn = currentLang.value === 'en'
 .list {
   margin: 0;
   padding-left: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .list li + li {
@@ -135,17 +130,7 @@ const isEn = currentLang.value === 'en'
 
 .body {
   margin: 0 0 0.75rem;
-  font-size: 0.9rem;
-}
-
-.talk-link {
-  font-size: 0.85rem;
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.talk-link:hover {
-  text-decoration: underline;
+  font-size: 0.92rem;
 }
 </style>
 

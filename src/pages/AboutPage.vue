@@ -10,12 +10,15 @@ const isEn = currentLang.value === 'en'
 <template>
   <article>
     <header class="page-header">
-      <h1 class="page-title">
-        {{ t('about.pageTitle') }}
-      </h1>
-      <p class="page-intro">
-        {{ t('about.intro') }}
-      </p>
+      <img src="/me.jpg" :alt="t('about.photoAlt')" class="about-photo" />
+      <div class="page-header-text">
+        <h1 class="page-title">
+          {{ t('about.pageTitle') }}
+        </h1>
+        <p class="page-intro">
+          {{ t('about.intro') }}
+        </p>
+      </div>
     </header>
 
     <section class="section grid grid--two">
@@ -76,6 +79,29 @@ const isEn = currentLang.value === 'en'
 <style scoped>
 .page-header {
   margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.about-photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.page-header-text {
+  min-width: 0;
 }
 
 .page-title {

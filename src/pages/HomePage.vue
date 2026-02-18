@@ -56,13 +56,11 @@ const isEn = currentLang.value === 'en'
         <template #title>
           {{ isEn ? 'What we focus on' : 'A fókusz a képzéseken' }}
         </template>
-        <p class="body">
-          {{
-            isEn
-              ? 'The goal is not a new framework, but everyday practices that reduce friction and make architecture decisions explicit.'
-              : 'Nem új framework a cél, hanem olyan mindennapi gyakorlatok, amelyek csökkentik a súrlódást és láthatóvá teszik az architekturális döntéseket.'
-          }}
-        </p>
+        <ul class="list">
+          <li v-for="item in t('home.focusOn')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
       </BaseCard>
     </div>
   </section>

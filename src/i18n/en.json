@@ -45,6 +45,14 @@
       "Infrastructure and deployment scripts are tribal knowledge instead of shared practice.",
       "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
     ],
+    "focusOn": [
+      "Making architectural boundaries visible and intentional (C4, ADRs, clear module boundaries).",
+      "Designing systems where domain logic is isolated from external dependencies.",
+      "Establishing CI/CD pipelines that give fast, reliable feedback.",
+      "Turning tests from noise into a confidence mechanism.",
+      "Replacing tribal knowledge with documented, repeatable engineering practices.",
+      "Ensuring infrastructure is versioned, reproducible, and understandable by the team."
+    ],
     "offeringsTitle": "Training focus areas",
     "offerings": [
       "Engineering practices: code review, branching, modular design, and habits that keep codebases maintainable.",

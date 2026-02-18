@@ -45,6 +45,14 @@
       "Az infrastruktúra és a deployment szkriptek törzsi tudáson alapulnak, nem közös gyakorlaton.",
       "A csapat tudja, „mi lenne a jó gyakorlat”, de nyomás alatt mégsem ez valósul meg."
     ],
+    "focusOn": [
+      "Az architekturális határok láthatóvá tétele (C4, ADR-ek, világos modulhatárok).",
+      "Olyan rendszerek tervezése, ahol a domain logika elkülönül a külső függőségektől.",
+      "CI/CD pipeline-ok kialakítása, amelyek gyors, megbízható visszajelzést adnak.",
+      "A tesztek zajból megbízhatósági eszközzé alakítása.",
+      "A rejtett tudás felváltása dokumentált, megismételhető mérnöki gyakorlatokkal.",
+      "Az infrastruktúra verziózott, reprodukálható és a csapat által érthető legyen."
+    ],
     "offeringsTitle": "Képzési fókuszterületek",
     "offerings": [
       "Mérnöki gyakorlatok: code review, branch-stratégiák, moduláris tervezés, és azok a szokások, amelyek fenntarthatóvá teszik a kódbázist.",

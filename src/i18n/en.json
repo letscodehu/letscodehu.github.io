@@ -6,7 +6,7 @@
     "consulting": "Consulting",
     "about": "About",
     "contact": "Contact",
-    "blog": "Blog"
+    "caseStudies": "Case studies"
   },
   "common": {
     "companyName": "Letscode Solutions Kft",
@@ -187,10 +187,15 @@
     "messageLabel": "Short description of your context",
     "submitLabel": "Send"
   },
-  "blog": {
-    "pageTitle": "Blog",
-    "emptyTitle": "Future insights from training and consulting work",
-    "emptyBody": "Over time I plan to share short, experience-based articles on engineering practices, architecture decisions, and how teams actually change. For now, the best way to learn more is to get in touch."
+  "caseStudies": {
+    "pageTitle": "Case studies",
+    "intro": "Real-world examples from training and consulting engagements.",
+    "backToList": "Back to case studies",
+    "eyebrow": "Case study",
+    "tocTitle": "In this article",
+    "sidebarCtaTitle": "Want similar results?",
+    "sidebarCtaBody": "If you're facing delivery or architecture challenges, we can discuss how training or focused consulting could help.",
+    "sidebarCtaLabel": "Get in touch"
   }
 }
 

@@ -6,7 +6,7 @@
     "consulting": "Tanácsadás",
     "about": "Rólam",
     "contact": "Kapcsolat",
-    "blog": "Blog"
+    "caseStudies": "Esettanulmányok"
   },
   "common": {
     "companyName": "Letscode Solutions Kft",
@@ -187,10 +187,15 @@
     "messageLabel": "Röviden a helyzetről",
     "submitLabel": "Küldés"
   },
-  "blog": {
-    "pageTitle": "Blog",
-    "emptyTitle": "Későbbi jegyzetek a képzési és tanácsadási munkából",
-    "emptyBody": "Idővel rövid, tapasztalati alapú írásokat tervezek megosztani mérnöki gyakorlatokról, architekturális döntésekről és csapatváltozásról. Jelenleg a legjobb, ha közvetlenül veszed fel velem a kapcsolatot."
+  "caseStudies": {
+    "pageTitle": "Esettanulmányok",
+    "intro": "Valós példák a képzési és tanácsadási együttműködésekből.",
+    "backToList": "Vissza az esettanulmányokhoz",
+    "eyebrow": "Esettanulmány",
+    "tocTitle": "Ebben a cikkben",
+    "sidebarCtaTitle": "Szeretnél hasonló eredményeket?",
+    "sidebarCtaBody": "Ha szállítási vagy architekturális kihívásokkal nézel szembe, beszéljünk arról, hogyan segíthet a képzés vagy a fókuszált tanácsadás.",
+    "sidebarCtaLabel": "Beszéljünk"
   }
 }
 

@@ -1,41 +1,49 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import './style.css'
 import App from './App.vue'
-import { router } from './router'
+import { routes } from './router'
 import type { Language } from './composables/useI18n'
-import en from './i18n/en.json'
-import hu from './i18n/hu.json'
+import {
+  detectBrowserLanguage,
+  readStoredLanguage,
+  writeStoredLanguage,
+} from './composables/useI18n'
+import { caseStudies } from './data/case-studies'
 
-const messages: Record<Language, any> = {
-  en,
-  hu,
-}
+export const createApp = ViteSSG(App, { routes }, ({ router }) => {
+  router.beforeEach((to) => {
+    const languagePathMatch = to.path.match(/^\/(en|hu)(?:\/|$)/)
+    if (languagePathMatch) {
+      const languageFromPath: Language = languagePathMatch[1] === 'hu' ? 'hu' : 'en'
+      writeStoredLanguage(languageFromPath)
+      return true
+    }
 
-function getNestedValue(source: Record<string, any>, path: string): string | undefined {
-  const segments = path.split('.')
-  let value: any = source
+    const preferredLanguage = readStoredLanguage() ?? detectBrowserLanguage() ?? 'en'
+    const fullPath = to.fullPath === '/' ? '/' : to.fullPath
 
-  for (const segment of segments) {
-    value = value?.[segment]
-    if (value === undefined) {
-      return undefined
+    return {
+      path: `/${preferredLanguage}${fullPath}`,
+      replace: true,
+    }
+  })
+})
+
+export async function includedRoutes() {
+  const langs: ('en' | 'hu')[] = ['en', 'hu']
+  const staticPaths = ['training', 'consulting', 'about', 'contact', 'case-studies']
+
+  const paths: string[] = []
+
+  for (const lang of langs) {
+    paths.push(`/${lang}`)
+    for (const p of staticPaths) {
+      paths.push(`/${lang}/${p}`)
+    }
+    for (const cs of caseStudies) {
+      paths.push(`/${lang}/case-studies/${cs.slug}`)
     }
   }
 
-  return typeof value === 'string' ? value : undefined
+  return paths
 }
-
-const app = createApp(App)
-
-app.use(router)
-
-router.afterEach((to) => {
-  const lang: Language = to.params.lang === 'hu' ? 'hu' : 'en'
-  const titleKey = typeof to.meta.titleKey === 'string' ? to.meta.titleKey : undefined
-  const brand = messages[lang].common.companyName
-  const localizedTitle = titleKey ? getNestedValue(messages[lang], titleKey) : undefined
-
-  document.title = localizedTitle ? `${localizedTitle} | ${brand}` : brand
-})
-
-app.mount('#app')

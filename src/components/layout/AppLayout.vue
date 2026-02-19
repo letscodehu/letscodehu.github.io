@@ -1,7 +1,23 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import AppHeader from './AppHeader.vue'
 import AppFooter from './AppFooter.vue'
 import CookieBanner from '../ui/CookieBanner.vue'
+import { useI18n } from '../../composables/useI18n'
+
+const route = useRoute()
+const { t } = useI18n()
+
+useHead({
+  title: computed(() => {
+    const titleKey = typeof route.meta.titleKey === 'string' ? route.meta.titleKey : undefined
+    const brand = t('common.companyName')
+    const localizedTitle = titleKey ? t(titleKey) : undefined
+    return localizedTitle ? `${localizedTitle} | ${brand}` : brand
+  }),
+})
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import { useI18n } from '../composables/useI18n'
 import { getCaseStudyBySlug } from '../data/case-studies'
 import { marked } from 'marked'
@@ -11,6 +12,14 @@ const { t, currentLang } = useI18n()
 
 const slug = computed(() => route.params.slug as string)
 const caseStudy = computed(() => getCaseStudyBySlug(slug.value))
+
+useHead({
+  title: computed(() => {
+    const cs = caseStudy.value
+    const brand = t('common.companyName')
+    return cs ? `${cs.title} | ${brand}` : brand
+  }),
+})
 
 function slugify(text: string): string {
   return text
@@ -67,9 +76,6 @@ watch(
   (cs) => {
     if (route.name === 'case-study-detail-en' && slug.value && !cs) {
       router.replace({ name: 'case-studies-en', params: { lang: currentLang.value } })
-    } else if (cs) {
-      const brand = t('common.companyName')
-      document.title = `${cs.title} | ${brand}`
     }
   },
   { immediate: true }

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import AppLayout from '../components/layout/AppLayout.vue'
 import HomePage from '../pages/HomePage.vue'
 import TrainingPage from '../pages/TrainingPage.vue'
@@ -7,12 +7,6 @@ import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import CaseStudiesPage from '../pages/CaseStudiesPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
-import {
-  detectBrowserLanguage,
-  type Language,
-  readStoredLanguage,
-  writeStoredLanguage,
-} from '../composables/useI18n'
 
 const childRoutes: RouteRecordRaw[] = [
   { path: '', name: 'home', component: HomePage, meta: { titleKey: 'nav.home' } },
@@ -59,7 +53,7 @@ const childRoutes: RouteRecordRaw[] = [
   },
 ]
 
-const routes: RouteRecordRaw[] = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: AppLayout,
@@ -70,26 +64,3 @@ const routes: RouteRecordRaw[] = [
     children: childRoutes,
   },
 ]
-
-export const router = createRouter({
-  history: createWebHistory(),
-  routes,
-})
-
-router.beforeEach((to) => {
-  const languagePathMatch = to.path.match(/^\/(en|hu)(?:\/|$)/)
-  if (languagePathMatch) {
-    const languageFromPath: Language = languagePathMatch[1] === 'hu' ? 'hu' : 'en'
-    writeStoredLanguage(languageFromPath)
-    return true
-  }
-
-  const preferredLanguage = readStoredLanguage() ?? detectBrowserLanguage() ?? 'en'
-  const fullPath = to.fullPath === '/' ? '/' : to.fullPath
-
-  return {
-    path: `/${preferredLanguage}${fullPath}`,
-    replace: true,
-  }
-})
-

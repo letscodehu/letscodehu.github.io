@@ -11,7 +11,7 @@ const navItems = computed(() => [
   { name: t('nav.training'), to: { name: 'training-en', params: { lang: currentLang.value } } },
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
-  { name: t('nav.blog'), to: { name: 'blog-en', params: { lang: currentLang.value } } },
+  { name: t('nav.caseStudies'), to: { name: 'case-studies-en', params: { lang: currentLang.value } } },
   { name: t('nav.contact'), to: { name: 'contact-en', params: { lang: currentLang.value } } },
 ])
 
@@ -25,8 +25,11 @@ const currentPathName = computed(() => (route.name as string) || 'home')
         :to="{ name: 'home', params: { lang: currentLang } }"
         class="brand"
       >
-        <span class="brand-name">Letscode Solutions</span>
-        <span class="brand-tagline">Training &amp; consulting for engineering teams</span>
+        <img src="/logo.png" alt="Letscode Solutions" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">Letscode Solutions</span>
+          <span class="brand-tagline">Training &amp; consulting for engineering teams</span>
+        </span>
       </RouterLink>
 
       <nav class="nav" aria-label="Main navigation">
@@ -83,6 +86,22 @@ const currentPathName = computed(() => (route.name as string) || 'home')
 .brand {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.brand-text {
   display: flex;
   flex-direction: column;
 }

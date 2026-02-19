@@ -6,7 +6,7 @@
     "consulting": "Consulting",
     "about": "About",
     "contact": "Contact",
-    "blog": "Blog"
+    "caseStudies": "Case studies"
   },
   "common": {
     "companyName": "Letscode Solutions Kft",
@@ -44,6 +44,14 @@
       "Architecture decisions are undocumented; new engineers have to reverse-engineer intent from code.",
       "Infrastructure and deployment scripts are tribal knowledge instead of shared practice.",
       "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
+    ],
+    "focusOn": [
+      "Making architectural boundaries visible and intentional (C4, ADRs, clear module boundaries).",
+      "Designing systems where domain logic is isolated from external dependencies.",
+      "Establishing CI/CD pipelines that give fast, reliable feedback.",
+      "Turning tests from noise into a confidence mechanism.",
+      "Replacing tribal knowledge with documented, repeatable engineering practices.",
+      "Ensuring infrastructure is versioned, reproducible, and understandable by the team."
     ],
     "offeringsTitle": "Training focus areas",
     "offerings": [
@@ -142,6 +150,7 @@
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",
     "intro": "I work as a senior consultant and trainer focused on helping software engineering teams deliver reliably without losing sight of technical quality.",
+    "photoAlt": "Photo of Krisztián Papp",
     "backgroundTitle": "Background",
     "background": [
       "Years of experience working with product development teams and engineering organizations.",
@@ -187,10 +196,15 @@
     "messageLabel": "Short description of your context",
     "submitLabel": "Send"
   },
-  "blog": {
-    "pageTitle": "Blog",
-    "emptyTitle": "Future insights from training and consulting work",
-    "emptyBody": "Over time I plan to share short, experience-based articles on engineering practices, architecture decisions, and how teams actually change. For now, the best way to learn more is to get in touch."
+  "caseStudies": {
+    "pageTitle": "Case studies",
+    "intro": "Real-world examples from training and consulting engagements.",
+    "backToList": "Back to case studies",
+    "eyebrow": "Case study",
+    "tocTitle": "In this article",
+    "sidebarCtaTitle": "Want similar results?",
+    "sidebarCtaBody": "If you're facing delivery or architecture challenges, we can discuss how training or focused consulting could help.",
+    "sidebarCtaLabel": "Get in touch"
   }
 }
 

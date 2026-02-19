@@ -5,7 +5,8 @@ import TrainingPage from '../pages/TrainingPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
-import BlogPage from '../pages/BlogPage.vue'
+import CaseStudiesPage from '../pages/CaseStudiesPage.vue'
+import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
 import {
   detectBrowserLanguage,
   type Language,
@@ -44,10 +45,17 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'contact.pageTitle' },
   },
   {
-    path: 'blog',
-    name: 'blog-en',
-    component: BlogPage,
-    meta: { titleKey: 'blog.pageTitle' },
+    path: 'case-studies',
+    name: 'case-studies-en',
+    component: CaseStudiesPage,
+    alias: 'esettanulmanyok',
+    meta: { titleKey: 'caseStudies.pageTitle' },
+  },
+  {
+    path: 'case-studies/:slug',
+    name: 'case-study-detail-en',
+    component: CaseStudyDetailPage,
+    meta: { titleKey: 'caseStudies.pageTitle' },
   },
 ]
 

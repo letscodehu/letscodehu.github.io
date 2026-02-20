@@ -67,6 +67,17 @@
     </style>
   </head>
   <body>
+    <script>
+      // Redirect trailing slash URLs to non-trailing slash (except root)
+      // This handles direct requests and refreshes on URLs like /en/ or /en/training/
+      (function() {
+        var pathname = window.location.pathname;
+        if (pathname !== '/' && pathname.endsWith('/')) {
+          var newPath = pathname.replace(/\/$/, '') + window.location.search + window.location.hash;
+          window.location.replace(newPath);
+        }
+      })();
+    </script>
     <div class="wrap">
       <p class="code">404</p>
       <h1>Page not found</h1>

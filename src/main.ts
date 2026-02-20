@@ -13,6 +13,16 @@ import { trackPageView } from './tracking'
 
 export const createApp = ViteSSG(App, { routes }, ({ router }) => {
   router.beforeEach((to) => {
+    // Redirect trailing slash URLs to non-trailing slash (except root)
+    if (to.path !== '/' && to.path.endsWith('/')) {
+      return {
+        path: to.path.replace(/\/$/, ''),
+        query: to.query,
+        hash: to.hash,
+        replace: true,
+      }
+    }
+
     const languagePathMatch = to.path.match(/^\/(en|hu)(?:\/|$)/)
     if (languagePathMatch) {
       const languageFromPath: Language = languagePathMatch[1] === 'hu' ? 'hu' : 'en'

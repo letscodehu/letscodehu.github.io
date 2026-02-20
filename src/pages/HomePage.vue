@@ -75,7 +75,7 @@ const isEn = currentLang.value === 'en'
           {{ isEn ? 'Engineering practices' : 'Mérnöki gyakorlatok' }}
         </template>
         <ul class="list">
-          <li v-for="item in t('home.offerings').slice(0, 1)" :key="item">
+          <li v-for="item in t('home.offeringsEngineering')" :key="item">
             {{ item }}
           </li>
         </ul>
@@ -85,7 +85,7 @@ const isEn = currentLang.value === 'en'
           {{ isEn ? 'DevOps and delivery' : 'DevOps és szállítás' }}
         </template>
         <ul class="list">
-          <li v-for="item in t('home.offerings').slice(1, 2)" :key="item">
+          <li v-for="item in t('home.offeringsDevOps')" :key="item">
             {{ item }}
           </li>
         </ul>
@@ -95,7 +95,7 @@ const isEn = currentLang.value === 'en'
           {{ isEn ? 'Architecture: ADR, C4, clean architecture' : 'Architektúra: ADR, C4, tiszta architektúra' }}
         </template>
         <ul class="list">
-          <li v-for="item in t('home.offerings').slice(2)" :key="item">
+          <li v-for="item in t('home.offeringsArchitecture')" :key="item">
             {{ item }}
           </li>
         </ul>
@@ -120,12 +120,31 @@ const isEn = currentLang.value === 'en'
           {{ isEn ? 'How this usually looks in practice' : 'Hogyan néz ez ki a gyakorlatban' }}
         </template>
         <p class="body">
-          {{
-            isEn
-              ? 'We work with concrete examples from your context wherever possible: code, pipeline definitions, architecture sketches, and real trade-offs.'
-              : 'Lehetőség szerint a ti kontextusotokból dolgozunk: kód, pipeline definíciók, architektúra-vázlatok és valódi trade-offok mentén.'
-          }}
+          {{ t('home.practiceIntro') }}
         </p>
+        <ul class="list">
+          <li v-for="item in t('home.practiceExamples')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </BaseCard>
+    </div>
+  </section>
+
+  <section class="section">
+    <header class="section-header">
+      <h2>{{ t('home.engagementModelsTitle') }}</h2>
+      <p class="section-intro">
+        {{ t('home.engagementModelsIntro') }}
+      </p>
+    </header>
+    <div class="grid grid--two">
+      <BaseCard>
+        <ul class="list">
+          <li v-for="item in t('home.engagementModels')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
       </BaseCard>
     </div>
   </section>

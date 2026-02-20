@@ -2,8 +2,7 @@
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 
-const { t, currentLang } = useI18n()
-const isEn = currentLang.value === 'en'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -49,18 +48,10 @@ const isEn = currentLang.value === 'en'
     <section class="section">
       <BaseCard>
         <template #title>
-          {{
-            isEn
-              ? 'How consulting complements training'
-              : 'Hogyan egészíti ki a tanácsadás a képzéseket'
-          }}
+          {{ t('consulting.complementsTitle') }}
         </template>
         <p class="body">
-          {{
-            isEn
-              ? 'Consulting engagements are short and focused. The goal is not a permanent dependency, but helping your teams make and communicate decisions they can own afterwards.'
-              : 'A tanácsadási együttműködések rövidek és fókuszáltak. A cél nem tartós függés kialakítása, hanem az, hogy a csapat olyan döntéseket tudjon hozni és kommunikálni, amelyek mögött később is meg tud állni.'
-          }}
+          {{ t('consulting.complementsBody') }}
         </p>
       </BaseCard>
     </section>

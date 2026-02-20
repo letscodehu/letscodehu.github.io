@@ -49,17 +49,29 @@ function initGoogleAnalytics() {
     return
   }
 
-  injectScriptOnce('ga-script', `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`)
+  // Initialize dataLayer first
   window.dataLayer = window.dataLayer || []
-  window.gtag =
-    window.gtag ||
-    function gtag(...args: unknown[]) {
-      window.dataLayer?.push(args)
-    }
+  
+  // Define gtag function that queues calls until script loads
+  window.gtag = window.gtag || function gtag(...args: unknown[]) {
+    window.dataLayer?.push(args)
+  }
 
+  // Call gtag('js') and gtag('config') - these will be queued
   window.gtag('js', new Date())
-  window.gtag('config', GA_MEASUREMENT_ID)
-  loaded.ga = true
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    page_path: window.location.pathname,
+  })
+
+  // Inject the script tag
+  const scriptInjected = injectScriptOnce('ga-script', `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`)
+  
+  if (scriptInjected) {
+    loaded.ga = true
+    
+    // Once script loads, it will process the queued gtag calls automatically
+    // The script will replace our gtag function with the real one
+  }
 }
 
 function initFacebookPixel() {
@@ -140,4 +152,14 @@ export function applyTrackingConsent(consent: CookieConsentState) {
     initFacebookPixel()
     initLinkedInInsight()
   }
+}
+
+export function trackPageView(path: string) {
+  if (typeof window === 'undefined' || !window.gtag || !loaded.ga) {
+    return
+  }
+
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    page_path: path,
+  })
 }

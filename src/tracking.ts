@@ -53,8 +53,10 @@ function initGoogleAnalytics() {
   window.dataLayer = window.dataLayer || []
   
   // Define gtag function that queues calls until script loads
-  window.gtag = window.gtag || function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args)
+  // Use arguments object (not array) to match Google's official snippet format
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push(arguments)
   }
 
   // Call gtag('js') and gtag('config') - these will be queued
@@ -68,6 +70,20 @@ function initGoogleAnalytics() {
   
   if (scriptInjected) {
     loaded.ga = true
+    
+    // Set up onload handler to ensure config is sent after script loads
+    // This ensures the first collect request is triggered even if dataLayer processing is delayed
+    const scriptElement = document.getElementById('ga-script') as HTMLScriptElement
+    if (scriptElement) {
+      scriptElement.onload = () => {
+        // Re-send config after script loads to trigger first collect request
+        if (window.gtag) {
+          window.gtag('config', GA_MEASUREMENT_ID, {
+            page_path: window.location.pathname,
+          })
+        }
+      }
+    }
     
     // Once script loads, it will process the queued gtag calls automatically
     // The script will replace our gtag function with the real one

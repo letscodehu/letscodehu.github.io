@@ -46,12 +46,12 @@
       "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
     ],
     "focusOn": [
-      "Making architectural boundaries visible and intentional (C4, ADRs, clear module boundaries).",
-      "Designing systems where domain logic is isolated from external dependencies.",
-      "Establishing CI/CD pipelines that give fast, reliable feedback.",
-      "Turning tests from noise into a confidence mechanism.",
-      "Replacing tribal knowledge with documented, repeatable engineering practices.",
-      "Ensuring infrastructure is versioned, reproducible, and understandable by the team."
+      "Safer changes: tests and pipelines that catch problems before production instead of after.",
+      "Faster delivery: fewer bottlenecks, clearer handoffs, and less rework from inconsistent practices.",
+      "Visible architecture: boundaries and decisions documented so the next person can pick them up.",
+      "Repeatable practices: versioned infrastructure and shared conventions instead of tribal knowledge.",
+      "Confidence in refactoring: modular design and dependency rules that make change predictable.",
+      "Delivery feedback you can trust: CI/CD that gives fast, reliable signals so releases stop feeling risky."
     ],
     "offeringsTitle": "Training focus areas",
     "offerings": [
@@ -61,12 +61,37 @@
       "C4 diagrams: lightweight visual models that help teams reason about systems together.",
       "Clean architecture: structuring systems so that business rules stay decoupled from frameworks and infrastructure."
     ],
+    "offeringsEngineering": [
+      "Code review as a consistency and learning lever, not a gate.",
+      "Branching and integration strategies that keep main releasable and reduce merge pain.",
+      "Modular design and boundaries that keep the codebase navigable as it grows.",
+      "Definition of done and quality gates that teams can actually sustain under pressure."
+    ],
+    "offeringsDevOps": [
+      "CI pipelines that give fast, reliable feedback and fail in a way that blocks broken builds.",
+      "Trunk-based development vs. long-lived branches: trade-offs and when each fits.",
+      "Environments and deployment practices that support safe, repeatable releases.",
+      "Pragmatic monitoring and observability so the team can detect and diagnose issues."
+    ],
+    "offeringsArchitecture": [
+      "ADRs: when to write them, what to capture, and how to keep them lightweight and useful.",
+      "C4 diagrams: a shared visual language to reason about systems at different levels.",
+      "Clean architecture: dependency rules and boundaries that keep business logic decoupled from frameworks and infrastructure.",
+      "Structuring systems so that future changes don't require rewrites or heroics."
+    ],
     "whyDifferentTitle": "Why this training is different",
     "whyDifferent": [
       "Senior-led: you work directly with me, not with a junior trainer reading from slides.",
       "Hands-on: we work through real examples, code, and architecture from your world.",
       "Opinionated: I share what tends to work in practice, not just what looks nice in a slide deck.",
       "Context-aware: formats and exercises are adapted to your team’s maturity and constraints."
+    ],
+    "practiceIntro": "Work is done on your codebase, pipelines, and architecture—not generic examples. Typical formats include:",
+    "practiceExamples": [
+      "Architecture reviews: walking through your system, identifying boundaries and coupling, and agreeing next steps.",
+      "ADR sessions: capturing decisions in a lightweight format so they survive beyond the current team.",
+      "CI/CD redesign: reviewing your pipeline and deployment flow, then designing changes for faster, safer feedback.",
+      "Refactoring workshops: guided work on real modules to introduce or tighten boundaries and dependency rules."
     ],
     "talksTitle": "Conference talks and sessions",
     "talksIntro": "To get a sense of my approach, here are a few conference talks and sessions:",
@@ -77,6 +102,14 @@
     "talk2Description": "On the cost of missing ADRs and documented decisions.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Watch on Vimeo",
+    "engagementModelsTitle": "Engagement models",
+    "engagementModelsIntro": "Formats are adapted to your goals and team maturity. Common options:",
+    "engagementModels": [
+      "1–2 day focused workshops: sharpen one or two areas (e.g. ADRs and C4, or CI/CD and safe release) with an experienced team.",
+      "Short diagnostic engagements: review architecture and practices, identify high-impact improvements, and hand over a clear summary and next steps.",
+      "Ongoing advisory: periodic sessions to support decision-making, rollout of new practices, or course-correction as you change.",
+      "Longer-term partnership: multi-phase work when you want sustained support for a broader transformation, with scope and rhythm agreed up front."
+    ],
     "ctaPrimary": "Request training",
     "ctaSecondary": "Discuss a training need"
   },

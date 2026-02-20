@@ -46,12 +46,12 @@
       "A csapat tudja, „mi lenne a jó gyakorlat”, de nyomás alatt mégsem ez valósul meg."
     ],
     "focusOn": [
-      "Az architekturális határok láthatóvá tétele (C4, ADR-ek, világos modulhatárok).",
-      "Olyan rendszerek tervezése, ahol a domain logika elkülönül a külső függőségektől.",
-      "CI/CD pipeline-ok kialakítása, amelyek gyors, megbízható visszajelzést adnak.",
-      "A tesztek zajból megbízhatósági eszközzé alakítása.",
-      "A rejtett tudás felváltása dokumentált, megismételhető mérnöki gyakorlatokkal.",
-      "Az infrastruktúra verziózott, reprodukálható és a csapat által érthető legyen."
+      "Biztonságosabb változtatások: tesztek és pipeline-ok, amelyek a problémákat éles előtt, nem utána észlelik.",
+      "Gyorsabb szállítás: kevesebb szűk keresztmetszet, világosabb átadások, kevesebb újramunka az inkonzisztens gyakorlatok miatt.",
+      "Látható architektúra: dokumentált határok és döntések, hogy a következő ember is fel tudja venni a fonalat.",
+      "Megismételhető gyakorlatok: verziózott infrastruktúra és közös konvenciók a törzsi tudás helyett.",
+      "Magabiztosság a refaktorálásban: moduláris tervezés és függőségi szabályok, amelyek a változtatást kiszámíthatóvá teszik.",
+      "Megbízható szállítási visszajelzés: CI/CD, amely gyors, megbízható jeleket ad, így a release-ek nem érződnek kockázatosnak."
     ],
     "offeringsTitle": "Képzési fókuszterületek",
     "offerings": [
@@ -61,12 +61,37 @@
       "C4 diagramok: könnyűsúlyú vizuális modellek, amelyek segítik a közös gondolkodást a rendszerről.",
       "Tiszta architektúra: hogyan válasszuk szét az üzleti logikát a frameworköktől és az infrastruktúrától."
     ],
+    "offeringsEngineering": [
+      "Code review következetesség és tanulás eszközeként, nem akadályként.",
+      "Branch- és integrációs stratégiák, amelyek a main-t release-kész állapotban tartják és csökkentik a merge fájdalmat.",
+      "Moduláris tervezés és határok, amelyek a kódbázist navigálhatóvá teszik a növekedés során.",
+      "Definition of done és minőségi kapuk, amelyeket a csapat nyomás alatt is fenntartani tud."
+    ],
+    "offeringsDevOps": [
+      "CI pipeline-ok, amelyek gyors, megbízható visszajelzést adnak és úgy hibáznak, hogy blokkolják a hibás build-eket.",
+      "Trunk-based development vs. hosszú életű branch-ek: trade-offok és mikor melyik illik.",
+      "Környezetek és deployment gyakorlatok, amelyek biztonságos, megismételhető release-eket tesznek lehetővé.",
+      "Pragmatikus monitoring és observability, hogy a csapat képes legyen problémákat észlelni és diagnosztizálni."
+    ],
+    "offeringsArchitecture": [
+      "ADR-ek: mikor érdemes írni, mit rögzítsünk, és hogyan maradjon könnyű súlyú, de használható.",
+      "C4 diagramok: közös vizuális nyelv a rendszerek különböző szintjeinek megbeszéléséhez.",
+      "Tiszta architektúra: függőségi szabályok és határok, amelyek az üzleti logikát elválasztják a frameworköktől és infrastruktúrától.",
+      "Rendszerek strukturálása úgy, hogy a jövőbeli változtatások ne igényeljenek újraírást vagy hőstetteket."
+    ],
     "whyDifferentTitle": "Miért más ez a képzés?",
     "whyDifferent": [
       "Senior fókusz: közvetlenül velem dolgoztok, nem junior tréner tartja az anyagot.",
       "Gyakorlati: valós példákon, kódon és architektúrákon dolgozunk – lehetőség szerint a ti környezetetekből.",
       "Véleményes: azt mutatom, mi működik a gyakorlatban, nem csak azt, ami jól mutat egy prezentációban.",
       "Kontekstuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
+    ],
+    "practiceIntro": "A munka a ti kódbázisotokon, pipeline-jaitokon és architektúrátokon történik – nem általános példákon. Tipikus formátumok:",
+    "practiceExamples": [
+      "Architektúra áttekintések: végigjárjuk a rendszert, azonosítjuk a határokat és a csatolásokat, megegyezünk a következő lépésekben.",
+      "ADR sessionök: döntések rögzítése könnyű súlyú formátumban, hogy túléljék az aktuális csapatot.",
+      "CI/CD újragondolás: pipeline és deployment flow áttekintése, majd változtatások tervezése gyorsabb, biztonságosabb visszajelzésért.",
+      "Refaktoráló workshopok: irányított munka valós modulokon, hogy bevezessük vagy szigorítsuk a határokat és függőségi szabályokat."
     ],
     "talksTitle": "Konferencia-előadások és sessionök",
     "talksIntro": "Ízelítőként két előadás az ADR-ekről és a dokumentált döntésekről:",
@@ -77,6 +102,14 @@
     "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Megtekintés Vimeo-n",
+    "engagementModelsTitle": "Együttműködési formátumok",
+    "engagementModelsIntro": "A formátumok a céljaitokhoz és a csapat érettségéhez igazodnak. Gyakori lehetőségek:",
+    "engagementModels": [
+      "1–2 napos fókuszált workshopok: egy-két terület elmélyítése (pl. ADR és C4, vagy CI/CD és biztonságos release) tapasztalt csapatokkal.",
+      "Rövid diagnosztikai együttműködések: architektúra és gyakorlatok áttekintése, nagy hatású fejlesztések azonosítása, világos összefoglaló és következő lépések átadása.",
+      "Folyamatos tanácsadás: rendszeres sessionök a döntéshozatal, új gyakorlatok bevezetése vagy irányváltás támogatására változás közben.",
+      "Hosszabb távú partnerség: többfázisú munka, amikor szélesebb átalakuláshoz folyamatos támogatásra van szükség, előre egyeztetett hatáskörrel és ritmussal."
+    ],
     "ctaPrimary": "Képzés ajánlatkérés",
     "ctaSecondary": "Beszéljünk a képzési igényről"
   },

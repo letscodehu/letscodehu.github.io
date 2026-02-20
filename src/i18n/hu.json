@@ -159,26 +159,28 @@
     "cta": "Beszéljünk a képzési igényről"
   },
   "consulting": {
-    "pageTitle": "Tanácsadás a döntések és a képzések támogatására",
-    "intro": "A képzés akkor működik igazán, ha konkrét döntésekhez kapcsolódik. Rövid, fókuszált tanácsadási együttműködéseket vállalok, ugyanazon alapelvek mentén, mint a workshopok.",
+    "pageTitle": "Tanácsadás, amely segít a csapatoknak workshop elveket valós rendszerekben alkalmazni",
+    "intro": "A képzés akkor ragad meg igazán, ha valós rendszereken és valós döntéseken használják. Rövid, fókuszált tanácsadási együttműködéseket vállalok, amelyek ugyanazon workshop ötletekre épülnek—ADR-ek, C4, CI/CD és deployment gyakorlatok, moduláris tervezés—így a csapatod ott tudja alkalmazni őket, ahol számít.",
     "auditsTitle": "Architektúra- és gyakorlat-felmérés",
     "audits": [
-      "A jelenlegi architektúra, deployment környezet és mérnöki gyakorlatok áttekintése.",
-      "A szállítási szűk keresztmetszetek és a nagy hatású, de reális változtatási pontok azonosítása.",
-      "Írásos összefoglaló, amelyre a vezetés és a csapat is tud építeni."
+      "A jelenlegi architektúra, deployment környezet és mérnöki gyakorlatok áttekintése, fókuszával arra, hogy mi akadályozza a szállítást vagy kockázatossá teszi a változtatást.",
+      "A szállítási szűk keresztmetszetek és nagy hatású, de kis változtatással elérhető fejlesztési területek azonosítása, hogy tudjátok, hol kell először cselekedni.",
+      "Írásos összefoglaló és konkrét következő lépések, amelyekre a vezetés és a csapat is tud építeni."
     ],
     "decisionsTitle": "Döntéstámogatás",
     "decisions": [
-      "Facilitált sessionök kulcs technikai döntések strukturált rögzítésére ADR-ek formájában.",
+      "Facilitált sessionök kulcs technikai döntések strukturált rögzítésére ADR-ek formájában, hogy az indoklás túlélje a jelenlegi csapatot.",
       "Segítség architekturális opciók összevetésében, világos trade-offok mentén, nem csak megérzés alapján.",
-      "Annak támogatása, hogy a kockázatokat és korlátokat a nem technikai érintettek számára is érthetően fogalmazzátok meg."
+      "Segítség a csapatoknak abban, hogy a kockázatokat és korlátokat olyan módon fogalmazzanak meg, amely a nem technikai érintettek számára is érthető."
     ],
     "mentoringTitle": "Mentorálás leadeknek",
     "mentoring": [
-      "1:1 vagy kis csoportos mentorálás tech leaddel és senior fejlesztők számára.",
-      "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban.",
+      "1:1 vagy kis csoportos mentorálás tech leaddel és senior fejlesztők számára, ugyanazon koncepciók mentén, mint a workshopok.",
+      "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban—ADR-ek, határok, CI/CD—a kódbázisban és csapatban.",
       "Visszajelzés architekturális javaslatokra, RFC-kre és rollout tervekhez."
-    ]
+    ],
+    "complementsTitle": "Hogyan egészíti ki a tanácsadás a képzéseket",
+    "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk."
   },
   "about": {
     "pageTitle": "Rólam és a Letscode Solutionsról",

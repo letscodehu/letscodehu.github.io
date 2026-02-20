@@ -159,26 +159,28 @@
     "cta": "Discuss a training need"
   },
   "consulting": {
-    "pageTitle": "Consulting to support training and decisions",
-    "intro": "Training works best when it is connected to real decisions. I offer short, focused consulting engagements that build on the same principles as the workshops.",
+    "pageTitle": "Consulting that helps teams apply workshop principles in real systems",
+    "intro": "Training sticks when teams use it on real systems and real decisions. I offer short, focused consulting engagements that build on the same workshop ideas—ADRs, C4, CI/CD and deployment practices, modular design—so your team can apply them where it counts.",
     "auditsTitle": "Architecture and practice audits",
     "audits": [
-      "Review of current architecture, deployment setup, and engineering practices.",
-      "Identification of bottlenecks in delivery and areas where small changes can have large impact.",
-      "Written summary that your leadership and teams can use as a starting point for change."
+      "Review of your current architecture, deployment setup, and engineering practices, with a focus on what actually blocks delivery or makes change risky.",
+      "Identification of delivery bottlenecks and high-leverage improvement areas so you know where to act first.",
+      "Written summary and concrete next steps that your teams and leadership can use without requiring ongoing external support."
     ],
     "decisionsTitle": "Decision support",
     "decisions": [
-      "Facilitated sessions to structure and record key technical decisions using ADRs.",
-      "Support in comparing architecture options using clear trade-offs, not gut feeling alone.",
-      "Helping teams express risks and constraints in a way that non-technical stakeholders can work with."
+      "Facilitated sessions to capture key technical decisions as ADRs so the rationale outlives the current team.",
+      "Support in comparing architecture options against explicit trade-offs so choices are defensible and repeatable.",
+      "Help teams articulate risks and constraints so non-technical stakeholders can participate in trade-offs."
     ],
     "mentoringTitle": "Mentoring for leads",
     "mentoring": [
-      "1:1 or small-group mentoring for tech leads and senior engineers.",
-      "Practical discussions about how to introduce and sustain new practices in real teams.",
+      "1:1 or small-group mentoring for tech leads and senior engineers, aligned with the same concepts as the workshops.",
+      "Practical discussions on introducing and sustaining workshop practices—ADRs, boundaries, CI/CD—in your codebase and team.",
       "Feedback on architecture proposals, RFCs, and rollout plans."
-    ]
+    ],
+    "complementsTitle": "How consulting complements training",
+    "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done."
   },
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",

@@ -9,6 +9,7 @@ import {
   writeStoredLanguage,
 } from './composables/useI18n'
 import { caseStudies } from './data/case-studies'
+import { trackPageView } from './tracking'
 
 export const createApp = ViteSSG(App, { routes }, ({ router }) => {
   router.beforeEach((to) => {
@@ -26,6 +27,11 @@ export const createApp = ViteSSG(App, { routes }, ({ router }) => {
       path: `/${preferredLanguage}${fullPath}`,
       replace: true,
     }
+  })
+
+  router.afterEach((to) => {
+    // Track page view for Google Analytics
+    trackPageView(to.fullPath)
   })
 })
 

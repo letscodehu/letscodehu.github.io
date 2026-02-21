@@ -2,6 +2,7 @@
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { useI18n } from '../../composables/useI18n'
+import { useDarkMode } from '../../composables/useDarkMode'
 
 const { t, currentLang, switchLanguage } = useI18n()
 const route = useRoute()
@@ -18,6 +19,13 @@ const navItems = computed(() => [
 const currentPathName = computed(() => (route.name as string) || 'home')
 
 const menuOpen = ref(false)
+
+const { theme, toggleTheme } = useDarkMode()
+const isDarkMode = computed(() => theme.value === 'dark')
+const toggleAriaLabel = computed(() =>
+  isDarkMode.value ? t('common.lightMode') : t('common.darkMode')
+)
+const themeIcon = computed(() => (isDarkMode.value ? '☀️' : '🌙'))
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value
@@ -88,24 +96,39 @@ onUnmounted(() => {
           </RouterLink>
         </nav>
 
-        <div class="lang-switch">
-          <button
-            type="button"
-            class="lang-button"
-            :class="{ 'lang-button--active': currentLang === 'en' }"
-            @click="switchLanguage('en')"
-          >
-            EN
-          </button>
-          <span class="lang-separator">/</span>
-          <button
-            type="button"
-            class="lang-button"
-            :class="{ 'lang-button--active': currentLang === 'hu' }"
-            @click="switchLanguage('hu')"
-          >
-            HU
-          </button>
+        <div class="header-actions">
+          <div class="theme-toggle">
+            <button
+              type="button"
+              class="theme-toggle__button"
+              :aria-pressed="isDarkMode"
+              :aria-label="toggleAriaLabel"
+              @click="toggleTheme"
+            >
+              <span class="theme-toggle__icon" aria-hidden="true">{{ themeIcon }}</span>
+              <span class="sr-only">{{ toggleAriaLabel }}</span>
+            </button>
+          </div>
+
+          <div class="lang-switch">
+            <button
+              type="button"
+              class="lang-button"
+              :class="{ 'lang-button--active': currentLang === 'en' }"
+              @click="switchLanguage('en')"
+            >
+              EN
+            </button>
+            <span class="lang-separator">/</span>
+            <button
+              type="button"
+              class="lang-button"
+              :class="{ 'lang-button--active': currentLang === 'hu' }"
+              @click="switchLanguage('hu')"
+            >
+              HU
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -115,7 +138,7 @@ onUnmounted(() => {
 <style scoped>
 .header {
   border-bottom: 1px solid var(--color-border);
-  background-color: rgba(243, 246, 251, 0.9);
+  background-color: var(--color-surface);
   backdrop-filter: blur(8px);
 }
 
@@ -208,6 +231,46 @@ onUnmounted(() => {
   gap: 1.25rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle__button {
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.theme-toggle__icon {
+  font-size: 1rem;
+}
+
+.theme-toggle__button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-strong);
+}
+
+.theme-toggle__button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .nav-link {
   font-size: 0.9rem;
   color: var(--color-text-muted);
@@ -273,7 +336,7 @@ onUnmounted(() => {
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    background-color: rgba(243, 246, 251, 0.98);
+    background-color: var(--color-surface);
     backdrop-filter: blur(8px);
     border-top: 1px solid var(--color-border);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -307,13 +370,22 @@ onUnmounted(() => {
     border-bottom: none;
   }
 
-  .lang-switch {
-    margin-left: 0;
+  .header-actions {
+    width: 100%;
     margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
     padding-top: 1rem;
     border-top: 1px solid var(--color-border);
+    gap: 0.75rem;
+  }
+
+  .lang-switch {
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
     justify-content: center;
   }
 }
 </style>
-

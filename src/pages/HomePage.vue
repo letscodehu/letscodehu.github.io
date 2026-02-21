@@ -188,11 +188,12 @@ const isEn = currentLang.value === 'en'
   padding: 1.3rem 1.3rem 2.2rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, #f9fbff 0%, #eef4ff 100%);
+  background: radial-gradient(circle at top right, var(--color-gradient-start) 0%, var(--color-gradient-end) 55%);
   box-shadow: var(--shadow-sm);
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 2.5rem;
+  background-color: var(--color-surface);
 }
 
 .hero-main {
@@ -285,4 +286,3 @@ const isEn = currentLang.value === 'en'
   }
 }
 </style>
-

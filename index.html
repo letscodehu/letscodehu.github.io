@@ -5,6 +5,48 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>letscode.hu</title>
+    <script>
+      (function () {
+        var STORAGE_KEY = 'dark-mode-preference'
+        var COOKIE_KEY = 'dark-mode-preference'
+        var LIGHT_CLASS = 'theme-light'
+        var DARK_CLASS = 'theme-dark'
+        var html = document.documentElement
+
+        function readStored() {
+          try {
+            return localStorage.getItem(STORAGE_KEY)
+          } catch (error) {
+            return null
+          }
+        }
+
+        function readCookie() {
+          var match = document.cookie.match(
+            new RegExp('(?:^|;\\s*)' + COOKIE_KEY + '=(dark|light)(?:;|$)')
+          )
+          return match ? match[1] : null
+        }
+
+        function detectSystem() {
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+        }
+
+        function applyTheme(theme) {
+          html.classList.remove(LIGHT_CLASS, DARK_CLASS)
+          html.classList.add(theme === 'dark' ? DARK_CLASS : LIGHT_CLASS)
+          html.dataset.theme = theme
+        }
+
+        var stored = readStored() || readCookie()
+        if (stored !== 'dark' && stored !== 'light') {
+          stored = detectSystem()
+        }
+        applyTheme(stored)
+      })()
+    </script>
   </head>
   <body>
     <div id="app" contenteditable="false"></div>

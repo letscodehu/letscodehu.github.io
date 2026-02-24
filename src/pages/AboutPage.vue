@@ -73,6 +73,23 @@ const isEn = currentLang.value === 'en'
         </BaseCard>
       </div>
     </section>
+
+    <section class="section credly-badge-section">
+      <BaseCard>
+        <!-- Badge image lives in public/credly-badge.png; update the file and the href if the credential changes. -->
+        <a
+          href="https://www.credly.com/badges/e6e6a6b2-e385-461a-a97d-171c84c24585/public_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/aws-certified-cloud-practitioner.png"
+            :alt="t('about.credlyBadgeAlt')"
+            class="credly-badge-image"
+          />
+        </a>
+      </BaseCard>
+    </section>
   </article>
 </template>
 
@@ -158,5 +175,15 @@ const isEn = currentLang.value === 'en'
   margin: 0 0 0.75rem;
   font-size: 0.92rem;
 }
-</style>
 
+.credly-badge-section {
+  text-align: center;
+}
+
+.credly-badge-image {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+</style>

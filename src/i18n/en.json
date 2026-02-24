@@ -202,6 +202,7 @@
       "Documentation should be light but reliable: ADRs and diagrams that engineers actually trust.",
       "Good teams learn to make decisions together instead of depending on a single \"hero\" engineer."
     ],
+    "credlyBadgeAlt": "Credly badge for Letscode Solutions",
     "talksTitle": "Talks and conference sessions",
     "talksIntro": "Here are two representative talks on ADRs and documented decisions:",
     "talk1Title": "Architecture Decision Records (ADRs) in practice",

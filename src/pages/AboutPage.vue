@@ -76,18 +76,31 @@ const isEn = currentLang.value === 'en'
 
     <section class="section credly-badge-section">
       <BaseCard>
-        <!-- Badge image lives in public/credly-badge.png; update the file and the href if the credential changes. -->
-        <a
-          href="https://www.credly.com/badges/e6e6a6b2-e385-461a-a97d-171c84c24585/public_url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/aws-certified-cloud-practitioner.png"
-            :alt="t('about.credlyBadgeAlt')"
-            class="credly-badge-image"
-          />
-        </a>
+        <!-- Badge images live in public/; update files and hrefs if credentials change. -->
+        <div class="credly-badge-list">
+          <a
+            href="https://www.credly.com/badges/e6e6a6b2-e385-461a-a97d-171c84c24585/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/aws-certified-cloud-practitioner.png"
+              :alt="t('about.credlyBadgeAlt')"
+              class="credly-badge-image"
+            />
+          </a>
+          <a
+            href="https://www.credly.com/badges/c984d7f3-bf75-4cef-8ab2-3e7d738c7e0d/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/aws-certified-ai-practitioner.png"
+              :alt="t('about.credlyBadgeAiAlt')"
+              class="credly-badge-image"
+            />
+          </a>
+        </div>
       </BaseCard>
     </section>
   </article>
@@ -178,6 +191,14 @@ const isEn = currentLang.value === 'en'
 
 .credly-badge-section {
   text-align: center;
+}
+
+.credly-badge-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .credly-badge-image {

@@ -204,6 +204,7 @@
     ],
     "credlyBadgeAlt": "AWS Certified Cloud Practitioner badge on Credly",
     "credlyBadgeAiAlt": "AWS Certified AI Practitioner badge on Credly",
+    "credlyBadgeSaaAlt": "AWS Certified Solutions Architect - Associate badge on Credly",
     "talksTitle": "Talks and conference sessions",
     "talksIntro": "Here are two representative talks on ADRs and documented decisions:",
     "talk1Title": "Architecture Decision Records (ADRs) in practice",

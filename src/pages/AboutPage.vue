@@ -100,6 +100,17 @@ const isEn = currentLang.value === 'en'
               class="credly-badge-image"
             />
           </a>
+          <a
+            href="https://www.credly.com/badges/b7004ded-799d-44cc-9bd0-c98456f28c4a/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/aws-certified-solutions-architect-associate.png"
+              :alt="t('about.credlyBadgeSaaAlt')"
+              class="credly-badge-image"
+            />
+          </a>
         </div>
       </BaseCard>
     </section>

@@ -204,6 +204,7 @@
     ],
     "credlyBadgeAlt": "AWS Certified Cloud Practitioner badge a Credly oldalán",
     "credlyBadgeAiAlt": "AWS Certified AI Practitioner badge a Credly oldalán",
+    "credlyBadgeSaaAlt": "AWS Certified Solutions Architect - Associate badge a Credly oldalán",
     "talksTitle": "Előadások és sessionök",
     "talksIntro": "Két jellemző előadás az ADR-ekről és a dokumentált döntésekről:",
     "talk1Title": "ADR-ek a gyakorlatban",

@@ -29,12 +29,7 @@ const { t } = useI18n()
 
     <p class="hint">
       <!-- Placeholder only; no backend -->
-      <span v-if="t('langCode') === 'en'">
-        This is a placeholder form. In production, wire it to your preferred contact channel.
-      </span>
-      <span v-else>
-        Ez egy helykitöltő űrlap. Éles használatban saját kapcsolatfelvételi csatornához érdemes kötni.
-      </span>
+      <span>{{ t('contact.formPlaceholderHint') }}</span>
     </p>
 
     <div class="actions">

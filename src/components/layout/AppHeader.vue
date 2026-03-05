@@ -57,10 +57,10 @@ onUnmounted(() => {
         :to="{ name: 'home', params: { lang: currentLang } }"
         class="brand"
       >
-        <img src="/logo.png" alt="Letscode Solutions" class="brand-logo" />
+        <img src="/logo.png" :alt="t('common.brandLogoAlt')" class="brand-logo" />
         <span class="brand-text">
-          <span class="brand-name">Letscode Solutions</span>
-          <span class="brand-tagline">Training &amp; consulting for engineering teams</span>
+          <span class="brand-name">{{ t('common.brandLogoAlt') }}</span>
+          <span class="brand-tagline">{{ t('common.brandTagline') }}</span>
         </span>
       </RouterLink>
 
@@ -70,7 +70,7 @@ onUnmounted(() => {
         :class="{ 'hamburger--open': menuOpen }"
         :aria-expanded="menuOpen"
         aria-controls="main-nav"
-        aria-label="Menü"
+        :aria-label="t('common.menuAriaLabel')"
         @click="toggleMenu"
       >
         <span class="hamburger-line"></span>
@@ -83,7 +83,7 @@ onUnmounted(() => {
         class="nav-wrapper"
         :class="{ 'nav-wrapper--open': menuOpen }"
       >
-        <nav class="nav" aria-label="Main navigation">
+        <nav class="nav" :aria-label="t('common.mainNavigationAriaLabel')">
           <RouterLink
             v-for="item in navItems"
             :key="item.name"

@@ -5,15 +5,13 @@ import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
 
 const { t, currentLang } = useI18n()
-
-const isEn = currentLang.value === 'en'
 </script>
 
 <template>
   <section class="hero">
     <div class="hero-main">
       <p class="eyebrow">
-        {{ isEn ? 'Classroom training and consulting for software engineering teams.' : 'Képzések és tanácsadás szoftverfejlesztő csapatoknak.' }}
+        {{ t('home.heroEyebrow') }}
       </p>
       <h1 class="hero-title">
         {{ t('home.heroTitle') }}
@@ -44,7 +42,7 @@ const isEn = currentLang.value === 'en'
     <div class="grid grid--two">
       <BaseCard>
         <template #title>
-          {{ isEn ? 'What usually goes wrong' : 'Ami jellemzően félrecsúszik' }}
+          {{ t('home.problemsCardTitle') }}
         </template>
         <ul class="list">
           <li v-for="item in t('home.problems')" :key="item">
@@ -54,7 +52,7 @@ const isEn = currentLang.value === 'en'
       </BaseCard>
       <BaseCard>
         <template #title>
-          {{ isEn ? 'What we focus on' : 'A fókusz a képzéseken' }}
+          {{ t('home.focusCardTitle') }}
         </template>
         <ul class="list">
           <li v-for="item in t('home.focusOn')" :key="item">
@@ -72,7 +70,7 @@ const isEn = currentLang.value === 'en'
     <div class="grid grid--three">
       <BaseCard>
         <template #title>
-          {{ isEn ? 'Engineering practices' : 'Mérnöki gyakorlatok' }}
+          {{ t('home.offeringsEngineeringTitle') }}
         </template>
         <ul class="list">
           <li v-for="item in t('home.offeringsEngineering')" :key="item">
@@ -82,7 +80,7 @@ const isEn = currentLang.value === 'en'
       </BaseCard>
       <BaseCard>
         <template #title>
-          {{ isEn ? 'DevOps and delivery' : 'DevOps és szállítás' }}
+          {{ t('home.offeringsDevOpsTitle') }}
         </template>
         <ul class="list">
           <li v-for="item in t('home.offeringsDevOps')" :key="item">
@@ -92,7 +90,7 @@ const isEn = currentLang.value === 'en'
       </BaseCard>
       <BaseCard>
         <template #title>
-          {{ isEn ? 'Architecture: ADR, C4, clean architecture' : 'Architektúra: ADR, C4, tiszta architektúra' }}
+          {{ t('home.offeringsArchitectureTitle') }}
         </template>
         <ul class="list">
           <li v-for="item in t('home.offeringsArchitecture')" :key="item">
@@ -117,7 +115,7 @@ const isEn = currentLang.value === 'en'
       </BaseCard>
       <BaseCard>
         <template #title>
-          {{ isEn ? 'How this usually looks in practice' : 'Hogyan néz ez ki a gyakorlatban' }}
+          {{ t('home.practiceCardTitle') }}
         </template>
         <p class="body">
           {{ t('home.practiceIntro') }}
@@ -160,7 +158,7 @@ const isEn = currentLang.value === 'en'
       <BaseCard>
         <template #title>{{ t('home.talk1Title') }}</template>
         <p class="body">
-          {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
+          {{ t('home.talk1Description') }}
         </p>
         <VideoEmbed
           :url="t('home.talk1Url')"
@@ -180,13 +178,9 @@ const isEn = currentLang.value === 'en'
         />
       </BaseCard>
       <BaseCard>
-        <template #title>{{ isEn ? 'More conference sessions' : 'Tovabbi konferencia sessionok' }}</template>
+        <template #title>{{ t('home.moreSessionsTitle') }}</template>
         <p class="body sessionize-card-body">
-          {{
-            isEn
-              ? 'See upcoming events and full session history on my public Sessionize profile.'
-              : 'Nezd meg a kozelgo es korabbi eloadasokat a nyilvanos Sessionize profilomon.'
-          }}
+          {{ t('home.moreSessionsBody') }}
         </p>
         <BaseButton
           as="a"

@@ -4,8 +4,7 @@ import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t, currentLang } = useI18n()
-const isEn = currentLang.value === 'en'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -53,7 +52,7 @@ const isEn = currentLang.value === 'en'
         <BaseCard>
           <template #title>{{ t('about.talk1Title') }}</template>
           <p class="body">
-            {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
+            {{ t('about.talk1Description') }}
           </p>
           <VideoEmbed
             :url="t('about.talk1Url')"
@@ -73,13 +72,9 @@ const isEn = currentLang.value === 'en'
           />
         </BaseCard>
         <BaseCard>
-          <template #title>{{ isEn ? 'More conference sessions' : 'Tovabbi konferencia sessionok' }}</template>
+          <template #title>{{ t('about.moreSessionsTitle') }}</template>
           <p class="body sessionize-card-body">
-            {{
-              isEn
-                ? 'See upcoming events and full session history on my public Sessionize profile.'
-                : 'Nezd meg a kozelgo es korabbi eloadasokat a nyilvanos Sessionize profilomon.'
-            }}
+            {{ t('about.moreSessionsBody') }}
           </p>
           <BaseButton
             as="a"

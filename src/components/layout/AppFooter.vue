@@ -11,12 +11,7 @@ const { t, currentLang } = useI18n()
       <p class="footer-text">
         <span>© {{ new Date().getFullYear() }} {{ t('common.companyName') }}.</span>
         <span class="separator">·</span>
-        <span v-if="currentLang === 'en'">
-          Independent consultant and trainer for software engineering teams.
-        </span>
-        <span v-else>
-          Független tanácsadó és tréner szoftverfejlesztő csapatok számára.
-        </span>
+        <span>{{ t('common.footerTagline') }}</span>
         <span class="separator">·</span>
         <RouterLink :to="{ name: 'privacy-en', params: { lang: currentLang } }" class="footer-link">
           {{ t('common.privacyLink') }}

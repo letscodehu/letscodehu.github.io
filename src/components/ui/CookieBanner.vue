@@ -88,7 +88,7 @@ onMounted(() => {
           <p class="cookie-option-title">{{ t('cookies.essentialTitle') }}</p>
           <p class="cookie-option-text">{{ t('cookies.essentialDescription') }}</p>
         </div>
-        <input type="checkbox" checked disabled aria-label="Essential cookies" />
+        <input type="checkbox" checked disabled :aria-label="t('cookies.essentialAriaLabel')" />
       </div>
 
       <div class="cookie-option">

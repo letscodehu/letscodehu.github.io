@@ -3,8 +3,7 @@ import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t, currentLang } = useI18n()
-const isEn = currentLang.value === 'en'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -101,16 +100,12 @@ const isEn = currentLang.value === 'en'
     <section class="section cta">
       <BaseButton
         as="a"
-        :href="isEn ? 'mailto:placeholder@example.com' : 'mailto:placeholder@example.com'"
+        href="mailto:fejlesztes@letscode.hu"
       >
         {{ t('training.cta') }}
       </BaseButton>
       <p class="cta-note">
-        {{
-          isEn
-            ? 'For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP.'
-            : 'Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP.'
-        }}
+        {{ t('training.ctaNote') }}
       </p>
     </section>
   </article>

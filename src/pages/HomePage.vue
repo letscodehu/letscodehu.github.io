@@ -177,21 +177,6 @@ const { t, currentLang } = useI18n()
           :link-label="t('home.talk2Label')"
         />
       </BaseCard>
-      <BaseCard>
-        <template #title>{{ t('home.moreSessionsTitle') }}</template>
-        <p class="body sessionize-card-body">
-          {{ t('home.moreSessionsBody') }}
-        </p>
-        <BaseButton
-          as="a"
-          :href="t('home.sessionizeUrl')"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="sessionize-cta"
-        >
-          {{ t('home.sessionizeLabel') }}
-        </BaseButton>
-      </BaseCard>
     </div>
   </section>
 </template>
@@ -291,14 +276,6 @@ const { t, currentLang } = useI18n()
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.35rem;
   margin-top: 1.15rem;
-}
-
-.sessionize-card-body {
-  margin-bottom: 0.95rem;
-}
-
-.sessionize-cta {
-  width: 100%;
 }
 
 @media (max-width: 600px) {

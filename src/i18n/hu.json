@@ -20,6 +20,8 @@
     "lightMode": "Világos mód bekapcsolása",
     "toggleDarkMode": "Váltás a világos és sötét mód között",
     "privacyLink": "Adatkezelés",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube",
     "footerTagline": "Független tanácsadó és tréner szoftverfejlesztő csapatok számára.",
     "brandLogoAlt": "Letscode Solutions",
     "brandTagline": "Képzések és tanácsadás szoftverfejlesztő csapatoknak",
@@ -122,6 +124,8 @@
     "talk2Label": "Megtekintés Vimeo-n",
     "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
     "sessionizeLabel": "Konferencia sessionök (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube csatorna",
     "moreSessionsTitle": "További konferencia sessionök",
     "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
     "engagementModelsTitle": "Együttműködési formátumok",
@@ -237,8 +241,11 @@
     "talk2Label": "Megtekintés Vimeo-n",
     "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
     "sessionizeLabel": "Konferencia sessionök (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube csatorna",
     "moreSessionsTitle": "További konferencia sessionök",
-    "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon."
+    "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
+    "onlinePresenceTitle": "Megtalálsz még itt"
   },
   "contact": {
     "pageTitle": "Kapcsolat",

@@ -71,22 +71,34 @@ const { t } = useI18n()
             :link-label="t('about.talk2Label')"
           />
         </BaseCard>
-        <BaseCard>
-          <template #title>{{ t('about.moreSessionsTitle') }}</template>
-          <p class="body sessionize-card-body">
-            {{ t('about.moreSessionsBody') }}
-          </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('about.onlinePresenceTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <div class="presence-buttons">
           <BaseButton
             as="a"
             :href="t('about.sessionizeUrl')"
             target="_blank"
             rel="noopener noreferrer"
-            class="sessionize-cta"
           >
             {{ t('about.sessionizeLabel') }}
           </BaseButton>
-        </BaseCard>
-      </div>
+          <BaseButton
+            as="a"
+            :href="t('about.youtubeChannelUrl')"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="ghost"
+          >
+            {{ t('about.youtubeChannelLabel') }}
+          </BaseButton>
+        </div>
+      </BaseCard>
     </section>
 
     <section class="section credly-badge-section">
@@ -215,12 +227,15 @@ const { t } = useI18n()
   font-size: 0.92rem;
 }
 
-.sessionize-card-body {
-  margin-bottom: 0.95rem;
+.presence-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.sessionize-cta {
-  width: 100%;
+.presence-buttons :deep(.button) {
+  flex: 1;
+  min-width: 0;
 }
 
 .credly-badge-section {

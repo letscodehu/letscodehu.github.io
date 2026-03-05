@@ -20,6 +20,8 @@
     "lightMode": "Switch to light mode",
     "toggleDarkMode": "Toggle light and dark mode",
     "privacyLink": "Privacy",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube",
     "footerTagline": "Independent consultant and trainer for software engineering teams.",
     "brandLogoAlt": "Letscode Solutions",
     "brandTagline": "Training and consulting for engineering teams",
@@ -122,6 +124,8 @@
     "talk2Label": "Watch on Vimeo",
     "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
     "sessionizeLabel": "Conference sessions (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube channel",
     "moreSessionsTitle": "More conference sessions",
     "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
     "engagementModelsTitle": "Engagement models",
@@ -237,8 +241,11 @@
     "talk2Label": "Watch on Vimeo",
     "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
     "sessionizeLabel": "Conference sessions (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube channel",
     "moreSessionsTitle": "More conference sessions",
-    "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile."
+    "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
+    "onlinePresenceTitle": "Online presence"
   },
   "contact": {
     "pageTitle": "Contact",

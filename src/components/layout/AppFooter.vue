@@ -13,6 +13,13 @@ const { t, currentLang } = useI18n()
         <span class="separator">·</span>
         <span>{{ t('common.footerTagline') }}</span>
         <span class="separator">·</span>
+        <a
+          :href="t('common.youtubeChannelUrl')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >{{ t('common.youtubeChannelLabel') }}</a>
+        <span class="separator">·</span>
         <RouterLink :to="{ name: 'privacy-en', params: { lang: currentLang } }" class="footer-link">
           {{ t('common.privacyLink') }}
         </RouterLink>

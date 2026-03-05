@@ -18,7 +18,8 @@
     "languageHungarian": "Magyar",
     "darkMode": "Sötét mód bekapcsolása",
     "lightMode": "Világos mód bekapcsolása",
-    "toggleDarkMode": "Váltás a világos és sötét mód között"
+    "toggleDarkMode": "Váltás a világos és sötét mód között",
+    "privacyLink": "Adatkezelés"
   },
   "cookies": {
     "title": "Sütiket használunk",
@@ -250,5 +251,53 @@
     "sidebarCtaTitle": "Szeretnél hasonló eredményeket?",
     "sidebarCtaBody": "Ha szállítási vagy architekturális kihívásokkal nézel szembe, beszéljünk arról, hogyan segíthet a képzés vagy a fókuszált tanácsadás.",
     "sidebarCtaLabel": "Beszéljünk"
+  },
+  "privacy": {
+    "pageTitle": "Adatkezelési tájékoztató",
+    "intro": "Ezen az oldalon összefoglaljuk, milyen adatkezelés történhet a webhely használata közben, és milyen külső szolgáltatások töltődhetnek be.",
+    "lastUpdatedLabel": "Utolsó frissítés",
+    "lastUpdatedValue": "2026-03-05",
+    "scopeTitle": "Mire terjed ki a tájékoztató",
+    "scopeItems": [
+      "A tájékoztató erre a webhelyre és az itt használt harmadik fél szolgáltatásokra vonatkozik.",
+      "Az egyes szolgáltatókhoz kerülő adatok köre a használattól és a süti beállításoktól függ.",
+      "Külső linkre kattintás után az adott oldal saját adatkezelési szabályai érvényesek."
+    ],
+    "legalTitle": "Jogalap röviden",
+    "legalItems": [
+      "Az alapműködéshez szükséges technikai adatkezelés jogos érdek alapján történik.",
+      "Az opcionális analitikai és marketing szkriptek csak hozzájárulás után töltődnek be.",
+      "A döntésedet bármikor módosíthatod a láblécben található Süti beállítások linken."
+    ],
+    "servicesTitle": "Használt külső szolgáltatások",
+    "servicesIntro": "Ezek a szolgáltatók használat vagy engedélyezés esetén technikai adatokat (pl. IP-cím, böngésző adatok, interakciós események) kaphatnak.",
+    "schedulingTitle": "Időpontfoglalás",
+    "schedulingItems": [
+      "Calendly (calendly.com, assets.calendly.com): a kapcsolat oldalon időpontfoglaláshoz."
+    ],
+    "analyticsTitle": "Analitika",
+    "analyticsItems": [
+      "Google Analytics (googletagmanager.com): oldalhasználati és látogatottsági analitika.",
+      "Hotjar (static.hotjar.com): viselkedési analitika és session betekintés."
+    ],
+    "marketingTitle": "Marketing",
+    "marketingItems": [
+      "Facebook Pixel (connect.facebook.net): marketing és kampányteljesítmény mérése.",
+      "LinkedIn Insight Tag (snap.licdn.com): kampány- és konverziómérés."
+    ],
+    "embedsTitle": "Beágyazott média",
+    "embedsItems": [
+      "YouTube beágyazások (youtube.com): konferencia előadás videók.",
+      "Vimeo beágyazások (player.vimeo.com): konferencia előadás videók."
+    ],
+    "externalLinksTitle": "Külső linkek és profilok",
+    "externalLinksItems": [
+      "Sessionize linkek (sessionize.com): nyilvános konferencia profil.",
+      "Credly linkek (credly.com): nyilvános minősítési badge oldalak."
+    ],
+    "cookieControlsTitle": "Süti beállítások",
+    "cookieControlsBody": "Az opcionális sütik teljes körűen elfogadhatók vagy kategóriánként állíthatók (analitika, marketing). A beállítás helyben tárolódik, így a döntésed megmarad.",
+    "contactTitle": "Kérdések",
+    "contactBody": "Ha kérdésed van az oldalon történő adatkezeléssel kapcsolatban, kérlek használd a Kapcsolat oldalt."
   }
 }

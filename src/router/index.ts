@@ -7,6 +7,7 @@ import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import CaseStudiesPage from '../pages/CaseStudiesPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
+import PrivacyPage from '../pages/PrivacyPage.vue'
 
 const childRoutes: RouteRecordRaw[] = [
   { path: '', name: 'home', component: HomePage, meta: { titleKey: 'nav.home' } },
@@ -50,6 +51,13 @@ const childRoutes: RouteRecordRaw[] = [
     name: 'case-study-detail-en',
     component: CaseStudyDetailPage,
     meta: { titleKey: 'caseStudies.pageTitle' },
+  },
+  {
+    path: 'privacy',
+    name: 'privacy-en',
+    component: PrivacyPage,
+    alias: 'adatkezeles',
+    meta: { titleKey: 'privacy.pageTitle' },
   },
 ]
 

@@ -18,7 +18,8 @@
     "languageHungarian": "Magyar",
     "darkMode": "Switch to dark mode",
     "lightMode": "Switch to light mode",
-    "toggleDarkMode": "Toggle light and dark mode"
+    "toggleDarkMode": "Toggle light and dark mode",
+    "privacyLink": "Privacy"
   },
   "cookies": {
     "title": "We use cookies",
@@ -250,5 +251,53 @@
     "sidebarCtaTitle": "Want similar results?",
     "sidebarCtaBody": "If you're facing delivery or architecture challenges, we can discuss how training or focused consulting could help.",
     "sidebarCtaLabel": "Get in touch"
+  },
+  "privacy": {
+    "pageTitle": "Privacy and data processing",
+    "intro": "This page explains what data processing may happen when you use this website and when external services are loaded.",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdatedValue": "2026-03-05",
+    "scopeTitle": "What this notice covers",
+    "scopeItems": [
+      "This notice covers this website and the third-party services integrated in it.",
+      "The exact data that each provider receives depends on your interaction and your cookie preferences.",
+      "When you follow external links, the destination site handles your data under its own policies."
+    ],
+    "legalTitle": "Legal basis in short",
+    "legalItems": [
+      "Essential technical processing is based on legitimate interest to operate the site securely.",
+      "Optional analytics and marketing scripts are loaded only after your consent in cookie settings.",
+      "You can change your choices any time from the footer's Cookie settings link."
+    ],
+    "servicesTitle": "Third-party services used",
+    "servicesIntro": "These providers may receive technical metadata (for example IP address, browser details, and interaction events) when enabled or used.",
+    "schedulingTitle": "Scheduling",
+    "schedulingItems": [
+      "Calendly (calendly.com, assets.calendly.com): used on the contact page to book calls."
+    ],
+    "analyticsTitle": "Analytics",
+    "analyticsItems": [
+      "Google Analytics (googletagmanager.com): page view and usage analytics.",
+      "Hotjar (static.hotjar.com): behavior analytics and session insights."
+    ],
+    "marketingTitle": "Marketing",
+    "marketingItems": [
+      "Facebook Pixel (connect.facebook.net): marketing and campaign performance measurement.",
+      "LinkedIn Insight Tag (snap.licdn.com): campaign and conversion measurement."
+    ],
+    "embedsTitle": "Embedded media",
+    "embedsItems": [
+      "YouTube embeds (youtube.com): conference talk videos.",
+      "Vimeo embeds (player.vimeo.com): conference talk videos."
+    ],
+    "externalLinksTitle": "External links and profiles",
+    "externalLinksItems": [
+      "Sessionize links (sessionize.com): public conference sessions profile.",
+      "Credly links (credly.com): public certification badges."
+    ],
+    "cookieControlsTitle": "Cookie controls",
+    "cookieControlsBody": "You can accept all optional cookies or choose categories (analytics, marketing). Preferences are stored locally so your choice is remembered.",
+    "contactTitle": "Questions",
+    "contactBody": "If you have questions about data processing on this site, please use the Contact page."
   }
 }

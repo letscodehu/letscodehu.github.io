@@ -18,6 +18,10 @@ const { t, currentLang } = useI18n()
           Független tanácsadó és tréner szoftverfejlesztő csapatok számára.
         </span>
         <span class="separator">·</span>
+        <RouterLink :to="{ name: 'privacy-en', params: { lang: currentLang } }" class="footer-link">
+          {{ t('common.privacyLink') }}
+        </RouterLink>
+        <span class="separator">·</span>
         <button type="button" class="cookie-settings-btn" @click="openCookieSettings">
           {{ t('cookies.settingsLink') }}
         </button>
@@ -61,6 +65,11 @@ const { t, currentLang } = useI18n()
   font-size: 0.8rem;
   padding: 0;
   cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer-link {
+  color: var(--color-primary);
   text-decoration: underline;
 }
 </style>

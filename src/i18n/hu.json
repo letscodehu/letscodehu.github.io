@@ -161,6 +161,137 @@
     ],
     "cta": "Beszéljünk a képzési igényről"
   },
+  "workshop": {
+    "pageTitle": "Döntések nyoma | Workshop",
+    "eyebrow": "2 napos, helyszíni workshop",
+    "onSiteHighlight": "Helyszíni (on-site) workshop",
+    "exerciseLabel": "Gyakorlat",
+    "title": "Döntések nyoma – hogyan építsünk rendszert úgy, hogy később is értsük, miért ilyen",
+    "subtitle": "ADR-ek nem compliance-ből, hanem önvédelemből.",
+    "day1": {
+      "title": "1. nap – Döntések születése (és elrontása)",
+      "goal": "Cél: megérteni, mikor érdemes ADR-t írni, milyen mélységben, és mikor válik kontraproduktívvá.",
+      "sessions": [
+        {
+          "time": "09:00–10:15",
+          "title": "A láthatatlan döntések problémája",
+          "goal": "Közös nyelv kialakítása arról, miért tűnik el a döntések mögötti indoklás.",
+          "points": [
+            "„Ki döntött erről?” mint klasszikus projektvégi kérdés.",
+            "Tipikus tünetek: „Ez mindig is így volt”, „A korábbi csapat döntése”, „Most már nem nyúlunk hozzá”.",
+            "ADR mint szervezeti memória, konfliktusmegelőzés és onboarding-gyorsító."
+          ],
+          "exercise": "Hozzatok egy valós döntést a saját projektből, amire már senki nem emlékszik pontosan."
+        },
+        {
+          "time": "10:30–12:30",
+          "title": "Mi az ADR valójában (és mi nem)",
+          "goal": "A jó ADR könnyűsúlyú, mégis használható szerkezetének begyakorlása.",
+          "points": [
+            "ADR nem design doc, nem ticket komment, és nem utólagos magyarázkodás.",
+            "A jó ADR elemei: Context, Decision, Options considered, Consequences (jó és rossz).",
+            "Mélységi szintek: 5 soros micro-ADR, normál ADR, „architectural line in the sand”."
+          ],
+          "exercise": "Ugyanarra a döntésre 3 különböző mélységű ADR-t írunk."
+        },
+        {
+          "time": "13:30–15:00",
+          "title": "Mikor kell ADR, és mikor nem?",
+          "goal": "Döntési keret kialakítása, hogy elkerüljük az ADR mindenhez és az ADR soha szélsőségeit.",
+          "points": [
+            "Döntési mátrix: visszafordítható/visszafordíthatatlan, lokális/rendszerszintű, olcsó/drága változtatás.",
+            "YAGNI vs ADR: mikor dokumentálunk előre, és mikor utólag.",
+            "Antipatternök: ADR mindenhez, ADR soha."
+          ],
+          "exercise": "Backlog elemek besorolása: ADR kell / ADR nem kell / ADR majd később."
+        },
+        {
+          "time": "15:15–16:30",
+          "title": "Felelősség és döntési jogkörök",
+          "goal": "Egyértelmű döntési felelősség és jóváhagyási rend kialakítása.",
+          "points": [
+            "Ki írhat ADR-t, ki hagyja jóvá, és mi történik konszenzus hiányában.",
+            "ADR mint döntési szerződés a csapat és az érintettek között."
+          ],
+          "exercise": "Döntési folyamat megrajzolása: ötlet -> vita -> ADR -> implementáció -> review."
+        }
+      ]
+    },
+    "day2": {
+      "title": "2. nap – ADR-ek egy élő rendszerben",
+      "goal": "Cél: ne polcon porosodó markdown legyen, hanem a mindennapi munka része.",
+      "sessions": [
+        {
+          "time": "09:00–10:30",
+          "title": "Rendszerépítés ADR-ekkel",
+          "goal": "Döntések gyakorlása időnyomás alatt, valós kompromisszumok mentén.",
+          "points": [
+            "Fiktív, de valósághű projekt döntései: monorepo vs multirepo, sync vs async, adatbázis-választás, auth megoldás.",
+            "Minden komolyabb döntéshez ADR készül időnyomás alatt.",
+            "Tanulság: mitől lassít, és mitől gyorsít valójában."
+          ]
+        },
+        {
+          "time": "10:45–12:00",
+          "title": "ADR-ek életciklusa",
+          "goal": "Megtanulni, hogyan marad az ADR élő dokumentum, nem pedig archív emlék.",
+          "points": [
+            "Életciklus: Draft -> Accepted -> Superseded -> Deprecated.",
+            "Hogyan marad naprakész, és hogyan nem lesz belőle dokumentumtemető.",
+            "A superseding ADR nem szégyen, hanem evolúció."
+          ],
+          "exercise": "Egy korábbi ADR megdöntése, és új ADR írása rá."
+        },
+        {
+          "time": "13:00–14:30",
+          "title": "ADR + delivery flow",
+          "goal": "Az ADR beágyazása a napi szállítási folyamatba.",
+          "points": [
+            "Kapcsolódás tickethez, PR-hez és release-hez.",
+            "Minimum integráció: ADR link a PR-ben, ADR ID a commitban.",
+            "Mikor nem kell gate-ként működnie."
+          ],
+          "exercise": "Mini design: csapat-specifikus ADR workflow megtervezése."
+        },
+        {
+          "time": "14:45–16:00",
+          "title": "AI, agentek és ADR",
+          "goal": "Az AI hasznos és káros használatának elkülönítése ADR környezetben.",
+          "points": [
+            "ADR mint prompt input és intézményi memória az agentek számára.",
+            "Mikor van értelme: döntési összefoglalás, hatáselemzés.",
+            "Mikor nincs: „Írjuk meg az ADR-t az AI-val”."
+          ],
+          "exercise": "Egy ADR-ből onboarding összefoglaló és „miért ilyen a rendszer?” válasz készítése."
+        },
+        {
+          "time": "16:00–16:30",
+          "title": "Zárás: mit változtatunk hétfőtől?",
+          "goal": "Közös minimum szabályrendszer kialakítása, ami azonnal bevezethető.",
+          "points": [
+            "ADR policy v0: mikor kötelező, hol él, ki felel érte.",
+            "1 dolog, amit elkezdünk, és 1 dolog, amit abbahagyunk.",
+            "Workshop retrospektív."
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "title": "Mit visztek haza hétfőtől",
+      "intro": "A workshop végére lesz egy működő, csapatra szabott ADR alapcsomag, amit hétfőn azonnal be lehet vezetni.",
+      "points": [
+        "Döntési mátrix: mikor írunk ADR-t és milyen mélységben.",
+        "Egyszerű felelősségi modell: ki ír, ki review-z, ki dönt.",
+        "Életciklus-szabályok: mikor supersede-elünk, mikor deprecate-elünk.",
+        "PR és commit minimum integrációs szabályok."
+      ]
+    },
+    "cta": {
+      "title": "Szeretnéd ezt a workshopot a csapatodnak?",
+      "body": "Ha van egy konkrét csapat és valós szervezeti kontextus, a tartalmat a saját stacketekre, döntési helyzeteitekre és delivery ritmusotokra szabjuk. A workshop alapértelmezett formátuma helyszíni (on-site).",
+      "button": "Egyeztessünk workshop időpontot"
+    }
+  },
   "consulting": {
     "pageTitle": "Tanácsadás, amely segít a csapatoknak workshop elveket valós rendszerekben alkalmazni",
     "intro": "A képzés akkor ragad meg igazán, ha valós rendszereken és valós döntéseken használják. Rövid, fókuszált tanácsadási együttműködéseket vállalok, amelyek ugyanazon workshop ötletekre épülnek—ADR-ek, C4, CI/CD és deployment gyakorlatok, moduláris tervezés—így a csapatod ott tudja alkalmazni őket, ahol számít.",

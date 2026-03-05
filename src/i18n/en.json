@@ -161,6 +161,137 @@
     ],
     "cta": "Discuss a training need"
   },
+  "workshop": {
+    "pageTitle": "Decision traces workshop",
+    "eyebrow": "2-day workshop",
+    "onSiteHighlight": "On-site workshop format",
+    "exerciseLabel": "Exercise",
+    "title": "Decision traces – how to build systems so we still understand why they are like this later",
+    "subtitle": "ADRs not for compliance, but for self-defense.",
+    "day1": {
+      "title": "Day 1 – How decisions are made (and broken)",
+      "goal": "Goal: understand when ADRs are needed, at what depth, and when they become harmful.",
+      "sessions": [
+        {
+          "time": "09:00–10:15",
+          "title": "The problem of invisible decisions",
+          "goal": "Build shared language around why decision rationale disappears.",
+          "points": [
+            "\"Who decided this?\" as the classic end-of-project question.",
+            "Typical symptoms: \"It has always been this way\", \"Previous team decision\", \"We don't touch this anymore\".",
+            "ADR as memory, conflict prevention, and onboarding accelerator."
+          ],
+          "exercise": "Bring one real decision from your project that nobody remembers clearly anymore."
+        },
+        {
+          "time": "10:30–12:30",
+          "title": "What an ADR really is (and what it is not)",
+          "goal": "Practice the minimal structure of a useful ADR.",
+          "points": [
+            "ADR is not a design doc, not a ticket comment, and not post-factum justification.",
+            "Core anatomy: Context, Decision, Options considered, Consequences.",
+            "Depth levels: micro-ADR, normal ADR, architectural line in the sand."
+          ],
+          "exercise": "Write 3 ADR variants with different depth for the same decision."
+        },
+        {
+          "time": "13:30–15:00",
+          "title": "When to write ADRs, and when not to",
+          "goal": "Define practical boundaries so ADRs stay useful.",
+          "points": [
+            "Decision matrix: reversible/irreversible, local/system-wide, cheap/expensive to change.",
+            "YAGNI vs ADR: when to document up front and when later.",
+            "Anti-patterns: ADR for everything, ADR never."
+          ],
+          "exercise": "Classify backlog items: ADR needed / not needed / later."
+        },
+        {
+          "time": "15:15–16:30",
+          "title": "Ownership and decision rights",
+          "goal": "Define ownership and approval flow for ADRs.",
+          "points": [
+            "Who can write ADRs, who approves, and what happens without consensus.",
+            "ADR as a lightweight decision contract."
+          ],
+          "exercise": "Draw the flow: idea -> discussion -> ADR -> implementation -> review."
+        }
+      ]
+    },
+    "day2": {
+      "title": "Day 2 – ADRs in a living system",
+      "goal": "Goal: make ADRs a practical tool, not dusty markdown.",
+      "sessions": [
+        {
+          "time": "09:00–10:30",
+          "title": "Building systems with ADRs",
+          "goal": "Practice under time pressure with real trade-offs.",
+          "points": [
+            "Project choices: monorepo vs multirepo, sync vs async, database, auth.",
+            "Every major decision gets an ADR under time pressure.",
+            "Learn what truly slows down and what speeds up delivery."
+          ]
+        },
+        {
+          "time": "10:45–12:00",
+          "title": "ADR lifecycle",
+          "goal": "Learn to keep ADRs current and useful over time.",
+          "points": [
+            "Draft -> Accepted -> Superseded -> Deprecated.",
+            "How to avoid building an ADR graveyard.",
+            "Superseding ADRs as evolution, not failure."
+          ],
+          "exercise": "Supersede an older ADR and write a new one."
+        },
+        {
+          "time": "13:00–14:30",
+          "title": "ADR and delivery flow",
+          "goal": "Integrate ADRs into daily delivery.",
+          "points": [
+            "Connection to tickets, PRs, and releases.",
+            "Minimum integration: ADR link in PR, ADR ID in commit.",
+            "When ADR should not be a delivery gate."
+          ],
+          "exercise": "Design a team-specific ADR workflow."
+        },
+        {
+          "time": "14:45–16:00",
+          "title": "AI, agents, and ADR",
+          "goal": "Separate useful and harmful AI use around ADRs.",
+          "points": [
+            "ADR as prompt input and institutional memory for agents.",
+            "Useful use-cases: decision summarization and impact analysis.",
+            "Non-goal: \"let AI write the ADR for us\"."
+          ],
+          "exercise": "From one ADR, create onboarding summary and a \"why is this like this?\" answer."
+        },
+        {
+          "time": "16:00–16:30",
+          "title": "Closing: what changes from Monday?",
+          "goal": "Define minimum policy the team can adopt immediately.",
+          "points": [
+            "ADR policy v0: when mandatory, where it lives, ownership.",
+            "One thing to start, one thing to stop.",
+            "Workshop retro."
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "title": "What you take back on Monday",
+      "intro": "By the end of the workshop, your team has a practical ADR baseline ready to use immediately.",
+      "points": [
+        "Decision matrix for when and how deeply to write ADRs.",
+        "Simple ownership model for writing, review, and decision authority.",
+        "Lifecycle rules for superseding and deprecating ADRs.",
+        "Minimum PR and commit integration guidelines."
+      ]
+    },
+    "cta": {
+      "title": "Want this workshop for your team?",
+      "body": "If you have a real team and context, we can adapt it to your stack, decision pressure, and delivery rhythm. The default delivery format is on-site.",
+      "button": "Book a workshop discussion"
+    }
+  },
   "consulting": {
     "pageTitle": "Consulting that helps teams apply workshop principles in real systems",
     "intro": "Training sticks when teams use it on real systems and real decisions. I offer short, focused consulting engagements that build on the same workshop ideas—ADRs, C4, CI/CD and deployment practices, modular design—so your team can apply them where it counts.",

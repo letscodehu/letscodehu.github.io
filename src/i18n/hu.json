@@ -105,6 +105,8 @@
     "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Megtekintés Vimeo-n",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Konferencia sessionök (Sessionize)",
     "engagementModelsTitle": "Együttműködési formátumok",
     "engagementModelsIntro": "A formátumok a céljaitokhoz és a csapat érettségéhez igazodnak. Gyakori lehetőségek:",
     "engagementModels": [
@@ -213,7 +215,9 @@
     "talk2Title": "Continuous failure – Miért nehezítjük meg a saját életünket?",
     "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
     "talk2Url": "https://vimeo.com/1102474381",
-    "talk2Label": "Megtekintés Vimeo-n"
+    "talk2Label": "Megtekintés Vimeo-n",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Konferencia sessionök (Sessionize)"
   },
   "contact": {
     "pageTitle": "Kapcsolat",

@@ -2,6 +2,7 @@
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
+import BaseButton from '../components/ui/BaseButton.vue'
 
 const { t, currentLang } = useI18n()
 const isEn = currentLang.value === 'en'
@@ -70,6 +71,25 @@ const isEn = currentLang.value === 'en'
             :title="t('about.talk2Title')"
             :link-label="t('about.talk2Label')"
           />
+        </BaseCard>
+        <BaseCard>
+          <template #title>{{ isEn ? 'More conference sessions' : 'Tovabbi konferencia sessionok' }}</template>
+          <p class="body sessionize-card-body">
+            {{
+              isEn
+                ? 'See upcoming events and full session history on my public Sessionize profile.'
+                : 'Nezd meg a kozelgo es korabbi eloadasokat a nyilvanos Sessionize profilomon.'
+            }}
+          </p>
+          <BaseButton
+            as="a"
+            :href="t('about.sessionizeUrl')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sessionize-cta"
+          >
+            {{ t('about.sessionizeLabel') }}
+          </BaseButton>
         </BaseCard>
       </div>
     </section>
@@ -198,6 +218,14 @@ const isEn = currentLang.value === 'en'
 .body {
   margin: 0 0 0.75rem;
   font-size: 0.92rem;
+}
+
+.sessionize-card-body {
+  margin-bottom: 0.95rem;
+}
+
+.sessionize-cta {
+  width: 100%;
 }
 
 .credly-badge-section {

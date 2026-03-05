@@ -179,6 +179,25 @@ const isEn = currentLang.value === 'en'
           :link-label="t('home.talk2Label')"
         />
       </BaseCard>
+      <BaseCard>
+        <template #title>{{ isEn ? 'More conference sessions' : 'Tovabbi konferencia sessionok' }}</template>
+        <p class="body sessionize-card-body">
+          {{
+            isEn
+              ? 'See upcoming events and full session history on my public Sessionize profile.'
+              : 'Nezd meg a kozelgo es korabbi eloadasokat a nyilvanos Sessionize profilomon.'
+          }}
+        </p>
+        <BaseButton
+          as="a"
+          :href="t('home.sessionizeUrl')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sessionize-cta"
+        >
+          {{ t('home.sessionizeLabel') }}
+        </BaseButton>
+      </BaseCard>
     </div>
   </section>
 </template>
@@ -278,6 +297,14 @@ const isEn = currentLang.value === 'en'
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.35rem;
   margin-top: 1.15rem;
+}
+
+.sessionize-card-body {
+  margin-bottom: 0.95rem;
+}
+
+.sessionize-cta {
+  width: 100%;
 }
 
 @media (max-width: 600px) {

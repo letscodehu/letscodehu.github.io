@@ -105,6 +105,8 @@
     "talk2Description": "On the cost of missing ADRs and documented decisions.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Watch on Vimeo",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Conference sessions (Sessionize)",
     "engagementModelsTitle": "Engagement models",
     "engagementModelsIntro": "Formats are adapted to your goals and team maturity. Common options:",
     "engagementModels": [
@@ -213,7 +215,9 @@
     "talk2Title": "Continuous failure – Why do we make our lives hard?",
     "talk2Description": "On the cost of missing ADRs and documented decisions.",
     "talk2Url": "https://vimeo.com/1102474381",
-    "talk2Label": "Watch on Vimeo"
+    "talk2Label": "Watch on Vimeo",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Conference sessions (Sessionize)"
   },
   "contact": {
     "pageTitle": "Contact",

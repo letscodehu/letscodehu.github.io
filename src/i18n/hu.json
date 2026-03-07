@@ -18,7 +18,15 @@
     "languageHungarian": "Magyar",
     "darkMode": "Sötét mód bekapcsolása",
     "lightMode": "Világos mód bekapcsolása",
-    "toggleDarkMode": "Váltás a világos és sötét mód között"
+    "toggleDarkMode": "Váltás a világos és sötét mód között",
+    "privacyLink": "Adatkezelés",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube",
+    "footerTagline": "Független tanácsadó és tréner szoftverfejlesztő csapatok számára.",
+    "brandLogoAlt": "Letscode Solutions",
+    "brandTagline": "Képzések és tanácsadás szoftverfejlesztő csapatoknak",
+    "menuAriaLabel": "Menü",
+    "mainNavigationAriaLabel": "Fő navigáció"
   },
   "cookies": {
     "title": "Sütiket használunk",
@@ -33,6 +41,7 @@
     "analyticsDescription": "Segítenek megérteni, hogyan használják a látogatók az oldalt (Google Analytics, Hotjar).",
     "marketingTitle": "Marketing sütik",
     "marketingDescription": "Marketing- és hirdetési teljesítmény mérésére szolgálnak (Facebook, LinkedIn).",
+    "essentialAriaLabel": "Szükséges sütik",
     "savePreferences": "Beállítások mentése",
     "settingsLink": "Süti beállítások",
     "closeLabel": "Süti beállítások bezárása"
@@ -40,7 +49,9 @@
   "home": {
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
     "heroSubtitle": "Közép- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
+    "heroEyebrow": "Képzések és tanácsadás szoftverfejlesztő csapatoknak.",
     "problemsTitle": "Tipikus problémák, amikkel találkozom",
+    "problemsCardTitle": "Ami jellemzően félrecsúszik",
     "problems": [
       "Ahogy nő a kódbázis, lassul a szállítás; a release-ek kockázatosnak és törékenynek érződnek.",
       "A különböző csapatok (vagy akár egyénenként) eltérő konvenciókat és eszközöket használnak.",
@@ -48,6 +59,7 @@
       "Az infrastruktúra és a deployment szkriptek törzsi tudáson alapulnak, nem közös gyakorlaton.",
       "A csapat tudja, „mi lenne a jó gyakorlat”, de nyomás alatt mégsem ez valósul meg."
     ],
+    "focusCardTitle": "A fókusz a képzéseken",
     "focusOn": [
       "Biztonságosabb változtatások: tesztek és pipeline-ok, amelyek a problémákat éles előtt, nem utána észlelik.",
       "Gyorsabb szállítás: kevesebb szűk keresztmetszet, világosabb átadások, kevesebb újramunka az inkonzisztens gyakorlatok miatt.",
@@ -57,6 +69,9 @@
       "Megbízható szállítási visszajelzés: CI/CD, amely gyors, megbízható jeleket ad, így a release-ek nem érződnek kockázatosnak."
     ],
     "offeringsTitle": "Képzési fókuszterületek",
+    "offeringsEngineeringTitle": "Mérnöki gyakorlatok",
+    "offeringsDevOpsTitle": "DevOps és szállítás",
+    "offeringsArchitectureTitle": "Architektúra: ADR, C4, tiszta architektúra",
     "offerings": [
       "Mérnöki gyakorlatok: code review, branch-stratégiák, moduláris tervezés, és azok a szokások, amelyek fenntarthatóvá teszik a kódbázist.",
       "DevOps alapelvek: CI pipeline-ok, pragmatikus monitorozás – a hangsúly azon, amit a csapat valóban be tud vezetni.",
@@ -90,6 +105,7 @@
       "Kontekstuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
     ],
     "practiceIntro": "A munka a ti kódbázisotokon, pipeline-jaitokon és architektúrátokon történik – nem általános példákon. Tipikus formátumok:",
+    "practiceCardTitle": "Hogyan néz ez ki a gyakorlatban",
     "practiceExamples": [
       "Architektúra áttekintések: végigjárjuk a rendszert, azonosítjuk a határokat és a csatolásokat, megegyezünk a következő lépésekben.",
       "ADR sessionök: döntések rögzítése könnyű súlyú formátumban, hogy túléljék az aktuális csapatot.",
@@ -99,12 +115,19 @@
     "talksTitle": "Konferencia-előadások és sessionök",
     "talksIntro": "Ízelítőként két előadás az ADR-ekről és a dokumentált döntésekről:",
     "talk1Title": "ADR-ek a gyakorlatban",
+    "talk1Description": "Konferencia-session az ADR-ekről a gyakorlatban",
     "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
     "talk1Label": "Megtekintés YouTube-on",
     "talk2Title": "Continuous failure – Miért nehezítjük meg a saját életünket?",
     "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Megtekintés Vimeo-n",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Konferencia sessionök (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube csatorna",
+    "moreSessionsTitle": "További konferencia sessionök",
+    "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
     "engagementModelsTitle": "Együttműködési formátumok",
     "engagementModelsIntro": "A formátumok a céljaitokhoz és a csapat érettségéhez igazodnak. Gyakori lehetőségek:",
     "engagementModels": [
@@ -159,7 +182,8 @@
       "Kiszámíthatóbb szállítás, mert a gyakorlatok nem fejenként különböznek.",
       "Konkrét, kontextushoz illeszkedő következő lépések, nem általános checklista."
     ],
-    "cta": "Beszéljünk a képzési igényről"
+    "cta": "Beszéljünk a képzési igényről",
+    "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "workshop": {
     "pageTitle": "Döntések nyoma | Workshop",
@@ -339,12 +363,20 @@
     "talksTitle": "Előadások és sessionök",
     "talksIntro": "Két jellemző előadás az ADR-ekről és a dokumentált döntésekről:",
     "talk1Title": "ADR-ek a gyakorlatban",
+    "talk1Description": "Konferencia-session az ADR-ekről a gyakorlatban",
     "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
     "talk1Label": "Megtekintés YouTube-on",
     "talk2Title": "Continuous failure – Miért nehezítjük meg a saját életünket?",
     "talk2Description": "Az ADR-ek és a dokumentált döntések hiányának ára.",
     "talk2Url": "https://vimeo.com/1102474381",
-    "talk2Label": "Megtekintés Vimeo-n"
+    "talk2Label": "Megtekintés Vimeo-n",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Konferencia sessionök (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube csatorna",
+    "moreSessionsTitle": "További konferencia sessionök",
+    "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
+    "onlinePresenceTitle": "Megtalálsz még itt"
   },
   "contact": {
     "pageTitle": "Kapcsolat",
@@ -366,7 +398,8 @@
     "emailLabel": "Munkahelyi e-mail",
     "companyLabel": "Cég",
     "messageLabel": "Röviden a helyzetről",
-    "submitLabel": "Küldés"
+    "submitLabel": "Küldés",
+    "formPlaceholderHint": "Ez egy helykitöltő űrlap. Éles használatban saját kapcsolatfelvételi csatornához érdemes kötni."
   },
   "caseStudies": {
     "pageTitle": "Esettanulmányok",
@@ -374,8 +407,57 @@
     "backToList": "Vissza az esettanulmányokhoz",
     "eyebrow": "Esettanulmány",
     "tocTitle": "Ebben a cikkben",
+    "tocAriaLabel": "Tartalomjegyzék",
     "sidebarCtaTitle": "Szeretnél hasonló eredményeket?",
     "sidebarCtaBody": "Ha szállítási vagy architekturális kihívásokkal nézel szembe, beszéljünk arról, hogyan segíthet a képzés vagy a fókuszált tanácsadás.",
     "sidebarCtaLabel": "Beszéljünk"
+  },
+  "privacy": {
+    "pageTitle": "Adatkezelési tájékoztató",
+    "intro": "Ezen az oldalon összefoglaljuk, milyen adatkezelés történhet a webhely használata közben, és milyen külső szolgáltatások töltődhetnek be.",
+    "lastUpdatedLabel": "Utolsó frissítés",
+    "lastUpdatedValue": "2026-03-05",
+    "scopeTitle": "Mire terjed ki a tájékoztató",
+    "scopeItems": [
+      "A tájékoztató erre a webhelyre és az itt használt harmadik fél szolgáltatásokra vonatkozik.",
+      "Az egyes szolgáltatókhoz kerülő adatok köre a használattól és a süti beállításoktól függ.",
+      "Külső linkre kattintás után az adott oldal saját adatkezelési szabályai érvényesek."
+    ],
+    "legalTitle": "Jogalap röviden",
+    "legalItems": [
+      "Az alapműködéshez szükséges technikai adatkezelés jogos érdek alapján történik.",
+      "Az opcionális analitikai és marketing szkriptek csak hozzájárulás után töltődnek be.",
+      "A döntésedet bármikor módosíthatod a láblécben található Süti beállítások linken."
+    ],
+    "servicesTitle": "Használt külső szolgáltatások",
+    "servicesIntro": "Ezek a szolgáltatók használat vagy engedélyezés esetén technikai adatokat (pl. IP-cím, böngésző adatok, interakciós események) kaphatnak.",
+    "schedulingTitle": "Időpontfoglalás",
+    "schedulingItems": [
+      "Calendly (calendly.com, assets.calendly.com): a kapcsolat oldalon időpontfoglaláshoz."
+    ],
+    "analyticsTitle": "Analitika",
+    "analyticsItems": [
+      "Google Analytics (googletagmanager.com): oldalhasználati és látogatottsági analitika.",
+      "Hotjar (static.hotjar.com): viselkedési analitika és session betekintés."
+    ],
+    "marketingTitle": "Marketing",
+    "marketingItems": [
+      "Facebook Pixel (connect.facebook.net): marketing és kampányteljesítmény mérése.",
+      "LinkedIn Insight Tag (snap.licdn.com): kampány- és konverziómérés."
+    ],
+    "embedsTitle": "Beágyazott média",
+    "embedsItems": [
+      "YouTube beágyazások (youtube.com): konferencia előadás videók.",
+      "Vimeo beágyazások (player.vimeo.com): konferencia előadás videók."
+    ],
+    "externalLinksTitle": "Külső linkek és profilok",
+    "externalLinksItems": [
+      "Sessionize linkek (sessionize.com): nyilvános konferencia profil.",
+      "Credly linkek (credly.com): nyilvános minősítési badge oldalak."
+    ],
+    "cookieControlsTitle": "Süti beállítások",
+    "cookieControlsBody": "Az opcionális sütik teljes körűen elfogadhatók vagy kategóriánként állíthatók (analitika, marketing). A beállítás helyben tárolódik, így a döntésed megmarad.",
+    "contactTitle": "Kérdések",
+    "contactBody": "Ha kérdésed van az oldalon történő adatkezeléssel kapcsolatban, kérlek használd a Kapcsolat oldalt."
   }
 }

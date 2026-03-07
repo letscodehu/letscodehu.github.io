@@ -18,7 +18,15 @@
     "languageHungarian": "Magyar",
     "darkMode": "Switch to dark mode",
     "lightMode": "Switch to light mode",
-    "toggleDarkMode": "Toggle light and dark mode"
+    "toggleDarkMode": "Toggle light and dark mode",
+    "privacyLink": "Privacy",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube",
+    "footerTagline": "Independent consultant and trainer for software engineering teams.",
+    "brandLogoAlt": "Letscode Solutions",
+    "brandTagline": "Training and consulting for engineering teams",
+    "menuAriaLabel": "Menu",
+    "mainNavigationAriaLabel": "Main navigation"
   },
   "cookies": {
     "title": "We use cookies",
@@ -33,6 +41,7 @@
     "analyticsDescription": "Help us understand how the site is used (Google Analytics, Hotjar).",
     "marketingTitle": "Marketing cookies",
     "marketingDescription": "Used for marketing and ad performance tracking (Facebook, LinkedIn).",
+    "essentialAriaLabel": "Essential cookies",
     "savePreferences": "Save preferences",
     "settingsLink": "Cookie settings",
     "closeLabel": "Close cookie settings"
@@ -40,7 +49,9 @@
   "home": {
     "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",
     "heroSubtitle": "I work with mid–senior teams on DevOps, architecture, and everyday practices that reduce friction instead of adding process overhead.",
+    "heroEyebrow": "Classroom training and consulting for software engineering teams.",
     "problemsTitle": "Typical problems I see in engineering teams",
+    "problemsCardTitle": "What usually goes wrong",
     "problems": [
       "Delivery slows down as the codebase grows; releases feel risky and fragile.",
       "Different teams (or even individuals) follow incompatible conventions and tooling.",
@@ -48,6 +59,7 @@
       "Infrastructure and deployment scripts are tribal knowledge instead of shared practice.",
       "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
     ],
+    "focusCardTitle": "What we focus on",
     "focusOn": [
       "Safer changes: tests and pipelines that catch problems before production instead of after.",
       "Faster delivery: fewer bottlenecks, clearer handoffs, and less rework from inconsistent practices.",
@@ -57,6 +69,9 @@
       "Delivery feedback you can trust: CI/CD that gives fast, reliable signals so releases stop feeling risky."
     ],
     "offeringsTitle": "Training focus areas",
+    "offeringsEngineeringTitle": "Engineering practices",
+    "offeringsDevOpsTitle": "DevOps and delivery",
+    "offeringsArchitectureTitle": "Architecture: ADR, C4, clean architecture",
     "offerings": [
       "Engineering practices: code review, branching, modular design, and habits that keep codebases maintainable.",
       "DevOps fundamentals: from CI pipelines to pragmatic monitoring, focused on what your team can actually adopt.",
@@ -90,6 +105,7 @@
       "Context-aware: formats and exercises are adapted to your team’s maturity and constraints."
     ],
     "practiceIntro": "Work is done on your codebase, pipelines, and architecture—not generic examples. Typical formats include:",
+    "practiceCardTitle": "How this usually looks in practice",
     "practiceExamples": [
       "Architecture reviews: walking through your system, identifying boundaries and coupling, and agreeing next steps.",
       "ADR sessions: capturing decisions in a lightweight format so they survive beyond the current team.",
@@ -99,12 +115,19 @@
     "talksTitle": "Conference talks and sessions",
     "talksIntro": "To get a sense of my approach, here are a few conference talks and sessions:",
     "talk1Title": "Architecture Decision Records (ADRs) in practice",
+    "talk1Description": "Conference session on Architecture Decision Records in practice",
     "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
     "talk1Label": "Watch on YouTube",
     "talk2Title": "Continuous failure – Why do we make our lives hard?",
     "talk2Description": "On the cost of missing ADRs and documented decisions.",
     "talk2Url": "https://vimeo.com/1102474381",
     "talk2Label": "Watch on Vimeo",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Conference sessions (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube channel",
+    "moreSessionsTitle": "More conference sessions",
+    "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
     "engagementModelsTitle": "Engagement models",
     "engagementModelsIntro": "Formats are adapted to your goals and team maturity. Common options:",
     "engagementModels": [
@@ -159,7 +182,8 @@
       "More predictable delivery because practices are consistent, not reinvented per feature.",
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
-    "cta": "Discuss a training need"
+    "cta": "Discuss a training need",
+    "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "workshop": {
     "pageTitle": "Decision traces workshop",
@@ -339,12 +363,20 @@
     "talksTitle": "Talks and conference sessions",
     "talksIntro": "Here are two representative talks on ADRs and documented decisions:",
     "talk1Title": "Architecture Decision Records (ADRs) in practice",
+    "talk1Description": "Conference session on Architecture Decision Records in practice",
     "talk1Url": "https://www.youtube.com/watch?v=9Ua9BDqPHPA",
     "talk1Label": "Watch on YouTube",
     "talk2Title": "Continuous failure – Why do we make our lives hard?",
     "talk2Description": "On the cost of missing ADRs and documented decisions.",
     "talk2Url": "https://vimeo.com/1102474381",
-    "talk2Label": "Watch on Vimeo"
+    "talk2Label": "Watch on Vimeo",
+    "sessionizeUrl": "https://sessionize.com/krisztian-papp/#events",
+    "sessionizeLabel": "Conference sessions (Sessionize)",
+    "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
+    "youtubeChannelLabel": "YouTube channel",
+    "moreSessionsTitle": "More conference sessions",
+    "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
+    "onlinePresenceTitle": "Online presence"
   },
   "contact": {
     "pageTitle": "Contact",
@@ -366,7 +398,8 @@
     "emailLabel": "Work email",
     "companyLabel": "Company",
     "messageLabel": "Short description of your context",
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "formPlaceholderHint": "This is a placeholder form. In production, wire it to your preferred contact channel."
   },
   "caseStudies": {
     "pageTitle": "Case studies",
@@ -374,8 +407,57 @@
     "backToList": "Back to case studies",
     "eyebrow": "Case study",
     "tocTitle": "In this article",
+    "tocAriaLabel": "Table of contents",
     "sidebarCtaTitle": "Want similar results?",
     "sidebarCtaBody": "If you're facing delivery or architecture challenges, we can discuss how training or focused consulting could help.",
     "sidebarCtaLabel": "Get in touch"
+  },
+  "privacy": {
+    "pageTitle": "Privacy and data processing",
+    "intro": "This page explains what data processing may happen when you use this website and when external services are loaded.",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdatedValue": "2026-03-05",
+    "scopeTitle": "What this notice covers",
+    "scopeItems": [
+      "This notice covers this website and the third-party services integrated in it.",
+      "The exact data that each provider receives depends on your interaction and your cookie preferences.",
+      "When you follow external links, the destination site handles your data under its own policies."
+    ],
+    "legalTitle": "Legal basis in short",
+    "legalItems": [
+      "Essential technical processing is based on legitimate interest to operate the site securely.",
+      "Optional analytics and marketing scripts are loaded only after your consent in cookie settings.",
+      "You can change your choices any time from the footer's Cookie settings link."
+    ],
+    "servicesTitle": "Third-party services used",
+    "servicesIntro": "These providers may receive technical metadata (for example IP address, browser details, and interaction events) when enabled or used.",
+    "schedulingTitle": "Scheduling",
+    "schedulingItems": [
+      "Calendly (calendly.com, assets.calendly.com): used on the contact page to book calls."
+    ],
+    "analyticsTitle": "Analytics",
+    "analyticsItems": [
+      "Google Analytics (googletagmanager.com): page view and usage analytics.",
+      "Hotjar (static.hotjar.com): behavior analytics and session insights."
+    ],
+    "marketingTitle": "Marketing",
+    "marketingItems": [
+      "Facebook Pixel (connect.facebook.net): marketing and campaign performance measurement.",
+      "LinkedIn Insight Tag (snap.licdn.com): campaign and conversion measurement."
+    ],
+    "embedsTitle": "Embedded media",
+    "embedsItems": [
+      "YouTube embeds (youtube.com): conference talk videos.",
+      "Vimeo embeds (player.vimeo.com): conference talk videos."
+    ],
+    "externalLinksTitle": "External links and profiles",
+    "externalLinksItems": [
+      "Sessionize links (sessionize.com): public conference sessions profile.",
+      "Credly links (credly.com): public certification badges."
+    ],
+    "cookieControlsTitle": "Cookie controls",
+    "cookieControlsBody": "You can accept all optional cookies or choose categories (analytics, marketing). Preferences are stored locally so your choice is remembered.",
+    "contactTitle": "Questions",
+    "contactBody": "If you have questions about data processing on this site, please use the Contact page."
   }
 }

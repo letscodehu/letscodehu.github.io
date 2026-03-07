@@ -108,7 +108,7 @@ watch(
     <aside class="sidebar">
       <div v-if="tocEntries.length > 0" class="sidebar-block sidebar-toc">
         <h2 class="sidebar-title">{{ t('caseStudies.tocTitle') }}</h2>
-        <nav aria-label="Table of contents">
+        <nav :aria-label="t('caseStudies.tocAriaLabel')">
           <ul class="toc-list">
             <li v-for="entry in tocEntries" :key="entry.slug">
               <a :href="`#${entry.slug}`" class="toc-link">{{ entry.text }}</a>

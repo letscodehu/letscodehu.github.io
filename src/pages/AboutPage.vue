@@ -2,9 +2,9 @@
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
+import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t, currentLang } = useI18n()
-const isEn = currentLang.value === 'en'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -52,7 +52,7 @@ const isEn = currentLang.value === 'en'
         <BaseCard>
           <template #title>{{ t('about.talk1Title') }}</template>
           <p class="body">
-            {{ isEn ? 'Conference session on Architecture Decision Records in practice.' : 'Konferencia-session az ADR-ekről a gyakorlatban.' }}
+            {{ t('about.talk1Description') }}
           </p>
           <VideoEmbed
             :url="t('about.talk1Url')"
@@ -72,6 +72,33 @@ const isEn = currentLang.value === 'en'
           />
         </BaseCard>
       </div>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('about.onlinePresenceTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <div class="presence-buttons">
+          <BaseButton
+            as="a"
+            :href="t('about.sessionizeUrl')"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ t('about.sessionizeLabel') }}
+          </BaseButton>
+          <BaseButton
+            as="a"
+            :href="t('about.youtubeChannelUrl')"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="ghost"
+          >
+            {{ t('about.youtubeChannelLabel') }}
+          </BaseButton>
+        </div>
+      </BaseCard>
     </section>
 
     <section class="section credly-badge-section">
@@ -198,6 +225,17 @@ const isEn = currentLang.value === 'en'
 .body {
   margin: 0 0 0.75rem;
   font-size: 0.92rem;
+}
+
+.presence-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.presence-buttons :deep(.button) {
+  flex: 1;
+  min-width: 0;
 }
 
 .credly-badge-section {

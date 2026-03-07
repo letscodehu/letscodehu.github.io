@@ -186,12 +186,12 @@
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "workshop": {
-    "pageTitle": "Decision traces workshop",
-    "eyebrow": "2-day workshop",
-    "onSiteHighlight": "On-site workshop format",
+    "pageTitle": "ADR and requirement alignment workshop",
+    "eyebrow": "2-day on-site workshop for engineering teams",
+    "onSiteHighlight": "Focus: ADRs + requirement clarity + customer-needs delivery",
     "exerciseLabel": "Exercise",
-    "title": "Decision traces – how to build systems so we still understand why they are like this later",
-    "subtitle": "ADRs not for compliance, but for self-defense.",
+    "title": "ADRs and requirement clarity – deliver what the customer actually needs",
+    "subtitle": "Clarify decisions, expectations, and scope so teams ship not just fast, but in the right direction.",
     "day1": {
       "title": "Day 1 – How decisions are made (and broken)",
       "goal": "Goal: understand when ADRs are needed, at what depth, and when they become harmful.",
@@ -311,9 +311,9 @@
       ]
     },
     "cta": {
-      "title": "Want this workshop for your team?",
-      "body": "If you have a real team and context, we can adapt it to your stack, decision pressure, and delivery rhythm. The default delivery format is on-site.",
-      "button": "Book a workshop discussion"
+      "title": "Want your team to reduce misalignment and ship with higher precision?",
+      "body": "We tailor the workshop to your product and engineering context: ADR decisions, requirement clarity, and scope discipline anchored in customer needs. Default format is on-site.",
+      "button": "Book a workshop consultation"
     }
   },
   "consulting": {

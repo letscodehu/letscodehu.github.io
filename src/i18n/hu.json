@@ -188,13 +188,13 @@
   "workshop": {
     "pageTitle": "ADR és requirement tisztázás workshop",
     "eyebrow": "2 napos, helyszíni workshop tech csapatoknak",
-    "onSiteHighlight": "Fókusz: ADR + requirement tisztázás + ügyféligényre szállítás",
+    "onSiteHighlight": "A fő cél: csapatként jó architekturális döntéseket hozni",
     "exerciseLabel": "Gyakorlat",
     "title": "ADR-ek és requirement tisztázás – azt szállítsuk, amire az ügyfélnek valóban szüksége van",
-    "subtitle": "Döntések, elvárások és scope tisztázása úgy, hogy a csapat ne csak gyorsan, hanem jó irányba is szállítson.",
+    "subtitle": "Az ADR itt nem adminisztráció, hanem melléktermék: a lényeg, hogy a csapat közösen, tudatosan és következetesen hozzon architekturális döntéseket.",
     "day1": {
       "title": "1. nap – Döntések születése (és elrontása)",
-      "goal": "Cél: megérteni, mikor érdemes ADR-t írni, milyen mélységben, és mikor válik kontraproduktívvá.",
+      "goal": "Cél: megtanulni, hogyan hozzunk csapatként jó architekturális döntéseket; az ADR-dokumentálás ennek következménye, nem célja.",
       "sessions": [
         {
           "time": "09:00–10:15",
@@ -243,7 +243,7 @@
     },
     "day2": {
       "title": "2. nap – ADR-ek egy élő rendszerben",
-      "goal": "Cél: ne polcon porosodó markdown legyen, hanem a mindennapi munka része.",
+      "goal": "Cél: a közös döntéshozatali működés beépítése a napi munkába, ahol a dokumentálás természetes melléktermék.",
       "sessions": [
         {
           "time": "09:00–10:30",
@@ -302,17 +302,17 @@
     },
     "closing": {
       "title": "Mit visztek haza hétfőtől",
-      "intro": "A workshop végére lesz egy működő, csapatra szabott ADR alapcsomag, amit hétfőn azonnal be lehet vezetni.",
+      "intro": "A workshop végére lesz egy közös döntéshozatali működésmódotok, amelyben az ADR-ek automatikusan, hasznos melléktermékként születnek.",
       "points": [
-        "Döntési mátrix: mikor írunk ADR-t és milyen mélységben.",
-        "Egyszerű felelősségi modell: ki ír, ki review-z, ki dönt.",
+        "Döntési mátrix: hogyan választunk opciók között, és mikor kell formális döntés.",
+        "Egyszerű felelősségi modell: ki készít elő, ki review-z, ki dönt.",
         "Életciklus-szabályok: mikor supersede-elünk, mikor deprecate-elünk.",
         "PR és commit minimum integrációs szabályok."
       ]
     },
     "cta": {
       "title": "Szeretnéd, hogy a csapatod kevesebbet félreértsen és pontosabban szállítson?",
-      "body": "A workshopot a saját termék- és fejlesztési környezetetekre szabjuk: ADR döntések, requirement tisztázás és ügyféligény-alapú scope-fegyelem. Az alapértelmezett formátum helyszíni (on-site).",
+      "body": "A workshopot a saját termék- és fejlesztési környezetetekre szabjuk, hogy a csapat megtanuljon együtt jó döntéseket hozni bizonytalan helyzetekben is. Az ADR-eket nem célként gyártjuk, hanem a jobb döntéshozatal természetes lenyomataként kezeljük. Az alapértelmezett formátum helyszíni (on-site).",
       "button": "Egyeztessünk a workshopról"
     }
   },

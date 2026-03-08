@@ -188,13 +188,13 @@
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",
     "eyebrow": "2-day on-site workshop for engineering teams",
-    "onSiteHighlight": "Focus: ADRs + requirement clarity + customer-needs delivery",
+    "onSiteHighlight": "Primary goal: learn to make strong architecture decisions as a team",
     "exerciseLabel": "Exercise",
     "title": "ADRs and requirement clarity – deliver what the customer actually needs",
-    "subtitle": "Clarify decisions, expectations, and scope so teams ship not just fast, but in the right direction.",
+    "subtitle": "ADRs are not the end goal here; they are a byproduct. The core outcome is a team that can make clear, aligned architecture decisions together.",
     "day1": {
       "title": "Day 1 – How decisions are made (and broken)",
-      "goal": "Goal: understand when ADRs are needed, at what depth, and when they become harmful.",
+      "goal": "Goal: learn how to make strong architecture decisions as a team; ADR documentation is a consequence, not the objective.",
       "sessions": [
         {
           "time": "09:00–10:15",
@@ -243,7 +243,7 @@
     },
     "day2": {
       "title": "Day 2 – ADRs in a living system",
-      "goal": "Goal: make ADRs a practical tool, not dusty markdown.",
+      "goal": "Goal: embed shared decision-making into daily work, with documentation as a practical byproduct.",
       "sessions": [
         {
           "time": "09:00–10:30",
@@ -302,17 +302,17 @@
     },
     "closing": {
       "title": "What you take back on Monday",
-      "intro": "By the end of the workshop, your team has a practical ADR baseline ready to use immediately.",
+      "intro": "By the end of the workshop, your team has a shared decision-making operating model where useful ADRs emerge naturally.",
       "points": [
-        "Decision matrix for when and how deeply to write ADRs.",
-        "Simple ownership model for writing, review, and decision authority.",
+        "Decision matrix for choosing options and identifying when formal decisions are needed.",
+        "Simple ownership model for preparation, review, and decision authority.",
         "Lifecycle rules for superseding and deprecating ADRs.",
         "Minimum PR and commit integration guidelines."
       ]
     },
     "cta": {
       "title": "Want your team to reduce misalignment and ship with higher precision?",
-      "body": "We tailor the workshop to your product and engineering context: ADR decisions, requirement clarity, and scope discipline anchored in customer needs. Default format is on-site.",
+      "body": "We tailor the workshop to your product and engineering context so your team can make better decisions together under real delivery pressure. ADRs are treated as a useful output of that capability, not as paperwork. Default format is on-site.",
       "button": "Book a workshop consultation"
     }
   },

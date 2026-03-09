@@ -58,6 +58,15 @@ const { t } = useI18n()
         </BaseCard>
 
         <BaseCard>
+          <template #title>{{ t('privacy.newsletterTitle') }}</template>
+          <ul class="list">
+            <li v-for="item in t('privacy.newsletterItems')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
+
+        <BaseCard>
           <template #title>{{ t('privacy.analyticsTitle') }}</template>
           <ul class="list">
             <li v-for="item in t('privacy.analyticsItems')" :key="item">

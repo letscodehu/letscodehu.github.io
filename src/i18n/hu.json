@@ -291,7 +291,8 @@
     "validationEmailInvalid": "Érvényes email címet adj meg.",
     "errorGeneric": "A feliratkozás nem sikerült. Próbáld újra egy perc múlva.",
     "errorTimeout": "A kérés időtúllépés miatt megszakadt. Próbáld újra.",
-    "errorNetwork": "Hálózati hiba történt a feliratkozás közben. Próbáld újra."
+    "errorNetwork": "Hálózati hiba történt a feliratkozás közben. Próbáld újra.",
+    "errorBrowserHint": "Egyes böngészők blokkolhatják a Mailchimp feliratkozást."
   },
   "workshop": {
     "pageTitle": "ADR és requirement tisztázás workshop",
@@ -542,6 +543,11 @@
     "schedulingTitle": "Időpontfoglalás",
     "schedulingItems": [
       "Calendly (calendly.com, assets.calendly.com): a kapcsolat oldalon időpontfoglaláshoz."
+    ],
+    "newsletterTitle": "Hírlevél / várólista feliratkozás",
+    "newsletterItems": [
+      "Mailchimp (list-manage.com): a tréning várólista feliratkozási űrlaphoz. Az e-mail és név a feliratkozáskor közvetlenül a Mailchimp rendszerébe kerül.",
+      "A Mailchimp adatkezelési tájékoztatóját a mailchimp.com oldalon találod."
     ],
     "analyticsTitle": "Analitika",
     "analyticsItems": [

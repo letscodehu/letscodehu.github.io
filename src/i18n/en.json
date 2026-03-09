@@ -291,7 +291,8 @@
     "validationEmailInvalid": "Please enter a valid email address.",
     "errorGeneric": "Signup failed. Please try again in a minute.",
     "errorTimeout": "Request timed out. Please try again.",
-    "errorNetwork": "Network error while sending signup. Please try again."
+    "errorNetwork": "Network error while sending signup. Please try again.",
+    "errorBrowserHint": "Some browsers may block Mailchimp signup requests."
   },
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",
@@ -542,6 +543,11 @@
     "schedulingTitle": "Scheduling",
     "schedulingItems": [
       "Calendly (calendly.com, assets.calendly.com): used on the contact page to book calls."
+    ],
+    "newsletterTitle": "Newsletter / waitlist signup",
+    "newsletterItems": [
+      "Mailchimp (list-manage.com): for the training waitlist signup form. Email and name are sent directly to Mailchimp when you subscribe.",
+      "See Mailchimp's privacy policy at mailchimp.com."
     ],
     "analyticsTitle": "Analytics",
     "analyticsItems": [

@@ -9,6 +9,7 @@ import { useI18n } from '../../composables/useI18n'
 
 const route = useRoute()
 const { t } = useI18n()
+const defaultMetaImage = '/architect-from-dev.png'
 
 useHead({
   title: computed(() => {
@@ -17,6 +18,12 @@ useHead({
     const localizedTitle = titleKey ? t(titleKey) : undefined
     return localizedTitle ? `${localizedTitle} | ${brand}` : brand
   }),
+  meta: [
+    { property: 'og:image', content: defaultMetaImage },
+    { property: 'og:image:alt', content: 'Architect from dev training visual' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:image', content: defaultMetaImage },
+  ],
 })
 </script>
 

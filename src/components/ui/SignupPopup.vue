@@ -251,6 +251,7 @@ onUnmounted(() => {
           </div>
 
           <p v-if="submitError" class="error">{{ submitError }}</p>
+          <p v-if="submitError" class="error-hint">{{ t('signupPopup.errorBrowserHint') }}</p>
 
           <div class="actions">
             <BaseButton variant="ghost" type="button" @click="handleClose">
@@ -346,6 +347,12 @@ onUnmounted(() => {
   margin: 0;
   color: #dc2626;
   font-size: 0.8rem;
+}
+
+.error-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
 }
 
 .actions {

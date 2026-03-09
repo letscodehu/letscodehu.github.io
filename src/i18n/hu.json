@@ -182,8 +182,116 @@
       "Kiszámíthatóbb szállítás, mert a gyakorlatok nem fejenként különböznek.",
       "Konkrét, kontextushoz illeszkedő következő lépések, nem általános checklista."
     ],
+    "b2cCardTitle": "Egyéni fejlesztői program",
+    "b2cCardBody": "Egyéni fejlesztőknek szóló formátumot keresel? Nézd meg a 2 napos, döntésközpontú architekt szemlélet tréninget C4 fókuszban.",
+    "b2cCardCta": "Tréning megtekintése",
     "cta": "Beszéljünk a képzési igényről",
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
+  },
+  "trainingB2c": {
+    "pageTitle": "Architect szemlélet fejlesztőknek tréning",
+    "eyebrow": "Képzés egyéni fejlesztőknek",
+    "intro": "Gyakorlati 2 napos program, amely segít tisztábban és tudatosabban technikai döntéseket hozni.",
+    "formatTitle": "Formátum és részvétel",
+    "format": [
+      "Budapesten tartott, kiscsoportos tréning.",
+      "Kizárólag személyes részvétellel.",
+      "Online csatlakozás nem elérhető.",
+      "A közös táblás rajzolás és modellezés a képzés központi eleme."
+    ],
+    "forWhoTitle": "Kiknek szól?",
+    "forWho": [
+      "Medior- és senior fejlesztőknek, akik nem csak implementálni, hanem rendszerszinten gondolkodni is szeretnének.",
+      "Fejlesztőknek, akik senior, staff vagy tech lead irányba lépnének tovább.",
+      "Olyan mérnököknek, akik tisztábban szeretnének kommunikálni termékes és nem technikai érintettekkel."
+    ],
+    "notForTitle": "Kiknek nem szól?",
+    "notFor": [
+      "Teljesen kezdő fejlesztőknek, akik még az alap programozási készségeket építik.",
+      "Olyanoknak, akik csak passzív előadást keresnek gyakorlati feladatok nélkül.",
+      "Résztvevőknek, akik nem szeretnének döntéseket közösen átnézni és röviden rögzíteni.",
+      "Akik kizárólag online formátumban tudnak vagy szeretnének csatlakozni."
+    ],
+    "day1": {
+      "title": "1. nap - Jó technikai döntések bizonytalan helyzetekben",
+      "goal": "Döntési rutin kialakítása valós kompromisszumok között; az ADR itt csak rövid döntési lenyomatként jelenik meg.",
+      "sessions": [
+        {
+          "title": "Döntési helyzetek tisztázása",
+          "points": [
+            "Korlátok, feltételezések és célok szétválasztása.",
+            "A valódi döntési kérdés megfogalmazása zajos helyzetekben."
+          ]
+        },
+        {
+          "title": "Opciók és trade-offok összevetése",
+          "points": [
+            "Alternatívák összevetése kockázat, költség és változtatási ár alapján.",
+            "Döntési indoklás érthető kommunikálása technikai és üzleti nézőpontból."
+          ]
+        },
+        {
+          "title": "Rövid döntési lenyomatok (ADR mint keret)",
+          "points": [
+            "Mikor érdemes rögzíteni egy döntést, és mikor elég szóbeli megállapodás.",
+            "Könnyűsúlyú sablon használata úgy, hogy ne legyen adminisztrációs teher."
+          ]
+        }
+      ]
+    },
+    "day2": {
+      "title": "2. nap - Döntések láthatóvá tétele C4 modellekkel",
+      "goal": "A döntések közös vizuális nyelven történő kommunikálása, hogy a csapat és az érintettek ugyanazt értsék a rendszerről.",
+      "sessions": [
+        {
+          "title": "C4: kontextus- és konténernézet",
+          "points": [
+            "Rendszerhatárok és külső függőségek modellezése.",
+            "Felelősségek és kulcs interakciók tiszta jelölése."
+          ]
+        },
+        {
+          "title": "C4: komponensnézet",
+          "points": [
+            "Containerek bontása értelmes komponensekre és interfészekre.",
+            "Kockázatos csatolások és homályos ownership felismerése."
+          ]
+        },
+        {
+          "title": "Döntések kommunikálása diagramokkal és rövid leírásokkal",
+          "points": [
+            "A diagramok és rövid döntési leírások összerendezése közös történetté.",
+            "Ismételhető kommunikációs rutin kialakítása csapaton belül és kívül."
+          ]
+        }
+      ]
+    },
+    "takeawayTitle": "Mit viszel haza",
+    "takeaways": [
+      "Saját döntési keret, amivel bizonytalan helyzetekben is magabiztosabban választasz opciót.",
+      "Egy gyakorlatban használható C4 diagram csomag (Context, Container, Component).",
+      "Minta arra, hogyan rögzíts röviden döntéseket (ADR mint keret), dokumentációs túlterhelés nélkül."
+    ],
+    "ctaTitle": "Csatlakozz a következő csoporthoz",
+    "ctaBody": "Iratkozz fel a várólistára, és elsőként küldöm az új tréning időpontokat.",
+    "cta": "Feliratkozom a várólistára"
+  },
+  "signupPopup": {
+    "title": "Feliratkozás az architekt szemlélet tréning várólistára",
+    "intro": "Add meg az adataidat, és értesítelek, amikor elérhetőek az új budapesti, személyes tréning időpontok.",
+    "firstNameLabel": "Keresztnév",
+    "emailLabel": "Email cím",
+    "submitCta": "Feliratkozom",
+    "submitLoading": "Küldés...",
+    "cancelCta": "Mégsem",
+    "closeCta": "Bezárás",
+    "closeLabel": "Feliratkozó popup bezárása",
+    "successMessage": "Köszönöm, a feliratkozás sikeres. Hamarosan küldöm a következő időpontokat.",
+    "validationEmailRequired": "Add meg az email címed.",
+    "validationEmailInvalid": "Érvényes email címet adj meg.",
+    "errorGeneric": "A feliratkozás nem sikerült. Próbáld újra egy perc múlva.",
+    "errorTimeout": "A kérés időtúllépés miatt megszakadt. Próbáld újra.",
+    "errorNetwork": "Hálózati hiba történt a feliratkozás közben. Próbáld újra."
   },
   "workshop": {
     "pageTitle": "ADR és requirement tisztázás workshop",

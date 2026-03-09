@@ -48,7 +48,16 @@ export const createApp = ViteSSG(App, { routes }, ({ router }) => {
 export async function includedRoutes() {
   const langs: ('en' | 'hu')[] = ['en', 'hu']
 
-  const staticPaths = ['training', 'training/workshop-adr', 'consulting', 'about', 'contact', 'privacy', 'case-studies']
+  const staticPaths = [
+    'training',
+    'training/architect-mindset',
+    'training/workshop-adr',
+    'consulting',
+    'about',
+    'contact',
+    'privacy',
+    'case-studies',
+  ]
 
   const paths: string[] = []
 

@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import AppLayout from '../components/layout/AppLayout.vue'
 import HomePage from '../pages/HomePage.vue'
 import TrainingPage from '../pages/TrainingPage.vue'
+import TrainingB2CPage from '../pages/TrainingB2CPage.vue'
 import WorkshopPage from '../pages/WorkshopPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
@@ -18,6 +19,13 @@ const childRoutes: RouteRecordRaw[] = [
     component: TrainingPage,
     alias: 'kepzes',
     meta: { titleKey: 'training.pageTitle' },
+  },
+  {
+    path: 'training/architect-mindset',
+    name: 'training-b2c-en',
+    component: TrainingB2CPage,
+    alias: 'kepzes/architect-gondolkodas',
+    meta: { titleKey: 'trainingB2c.pageTitle' },
   },
   {
     path: 'training/workshop-adr',

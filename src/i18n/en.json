@@ -182,8 +182,116 @@
       "More predictable delivery because practices are consistent, not reinvented per feature.",
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
+    "b2cCardTitle": "Individual developer track",
+    "b2cCardBody": "Looking for an individual developer format? See the 2-day decision-focused architect mindset training with a strong C4 focus.",
+    "b2cCardCta": "See training",
     "cta": "Discuss a training need",
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
+  },
+  "trainingB2c": {
+    "pageTitle": "2-day architect mindset for developers",
+    "eyebrow": "Training for individual developers",
+    "intro": "A practical 2-day program focused on stronger technical decision-making. ADR appears only as a lightweight documentation framework, while C4 supports shared system reasoning.",
+    "formatTitle": "Format and attendance",
+    "format": [
+      "Small-group training held in Budapest.",
+      "In-person attendance only.",
+      "Remote participation is not available.",
+      "Shared whiteboard drawing and modeling are core parts of the training format."
+    ],
+    "forWhoTitle": "Who this is for",
+    "forWho": [
+      "Mid-senior developers who want to reason like an architect, not only implement tickets.",
+      "Developers preparing for senior, staff, or tech lead responsibilities.",
+      "Engineers who need clearer communication with product and non-technical stakeholders."
+    ],
+    "notForTitle": "Who this is not for",
+    "notFor": [
+      "Absolute beginners still learning programming foundations.",
+      "Developers looking for a passive, talk-only event without practical exercises.",
+      "Participants who do not want to review decisions together and capture short decision records.",
+      "People who need a fully remote format."
+    ],
+    "day1": {
+      "title": "Day 1 - Better technical decisions under uncertainty",
+      "goal": "Build practical decision habits under real constraints; ADR is treated as a lightweight record, not the main objective.",
+      "sessions": [
+        {
+          "title": "Clarifying the real decision",
+          "points": [
+            "Separate constraints, assumptions, and goals.",
+            "Define the core decision question in noisy environments."
+          ]
+        },
+        {
+          "title": "Comparing options and trade-offs",
+          "points": [
+            "Compare alternatives by risk, cost, and change impact.",
+            "Communicate rationale clearly to technical and business stakeholders."
+          ]
+        },
+        {
+          "title": "Short decision records (ADR as framework)",
+          "points": [
+            "Decide when a decision should be captured versus kept verbal.",
+            "Use a lightweight structure without turning it into documentation overhead."
+          ]
+        }
+      ]
+    },
+    "day2": {
+      "title": "Day 2 - Making decisions visible with C4",
+      "goal": "Communicate decisions with a shared visual language so engineers and stakeholders align on system intent.",
+      "sessions": [
+        {
+          "title": "C4 context and container views",
+          "points": [
+            "Model system boundaries and external dependencies.",
+            "Express responsibilities and key interactions clearly."
+          ]
+        },
+        {
+          "title": "C4 component view",
+          "points": [
+            "Break containers into meaningful components and interfaces.",
+            "Detect risky coupling and unclear ownership."
+          ]
+        },
+        {
+          "title": "Communicating decisions with diagrams and short notes",
+          "points": [
+            "Link diagrams and short decision notes into one coherent narrative.",
+            "Create a repeatable communication routine inside and outside the team."
+          ]
+        }
+      ]
+    },
+    "takeawayTitle": "What you leave with",
+    "takeaways": [
+      "A practical decision framework for making stronger choices under uncertainty.",
+      "A practical C4 diagram set (Context, Container, Component) for a realistic system.",
+      "A lightweight way to capture decisions (ADR as framework) without documentation overload."
+    ],
+    "ctaTitle": "Join the next cohort",
+    "ctaBody": "Sign up for the waitlist and receive the next available cohort details first.",
+    "cta": "Join the waitlist"
+  },
+  "signupPopup": {
+    "title": "Join the architect thinking waitlist",
+    "intro": "Leave your details and I will notify you when new in-person training dates in Budapest are available.",
+    "firstNameLabel": "First name",
+    "emailLabel": "Email address",
+    "submitCta": "Sign up",
+    "submitLoading": "Submitting...",
+    "cancelCta": "Cancel",
+    "closeCta": "Close",
+    "closeLabel": "Close signup popup",
+    "successMessage": "Thanks, your signup is confirmed. I will contact you with upcoming dates.",
+    "validationEmailRequired": "Please provide your email address.",
+    "validationEmailInvalid": "Please enter a valid email address.",
+    "errorGeneric": "Signup failed. Please try again in a minute.",
+    "errorTimeout": "Request timed out. Please try again.",
+    "errorNetwork": "Network error while sending signup. Please try again."
   },
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",

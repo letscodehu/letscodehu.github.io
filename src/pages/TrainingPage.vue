@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
+import { RouterLink } from 'vue-router'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
 </script>
 
 <template>
@@ -108,6 +109,18 @@ const { t } = useI18n()
         {{ t('training.ctaNote') }}
       </p>
     </section>
+
+    <section class="section">
+      <BaseCard>
+        <template #title>{{ t('training.b2cCardTitle') }}</template>
+        <p class="b2c-copy">{{ t('training.b2cCardBody') }}</p>
+        <RouterLink :to="{ name: 'training-b2c-en', params: { lang: currentLang } }">
+          <BaseButton variant="ghost">
+            {{ t('training.b2cCardCta') }}
+          </BaseButton>
+        </RouterLink>
+      </BaseCard>
+    </section>
   </article>
 </template>
 
@@ -145,6 +158,11 @@ const { t } = useI18n()
 
 .list li + li {
   margin-top: 0.35rem;
+}
+
+.b2c-copy {
+  margin: 0 0 0.9rem;
+  color: var(--color-text-muted);
 }
 
 .grid {

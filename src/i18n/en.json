@@ -6,7 +6,8 @@
     "consulting": "Consulting",
     "about": "About",
     "contact": "Contact",
-    "caseStudies": "Case studies"
+    "caseStudies": "Case studies",
+    "blog": "Blog"
   },
   "common": {
     "companyName": "Letscode Solutions Kft",
@@ -519,6 +520,17 @@
     "tocAriaLabel": "Table of contents",
     "sidebarCtaTitle": "Want similar results?",
     "sidebarCtaBody": "If you're facing delivery or architecture challenges, we can discuss how training or focused consulting could help.",
+    "sidebarCtaLabel": "Get in touch"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "intro": "Articles on delivery, CI/CD, and how teams ship value to production.",
+    "backToList": "Back to blog",
+    "eyebrow": "Article",
+    "tocTitle": "In this article",
+    "tocAriaLabel": "Table of contents",
+    "sidebarCtaTitle": "Book a call",
+    "sidebarCtaBody": "If your pipeline is the bottleneck, we can map the gaps and build a leaner path to production.",
     "sidebarCtaLabel": "Get in touch"
   },
   "privacy": {

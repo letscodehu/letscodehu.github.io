@@ -6,7 +6,8 @@
     "consulting": "Tanácsadás",
     "about": "Rólam",
     "contact": "Kapcsolat",
-    "caseStudies": "Esettanulmányok"
+    "caseStudies": "Esettanulmányok",
+    "blog": "Blog"
   },
   "common": {
     "companyName": "Letscode Solutions Kft",
@@ -519,6 +520,17 @@
     "tocAriaLabel": "Tartalomjegyzék",
     "sidebarCtaTitle": "Szeretnél hasonló eredményeket?",
     "sidebarCtaBody": "Ha szállítási vagy architekturális kihívásokkal nézel szembe, beszéljünk arról, hogyan segíthet a képzés vagy a fókuszált tanácsadás.",
+    "sidebarCtaLabel": "Beszéljünk"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "intro": "Cikkek a szállításról, CI/CD-ről és arról, hogyan jut el az érték a productionbe.",
+    "backToList": "Vissza a bloghoz",
+    "eyebrow": "Cikk",
+    "tocTitle": "Ebben a cikkben",
+    "tocAriaLabel": "Tartalomjegyzék",
+    "sidebarCtaTitle": "Foglalj egy hívást",
+    "sidebarCtaBody": "Ha a pipeline a szűk keresztmetszet, feltérképezzük a hiányokat, és egy karcsúbb utat építünk a production felé.",
     "sidebarCtaLabel": "Beszéljünk"
   },
   "privacy": {

@@ -9,6 +9,7 @@ import {
   writeStoredLanguage,
 } from './composables/useI18n'
 import { caseStudies } from './data/case-studies'
+import { blogPosts } from './data/blog-posts'
 import { trackPageView } from './tracking'
 
 export const createApp = ViteSSG(App, { routes }, ({ router }) => {
@@ -57,6 +58,7 @@ export async function includedRoutes() {
     'contact',
     'privacy',
     'case-studies',
+    'blog',
   ]
 
   const paths: string[] = []
@@ -68,6 +70,9 @@ export async function includedRoutes() {
     }
     for (const cs of caseStudies) {
       paths.push(`/${lang}/case-studies/${cs.slug}`)
+    }
+    for (const post of blogPosts) {
+      paths.push(`/${lang}/blog/p/${post.slug}`)
     }
   }
 

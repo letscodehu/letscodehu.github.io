@@ -49,7 +49,7 @@
   },
   "home": {
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
-    "heroSubtitle": "Közép- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
+    "heroSubtitle": "Mid- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
     "heroEyebrow": "Képzések és tanácsadás szoftverfejlesztő csapatoknak.",
     "problemsTitle": "Tipikus problémák, amikkel találkozom",
     "problemsCardTitle": "Ami jellemzően félrecsúszik",
@@ -152,7 +152,7 @@
     ],
     "forWhoTitle": "Kiknek szól?",
     "forWho": [
-      "Közép- és senior fejlesztőknek, akik már felelnek éles rendszerekért.",
+      "Mid- és senior fejlesztőknek, akik már felelnek éles rendszerekért.",
       "Tech leaddel és engineering managerekkel, akik a csapat szintű standardekért és szállításért felelnek.",
       "Olyan csapatoknak, ahol „mindenki kicsit máshogy csinálja”, és szükség lenne közös alapokra."
     ],

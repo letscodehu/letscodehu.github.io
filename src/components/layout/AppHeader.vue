@@ -13,6 +13,7 @@ const navItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
   { name: t('nav.caseStudies'), to: { name: 'case-studies-en', params: { lang: currentLang.value } } },
+  { name: t('nav.blog'), to: { name: 'blog-list-en', params: { lang: currentLang.value } } },
   { name: t('nav.contact'), to: { name: 'contact-en', params: { lang: currentLang.value } } },
 ])
 

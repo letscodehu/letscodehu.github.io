@@ -9,6 +9,8 @@ import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import CaseStudiesPage from '../pages/CaseStudiesPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
+import BlogPage from '../pages/BlogPage.vue'
+import BlogPostDetailPage from '../pages/BlogPostDetailPage.vue'
 import PrivacyPage from '../pages/PrivacyPage.vue'
 
 const childRoutes: RouteRecordRaw[] = [
@@ -67,6 +69,19 @@ const childRoutes: RouteRecordRaw[] = [
     name: 'case-study-detail-en',
     component: CaseStudyDetailPage,
     meta: { titleKey: 'caseStudies.pageTitle' },
+  },
+  {
+    path: 'blog',
+    name: 'blog-list-en',
+    component: BlogPage,
+    alias: 'cikkek',
+    meta: { titleKey: 'blog.pageTitle' },
+  },
+  {
+    path: 'blog/p/:slug',
+    name: 'blog-post-detail-en',
+    component: BlogPostDetailPage,
+    meta: { titleKey: 'blog.pageTitle' },
   },
   {
     path: 'privacy',

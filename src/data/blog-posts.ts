@@ -248,6 +248,165 @@ Segítek tech cégeknek áthidalni a szakadékot a fejlesztői munka és az üzl
 
 Beszéljünk, és nézzük meg, hogyan tehetjük gördülékenyebbé a folyamataitokat!`,
   },
+  {
+    slug: 'adrs-are-useful-only-if-they-shape-the-decision',
+    titleEn: 'ADRs Are Useful Only If They Shape the Decision',
+    titleHu: 'Az ADR csak akkor ér valamit, ha alakítja a döntést',
+    excerptEn:
+      'ADRs fail when they become passive documentation. Their real value is the thinking and discussion before the decision is finalized.',
+    excerptHu:
+      'Az ADR akkor bukik el, ha csak dokumentáció marad. A valódi értéke az, amikor még a döntés előtt tisztázza a kontextust és tradeoffokat.',
+    contentEn: `If you'd rather watch this as a video, [watch it on YouTube](https://www.youtube.com/watch?v=7ts25z4ysLo).
+
+Most people will tell you that having ADRs is a good thing. They are not wrong.
+
+ADR stands for Architecture Decision Record. The idea is simple: when you make an important architectural decision, you write it down. You capture context, alternatives, tradeoffs, reasoning, and final choice.
+
+So when someone asks six months later, "Why this database?", "Why this queue?", or "Why three services?", you do not need to reconstruct the answer from Slack fragments and half-remembered meetings.
+
+In theory, that is incredibly valuable.
+
+## Why ADRs still fail in practice
+
+In many teams ADRs exist and still feel like a waste of time. Not because the concept is bad, but because the intended value never appears.
+
+A practical reason is discoverability. In a small team, searching Confluence is acceptable. In a larger organization, searching for one ADR returns hundreds of results, many outdated, archived, or irrelevant. The document is "there", but practically unreachable. And if engineers cannot find a decision quickly, they behave as if that decision was never documented.
+
+There is also a process failure mode: ADRs become ritual. Someone introduces templates, review meetings, and a governance flow. People continue writing documents, but real decisions happen elsewhere. The review meeting ends with polite nods, a formal approval, and no meaningful improvement in decision quality.
+
+## ADRs do not remove bias
+
+ADRs are supposed to compare options objectively, but the author is still human. If someone has a decade of SQL experience and little exposure to NoSQL, the framing can drift before anyone notices.
+
+SQL gets described as mature and proven. NoSQL gets described as uncertain and operationally risky. Both might be valid choices, but one gets better narrative framing because it is familiar. The ADR then captures preference with just enough logic around it to look neutral.
+
+So ADRs do not eliminate bias. They only make the written reasoning visible.
+
+## The real value is the thinking
+
+Most teams treat ADRs as documentation. Their real value is decision hygiene.
+
+When an ADR is written before commitment, it forces useful questions: what is the actual context, which alternatives are truly viable, what tradeoffs matter most, and what consequences are we accepting on purpose.
+
+If that thinking happens early, the ADR has done its job, even if nobody reads it again. If it is written after implementation starts, it becomes historical reporting with little influence on outcomes.
+
+## A costly example: KMS + CloudHSM
+
+On one product, we had to decide how to manage encryption keys for sensitive customer data. Security pressure was high, compliance expectations were strict, and we wanted a setup that looked strong in both audits and architecture diagrams.
+
+We picked AWS KMS with CloudHSM. On paper, it looked excellent: managed primitives, hardware-backed key protection, clear enterprise story. The decision meeting focused heavily on cryptographic guarantees and almost not at all on recovery constraints.
+
+The missing question was simple: what happens if the AWS account itself is compromised?
+
+Months later, during a resilience review, we discovered an unpleasant constraint. In an account takeover scenario, you cannot just recreate the exact KMS and CloudHSM trust relationship in a new account and continue business as usual. The coupling is not something you can rebuild in a clean environment on demand.
+
+That changed the risk picture completely. We had already built dependent services around the original setup, production data had been encrypted under that model, and key-handling paths were spread across multiple components.
+
+Fixing the gap was painful. We had to redesign parts of the key lifecycle, introduce migration steps for encrypted data, coordinate downtime windows, and retest incident procedures end to end. It took weeks and consumed capacity that should have gone to product work.
+
+Would an ADR template alone have saved us? No. But a better decision conversation probably would have. One person asking "show me the DR playbook for account compromise" could have forced the right investigation before implementation.
+
+That is the core point: the value is not the file. The value is the conversation the file forces.
+
+## When ADRs actually work
+
+In practice, a few rules help:
+
+1. Use ADRs for decisions that are expensive to reverse (data stores, boundaries, integration patterns).
+2. Write them before final commitment, not after implementation starts.
+3. Keep them short and focused: context, options, tradeoffs, decision, consequences.
+
+Retrospective ADRs can still be useful at the beginning, as practice for better decision thinking. But the long-term goal is proactive ADRs that shape decisions in real time.
+
+## Final thought
+
+ADRs are not useless.
+
+They fail when they are treated as passive documentation.
+
+If your ADR did not influence the decision, it is not really an architecture decision record. It is just documentation.
+
+If you want better architectural decisions in your team, I can help you design a lean ADR workflow that improves discussion quality and reduces expensive blind spots before implementation.
+
+[Contact me and let's improve your decision process](/en/contact).`,
+    contentHu: `Ha inkább videón néznéd meg, [itt megtalálod YouTube-on](https://www.youtube.com/watch?v=7ts25z4ysLo).
+
+Sokan azt mondják, hogy az ADR jó dolog. És igazuk is van.
+
+Az ADR (Architecture Decision Record) lényege egyszerű: ha fontos architekturális döntést hoztok, azt leírjátok. Kontextus, opciók, érvelés, végső döntés.
+
+Így amikor fél év múlva valaki megkérdezi, hogy miért pont ezt az adatbázist választottátok, miért van itt queue, vagy miért három szolgáltatásra van bontva a rendszer, nem Slack threadeket és félhomályos meeting-emlékeket kell visszafejteni.
+
+Elvben ez óriási érték.
+
+## Miért bukik el mégis sok ADR?
+
+Sok csapatnál az ADR-ek léteznek, mégis időpocsékolásnak érződnek. Nem azért, mert rossz az ötlet, hanem mert a valódi haszon nem jelenik meg.
+
+Az első probléma a megtalálhatóság. Kisebb csapatban még működik a dokumentációs kereső. Nagyobb szervezetben viszont egyetlen ADR-keresésre jön 200 találat: archív oldal, régi meetingjegyzet, félig releváns belsős wiki. A döntés "elvileg megvan", gyakorlatban viszont nincs kéznél.
+
+A második probléma, hogy az ADR könnyen rituálévá válik. Van template, van review meeting, van approval, de a valódi döntések nem ezekben a fórumokban születnek. A csapat kipipál egy folyamatlépést, miközben a döntéshozatali minőség nem javul.
+
+## Az ADR nem szünteti meg a bias-t
+
+Az ADR formailag bemutathat több opciót, mégis torzíthat. Ha az író SQL-ben magabiztos és NoSQL-ben bizonytalan, a megfogalmazás eleve billen:
+
+- az SQL érettnek és megbízhatónak hangzik,
+- a NoSQL kockázatosnak és túl bonyolultnak.
+
+Mindkettő lehet valid út, mégis az ismerős technológia kap jobb narratívát. Az ADR az érvelést rögzíti, de nem teszi automatikusan objektívvé.
+
+## A valódi érték: a közös gondolkodás
+
+A legtöbb csapat dokumentációnak tekinti az ADR-t, pedig az igazi értéke a döntés előtti gondolkodás kikényszerítése.
+
+Mi a valódi kontextus?  
+Mely alternatívák életképesek ténylegesen?  
+Mely tradeoffok számítanak igazán?  
+Milyen következményeket fogadunk el tudatosan?
+
+Ha ezekre még a végleges döntés előtt válasz születik, az ADR működik. Ha csak utólag írjátok meg, akkor inkább történeti napló.
+
+## Egy drága példa: KMS + CloudHSM
+
+Egy korábbi terméknél arról döntöttünk, hogyan tároljuk a titkosítási kulcsokat. Az üzleti oldal nyilván erős biztonsági sztorit akart, a compliance oldal auditálhatóságot, a technikai oldal pedig minél kevesebb operatív terhet.
+
+AWS KMS + CloudHSM kombináció mellett mentünk el. Papíron ez tökéletesen nézett ki: managed szolgáltatás, hardveres kulcsvédelem, enterprise-kompatibilis security narrative. A döntési beszélgetésben viszont túl sok fókusz ment arra, hogy "mennyire erős kriptográfiailag", és túl kevés arra, hogy "mi történik, ha az account szintjén van baj".
+
+A hiányzó kérdés egyszerű volt: mi a disaster recovery terv account compromise esetére?
+
+Ezt nem bontottuk ki időben. Hónapokkal később, egy reziliencia-áttekintésen derült ki, hogy ha az AWS account kompromittálódik, a KMS és CloudHSM kapcsolatát nem tudod csak úgy egy másik accountban reprodukálni, mintha semmi nem történt volna.
+
+Ez alapjaiban írta át a kockázatot. Addigra a rendszer már erre épült, több komponens kulcskezelése függött ettől, és éles adatok voltak az adott modell szerint titkosítva.
+
+A korrekció nem "egy gyors ticket" volt. Újra kellett tervezni a kulcs-életciklus egy részét, migrációs folyamatot építeni a már titkosított adatokhoz, koordinálni az átállást, és végigtesztelni az incidenskezelést. Hetek mentek el rá, jelentős termékfejlesztési kapacitás árán.
+
+Megoldotta volna ezt önmagában egy ADR sablon? Nem. De ha a döntésbe korán bevonunk még egy-két nézőpontot, és valaki felteszi a DR kérdést, nagy eséllyel még implementáció előtt felszínre jön ez a vakfolt.
+
+Ez a lényeg: nem a dokumentum az érték, hanem a beszélgetés, amit kikényszerít.
+
+## Mikor működik jól az ADR?
+
+Tapasztalatból három egyszerű szabály:
+
+1. Olyan döntésekhez használd, amelyeket drága visszafordítani (adatbázis, kommunikációs minta, rendszerhatárok).
+2. A végleges döntés előtt készüljön, ne implementáció után.
+3. Legyen egyszerű: kontextus, opciók, tradeoffok, döntés, következmények.
+
+Kezdetben retrospektív ADR-ek is hasznosak lehetnek gyakorlásként, de a cél az, hogy az ADR valós időben formálja a döntést.
+
+## Záró gondolat
+
+Az ADR nem haszontalan.
+
+Akkor bukik el, ha csak passzív dokumentáció marad.
+
+Ha az ADR-ed nem befolyásolta magát a döntést, akkor az nem igazán architecture decision record. Az csak dokumentáció.
+
+Ha szeretnél jobb architekturális döntéseket a csapatodban, segítek kialakítani egy könnyű, működő ADR folyamatot, ami még implementáció előtt felszínre hozza a vakfoltokat.
+
+[Írj, és nézzük meg együtt a döntési folyamataitokat](/hu/contact).`,
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

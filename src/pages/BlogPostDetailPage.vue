@@ -129,9 +129,6 @@ watch(
         >
           ← {{ t('blog.backToList') }}
         </RouterLink>
-        <p class="eyebrow">
-          {{ t('blog.eyebrow') }}
-        </p>
         <h1 class="page-title">
           {{ postTitle }}
         </h1>
@@ -206,12 +203,6 @@ watch(
 
 .back-link:hover {
   color: var(--color-primary);
-}
-
-.eyebrow {
-  margin: 0 0 0.35rem;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
 }
 
 .page-title {

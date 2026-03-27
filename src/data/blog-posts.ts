@@ -6,6 +6,7 @@ export interface BlogPost {
   excerptHu: string
   contentEn: string
   contentHu: string
+  videoUrl?: string
 }
 
 export const blogPosts: BlogPost[] = [
@@ -17,9 +18,8 @@ export const blogPosts: BlogPost[] = [
       'Developers ship fast; production does not. The bottleneck is not people—it is your pipeline, process, and architecture of delivery.',
     excerptHu:
       'Gyorsan jön a kód, az éles környezet mégis napokig változatlan. A szűk keresztmetszet nem a fejlesztőkben van, hanem a pipeline-ban.',
-    contentEn: `If you'd rather watch this as a video, [watch it on YouTube](https://www.youtube.com/watch?v=C4pPAub7ZbM).
-
-Your developers are fast. Too fast, actually.
+    videoUrl: 'https://www.youtube.com/watch?v=C4pPAub7ZbM',
+    contentEn: `Your developers are fast. Too fast, actually.
 
 They ship code in hours. AI writes half of it. Pull requests pile up. And yet your production environment hasn't changed in three days.
 
@@ -135,9 +135,7 @@ If you're a CTO or a Lead Engineer, and you feel like your team is "buffering" i
 I help tech companies bridge the gap between engineering effort and business value. We'll identify the bottlenecks in your process—whether they're in your code, your architecture, or your decision-making—and build a leaner, smarter path to production.
 
 Book a Call to see how we can work together.`,
-    contentHu: `Ha inkább videón néznéd meg, [itt megtalálod YouTube-on](https://www.youtube.com/watch?v=C4pPAub7ZbM).
-
-A fejlesztőid gyorsak. Talán túl gyorsak is.
+    contentHu: `A fejlesztőid gyorsak. Talán túl gyorsak is.
 
 Órák alatt kerül be a kód a repóba, az AI megírja a felét, a pull requestek pedig tornyosulnak. Mégis, az éles környezet három napja változatlan.
 
@@ -256,9 +254,8 @@ Beszéljünk, és nézzük meg, hogyan tehetjük gördülékenyebbé a folyamata
       'ADRs fail when they become passive documentation. Their real value is the thinking and discussion before the decision is finalized.',
     excerptHu:
       'Az ADR akkor bukik el, ha csak dokumentáció marad. A valódi értéke az, amikor még a döntés előtt tisztázza a kontextust és tradeoffokat.',
-    contentEn: `If you'd rather watch this as a video, [watch it on YouTube](https://www.youtube.com/watch?v=7ts25z4ysLo).
-
-Most people will tell you that having ADRs is a good thing. They are not wrong.
+    videoUrl: 'https://www.youtube.com/watch?v=7ts25z4ysLo',
+    contentEn: `Most people will tell you that having ADRs is a good thing. They are not wrong.
 
 ADR stands for Architecture Decision Record. The idea is simple: when you make an important architectural decision, you write it down. You capture context, alternatives, tradeoffs, reasoning, and final choice.
 
@@ -329,9 +326,7 @@ If your ADR did not influence the decision, it is not really an architecture dec
 If you want better architectural decisions in your team, I can help you design a lean ADR workflow that improves discussion quality and reduces expensive blind spots before implementation.
 
 [Contact me and let's improve your decision process](/en/contact).`,
-    contentHu: `Ha inkább videón néznéd meg, [itt megtalálod YouTube-on](https://www.youtube.com/watch?v=7ts25z4ysLo).
-
-Sokan azt mondják, hogy az ADR jó dolog. És igazuk is van.
+    contentHu: `Sokan azt mondják, hogy az ADR jó dolog. És igazuk is van.
 
 Az ADR (Architecture Decision Record) lényege egyszerű: ha fontos architekturális döntést hoztok, azt leírjátok. Kontextus, opciók, érvelés, végső döntés.
 
@@ -415,9 +410,8 @@ Ha szeretnél jobb architekturális döntéseket a csapatodban, segítek kialak�
       'Before moving to Kubernetes, verify what actually breaks first. Many scaling problems come from architecture and unclear boundaries, not missing clusters.',
     excerptHu:
       'Mielőtt Kubernetesre váltasz, mérd meg, mi a valódi limit. A skálázási gondok gyakran nem az infrastruktúrán, hanem az architektúrán csúsznak el.',
-    contentEn: `If you'd rather watch this as a video, [watch it on YouTube](https://youtu.be/ah5V42lkuds).
-
-What if your scaling problem has nothing to do with infrastructure?
+    videoUrl: 'https://youtu.be/ah5V42lkuds',
+    contentEn: `What if your scaling problem has nothing to do with infrastructure?
 
 What if the real problem is architecture?
 
@@ -527,9 +521,7 @@ Distributed problems are harder than local ones. Always.
 If your team is unsure whether the next scaling step is architecture work, platform work, or both, I can help you map the actual bottlenecks first and choose the simplest path that keeps delivery fast.
 
 [Contact me and let's find the right scaling path](/en/contact).`,
-    contentHu: `Ha inkább videón néznéd meg, [itt megtalálod YouTube-on](https://youtu.be/ah5V42lkuds).
-
-Mi van, ha a skálázási problémádnak semmi köze az infrastruktúrához?
+    contentHu: `Mi van, ha a skálázási problémádnak semmi köze az infrastruktúrához?
 
 Mi van, ha valójában az architektúra a szűk keresztmetszet?
 

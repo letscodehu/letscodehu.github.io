@@ -4,6 +4,8 @@
 
 Long-form articles live in [`src/data/blog-posts.ts`](../src/data/blog-posts.ts). Each post has a shared `slug`, separate English and Hungarian fields (`titleEn` / `titleHu`, `excerptEn` / `excerptHu`, `contentEn` / `contentHu`), and markdown body content rendered with `marked` on [`BlogPostDetailPage.vue`](../src/pages/BlogPostDetailPage.vue).
 
+Optional `videoUrl` (YouTube watch or youtu.be URL): when set, the post detail page shows a dedicated block above the article body with localized copy and a text link that opens the video on YouTube in a new tab. Do not duplicate the video link inside markdown.
+
 ## Routes
 
 - List: `/en/blog`, `/hu/blog` (Hungarian alias: `/hu/cikkek`).

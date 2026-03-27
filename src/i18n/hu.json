@@ -531,7 +531,11 @@
     "tocAriaLabel": "Tartalomjegyzék",
     "sidebarCtaTitle": "Foglalj egy hívást",
     "sidebarCtaBody": "Ha a pipeline a szűk keresztmetszet, feltérképezzük a hiányokat, és egy karcsúbb utat építünk a production felé.",
-    "sidebarCtaLabel": "Beszéljünk"
+    "sidebarCtaLabel": "Beszéljünk",
+    "videoBlockTitle": "Nézd meg videón",
+    "videoBlockBody": "Ugyanez a tartalom YouTube-on is elérhető, ha inkább videóban hallanád.",
+    "videoWatchButton": "Megnézem YouTube-on",
+    "videoBlockAriaLabel": "A cikk videó változata"
   },
   "privacy": {
     "pageTitle": "Adatkezelési tájékoztató",

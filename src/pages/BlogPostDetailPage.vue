@@ -134,6 +134,55 @@ watch(
         </h1>
       </header>
 
+      <div
+        v-if="post.videoUrl"
+        class="video-block"
+        role="region"
+        :aria-label="t('blog.videoBlockAriaLabel')"
+      >
+        <div class="video-block-header">
+          <svg
+            class="video-block-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="2"
+              y="4"
+              width="20"
+              height="16"
+              rx="3"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M10 8.5v7l5.5-3.5L10 8.5z"
+              fill="currentColor"
+            />
+          </svg>
+          <div class="video-block-headings">
+            <p class="video-block-title">
+              {{ t('blog.videoBlockTitle') }}
+            </p>
+            <p class="video-block-body">
+              {{ t('blog.videoBlockBody') }}
+            </p>
+            <a
+              :href="post.videoUrl"
+              class="video-block-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ t('blog.videoWatchButton') }}
+              <span class="video-block-link-external" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="content-card">
         <div class="markdown-body" v-html="contentHtml" />
       </div>
@@ -208,6 +257,76 @@ watch(
 .page-title {
   margin: 0;
   font-size: 1.85rem;
+}
+
+.video-block {
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  max-width: 65ch;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.video-block-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.video-block-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-primary);
+}
+
+.video-block-headings {
+  min-width: 0;
+}
+
+.video-block-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.video-block-body {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.video-block-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  width: fit-content;
+}
+
+.video-block-link:hover {
+  color: var(--color-primary-strong);
+}
+
+.video-block-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.video-block-link-external {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  text-decoration: none;
 }
 
 .content-card {

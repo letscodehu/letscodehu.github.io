@@ -531,7 +531,11 @@
     "tocAriaLabel": "Table of contents",
     "sidebarCtaTitle": "Book a call",
     "sidebarCtaBody": "If your pipeline is the bottleneck, we can map the gaps and build a leaner path to production.",
-    "sidebarCtaLabel": "Get in touch"
+    "sidebarCtaLabel": "Get in touch",
+    "videoBlockTitle": "Watch as video",
+    "videoBlockBody": "Same content on YouTube if you prefer video.",
+    "videoWatchButton": "Watch on YouTube",
+    "videoBlockAriaLabel": "Video version of this article"
   },
   "privacy": {
     "pageTitle": "Privacy and data processing",

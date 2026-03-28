@@ -23,6 +23,10 @@
   --color-primary-soft: rgba(29, 78, 216, 0.16);
   --color-gradient-start: #dce9ff;
   --color-gradient-end: #f3f6fb;
+  --color-button-solid-bg: #1d4ed8;
+  --color-button-solid-bg-hover: #1e40af;
+  --color-button-solid-fg: #ffffff;
+  --color-button-solid-shadow: 0 10px 24px rgba(29, 78, 216, 0.28);
 }
 
 .theme-light {
@@ -41,6 +45,10 @@
   --color-gradient-end: #f3f6fb;
   --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 14px 38px rgba(15, 23, 42, 0.08);
+  --color-button-solid-bg: #1d4ed8;
+  --color-button-solid-bg-hover: #1e40af;
+  --color-button-solid-fg: #ffffff;
+  --color-button-solid-shadow: 0 10px 24px rgba(29, 78, 216, 0.28);
 }
 
 .theme-dark {
@@ -59,6 +67,10 @@
   --color-gradient-end: #04050a;
   --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.55);
   --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --color-button-solid-bg: #3b82f6;
+  --color-button-solid-bg-hover: #2563eb;
+  --color-button-solid-fg: #ffffff;
+  --color-button-solid-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
 *,

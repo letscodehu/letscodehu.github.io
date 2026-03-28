@@ -319,14 +319,14 @@ watch(
   font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-button-solid-bg);
+  color: var(--color-button-solid-fg);
   transition: background-color 0.16s ease, transform 0.16s ease;
 }
 
 .sidebar-cta-button:hover {
-  background-color: var(--color-primary-strong);
-  color: #fff;
+  background-color: var(--color-button-solid-bg-hover);
+  color: var(--color-button-solid-fg);
   transform: translateY(-1px);
 }
 </style>

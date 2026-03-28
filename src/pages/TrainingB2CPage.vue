@@ -22,7 +22,11 @@ function closeSignup() {
     <header class="hero">
       <p class="hero-eyebrow">{{ t('trainingB2c.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2c.pageTitle') }}</h1>
-      <p class="hero-subtitle">{{ t('trainingB2c.intro') }}</p>
+      <div class="hero-intro">
+        <p v-for="(paragraph, index) in t('trainingB2c.intro')" :key="index" class="hero-subtitle">
+          {{ paragraph }}
+        </p>
+      </div>
       <div class="hero-actions">
         <BaseButton @click="openSignup">
           {{ t('trainingB2c.cta') }}
@@ -32,42 +36,57 @@ function closeSignup() {
 
     <section class="section">
       <header class="section-header">
-        <h2>{{ t('trainingB2c.formatTitle') }}</h2>
+        <h2>{{ t('trainingB2c.problemTitle') }}</h2>
       </header>
       <BaseCard>
         <ul class="list">
-          <li v-for="item in t('trainingB2c.format')" :key="item">
+          <li v-for="item in t('trainingB2c.problem')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+        <p class="section-closing">{{ t('trainingB2c.problemClosing') }}</p>
+      </BaseCard>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('trainingB2c.solutionTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <div class="prose">
+          <p>{{ t('trainingB2c.solutionLead') }}</p>
+          <p>{{ t('trainingB2c.solutionAdr') }}</p>
+          <p>{{ t('trainingB2c.solutionC4') }}</p>
+          <p>{{ t('trainingB2c.solutionClosing') }}</p>
+        </div>
+      </BaseCard>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('trainingB2c.takeawayTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <ul class="list">
+          <li v-for="item in t('trainingB2c.takeaways')" :key="item">
             {{ item }}
           </li>
         </ul>
       </BaseCard>
     </section>
 
-    <section class="section grid grid--two">
-      <div>
-        <header class="section-header">
-          <h2>{{ t('trainingB2c.forWhoTitle') }}</h2>
-        </header>
-        <BaseCard>
-          <ul class="list">
-            <li v-for="item in t('trainingB2c.forWho')" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </BaseCard>
-      </div>
-      <div>
-        <header class="section-header">
-          <h2>{{ t('trainingB2c.notForTitle') }}</h2>
-        </header>
-        <BaseCard>
-          <ul class="list">
-            <li v-for="item in t('trainingB2c.notFor')" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </BaseCard>
-      </div>
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('trainingB2c.howItWorksTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <ul class="list">
+          <li v-for="item in t('trainingB2c.howItWorks')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+        <p class="section-closing">{{ t('trainingB2c.howItWorksClosing') }}</p>
+      </BaseCard>
     </section>
 
     <section class="section">
@@ -104,17 +123,31 @@ function closeSignup() {
       </div>
     </section>
 
-    <section class="section">
-      <header class="section-header">
-        <h2>{{ t('trainingB2c.takeawayTitle') }}</h2>
-      </header>
-      <BaseCard>
-        <ul class="list">
-          <li v-for="item in t('trainingB2c.takeaways')" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </BaseCard>
+    <section class="section grid grid--two">
+      <div>
+        <header class="section-header">
+          <h2>{{ t('trainingB2c.forWhoTitle') }}</h2>
+        </header>
+        <BaseCard>
+          <ul class="list">
+            <li v-for="item in t('trainingB2c.forWho')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
+      </div>
+      <div>
+        <header class="section-header">
+          <h2>{{ t('trainingB2c.notForTitle') }}</h2>
+        </header>
+        <BaseCard>
+          <ul class="list">
+            <li v-for="item in t('trainingB2c.notFor')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
+      </div>
     </section>
 
     <section class="section cta">
@@ -154,11 +187,19 @@ function closeSignup() {
   line-height: 1.3;
 }
 
+.hero-intro {
+  max-width: 50rem;
+}
+
 .hero-subtitle {
   margin: 0;
   font-size: 1rem;
   color: var(--color-text-muted);
-  max-width: 50rem;
+  line-height: 1.55;
+}
+
+.hero-subtitle + .hero-subtitle {
+  margin-top: 0.75rem;
 }
 
 .hero-actions {
@@ -178,6 +219,24 @@ function closeSignup() {
   margin: 0 0 0.8rem;
   font-size: 0.93rem;
   color: var(--color-text-muted);
+}
+
+.section-closing {
+  margin: 0.75rem 0 0;
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.prose p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.5;
 }
 
 .grid {

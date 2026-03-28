@@ -200,9 +200,9 @@ onMounted(() => {
 }
 
 .cookie-btn--primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-button-solid-bg);
+  border-color: var(--color-button-solid-bg);
+  color: var(--color-button-solid-fg);
 }
 
 .cookie-btn--secondary:hover {

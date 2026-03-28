@@ -44,13 +44,13 @@ const props = withDefaults(
 }
 
 .button--primary {
-  background-color: var(--color-primary);
-  color: #fff;
-  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.28);
+  background-color: var(--color-button-solid-bg);
+  color: var(--color-button-solid-fg);
+  box-shadow: var(--color-button-solid-shadow);
 }
 
 .button--primary:hover {
-  background-color: var(--color-primary-strong);
+  background-color: var(--color-button-solid-bg-hover);
   transform: translateY(-1px);
 }
 

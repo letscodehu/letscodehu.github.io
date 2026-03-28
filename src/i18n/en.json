@@ -184,38 +184,57 @@
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
     "b2cCardTitle": "Individual developer track",
-    "b2cCardBody": "Looking for an individual developer format? See the 2-day decision-focused architect mindset training with a strong C4 focus.",
+    "b2cCardBody": "Looking for an individual track? Two-day, in-person Budapest workshop: technical decisions, C4, and lightweight ADRs—for developers moving past ticket-only work.",
     "b2cCardCta": "See training",
     "cta": "Discuss a training need",
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "trainingB2c": {
-    "pageTitle": "2-day architect mindset for developers",
-    "eyebrow": "Training for individual developers",
-    "intro": "A practical 2-day program focused on stronger technical decision-making. ADR appears only as a lightweight documentation framework, while C4 supports shared system reasoning.",
-    "formatTitle": "Format and attendance",
-    "format": [
-      "Small-group training held in Budapest.",
-      "In-person attendance only.",
-      "Remote participation is not available.",
-      "Shared whiteboard drawing and modeling are core parts of the training format."
+    "pageTitle": "You ship tickets. The system stays fuzzy.",
+    "eyebrow": "For individual developers · 2 days · Budapest · in person only",
+    "intro": [
+      "You implement features, but you don't really see the whole picture. Bigger calls feel like guesswork.",
+      "Architecture discussions happen without you—or you're in the room without language that sticks. System design interviews feel improvised.",
+      "This workshop is two hands-on days on technical decisions, C4, and lightweight ADRs so you can explain what you built, defend trade-offs, and sound like the engineer who shapes the system—not only the one who codes it."
     ],
+    "problemTitle": "The problem",
+    "problem": [
+      "You're deep in implementation, but dependencies, boundaries, and failure modes stay vague.",
+      "Every meaningful choice (data model, integration, split services, \"temporary\" shortcuts) feels uncertain when it matters.",
+      "You're not in—or not heard in—conversations where real technical direction gets set.",
+      "When someone asks \"why did we do it this way?\", the honest answer is often \"nobody remembers.\"",
+      "System design interviews expose the gap: you know pieces, but not how to tell a coherent story fast."
+    ],
+    "problemClosing": "If that reads like your week, you're the audience.",
+    "solutionTitle": "What this actually is",
+    "solutionLead": "This is not a slide deck about \"mindset.\" It's a small-group, in-person workshop where you work through real decision patterns: separating constraints from opinions, comparing options by risk and cost, and leaving a short paper trail when it counts.",
+    "solutionAdr": "ADRs show up for what they are: a small, repeatable format for \"what we decided, what else we considered, what breaks if we're wrong\"—not enterprise paperwork.",
+    "solutionC4": "C4 is how you make the system legible: context, containers, components—so you and others align on boundaries and ownership instead of arguing from different mental models.",
+    "solutionClosing": "Together: decisions you can justify, diagrams you can point at, and a way to talk to product and leadership without drowning in jargon.",
+    "howItWorksTitle": "How it works",
+    "howItWorks": [
+      "Two days, Budapest, small group. In person only—shared whiteboard and modeling are core; no remote stream.",
+      "Short inputs, heavy practice: you're comparing options, sketching, and writing—not passively listening.",
+      "You bring your own mess: a system you work on, or a decision that still bothers you. We also use realistic examples so nobody is blocked if they can't share internals."
+    ],
+    "howItWorksClosing": "The day-by-day breakdown is in the Day 1 and Day 2 sections below. You leave with things you can paste into Confluence, Notion, or a repo—not a certificate and vague \"insight.\"",
     "forWhoTitle": "Who this is for",
     "forWho": [
-      "Mid-senior developers who want to reason like an architect, not only implement tickets.",
-      "Developers preparing for senior, staff, or tech lead responsibilities.",
-      "Engineers who need clearer communication with product and non-technical stakeholders."
+      "Mid-level to senior developers who want senior, staff, or tech lead trajectories—not another year of only closing Jira issues.",
+      "People who want system fluency: how pieces connect, fail, and evolve—not just framework APIs.",
+      "Anyone who wants interview-relevant clarity: explain architecture and trade-offs in a structured way under time pressure.",
+      "Engineers who are tired of being overruled without a vocabulary to push back constructively."
     ],
     "notForTitle": "Who this is not for",
     "notFor": [
-      "Absolute beginners still learning programming foundations.",
-      "Developers looking for a passive, talk-only event without practical exercises.",
-      "Participants who do not want to review decisions together and capture short decision records.",
-      "People who need a fully remote format."
+      "Beginners still learning core programming.",
+      "Anyone who wants a talk-only event with no exercises or peer review.",
+      "People unwilling to sketch, write, and defend a decision in the room.",
+      "Anyone who needs remote—this format doesn't translate without the whiteboard."
     ],
     "day1": {
-      "title": "Day 1 - Better technical decisions under uncertainty",
-      "goal": "Build practical decision habits under real constraints; ADR is treated as a lightweight record, not the main objective.",
+      "title": "Day 1 — Decisions under pressure",
+      "goal": "Clarify the real decision, compare trade-offs, and capture short records when it matters—ADR as a lightweight framework, not documentation theater.",
       "sessions": [
         {
           "title": "Clarifying the real decision",
@@ -241,8 +260,8 @@
       ]
     },
     "day2": {
-      "title": "Day 2 - Making decisions visible with C4",
-      "goal": "Communicate decisions with a shared visual language so engineers and stakeholders align on system intent.",
+      "title": "Day 2 — Making it visible with C4",
+      "goal": "Model the system with C4, spot coupling and ownership gaps, and tie diagrams plus short decision notes into one narrative.",
       "sessions": [
         {
           "title": "C4 context and container views",
@@ -267,22 +286,24 @@
         }
       ]
     },
-    "takeawayTitle": "What you leave with",
+    "takeawayTitle": "What you'll leave with",
     "takeaways": [
-      "A practical decision framework for making stronger choices under uncertainty.",
-      "A practical C4 diagram set (Context, Container, Component) for a realistic system.",
-      "A lightweight way to capture decisions (ADR as framework) without documentation overload."
+      "A reusable decision checklist you can use on real tickets and design discussions—not a one-off theory.",
+      "One or two C4 views (context, container, component) for your system or a concrete example from the room—artifacts you can drop into docs or interview prep.",
+      "ADR drafts you wrote during the workshop (with feedback), so you've already done it once before you're back at work.",
+      "The ability to walk someone through your system in a few minutes with a diagram plus a short decision story.",
+      "Sharper prep for system design-style conversations and for being taken seriously when trade-offs actually get decided."
     ],
-    "ctaTitle": "Join the next cohort",
-    "ctaBody": "Sign up for the waitlist and receive the next available cohort details first.",
-    "cta": "Join the waitlist"
+    "ctaTitle": "Next step",
+    "ctaBody": "Reserve a spot on the waitlist—and when I follow up with Budapest dates, you can send a short description of a system you work on (or two decisions you still find hard to justify). A few sentences is enough. I use that to tune examples and to make sure the cohort is a fit.",
+    "cta": "Join the waitlist — tell me about your system"
   },
   "signupPopup": {
-    "title": "Join the architect thinking waitlist",
-    "intro": "Leave your details and I will notify you when new in-person training dates in Budapest are available.",
+    "title": "Join the training waitlist",
+    "intro": "Add your email and first name. When I write with Budapest cohort dates, reply with a few sentences about a system you work on or decisions you struggle with if you want—that helps me tune examples. No essay required.",
     "firstNameLabel": "First name",
     "emailLabel": "Email address",
-    "submitCta": "Sign up",
+    "submitCta": "Join the waitlist",
     "submitLoading": "Submitting...",
     "cancelCta": "Cancel",
     "closeCta": "Close",

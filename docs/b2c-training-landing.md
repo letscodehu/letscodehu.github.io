@@ -34,3 +34,18 @@
   - available only in-person (no remote joining).
 - Added rationale to the visible copy: shared whiteboard drawing/modeling is a core part of the training, so online participation is not supported.
 - Updated both the `notFor` list and signup popup intro to reinforce that waitlist notifications refer to in-person Budapest cohorts.
+
+## B2C copy refresh (pain-first narrative)
+- Reordered `TrainingB2CPage` to: hero → problem → solution → takeaways → how it works → day 1/2 session detail → who / not for → CTA (no separate credibility block).
+- Replaced abstract “architect mindset” framing with concrete developer pain, career-relevant outcomes, and logistics folded into “How it works” (removed standalone `format` i18n block).
+- Waitlist popup copy matches the personalized CTA; still collects first name and email only (context note is invited on follow-up email, not a new Mailchimp field).
+
+## Hungarian copy pass
+- Refined `trainingB2c` and `training.b2cCardBody` in `hu.json` for more natural developer Hungarian: fixed a `forWho` agreement error, reduced calques and mixed English (e.g. trade-off → kompromisszum, system design → rendszertervező), aligned day-2 “Containerek” with konténer terminology, and softened CTA wording.
+
+## Redundancy reduction
+- Trimmed `trainingB2c.howItWorks` in `en.json` and `hu.json` to logistics + format + bring-your-context only; removed day 1/2 bullets that duplicated `day1`/`day2` session grids.
+- Extended `howItWorksClosing` to point readers to the day sections below for the detailed schedule.
+
+## Hero intro layout
+- `trainingB2c.intro` is a string array (EN/HU); `TrainingB2CPage` renders each entry as its own paragraph with vertical spacing for readability.

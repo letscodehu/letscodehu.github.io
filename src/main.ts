@@ -8,8 +8,7 @@ import {
   readStoredLanguage,
   writeStoredLanguage,
 } from './composables/useI18n'
-import { caseStudies } from './data/case-studies'
-import { blogPosts } from './data/blog-posts'
+import { getPrerenderPathnames } from './seo/prerender-paths'
 import { trackPageView } from './tracking'
 
 export const createApp = ViteSSG(App, { routes }, ({ router }) => {
@@ -18,6 +17,15 @@ export const createApp = ViteSSG(App, { routes }, ({ router }) => {
     if (to.path !== '/' && to.path.endsWith('/')) {
       return {
         path: to.path.replace(/\/$/, ''),
+        query: to.query,
+        hash: to.hash,
+        replace: true,
+      }
+    }
+
+    if (to.path === '/hu/privacy') {
+      return {
+        path: '/hu/adatkezeles',
         query: to.query,
         hash: to.hash,
         replace: true,
@@ -47,36 +55,5 @@ export const createApp = ViteSSG(App, { routes }, ({ router }) => {
 })
 
 export async function includedRoutes() {
-  const langs: ('en' | 'hu')[] = ['en', 'hu']
-
-  const staticPaths = [
-    'training',
-    'training/architect-mindset',
-    'training/workshop-adr',
-    'consulting',
-    'about',
-    'contact',
-    'privacy',
-    'case-studies',
-    'blog',
-  ]
-
-  const paths: string[] = []
-
-  for (const lang of langs) {
-    paths.push(`/${lang}`)
-    for (const p of staticPaths) {
-      paths.push(`/${lang}/${p}`)
-    }
-    for (const cs of caseStudies) {
-      paths.push(`/${lang}/case-studies/${cs.slug}`)
-    }
-    for (const post of blogPosts) {
-      paths.push(`/${lang}/blog/p/${post.slug}`)
-    }
-  }
-
-  paths.push('/hu/adatkezeles')
-
-  return paths
+  return getPrerenderPathnames()
 }

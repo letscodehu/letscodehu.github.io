@@ -610,5 +610,20 @@
     "cookieControlsBody": "Az opcionális sütik teljes körűen elfogadhatók vagy kategóriánként állíthatók (analitika, marketing). A beállítás helyben tárolódik, így a döntésed megmarad.",
     "contactTitle": "Kérdések",
     "contactBody": "Ha kérdésed van az oldalon történő adatkezeléssel kapcsolatban, kérlek használd a Kapcsolat oldalt."
+  },
+  "seo": {
+    "defaultOgImageAlt": "Letscode Solutions — képzés és tanácsadás fejlesztői csapatoknak",
+    "descriptions": {
+      "home": "Terem- és online képzés, valamint tanácsadás tapasztalt fejlesztői csapatoknak: DevOps, architektúra, ADR, C4, CI/CD és biztonságosabb szállítás.",
+      "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
+      "trainingB2c": "Két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és könnyű ADR-ek—a ticketektől a rendszerszintű gondolkodásig.",
+      "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
+      "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
+      "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",
+      "contact": "Lépj kapcsolatba a Letscode Solutionsszel képzés, workshop vagy tanácsadás egyeztetéséhez.",
+      "caseStudies": "Esettanulmányok valós képzési és tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
+      "blog": "Cikkek CI/CD-ről, szállítási szűk keresztmetszetekről, architekturális döntésekről és a production felé vezető útról.",
+      "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások."
+    }
   }
 }

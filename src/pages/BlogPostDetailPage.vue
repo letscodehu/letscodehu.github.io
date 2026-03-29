@@ -5,6 +5,8 @@ import { useHead } from '@unhead/vue'
 import { useI18n } from '../composables/useI18n'
 import { getBlogPostBySlug } from '../data/blog-posts'
 import { marked } from 'marked'
+import { absoluteUrl } from '../site'
+import { canonicalPathname } from '../seo/canonical-path'
 
 const route = useRoute()
 const router = useRouter()
@@ -25,13 +27,59 @@ const postContent = computed(() => {
   return currentLang.value === 'en' ? p.contentEn : p.contentHu
 })
 
-useHead({
-  title: computed(() => {
-    const title = postTitle.value
-    const brand = t('common.companyName')
-    return title ? `${title} | ${brand}` : brand
-  }),
+const postExcerpt = computed(() => {
+  const p = post.value
+  if (!p) return ''
+  return currentLang.value === 'en' ? p.excerptEn : p.excerptHu
 })
+
+const fullTitle = computed(() => {
+  const title = postTitle.value
+  const brand = t('common.companyName')
+  return title ? `${title} | ${brand}` : brand
+})
+
+const canonicalHref = computed(() => absoluteUrl(canonicalPathname(route.path)))
+
+const blogPostingLd = computed(() => {
+  const p = post.value
+  if (!p) return ''
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: currentLang.value === 'en' ? p.titleEn : p.titleHu,
+    description: postExcerpt.value,
+    url: canonicalHref.value,
+    inLanguage: currentLang.value === 'hu' ? 'hu' : 'en',
+  })
+})
+
+useHead(
+  computed(() => {
+    const p = post.value
+    const excerpt = postExcerpt.value
+    const head: Record<string, unknown> = {
+      title: fullTitle.value,
+      meta: [
+        { name: 'description', content: excerpt },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: fullTitle.value },
+        { property: 'og:description', content: excerpt },
+        { name: 'twitter:title', content: fullTitle.value },
+        { name: 'twitter:description', content: excerpt },
+      ],
+    }
+    if (p) {
+      head.script = [
+        {
+          type: 'application/ld+json',
+          innerHTML: blogPostingLd.value,
+        },
+      ]
+    }
+    return head
+  })
+)
 
 const HUNGARIAN_CHAR_MAP: Record<string, string> = {
   á: 'a',

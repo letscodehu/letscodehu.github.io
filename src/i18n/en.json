@@ -610,5 +610,20 @@
     "cookieControlsBody": "You can accept all optional cookies or choose categories (analytics, marketing). Preferences are stored locally so your choice is remembered.",
     "contactTitle": "Questions",
     "contactBody": "If you have questions about data processing on this site, please use the Contact page."
+  },
+  "seo": {
+    "defaultOgImageAlt": "Letscode Solutions — training and consulting for software engineering teams",
+    "descriptions": {
+      "home": "Classroom training and consulting for mid–senior software teams: DevOps, architecture, ADRs, C4, CI/CD, and practices that make delivery safer and faster.",
+      "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
+      "trainingB2c": "Two-day Budapest workshop for developers: technical decisions, C4, and lightweight ADRs—move from tickets to systems thinking.",
+      "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
+      "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
+      "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",
+      "contact": "Contact Letscode Solutions to discuss training, workshops, or consulting for your engineering team.",
+      "caseStudies": "Case studies from real training and consulting work: delivery, testing, architecture, and platform modernization.",
+      "blog": "Articles on CI/CD, delivery bottlenecks, architecture decisions, and how engineering teams ship to production.",
+      "privacy": "How this site processes data, which third-party services may load, and how cookie preferences work."
+    }
   }
 }

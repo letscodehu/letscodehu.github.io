@@ -5,6 +5,8 @@ import { useHead } from '@unhead/vue'
 import { useI18n } from '../composables/useI18n'
 import { getCaseStudyBySlug } from '../data/case-studies'
 import { marked } from 'marked'
+import { absoluteUrl } from '../site'
+import { canonicalPathname } from '../seo/canonical-path'
 
 const route = useRoute()
 const router = useRouter()
@@ -13,13 +15,53 @@ const { t, currentLang } = useI18n()
 const slug = computed(() => route.params.slug as string)
 const caseStudy = computed(() => getCaseStudyBySlug(slug.value))
 
-useHead({
-  title: computed(() => {
-    const cs = caseStudy.value
-    const brand = t('common.companyName')
-    return cs ? `${cs.title} | ${brand}` : brand
-  }),
+const fullTitle = computed(() => {
+  const cs = caseStudy.value
+  const brand = t('common.companyName')
+  return cs ? `${cs.title} | ${brand}` : brand
 })
+
+const canonicalHref = computed(() => absoluteUrl(canonicalPathname(route.path)))
+
+const articleLd = computed(() => {
+  const cs = caseStudy.value
+  if (!cs) return ''
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: cs.title,
+    description: cs.excerpt,
+    url: canonicalHref.value,
+    inLanguage: currentLang.value === 'hu' ? 'hu' : 'en',
+  })
+})
+
+useHead(
+  computed(() => {
+    const cs = caseStudy.value
+    const excerpt = cs?.excerpt ?? ''
+    const head: Record<string, unknown> = {
+      title: fullTitle.value,
+      meta: [
+        { name: 'description', content: excerpt },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: fullTitle.value },
+        { property: 'og:description', content: excerpt },
+        { name: 'twitter:title', content: fullTitle.value },
+        { name: 'twitter:description', content: excerpt },
+      ],
+    }
+    if (cs) {
+      head.script = [
+        {
+          type: 'application/ld+json',
+          innerHTML: articleLd.value,
+        },
+      ]
+    }
+    return head
+  })
+)
 
 function slugify(text: string): string {
   return text

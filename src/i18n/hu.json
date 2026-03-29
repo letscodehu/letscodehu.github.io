@@ -190,8 +190,8 @@
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "trainingB2c": {
-    "pageTitle": "Darálod a ticketeket, de a rendszer továbbra is homályos.",
-    "eyebrow": "Egyéni fejlesztőknek · 2 nap · Budapest · csak személyesen",
+  "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
+    "eyebrow": "Mid-Senior fejlesztőknek · 2 nap · Budapest · csak személyesen",
     "intro": [
       "Szállítod a ticketeket, de az egész rendszer még mindig ködös. A nagyobb döntéseknél gyakran csak találgatsz.",
       "Az architektúráról szóló beszélgetések nélküled mennek—vagy bent ülsz, de nincs meg az a nyelv, amivel átütően tudsz érvelni. A rendszertervező interjúkon ugyanúgy kijön: ismered a részleteket, de nem tudsz gyorsan, érthetően beszélni a rendszerről.",

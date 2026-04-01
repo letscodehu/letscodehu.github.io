@@ -314,7 +314,7 @@
     "errorGeneric": "Signup failed. Please try again in a minute.",
     "errorTimeout": "Request timed out. Please try again.",
     "errorNetwork": "Network error while sending signup. Please try again.",
-    "errorBrowserHint": "Some browsers may block Mailchimp signup requests."
+    "errorBrowserHint": "If signup fails, check your network connection and try again."
   },
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",
@@ -583,8 +583,8 @@
     ],
     "newsletterTitle": "Newsletter / waitlist signup",
     "newsletterItems": [
-      "Mailchimp (list-manage.com): for the training waitlist signup form. Email and name are sent directly to Mailchimp when you subscribe.",
-      "See Mailchimp's privacy policy at mailchimp.com."
+      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): used for the training waitlist signup form. Email and first name are sent in a JSON request when you subscribe.",
+      "Signup data is processed by a backend workflow operated by Letscode Solutions."
     ],
     "analyticsTitle": "Analytics",
     "analyticsItems": [

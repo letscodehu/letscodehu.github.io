@@ -314,7 +314,7 @@
     "errorGeneric": "A feliratkozás nem sikerült. Próbáld újra egy perc múlva.",
     "errorTimeout": "A kérés időtúllépés miatt megszakadt. Próbáld újra.",
     "errorNetwork": "Hálózati hiba történt a feliratkozás közben. Próbáld újra.",
-    "errorBrowserHint": "Egyes böngészők blokkolhatják a Mailchimp feliratkozást."
+    "errorBrowserHint": "Ha a feliratkozás sikertelen, ellenőrizd a hálózati kapcsolatot, majd próbáld újra."
   },
   "workshop": {
     "pageTitle": "ADR és requirement tisztázás workshop",
@@ -583,8 +583,8 @@
     ],
     "newsletterTitle": "Hírlevél / várólista feliratkozás",
     "newsletterItems": [
-      "Mailchimp (list-manage.com): a tréning várólista feliratkozási űrlaphoz. Az e-mail és név a feliratkozáskor közvetlenül a Mailchimp rendszerébe kerül.",
-      "A Mailchimp adatkezelési tájékoztatóját a mailchimp.com oldalon találod."
+      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): a tréning várólista feliratkozási űrlaphoz. Az e-mail és név a feliratkozáskor JSON kérésben kerül továbbításra.",
+      "A feliratkozási adatok feldolgozása a Letscode Solutions által üzemeltetett backend folyamatban történik."
     ],
     "analyticsTitle": "Analitika",
     "analyticsItems": [

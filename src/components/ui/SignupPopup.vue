@@ -2,7 +2,7 @@
 import { computed, nextTick, onUnmounted, ref, watch } from 'vue'
 import BaseButton from './BaseButton.vue'
 import { useI18n } from '../../composables/useI18n'
-import { MAILCHIMP_JSONP_TIMEOUT_MS, MAILCHIMP_SIGNUP_URL } from '../../config'
+import { WAITLIST_SIGNUP_API_URL, WAITLIST_SIGNUP_TIMEOUT_MS } from '../../config'
 
 const props = defineProps<{
   open: boolean
@@ -23,8 +23,7 @@ const isSubmitting = ref(false)
 const isSuccess = ref(false)
 const emailInput = ref<HTMLInputElement | null>(null)
 
-let activeCallbackName = ''
-let activeScript: HTMLScriptElement | null = null
+let activeAbortController: AbortController | null = null
 let activeTimeoutId = 0
 
 const canSubmit = computed(() => !isSubmitting.value && !isSuccess.value)
@@ -57,32 +56,14 @@ function validateForm() {
   return true
 }
 
-function buildMailchimpJsonpUrl(callbackName: string) {
-  const formUrl = new URL(MAILCHIMP_SIGNUP_URL)
-  formUrl.pathname = formUrl.pathname.replace(/\/post$/, '/post-json')
-  formUrl.searchParams.set('EMAIL', email.value)
-  formUrl.searchParams.set('FNAME', firstName.value)
-  formUrl.searchParams.set('c', callbackName)
-  return formUrl.toString()
-}
-
-function clearPendingJsonp() {
-  if (!canUseDom) {
-    return
-  }
-
+function clearPendingRequest() {
   if (activeTimeoutId) {
     window.clearTimeout(activeTimeoutId)
     activeTimeoutId = 0
   }
-  if (activeScript) {
-    activeScript.remove()
-    activeScript = null
-  }
-  if (activeCallbackName) {
-    const dynamicWindow = window as unknown as Record<string, unknown>
-    delete dynamicWindow[activeCallbackName]
-    activeCallbackName = ''
+  if (activeAbortController) {
+    activeAbortController.abort()
+    activeAbortController = null
   }
 }
 
@@ -93,7 +74,7 @@ function resetState() {
   submitError.value = ''
   isSubmitting.value = false
   isSuccess.value = false
-  clearPendingJsonp()
+  clearPendingRequest()
 }
 
 function handleEscape(event: KeyboardEvent) {
@@ -102,7 +83,7 @@ function handleEscape(event: KeyboardEvent) {
   }
 }
 
-async function submitToMailchimp() {
+async function submitToWaitlist() {
   if (!canUseDom) {
     submitError.value = t('signupPopup.errorGeneric')
     return
@@ -115,46 +96,41 @@ async function submitToMailchimp() {
   isSubmitting.value = true
   submitError.value = ''
 
-  const callbackName = `mailchimpCallback_${Date.now()}_${Math.floor(Math.random() * 100000)}`
-  const script = document.createElement('script')
-  script.src = buildMailchimpJsonpUrl(callbackName)
-  script.async = true
+  const abortController = new AbortController()
+  activeAbortController = abortController
+  activeTimeoutId = window.setTimeout(() => {
+    abortController.abort()
+  }, WAITLIST_SIGNUP_TIMEOUT_MS)
 
-  activeCallbackName = callbackName
-  activeScript = script
+  try {
+    const response = await fetch(WAITLIST_SIGNUP_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email.value,
+        firstName: firstName.value,
+      }),
+      signal: abortController.signal,
+    })
 
-  const dynamicWindow = window as unknown as Record<string, unknown>
-  dynamicWindow[callbackName] = (response: { result?: string; msg?: string }) => {
-    clearPendingJsonp()
+    clearPendingRequest()
     isSubmitting.value = false
 
-    if (response.result === 'success') {
-      isSuccess.value = true
-      return
-    }
-
-    const message = response.msg ?? ''
-    if (message.toLowerCase().includes('already subscribed')) {
+    if (response.ok) {
       isSuccess.value = true
       return
     }
 
     submitError.value = t('signupPopup.errorGeneric')
-  }
-
-  activeTimeoutId = window.setTimeout(() => {
-    clearPendingJsonp()
+  } catch (error) {
+    clearPendingRequest()
     isSubmitting.value = false
-    submitError.value = t('signupPopup.errorTimeout')
-  }, MAILCHIMP_JSONP_TIMEOUT_MS)
 
-  script.onerror = () => {
-    clearPendingJsonp()
-    isSubmitting.value = false
-    submitError.value = t('signupPopup.errorNetwork')
+    const isAbortError = error instanceof DOMException && error.name === 'AbortError'
+    submitError.value = isAbortError ? t('signupPopup.errorTimeout') : t('signupPopup.errorNetwork')
   }
-
-  document.body.appendChild(script)
 }
 
 watch(
@@ -208,7 +184,7 @@ onUnmounted(() => {
 
   document.removeEventListener('keydown', handleEscape)
   document.body.style.overflow = ''
-  clearPendingJsonp()
+  clearPendingRequest()
 })
 </script>
 
@@ -230,7 +206,7 @@ onUnmounted(() => {
           </BaseButton>
         </div>
 
-        <form v-else class="form" @submit.prevent="submitToMailchimp">
+        <form v-else class="form" @submit.prevent="submitToWaitlist">
           <div class="form-row">
             <label class="label" for="signup-first-name">{{ t('signupPopup.firstNameLabel') }}</label>
             <input id="signup-first-name" v-model="firstName" type="text" class="input" autocomplete="given-name" />

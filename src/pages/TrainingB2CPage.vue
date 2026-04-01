@@ -127,6 +127,7 @@ onUnmounted(() => {
           </li>
         </ul>
         <p class="section-closing">{{ t('trainingB2c.problemClosing') }}</p>
+        <p class="problem-patch">{{ t('trainingB2c.problemImmediateHelp') }}</p>
       </BaseCard>
     </section>
 
@@ -236,6 +237,13 @@ onUnmounted(() => {
       <BaseCard>
         <template #title>{{ t('trainingB2c.ctaTitle') }}</template>
         <p class="section-intro">{{ t('trainingB2c.ctaBody') }}</p>
+        <div class="cta-gift-box">
+          <p class="cta-gift-title">
+            <span class="cta-gift-emoji" aria-hidden="true">🎁</span>
+            {{ t('trainingB2c.ctaGiftTitle') }}
+          </p>
+          <p class="cta-gift-body">{{ t('trainingB2c.ctaGiftBody') }}</p>
+        </div>
         <div ref="bottomCtaEl" class="cta-inline-actions">
           <BaseButton @click="openSignup">
             {{ t('trainingB2c.cta') }}
@@ -326,6 +334,58 @@ onUnmounted(() => {
   margin: 0.75rem 0 0;
   font-size: 0.93rem;
   color: var(--color-text-muted);
+}
+
+.problem-patch {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.cta-gift-box {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 1rem 0 0.75rem;
+  padding: 1rem 1.1rem;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-gift-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  line-height: 1.35;
+}
+
+.cta-gift-emoji {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.cta-gift-body {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .prose {

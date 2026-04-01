@@ -391,12 +391,6 @@ watch(
   line-height: 1.6;
 }
 
-.markdown-body :deep(p:first-child) {
-  font-size: 1rem;
-  color: var(--color-text);
-  margin-top: 0;
-}
-
 .markdown-body :deep(h2) {
   margin: 2.25rem 0 0.75rem;
   font-size: 1.4rem;

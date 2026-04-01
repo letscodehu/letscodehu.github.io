@@ -1,5 +1,5 @@
+import { blogPostManifest } from '../data/blog-post-manifest'
 import { caseStudies } from '../data/case-studies'
-import { blogPosts } from '../data/blog-posts'
 
 const LANGS = ['en', 'hu'] as const
 
@@ -54,7 +54,7 @@ export function getPrerenderPathnames(): string[] {
     for (const cs of caseStudies) {
       paths.push(`/${lang}/case-studies/${cs.slug}`)
     }
-    for (const post of blogPosts) {
+    for (const post of blogPostManifest) {
       paths.push(`/${lang}/blog/p/${post.slug}`)
     }
   }

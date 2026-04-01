@@ -16,6 +16,8 @@ const isContentDetail = computed(
   () => route.name === 'blog-post-detail-en' || route.name === 'case-study-detail-en'
 )
 
+const isBlogPostDetail = computed(() => route.name === 'blog-post-detail-en')
+
 const useChildTitle = computed(() => Boolean(route.meta.useChildTitle))
 
 const pageTitle = computed(() => {
@@ -55,14 +57,19 @@ const organizationLd = computed(() =>
 useHead(
   computed(() => {
     const meta: { name?: string; property?: string; content: string }[] = [
-      { property: 'og:image', content: fullOgImage.value },
-      { property: 'og:image:alt', content: String(t('seo.defaultOgImageAlt')) },
       { property: 'og:url', content: canonicalHref.value },
       { property: 'og:locale', content: ogLocale.value },
       { property: 'og:locale:alternate', content: ogLocaleAlt.value },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: fullOgImage.value },
     ]
+
+    if (!isBlogPostDetail.value) {
+      meta.push(
+        { property: 'og:image', content: fullOgImage.value },
+        { property: 'og:image:alt', content: String(t('seo.defaultOgImageAlt')) },
+        { name: 'twitter:image', content: fullOgImage.value }
+      )
+    }
 
     if (!isContentDetail.value) {
       meta.push({ property: 'og:type', content: 'website' })

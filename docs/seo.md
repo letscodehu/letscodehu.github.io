@@ -6,9 +6,9 @@
 
 ## Head tags
 
-[`AppLayout.vue`](../src/components/layout/AppLayout.vue) sets `html[lang]`, `meta description`, full OG/Twitter fields (except on content-detail routes), `link[rel=canonical]`, `hreflang` alternates (`en`, `hu`, `x-default` → English), `og:locale` / `og:locale:alternate`, default `og:image`, and sitewide `Organization` JSON-LD.
+[`AppLayout.vue`](../src/components/layout/AppLayout.vue) sets `html[lang]`, `meta description`, full OG/Twitter fields (except on content-detail routes), `link[rel=canonical]`, `hreflang` alternates (`en`, `hu`, `x-default` → English), `og:locale` / `og:locale:alternate`, default `og:image` (except on **blog** post detail, where [`BlogPostDetailPage.vue`](../src/pages/BlogPostDetailPage.vue) sets `og:image` / `twitter:image` to avoid duplicates), and sitewide `Organization` JSON-LD.
 
-Blog and case study detail pages add article-type meta and `BlogPosting` / `Article` JSON-LD in their page components.
+Blog and case study detail pages add article-type meta and `BlogPosting` / `Article` JSON-LD in their page components. Blog posts may set optional per-post `ogImagePath` in [`blog-post-manifest.ts`](../src/data/blog-post-manifest.ts); see [`docs/blog.md`](blog.md).
 
 ## Canonical and hreflang
 

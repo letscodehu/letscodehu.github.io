@@ -5,7 +5,7 @@ import { useHead } from '@unhead/vue'
 import { useI18n } from '../composables/useI18n'
 import { getBlogPostBySlug } from '../data/blog-posts'
 import { marked } from 'marked'
-import { absoluteUrl } from '../site'
+import { absoluteUrl, DEFAULT_OG_IMAGE_PATH } from '../site'
 import { canonicalPathname } from '../seo/canonical-path'
 
 const route = useRoute()
@@ -41,17 +41,34 @@ const fullTitle = computed(() => {
 
 const canonicalHref = computed(() => absoluteUrl(canonicalPathname(route.path)))
 
+const postOgImageUrl = computed(() => {
+  const p = post.value
+  const path = p?.ogImagePath ?? DEFAULT_OG_IMAGE_PATH
+  const normalized = path.startsWith('/') ? path : `/${path}`
+  return absoluteUrl(normalized)
+})
+
+const postOgImageAlt = computed(() => {
+  const title = postTitle.value
+  return title || String(t('seo.defaultOgImageAlt'))
+})
+
 const blogPostingLd = computed(() => {
   const p = post.value
   if (!p) return ''
-  return JSON.stringify({
+  const payload: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: currentLang.value === 'en' ? p.titleEn : p.titleHu,
     description: postExcerpt.value,
     url: canonicalHref.value,
     inLanguage: currentLang.value === 'hu' ? 'hu' : 'en',
-  })
+  }
+  if (p.ogImagePath) {
+    const path = p.ogImagePath.startsWith('/') ? p.ogImagePath : `/${p.ogImagePath}`
+    payload.image = absoluteUrl(path)
+  }
+  return JSON.stringify(payload)
 })
 
 useHead(
@@ -65,8 +82,11 @@ useHead(
         { property: 'og:type', content: 'article' },
         { property: 'og:title', content: fullTitle.value },
         { property: 'og:description', content: excerpt },
+        { property: 'og:image', content: postOgImageUrl.value },
+        { property: 'og:image:alt', content: postOgImageAlt.value },
         { name: 'twitter:title', content: fullTitle.value },
         { name: 'twitter:description', content: excerpt },
+        { name: 'twitter:image', content: postOgImageUrl.value },
       ],
     }
     if (p) {

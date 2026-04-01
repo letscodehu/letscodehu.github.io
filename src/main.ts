@@ -11,7 +11,21 @@ import {
 import { getPrerenderPathnames } from './seo/prerender-paths'
 import { trackPageView } from './tracking'
 
-export const createApp = ViteSSG(App, { routes }, ({ router }) => {
+export const createApp = ViteSSG(
+  App,
+  {
+    routes,
+    scrollBehavior(to, _from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition
+      }
+      if (to.hash) {
+        return { el: to.hash }
+      }
+      return { left: 0, top: 0 }
+    },
+  },
+  ({ router }) => {
   router.beforeEach((to) => {
     // Redirect trailing slash URLs to non-trailing slash (except root)
     if (to.path !== '/' && to.path.endsWith('/')) {
@@ -52,7 +66,8 @@ export const createApp = ViteSSG(App, { routes }, ({ router }) => {
     // Track page view for Google Analytics
     trackPageView(to.fullPath)
   })
-})
+  },
+)
 
 export async function includedRoutes() {
   return getPrerenderPathnames()

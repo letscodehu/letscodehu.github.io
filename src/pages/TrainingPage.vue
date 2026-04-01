@@ -115,7 +115,7 @@ const { t, currentLang } = useI18n()
         <template #title>{{ t('training.b2cCardTitle') }}</template>
         <p class="b2c-copy">{{ t('training.b2cCardBody') }}</p>
         <RouterLink :to="{ name: 'training-b2c-en', params: { lang: currentLang } }">
-          <BaseButton variant="ghost">
+          <BaseButton>
             {{ t('training.b2cCardCta') }}
           </BaseButton>
         </RouterLink>

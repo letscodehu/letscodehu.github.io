@@ -2,7 +2,7 @@
 
 ## Change
 
-Added a new bilingual blog entry in [`src/data/blog-posts.ts`](../src/data/blog-posts.ts) with slug `adrs-are-useful-only-if-they-shape-the-decision`.
+Added a new bilingual blog entry (manifest in [`src/data/blog-post-manifest.ts`](../src/data/blog-post-manifest.ts), bodies under [`content/blog/adrs-are-useful-only-if-they-shape-the-decision/`](../content/blog/adrs-are-useful-only-if-they-shape-the-decision/)) with slug `adrs-are-useful-only-if-they-shape-the-decision`.
 Refined the post afterward to reduce separator-heavy formatting, expand the KMS/CloudHSM narrative section, and align CTA links to internal contact routes.
 
 ## Architectural Relevance

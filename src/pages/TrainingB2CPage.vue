@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 import SignupPopup from '../components/ui/SignupPopup.vue'
 import { useI18n } from '../composables/useI18n'
 
+const MOBILE_MAX_PX = 768
+
 const { t } = useI18n()
 const isSignupOpen = ref(false)
+
+const heroCtaEl = ref<HTMLElement | null>(null)
+const bottomCtaEl = ref<HTMLElement | null>(null)
+const heroCtaVisible = ref(true)
+const bottomCtaVisible = ref(false)
+const isMobileViewport = ref(false)
+
+let heroObserver: IntersectionObserver | null = null
+let bottomObserver: IntersectionObserver | null = null
+let mediaQuery: MediaQueryList | null = null
 
 function openSignup() {
   isSignupOpen.value = true
@@ -15,10 +27,80 @@ function openSignup() {
 function closeSignup() {
   isSignupOpen.value = false
 }
+
+function syncMobileViewport() {
+  if (typeof window === 'undefined') {
+    return
+  }
+  isMobileViewport.value = window.matchMedia(`(max-width: ${MOBILE_MAX_PX}px)`).matches
+}
+
+const showStickyWaitlistCta = computed(
+  () =>
+    isMobileViewport.value &&
+    !isSignupOpen.value &&
+    !heroCtaVisible.value &&
+    !bottomCtaVisible.value
+)
+
+function setupObservers() {
+  if (typeof IntersectionObserver === 'undefined') {
+    return
+  }
+
+  const options: IntersectionObserverInit = {
+    root: null,
+    threshold: 0,
+    rootMargin: '0px',
+  }
+
+  heroObserver = new IntersectionObserver((entries) => {
+    const e = entries[0]
+    heroCtaVisible.value = e ? e.isIntersecting : false
+  }, options)
+
+  bottomObserver = new IntersectionObserver((entries) => {
+    const e = entries[0]
+    bottomCtaVisible.value = e ? e.isIntersecting : false
+  }, options)
+
+  const heroEl = heroCtaEl.value
+  const bottomEl = bottomCtaEl.value
+  if (heroEl) {
+    heroObserver.observe(heroEl)
+  }
+  if (bottomEl) {
+    bottomObserver.observe(bottomEl)
+  }
+}
+
+function teardownObservers() {
+  heroObserver?.disconnect()
+  bottomObserver?.disconnect()
+  heroObserver = null
+  bottomObserver = null
+}
+
+onMounted(() => {
+  syncMobileViewport()
+  if (typeof window !== 'undefined') {
+    mediaQuery = window.matchMedia(`(max-width: ${MOBILE_MAX_PX}px)`)
+    mediaQuery.addEventListener('change', syncMobileViewport)
+  }
+  void nextTick(() => {
+    setupObservers()
+  })
+})
+
+onUnmounted(() => {
+  teardownObservers()
+  mediaQuery?.removeEventListener('change', syncMobileViewport)
+  mediaQuery = null
+})
 </script>
 
 <template>
-  <article>
+  <article class="b2c-page">
     <header class="hero">
       <p class="hero-eyebrow">{{ t('trainingB2c.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2c.pageTitle') }}</h1>
@@ -27,7 +109,7 @@ function closeSignup() {
           {{ paragraph }}
         </p>
       </div>
-      <div class="hero-actions">
+      <div ref="heroCtaEl" class="hero-actions">
         <BaseButton @click="openSignup">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
@@ -154,17 +236,36 @@ function closeSignup() {
       <BaseCard>
         <template #title>{{ t('trainingB2c.ctaTitle') }}</template>
         <p class="section-intro">{{ t('trainingB2c.ctaBody') }}</p>
+        <div ref="bottomCtaEl" class="cta-inline-actions">
+          <BaseButton @click="openSignup">
+            {{ t('trainingB2c.cta') }}
+          </BaseButton>
+        </div>
+      </BaseCard>
+    </section>
+
+    <Teleport to="body">
+      <div
+        v-show="showStickyWaitlistCta"
+        class="training-b2c-sticky-waitlist"
+        role="region"
+        :aria-label="t('trainingB2c.cta')"
+      >
         <BaseButton @click="openSignup">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
-      </BaseCard>
-    </section>
+      </div>
+    </Teleport>
 
     <SignupPopup :open="isSignupOpen" @close="closeSignup" />
   </article>
 </template>
 
 <style scoped>
+.b2c-page {
+  padding-bottom: 0;
+}
+
 .hero {
   padding: 1.3rem 1.3rem 2rem;
   margin-bottom: 2rem;
@@ -265,5 +366,43 @@ function closeSignup() {
 
 .cta {
   margin-bottom: 0;
+}
+
+.cta-inline-actions {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .b2c-page {
+    padding-bottom: 5rem;
+  }
+}
+</style>
+
+<style>
+@media (max-width: 768px) {
+  .training-b2c-sticky-waitlist {
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+    pointer-events: none;
+    background: linear-gradient(to top, var(--color-bg) 72%, transparent);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
+  }
+
+  .training-b2c-sticky-waitlist .button {
+    pointer-events: auto;
+    width: min(22rem, calc(100vw - 2rem));
+    max-width: 100%;
+  }
 }
 </style>

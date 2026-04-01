@@ -2,7 +2,7 @@
 
 ## Change
 
-Added a new bilingual blog entry in [`src/data/blog-posts.ts`](../src/data/blog-posts.ts) with slug `your-scaling-problem-might-be-architecture-not-kubernetes`.
+Added a new bilingual blog entry (manifest in [`src/data/blog-post-manifest.ts`](../src/data/blog-post-manifest.ts), bodies under [`content/blog/your-scaling-problem-might-be-architecture-not-kubernetes/`](../content/blog/your-scaling-problem-might-be-architecture-not-kubernetes/)) with slug `your-scaling-problem-might-be-architecture-not-kubernetes`.
 
 ## Architectural Relevance
 

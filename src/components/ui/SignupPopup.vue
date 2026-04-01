@@ -197,7 +197,8 @@ onUnmounted(() => {
         </button>
 
         <h2 class="title">{{ t('signupPopup.title') }}</h2>
-        <p class="intro">{{ t('signupPopup.intro') }}</p>
+        <p class="intro">{{ t('signupPopup.introChecklist') }}</p>
+        <p class="intro intro--follow">{{ t('signupPopup.introWaitlist') }}</p>
 
         <div v-if="isSuccess" class="result result--success">
           <p>{{ t('signupPopup.successMessage') }}</p>
@@ -255,13 +256,19 @@ onUnmounted(() => {
 }
 
 .modal {
-  width: min(100%, 30rem);
+  width: 100%;
+  max-width: min(30rem, calc(100vw - 2rem));
+  min-width: 0;
+  box-sizing: border-box;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: 1.25rem;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: min(90dvh, 100vh - 2rem);
 }
 
 .close-button {
@@ -277,13 +284,24 @@ onUnmounted(() => {
 
 .title {
   margin: 0 0 0.4rem;
+  padding-right: 2.25rem;
   font-size: 1.2rem;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .intro {
   margin: 0 0 1rem;
   color: var(--color-text-muted);
   font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.intro--follow {
+  margin-top: -0.35rem;
 }
 
 .form {
@@ -304,6 +322,10 @@ onUnmounted(() => {
 }
 
 .input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border-radius: 0.4rem;
   border: 1px solid var(--color-text-muted);
   padding: 0.55rem 0.65rem;
@@ -323,17 +345,21 @@ onUnmounted(() => {
   margin: 0;
   color: #dc2626;
   font-size: 0.8rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .error-hint {
   margin: 0.35rem 0 0;
   font-size: 0.78rem;
   color: var(--color-text-muted);
+  overflow-wrap: break-word;
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 0.2rem;
 }
@@ -342,9 +368,35 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  min-width: 0;
 }
 
 .result--success p {
   margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 28rem) {
+  .overlay {
+    align-content: center;
+    padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
+      max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions :deep(.button) {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
 }
 </style>

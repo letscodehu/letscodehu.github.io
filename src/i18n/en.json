@@ -206,6 +206,7 @@
       "System design interviews expose the gap: you know pieces, but not how to tell a coherent story fast."
     ],
     "problemClosing": "If that reads like your week, you're the audience.",
+    "problemImmediateHelp": "You don't have to wait for the workshop to start seeing your system more clearly. Join the waitlist and I'll send you the Architect's Reality Check checklist right away—five questions that help you cut through the chaos on your next planning cycle.",
     "solutionTitle": "What this actually is",
     "solutionLead": "This is not a slide deck about \"mindset.\" It's a small-group, in-person workshop where you work through real decision patterns: separating constraints from opinions, comparing options by risk and cost, and leaving a short paper trail when it counts.",
     "solutionAdr": "ADRs show up for what they are: a small, repeatable format for \"what we decided, what else we considered, what breaks if we're wrong\"—not enterprise paperwork.",
@@ -296,6 +297,8 @@
     ],
     "ctaTitle": "Next step",
     "ctaBody": "Reserve a spot on the waitlist—and when I follow up with Budapest dates, you can send a short description of a system you work on (or two decisions you still find hard to justify). A few sentences is enough. I use that to tune examples and to make sure the cohort is a fit.",
+    "ctaGiftTitle": "A gift when you sign up",
+    "ctaGiftBody": "When you join the waitlist, you won't only hear about new dates—you'll also get the Architect's Reality Check (PDF) companion. It's a condensed take on the mindset we'll practice live over the two days.",
     "cta": "Join the waitlist"
   },
   "signupPopup": {
@@ -310,6 +313,7 @@
     "closeCta": "Close",
     "closeLabel": "Close signup popup",
     "successMessage": "Thanks! You’ll get the checklist shortly, and you’re on the waitlist too.",
+    "successAriaLabel": "Signup successful",
     "validationEmailRequired": "Please provide your email address.",
     "validationEmailInvalid": "Please enter a valid email address.",
     "errorGeneric": "Signup failed. Please try again in a minute.",

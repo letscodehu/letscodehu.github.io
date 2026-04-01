@@ -191,23 +191,42 @@ onUnmounted(() => {
 <template>
   <Teleport to="body">
     <div v-if="open" class="overlay" @click.self="handleClose">
-      <div class="modal" role="dialog" aria-modal="true" :aria-label="t('signupPopup.title')">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="isSuccess ? t('signupPopup.successAriaLabel') : t('signupPopup.title')"
+      >
         <button type="button" class="close-button" :aria-label="t('signupPopup.closeLabel')" @click="handleClose">
           x
         </button>
 
-        <h2 class="title">{{ t('signupPopup.title') }}</h2>
-        <p class="intro">{{ t('signupPopup.introChecklist') }}</p>
-        <p class="intro intro--follow">{{ t('signupPopup.introWaitlist') }}</p>
+        <template v-if="!isSuccess">
+          <h2 class="title">{{ t('signupPopup.title') }}</h2>
+          <p class="intro">{{ t('signupPopup.introChecklist') }}</p>
+          <p class="intro intro--follow">{{ t('signupPopup.introWaitlist') }}</p>
+        </template>
 
-        <div v-if="isSuccess" class="result result--success">
-          <p>{{ t('signupPopup.successMessage') }}</p>
+        <div v-else class="result result--success">
+          <div class="success-icon-wrap" aria-hidden="true">
+            <svg class="success-check" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="success-check-bg" cx="24" cy="24" r="22" stroke-width="1.5" />
+              <path
+                class="success-check-mark"
+                d="M14 24.5l7 7 13-14"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <p class="success-text">{{ t('signupPopup.successMessage') }}</p>
           <BaseButton variant="ghost" @click="handleClose">
             {{ t('signupPopup.closeCta') }}
           </BaseButton>
         </div>
 
-        <form v-else class="form" @submit.prevent="submitToWaitlist">
+        <form v-if="!isSuccess" class="form" @submit.prevent="submitToWaitlist">
           <div class="form-row">
             <label class="label" for="signup-first-name">{{ t('signupPopup.firstNameLabel') }}</label>
             <input id="signup-first-name" v-model="firstName" type="text" class="input" autocomplete="given-name" />
@@ -371,8 +390,46 @@ onUnmounted(() => {
   min-width: 0;
 }
 
-.result--success p {
+.result--success {
+  align-items: center;
+  text-align: center;
+  padding-top: 0.35rem;
+}
+
+.success-icon-wrap {
+  flex-shrink: 0;
+}
+
+.success-check {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+}
+
+.success-check-bg {
+  fill: #dcfce7;
+  stroke: #86efac;
+}
+
+.success-check-mark {
+  stroke: #16a34a;
+  fill: none;
+}
+
+:global(html.theme-dark) .success-check-bg {
+  fill: rgba(34, 197, 94, 0.22);
+  stroke: rgba(74, 222, 128, 0.45);
+}
+
+:global(html.theme-dark) .success-check-mark {
+  stroke: #4ade80;
+}
+
+.success-text {
   margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text);
   overflow-wrap: break-word;
   word-break: break-word;
 }

@@ -287,13 +287,28 @@
         }
       ]
     },
-    "takeawayTitle": "What you'll leave with",
+    "takeawayTitle": "What are you taking home by Monday morning? (A toolkit you can use right away)",
     "takeaways": [
-      "A reusable decision checklist you can use on real tickets and design discussions—not a one-off theory.",
-      "One or two C4 views (context, container, component) for your system or a concrete example from the room—artifacts you can drop into docs or interview prep.",
-      "ADR drafts you wrote during the workshop (with feedback), so you've already done it once before you're back at work.",
-      "The ability to walk someone through your system in a few minutes with a diagram plus a short decision story.",
-      "Sharper prep for system design-style conversations and for being taken seriously when trade-offs actually get decided."
+      {
+        "lead": "The “Reality Check” decision checklist:",
+        "body": "A physical aide you can keep beside your keyboard. Five critical questions that stop pointless debates in tech design meetings."
+      },
+      {
+        "lead": "A C4 model of your own system:",
+        "body": "Not theoretical sketches. You leave with Context and Container diagrams for your own (or a brought-in) project—ready to paste into company Confluence on Monday."
+      },
+      {
+        "lead": "Reviewed ADR drafts:",
+        "body": "Decision documentation (Architecture Decision Records) you draft during the workshop, reviewed by Krisztián, which you can use as templates with your team."
+      },
+      {
+        "lead": "The “15-minute architecture story”:",
+        "body": "A ready communication routine. You’ll be able to confidently explain your system’s boundaries and trade-offs to any stakeholder—CTO or Product Owner."
+      },
+      {
+        "lead": "Interview-ready systems thinking:",
+        "body": "If you’re considering a move, this workshop gives you a structured mindset to get through even the toughest system design interviews."
+      }
     ],
     "ctaTitle": "Next step",
     "ctaBody": "Reserve a spot on the waitlist—and when I follow up with Budapest dates, you can send a short description of a system you work on (or two decisions you still find hard to justify). A few sentences is enough. I use that to tune examples and to make sure the cohort is a fit.",

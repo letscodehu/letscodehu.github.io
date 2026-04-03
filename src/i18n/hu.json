@@ -199,7 +199,7 @@
     ],
     "problemTitle": "A probléma",
     "problem": [
-      "Mélyen benne vagy a megvalósításban, de a függőségek, határok és hibamódok továbbra is homályosak.",
+      "Mélyen benne vagy a megvalósításban, de a függőségek, határok és hibakezelési stratégiák továbbra is homályosak.",
       "Minden lényegesebb választás (adatmodell, integráció, szétbontás, „átmeneti” megoldások) bizonytalannak érződik, amikor számít.",
       "Nem vagy benne—vagy nem hallanak meg—ott, ahol a technikai irányt tényleg eldöntik.",
       "Amikor valaki azt kérdezi: „miért így csináltuk?”, a becsületes válasz gyakran az, hogy „senki nem emlékszik”.",
@@ -208,7 +208,7 @@
     "problemClosing": "Ha ilyen egy átlag heted, akkor Neked szól.",
     "problemImmediateHelp": "Nem kell megvárnod a workshopot, hogy elkezdd tisztábban látni a rendszeredet. Iratkozz fel a várólistára, és azonnal küldöm az Architect’s Reality Check csekklistát – 5 kérdés, ami segít átlátni a káoszon már a következő tervezésnél.",
     "solutionTitle": "Mi ez valójában",
-    "solutionLead": "Ez nem „szemlélet”-ről szóló diasor. Kiscsoportos, személyes képzés, ahol valós döntési mintákon dolgozol: szétválasztod a korlátokat a véleményektől, összehasonlítod az opciókat kockázat és költség szerint, és akkor hagysz rövid nyomot, amikor számít.",
+    "solutionLead": "Ez nem „szemlélet”-ről szóló diasor. Kiscsoportos, személyes képzés, ahol valós döntési mintákon dolgozol: szétválasztod a korlátokat a véleményektől, összehasonlítod az opciókat kockázat és költség szerint, és akkor dokumentálod, amikor számít.",
     "solutionAdr": "Az ADR-ek annyiban jelennek meg, amennyire kellenek: egy kis, ismételhető formátum arra, hogy „mit döntöttünk, mit fontolgattunk még, mi törik el, ha tévedünk”—nem vállalati papírtologatás.",
     "solutionC4": "A C4 az, ahogy olvashatóvá teszed a rendszert: kontextus, konténerek, komponensek—hogy te és mások ugyanazt értsék a határokról és a felelősségről, ne egymás fejében élő modellekről vitázzatok.",
     "solutionClosing": "Eredmény: döntések, amiket meg tudsz indokolni, diagramok, amikre rá tudsz mutatni, és olyan kommunikáció a termékkel és a vezetéssel, ami nem fullad zsargonba.",
@@ -241,13 +241,13 @@
           "title": "Döntési helyzetek tisztázása",
           "points": [
             "Korlátok, feltételezések és célok szétválasztása.",
-            "A valódi döntési kérdés megfogalmazása zajos helyzetekben."
+            "A valódi döntési kérdés megfogalmazása zavaros helyzetekben."
           ]
         },
         {
           "title": "Opciók és kompromisszumok összevetése",
           "points": [
-            "Alternatívák összevetése kockázat, költség és változtatási ár alapján.",
+            "Alternatívák összevetése kockázat, költség és fejlesztési idő alapján.",
             "Döntési indoklás érthető kommunikálása technikai és üzleti nézőpontból."
           ]
         },
@@ -255,7 +255,7 @@
           "title": "Rövid döntési lenyomatok (ADR mint keret)",
           "points": [
             "Mikor érdemes rögzíteni egy döntést, és mikor elég szóbeli megállapodás.",
-            "Könnyűsúlyú sablon használata úgy, hogy ne legyen adminisztrációs teher."
+            "Hogy dokumentáljunk úgy, hogy ne legyen adminisztrációs teher."
           ]
         }
       ]
@@ -268,32 +268,47 @@
           "title": "C4: kontextus- és konténernézet",
           "points": [
             "Rendszerhatárok és külső függőségek modellezése.",
-            "Felelősségek és kulcs interakciók tiszta jelölése."
+            "Felelősségek és a legfontosabb interakciók egyértelmű jelölése."
           ]
         },
         {
           "title": "C4: komponensnézet",
           "points": [
-            "Konténerek bontása értelmes komponensekre és interfészekre.",
-            "Kockázatos csatolások és homályos felelősségmegosztás felismerése."
+            "Konténerek bontása értelmes komponensekre és API-kra.",
+            "Kockázatos kapcsolatok és homályos felelősségmegosztás felismerése."
           ]
         },
         {
           "title": "Döntések kommunikálása diagramokkal és rövid leírásokkal",
           "points": [
-            "A diagramok és rövid döntési leírások összerendezése közös történetté.",
+            "A diagramok és rövid döntési leírások összerendezése egy közös történetté.",
             "Ismételhető kommunikációs rutin kialakítása csapaton belül és kívül."
           ]
         }
       ]
     },
-    "takeawayTitle": "Mit viszel haza",
+    "takeawayTitle": "Mit viszel haza hétfő reggelre?",
     "takeaways": [
-      "Újrahasználható döntési checklista valós feladatokhoz és tervezési egyeztetésekhez—nem egyszeri elmélet.",
-      "Egy-két C4 nézet (kontextus, konténer, komponens) a saját rendszeredre vagy egy teremben vett konkrét példára—bemásolható a doksiba vagy interjúfelkészítésbe.",
-      "ADR vázlatok, amiket a képzésen írtál (visszajelzéssel), hogy már egyszer végigcsináld, mielőtt visszaülsz a munkához.",
-      "Képes leszel néhány perc alatt végigvezetni valakit a rendszereden egy diagrammal és egy rövid döntéstörténettel.",
-      "Élesebb felkészülés rendszertervező jellegű beszélgetésekre és arra, hogy komolyan vegyenek, amikor tényleg eldőlnek a kompromisszumok."
+      {
+        "lead": "A „Reality Check” döntési checklist:",
+        "body": "Egy fizikai segédlet, amit a billentyűzeted mellé tehetsz. 5 kritikus kérdés, ami megállítja a felesleges vitákat a tech design meetingeken."
+      },
+      {
+        "lead": "A saját rendszered C4 modellje:",
+        "body": "Nem elméleti ábrák. A saját (vagy egy hozott) projekted Context és Container diagramjaival mész haza, amiket hétfőn csak be kell másolnod a vállalati Confluence-be."
+      },
+      {
+        "lead": "Lektorált ADR vázlatok:",
+        "body": "Olyan döntési dokumentáció (Architecture Decision Record), amit a workshopon írsz meg, Krisztián véleményez, és sablonként használhatsz a csapatodban."
+      },
+      {
+        "lead": "A „15 perces architektúra-sztori”:",
+        "body": "Egy kész kommunikációs rutin. Képes leszel bármilyen stakeholdernek (legyen az CTO vagy Product Owner) magabiztosan elmagyarázni a rendszered határait és a kompromisszumokat."
+      },
+      {
+        "lead": "Interjú-ready rendszerszemlélet:",
+        "body": "Ha épp váltáson gondolkodsz, ez a workshop ad egy olyan strukturált gondolkodásmódot, amivel a legnehezebb System Design interjúkon is átmész."
+      }
     ],
     "ctaTitle": "Következő lépés",
     "ctaBody": "Iratkozz fel a várólistára—amikor írok a budapesti időpontokról, küldhetsz pár mondatot egy rendszerről, amin dolgozol (vagy két döntésről, amit még mindig nehéz megindokolni). Elég néhány mondat; ebből hangolom a példákat és ellenőrzöm, hogy illik-e a csoport.",

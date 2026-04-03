@@ -151,8 +151,9 @@ onUnmounted(() => {
       </header>
       <BaseCard>
         <ul class="list">
-          <li v-for="item in t('trainingB2c.takeaways')" :key="item">
-            {{ item }}
+          <li v-for="item in t('trainingB2c.takeaways')" :key="item.lead">
+            <strong>{{ item.lead }}</strong>
+            {{ item.body }}
           </li>
         </ul>
       </BaseCard>

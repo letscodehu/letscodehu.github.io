@@ -1,31 +1,99 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 import SignupPopup from '../components/ui/SignupPopup.vue'
 import { useI18n } from '../composables/useI18n'
+import { B2C_PAYMENT_EARLY_BIRD_URL, B2C_PAYMENT_REGULAR_URL } from '../config'
 
 const MOBILE_MAX_PX = 768
+const EARLY_BIRD_DEADLINE_MS = Date.parse('2026-05-17T23:59:59.999+02:00')
+const INACTIVITY_TIMEOUT_MS = 120000
+const ACTIVITY_EVENTS: (keyof WindowEventMap)[] = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart']
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
 const isSignupOpen = ref(false)
+const paymentUnavailableNote = ref('')
+const hasAutoPopupShown = ref(false)
+const isEarlyBird = computed(() => Date.now() <= EARLY_BIRD_DEADLINE_MS)
+const activePaymentUrl = computed(() =>
+  (isEarlyBird.value ? B2C_PAYMENT_EARLY_BIRD_URL : B2C_PAYMENT_REGULAR_URL).trim()
+)
+const isPaymentReady = computed(() => activePaymentUrl.value.length > 0)
+const inactivityTimerId = ref<number | null>(null)
 
 const heroCtaEl = ref<HTMLElement | null>(null)
+const midCtaEl = ref<HTMLElement | null>(null)
 const bottomCtaEl = ref<HTMLElement | null>(null)
 const heroCtaVisible = ref(true)
+const midCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 
 let heroObserver: IntersectionObserver | null = null
+let midObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
 
 function openSignup() {
+  paymentUnavailableNote.value = ''
   isSignupOpen.value = true
 }
 
 function closeSignup() {
   isSignupOpen.value = false
+}
+
+function openSignupFromAutoTrigger() {
+  if (hasAutoPopupShown.value || isSignupOpen.value) {
+    return
+  }
+
+  hasAutoPopupShown.value = true
+  openSignup()
+}
+
+function handleExitIntent(event: MouseEvent) {
+  if (event.relatedTarget) {
+    return
+  }
+
+  if (event.clientY > 0) {
+    return
+  }
+
+  openSignupFromAutoTrigger()
+}
+
+function clearInactivityTimer() {
+  if (inactivityTimerId.value === null) {
+    return
+  }
+
+  window.clearTimeout(inactivityTimerId.value)
+  inactivityTimerId.value = null
+}
+
+function resetInactivityTimer() {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  clearInactivityTimer()
+  inactivityTimerId.value = window.setTimeout(() => {
+    openSignupFromAutoTrigger()
+  }, INACTIVITY_TIMEOUT_MS)
+}
+
+function handlePayClick() {
+  if (!isPaymentReady.value) {
+    paymentUnavailableNote.value = t('trainingB2c.launch.paymentFallback')
+    openSignup()
+    return
+  }
+
+  window.location.href = activePaymentUrl.value
 }
 
 function syncMobileViewport() {
@@ -40,6 +108,7 @@ const showStickyWaitlistCta = computed(
     isMobileViewport.value &&
     !isSignupOpen.value &&
     !heroCtaVisible.value &&
+    !midCtaVisible.value &&
     !bottomCtaVisible.value
 )
 
@@ -59,15 +128,24 @@ function setupObservers() {
     heroCtaVisible.value = e ? e.isIntersecting : false
   }, options)
 
+  midObserver = new IntersectionObserver((entries) => {
+    const e = entries[0]
+    midCtaVisible.value = e ? e.isIntersecting : false
+  }, options)
+
   bottomObserver = new IntersectionObserver((entries) => {
     const e = entries[0]
     bottomCtaVisible.value = e ? e.isIntersecting : false
   }, options)
 
   const heroEl = heroCtaEl.value
+  const midEl = midCtaEl.value
   const bottomEl = bottomCtaEl.value
   if (heroEl) {
     heroObserver.observe(heroEl)
+  }
+  if (midEl) {
+    midObserver.observe(midEl)
   }
   if (bottomEl) {
     bottomObserver.observe(bottomEl)
@@ -76,8 +154,10 @@ function setupObservers() {
 
 function teardownObservers() {
   heroObserver?.disconnect()
+  midObserver?.disconnect()
   bottomObserver?.disconnect()
   heroObserver = null
+  midObserver = null
   bottomObserver = null
 }
 
@@ -86,6 +166,11 @@ onMounted(() => {
   if (typeof window !== 'undefined') {
     mediaQuery = window.matchMedia(`(max-width: ${MOBILE_MAX_PX}px)`)
     mediaQuery.addEventListener('change', syncMobileViewport)
+    window.addEventListener('mouseout', handleExitIntent)
+    ACTIVITY_EVENTS.forEach((eventName) => {
+      window.addEventListener(eventName, resetInactivityTimer, { passive: true })
+    })
+    resetInactivityTimer()
   }
   void nextTick(() => {
     setupObservers()
@@ -95,6 +180,11 @@ onMounted(() => {
 onUnmounted(() => {
   teardownObservers()
   mediaQuery?.removeEventListener('change', syncMobileViewport)
+  window.removeEventListener('mouseout', handleExitIntent)
+  ACTIVITY_EVENTS.forEach((eventName) => {
+    window.removeEventListener(eventName, resetInactivityTimer)
+  })
+  clearInactivityTimer()
   mediaQuery = null
 })
 </script>
@@ -104,17 +194,50 @@ onUnmounted(() => {
     <header class="hero">
       <p class="hero-eyebrow">{{ t('trainingB2c.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2c.pageTitle') }}</h1>
+      <p class="hero-outcome">{{ t('trainingB2c.heroOutcome') }}</p>
       <div class="hero-intro">
         <p v-for="(paragraph, index) in t('trainingB2c.intro')" :key="index" class="hero-subtitle">
           {{ paragraph }}
         </p>
       </div>
+      <div class="launch-meta">
+        <p class="launch-meta-line">
+          <strong>{{ t('trainingB2c.launch.dateLabel') }}:</strong> {{ t('trainingB2c.launch.dateValue') }}
+        </p>
+        <p class="launch-meta-line">
+          <strong>{{ t('trainingB2c.launch.capacityLabel') }}:</strong> {{ t('trainingB2c.launch.capacityValue') }}
+        </p>
+      </div>
+      <div class="price-box">
+        <p class="price-title">{{ t('trainingB2c.launch.priceLabel') }}</p>
+        <p class="price-line" :class="{ 'price-line--active': isEarlyBird }">
+          {{ t('trainingB2c.launch.earlyBirdLabel') }} - {{ t('trainingB2c.launch.earlyBirdPrice') }}
+        </p>
+        <p class="price-line" :class="{ 'price-line--active': !isEarlyBird }">
+          {{ t('trainingB2c.launch.regularLabel') }} - {{ t('trainingB2c.launch.regularPrice') }}
+        </p>
+      </div>
       <div ref="heroCtaEl" class="hero-actions">
-        <BaseButton @click="openSignup">
-          {{ t('trainingB2c.cta') }}
+        <BaseButton @click="handlePayClick">
+          {{ t('trainingB2c.payCta') }}
         </BaseButton>
+        <p v-if="!isPaymentReady" class="payment-note">{{ t('trainingB2c.paymentPendingNote') }}</p>
+        <p v-if="paymentUnavailableNote" class="payment-note">{{ paymentUnavailableNote }}</p>
       </div>
     </header>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('trainingB2c.immediateOutcomesTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <ul class="list">
+          <li v-for="item in t('trainingB2c.immediateOutcomes')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </BaseCard>
+    </section>
 
     <section class="section">
       <header class="section-header">
@@ -127,21 +250,19 @@ onUnmounted(() => {
           </li>
         </ul>
         <p class="section-closing">{{ t('trainingB2c.problemClosing') }}</p>
-        <p class="problem-patch">{{ t('trainingB2c.problemImmediateHelp') }}</p>
       </BaseCard>
     </section>
 
     <section class="section">
       <header class="section-header">
-        <h2>{{ t('trainingB2c.solutionTitle') }}</h2>
+        <h2>{{ t('trainingB2c.whatItIsTitle') }}</h2>
       </header>
       <BaseCard>
-        <div class="prose">
-          <p>{{ t('trainingB2c.solutionLead') }}</p>
-          <p>{{ t('trainingB2c.solutionAdr') }}</p>
-          <p>{{ t('trainingB2c.solutionC4') }}</p>
-          <p>{{ t('trainingB2c.solutionClosing') }}</p>
-        </div>
+        <ul class="list">
+          <li v-for="item in t('trainingB2c.whatItIs')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
       </BaseCard>
     </section>
 
@@ -158,6 +279,37 @@ onUnmounted(() => {
       </BaseCard>
     </section>
 
+    <section class="section section--mid-cta">
+      <BaseCard>
+        <template #title>{{ t('trainingB2c.midCtaTitle') }}</template>
+        <p class="section-intro">{{ t('trainingB2c.midCtaBody') }}</p>
+        <div ref="midCtaEl" class="cta-inline-actions">
+          <BaseButton @click="handlePayClick">
+            {{ t('trainingB2c.payCta') }}
+          </BaseButton>
+          <p v-if="!isPaymentReady" class="payment-note">{{ t('trainingB2c.paymentPendingNote') }}</p>
+        </div>
+      </BaseCard>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('trainingB2c.trustTitle') }}</h2>
+      </header>
+      <BaseCard>
+        <ul class="list">
+          <li v-for="item in t('trainingB2c.trust')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+        <p class="trust-about">
+          <RouterLink class="trust-about-link" :to="{ name: 'about-en', params: { lang: currentLang } }">
+            {{ t('trainingB2c.trustAboutLabel') }}
+          </RouterLink>
+        </p>
+      </BaseCard>
+    </section>
+
     <section class="section">
       <header class="section-header">
         <h2>{{ t('trainingB2c.howItWorksTitle') }}</h2>
@@ -170,6 +322,33 @@ onUnmounted(() => {
         </ul>
         <p class="section-closing">{{ t('trainingB2c.howItWorksClosing') }}</p>
       </BaseCard>
+    </section>
+
+    <section class="section grid grid--two">
+      <div>
+        <header class="section-header">
+          <h2>{{ t('trainingB2c.forWhoTitle') }}</h2>
+        </header>
+        <BaseCard>
+          <ul class="list">
+            <li v-for="item in t('trainingB2c.forWho')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
+      </div>
+      <div>
+        <header class="section-header">
+          <h2>{{ t('trainingB2c.notForTitle') }}</h2>
+        </header>
+        <BaseCard>
+          <ul class="list">
+            <li v-for="item in t('trainingB2c.notFor')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
+      </div>
     </section>
 
     <section class="section">
@@ -206,49 +385,19 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section class="section grid grid--two">
-      <div>
-        <header class="section-header">
-          <h2>{{ t('trainingB2c.forWhoTitle') }}</h2>
-        </header>
-        <BaseCard>
-          <ul class="list">
-            <li v-for="item in t('trainingB2c.forWho')" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </BaseCard>
-      </div>
-      <div>
-        <header class="section-header">
-          <h2>{{ t('trainingB2c.notForTitle') }}</h2>
-        </header>
-        <BaseCard>
-          <ul class="list">
-            <li v-for="item in t('trainingB2c.notFor')" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </BaseCard>
-      </div>
-    </section>
-
     <section class="section cta">
       <BaseCard>
         <template #title>{{ t('trainingB2c.ctaTitle') }}</template>
         <p class="section-intro">{{ t('trainingB2c.ctaBody') }}</p>
-        <div class="cta-gift-box">
-          <p class="cta-gift-title">
-            <span class="cta-gift-emoji" aria-hidden="true">🎁</span>
-            {{ t('trainingB2c.ctaGiftTitle') }}
-          </p>
-          <p class="cta-gift-body">{{ t('trainingB2c.ctaGiftBody') }}</p>
-        </div>
         <div ref="bottomCtaEl" class="cta-inline-actions">
-          <BaseButton @click="openSignup">
-            {{ t('trainingB2c.cta') }}
+          <BaseButton @click="handlePayClick">
+            {{ t('trainingB2c.payCta') }}
+          </BaseButton>
+          <BaseButton variant="ghost" @click="openSignup">
+            {{ t('trainingB2c.leadMagnetCta') }}
           </BaseButton>
         </div>
+        <p v-if="!isPaymentReady" class="payment-note">{{ t('trainingB2c.paymentPendingNote') }}</p>
       </BaseCard>
     </section>
 
@@ -296,6 +445,15 @@ onUnmounted(() => {
   line-height: 1.3;
 }
 
+.hero-outcome {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--color-text);
+  max-width: 50rem;
+}
+
 .hero-intro {
   max-width: 50rem;
 }
@@ -315,7 +473,52 @@ onUnmounted(() => {
   margin-top: 1rem;
 }
 
+.launch-meta {
+  margin-top: 0.9rem;
+}
+
+.launch-meta-line {
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.price-box {
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+}
+
+.price-title {
+  margin: 0 0 0.45rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.price-line {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.price-line--active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.payment-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
 .section {
+  margin-bottom: 2rem;
+}
+
+.section--mid-cta {
   margin-bottom: 2rem;
 }
 
@@ -336,68 +539,19 @@ onUnmounted(() => {
   color: var(--color-text-muted);
 }
 
-.problem-patch {
-  margin: 1rem 0 0;
-  padding: 0.85rem 1rem;
-  font-size: 0.93rem;
-  line-height: 1.55;
-  color: var(--color-text);
-  background: var(--color-surface-soft);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius-md);
-  overflow-wrap: break-word;
-  word-break: break-word;
+.trust-about {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
 }
 
-.cta-gift-box {
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
-  margin: 1rem 0 0.75rem;
-  padding: 1rem 1.1rem;
-  background: var(--color-surface-soft);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+.trust-about-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
-.cta-gift-title {
-  margin: 0 0 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.4rem;
-  line-height: 1.35;
-}
-
-.cta-gift-emoji {
-  flex-shrink: 0;
-  font-size: 1.1rem;
-  line-height: 1.35;
-}
-
-.cta-gift-body {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--color-text-muted);
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-.prose {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.prose p {
-  margin: 0;
-  font-size: 0.93rem;
-  line-height: 1.5;
+.trust-about-link:hover {
+  text-decoration-thickness: 0.1em;
 }
 
 .grid {
@@ -430,6 +584,10 @@ onUnmounted(() => {
 
 .cta-inline-actions {
   margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
 }
 
 @media (max-width: 768px) {

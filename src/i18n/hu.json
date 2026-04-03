@@ -190,52 +190,94 @@
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "trainingB2c": {
-  "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
-    "eyebrow": "Mid-Senior fejlesztőknek · 2 nap · Budapest · csak személyesen",
+    "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
+    "heroOutcome": "Két nap alatt világosan el tudod mondani, hogyan működik a rendszered, meg tudod védeni a döntéseidet, és kész C4-diagramokkal + ADR-vázlatokkal mész haza.",
+    "eyebrow": "Medior–senior fejlesztőknek · 2 nap · Budapest · csak személyesen",
+    "launch": {
+      "dateLabel": "Időpont",
+      "dateValue": "2026. június 11-12.",
+      "priceLabel": "Részvételi díj",
+      "earlyBirdLabel": "Early bird (2026-05-17-ig)",
+      "regularLabel": "Normál ár (2026-05-18-tól)",
+      "earlyBirdPrice": "99.000 Ft",
+      "regularPrice": "119.000 Ft",
+      "capacityLabel": "Maximális létszám",
+      "capacityValue": "10 fő",
+      "paymentFallback": "A Stripe fizetési link hamarosan érkezik. Addig kérlek iratkozz fel a várólistára."
+    },
     "intro": [
-      "Szállítod a ticketeket, de az egész rendszer még mindig ködös. A nagyobb döntéseknél gyakran csak találgatsz.",
-      "Az architektúráról szóló beszélgetések nélküled mennek—vagy bent ülsz, de nincs meg az a nyelv, amivel átütően tudsz érvelni. A rendszertervező interjúkon ugyanúgy kijön: ismered a részleteket, de nem tudsz gyorsan, érthetően beszélni a rendszerről.",
-      "Ez két gyakorlatorientált nap technikai döntésekről, C4-ről és könnyű ADR-ekről, hogy világosan el tudd mondani, mit építettél, meg tudd védeni a kompromisszumokat, és úgy szólalj meg, mint aki alakítja a rendszert—nem csak aki lekódolja."
+      "A technikai irány gyakran nélküled dől el — vagy bent vagy, csak nem tudsz elég erősen érvelni.",
+      "Ez 2 nap gyakorlat: döntések, C4, rövid ADR-ek. Kevesebb slide, több valós helyzet."
+    ],
+    "immediateOutcomesTitle": "Mit kapsz 2 nap alatt",
+    "immediateOutcomes": [
+      "Tisztább döntési kérdés zajos helyzetben — nem ködös vita.",
+      "Opciók összevetése kockázat és költség szerint—nem ösztönös választás.",
+      "Rövid döntésjegyzetek (ADR-stílus), ahol kell—nem papírhegy.",
+      "C4 nézetek, amikre rá tudsz mutatni — nem fejben tárolt vázlat.",
+      "Egy rövid, érthető történeted lesz a rendszerről — megbeszélésre és interjúra is."
     ],
     "problemTitle": "A probléma",
     "problem": [
-      "Mélyen benne vagy a megvalósításban, de a függőségek, határok és hibamódok továbbra is homályosak.",
-      "Minden lényegesebb választás (adatmodell, integráció, szétbontás, „átmeneti” megoldások) bizonytalannak érződik, amikor számít.",
+      "Benne vagy a kódban, de a határok, függőségek és hibamódok továbbra is homályosak.",
+      "Minden lényeges választás (adatmodell, integráció, szétbontás, „átmeneti” megoldás) bizonytalannak érződik, amikor számít.",
       "Nem vagy benne—vagy nem hallanak meg—ott, ahol a technikai irányt tényleg eldöntik.",
-      "Amikor valaki azt kérdezi: „miért így csináltuk?”, a becsületes válasz gyakran az, hogy „senki nem emlékszik”.",
-      "A rendszertervező helyzetek leleplezik a rést: ismered a részeket, de nem tudsz belőlük gyorsan összefüggő történetet rakni."
+      "„Miért így?”—a válasz gyakran: „senki nem emlékszik”.",
+      "Rendszertervező helyzetek: ismered a részeket, de nem áll össze gyorsan egy érthető történet."
     ],
-    "problemClosing": "Ha ilyen egy átlag heted, akkor Neked szól.",
-    "problemImmediateHelp": "Nem kell megvárnod a workshopot, hogy elkezdd tisztábban látni a rendszeredet. Iratkozz fel a várólistára, és azonnal küldöm az Architect’s Reality Check csekklistát – 5 kérdés, ami segít átlátni a káoszon már a következő tervezésnél.",
-    "solutionTitle": "Mi ez valójában",
-    "solutionLead": "Ez nem „szemlélet”-ről szóló diasor. Kiscsoportos, személyes képzés, ahol valós döntési mintákon dolgozol: szétválasztod a korlátokat a véleményektől, összehasonlítod az opciókat kockázat és költség szerint, és akkor hagysz rövid nyomot, amikor számít.",
-    "solutionAdr": "Az ADR-ek annyiban jelennek meg, amennyire kellenek: egy kis, ismételhető formátum arra, hogy „mit döntöttünk, mit fontolgattunk még, mi törik el, ha tévedünk”—nem vállalati papírtologatás.",
-    "solutionC4": "A C4 az, ahogy olvashatóvá teszed a rendszert: kontextus, konténerek, komponensek—hogy te és mások ugyanazt értsék a határokról és a felelősségről, ne egymás fejében élő modellekről vitázzatok.",
-    "solutionClosing": "Eredmény: döntések, amiket meg tudsz indokolni, diagramok, amikre rá tudsz mutatni, és olyan kommunikáció a termékkel és a vezetéssel, ami nem fullad zsargonba.",
+    "problemClosing": "Ha ez ismerős, itt a helyed.",
+    "whatItIsTitle": "Mi ez valójában",
+    "whatItIs": [
+      "Kiscsoportos, személyes workshop Budapesten — nem online stream, nem tömegelőadás.",
+      "Valós döntési minták: korlátok vs. vélemények, opciók összevetése, rövid döntésnyom, amikor számít.",
+      "ADR: egy ismételhető formátum—mit döntöttünk, mit nem, mi törik el.",
+      "C4: kontextus, konténer, komponens—közös kép a határokról.",
+      "A végén lesz: indokolt döntés, mutatható diagram, és érthető magyarázat nem-technikai szereplőknek is."
+    ],
+    "takeawayTitle": "Mit viszel haza",
+    "takeaways": [
+      "Döntési ellenőrzőlista valós feladatokhoz és tervezési egyeztetésekhez.",
+      "Egy-két C4 nézet (kontextus, konténer, komponens) a saját példádra vagy a teremből—bemásolható doksiba.",
+      "ADR vázlatok visszajelzéssel—már egyszer végigcsinálod, mielőtt visszaülsz.",
+      "Néhány perc alatt végig tudsz vezetni valakit a rendszereden diagrammal + rövid döntéstörténettel.",
+      "Élesebb felkészülés rendszertervező beszélgetésekre—amikor tényleg eldőlnek a kompromisszumok."
+    ],
+    "leadMagnetTitle": "Ingyenes PDF: Architect’s Reality Check",
+    "leadMagnetBody": "Öt kérdés a következő tervezéshez—azonnal e-mailben, ha feliratkozol a várólistára.",
+    "leadMagnetCta": "Feliratkozom a várólistára",
+    "midCtaTitle": "Foglalás",
+    "midCtaBody": "2026. június 11–12., Budapest. Legfeljebb 10 fő.",
+    "trustTitle": "Ki tartja",
+    "trust": [
+      "Papp Krisztián — senior tanácsadó és tréner; 10+ éve dolgozik termékfejlesztő csapatokkal.",
+      "Kézzelfogható tapasztalat sokféle kódbázison, infrastruktúrán és szállítási folyamatokon átivelően.",
+      "Rendszeres előadó nemzetközi konferenciákon; gyakorlati fókusz, nulla mellébeszélés."
+    ],
+    "trustAboutLabel": "Röviden rólam",
     "howItWorksTitle": "Hogyan működik",
     "howItWorks": [
-      "Két nap, Budapest, kiscsoport. Csak személyesen—a közös tábla és a modellezés nélkülözhetetlen; nincs online közvetítés.",
-      "Rövid elmélet, sok gyakorlat: opciókat hasonlítasz, rajzolsz, írsz—nem csak végighallgatsz.",
-      "Hozd a saját „rendetlenséged”: egy rendszert, amin dolgozol, vagy egy döntést, ami még mindig zavar. Lesznek életszerű példák is, ha belső részleteket nem oszthatsz meg."
+      "Két nap, Budapest, kiscsoport. Csak személyesen—a tábla és a modellezés nélkül nincs értelme; nincs online közvetítés.",
+      "Rövid bevezető, sok gyakorlat: opciókat hasonlítasz, rajzolsz, írsz.",
+      "Hozd a saját „rendetlenséged”: egy rendszert vagy egy döntést, ami még zavar. Ha nem oszthatsz belsőt, lesz életszerű példa is."
     ],
-    "howItWorksClosing": "Nem oklevéllel és homályos „felismeréssel” mész haza - hanem dolgokkal, amiket bemásolhatsz Confluence-be, Notionba vagy a repóba.",
+    "howItWorksClosing": "A részletes program lejjebb van. Nem oklevéllel mész haza, hanem azonnal használható anyagokkal.",
     "forWhoTitle": "Kiknek szól?",
     "forWho": [
-      "Medior–senior fejlesztőknek, akik senior, staff vagy tech lead irányt céloznak—nem még egy év „csak Jira zárás”.",
-      "Akik rendszer-szintű jártasságot akarnak: hogyan kapcsolódnak, buknak el és változnak a részek—nem csak keretrendszer-API-kat.",
-      "Akik interjúra is hasznos tisztaságot akarnak: architektúra és kompromisszumok strukturáltan, időnyomás alatt.",
-      "Mérnököknek, akiknek elege van abból, hogy fölöttük döntenek úgy, hogy nincs mivel érdemben visszavágni."
+      "Medior–senior fejlesztőknek, akik senior, staff vagy tech lead irányt céloznak — nem akarnak örökre végrehajtó szerepben maradni.",
+      "Akik rendszerszintű jártasságot akarnak: hogyan kapcsolódnak, buknak el és változnak a részek.",
+      "Akik interjúra is használható tudást akarnak: architektúra és kompromisszumok strukturáltan, időnyomás alatt.",
+      "Mérnököknek, akiknek elege van abból, hogy fölöttük döntenek úgy, hogy nincs mivel megakadályozni."
     ],
     "notForTitle": "Kiknek nem szól?",
     "notFor": [
-      "Kezdőknek, akik még az alap programozást tanulják.",
-      "Akik csak előadást akarnak gyakorlat és közös átnézés nélkül.",
-      "Akik nem hajlandók a teremben rajzolni, írni és megvédeni egy döntést.",
-      "Akiknek kötelező a távoli részvétel—tábla nélkül ez a formátum nem működik."
+      "Kezdőknek, akik még csak az alap programozást tanulják.",
+      "Akik csak előadást akarnak gyakorlat és közös munka nélkül.",
+      "Akik nem hajlandóak a teremben rajzolni, írni és megvédeni egy döntést.",
+      "Akik csak online tudnak részt venni - tábla nélkül ez a formátum nem működik."
     ],
     "day1": {
       "title": "1. nap — Döntések nyomás alatt",
-      "goal": "Tisztázod a valódi döntést, összeveted a kompromisszumokat, és akkor rögzítesz röviden, amikor számít—az ADR könnyű keret, nem dokumentációs színház.",
+      "goal": "A valódi döntési kérdés tisztázása, kompromisszumok összevetése, rövid rögzítés amikor kell — ADR mint könnyű keret, nem dokumentációs színház.",
       "sessions": [
         {
           "title": "Döntési helyzetek tisztázása",
@@ -248,21 +290,21 @@
           "title": "Opciók és kompromisszumok összevetése",
           "points": [
             "Alternatívák összevetése kockázat, költség és változtatási ár alapján.",
-            "Döntési indoklás érthető kommunikálása technikai és üzleti nézőpontból."
+            "Döntési indoklás technikai és üzleti nézőpontból is érthetően."
           ]
         },
         {
           "title": "Rövid döntési lenyomatok (ADR mint keret)",
           "points": [
-            "Mikor érdemes rögzíteni egy döntést, és mikor elég szóbeli megállapodás.",
-            "Könnyűsúlyú sablon használata úgy, hogy ne legyen adminisztrációs teher."
+            "Mikor érdemes rögzíteni egy döntést, mikor elég szóban.",
+            "Könnyűsúlyú sablon adminisztráció nélkül."
           ]
         }
       ]
     },
     "day2": {
       "title": "2. nap — Láthatóvá teszed C4-gyel",
-      "goal": "C4-gel modellezed a rendszert, felismered a csatolást és a felelősségmegosztás hiányosságait, és diagramokat plusz rövid döntésjegyzeteket egy mesévé fűzöl.",
+      "goal": "C4-gyel modellezed a rendszert, felismered a kockázatos csatolást és a felelősségi réseket; diagram + rövid döntésjegyzetek egy koherens történetben.",
       "sessions": [
         {
           "title": "C4: kontextus- és konténernézet",
@@ -281,30 +323,24 @@
         {
           "title": "Döntések kommunikálása diagramokkal és rövid leírásokkal",
           "points": [
-            "A diagramok és rövid döntési leírások összerendezése közös történetté.",
-            "Ismételhető kommunikációs rutin kialakítása csapaton belül és kívül."
+            "Diagramok és rövid döntési leírások egy közös történetté.",
+            "Ismételhető kommunikációs rutin csapaton belül és kívül."
           ]
         }
       ]
     },
-    "takeawayTitle": "Mit viszel haza",
-    "takeaways": [
-      "Újrahasználható döntési checklista valós feladatokhoz és tervezési egyeztetésekhez—nem egyszeri elmélet.",
-      "Egy-két C4 nézet (kontextus, konténer, komponens) a saját rendszeredre vagy egy teremben vett konkrét példára—bemásolható a doksiba vagy interjúfelkészítésbe.",
-      "ADR vázlatok, amiket a képzésen írtál (visszajelzéssel), hogy már egyszer végigcsináld, mielőtt visszaülsz a munkához.",
-      "Képes leszel néhány perc alatt végigvezetni valakit a rendszereden egy diagrammal és egy rövid döntéstörténettel.",
-      "Élesebb felkészülés rendszertervező jellegű beszélgetésekre és arra, hogy komolyan vegyenek, amikor tényleg eldőlnek a kompromisszumok."
-    ],
-    "ctaTitle": "Következő lépés",
-    "ctaBody": "Iratkozz fel a várólistára—amikor írok a budapesti időpontokról, küldhetsz pár mondatot egy rendszerről, amin dolgozol (vagy két döntésről, amit még mindig nehéz megindokolni). Elég néhány mondat; ebből hangolom a példákat és ellenőrzöm, hogy illik-e a csoport.",
+    "ctaTitle": "Jelentkezés — max. 10 fő",
+    "ctaBody": "2026. június 11–12., Budapest. Maximum 10 fő. Ha most nem foglalsz helyet, iratkozz fel a várólistára: cserébe megkapod az Architect’s Reality Checklistem, ami jól jön a következő technikai döntésed során.",
     "ctaGiftTitle": "Ajándék a feliratkozáshoz",
-    "ctaGiftBody": "Ha feliratkozol a várólistára, nemcsak az időpontokról értesülsz, hanem megkapod az Architect’s Reality Check (PDF) segédletet is. Ez egy sűrített kivonata annak a szemléletnek, amit a két nap alatt élőben is gyakorolni fogunk.",
-    "cta": "Feliratkozom a várólistára"
+    "ctaGiftBody": "Várólista = első értesítés az időpontokról + Architect’s Reality Check (PDF). Rövid, használható segédlet, nem marketingszöveg.",
+    "cta": "Várólista + PDF — kérem",
+    "payCta": "Lefoglalom a helyem",
+    "paymentPendingNote": "A fizetés rövidesen Stripe payment linken lesz elérhető."
   },
   "signupPopup": {
     "title": "Ne csak a ticketeket pörgesd — emelkedj rendszer-szintre.",
     "introChecklist": "Add meg az e-mail címed, és azonnal küldöm az „Architect’s Reality Check” csekklistámat. Ez az az 5 kérdés, amit én is minden tervezési fázisban felteszek, hogy elkerüljem a drága és fájdalmas technológiai zsákutcákat.",
-    "introWaitlist": "Egyúttal felkerülsz a várólistára is: amint megvannak az új budapesti időpontok, kapsz egy értesítőt. Ha válaszolsz majd rá pár mondatban a saját projektedről, a workshop példáit is rád tudom szabni — így nem csak elméletet, hanem valódi megoldásokat kapsz.",
+    "introWaitlist": "Egyúttal felkerülsz a várólistára is: ha most nem jelentkeznél a 2026. június 11-12. csoportra, későbbi időpontokról elsőként küldök értesítést.",
     "firstNameLabel": "Keresztnév",
     "emailLabel": "E-mail cím",
     "submitCta": "Kérem a csekklistát és a várólistát!",
@@ -482,7 +518,7 @@
     "photoAlt": "Papp Krisztián fotója",
     "backgroundTitle": "Háttér",
     "background": [
-      "Több éves tapasztalat termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel.",
+      "10+ éves tapasztalat termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel.",
       "Hands-on munka kódbázisokon, infrastruktúrán és szállítási pipeline-okon.",
       "Rendszeres előadások meetupon és konferenciákon, erős gyakorlati fókuszsal."
     ],
@@ -624,7 +660,7 @@
     "descriptions": {
       "home": "Terem- és online képzés, valamint tanácsadás tapasztalt fejlesztői csapatoknak: DevOps, architektúra, ADR, C4, CI/CD és biztonságosabb szállítás.",
       "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
-      "trainingB2c": "Két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és könnyű ADR-ek—a ticketektől a rendszerszintű gondolkodásig.",
+      "trainingB2c": "2 napos budapesti architektúra-tréning: döntések, C4, rövid ADR—max. 10 fő, június 11–12. Tech lead / architect irány.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
       "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
       "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",

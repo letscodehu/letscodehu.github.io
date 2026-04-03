@@ -190,52 +190,94 @@
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "trainingB2c": {
-    "pageTitle": "You ship tickets. The system stays fuzzy.",
-    "eyebrow": "For individual developers · 2 days · Budapest · in person only",
+    "pageTitle": "You ship tickets. You don't own the decisions.",
+    "heroOutcome": "In two days: explain the system clearly, defend trade-offs, and leave with artifacts—diagrams and short decision notes.",
+    "eyebrow": "Mid–senior developers · 2 days · Budapest · in person only",
+    "launch": {
+      "dateLabel": "Date",
+      "dateValue": "June 11-12, 2026",
+      "priceLabel": "Price",
+      "earlyBirdLabel": "Early bird (until 2026-05-17)",
+      "regularLabel": "Regular price (from 2026-05-18)",
+      "earlyBirdPrice": "99,000 HUF",
+      "regularPrice": "119,000 HUF",
+      "capacityLabel": "Capacity",
+      "capacityValue": "10 seats",
+      "paymentFallback": "Stripe payment links are coming soon. Please join the waitlist in the meantime."
+    },
     "intro": [
-      "You implement features, but you don't really see the whole picture. Bigger calls feel like guesswork.",
-      "Architecture discussions happen without you—or you're in the room without language that sticks. System design interviews feel improvised.",
-      "This workshop is two hands-on days on technical decisions, C4, and lightweight ADRs so you can explain what you built, defend trade-offs, and sound like the engineer who shapes the system—not only the one who codes it."
+      "Technical direction often moves past you—or you're in the room without language that lands.",
+      "Two days of practice: decisions, C4, lightweight ADR-style notes. Not a lecture—sketching, writing, defending."
+    ],
+    "immediateOutcomesTitle": "What you get in 2 days",
+    "immediateOutcomes": [
+      "A sharper decision question in noisy situations—not a vague debate.",
+      "Options compared by risk and cost—not a gut call.",
+      "Short decision notes (ADR-style) where it matters—not a paper mill.",
+      "C4 views you can point at—not a half-baked mental model.",
+      "A short story of your system—for reviews and interviews."
     ],
     "problemTitle": "The problem",
     "problem": [
-      "You're deep in implementation, but dependencies, boundaries, and failure modes stay vague.",
-      "Every meaningful choice (data model, integration, split services, \"temporary\" shortcuts) feels uncertain when it matters.",
-      "You're not in—or not heard in—conversations where real technical direction gets set.",
-      "When someone asks \"why did we do it this way?\", the honest answer is often \"nobody remembers.\"",
-      "System design interviews expose the gap: you know pieces, but not how to tell a coherent story fast."
+      "You're deep in code, but boundaries, dependencies, and failure modes stay fuzzy.",
+      "Every meaningful choice (data model, integration, split, \"temporary\" shortcut) feels uncertain when it counts.",
+      "You're not in—or not heard in—conversations where technical direction is actually set.",
+      "\"Why did we do it this way?\"—often: \"nobody remembers.\"",
+      "System design moments: you know the pieces, but you can't assemble a coherent story fast."
     ],
-    "problemClosing": "If that reads like your week, you're the audience.",
-    "problemImmediateHelp": "You don't have to wait for the workshop to start seeing your system more clearly. Join the waitlist and I'll send you the Architect's Reality Check checklist right away—five questions that help you cut through the chaos on your next planning cycle.",
-    "solutionTitle": "What this actually is",
-    "solutionLead": "This is not a slide deck about \"mindset.\" It's a small-group, in-person workshop where you work through real decision patterns: separating constraints from opinions, comparing options by risk and cost, and leaving a short paper trail when it counts.",
-    "solutionAdr": "ADRs show up for what they are: a small, repeatable format for \"what we decided, what else we considered, what breaks if we're wrong\"—not enterprise paperwork.",
-    "solutionC4": "C4 is how you make the system legible: context, containers, components—so you and others align on boundaries and ownership instead of arguing from different mental models.",
-    "solutionClosing": "Together: decisions you can justify, diagrams you can point at, and a way to talk to product and leadership without drowning in jargon.",
+    "problemClosing": "If that's your week, this page is for you.",
+    "whatItIsTitle": "What this actually is",
+    "whatItIs": [
+      "Small-group, in-person workshop in Budapest—not a stream, not a crowd.",
+      "Real decision patterns: constraints vs. opinions, options, a short trail when it counts.",
+      "ADRs as a repeatable format—what we picked, what we didn't, what breaks.",
+      "C4: context, containers, components—a shared picture of boundaries.",
+      "You leave with justified decisions, pointable diagrams, and plain language for the business."
+    ],
+    "takeawayTitle": "What you'll leave with",
+    "takeaways": [
+      "A decision checklist for real tickets and design discussions.",
+      "One or two C4 views (context, container, component) for your example or from the room—paste into docs.",
+      "ADR drafts with feedback—so you've already done it once before you're back at work.",
+      "Walk someone through your system in minutes with a diagram and a short decision story.",
+      "Sharper prep for system-design-style conversations when trade-offs actually get decided."
+    ],
+    "leadMagnetTitle": "Free PDF: Architect's Reality Check",
+    "leadMagnetBody": "Five questions for your next planning cycle—sent by email when you join the waitlist.",
+    "leadMagnetCta": "Send me the checklist",
+    "midCtaTitle": "Book a seat",
+    "midCtaBody": "June 11–12, 2026, Budapest. At most 10 people.",
+    "trustTitle": "Who's teaching",
+    "trust": [
+      "Krisztián Papp—senior consultant and trainer; years of work with product engineering teams.",
+      "Hands-on experience across codebases, infrastructure, and delivery pipelines.",
+      "Regular speaker at meetups and conferences; practice, not fluff."
+    ],
+    "trustAboutLabel": "About me",
     "howItWorksTitle": "How it works",
     "howItWorks": [
-      "Two days, Budapest, small group. In person only—shared whiteboard and modeling are core; no remote stream.",
-      "Short inputs, heavy practice: you're comparing options, sketching, and writing—not passively listening.",
-      "You bring your own mess: a system you work on, or a decision that still bothers you. We also use realistic examples so nobody is blocked if they can't share internals."
+      "Two days, Budapest, small group. In person only—the whiteboard is non-negotiable; no remote stream.",
+      "Short inputs, heavy practice: compare options, sketch, write.",
+      "Bring your mess: a system you work on or a decision that still bothers you. If you can't share internals, we use realistic examples."
     ],
-    "howItWorksClosing": "The day-by-day breakdown is in the Day 1 and Day 2 sections below. You leave with things you can paste into Confluence, Notion, or a repo—not a certificate and vague \"insight.\"",
+    "howItWorksClosing": "The detailed program is at the bottom of the page. You leave with paste-ready artifacts—not a certificate.",
     "forWhoTitle": "Who this is for",
     "forWho": [
-      "Mid-level to senior developers who want senior, staff, or tech lead trajectories—not another year of only closing Jira issues.",
-      "People who want system fluency: how pieces connect, fail, and evolve—not just framework APIs.",
-      "Anyone who wants interview-relevant clarity: explain architecture and trade-offs in a structured way under time pressure.",
-      "Engineers who are tired of being overruled without a vocabulary to push back constructively."
+      "Mid-level to senior developers aiming at senior, staff, or tech lead—not another year of only closing Jira issues.",
+      "People who want system fluency: how pieces connect, fail, and evolve.",
+      "Anyone who wants interview-relevant clarity under time pressure.",
+      "Engineers tired of being overruled without vocabulary to push back."
     ],
     "notForTitle": "Who this is not for",
     "notFor": [
       "Beginners still learning core programming.",
       "Anyone who wants a talk-only event with no exercises or peer review.",
       "People unwilling to sketch, write, and defend a decision in the room.",
-      "Anyone who needs remote—this format doesn't translate without the whiteboard."
+      "Anyone who needs remote—this format doesn't work without the whiteboard."
     ],
     "day1": {
       "title": "Day 1 — Decisions under pressure",
-      "goal": "Clarify the real decision, compare trade-offs, and capture short records when it matters—ADR as a lightweight framework, not documentation theater.",
+      "goal": "Clarify the real decision, compare trade-offs, capture short records when it counts—ADR as a light frame, not documentation theater.",
       "sessions": [
         {
           "title": "Clarifying the real decision",
@@ -248,21 +290,21 @@
           "title": "Comparing options and trade-offs",
           "points": [
             "Compare alternatives by risk, cost, and change impact.",
-            "Communicate rationale clearly to technical and business stakeholders."
+            "Communicate rationale to technical and business stakeholders."
           ]
         },
         {
           "title": "Short decision records (ADR as framework)",
           "points": [
-            "Decide when a decision should be captured versus kept verbal.",
-            "Use a lightweight structure without turning it into documentation overhead."
+            "When to capture a decision versus keep it verbal.",
+            "A lightweight template without admin overhead."
           ]
         }
       ]
     },
     "day2": {
       "title": "Day 2 — Making it visible with C4",
-      "goal": "Model the system with C4, spot coupling and ownership gaps, and tie diagrams plus short decision notes into one narrative.",
+      "goal": "Model with C4, spot coupling and ownership gaps; tie diagrams and short decision notes into one story.",
       "sessions": [
         {
           "title": "C4 context and container views",
@@ -281,30 +323,24 @@
         {
           "title": "Communicating decisions with diagrams and short notes",
           "points": [
-            "Link diagrams and short decision notes into one coherent narrative.",
-            "Create a repeatable communication routine inside and outside the team."
+            "Turn diagrams and short notes into one coherent narrative.",
+            "A repeatable communication routine inside and outside the team."
           ]
         }
       ]
     },
-    "takeawayTitle": "What you'll leave with",
-    "takeaways": [
-      "A reusable decision checklist you can use on real tickets and design discussions—not a one-off theory.",
-      "One or two C4 views (context, container, component) for your system or a concrete example from the room—artifacts you can drop into docs or interview prep.",
-      "ADR drafts you wrote during the workshop (with feedback), so you've already done it once before you're back at work.",
-      "The ability to walk someone through your system in a few minutes with a diagram plus a short decision story.",
-      "Sharper prep for system design-style conversations and for being taken seriously when trade-offs actually get decided."
-    ],
-    "ctaTitle": "Next step",
-    "ctaBody": "Reserve a spot on the waitlist—and when I follow up with Budapest dates, you can send a short description of a system you work on (or two decisions you still find hard to justify). A few sentences is enough. I use that to tune examples and to make sure the cohort is a fit.",
-    "ctaGiftTitle": "A gift when you sign up",
-    "ctaGiftBody": "When you join the waitlist, you won't only hear about new dates—you'll also get the Architect's Reality Check (PDF) companion. It's a condensed take on the mindset we'll practice live over the two days.",
-    "cta": "Join the waitlist"
+    "ctaTitle": "Apply — max. 10 seats",
+    "ctaBody": "June 11–12, 2026, Budapest. At most 10 seats—if you're not booking now, join the waitlist: a few lines about your system or two hard-to-justify decisions, and I'll tune examples.",
+    "ctaGiftTitle": "Waitlist bonus",
+    "ctaGiftBody": "Waitlist: date updates plus Architect's Reality Check (PDF)—condensed helper, not marketing filler.",
+    "cta": "Waitlist + PDF",
+    "payCta": "Reserve my seat — June 11–12",
+    "paymentPendingNote": "Payment will soon be available via Stripe payment links."
   },
   "signupPopup": {
     "title": "Don’t just churn tickets—level up to systems thinking.",
     "introChecklist": "Enter your email address and I’ll send you my “Architect’s Reality Check” checklist right away. These are the five questions I ask in every design phase to avoid expensive, painful technology dead ends.",
-    "introWaitlist": "You’ll also join the waitlist: as soon as new Budapest dates are set, you’ll get a notification. If you reply in a few sentences about your own project, I can tailor the workshop examples to you—so you get real solutions, not just theory.",
+    "introWaitlist": "You’ll also join the waitlist: if you’re not applying for the June 11-12, 2026 cohort right now, you’ll be first to hear about upcoming dates. If you reply with a few lines about your project, I can tailor workshop examples to your context.",
     "firstNameLabel": "First name",
     "emailLabel": "Email address",
     "submitCta": "Send me the checklist and add me to the waitlist!",
@@ -482,7 +518,7 @@
     "photoAlt": "Photo of Krisztián Papp",
     "backgroundTitle": "Background",
     "background": [
-      "Years of experience working with product development teams and engineering organizations.",
+      "10+ years of experience working with product development teams and engineering organizations.",
       "Hands-on work across codebases, infrastructure, and delivery pipelines.",
       "Regular speaker at meetups and conferences, with a focus on practical, experience-based talks."
     ],
@@ -624,7 +660,7 @@
     "descriptions": {
       "home": "Classroom training and consulting for mid–senior software teams: DevOps, architecture, ADRs, C4, CI/CD, and practices that make delivery safer and faster.",
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
-      "trainingB2c": "Two-day Budapest workshop for developers: technical decisions, C4, and lightweight ADRs—move from tickets to systems thinking.",
+      "trainingB2c": "Two-day Budapest architecture training: decisions, C4, lightweight ADRs—max 10 seats, June 11–12. For tech lead / architect paths.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
       "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
       "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",

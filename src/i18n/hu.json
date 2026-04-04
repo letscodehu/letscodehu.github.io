@@ -200,7 +200,7 @@
     "problemTitle": "A probléma",
     "problem": [
       "Mélyen benne vagy a megvalósításban, de a függőségek, határok és hibakezelési stratégiák továbbra is homályosak.",
-      "Minden lényegesebb választás (adatmodell, integráció, szétbontás, „átmeneti” megoldások) bizonytalannak érződik, amikor számít.",
+      "Minden lényegesebb választás (adatmodell, integráció, szétbontás, „átmeneti” megoldások) bizonytalannak érződik.",
       "Nem vagy benne—vagy nem hallanak meg—ott, ahol a technikai irányt tényleg eldöntik.",
       "Amikor valaki azt kérdezi: „miért így csináltuk?”, a becsületes válasz gyakran az, hogy „senki nem emlékszik”.",
       "A rendszertervező helyzetek leleplezik a rést: ismered a részeket, de nem tudsz belőlük gyorsan összefüggő történetet rakni."

@@ -190,7 +190,8 @@ onUnmounted(() => {
 
 <template>
   <Teleport to="body">
-    <div v-if="open" class="overlay" @click.self="handleClose">
+    <div v-if="open" class="popup-layer" role="presentation">
+      <div class="popup-backdrop" aria-hidden="true" @click="handleClose" />
       <div
         class="modal"
         role="dialog"
@@ -264,17 +265,32 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.overlay {
+.popup-layer {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.56);
   display: grid;
   place-items: center;
   padding: 1rem;
   z-index: 90;
 }
 
+.popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+:global(html.theme-dark) .popup-backdrop {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .modal {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: min(30rem, calc(100vw - 2rem));
   min-width: 0;
@@ -435,7 +451,7 @@ onUnmounted(() => {
 }
 
 @media (max-width: 28rem) {
-  .overlay {
+  .popup-layer {
     align-content: center;
     padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
       max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));

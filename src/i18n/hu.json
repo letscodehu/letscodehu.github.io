@@ -316,6 +316,37 @@
     "ctaGiftBody": "Ha feliratkozol a várólistára, nemcsak az időpontokról értesülsz, hanem megkapod az Architect’s Reality Check (PDF) segédletet is. Ez egy sűrített kivonata annak a szemléletnek, amit a két nap alatt élőben is gyakorolni fogunk.",
     "cta": "Feliratkozom a várólistára"
   },
+  "trainingB2cAds": {
+    "pageTitle": "Workshop Budapest — lépj túl a ticket-végrehajtáson",
+    "eyebrow": "2 nap · Budapest · kiscsoportos, személyes workshop",
+    "heroTitle": "Fejlesztőből rendszerszinten gondolkodó mérnök.",
+    "heroBody": "Két intenzív, gyakorlati nap technikai döntésekről, C4-ről és ADR-ekről. A cél egyszerű: hétfőn úgy menj vissza, hogy tisztábban látsz, gyorsabban érvelsz, és magabiztosabban kommunikálod a kompromisszumokat.",
+    "heroSub": "Hozd a saját rendszeredet, vagy egy valós döntési problémát a munkádból, és abból dolgozunk.",
+    "ctaPrimary": "Feliratkozom most",
+    "proofTitle": "Miért működik ez a formátum",
+    "proofPoints": [
+      "Nem passzív előadás: a saját döntési helyzeteiden dolgozol.",
+      "Kiscsoportos, személyes workshop valódi visszajelzéssel, nem csak prezentációkkal.",
+      "C4 + ADR együtt: diagram, döntési indoklás és kommunikáció egy közös történetben.",
+      "Konkrét, azonnal használható tudással mész haza, nem csak motivációval."
+    ],
+    "outcomesTitle": "Mit viszel magaddal hétfő reggelre",
+    "outcomes": [
+      "A „Reality Check” döntési keretrendszer, amivel strukturáltabban mérlegeled az opciókat, és magabiztosabban hozol technikai döntéseket.",
+      "A saját rendszered Context és Container C4 nézete, dokumentációba illeszthető formában.",
+      "Egy praktikus ADR-minta, amit a csapatoddal újra és újra használhatsz.",
+      "Egy 15 perces architektúra-sztori rutin stakeholder beszélgetésekhez."
+    ],
+    "instructorTitle": "Az oktatóról",
+    "instructorImagePlaceholder": "Oktatói kép helye",
+    "instructorImagePlaceholderAria": "Krisztián workshop közben",
+    "instructorBody1": "Krisztián szoftverarchitekt és tanácsadó, több mint tíz év gyakorlati tapasztalattal összetett szoftverrendszerek tervezésében, építésében és továbbfejlesztésében. Több senior mérnöki vezetői szerep után megalapította saját tanácsadó cégét, ahol szervezeteknek segít az architektúra modernizálásában, a szállítás gyorsításában és fenntartható mérnöki gyakorlatok kialakításában.",
+    "instructorBody2": "Szakterületei a felhőtranszformációk, a DevOps gyakorlatok, az architekturális döntéshozatal (ADR) és a pragmatikus rendszertervezés. Krisztián a Letscode.hu közösség alapítója is, ahol támogató közeget épít azért, hogy az egyének fejlődhessenek, megosszák a tudásukat, és együtt vigyék előre a szakmát.",
+    "ctaSecondaryTitle": "Ha ez most fontos neked, ne halogasd",
+    "ctaSecondaryBody": "Feliratkozás után azonnal megkapod az Architect’s Reality Check segédletet, és értesítelek a következő budapesti időpontokról.",
+    "ctaSecondaryButton": "Feliratkozom most",
+    "fullProgramLinkLabel": "Megnézem a részletes programot"
+  },
   "signupPopup": {
     "title": "Ne csak a ticketeket pörgesd — emelkedj rendszer-szintre.",
     "introChecklist": "Add meg az e-mail címed, és azonnal küldöm az „Architect’s Reality Check” csekklistámat. Ez az az 5 kérdés, amit én is minden tervezési fázisban felteszek, hogy elkerüljem a drága és fájdalmas technológiai zsákutcákat.",
@@ -640,6 +671,7 @@
       "home": "Terem- és online képzés, valamint tanácsadás tapasztalt fejlesztői csapatoknak: DevOps, architektúra, ADR, C4, CI/CD és biztonságosabb szállítás.",
       "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
       "trainingB2c": "Két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és könnyű ADR-ek—a ticketektől a rendszerszintű gondolkodásig.",
+      "trainingB2cAds": "Konverzióra optimalizált, két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és ADR-ek, hogy hétfőn már rendszerben kommunikálj.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
       "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
       "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",

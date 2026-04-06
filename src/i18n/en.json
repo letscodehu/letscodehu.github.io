@@ -316,6 +316,37 @@
     "ctaGiftBody": "When you join the waitlist, you won't only hear about new dates—you'll also get the Architect's Reality Check (PDF) companion. It's a condensed take on the mindset we'll practice live over the two days.",
     "cta": "Join the waitlist"
   },
+  "trainingB2cAds": {
+    "pageTitle": "Workshop Budapest — move beyond ticket execution",
+    "eyebrow": "2 days · Budapest · small group · in person only",
+    "heroTitle": "Become the developer who can reason at system level.",
+    "heroBody": "Two intense, hands-on days on technical decisions, C4, and lightweight ADRs. The goal is simple: return Monday with sharper clarity, faster reasoning, and stronger trade-off communication.",
+    "heroSub": "Bring your own system or a real decision knot from work, and we build from that.",
+    "ctaPrimary": "Get waitlist access + checklist",
+    "proofTitle": "Why this format works",
+    "proofPoints": [
+      "Not a passive talk: you work through your own decision situations.",
+      "Small in-person group with feedback, not just slides.",
+      "C4 + ADR together: diagrams, rationale, and communication in one narrative.",
+      "You leave with usable artifacts, not just motivation."
+    ],
+    "outcomesTitle": "What you take back by Monday morning",
+    "outcomes": [
+      "The “Reality Check” decision checklist you can use in your next design meeting.",
+      "Context and Container C4 views for your own system, ready to paste into docs.",
+      "A practical ADR draft pattern you can reuse with your team.",
+      "A 15-minute architecture story routine for stakeholder conversations."
+    ],
+    "instructorTitle": "About the instructor",
+    "instructorImagePlaceholder": "Instructor image placeholder",
+    "instructorImagePlaceholderAria": "Krisztián during workshops",
+    "instructorBody1": "Krisztián is a software architect and consultant with over a decade of hands-on experience in designing, building, and evolving complex software systems. After years in senior engineering leadership roles, he founded his own consulting company, where he helps organizations modernize their architecture, accelerate delivery, and build sustainable engineering practices.",
+    "instructorBody2": "He specializes in cloud transformations, DevOps practices, architectural decision-making (ADR), and pragmatic system design. Krisztián is also the founder of the Letscode.hu community, creating a supportive environment where individuals can thrive, share their knowledge, and collectively contribute to the advancement of technology.",
+    "ctaSecondaryTitle": "If this is relevant now, don't postpone it",
+    "ctaSecondaryBody": "After signup, you'll get the Architect’s Reality Check companion immediately and updates on the next Budapest dates.",
+    "ctaSecondaryButton": "Join the waitlist now",
+    "fullProgramLinkLabel": "See the full program details"
+  },
   "signupPopup": {
     "title": "Don’t just churn tickets—level up to systems thinking.",
     "introChecklist": "Enter your email address and I’ll send you my “Architect’s Reality Check” checklist right away. These are the five questions I ask in every design phase to avoid expensive, painful technology dead ends.",
@@ -640,6 +671,7 @@
       "home": "Classroom training and consulting for mid–senior software teams: DevOps, architecture, ADRs, C4, CI/CD, and practices that make delivery safer and faster.",
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
       "trainingB2c": "Two-day Budapest workshop for developers: technical decisions, C4, and lightweight ADRs—move from tickets to systems thinking.",
+      "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
       "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
       "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",

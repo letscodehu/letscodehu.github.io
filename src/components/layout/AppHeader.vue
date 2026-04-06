@@ -138,6 +138,8 @@ onUnmounted(() => {
 
 <style scoped>
 .header {
+  position: relative;
+  z-index: 80;
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-surface);
   backdrop-filter: blur(8px);
@@ -335,6 +337,7 @@ onUnmounted(() => {
     top: 100%;
     left: 0;
     right: 0;
+    z-index: 90;
     flex-direction: column;
     align-items: stretch;
     background-color: var(--color-surface);

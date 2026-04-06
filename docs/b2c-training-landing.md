@@ -49,3 +49,16 @@
 
 ## Hero intro layout
 - `trainingB2c.intro` is a string array (EN/HU); `TrainingB2CPage` renders each entry as its own paragraph with vertical spacing for readability.
+
+## B2C ads landing route
+- Added a separate high-conversion landing page route for paid campaigns while keeping the original B2C page unchanged:
+  - `/en/training/workshop-budapest`
+  - `/hu/kepzes/workshop-budapest` (canonicalized to `/hu/training/workshop-budapest`)
+- Added a new standalone page component `TrainingB2CAdsLandingPage` with short-funnel structure, repeated CTA, and the existing waitlist `SignupPopup` flow.
+- Added dedicated i18n namespace `trainingB2cAds` in EN/HU plus `seo.descriptions.trainingB2cAds` metadata keys.
+- Included the new route and Hungarian alias in prerender path generation so static output and sitemap include campaign URLs.
+
+## B2C ads dark-mode fix (no Tailwind)
+- Kept the existing theme system (`theme-light` / `theme-dark` and `data-theme`) and fixed landing-specific contrast issues with scoped CSS variables only.
+- Updated selectors to support both dark-mode signals (`html.theme-dark` and `html[data-theme='dark']`) so the page stays consistent regardless of how theme state is applied.
+- Rebalanced hero layering (gradient + `c4.png` watermark + square grid) so dark mode keeps readable text, visible grid detail, and a non-dominant C4 image.

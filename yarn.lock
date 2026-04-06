@@ -177,6 +177,51 @@
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.57.1.tgz"
   integrity sha512-HFps0JeGtuOR2convgRRkHCekD7j+gdAuXM+/i6kGzQtFhlCtQkpwtNzkNj6QhCDp7DRJ7+qC/1Vg2jt5iSOFw==
 
+"@tailwindcss/node@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.2.tgz"
+  integrity sha512-pXS+wJ2gZpVXqFaUEjojq7jzMpTGf8rU6ipJz5ovJV6PUGmlJ+jvIwGrzdHdQ80Sg+wmQxUFuoW1UAAwHNEdFA==
+  dependencies:
+    "@jridgewell/remapping" "^2.3.5"
+    enhanced-resolve "^5.19.0"
+    jiti "^2.6.1"
+    lightningcss "1.32.0"
+    magic-string "^0.30.21"
+    source-map-js "^1.2.1"
+    tailwindcss "4.2.2"
+
+"@tailwindcss/oxide-linux-x64-gnu@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.2.2.tgz"
+  integrity sha512-rTAGAkDgqbXHNp/xW0iugLVmX62wOp2PoE39BTCGKjv3Iocf6AFbRP/wZT/kuCxC9QBh9Pu8XPkv/zCZB2mcMg==
+
+"@tailwindcss/oxide@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.2.tgz"
+  integrity sha512-qEUA07+E5kehxYp9BVMpq9E8vnJuBHfJEC0vPC5e7iL/hw7HR61aDKoVoKzrG+QKp56vhNZe4qwkRmMC0zDLvg==
+  optionalDependencies:
+    "@tailwindcss/oxide-android-arm64" "4.2.2"
+    "@tailwindcss/oxide-darwin-arm64" "4.2.2"
+    "@tailwindcss/oxide-darwin-x64" "4.2.2"
+    "@tailwindcss/oxide-freebsd-x64" "4.2.2"
+    "@tailwindcss/oxide-linux-arm-gnueabihf" "4.2.2"
+    "@tailwindcss/oxide-linux-arm64-gnu" "4.2.2"
+    "@tailwindcss/oxide-linux-arm64-musl" "4.2.2"
+    "@tailwindcss/oxide-linux-x64-gnu" "4.2.2"
+    "@tailwindcss/oxide-linux-x64-musl" "4.2.2"
+    "@tailwindcss/oxide-wasm32-wasi" "4.2.2"
+    "@tailwindcss/oxide-win32-arm64-msvc" "4.2.2"
+    "@tailwindcss/oxide-win32-x64-msvc" "4.2.2"
+
+"@tailwindcss/vite@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.2.2.tgz"
+  integrity sha512-mEiF5HO1QqCLXoNEfXVA1Tzo+cYsrqV7w9Juj2wdUFyW07JRenqMG225MvPwr3ZD9N1bFQj46X7r33iHxLUW0w==
+  dependencies:
+    "@tailwindcss/node" "4.2.2"
+    "@tailwindcss/oxide" "4.2.2"
+    tailwindcss "4.2.2"
+
 "@types/estree@1.0.8":
   version "1.0.8"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.8.tgz"
@@ -516,6 +561,11 @@ decimal.js@^10.6.0:
   resolved "https://registry.npmjs.org/decimal.js/-/decimal.js-10.6.0.tgz"
   integrity sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==
 
+detect-libc@^2.0.3:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
+  integrity sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==
+
 dot-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/dot-case/-/dot-case-3.0.4.tgz"
@@ -523,6 +573,14 @@ dot-case@^3.0.4:
   dependencies:
     no-case "^3.0.4"
     tslib "^2.0.3"
+
+enhanced-resolve@^5.19.0:
+  version "5.20.1"
+  resolved "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.20.1.tgz"
+  integrity sha512-Qohcme7V1inbAfvjItgw0EaxVX5q2rdVEZHRBrEQdRZTssLDGsL8Lwrznl8oQ/6kuTJONLaDcGjkNP247XEhcA==
+  dependencies:
+    graceful-fs "^4.2.4"
+    tapable "^2.3.0"
 
 entities@^4.4.0:
   version "4.5.0"
@@ -593,6 +651,11 @@ get-tsconfig@^4.7.5:
   dependencies:
     resolve-pkg-maps "^1.0.0"
 
+graceful-fs@^4.2.4:
+  version "4.2.11"
+  resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz"
+  integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
 hookable@^5.5.3:
   version "5.5.3"
   resolved "https://registry.npmjs.org/hookable/-/hookable-5.5.3.tgz"
@@ -656,6 +719,11 @@ is-what@^5.2.0:
   resolved "https://registry.npmjs.org/is-what/-/is-what-5.5.0.tgz"
   integrity sha512-oG7cgbmg5kLYae2N5IVd3jm2s+vldjxJzK1pcu9LfpGuQ93MQSzo0okvRna+7y5ifrD+20FE8FvjusyGaz14fw==
 
+jiti@^2.6.1, jiti@>=1.21.0:
+  version "2.6.1"
+  resolved "https://registry.npmjs.org/jiti/-/jiti-2.6.1.tgz"
+  integrity sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==
+
 jsdom@^28.0.0:
   version "28.1.0"
   resolved "https://registry.npmjs.org/jsdom/-/jsdom-28.1.0.tgz"
@@ -692,6 +760,30 @@ json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
+lightningcss-linux-x64-gnu@1.32.0:
+  version "1.32.0"
+  resolved "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz"
+  integrity sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==
+
+lightningcss@^1.21.0, lightningcss@1.32.0:
+  version "1.32.0"
+  resolved "https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz"
+  integrity sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==
+  dependencies:
+    detect-libc "^2.0.3"
+  optionalDependencies:
+    lightningcss-android-arm64 "1.32.0"
+    lightningcss-darwin-arm64 "1.32.0"
+    lightningcss-darwin-x64 "1.32.0"
+    lightningcss-freebsd-x64 "1.32.0"
+    lightningcss-linux-arm-gnueabihf "1.32.0"
+    lightningcss-linux-arm64-gnu "1.32.0"
+    lightningcss-linux-arm64-musl "1.32.0"
+    lightningcss-linux-x64-gnu "1.32.0"
+    lightningcss-linux-x64-musl "1.32.0"
+    lightningcss-win32-arm64-msvc "1.32.0"
+    lightningcss-win32-x64-msvc "1.32.0"
 
 local-pkg@^1.1.2:
   version "1.1.2"
@@ -967,6 +1059,16 @@ symbol-tree@^3.2.4:
   resolved "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
+tailwindcss@^4.2.2, tailwindcss@4.2.2:
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.2.tgz"
+  integrity sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==
+
+tapable@^2.3.0:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/tapable/-/tapable-2.3.2.tgz"
+  integrity sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==
+
 terser@^5.15.1, terser@^5.16.0:
   version "5.46.0"
   resolved "https://registry.npmjs.org/terser/-/terser-5.46.0.tgz"
@@ -1083,7 +1185,7 @@ vite-ssg@^28.3.0:
     html5parser "^2.0.2"
     jsdom "^28.0.0"
 
-"vite@^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0-0 || ^8.0.0-0", "vite@^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", vite@^7.3.1:
+"vite@^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0-0 || ^8.0.0-0", "vite@^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "vite@^5.2.0 || ^6 || ^7 || ^8", vite@^7.3.1:
   version "7.3.1"
   resolved "https://registry.npmjs.org/vite/-/vite-7.3.1.tgz"
   integrity sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==

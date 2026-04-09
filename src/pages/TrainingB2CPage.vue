@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
-import SignupPopup from '../components/ui/SignupPopup.vue'
 import { useI18n } from '../composables/useI18n'
 
 const MOBILE_MAX_PX = 768
+const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/5kQ6oHbZ3ghCfGdaG7aVa00'
 
-const { t } = useI18n()
-const isSignupOpen = ref(false)
+const { t, currentLang } = useI18n()
 
 const heroCtaEl = ref<HTMLElement | null>(null)
 const bottomCtaEl = ref<HTMLElement | null>(null)
@@ -20,14 +20,6 @@ let heroObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
 
-function openSignup() {
-  isSignupOpen.value = true
-}
-
-function closeSignup() {
-  isSignupOpen.value = false
-}
-
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
     return
@@ -38,7 +30,6 @@ function syncMobileViewport() {
 const showStickyWaitlistCta = computed(
   () =>
     isMobileViewport.value &&
-    !isSignupOpen.value &&
     !heroCtaVisible.value &&
     !bottomCtaVisible.value
 )
@@ -109,10 +100,24 @@ onUnmounted(() => {
           {{ paragraph }}
         </p>
       </div>
+      <div class="offer-meta">
+        <p class="offer-meta__early">
+          <span class="offer-meta__badge">{{ t('trainingB2c.offerMeta.earlyBirdLabel') }}</span>
+          <strong class="offer-meta__price">{{ t('trainingB2c.offerMeta.earlyBirdPrice') }}</strong>
+          <span class="offer-meta__deadline">{{ t('trainingB2c.offerMeta.earlyBirdDeadline') }}</span>
+        </p>
+        <p class="offer-meta__regular">
+          <span class="offer-meta__regular-label">{{ t('trainingB2c.offerMeta.regularPriceLabel') }}:</span>
+          <span class="offer-meta__regular-price">{{ t('trainingB2c.offerMeta.regularPrice') }}</span>
+        </p>
+      </div>
       <div ref="heroCtaEl" class="hero-actions">
-        <BaseButton @click="openSignup">
+        <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
+        <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
+          {{ t('trainingB2c.termsLinkLabel') }}
+        </RouterLink>
       </div>
     </header>
 
@@ -246,9 +251,12 @@ onUnmounted(() => {
           <p class="cta-gift-body">{{ t('trainingB2c.ctaGiftBody') }}</p>
         </div>
         <div ref="bottomCtaEl" class="cta-inline-actions">
-          <BaseButton @click="openSignup">
+          <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
             {{ t('trainingB2c.cta') }}
           </BaseButton>
+          <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
+            {{ t('trainingB2c.termsLinkLabel') }}
+          </RouterLink>
         </div>
       </BaseCard>
     </section>
@@ -260,13 +268,11 @@ onUnmounted(() => {
         role="region"
         :aria-label="t('trainingB2c.cta')"
       >
-        <BaseButton @click="openSignup">
+        <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
       </div>
     </Teleport>
-
-    <SignupPopup :open="isSignupOpen" @close="closeSignup" />
   </article>
 </template>
 
@@ -312,8 +318,65 @@ onUnmounted(() => {
   margin-top: 0.75rem;
 }
 
+.offer-meta {
+  margin: 0.8rem 0 0;
+}
+
+.offer-meta__early {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.offer-meta__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.offer-meta__price {
+  font-size: 1.12rem;
+  font-weight: 800;
+}
+
+.offer-meta__deadline {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.offer-meta__regular {
+  margin: 0.2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.offer-meta__regular-label {
+  font-size: 0.9rem;
+}
+
+.offer-meta__regular-price {
+  font-size: 0.95rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
 .hero-actions {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
 }
 
 .section {
@@ -431,6 +494,22 @@ onUnmounted(() => {
 
 .cta-inline-actions {
   margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.terms-link {
+  font-weight: 600;
+  color: var(--color-primary-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+}
+
+.terms-link:hover {
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

@@ -206,7 +206,7 @@
       "System design interviews expose the gap: you know pieces, but not how to tell a coherent story fast."
     ],
     "problemClosing": "If that reads like your week, you're the audience.",
-    "problemImmediateHelp": "You don't have to wait for the workshop to start seeing your system more clearly. Join the waitlist and I'll send you the Architect's Reality Check checklist right away—five questions that help you cut through the chaos on your next planning cycle.",
+    "problemImmediateHelp": "You don't have to wait to start seeing your system more clearly. Reserve your seat now and we will apply this framework directly to your own decision situations during the workshop.",
     "solutionTitle": "What this actually is",
     "solutionLead": "This is not a slide deck about \"mindset.\" It's a small-group, in-person workshop where you work through real decision patterns: separating constraints from opinions, comparing options by risk and cost, and leaving a short paper trail when it counts.",
     "solutionAdr": "ADRs show up for what they are: a small, repeatable format for \"what we decided, what else we considered, what breaks if we're wrong\"—not enterprise paperwork.",
@@ -311,18 +311,33 @@
       }
     ],
     "ctaTitle": "Next step",
-    "ctaBody": "Reserve a spot on the waitlist—and when I follow up with Budapest dates, you can send a short description of a system you work on (or two decisions you still find hard to justify). A few sentences is enough. I use that to tune examples and to make sure the cohort is a fit.",
-    "ctaGiftTitle": "A gift when you sign up",
-    "ctaGiftBody": "When you join the waitlist, you won't only hear about new dates—you'll also get the Architect's Reality Check (PDF) companion. It's a condensed take on the mindset we'll practice live over the two days.",
-    "cta": "Join the waitlist"
+    "ctaBody": "Reserve your seat for the Budapest workshop on June 11-12. After checkout, you will receive the follow-up details and practical preparation notes by email.",
+    "ctaGiftTitle": "Early bird until May 17",
+    "ctaGiftBody": "99,000 HUF until May 17 (early bird), then 119,000 HUF. Workshop date: June 11-12 (Thu-Fri).",
+    "offerMeta": {
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99,000 HUF",
+      "earlyBirdDeadline": "until May 17",
+      "regularPriceLabel": "After that",
+      "regularPrice": "119,000 HUF"
+    },
+    "termsLinkLabel": "Terms & Conditions",
+    "cta": "Reserve my workshop seat"
   },
   "trainingB2cAds": {
     "pageTitle": "Workshop Budapest — move beyond ticket execution",
-    "eyebrow": "2 days · Budapest · small group · in person only",
+    "eyebrow": "2 days · Budapest · June 11-12 (Thu-Fri) · small group · in person only",
     "heroTitle": "Become the developer who can reason at system level.",
     "heroBody": "Two intense, hands-on days on technical decisions, C4, and lightweight ADRs. The goal is simple: return Monday with sharper clarity, faster reasoning, and stronger trade-off communication.",
     "heroSub": "Bring your own system or a real decision knot from work, and we build from that.",
-    "ctaPrimary": "Get waitlist access + checklist",
+    "offerMeta": {
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99,000 HUF",
+      "earlyBirdDeadline": "until May 17",
+      "regularPriceLabel": "After that",
+      "regularPrice": "119,000 HUF"
+    },
+    "ctaPrimary": "Reserve my seat now",
     "proofTitle": "Why this format works",
     "proofPoints": [
       "Not a passive talk: you work through your own decision situations.",
@@ -343,9 +358,91 @@
     "instructorBody1": "Krisztián is a software architect and consultant with over a decade of hands-on experience in designing, building, and evolving complex software systems. After years in senior engineering leadership roles, he founded his own consulting company, where he helps organizations modernize their architecture, accelerate delivery, and build sustainable engineering practices.",
     "instructorBody2": "He specializes in cloud transformations, DevOps practices, architectural decision-making (ADR), and pragmatic system design. Krisztián is also the founder of the Letscode.hu community, creating a supportive environment where individuals can thrive, share their knowledge, and collectively contribute to the advancement of technology.",
     "ctaSecondaryTitle": "If this is relevant now, don't postpone it",
-    "ctaSecondaryBody": "After signup, you'll get the Architect’s Reality Check companion immediately and updates on the next Budapest dates.",
-    "ctaSecondaryButton": "Join the waitlist now",
-    "fullProgramLinkLabel": "See the full program details"
+    "ctaSecondaryBody": "Seats are limited: 99,000 HUF until May 17, then 119,000 HUF. Date: June 11-12 (Thu-Fri).",
+    "checkoutNote": "After registration, you are redirected to a secure Stripe checkout page. You will receive an immediate email confirmation about successful payment and the next steps.",
+    "ctaSecondaryButton": "Reserve my workshop seat",
+    "fullProgramLinkLabel": "See the full program details",
+    "termsLinkLabel": "Terms & Conditions"
+  },
+  "trainingB2cTerms": {
+    "pageTitle": "Participation Terms and Cancellation Policy",
+    "eyebrow": "B2C workshop · Participation terms",
+    "intro": "I want the workshop to be a high-quality and inspiring experience for every participant. To keep the collaboration predictable for everyone, the following rules apply to your registration.",
+    "sections": {
+      "registration": {
+        "title": "1. Registration and payment",
+        "points": [
+          "Your registration becomes final after you submit the registration form and pay the participation fee.",
+          "Seats are secured in the order payments are received. Until the fee arrives, I cannot guarantee your seat."
+        ]
+      },
+      "viability": {
+        "title": "2. Workshop viability",
+        "intro": "To provide the best possible quality, the workshop requires at least 6 participants.",
+        "decisionDeadlineLabel": "Decision deadline",
+        "decisionDeadlineValue": "No later than 7 calendar days before the workshop starts, I decide whether the event goes ahead based on the participant count, and I also share the exact venue at that time.",
+        "ifCancelledLabel": "If the event is canceled",
+        "ifCancelledOptions": [
+          "In this case, you have two options: either I refund 100% of the paid amount within 3 business days,",
+          "or your registration can be moved to the next announced date."
+        ]
+      },
+      "participantCancellation": {
+        "title": "3. Cancellation terms by the participant",
+        "intro": "I understand that plans can change, but due to venue and preparation costs I also need a clear framework.",
+        "bandsTitle": "Cancellation timing and refund rate",
+        "bands": [
+          {
+            "window": "More than 10 days before the event",
+            "refund": "100% refund"
+          },
+          {
+            "window": "Between 7 and 10 days before the event",
+            "refund": "50% refund"
+          },
+          {
+            "window": "Within 7 days of the event",
+            "refund": "No refund"
+          }
+        ],
+        "transferNote": "Important: Your ticket can be transferred at any time. If you cannot attend, you may send someone else in your place. In this case, please email the new participant's name and contact details."
+      },
+      "noShowAndLate": {
+        "title": "4. No-show and late arrival",
+        "points": [
+          "No-show: If you do not attend the workshop and did not notify me in advance (within the deadlines above), I cannot refund the participation fee, and it cannot be applied to another date.",
+          "Late arrival: The workshop starts exactly at the announced time. Please arrive 10-15 minutes earlier. In case of delay, I cannot repeat already covered content to avoid disrupting the group's progress. No partial refund is provided for time missed due to lateness."
+        ]
+      },
+      "conductAndLiability": {
+        "title": "5. Code of conduct and responsibility",
+        "points": [
+          "All participants attend the workshop at their own responsibility.",
+          "If a participant's behavior (for example aggression, intoxication, or continuous disruption) blocks the professional work or disturbs other participants, the organizer has the right to remove that participant from the event. In this case, no refund is provided."
+        ]
+      },
+      "mediaConsent": {
+        "title": "6. Photo and video",
+        "points": [
+          "Photos or short videos may be recorded during the event for documentation and marketing purposes.",
+          "By registering, you consent to the use of these recordings. If you do not want to appear in photos or videos, please let me know before the workshop starts."
+        ]
+      },
+      "forceMajeure": {
+        "title": "7. Force majeure and other terms",
+        "points": [
+          "If the workshop is canceled due to my side (for example illness), the full participation fee is refunded, or you can use it for a later date (your choice).",
+          "Each participant attends the workshop at their own responsibility.",
+          "The organizer reserves the right to change the venue (to a similar category and accessibility), and participants will be informed by email."
+        ]
+      },
+      "contact": {
+        "title": "Have a question?",
+        "intro": "Feel free to contact me at:",
+        "emailLabel": "Email",
+        "email": "fejlesztes@letscode.hu"
+      }
+    }
   },
   "signupPopup": {
     "title": "Don’t just churn tickets—level up to systems thinking.",
@@ -672,6 +769,7 @@
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
       "trainingB2c": "Two-day Budapest workshop for developers: technical decisions, C4, and lightweight ADRs—move from tickets to systems thinking.",
       "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
+      "trainingB2cTerms": "Participation and purchase terms for the Budapest B2C workshop.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
       "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
       "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",

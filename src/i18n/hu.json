@@ -206,7 +206,7 @@
       "A rendszertervező helyzetek leleplezik a rést: ismered a részeket, de nem tudsz belőlük gyorsan összefüggő történetet rakni."
     ],
     "problemClosing": "Ha ilyen egy átlag heted, akkor Neked szól.",
-    "problemImmediateHelp": "Nem kell megvárnod a workshopot, hogy elkezdd tisztábban látni a rendszeredet. Iratkozz fel a várólistára, és azonnal küldöm az Architect’s Reality Check csekklistát – 5 kérdés, ami segít átlátni a káoszon már a következő tervezésnél.",
+    "problemImmediateHelp": "Nem kell megvárnod a workshopot, hogy elkezdd tisztábban látni a rendszeredet. Foglald le a helyed most, és a workshopon azonnal a saját döntési helyzeteidre fordítjuk ezt a keretrendszert.",
     "solutionTitle": "Mi ez valójában",
     "solutionLead": "Ez nem „szemlélet”-ről szóló diasor. Kiscsoportos, személyes képzés, ahol valós döntési mintákon dolgozol: szétválasztod a korlátokat a véleményektől, összehasonlítod az opciókat kockázat és költség szerint, és akkor dokumentálod, amikor számít.",
     "solutionAdr": "Az ADR-ek annyiban jelennek meg, amennyire kellenek: egy kis, ismételhető formátum arra, hogy „mit döntöttünk, mit fontolgattunk még, mi törik el, ha tévedünk”—nem vállalati papírtologatás.",
@@ -311,18 +311,33 @@
       }
     ],
     "ctaTitle": "Következő lépés",
-    "ctaBody": "Iratkozz fel a várólistára—amikor írok a budapesti időpontokról, küldhetsz pár mondatot egy rendszerről, amin dolgozol (vagy két döntésről, amit még mindig nehéz megindokolni). Elég néhány mondat; ebből hangolom a példákat és ellenőrzöm, hogy illik-e a csoport.",
-    "ctaGiftTitle": "Ajándék a feliratkozáshoz",
-    "ctaGiftBody": "Ha feliratkozol a várólistára, nemcsak az időpontokról értesülsz, hanem megkapod az Architect’s Reality Check (PDF) segédletet is. Ez egy sűrített kivonata annak a szemléletnek, amit a két nap alatt élőben is gyakorolni fogunk.",
-    "cta": "Feliratkozom a várólistára"
+    "ctaBody": "Foglalj helyet a június 11-12-i budapesti workshopra. A checkout után e-mailben megkapod a további részleteket és a gyakorlati előkészületi információkat.",
+    "ctaGiftTitle": "Early bird ár május 17-ig",
+    "ctaGiftBody": "99.000 Ft május 17-ig (early bird), utána 119.000 Ft. A workshop időpontja: június 11-12. (csüt-péntek).",
+    "offerMeta": {
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99.000 Ft",
+      "earlyBirdDeadline": "május 17-ig",
+      "regularPriceLabel": "Utána",
+      "regularPrice": "119.000 Ft"
+    },
+    "termsLinkLabel": "Részvételi feltételek",
+    "cta": "Jelentkezem a workshopra"
   },
   "trainingB2cAds": {
     "pageTitle": "Workshop Budapest — lépj túl a ticket-végrehajtáson",
-    "eyebrow": "2 nap · Budapest · kiscsoportos, személyes workshop",
+    "eyebrow": "2 nap · Budapest · június 11-12. (csüt-péntek) · kiscsoportos, személyes workshop",
     "heroTitle": "Fejlesztőből rendszerszinten gondolkodó mérnök.",
     "heroBody": "Két intenzív, gyakorlati nap technikai döntésekről, C4-ről és ADR-ekről. A cél egyszerű: hétfőn úgy menj vissza, hogy tisztábban látsz, gyorsabban érvelsz, és magabiztosabban kommunikálod a kompromisszumokat.",
     "heroSub": "Hozd a saját rendszeredet, vagy egy valós döntési problémát a munkádból, és abból dolgozunk.",
-    "ctaPrimary": "Feliratkozom most",
+    "offerMeta": {
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99.000 Ft",
+      "earlyBirdDeadline": "május 17-ig",
+      "regularPriceLabel": "Utána",
+      "regularPrice": "119.000 Ft"
+    },
+    "ctaPrimary": "Jelentkezem most",
     "proofTitle": "Miért működik ez a formátum",
     "proofPoints": [
       "Nem passzív előadás: a saját döntési helyzeteiden dolgozol.",
@@ -343,9 +358,91 @@
     "instructorBody1": "Krisztián szoftverarchitekt és tanácsadó, több mint tíz év gyakorlati tapasztalattal összetett szoftverrendszerek tervezésében, építésében és továbbfejlesztésében. Több senior mérnöki vezetői szerep után megalapította saját tanácsadó cégét, ahol szervezeteknek segít az architektúra modernizálásában, a szállítás gyorsításában és fenntartható mérnöki gyakorlatok kialakításában.",
     "instructorBody2": "Szakterületei a felhőtranszformációk, a DevOps gyakorlatok, az architekturális döntéshozatal (ADR) és a pragmatikus rendszertervezés. Krisztián a Letscode.hu közösség alapítója is, ahol támogató közeget épít azért, hogy az egyének fejlődhessenek, megosszák a tudásukat, és együtt vigyék előre a szakmát.",
     "ctaSecondaryTitle": "Ha ez most fontos neked, ne halogasd",
-    "ctaSecondaryBody": "Feliratkozás után azonnal megkapod az Architect’s Reality Check segédletet, és értesítelek a következő budapesti időpontokról.",
-    "ctaSecondaryButton": "Feliratkozom most",
-    "fullProgramLinkLabel": "Megnézem a részletes programot"
+    "ctaSecondaryBody": "A helyek limitáltak: a workshop ára 99.000 Ft május 17-ig, utána 119.000 Ft. Időpont: június 11-12. (csüt-péntek).",
+    "checkoutNote": "A jelentkezés után a biztonságos Stripe fizetési oldalra irányítunk. A sikeres fizetésről és a további teendőkről azonnal visszaigazolást kapsz e-mailben.",
+    "ctaSecondaryButton": "Jelentkezem a workshopra",
+    "fullProgramLinkLabel": "Megnézem a részletes programot",
+    "termsLinkLabel": "Részvételi feltételek"
+  },
+  "trainingB2cTerms": {
+    "pageTitle": "Részvételi Feltételek és Lemondási Szabályzat",
+    "eyebrow": "B2C workshop · Részvételi feltételek",
+    "intro": "Szeretném, ha a workshop minden résztvevő számára minőségi és inspiráló élmény lenne. A közös munka tervezhetősége érdekében az alábbi szabályok érvényesek a jelentkezésedre.",
+    "sections": {
+      "registration": {
+        "title": "1. Jelentkezés és fizetés",
+        "points": [
+          "A workshopra való jelentkezés a regisztrációs űrlap kitöltésével és a részvételi díj befizetésével válik véglegessé.",
+          "A helyek biztosítása a befizetések sorrendjében történik. Amíg a díj nem érkezik meg, a helyedet nem tudom garantálni."
+        ]
+      },
+      "viability": {
+        "title": "2. A workshop megvalósulása",
+        "intro": "Hogy a legjobb minőséget tudjam nyújtani, a workshop megtartásához minimum 6 fő szükséges.",
+        "decisionDeadlineLabel": "Döntési határidő",
+        "decisionDeadlineValue": "Legkésőbb a workshop kezdése előtt 7 naptári nappal döntök arról, hogy a létszám alapján megvalósul-e az esemény, és ekkor küldöm ki a pontos helyszínt is.",
+        "ifCancelledLabel": "Ha elmarad",
+        "ifCancelledOptions": [
+          "Ilyenkor két lehetőséged van: vagy a befizetett összeget 100%-ban visszautalom 3 munkanapon belül,",
+          "vagy a jelentkezésedet átrakjuk a következő meghirdetett időpontra."
+        ]
+      },
+      "participantCancellation": {
+        "title": "3. Lemondási feltételek a résztvevő részéről",
+        "intro": "Tudom, hogy bármi közbejöhet, de a terembérlés és az előkészületek miatt nekem is kalkulálnom kell a költségekkel.",
+        "bandsTitle": "Lemondás időpontja és visszatérítés mértéke",
+        "bands": [
+          {
+            "window": "Több mint 10 nappal az esemény előtt",
+            "refund": "100% visszajár"
+          },
+          {
+            "window": "7 és 10 nap között",
+            "refund": "50% visszajár"
+          },
+          {
+            "window": "7 napon belül",
+            "refund": "Nincs visszatérítés"
+          }
+        ],
+        "transferNote": "Fontos: A jegyed bármikor átruházható. Ha mégsem tudsz eljönni, küldhetsz magad helyett valakit. Kérlek, ebben az esetben e-mailben jelezd az új résztvevő nevét és elérhetőségét."
+      },
+      "noShowAndLate": {
+        "title": "4. Meg nem jelenés és késés",
+        "points": [
+          "Meg nem jelenés: Amennyiben nem jelensz meg a workshopon, és ezt előzetesen (a fenti határidőkig) nem jelezted, a részvételi díjat nem áll módomban visszatéríteni, és más időpontra sem beszámítható.",
+          "Késés: A workshop a meghirdetett időpontban pontosan kezdődik. Kérlek, érkezz 10-15 perccel korábban. Késés esetén a már elhangzott információkat a csoport haladása érdekében nincs módomban megismételni. A késés miatt kiesett időért részleges visszatérítés nem jár."
+        ]
+      },
+      "conductAndLiability": {
+        "title": "5. Viselkedési szabályok és felelősség",
+        "points": [
+          "A workshopon mindenki saját felelősségére vesz részt.",
+          "Amennyiben a résztvevő viselkedésével (pl. agresszió, ittas állapot, folyamatos zavarás) akadályozza a szakmai munkát vagy zavarja a többi résztvevőt, a szervező jogosult őt az eseményről eltávolítani. Ebben az esetben visszatérítés nem jár."
+        ]
+      },
+      "mediaConsent": {
+        "title": "6. Fotó és videó",
+        "points": [
+          "Az eseményen dokumentációs és marketing céllal fotók vagy rövid videók készülhetnek.",
+          "A jelentkezéssel hozzájárulsz ezek használatához. Amennyiben nem szeretnél szerepelni a felvételeken, kérlek, jelezd nekem még a workshop megkezdése előtt."
+        ]
+      },
+      "forceMajeure": {
+        "title": "7. Vis maior és egyebek",
+        "points": [
+          "Amennyiben a workshop az én hibámból (pl. betegség) marad el, a teljes részvételi díj visszajár, vagy egy későbbi időpontban használható fel (döntésed szerint).",
+          "A workshopon mindenki saját felelősségére vesz részt.",
+          "A szervező fenntartja a jogot a helyszín módosítására (hasonló kategóriájú és megközelíthetőségű helyszínre), amiről e-mailben értesíti a résztvevőket."
+        ]
+      },
+      "contact": {
+        "title": "Kérdésed van?",
+        "intro": "Keress bizalommal az alábbi elérhetőségen:",
+        "emailLabel": "E-mail",
+        "email": "fejlesztes@letscode.hu"
+      }
+    }
   },
   "signupPopup": {
     "title": "Ne csak a ticketeket pörgesd — emelkedj rendszer-szintre.",
@@ -672,6 +769,7 @@
       "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
       "trainingB2c": "Két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és könnyű ADR-ek—a ticketektől a rendszerszintű gondolkodásig.",
       "trainingB2cAds": "Konverzióra optimalizált, két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és ADR-ek, hogy hétfőn már rendszerben kommunikálj.",
+      "trainingB2cTerms": "A budapesti B2C workshop részvételi és vásárlási feltételei.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
       "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
       "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",

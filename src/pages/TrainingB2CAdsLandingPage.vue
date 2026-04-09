@@ -134,6 +134,7 @@ onUnmounted(() => {
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
       </div>
+      <p class="checkout-note fade fade--5">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
     <section class="proof">
@@ -188,6 +189,7 @@ onUnmounted(() => {
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
       </div>
+      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
     <Teleport to="body">
@@ -501,6 +503,13 @@ onUnmounted(() => {
 .final-cta p {
   margin: 0.7rem 0 0;
   max-width: 65ch;
+}
+
+.checkout-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
 }
 
 .final-cta-actions {

@@ -360,9 +360,84 @@
     "ctaSecondaryTitle": "If this is relevant now, don't postpone it",
     "ctaSecondaryBody": "Seats are limited: 99,000 HUF until May 17, then 119,000 HUF. Date: June 11-12 (Thu-Fri).",
     "checkoutNote": "After registration, you are redirected to a secure Stripe checkout page. You will receive an immediate email confirmation about successful payment and the next steps.",
-    "ctaSecondaryButton": "Reserve my workshop seat",
+    "ctaSecondaryButton": "Reserve my seat now",
     "fullProgramLinkLabel": "See the full program details",
-    "termsLinkLabel": "Terms & Conditions"
+    "termsLinkLabel": "Terms & Conditions",
+    "faqTitle": "Frequently asked questions",
+    "faqCancellationLead": "In short, if you cannot attend:",
+    "faqCancellationPoints": [
+      "More than 10 days before the event: 100% refund.",
+      "Between 7 and 10 days before the event: 50% refund.",
+      "Within 7 days or in case of no-show: no refund.",
+      "Your ticket is transferable, and late arrival does not qualify for partial refund."
+    ],
+    "faqTermsLinkIntro": "Full text and all clauses:",
+    "faqItems": [
+      {
+        "question": "Who is this workshop for?",
+        "paragraphs": [
+          "This workshop is for developers who want to think at system level—not only ship code.",
+          "If you have worked on real production systems and want to make better decisions around architecture, trade-offs, and complexity, it is for you."
+        ]
+      },
+      {
+        "question": "Do I need prior experience?",
+        "paragraphs": [
+          "Yes—basic professional development experience is required.",
+          "It is not for absolute beginners, but you do not need to be senior. What matters is that you have faced real problems, not only tutorials."
+        ]
+      },
+      {
+        "question": "How many people can attend?",
+        "paragraphs": [
+          "Minimum 6, maximum 10 participants.",
+          "We keep the group small so you can ask questions and discuss—not only listen passively."
+        ]
+      },
+      {
+        "question": "Where and when is it?",
+        "paragraphs": [
+          "In person in Budapest (District XIII). Exact venue and schedule are sent after you register."
+        ]
+      },
+      {
+        "question": "What happens after payment?",
+        "paragraphs": [
+          "Right after payment you receive a short questionnaire so we can tailor the content even better.",
+          "If anything changes, we will notify you via email."
+        ]
+      },
+      {
+        "question": "Can I get an invoice for my company?",
+        "paragraphs": [
+          "Yes. During checkout you can enter the required billing details, and we will issue the invoice accordingly."
+        ]
+      },
+      {
+        "question": "What if I cannot attend?",
+        "variant": "cancellation"
+      },
+      {
+        "question": "What if the workshop is cancelled?",
+        "paragraphs": [
+          "If we do not reach the minimum headcount, we reschedule the workshop or refund the full amount."
+        ]
+      },
+      {
+        "question": "Will there be a recording?",
+        "paragraphs": [
+          "No. This is an interactive, in-person workshop—not a lecture.",
+          "That interaction is where most of the value comes from."
+        ]
+      },
+      {
+        "question": "What will I learn in practice?",
+        "paragraphs": [
+          "We work through real examples: system design decisions, understanding trade-offs, typical pitfalls and how to avoid them.",
+          "It is not a theory-only talk—it trains how you think."
+        ]
+      }
+    ]
   },
   "trainingB2cTerms": {
     "pageTitle": "Participation Terms and Cancellation Policy",

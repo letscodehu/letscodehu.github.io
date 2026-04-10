@@ -112,6 +112,11 @@ function openCheckoutPopup() {
 function closeCheckoutPopup() {
   isCheckoutPopupOpen.value = false
 }
+
+const faqItemsList = computed(() => {
+  const raw = t('trainingB2cAds.faqItems')
+  return Array.isArray(raw) ? raw : []
+})
 </script>
 
 <template>
@@ -185,12 +190,41 @@ function closeCheckoutPopup() {
       </div>
     </section>
 
+    <section id="ads-faq" class="faq" aria-labelledby="ads-faq-title">
+      <h2 id="ads-faq-title" class="section-title">{{ t('trainingB2cAds.faqTitle') }}</h2>
+      <div class="faq-accordion">
+        <template v-for="(item, faqIndex) in faqItemsList" :key="faqIndex">
+          <details v-if="item.variant !== 'cancellation'" class="faq-item">
+            <summary class="faq-summary">{{ item.question }}</summary>
+            <div class="faq-panel">
+              <p v-for="(para, pIdx) in item.paragraphs" :key="pIdx" class="faq-p">{{ para }}</p>
+            </div>
+          </details>
+          <details v-else class="faq-item">
+            <summary class="faq-summary">{{ item.question }}</summary>
+            <div class="faq-panel">
+              <p class="faq-p">{{ t('trainingB2cAds.faqCancellationLead') }}</p>
+              <p v-for="(point, pointIndex) in t('trainingB2cAds.faqCancellationPoints')" :key="pointIndex" class="faq-p">
+                {{ point }}
+              </p>
+              <p class="faq-p faq-terms-link-wrap">
+                {{ t('trainingB2cAds.faqTermsLinkIntro') }}
+                <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
+                  {{ t('trainingB2cAds.termsLinkLabel') }}
+                </RouterLink>
+              </p>
+            </div>
+          </details>
+        </template>
+      </div>
+    </section>
+
     <section class="final-cta">
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
       <div ref="bottomCtaEl" class="final-cta-actions">
         <BaseButton @click="openCheckoutPopup">
-          {{ t('trainingB2cAds.ctaSecondaryButton') }}
+          {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="{ name: 'training-b2c-en', params: { lang: currentLang } }">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
@@ -207,10 +241,10 @@ function closeCheckoutPopup() {
         v-show="showStickyWaitlistCta"
         class="training-b2c-ads-sticky-waitlist"
         role="region"
-        :aria-label="t('trainingB2cAds.ctaSecondaryButton')"
+        :aria-label="t('trainingB2cAds.ctaPrimary')"
       >
         <BaseButton @click="openCheckoutPopup">
-          {{ t('trainingB2cAds.ctaSecondaryButton') }}
+          {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
       </div>
     </Teleport>
@@ -426,6 +460,7 @@ function closeCheckoutPopup() {
 .proof,
 .outcomes,
 .instructor,
+.faq,
 .final-cta {
   border: 1px solid var(--landing-border);
   border-radius: var(--radius-lg);
@@ -505,6 +540,74 @@ function closeCheckoutPopup() {
   line-height: 1.6;
 }
 
+.faq-accordion {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.faq-item {
+  border: 1px solid var(--landing-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.faq-summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-primary-soft);
+}
+
+.faq-panel {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--landing-border);
+}
+
+.faq-p {
+  margin: 0.65rem 0 0;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.faq-p:first-child {
+  margin-top: 0.75rem;
+}
+
+.faq-p--strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.faq-ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.faq-ul li + li {
+  margin-top: 0.35rem;
+}
+
+.faq-terms-link-wrap {
+  margin-top: 0.85rem;
+}
+
 .final-cta {
   background: linear-gradient(120deg, var(--color-surface) 0%, var(--landing-accent-soft) 120%);
 }
@@ -569,6 +672,17 @@ function closeCheckoutPopup() {
     padding-bottom: 5rem;
   }
 
+  .hero-actions,
+  .final-cta-actions {
+    justify-content: center;
+  }
+
+  .hero-actions :deep(.button),
+  .final-cta-actions :deep(.button) {
+    width: min(22rem, 100%);
+    max-width: 100%;
+  }
+
   .outcome-grid {
     grid-template-columns: 1fr;
   }
@@ -605,24 +719,23 @@ function closeCheckoutPopup() {
   .training-b2c-ads-sticky-waitlist {
     box-sizing: border-box;
     position: fixed;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
+    width: min(100%, var(--max-width));
+    max-width: var(--max-width);
     z-index: 70;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 1.5rem;
     padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
     pointer-events: none;
-    background: linear-gradient(to top, var(--color-bg) 72%, transparent);
-    border-top: 1px solid var(--color-border);
-    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
   }
 
   .training-b2c-ads-sticky-waitlist .button {
     pointer-events: auto;
-    width: min(22rem, calc(100vw - 2rem));
+    width: min(22rem, 100%);
     max-width: 100%;
   }
 }

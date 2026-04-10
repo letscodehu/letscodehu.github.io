@@ -464,6 +464,20 @@
     "errorNetwork": "Hálózati hiba történt a feliratkozás közben. Próbáld újra.",
     "errorBrowserHint": "Ha a feliratkozás sikertelen, ellenőrizd a hálózati kapcsolatot, majd próbáld újra."
   },
+  "checkoutEmailPopup": {
+    "title": "Add meg az e-mail címed a jelentkezéshez",
+    "intro": "Az e-mail címeddel előtöltjük a Stripe fizetési oldalt.",
+    "emailLabel": "E-mail cím",
+    "submitCta": "Tovább a fizetéshez",
+    "submitLoading": "Továbbítás...",
+    "cancelCta": "Mégsem",
+    "closeLabel": "Checkout email popup bezárása",
+    "validationEmailRequired": "Add meg az email címed.",
+    "validationEmailInvalid": "Érvényes email címet adj meg.",
+    "errorGeneric": "Most nem sikerült továbblépni. Próbáld újra egy perc múlva.",
+    "errorTimeout": "A kérés időtúllépés miatt megszakadt. Próbáld újra.",
+    "errorNetwork": "Hálózati hiba történt. Próbáld újra."
+  },
   "workshop": {
     "pageTitle": "ADR és requirement tisztázás workshop",
     "eyebrow": "2 napos, helyszíni workshop tech csapatoknak",

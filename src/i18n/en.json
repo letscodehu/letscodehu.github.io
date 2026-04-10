@@ -464,6 +464,20 @@
     "errorNetwork": "Network error while sending signup. Please try again.",
     "errorBrowserHint": "If signup fails, check your network connection and try again."
   },
+  "checkoutEmailPopup": {
+    "title": "Enter your email to continue",
+    "intro": "We will prefill your email on the Stripe checkout page.",
+    "emailLabel": "Email address",
+    "submitCta": "Continue to checkout",
+    "submitLoading": "Continuing...",
+    "cancelCta": "Cancel",
+    "closeLabel": "Close checkout email popup",
+    "validationEmailRequired": "Please provide your email address.",
+    "validationEmailInvalid": "Please enter a valid email address.",
+    "errorGeneric": "Could not continue right now. Please try again in a minute.",
+    "errorTimeout": "Request timed out. Please try again.",
+    "errorNetwork": "Network error occurred. Please try again."
+  },
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",
     "eyebrow": "2-day on-site workshop for engineering teams",

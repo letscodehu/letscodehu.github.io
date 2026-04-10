@@ -3,6 +3,7 @@ import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
+import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
 import { useI18n } from '../composables/useI18n'
 
 const MOBILE_MAX_PX = 768
@@ -15,6 +16,7 @@ const bottomCtaEl = ref<HTMLElement | null>(null)
 const heroCtaVisible = ref(true)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
+const isCheckoutPopupOpen = ref(false)
 
 let heroObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
@@ -88,6 +90,14 @@ onUnmounted(() => {
   mediaQuery?.removeEventListener('change', syncMobileViewport)
   mediaQuery = null
 })
+
+function openCheckoutPopup() {
+  isCheckoutPopupOpen.value = true
+}
+
+function closeCheckoutPopup() {
+  isCheckoutPopupOpen.value = false
+}
 </script>
 
 <template>
@@ -112,7 +122,7 @@ onUnmounted(() => {
         </p>
       </div>
       <div ref="heroCtaEl" class="hero-actions">
-        <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
+        <BaseButton @click="openCheckoutPopup">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
         <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
@@ -251,7 +261,7 @@ onUnmounted(() => {
           <p class="cta-gift-body">{{ t('trainingB2c.ctaGiftBody') }}</p>
         </div>
         <div ref="bottomCtaEl" class="cta-inline-actions">
-          <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
+          <BaseButton @click="openCheckoutPopup">
             {{ t('trainingB2c.cta') }}
           </BaseButton>
           <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
@@ -268,11 +278,16 @@ onUnmounted(() => {
         role="region"
         :aria-label="t('trainingB2c.cta')"
       >
-        <BaseButton as="a" :href="STRIPE_CHECKOUT_URL">
+        <BaseButton @click="openCheckoutPopup">
           {{ t('trainingB2c.cta') }}
         </BaseButton>
       </div>
     </Teleport>
+    <CheckoutEmailPopup
+      :open="isCheckoutPopupOpen"
+      :stripe-checkout-url="STRIPE_CHECKOUT_URL"
+      @close="closeCheckoutPopup"
+    />
   </article>
 </template>
 

@@ -190,7 +190,7 @@
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "trainingB2c": {
-  "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
+    "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
     "eyebrow": "Mid-Senior fejlesztőknek · 2 nap · Budapest · csak személyesen",
     "intro": [
       "Szállítod a ticketeket, de az egész rendszer még mindig ködös. A nagyobb döntéseknél gyakran csak találgatsz.",
@@ -360,9 +360,84 @@
     "ctaSecondaryTitle": "Ha ez most fontos neked, ne halogasd",
     "ctaSecondaryBody": "A helyek limitáltak: a workshop ára 99.000 Ft május 17-ig, utána 119.000 Ft. Időpont: június 11-12. (csüt-péntek).",
     "checkoutNote": "A jelentkezés után a biztonságos Stripe fizetési oldalra irányítunk. A sikeres fizetésről és a további teendőkről azonnal visszaigazolást kapsz e-mailben.",
-    "ctaSecondaryButton": "Jelentkezem a workshopra",
+    "ctaSecondaryButton": "Jelentkezem most",
     "fullProgramLinkLabel": "Megnézem a részletes programot",
-    "termsLinkLabel": "Részvételi feltételek"
+    "termsLinkLabel": "Részvételi feltételek",
+    "faqTitle": "Gyakori kérdések",
+    "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
+    "faqCancellationPoints": [
+      "Ha az esemény előtt több mint 10 nappal mondod le, a díj 100%-át visszatérítjük.",
+      "Ha 7 és 10 nappal az esemény előtt mondod le, 50% visszatérítés jár.",
+      "Ha az esemény előtt 7 napon belül mondod le, vagy nem jelensz meg, nincs visszatérítés.",
+      "A jegy átruházható, késés esetén a kimaradt részre nem jár részleges visszatérítés."
+    ],
+    "faqTermsLinkIntro": "A teljes szöveg és minden pont:",
+    "faqItems": [
+      {
+        "question": "Kinek szól ez a workshop?",
+        "paragraphs": [
+          "Ez a workshop fejlesztőknek szól, akik nem csak kódot akarnak írni, hanem rendszerszinten gondolkodni.",
+          "Ha már dolgoztál éles projekten, és érdekel, hogyan lehet jobb döntéseket hozni architektúra, trade-offok és komplex rendszerek terén, akkor neked való."
+        ]
+      },
+      {
+        "question": "Kell előképzettség?",
+        "paragraphs": [
+          "Igen, alap fejlesztői tapasztalat szükséges.",
+          "Nem kezdőknek szól, viszont nem is kell seniornak lenned. A lényeg, hogy már találkoztál valós problémákkal, nem csak tutorialokkal."
+        ]
+      },
+      {
+        "question": "Hány fő vehet részt?",
+        "paragraphs": [
+          "Minimum 6, maximum 10 fő.",
+          "Kis csoportban dolgozunk, hogy tényleg lehessen kérdezni, beszélgetni, nem csak passzívan ülni."
+        ]
+      },
+      {
+        "question": "Hol és mikor lesz a workshop?",
+        "paragraphs": [
+          "Offline kerül megrendezésre, Budapesten a XIII. kerületben. Pontos helyszínt és időpontot a jelentkezés után küldjük."
+        ]
+      },
+      {
+        "question": "Mi történik a fizetés után?",
+        "paragraphs": [
+          "A fizetés után azonnal kapsz egy kérdőívet, ahol felteszünk pár kérdést, hogy még jobban testre tudjuk szabni a workshop tartalmát.",
+          "Ha bármi változik, az e-mail címeden keresztül értesítünk."
+        ]
+      },
+      {
+        "question": "Kaphatok számlát cégre?",
+        "paragraphs": [
+          "Igen. A fizetés során meg tudod adni a szükséges adatokat, és ennek megfelelő számlát állítunk ki."
+        ]
+      },
+      {
+        "question": "Mi történik, ha nem tudok részt venni?",
+        "variant": "cancellation"
+      },
+      {
+        "question": "Mi van, ha elmarad a workshop?",
+        "paragraphs": [
+          "Ha nem jön össze a minimum létszám, a workshopot áthelyezzük vagy visszatérítjük a teljes összeget."
+        ]
+      },
+      {
+        "question": "Lesz felvétel?",
+        "paragraphs": [
+          "Nem. Ez egy interaktív, offline workshop, nem előadás.",
+          "Pont ez adja az értékét."
+        ]
+      },
+      {
+        "question": "Mit fogok konkrétan tanulni?",
+        "paragraphs": [
+          "Valós példákon keresztül dolgozunk: rendszertervezési döntések, trade-offok megértése, tipikus hibák és hogyan kerüld el őket.",
+          "Nem elméleti előadás, hanem gondolkodásmód fejlesztés."
+        ]
+      }
+    ]
   },
   "trainingB2cTerms": {
     "pageTitle": "Részvételi Feltételek és Lemondási Szabályzat",

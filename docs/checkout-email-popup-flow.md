@@ -14,3 +14,7 @@ Before redirecting to Stripe, B2C checkout CTAs now open an email popup.
   - `CHECKOUT_EMAIL_CAPTURE_API_URL`
   - `CHECKOUT_EMAIL_CAPTURE_TIMEOUT_MS`
 - Both B2C pages now gate checkout through `CheckoutEmailPopup`.
+
+## Ads landing FAQ
+
+The conversion-focused ads landing (`TrainingB2CAdsLandingPage`) includes an FAQ block before the final CTA: native `<details>` / `<summary>` accordions (closed by default). One item pulls cancellation and no-show / late rules from the same i18n keys as the B2C terms page (`trainingB2cTerms`) and links to the full terms route for the active language.

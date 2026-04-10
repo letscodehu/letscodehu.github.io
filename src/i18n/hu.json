@@ -465,8 +465,8 @@
     "errorBrowserHint": "Ha a feliratkozás sikertelen, ellenőrizd a hálózati kapcsolatot, majd próbáld újra."
   },
   "checkoutEmailPopup": {
-    "title": "Add meg az e-mail címed a jelentkezéshez",
-    "intro": "Az e-mail címeddel előtöltjük a Stripe fizetési oldalt.",
+    "title": "Már majdnem kész",
+    "intro": "Add meg az e-mail címed a folytatáshoz. A fizetés után véglegesítjük a helyed.",
     "emailLabel": "E-mail cím",
     "submitCta": "Tovább a fizetéshez",
     "submitLoading": "Továbbítás...",

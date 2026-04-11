@@ -12,14 +12,17 @@ const { t, currentLang } = useI18n()
 const instructorImages = ['/webconf.jpg', '/cldrmeetup.jpg'] as const
 const currentImageIndex = ref(0)
 const heroCtaEl = ref<HTMLElement | null>(null)
+const middleCtaEl = ref<HTMLElement | null>(null)
 const bottomCtaEl = ref<HTMLElement | null>(null)
 const heroCtaVisible = ref(true)
+const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 const isCheckoutPopupOpen = ref(false)
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
+let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
 
@@ -35,6 +38,7 @@ const showStickyWaitlistCta = computed(
   () =>
     isMobileViewport.value &&
     !heroCtaVisible.value &&
+    !middleCtaVisible.value &&
     !bottomCtaVisible.value
 )
 
@@ -54,15 +58,24 @@ function setupObservers() {
     heroCtaVisible.value = entry ? entry.isIntersecting : false
   }, options)
 
+  middleObserver = new IntersectionObserver((entries) => {
+    const entry = entries[0]
+    middleCtaVisible.value = entry ? entry.isIntersecting : false
+  }, options)
+
   bottomObserver = new IntersectionObserver((entries) => {
     const entry = entries[0]
     bottomCtaVisible.value = entry ? entry.isIntersecting : false
   }, options)
 
   const heroEl = heroCtaEl.value
+  const middleEl = middleCtaEl.value
   const bottomEl = bottomCtaEl.value
   if (heroEl) {
     heroObserver.observe(heroEl)
+  }
+  if (middleEl) {
+    middleObserver.observe(middleEl)
   }
   if (bottomEl) {
     bottomObserver.observe(bottomEl)
@@ -71,8 +84,10 @@ function setupObservers() {
 
 function teardownObservers() {
   heroObserver?.disconnect()
+  middleObserver?.disconnect()
   bottomObserver?.disconnect()
   heroObserver = null
+  middleObserver = null
   bottomObserver = null
 }
 
@@ -243,7 +258,7 @@ const detailedProgram = computed(() => {
     <section class="final-cta">
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
-      <div class="final-cta-actions">
+      <div ref="middleCtaEl" class="final-cta-actions">
         <BaseButton @click="openCheckoutPopup">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>

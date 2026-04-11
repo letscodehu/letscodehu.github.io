@@ -195,13 +195,17 @@ const faqItemsList = computed(() => {
       <div class="faq-accordion">
         <template v-for="(item, faqIndex) in faqItemsList" :key="faqIndex">
           <details v-if="item.variant !== 'cancellation'" class="faq-item">
-            <summary class="faq-summary">{{ item.question }}</summary>
+            <summary class="faq-summary">
+              <span class="faq-summary__text">{{ item.question }}</span>
+            </summary>
             <div class="faq-panel">
               <p v-for="(para, pIdx) in item.paragraphs" :key="pIdx" class="faq-p">{{ para }}</p>
             </div>
           </details>
           <details v-else class="faq-item">
-            <summary class="faq-summary">{{ item.question }}</summary>
+            <summary class="faq-summary">
+              <span class="faq-summary__text">{{ item.question }}</span>
+            </summary>
             <div class="faq-panel">
               <p class="faq-p">{{ t('trainingB2cAds.faqCancellationLead') }}</p>
               <p v-for="(point, pointIndex) in t('trainingB2cAds.faqCancellationPoints')" :key="pointIndex" class="faq-p">
@@ -556,11 +560,49 @@ const faqItemsList = computed(() => {
 
 .faq-summary {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
   padding: 0.85rem 1rem;
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
   list-style: none;
+  transition: background-color var(--transition-fast);
+}
+
+.faq-summary__text {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.faq-summary::after {
+  content: '';
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.12em;
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  opacity: 0.92;
+  transition:
+    transform 0.2s ease,
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(-135deg);
+  margin-top: 0.28em;
+}
+
+.faq-summary:hover {
+  background-color: color-mix(in srgb, var(--color-text) 6%, transparent);
 }
 
 .faq-summary::-webkit-details-marker {

@@ -237,17 +237,17 @@
             {
               "time": "09:00 – 09:20",
               "title": "Bevezetés",
-              "body": "Rövid bemutatkozás és kontekstus. Áttekintitek a workshop gondolatmenetét: hogyan lesz egy problémából döntés, és abból dokumentált változás."
+              "body": "Rövid bemutatkozás és kontextus. Áttekintjük a workshop gondolatmenetét: hogyan lesz egy problémából döntés, és abból dokumentált változás."
             },
             {
               "time": "09:20 – 10:30",
               "title": "Döntések strukturálása",
-              "body": "Megnézitek, hogyan lehet egy problémát tisztán megfogalmazni, opciókat felállítani és trade-offok mentén dönteni. Egy közös példán végig is mentek."
+              "body": "Megnézzük, hogyan lehet egy problémát tisztán megfogalmazni, opciókat felállítani és trade-offok mentén dönteni. Egy közös példán végig is megyünk."
             },
             {
               "time": "10:45 – 12:15",
               "title": "Saját döntési helyzetek",
-              "body": "Saját problémákon dolgoztok. A cél, hogy a végére mindenkinél megszülessen egy konkrét, kimondott döntés."
+              "body": "Saját problémákon dolgozunk. A cél, hogy a végére mindenkinél megszülessen egy konkrét, kimondott döntés."
             },
             {
               "time": "12:15 – 13:15",
@@ -257,7 +257,7 @@
             {
               "time": "13:15 – 14:00",
               "title": "ADR alapok",
-              "body": "Átveszitek, hogyan lesz egy döntésből rövid, érthető dokumentáció. Mire kell fókuszálni, és mi az, ami csak felesleges zaj."
+              "body": "Átvesszük, hogyan lesz egy döntésből rövid, érthető dokumentáció. Mire kell fókuszálni, és mi az, ami csak felesleges zaj."
             },
             {
               "time": "14:00 – 15:30",
@@ -272,7 +272,7 @@
             {
               "time": "16:30 – 17:00",
               "title": "Zárás",
-              "body": "Összegzitek a nap tanulságait, és azt, hogyan változtak a döntések az írás során."
+              "body": "Összegezzük a nap tanulságait, és azt, hogyan változtak a döntések az írás során."
             }
           ]
         },
@@ -282,12 +282,12 @@
             {
               "time": "09:00 – 09:15",
               "title": "Ráhangolódás",
-              "body": "Rövid visszakapcsolás az előző naphoz: vannak döntéseitek és ADR-ek, ezek hatását most a rendszer szintjén nézitek meg."
+              "body": "Rövid visszatérés az előző naphoz: vannak döntéseitek és ADR-ek, ezek hatását most a rendszer szintjén nézitek meg."
             },
             {
               "time": "09:15 – 10:30",
               "title": "A rendszer megértése",
-              "body": "Arról beszéltek, hogyan lehet egy rendszert úgy nézni, mint döntések eredményét. Mi tartozik bele, mi nem, és mitől lesz érthető mások számára."
+              "body": "Arról beszélünk, hogyan lehet egy rendszert úgy nézni, mint döntések eredményét. Mi tartozik bele, mi nem, és mitől lesz érthető mások számára."
             },
             {
               "time": "10:45 – 12:15",
@@ -302,7 +302,7 @@
             {
               "time": "13:15 – 14:30",
               "title": "Közös modellezés",
-              "body": "Egy példán keresztül közösen felrajzoljátok a rendszer képét. A fókusz azon van, hogy érthetően kommunikálható legyen az architektúra."
+              "body": "Egy példán keresztül közösen felrajzoljuk a rendszer képét. A fókusz azon van, hogy érthetően kommunikálható legyen az architektúra."
             },
             {
               "time": "14:45 – 15:45",

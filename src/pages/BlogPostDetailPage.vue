@@ -283,7 +283,7 @@ watch(
         <h2 class="sidebar-cta-title">{{ t('blog.b2cCtaTitle') }}</h2>
         <p class="sidebar-cta-body">{{ t('blog.b2cCtaBody') }}</p>
         <RouterLink
-          :to="{ name: 'training-b2c-en', params: { lang: currentLang } }"
+          :to="{ name: 'training-b2c-ads-en', params: { lang: currentLang } }"
           class="sidebar-cta-button"
         >
           {{ t('blog.b2cCtaLabel') }}

@@ -2,7 +2,7 @@
 
 ### Architectural change
 - Added a dedicated CTA card on blog post detail pages to improve discoverability of the individual developer program.
-- The new sidebar card links directly to the existing B2C training route (`training/architect-mindset`) with language-aware routing.
+- The sidebar card links to the B2C workshop landing (`training/workshop-budapest`, route `training-b2c-ads-en`) with language-aware routing.
 
 ### UX impact
 - Blog readers now have two distinct conversion paths in the sidebar:

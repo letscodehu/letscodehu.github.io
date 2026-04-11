@@ -183,146 +183,11 @@
       "More predictable delivery because practices are consistent, not reinvented per feature.",
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
-    "b2cCardTitle": "Individual developer track",
+    "b2cCardTitle": "Architect Mindset training",
     "b2cCardBody": "Looking for an individual track? Two-day, in-person Budapest workshop: technical decisions, C4, and lightweight ADRs—for developers moving past ticket-only work.",
     "b2cCardCta": "See training",
     "cta": "Discuss a training need",
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
-  },
-  "trainingB2c": {
-    "pageTitle": "You ship tickets. The system stays fuzzy.",
-    "eyebrow": "For individual developers · 2 days · Budapest · in person only",
-    "intro": [
-      "You implement features, but you don't really see the whole picture. Bigger calls feel like guesswork.",
-      "Architecture discussions happen without you—or you're in the room without language that sticks. System design interviews feel improvised.",
-      "This workshop is two hands-on days on technical decisions, C4, and lightweight ADRs so you can explain what you built, defend trade-offs, and sound like the engineer who shapes the system—not only the one who codes it."
-    ],
-    "problemTitle": "The problem",
-    "problem": [
-      "You're deep in implementation, but dependencies, boundaries, and failure modes stay vague.",
-      "Every meaningful choice (data model, integration, split services, \"temporary\" shortcuts) feels uncertain when it matters.",
-      "You're not in—or not heard in—conversations where real technical direction gets set.",
-      "When someone asks \"why did we do it this way?\", the honest answer is often \"nobody remembers.\"",
-      "System design interviews expose the gap: you know pieces, but not how to tell a coherent story fast."
-    ],
-    "problemClosing": "If that reads like your week, you're the audience.",
-    "problemImmediateHelp": "You don't have to wait to start seeing your system more clearly. Reserve your seat now and we will apply this framework directly to your own decision situations during the workshop.",
-    "solutionTitle": "What this actually is",
-    "solutionLead": "This is not a slide deck about \"mindset.\" It's a small-group, in-person workshop where you work through real decision patterns: separating constraints from opinions, comparing options by risk and cost, and leaving a short paper trail when it counts.",
-    "solutionAdr": "ADRs show up for what they are: a small, repeatable format for \"what we decided, what else we considered, what breaks if we're wrong\"—not enterprise paperwork.",
-    "solutionC4": "C4 is how you make the system legible: context, containers, components—so you and others align on boundaries and ownership instead of arguing from different mental models.",
-    "solutionClosing": "Together: decisions you can justify, diagrams you can point at, and a way to talk to product and leadership without drowning in jargon.",
-    "howItWorksTitle": "How it works",
-    "howItWorks": [
-      "Two days, Budapest, small group. In person only—shared whiteboard and modeling are core; no remote stream.",
-      "Short inputs, heavy practice: you're comparing options, sketching, and writing—not passively listening.",
-      "You bring your own mess: a system you work on, or a decision that still bothers you. We also use realistic examples so nobody is blocked if they can't share internals."
-    ],
-    "howItWorksClosing": "The day-by-day breakdown is in the Day 1 and Day 2 sections below. You leave with things you can paste into Confluence, Notion, or a repo—not a certificate and vague \"insight.\"",
-    "forWhoTitle": "Who this is for",
-    "forWho": [
-      "Mid-level to senior developers who want senior, staff, or tech lead trajectories—not another year of only closing Jira issues.",
-      "People who want system fluency: how pieces connect, fail, and evolve—not just framework APIs.",
-      "Anyone who wants interview-relevant clarity: explain architecture and trade-offs in a structured way under time pressure.",
-      "Engineers who are tired of being overruled without a vocabulary to push back constructively."
-    ],
-    "notForTitle": "Who this is not for",
-    "notFor": [
-      "Beginners still learning core programming.",
-      "Anyone who wants a talk-only event with no exercises or peer review.",
-      "People unwilling to sketch, write, and defend a decision in the room.",
-      "Anyone who needs remote—this format doesn't translate without the whiteboard."
-    ],
-    "day1": {
-      "title": "Day 1 — Decisions under pressure",
-      "goal": "Clarify the real decision, compare trade-offs, and capture short records when it matters—ADR as a lightweight framework, not documentation theater.",
-      "sessions": [
-        {
-          "title": "Clarifying the real decision",
-          "points": [
-            "Separate constraints, assumptions, and goals.",
-            "Define the core decision question in noisy environments."
-          ]
-        },
-        {
-          "title": "Comparing options and trade-offs",
-          "points": [
-            "Compare alternatives by risk, cost, and change impact.",
-            "Communicate rationale clearly to technical and business stakeholders."
-          ]
-        },
-        {
-          "title": "Short decision records (ADR as framework)",
-          "points": [
-            "Decide when a decision should be captured versus kept verbal.",
-            "Use a lightweight structure without turning it into documentation overhead."
-          ]
-        }
-      ]
-    },
-    "day2": {
-      "title": "Day 2 — Making it visible with C4",
-      "goal": "Model the system with C4, spot coupling and ownership gaps, and tie diagrams plus short decision notes into one narrative.",
-      "sessions": [
-        {
-          "title": "C4 context and container views",
-          "points": [
-            "Model system boundaries and external dependencies.",
-            "Express responsibilities and key interactions clearly."
-          ]
-        },
-        {
-          "title": "C4 component view",
-          "points": [
-            "Break containers into meaningful components and interfaces.",
-            "Detect risky coupling and unclear ownership."
-          ]
-        },
-        {
-          "title": "Communicating decisions with diagrams and short notes",
-          "points": [
-            "Link diagrams and short decision notes into one coherent narrative.",
-            "Create a repeatable communication routine inside and outside the team."
-          ]
-        }
-      ]
-    },
-    "takeawayTitle": "What are you taking home by Monday morning? (A toolkit you can use right away)",
-    "takeaways": [
-      {
-        "lead": "The “Reality Check” decision checklist:",
-        "body": "A physical aide you can keep beside your keyboard. Five critical questions that stop pointless debates in tech design meetings."
-      },
-      {
-        "lead": "A C4 model of your own system:",
-        "body": "Not theoretical sketches. You leave with Context and Container diagrams for your own (or a brought-in) project—ready to paste into company Confluence on Monday."
-      },
-      {
-        "lead": "Reviewed ADR drafts:",
-        "body": "Decision documentation (Architecture Decision Records) you draft during the workshop, reviewed by Krisztián, which you can use as templates with your team."
-      },
-      {
-        "lead": "The “15-minute architecture story”:",
-        "body": "A ready communication routine. You’ll be able to confidently explain your system’s boundaries and trade-offs to any stakeholder—CTO or Product Owner."
-      },
-      {
-        "lead": "Interview-ready systems thinking:",
-        "body": "If you’re considering a move, this workshop gives you a structured mindset to get through even the toughest system design interviews."
-      }
-    ],
-    "ctaTitle": "Next step",
-    "ctaBody": "Reserve your seat for the Budapest workshop on June 11-12. After checkout, you will receive the follow-up details and practical preparation notes by email.",
-    "ctaGiftTitle": "Early bird until May 17",
-    "ctaGiftBody": "99,000 HUF until May 17 (early bird), then 119,000 HUF. Workshop date: June 11-12 (Thu-Fri).",
-    "offerMeta": {
-      "earlyBirdLabel": "Early bird",
-      "earlyBirdPrice": "99,000 HUF",
-      "earlyBirdDeadline": "until May 17",
-      "regularPriceLabel": "After that",
-      "regularPrice": "119,000 HUF"
-    },
-    "termsLinkLabel": "Terms & Conditions",
-    "cta": "Reserve my workshop seat"
   },
   "trainingB2cAds": {
     "pageTitle": "Workshop Budapest — move beyond ticket execution",
@@ -363,6 +228,103 @@
     "ctaSecondaryButton": "Reserve my seat now",
     "fullProgramLinkLabel": "See the full program details",
     "termsLinkLabel": "Terms & Conditions",
+    "detailedProgram": {
+      "sectionTitle": "Detailed schedule",
+      "days": [
+        {
+          "title": "Day 1 — Decisions and ADRs",
+          "slots": [
+            {
+              "time": "09:00 – 09:20",
+              "title": "Introduction",
+              "body": "Short intros and context. You walk through the workshop arc: from a problem to a decision, then to documented change."
+            },
+            {
+              "time": "09:20 – 10:30",
+              "title": "Structuring decisions",
+              "body": "You learn to state a problem clearly, surface options, and decide along trade-offs. You run through one shared example together."
+            },
+            {
+              "time": "10:45 – 12:15",
+              "title": "Your own decision situations",
+              "body": "You work on your own problems. The goal is that everyone leaves with one concrete, explicit decision."
+            },
+            {
+              "time": "12:15 – 13:15",
+              "title": "Lunch",
+              "body": ""
+            },
+            {
+              "time": "13:15 – 14:00",
+              "title": "ADR fundamentals",
+              "body": "How a decision becomes short, readable documentation. What to focus on—and what is just noise."
+            },
+            {
+              "time": "14:00 – 15:30",
+              "title": "Writing ADRs",
+              "body": "You turn morning decisions into ADRs. This is where it shows how clear the decision really was."
+            },
+            {
+              "time": "15:45 – 16:30",
+              "title": "Review and refinement",
+              "body": "You read each other's ADRs, ask questions, and tighten wording so others can follow it."
+            },
+            {
+              "time": "16:30 – 17:00",
+              "title": "Closing",
+              "body": "You recap the day and how decisions shifted while writing them down."
+            }
+          ]
+        },
+        {
+          "title": "Day 2 — C4 and systems thinking",
+          "slots": [
+            {
+              "time": "09:00 – 09:15",
+              "title": "Warm-up",
+              "body": "Brief bridge from day 1: you have decisions and ADRs—now you look at their impact at system level."
+            },
+            {
+              "time": "09:15 – 10:30",
+              "title": "Understanding the system",
+              "body": "How to look at a system as the outcome of decisions. What belongs in the picture, what does not, and what makes it legible for others."
+            },
+            {
+              "time": "10:45 – 12:15",
+              "title": "C4 essentials",
+              "body": "The core of the C4 model and how to present the system at different levels."
+            },
+            {
+              "time": "12:15 – 13:15",
+              "title": "Lunch",
+              "body": ""
+            },
+            {
+              "time": "13:15 – 14:30",
+              "title": "Shared modeling",
+              "body": "On one example you sketch the system together, focusing on architecture that is easy to communicate."
+            },
+            {
+              "time": "14:45 – 15:45",
+              "title": "Visualizing your own system",
+              "body": "You draw your own systems. This is where “communicable architecture” becomes concrete."
+            },
+            {
+              "time": "15:45 – 16:30",
+              "title": "Presentations and feedback",
+              "body": "You show diagrams to each other and give feedback on clarity and usefulness."
+            },
+            {
+              "time": "16:30 – 17:00",
+              "title": "Connecting the full flow",
+              "body": "You tie it together: problem, decision, ADR as change, and the current system state in C4."
+            }
+          ]
+        }
+      ]
+    },
+    "programFooterCtaTitle": "Reserve your seat",
+    "programFooterCtaBody": "If the schedule fits, book your seat—we follow up by email with practical details.",
     "faqTitle": "Frequently asked questions",
     "faqCancellationLead": "In short, if you cannot attend:",
     "faqCancellationPoints": [
@@ -440,6 +402,7 @@
     ]
   },
   "trainingB2cTerms": {
+    "backLabel": "Back to previous page",
     "pageTitle": "Participation Terms and Cancellation Policy",
     "eyebrow": "B2C workshop · Participation terms",
     "intro": "I want the workshop to be a high-quality and inspiring experience for every participant. To keep the collaboration predictable for everyone, the following rules apply to your registration.",
@@ -790,7 +753,7 @@
     "sidebarCtaTitle": "Book a call",
     "sidebarCtaBody": "If your pipeline is the bottleneck, we can map the gaps and build a leaner path to production.",
     "sidebarCtaLabel": "Get in touch",
-    "b2cCtaTitle": "Individual developer track",
+    "b2cCtaTitle": "Architect Mindset training",
     "b2cCtaBody": "A two-day, in-person Budapest training on technical decisions, C4, and lightweight ADRs for developers.",
     "b2cCtaLabel": "View program",
     "videoBlockTitle": "Watch as video",
@@ -856,7 +819,6 @@
     "descriptions": {
       "home": "Classroom training and consulting for mid–senior software teams: DevOps, architecture, ADRs, C4, CI/CD, and practices that make delivery safer and faster.",
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
-      "trainingB2c": "Two-day Budapest workshop for developers: technical decisions, C4, and lightweight ADRs—move from tickets to systems thinking.",
       "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
       "trainingB2cTerms": "Participation and purchase terms for the Budapest B2C workshop.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",

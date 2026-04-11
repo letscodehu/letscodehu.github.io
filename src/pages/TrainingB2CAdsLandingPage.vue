@@ -117,6 +117,23 @@ const faqItemsList = computed(() => {
   const raw = t('trainingB2cAds.faqItems')
   return Array.isArray(raw) ? raw : []
 })
+
+const fullProgramLocation = computed(() => ({
+  name: 'training-b2c-ads-en',
+  params: { lang: currentLang.value },
+  hash: '#workshop-detailed-program',
+}))
+
+type ProgramSlot = { time: string; title: string; body: string }
+type ProgramDay = { title: string; slots: ProgramSlot[] }
+
+const detailedProgram = computed(() => {
+  const raw = t('trainingB2cAds.detailedProgram')
+  if (raw && typeof raw === 'object' && Array.isArray((raw as { days?: unknown }).days)) {
+    return raw as { sectionTitle: string; days: ProgramDay[] }
+  }
+  return { sectionTitle: '', days: [] as ProgramDay[] }
+})
 </script>
 
 <template>
@@ -142,7 +159,7 @@ const faqItemsList = computed(() => {
         <BaseButton @click="openCheckoutPopup">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
-        <RouterLink class="full-program-link" :to="{ name: 'training-b2c-en', params: { lang: currentLang } }">
+        <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
         <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
@@ -195,13 +212,17 @@ const faqItemsList = computed(() => {
       <div class="faq-accordion">
         <template v-for="(item, faqIndex) in faqItemsList" :key="faqIndex">
           <details v-if="item.variant !== 'cancellation'" class="faq-item">
-            <summary class="faq-summary">{{ item.question }}</summary>
+            <summary class="faq-summary">
+              <span class="faq-summary__text">{{ item.question }}</span>
+            </summary>
             <div class="faq-panel">
               <p v-for="(para, pIdx) in item.paragraphs" :key="pIdx" class="faq-p">{{ para }}</p>
             </div>
           </details>
           <details v-else class="faq-item">
-            <summary class="faq-summary">{{ item.question }}</summary>
+            <summary class="faq-summary">
+              <span class="faq-summary__text">{{ item.question }}</span>
+            </summary>
             <div class="faq-panel">
               <p class="faq-p">{{ t('trainingB2cAds.faqCancellationLead') }}</p>
               <p v-for="(point, pointIndex) in t('trainingB2cAds.faqCancellationPoints')" :key="pointIndex" class="faq-p">
@@ -222,13 +243,47 @@ const faqItemsList = computed(() => {
     <section class="final-cta">
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
-      <div ref="bottomCtaEl" class="final-cta-actions">
+      <div class="final-cta-actions">
         <BaseButton @click="openCheckoutPopup">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
-        <RouterLink class="full-program-link" :to="{ name: 'training-b2c-en', params: { lang: currentLang } }">
+        <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
+        <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
+          {{ t('trainingB2cAds.termsLinkLabel') }}
+        </RouterLink>
+      </div>
+      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
+    </section>
+
+    <section
+      id="workshop-detailed-program"
+      class="detailed-program"
+      aria-labelledby="detailed-program-title"
+    >
+      <h2 id="detailed-program-title" class="section-title">{{ detailedProgram.sectionTitle }}</h2>
+      <div v-for="(day, dayIndex) in detailedProgram.days" :key="dayIndex" class="program-day">
+        <h3 class="program-day__title">{{ day.title }}</h3>
+        <ul class="program-slots">
+          <li v-for="(slot, slotIndex) in day.slots" :key="slotIndex" class="program-slot">
+            <div class="program-slot__time">{{ slot.time }}</div>
+            <div class="program-slot__main">
+              <div class="program-slot__heading">{{ slot.title }}</div>
+              <p v-if="slot.body" class="program-slot__body">{{ slot.body }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="program-footer-cta">
+      <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
+      <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
+      <div ref="bottomCtaEl" class="program-footer-cta-actions">
+        <BaseButton @click="openCheckoutPopup">
+          {{ t('trainingB2cAds.ctaPrimary') }}
+        </BaseButton>
         <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
@@ -461,7 +516,9 @@ const faqItemsList = computed(() => {
 .outcomes,
 .instructor,
 .faq,
-.final-cta {
+.final-cta,
+.detailed-program,
+.program-footer-cta {
   border: 1px solid var(--landing-border);
   border-radius: var(--radius-lg);
   background: var(--landing-panel-bg);
@@ -556,11 +613,49 @@ const faqItemsList = computed(() => {
 
 .faq-summary {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
   padding: 0.85rem 1rem;
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
   list-style: none;
+  transition: background-color var(--transition-fast);
+}
+
+.faq-summary__text {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.faq-summary::after {
+  content: '';
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.12em;
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  opacity: 0.92;
+  transition:
+    transform 0.2s ease,
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(-135deg);
+  margin-top: 0.28em;
+}
+
+.faq-summary:hover {
+  background-color: color-mix(in srgb, var(--color-text) 6%, transparent);
 }
 
 .faq-summary::-webkit-details-marker {
@@ -606,6 +701,99 @@ const faqItemsList = computed(() => {
 
 .faq-terms-link-wrap {
   margin-top: 0.85rem;
+}
+
+.detailed-program {
+  scroll-margin-top: 1.25rem;
+}
+
+.detailed-program .section-title {
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 40rem) {
+  .detailed-program .section-title {
+    margin-bottom: 2.15rem;
+  }
+}
+
+.program-day + .program-day {
+  margin-top: 1.35rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--landing-border);
+}
+
+.program-day__title {
+  margin: 0 0 0.75rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.program-slots {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.program-slot {
+  display: grid;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+  gap: 0.65rem 1rem;
+  align-items: start;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--landing-border);
+  background: var(--color-surface);
+}
+
+.program-slot__time {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--landing-accent);
+  line-height: 1.35;
+}
+
+.program-slot__heading {
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.program-slot__body {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.program-footer-cta {
+  background: linear-gradient(120deg, var(--color-surface) 0%, var(--landing-accent-soft) 120%);
+}
+
+.program-footer-cta h2 {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+}
+
+.program-footer-cta > p {
+  margin: 0.7rem 0 0;
+  max-width: 65ch;
+}
+
+.program-footer-cta-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .final-cta {
@@ -673,14 +861,24 @@ const faqItemsList = computed(() => {
   }
 
   .hero-actions,
-  .final-cta-actions {
+  .final-cta-actions,
+  .program-footer-cta-actions {
     justify-content: center;
   }
 
   .hero-actions :deep(.button),
-  .final-cta-actions :deep(.button) {
+  .final-cta-actions :deep(.button),
+  .program-footer-cta-actions :deep(.button) {
     width: min(22rem, 100%);
     max-width: 100%;
+  }
+
+  .program-slot {
+    grid-template-columns: 1fr;
+  }
+
+  .program-slot__time {
+    font-size: 0.78rem;
   }
 
   .outcome-grid {

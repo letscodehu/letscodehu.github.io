@@ -5,7 +5,6 @@ const LANGS = ['en', 'hu'] as const
 
 const STATIC_SEGMENTS = [
   'training',
-  'training/architect-mindset',
   'training/workshop-budapest',
   'training/workshop-terms',
   'training/workshop-adr',
@@ -21,7 +20,6 @@ const STATIC_SEGMENTS = [
 /** HU vanity URLs; `/hu/adatkezeles` is already emitted from the main HU loop (privacy segment). */
 const HU_STATIC_ALIASES: string[] = [
   'kepzes',
-  'kepzes/architect-gondolkodas',
   'kepzes/workshop-budapest',
   'kepzes/workshop-terms',
   'kepzes/workshop-adr',

@@ -1,15 +1,33 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
+const router = useRouter()
+
 const contactEmail = computed(() => String(t('trainingB2cTerms.sections.contact.email')))
 const contactEmailHref = computed(() => `mailto:${contactEmail.value}`)
+
+function goBackToPreviousPage() {
+  if (import.meta.env.SSR) {
+    return
+  }
+  const historyState = window.history.state as { back?: string | null } | null
+  if (historyState?.back != null && historyState.back !== '') {
+    router.back()
+    return
+  }
+  router.push({ name: 'training-b2c-ads-en', params: { lang: currentLang.value } })
+}
 </script>
 
 <template>
   <article class="terms-page">
     <header class="hero">
+      <button type="button" class="back-link" @click="goBackToPreviousPage">
+        ← {{ t('trainingB2cTerms.backLabel') }}
+      </button>
       <p class="hero-eyebrow">{{ t('trainingB2cTerms.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2cTerms.pageTitle') }}</h1>
       <p class="hero-subtitle">{{ t('trainingB2cTerms.intro') }}</p>
@@ -119,6 +137,43 @@ const contactEmailHref = computed(() => `mailto:${contactEmail.value}`)
 
 .hero {
   background: radial-gradient(circle at top right, var(--color-gradient-start) 0%, var(--color-gradient-end) 55%);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+  padding: 0.55rem 1rem 0.55rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-text) 6%, transparent);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-primary-strong);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary-soft) 55%, var(--color-surface-soft));
+}
+
+.back-link:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-text) 6%, transparent),
+    0 0 0 2px var(--color-primary-soft);
 }
 
 .hero-eyebrow {

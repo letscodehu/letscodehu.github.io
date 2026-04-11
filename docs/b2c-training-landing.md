@@ -62,3 +62,10 @@
 - Kept the existing theme system (`theme-light` / `theme-dark` and `data-theme`) and fixed landing-specific contrast issues with scoped CSS variables only.
 - Updated selectors to support both dark-mode signals (`html.theme-dark` and `html[data-theme='dark']`) so the page stays consistent regardless of how theme state is applied.
 - Rebalanced hero layering (gradient + `c4.png` watermark + square grid) so dark mode keeps readable text, visible grid detail, and a non-dominant C4 image.
+
+## Single B2C workshop surface (`workshop-budapest`)
+
+- Removed `TrainingB2CPage`. Legacy URLs `training/architect-mindset` and `kepzes/architect-gondolkodas` **redirect** to `training/workshop-budapest` with hash `#workshop-detailed-program`.
+- Full day-by-day schedule is rendered on `TrainingB2CAdsLandingPage` from `trainingB2cAds.detailedProgram` (HU/EN), below the main bottom CTA, with an additional checkout CTA under the schedule. “Részletes program” / “See the full program details” links are same-route anchors.
+- Dropped unused `trainingB2c` i18n tree and `seo.descriptions.trainingB2c`. Entry links from the B2B training page, blog sidebar, and terms back-navigation use route `training-b2c-ads-en`.
+- Prerender list no longer includes architect-mindset paths; `canonical-path` normalizes old segments to `training/workshop-budapest`.

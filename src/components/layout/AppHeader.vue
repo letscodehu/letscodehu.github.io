@@ -19,6 +19,22 @@ const navItems = computed(() => [
 
 const currentPathName = computed(() => (route.name as string) || 'home')
 
+/** Routes that should keep the main “Training” nav item highlighted. */
+const TRAINING_NAV_ACTIVE_NAMES = new Set([
+  'training-en',
+  'training-b2c-ads-en',
+  'training-b2c-terms-en',
+  'workshop-en',
+])
+
+function isNavLinkActive(item: (typeof navItems)['value'][number]): boolean {
+  const routeName = currentPathName.value
+  if (item.to.name === 'training-en') {
+    return TRAINING_NAV_ACTIVE_NAMES.has(routeName)
+  }
+  return item.to.name === routeName
+}
+
 const menuOpen = ref(false)
 
 const { theme, toggleTheme } = useDarkMode()
@@ -90,7 +106,7 @@ onUnmounted(() => {
             :key="item.name"
             :to="item.to"
             class="nav-link"
-            :class="{ 'nav-link--active': item.to.name === currentPathName }"
+            :class="{ 'nav-link--active': isNavLinkActive(item) }"
             @click="closeMenu"
           >
             {{ item.name }}

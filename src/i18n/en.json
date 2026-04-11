@@ -183,7 +183,7 @@
       "More predictable delivery because practices are consistent, not reinvented per feature.",
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
-    "b2cCardTitle": "Individual developer track",
+    "b2cCardTitle": "Architect Mindset training",
     "b2cCardBody": "Looking for an individual track? Two-day, in-person Budapest workshop: technical decisions, C4, and lightweight ADRs—for developers moving past ticket-only work.",
     "b2cCardCta": "See training",
     "cta": "Discuss a training need",
@@ -191,6 +191,7 @@
   },
   "trainingB2c": {
     "pageTitle": "You ship tickets. The system stays fuzzy.",
+    "heroWorkshopDate": "Next workshop: June 11–12 (Thu–Fri), Budapest",
     "eyebrow": "For individual developers · 2 days · Budapest · in person only",
     "intro": [
       "You implement features, but you don't really see the whole picture. Bigger calls feel like guesswork.",
@@ -440,6 +441,7 @@
     ]
   },
   "trainingB2cTerms": {
+    "backLabel": "Back to previous page",
     "pageTitle": "Participation Terms and Cancellation Policy",
     "eyebrow": "B2C workshop · Participation terms",
     "intro": "I want the workshop to be a high-quality and inspiring experience for every participant. To keep the collaboration predictable for everyone, the following rules apply to your registration.",
@@ -790,7 +792,7 @@
     "sidebarCtaTitle": "Book a call",
     "sidebarCtaBody": "If your pipeline is the bottleneck, we can map the gaps and build a leaner path to production.",
     "sidebarCtaLabel": "Get in touch",
-    "b2cCtaTitle": "Individual developer track",
+    "b2cCtaTitle": "Architect Mindset training",
     "b2cCtaBody": "A two-day, in-person Budapest training on technical decisions, C4, and lightweight ADRs for developers.",
     "b2cCtaLabel": "View program",
     "videoBlockTitle": "Watch as video",

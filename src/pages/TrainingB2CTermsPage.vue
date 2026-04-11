@@ -1,15 +1,33 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
+const router = useRouter()
+
 const contactEmail = computed(() => String(t('trainingB2cTerms.sections.contact.email')))
 const contactEmailHref = computed(() => `mailto:${contactEmail.value}`)
+
+function goBackToPreviousPage() {
+  if (import.meta.env.SSR) {
+    return
+  }
+  const historyState = window.history.state as { back?: string | null } | null
+  if (historyState?.back != null && historyState.back !== '') {
+    router.back()
+    return
+  }
+  router.push({ name: 'training-b2c-en', params: { lang: currentLang.value } })
+}
 </script>
 
 <template>
   <article class="terms-page">
     <header class="hero">
+      <button type="button" class="back-link" @click="goBackToPreviousPage">
+        ← {{ t('trainingB2cTerms.backLabel') }}
+      </button>
       <p class="hero-eyebrow">{{ t('trainingB2cTerms.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2cTerms.pageTitle') }}</h1>
       <p class="hero-subtitle">{{ t('trainingB2cTerms.intro') }}</p>
@@ -119,6 +137,24 @@ const contactEmailHref = computed(() => `mailto:${contactEmail.value}`)
 
 .hero {
   background: radial-gradient(circle at top right, var(--color-gradient-start) 0%, var(--color-gradient-end) 55%);
+}
+
+.back-link {
+  display: inline-block;
+  margin: 0 0 0.65rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
 }
 
 .hero-eyebrow {

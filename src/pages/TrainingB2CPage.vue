@@ -105,6 +105,7 @@ function closeCheckoutPopup() {
     <header class="hero">
       <p class="hero-eyebrow">{{ t('trainingB2c.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2c.pageTitle') }}</h1>
+      <p class="hero-workshop-date">{{ t('trainingB2c.heroWorkshopDate') }}</p>
       <div class="hero-intro">
         <p v-for="(paragraph, index) in t('trainingB2c.intro')" :key="index" class="hero-subtitle">
           {{ paragraph }}
@@ -313,9 +314,24 @@ function closeCheckoutPopup() {
 }
 
 .hero-title {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.55rem;
   font-size: 1.8rem;
   line-height: 1.3;
+}
+
+.hero-workshop-date {
+  margin: 0 0 1rem;
+  max-width: 36rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
 }
 
 .hero-intro {

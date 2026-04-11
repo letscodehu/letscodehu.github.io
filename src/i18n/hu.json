@@ -183,7 +183,7 @@
       "Kiszámíthatóbb szállítás, mert a gyakorlatok nem fejenként különböznek.",
       "Konkrét, kontextushoz illeszkedő következő lépések, nem általános checklista."
     ],
-    "b2cCardTitle": "Egyéni fejlesztői program",
+    "b2cCardTitle": "Architect Mindset képzés",
     "b2cCardBody": "Egyéni formátumot keresel? Két nap, Budapest, személyesen: technikai döntések, C4 és könnyű ADR-ek—ha már nem csak feladatot akarsz zárni.",
     "b2cCardCta": "Tréning megtekintése",
     "cta": "Beszéljünk a képzési igényről",
@@ -191,6 +191,7 @@
   },
   "trainingB2c": {
     "pageTitle": "Szállítod a ticketeket, de nem te hozod a döntéseket.",
+    "heroWorkshopDate": "Következő workshop: június 11–12. (csütörtök–péntek), Budapest",
     "eyebrow": "Mid-Senior fejlesztőknek · 2 nap · Budapest · csak személyesen",
     "intro": [
       "Szállítod a ticketeket, de az egész rendszer még mindig ködös. A nagyobb döntéseknél gyakran csak találgatsz.",
@@ -440,6 +441,7 @@
     ]
   },
   "trainingB2cTerms": {
+    "backLabel": "Vissza az előző oldalra",
     "pageTitle": "Részvételi Feltételek és Lemondási Szabályzat",
     "eyebrow": "B2C workshop · Részvételi feltételek",
     "intro": "Szeretném, ha a workshop minden résztvevő számára minőségi és inspiráló élmény lenne. A közös munka tervezhetősége érdekében az alábbi szabályok érvényesek a jelentkezésedre.",
@@ -790,7 +792,7 @@
     "sidebarCtaTitle": "Foglalj egy hívást",
     "sidebarCtaBody": "Ha a pipeline a szűk keresztmetszet, feltérképezzük a hiányokat, és egy karcsúbb utat építünk a production felé.",
     "sidebarCtaLabel": "Beszéljünk",
-    "b2cCtaTitle": "Egyéni fejlesztői program",
+    "b2cCtaTitle": "Architect Mindset képzés",
     "b2cCtaBody": "Két napos, budapesti, személyes tréning technikai döntésekről, C4-ről és ADR-ekről fejlesztőknek.",
     "b2cCtaLabel": "Program megtekintése",
     "videoBlockTitle": "Nézd meg videón",

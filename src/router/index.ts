@@ -2,7 +2,6 @@ import type { RouteRecordRaw } from 'vue-router'
 import AppLayout from '../components/layout/AppLayout.vue'
 import HomePage from '../pages/HomePage.vue'
 import TrainingPage from '../pages/TrainingPage.vue'
-import TrainingB2CPage from '../pages/TrainingB2CPage.vue'
 import TrainingB2CAdsLandingPage from '../pages/TrainingB2CAdsLandingPage.vue'
 import TrainingB2CTermsPage from '../pages/TrainingB2CTermsPage.vue'
 import WorkshopPage from '../pages/WorkshopPage.vue'
@@ -31,10 +30,12 @@ const childRoutes: RouteRecordRaw[] = [
   },
   {
     path: 'training/architect-mindset',
-    name: 'training-b2c-en',
-    component: TrainingB2CPage,
     alias: 'kepzes/architect-gondolkodas',
-    meta: { titleKey: 'trainingB2c.pageTitle', descriptionKey: 'seo.descriptions.trainingB2c' },
+    redirect: (to) => ({
+      name: 'training-b2c-ads-en',
+      params: { lang: to.params.lang },
+      hash: '#workshop-detailed-program',
+    }),
   },
   {
     path: 'training/workshop-budapest',

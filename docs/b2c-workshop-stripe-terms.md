@@ -12,4 +12,4 @@
 ## 2026-04-11
 - `TrainingB2CTermsPage`: back control uses client history when available, otherwise navigates to the Architect Mindset B2C route for the active locale.
 - Training overview card and blog sidebar CTA title for the B2C track: branded as **Architect Mindset képzés** (HU) / **Architect Mindset training** (EN).
-- `TrainingB2CPage`: `heroWorkshopDate` under the H1 so the June 11–12 Budapest slot is visible above the fold.
+- `TrainingB2CAdsLandingPage`: workshop dates and pricing appear in the hero and offer meta so the June 11–12 Budapest slot is visible above the fold.

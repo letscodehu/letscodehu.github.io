@@ -18,7 +18,7 @@ function goBackToPreviousPage() {
     router.back()
     return
   }
-  router.push({ name: 'training-b2c-en', params: { lang: currentLang.value } })
+  router.push({ name: 'training-b2c-ads-en', params: { lang: currentLang.value } })
 }
 </script>
 
@@ -140,21 +140,40 @@ function goBackToPreviousPage() {
 }
 
 .back-link {
-  display: inline-block;
-  margin: 0 0 0.65rem;
-  padding: 0;
-  border: none;
-  background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+  padding: 0.55rem 1rem 0.55rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-text) 6%, transparent);
   font: inherit;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .back-link:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-strong);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary-soft) 55%, var(--color-surface-soft));
+}
+
+.back-link:focus-visible {
+  outline: none;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-text) 6%, transparent),
+    0 0 0 2px var(--color-primary-soft);
 }
 
 .hero-eyebrow {

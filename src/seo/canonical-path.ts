@@ -30,7 +30,7 @@ export function canonicalPathname(pathname: string): string {
   }
 
   if (lang === 'hu' && rest[0] === 'kepzes' && rest[1] === 'architect-gondolkodas') {
-    rest = ['training', 'architect-mindset', ...rest.slice(2)]
+    rest = ['training', 'workshop-budapest', ...rest.slice(2)]
   } else if (lang === 'hu' && rest[0] === 'kepzes' && rest[1] === 'workshop-adr') {
     rest = ['training', 'workshop-adr', ...rest.slice(2)]
   } else if (lang === 'hu' && rest[0] === 'kepzes') {
@@ -40,6 +40,10 @@ export function canonicalPathname(pathname: string): string {
   const head = rest[0]
   if (lang === 'hu' && head != null && HU_HEAD_ALIASES[head] != null) {
     rest = [HU_HEAD_ALIASES[head], ...rest.slice(1)]
+  }
+
+  if (rest[0] === 'training' && rest[1] === 'architect-mindset') {
+    rest = ['training', 'workshop-budapest', ...rest.slice(2)]
   }
 
   return `/${lang}/${rest.join('/')}`

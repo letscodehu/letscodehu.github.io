@@ -1,6 +1,7 @@
 import type { CookieConsentState } from './cookieConsent'
 
 const GA_MEASUREMENT_ID = 'G-R6KWGC5Y5M'
+const GOOGLE_ADS_ID = 'AW-939032288'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '0000000'
 const HOTJAR_SITE_ID = 6649868
@@ -22,6 +23,7 @@ declare global {
 
 const loaded = {
   ga: false,
+  ads: false,
   fb: false,
   linkedin: false,
   hotjar: false,
@@ -51,42 +53,51 @@ function initGoogleAnalytics() {
 
   // Initialize dataLayer first
   window.dataLayer = window.dataLayer || []
-  
+
   // Define gtag function that queues calls until script loads
   // Use arguments object (not array) to match Google's official snippet format
-  window.gtag = window.gtag || function gtag() {
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push(arguments)
-  }
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push(arguments)
+    }
+
+  const existingScript = document.getElementById('ga-script')
 
   // Call gtag('js') and gtag('config') - these will be queued
-  window.gtag('js', new Date())
+  if (!existingScript) {
+    window.gtag('js', new Date())
+  }
+
   window.gtag('config', GA_MEASUREMENT_ID, {
     page_path: window.location.pathname,
   })
 
-  // Inject the script tag
-  const scriptInjected = injectScriptOnce('ga-script', `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`)
-  
+  // Inject the script tag (skip if Google Ads or another tag already loaded gtag.js)
+  const scriptInjected = injectScriptOnce(
+    'ga-script',
+    `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+  )
+
   if (scriptInjected) {
     loaded.ga = true
-    
-    // Set up onload handler to ensure config is sent after script loads
-    // This ensures the first collect request is triggered even if dataLayer processing is delayed
+
     const scriptElement = document.getElementById('ga-script') as HTMLScriptElement
     if (scriptElement) {
       scriptElement.onload = () => {
-        // Re-send config after script loads to trigger first collect request
         if (window.gtag) {
           window.gtag('config', GA_MEASUREMENT_ID, {
             page_path: window.location.pathname,
           })
+          if (loaded.ads) {
+            window.gtag('config', GOOGLE_ADS_ID)
+          }
         }
       }
     }
-    
-    // Once script loads, it will process the queued gtag calls automatically
-    // The script will replace our gtag function with the real one
+  } else if (existingScript != null) {
+    loaded.ga = true
   }
 }
 
@@ -154,6 +165,54 @@ function initHotjar() {
   loaded.hotjar = true
 }
 
+/** Google Ads gtag (AW-); uses the same gtag.js queue as GA4 when analytics already ran. */
+function initGoogleAdsTag() {
+  if (loaded.ads || typeof window === 'undefined') {
+    return
+  }
+
+  if (window.gtag && loaded.ga) {
+    window.gtag('config', GOOGLE_ADS_ID)
+    loaded.ads = true
+    return
+  }
+
+  window.dataLayer = window.dataLayer || []
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push(arguments)
+    }
+
+  window.gtag('js', new Date())
+  window.gtag('config', GOOGLE_ADS_ID)
+
+  const scriptInjected = injectScriptOnce(
+    'ga-script',
+    `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`,
+  )
+
+  if (scriptInjected) {
+    loaded.ads = true
+    const scriptElement = document.getElementById('ga-script') as HTMLScriptElement
+    if (scriptElement) {
+      scriptElement.onload = () => {
+        if (window.gtag) {
+          window.gtag('config', GOOGLE_ADS_ID)
+          if (loaded.ga) {
+            window.gtag('config', GA_MEASUREMENT_ID, {
+              page_path: window.location.pathname,
+            })
+          }
+        }
+      }
+    }
+  } else if (document.getElementById('ga-script') != null) {
+    loaded.ads = true
+  }
+}
+
 export function applyTrackingConsent(consent: CookieConsentState) {
   if (!consent.decided) {
     return
@@ -165,19 +224,32 @@ export function applyTrackingConsent(consent: CookieConsentState) {
   }
 
   if (consent.marketing) {
+    initGoogleAdsTag()
     initFacebookPixel()
     initLinkedInInsight()
   }
 }
 
 export function trackPageView(path: string) {
-  if (typeof window === 'undefined' || !window.gtag || !loaded.ga) {
+  if (typeof window === 'undefined' || !window.gtag) {
     return
   }
 
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_path: path,
-  })
+  if (loaded.ga) {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: path,
+    })
+  }
+
+  if (loaded.ads) {
+    window.gtag('config', GOOGLE_ADS_ID, {
+      page_path: path,
+    })
+  }
+
+  if (!loaded.ga && !loaded.ads) {
+    return
+  }
 }
 
 export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom' | 'sticky'

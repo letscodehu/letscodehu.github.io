@@ -41,7 +41,7 @@
     "analyticsTitle": "Analytics cookies",
     "analyticsDescription": "Help us understand how the site is used (Google Analytics, Hotjar).",
     "marketingTitle": "Marketing cookies",
-    "marketingDescription": "Used for marketing and ad performance tracking (Facebook, LinkedIn).",
+    "marketingDescription": "Used for marketing and ad performance tracking (Google Ads, Facebook, LinkedIn).",
     "essentialAriaLabel": "Essential cookies",
     "savePreferences": "Save preferences",
     "settingsLink": "Cookie settings",
@@ -796,6 +796,7 @@
     ],
     "marketingTitle": "Marketing",
     "marketingItems": [
+      "Google tag / Google Ads (googletagmanager.com): ad measurement and remarketing.",
       "Facebook Pixel (connect.facebook.net): marketing and campaign performance measurement.",
       "LinkedIn Insight Tag (snap.licdn.com): campaign and conversion measurement."
     ],

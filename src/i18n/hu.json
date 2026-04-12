@@ -41,7 +41,7 @@
     "analyticsTitle": "Analitikai sütik",
     "analyticsDescription": "Segítenek megérteni, hogyan használják a látogatók az oldalt (Google Analytics, Hotjar).",
     "marketingTitle": "Marketing sütik",
-    "marketingDescription": "Marketing- és hirdetési teljesítmény mérésére szolgálnak (Facebook, LinkedIn).",
+    "marketingDescription": "Marketing- és hirdetési teljesítmény mérésére szolgálnak (Google Ads, Facebook, LinkedIn).",
     "essentialAriaLabel": "Szükséges sütik",
     "savePreferences": "Beállítások mentése",
     "settingsLink": "Süti beállítások",
@@ -796,6 +796,7 @@
     ],
     "marketingTitle": "Marketing",
     "marketingItems": [
+      "Google tag / Google Ads (googletagmanager.com): hirdetésmérés és remarketing.",
       "Facebook Pixel (connect.facebook.net): marketing és kampányteljesítmény mérése.",
       "LinkedIn Insight Tag (snap.licdn.com): kampány- és konverziómérés."
     ],

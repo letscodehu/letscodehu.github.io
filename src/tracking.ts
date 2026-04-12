@@ -179,3 +179,73 @@ export function trackPageView(path: string) {
     page_path: path,
   })
 }
+
+export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom' | 'sticky'
+
+export type TrainingWorkshopCtaNextStep = 'email_popup' | 'stripe_checkout'
+
+export function trackTrainingWorkshopCtaClick(args: {
+  placement: TrainingWorkshopCtaPlacement
+  nextStep: TrainingWorkshopCtaNextStep
+}) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'training_workshop_cta_click', {
+      placement: args.placement,
+      next_step: args.nextStep,
+    })
+  }
+
+  if (loaded.fb && window.fbq) {
+    window.fbq('trackCustom', 'TrainingWorkshopCtaClick', {
+      placement: args.placement,
+      next_step: args.nextStep,
+    })
+  }
+}
+
+export function trackTrainingWorkshopEmailPopupOpen(args: {
+  placement: TrainingWorkshopCtaPlacement
+}) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'training_workshop_email_popup_open', {
+      placement: args.placement,
+    })
+  }
+
+  if (loaded.fb && window.fbq) {
+    window.fbq('trackCustom', 'TrainingWorkshopEmailPopupOpen', {
+      placement: args.placement,
+    })
+  }
+}
+
+export type TrainingWorkshopStripeSource = 'cta_direct' | 'email_popup'
+
+export function trackTrainingWorkshopStripeRedirect(args: {
+  source: TrainingWorkshopStripeSource
+}) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'training_workshop_stripe_redirect', {
+      source: args.source,
+    })
+  }
+
+  if (loaded.fb && window.fbq) {
+    window.fbq('track', 'InitiateCheckout', {
+      content_name: 'training_workshop',
+      source: args.source,
+    })
+  }
+}

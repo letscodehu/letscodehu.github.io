@@ -3,6 +3,7 @@ import { computed, nextTick, onUnmounted, ref, watch } from 'vue'
 import BaseButton from './BaseButton.vue'
 import { useI18n } from '../../composables/useI18n'
 import { CHECKOUT_EMAIL_CAPTURE_API_URL, CHECKOUT_EMAIL_CAPTURE_TIMEOUT_MS } from '../../config'
+import { trackTrainingWorkshopStripeRedirect } from '../../tracking'
 
 const props = defineProps<{
   open: boolean
@@ -83,6 +84,7 @@ function redirectToStripe(emailAddress: string) {
   if (!canUseDom) {
     return
   }
+  trackTrainingWorkshopStripeRedirect({ source: 'email_popup' })
   const checkoutUrl = new URL(props.stripeCheckoutUrl)
   checkoutUrl.searchParams.set('prefilled_email', emailAddress)
   window.location.assign(checkoutUrl.toString())

@@ -41,7 +41,7 @@
     "analyticsTitle": "Analytics cookies",
     "analyticsDescription": "Help us understand how the site is used (Google Analytics, Hotjar).",
     "marketingTitle": "Marketing cookies",
-    "marketingDescription": "Used for marketing and ad performance tracking (Facebook, LinkedIn).",
+    "marketingDescription": "Used for marketing and ad performance tracking (Google Ads, Facebook, LinkedIn).",
     "essentialAriaLabel": "Essential cookies",
     "savePreferences": "Save preferences",
     "settingsLink": "Cookie settings",
@@ -402,7 +402,7 @@
     ]
   },
   "trainingB2cTerms": {
-    "backLabel": "Back to previous page",
+    "backLabel": "Back to the workshop",
     "pageTitle": "Participation Terms and Cancellation Policy",
     "eyebrow": "B2C workshop · Participation terms",
     "intro": "I want the workshop to be a high-quality and inspiring experience for every participant. To keep the collaboration predictable for everyone, the following rules apply to your registration.",
@@ -796,6 +796,7 @@
     ],
     "marketingTitle": "Marketing",
     "marketingItems": [
+      "Google tag / Google Ads (googletagmanager.com): ad measurement and remarketing.",
       "Facebook Pixel (connect.facebook.net): marketing and campaign performance measurement.",
       "LinkedIn Insight Tag (snap.licdn.com): campaign and conversion measurement."
     ],

@@ -4,6 +4,12 @@ import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
 import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
 import { useI18n } from '../composables/useI18n'
+import {
+  trackTrainingWorkshopCtaClick,
+  trackTrainingWorkshopEmailPopupOpen,
+  trackTrainingWorkshopStripeRedirect,
+  type TrainingWorkshopCtaPlacement,
+} from '../tracking'
 
 const MOBILE_MAX_PX = 768
 const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/5kQ6oHbZ3ghCfGdaG7aVa00'
@@ -120,8 +126,17 @@ onUnmounted(() => {
   imageRotationInterval = null
 })
 
-function openCheckoutPopup() {
-  isCheckoutPopupOpen.value = true
+function handlePrimaryCtaClick(placement: TrainingWorkshopCtaPlacement) {
+  const usePopup = Math.random() < 0.5
+  const nextStep = usePopup ? 'email_popup' : 'stripe_checkout'
+  trackTrainingWorkshopCtaClick({ placement, nextStep })
+  if (usePopup) {
+    trackTrainingWorkshopEmailPopupOpen({ placement })
+    isCheckoutPopupOpen.value = true
+    return
+  }
+  trackTrainingWorkshopStripeRedirect({ source: 'cta_direct' })
+  window.location.assign(STRIPE_CHECKOUT_URL)
 }
 
 function closeCheckoutPopup() {
@@ -171,7 +186,7 @@ const detailedProgram = computed(() => {
       </div>
 
       <div ref="heroCtaEl" class="hero-actions fade fade--5">
-        <BaseButton @click="openCheckoutPopup">
+        <BaseButton @click="handlePrimaryCtaClick('hero')">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
@@ -259,7 +274,7 @@ const detailedProgram = computed(() => {
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
       <div ref="middleCtaEl" class="final-cta-actions">
-        <BaseButton @click="openCheckoutPopup">
+        <BaseButton @click="handlePrimaryCtaClick('middle')">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
@@ -296,7 +311,7 @@ const detailedProgram = computed(() => {
       <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
       <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
       <div ref="bottomCtaEl" class="program-footer-cta-actions">
-        <BaseButton @click="openCheckoutPopup">
+        <BaseButton @click="handlePrimaryCtaClick('bottom')">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
@@ -313,7 +328,7 @@ const detailedProgram = computed(() => {
         role="region"
         :aria-label="t('trainingB2cAds.ctaPrimary')"
       >
-        <BaseButton @click="openCheckoutPopup">
+        <BaseButton @click="handlePrimaryCtaClick('sticky')">
           {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
       </div>

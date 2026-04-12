@@ -24,10 +24,12 @@ function goBackToPreviousPage() {
 
 <template>
   <article class="terms-page">
-    <header class="hero">
+    <div class="terms-page__back-wrap">
       <button type="button" class="back-link" @click="goBackToPreviousPage">
         ← {{ t('trainingB2cTerms.backLabel') }}
       </button>
+    </div>
+    <header class="hero">
       <p class="hero-eyebrow">{{ t('trainingB2cTerms.eyebrow') }}</p>
       <h1 class="hero-title">{{ t('trainingB2cTerms.pageTitle') }}</h1>
       <p class="hero-subtitle">{{ t('trainingB2cTerms.intro') }}</p>
@@ -127,6 +129,10 @@ function goBackToPreviousPage() {
   gap: 1.6rem;
 }
 
+.terms-page__back-wrap {
+  margin: 0 0 0.25rem;
+}
+
 .hero,
 .section {
   border: 1px solid var(--color-border);
@@ -143,7 +149,7 @@ function goBackToPreviousPage() {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin: 0 0 1rem;
+  margin: 0;
   padding: 0.55rem 1rem 0.55rem 0.85rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -174,6 +180,56 @@ function goBackToPreviousPage() {
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--color-text) 6%, transparent),
     0 0 0 2px var(--color-primary-soft);
+}
+
+@media (max-width: 768px) {
+  .terms-page__back-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.65rem 1.5rem 0.75rem;
+    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    border-bottom: 1px solid var(--color-border-strong);
+    box-shadow: 0 10px 28px color-mix(in srgb, var(--color-text) 12%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  :global(.theme-dark) .terms-page__back-wrap {
+    background: color-mix(in srgb, var(--color-surface) 88%, #000);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+
+  .terms-page__back-wrap .back-link {
+    width: 100%;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.65rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--color-button-solid-bg);
+    color: var(--color-button-solid-fg);
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    box-shadow: var(--color-button-solid-shadow);
+    text-align: center;
+  }
+
+  .terms-page__back-wrap .back-link:hover {
+    background: var(--color-button-solid-bg-hover);
+    color: var(--color-button-solid-fg);
+    border-color: transparent;
+  }
+
+  .terms-page__back-wrap .back-link:focus-visible {
+    box-shadow:
+      var(--color-button-solid-shadow),
+      0 0 0 3px var(--color-primary-soft);
+  }
 }
 
 .hero-eyebrow {

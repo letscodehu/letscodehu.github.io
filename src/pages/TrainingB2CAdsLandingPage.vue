@@ -164,6 +164,28 @@ const detailedProgram = computed(() => {
   }
   return { sectionTitle: '', days: [] as ProgramDay[] }
 })
+
+type InstructorBody2Parts = {
+  beforeDevops: string
+  betweenDevopsAndAdr: string
+  betweenAdrAndKrisztian: string
+  betweenKrisztianAndCommunity: string
+  afterCommunity: string
+}
+
+type InstructorLinks = {
+  devopsPracticesLabel: string
+  devopsPracticesUrl: string
+  adrLabel: string
+  adrUrl: string
+  krisztianLabel: string
+  krisztianUrl: string
+  communityLabel: string
+  communityUrl: string
+}
+
+const instructorBody2Parts = computed(() => t('trainingB2cAds.instructorBody2Parts') as InstructorBody2Parts)
+const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as InstructorLinks)
 </script>
 
 <template>
@@ -196,6 +218,7 @@ const detailedProgram = computed(() => {
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
       </div>
+      <p class="cta-seats-left fade fade--5">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
       <p class="checkout-note fade fade--5">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
@@ -233,7 +256,45 @@ const detailedProgram = computed(() => {
       <div class="instructor-copy">
         <h2 class="section-title">{{ t('trainingB2cAds.instructorTitle') }}</h2>
         <p>{{ t('trainingB2cAds.instructorBody1') }}</p>
-        <p>{{ t('trainingB2cAds.instructorBody2') }}</p>
+        <p>
+          {{ instructorBody2Parts.beforeDevops }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.devopsPracticesUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.devopsPracticesLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenDevopsAndAdr }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.adrUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.adrLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenAdrAndKrisztian }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.krisztianUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.krisztianLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenKrisztianAndCommunity }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.communityUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.communityLabel }}
+          </a>
+          {{ instructorBody2Parts.afterCommunity }}
+        </p>
       </div>
     </section>
 
@@ -284,6 +345,7 @@ const detailedProgram = computed(() => {
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
       </div>
+      <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
       <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
@@ -318,6 +380,7 @@ const detailedProgram = computed(() => {
           {{ t('trainingB2cAds.termsLinkLabel') }}
         </RouterLink>
       </div>
+      <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
       <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
@@ -328,9 +391,12 @@ const detailedProgram = computed(() => {
         role="region"
         :aria-label="t('trainingB2cAds.ctaPrimary')"
       >
-        <BaseButton @click="handlePrimaryCtaClick('sticky')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
-        </BaseButton>
+        <div class="training-b2c-ads-sticky-waitlist__inner">
+          <BaseButton @click="handlePrimaryCtaClick('sticky')">
+            {{ t('trainingB2cAds.ctaPrimary') }}
+          </BaseButton>
+          <p class="training-b2c-ads-sticky-waitlist__seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
+        </div>
       </div>
     </Teleport>
     <CheckoutEmailPopup
@@ -627,6 +693,19 @@ const detailedProgram = computed(() => {
   line-height: 1.6;
 }
 
+.instructor-inline-link {
+  color: var(--color-primary-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1.5px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.instructor-inline-link:hover {
+  color: var(--landing-accent);
+  text-decoration-color: var(--landing-accent);
+}
+
 .faq-accordion {
   margin-top: 0.95rem;
   display: flex;
@@ -848,6 +927,13 @@ const detailedProgram = computed(() => {
   color: var(--color-text-muted);
 }
 
+.cta-seats-left {
+  margin: 0.6rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--landing-accent);
+}
+
 .final-cta-actions {
   margin-top: 1rem;
   display: flex;
@@ -959,6 +1045,21 @@ const detailedProgram = computed(() => {
     padding: 0.65rem 1.5rem;
     padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
     pointer-events: none;
+  }
+
+  .training-b2c-ads-sticky-waitlist__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .training-b2c-ads-sticky-waitlist__seats-left {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--landing-accent);
+    pointer-events: auto;
   }
 
   .training-b2c-ads-sticky-waitlist .button {

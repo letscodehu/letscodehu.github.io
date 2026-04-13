@@ -7,9 +7,22 @@ import { useDarkMode } from '../../composables/useDarkMode'
 const { t, currentLang, switchLanguage } = useI18n()
 const route = useRoute()
 
-const navItems = computed(() => [
+const trainingSubItems = computed(() => [
+  {
+    name: t('nav.trainingGeneral'),
+    to: { name: 'training-en', params: { lang: currentLang.value } },
+  },
+  {
+    name: t('nav.trainingArchitectMindset'),
+    to: { name: 'training-b2c-ads-en', params: { lang: currentLang.value } },
+  },
+])
+
+const primaryNavItems = computed(() => [
   { name: t('nav.home'), to: { name: 'home', params: { lang: currentLang.value } } },
-  { name: t('nav.training'), to: { name: 'training-en', params: { lang: currentLang.value } } },
+])
+
+const navItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
   { name: t('nav.caseStudies'), to: { name: 'case-studies-en', params: { lang: currentLang.value } } },
@@ -29,13 +42,21 @@ const TRAINING_NAV_ACTIVE_NAMES = new Set([
 
 function isNavLinkActive(item: (typeof navItems)['value'][number]): boolean {
   const routeName = currentPathName.value
-  if (item.to.name === 'training-en') {
-    return TRAINING_NAV_ACTIVE_NAMES.has(routeName)
-  }
   return item.to.name === routeName
 }
 
+function isPrimaryNavLinkActive(item: (typeof primaryNavItems)['value'][number]): boolean {
+  return item.to.name === currentPathName.value
+}
+
+const isTrainingParentActive = computed(() => TRAINING_NAV_ACTIVE_NAMES.has(currentPathName.value))
+
+function isTrainingSubItemActive(item: (typeof trainingSubItems)['value'][number]): boolean {
+  return item.to.name === currentPathName.value
+}
+
 const menuOpen = ref(false)
+const trainingSubmenuOpen = ref(false)
 
 const { theme, toggleTheme } = useDarkMode()
 const isDarkMode = computed(() => theme.value === 'dark')
@@ -50,6 +71,19 @@ function toggleMenu() {
 
 function closeMenu() {
   menuOpen.value = false
+}
+
+function openTrainingSubmenu() {
+  trainingSubmenuOpen.value = true
+}
+
+function closeTrainingSubmenu() {
+  trainingSubmenuOpen.value = false
+}
+
+function handleTrainingSubmenuClick() {
+  closeTrainingSubmenu()
+  closeMenu()
 }
 
 function handleEscape(e: KeyboardEvent) {
@@ -101,6 +135,43 @@ onUnmounted(() => {
         :class="{ 'nav-wrapper--open': menuOpen }"
       >
         <nav class="nav" :aria-label="t('common.mainNavigationAriaLabel')">
+          <RouterLink
+            v-for="item in primaryNavItems"
+            :key="item.name"
+            :to="item.to"
+            class="nav-link"
+            :class="{ 'nav-link--active': isPrimaryNavLinkActive(item) }"
+            @click="closeMenu"
+          >
+            {{ item.name }}
+          </RouterLink>
+
+          <div
+            class="nav-group"
+            :class="{
+              'nav-group--active': isTrainingParentActive,
+              'nav-group--submenu-open': trainingSubmenuOpen,
+            }"
+            @mouseenter="openTrainingSubmenu"
+            @mouseleave="closeTrainingSubmenu"
+            @focusin="openTrainingSubmenu"
+            @focusout="closeTrainingSubmenu"
+          >
+            <span class="nav-link nav-link--group">{{ t('nav.training') }}</span>
+            <div class="nav-submenu">
+              <RouterLink
+                v-for="item in trainingSubItems"
+                :key="item.name"
+                :to="item.to"
+                class="nav-submenu-link"
+                :class="{ 'nav-submenu-link--active': isTrainingSubItemActive(item) }"
+                @click="handleTrainingSubmenuClick"
+              >
+                {{ item.name }}
+              </RouterLink>
+            </div>
+          </div>
+
           <RouterLink
             v-for="item in navItems"
             :key="item.name"
@@ -299,6 +370,12 @@ onUnmounted(() => {
   transition: color 0.16s ease, border-color 0.16s ease;
 }
 
+.nav-link--group {
+  display: inline-flex;
+  align-items: center;
+  cursor: default;
+}
+
 .nav-link:hover {
   color: var(--color-text);
 }
@@ -307,6 +384,60 @@ onUnmounted(() => {
   color: var(--color-text);
   font-weight: 500;
   border-color: var(--color-primary);
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-group--active .nav-link--group {
+  color: var(--color-text);
+  font-weight: 500;
+  border-color: var(--color-primary);
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 14rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  padding: 0.35rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+}
+
+.nav-group--submenu-open .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-submenu-link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.45rem;
+  font-size: 0.86rem;
+  transition: color 0.16s ease, background-color 0.16s ease;
+}
+
+.nav-submenu-link:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-muted);
+}
+
+.nav-submenu-link--active {
+  color: var(--color-text);
+  font-weight: 600;
+  background-color: var(--color-surface-muted);
 }
 
 .lang-switch {
@@ -384,6 +515,39 @@ onUnmounted(() => {
   .nav-link {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-group {
+    position: static;
+  }
+
+  .nav-link--group {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-submenu {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 0.5rem 0.9rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    gap: 0.1rem;
+  }
+
+  .nav-submenu-link {
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+    padding: 0.6rem 0;
+  }
+
+  .nav-group--active .nav-link--group {
+    border-color: var(--color-primary);
   }
 
   .nav-link:last-child {

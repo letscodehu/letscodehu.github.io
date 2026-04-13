@@ -3,6 +3,8 @@
   "nav": {
     "home": "Kezdőlap",
     "training": "Képzés",
+    "trainingGeneral": "Képzések cégeknek",
+    "trainingArchitectMindset": "Architect Mindset képzés",
     "consulting": "Tanácsadás",
     "about": "Rólam",
     "contact": "Kapcsolat",

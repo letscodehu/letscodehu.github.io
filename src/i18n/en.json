@@ -3,6 +3,8 @@
   "nav": {
     "home": "Home",
     "training": "Training",
+    "trainingGeneral": "General training",
+    "trainingArchitectMindset": "Architect Mindset",
     "consulting": "Consulting",
     "about": "About",
     "contact": "Contact",

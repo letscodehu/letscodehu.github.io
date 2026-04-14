@@ -195,8 +195,14 @@
     "pageTitle": "Workshop Budapest — lépj túl a ticket-végrehajtáson",
     "eyebrow": "2 nap · Budapest · június 11-12. (csüt-péntek) · kiscsoportos, személyes workshop",
     "heroTitle": "Fejlesztőből rendszerszinten gondolkodó mérnök.",
-    "heroBody": "Két intenzív, gyakorlati nap technikai döntésekről, C4-ről és ADR-ekről. A cél egyszerű: hétfőn úgy menj vissza, hogy tisztábban látsz, gyorsabban érvelsz, és magabiztosabban kommunikálod a kompromisszumokat.",
-    "heroSub": "Hozd a saját rendszeredet, vagy egy valós döntési problémát a munkádból, és abból dolgozunk.",
+    "heroPainTitle": "Ismerős?",
+    "heroPainPoints": [
+      "A meetingek végére nincs valódi döntés, csak több kérdés",
+      "Nincs közös nyelv a diagramokra.",
+      "Nehéz elmagyarázni, miért ezt az irányt választottad.",
+      "Döntések születnek… de később senki nem tudja, miért"
+    ],
+    "heroPainClosing": "akkor ezt a workshopot neked szánták.",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99.000 Ft",
@@ -206,19 +212,19 @@
     },
     "ctaPrimary": "Jelentkezem most",
     "ctaSeatsLeft": "Már csak 7 hely maradt",
-    "proofTitle": "Miért működik ez a formátum",
+    "proofTitle": "Mit kapsz?",
     "proofPoints": [
-      "Nem passzív előadás: a saját döntési helyzeteiden dolgozol.",
-      "Kiscsoportos, személyes workshop valódi visszajelzéssel, nem csak prezentációkkal.",
-      "C4 + ADR együtt: diagram, döntési indoklás és kommunikáció egy közös történetben.",
-      "Konkrét, azonnal használható tudással mész haza, nem csak motivációval."
+      "Egy működő módszert, amivel nem érzésre hozol architektúrai döntéseket.",
+      "Eszközöket, hogy meg tudd indokolni a döntéseidet vitás helyzetekben.",
+      "Modellezési gyakorlatot, amit mások is elsőre értenek.",
+      "Magabiztosságot, amikor legközelebb megkérdezik: „miért így?”"
     ],
-    "outcomesTitle": "Mit viszel magaddal hétfő reggelre",
+    "outcomesTitle": "Mit viszel haza",
     "outcomes": [
-      "A „Reality Check” döntési keretrendszer, amivel strukturáltabban mérlegeled az opciókat, és magabiztosabban hozol technikai döntéseket.",
-      "A saját rendszered Context és Container C4 nézete, dokumentációba illeszthető formában.",
-      "Egy praktikus ADR-minta, amit a csapatoddal újra és újra használhatsz.",
-      "Egy 15 perces architektúra-sztori rutin stakeholder beszélgetésekhez."
+      "Amikor 3 opció között vacilláltok, lesz egy struktúrád eldönteni.",
+      "Amikor megkérdezik „miért így?”, nem fagysz le.",
+      "Megtanulod úgy modellezni a rendszert, hogy a CEO-tól a juniorig bárki megértse.",
+      "Amikor dokumentálni kell a döntést, nem üres sablont töltögetsz."
     ],
     "instructorTitle": "Az oktatóról",
     "instructorImagePlaceholder": "Oktatói kép helye",

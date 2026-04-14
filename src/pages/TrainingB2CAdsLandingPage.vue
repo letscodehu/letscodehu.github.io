@@ -193,8 +193,13 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     <section class="hero">
       <p class="eyebrow fade fade--1">{{ t('trainingB2cAds.eyebrow') }}</p>
       <h1 class="hero-title fade fade--2">{{ t('trainingB2cAds.heroTitle') }}</h1>
-      <p class="hero-body fade fade--3">{{ t('trainingB2cAds.heroBody') }}</p>
-      <p class="hero-sub fade fade--4">{{ t('trainingB2cAds.heroSub') }}</p>
+      <div class="hero-pain fade fade--3">
+        <p class="hero-pain-title">{{ t('trainingB2cAds.heroPainTitle') }}</p>
+        <ul class="hero-pain-list">
+          <li v-for="point in t('trainingB2cAds.heroPainPoints')" :key="point">{{ point }}</li>
+        </ul>
+        <p class="hero-pain-closing">{{ t('trainingB2cAds.heroPainClosing') }}</p>
+      </div>
       <div class="offer-meta fade fade--4">
         <p class="offer-meta__early">
           <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
@@ -487,8 +492,9 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
 .eyebrow,
 .hero-title,
-.hero-body,
-.hero-sub,
+.hero-pain,
+.hero-pain-title,
+.hero-pain-closing,
 .section-title,
 .final-cta h2 {
   position: relative;
@@ -514,18 +520,42 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   font-size: clamp(1.9rem, 6.2vw, 3.4rem);
 }
 
-.hero-body {
+.hero-pain {
   margin: 1rem 0 0;
   max-width: 62ch;
+}
+
+.hero-pain-title {
+  margin: 0 0 0.45rem;
   font-size: clamp(1rem, 2.2vw, 1.12rem);
-  line-height: 1.58;
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--color-text);
 }
 
-.hero-sub {
-  margin: 0.7rem 0 0;
-  max-width: 60ch;
+.hero-pain-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.55;
   color: var(--color-text-muted);
+}
+
+.hero-pain-list li + li {
+  margin-top: 0.35rem;
+}
+
+.hero-pain-list li::marker {
+  color: var(--landing-accent);
+}
+
+.hero-pain-closing {
+  margin: 0.85rem 0 0;
+  max-width: 62ch;
+  font-size: clamp(1rem, 2.2vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-text);
 }
 
 .offer-meta {

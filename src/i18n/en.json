@@ -195,8 +195,14 @@
     "pageTitle": "Workshop Budapest — move beyond ticket execution",
     "eyebrow": "2 days · Budapest · June 11-12 (Thu-Fri) · small group · in person only",
     "heroTitle": "Become the developer who can reason at system level.",
-    "heroBody": "Two intense, hands-on days on technical decisions, C4, and lightweight ADRs. The goal is simple: return Monday with sharper clarity, faster reasoning, and stronger trade-off communication.",
-    "heroSub": "Bring your own system or a real decision knot from work, and we build from that.",
+    "heroPainTitle": "Sound familiar?",
+    "heroPainPoints": [
+      "Architecture decisions fall apart in meetings.",
+      "There is no shared language for diagrams.",
+      "It is hard to explain why you chose this direction.",
+      "ADRs exist… but nobody reads them."
+    ],
+    "heroPainClosing": "Then this workshop is for you.",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99,000 HUF",
@@ -206,19 +212,19 @@
     },
     "ctaPrimary": "Reserve my seat now",
     "ctaSeatsLeft": "Only 7 seats left",
-    "proofTitle": "Why this format works",
+    "proofTitle": "What you actually get",
     "proofPoints": [
-      "Not a passive talk: you work through your own decision situations.",
-      "Small in-person group with feedback, not just slides.",
-      "C4 + ADR together: diagrams, rationale, and communication in one narrative.",
-      "You leave with usable artifacts, not just motivation."
+      "A working method so you do not make architecture decisions on gut feel alone.",
+      "Tools to defend your decisions when conversations get contentious.",
+      "Modeling practice that others understand the first time they see it.",
+      "Confidence the next time someone asks, “why this way?”"
     ],
-    "outcomesTitle": "What you take back by Monday morning",
+    "outcomesTitle": "What you take home",
     "outcomes": [
-      "The “Reality Check” decision checklist you can use in your next design meeting.",
-      "Context and Container C4 views for your own system, ready to paste into docs.",
-      "A practical ADR draft pattern you can reuse with your team.",
-      "A 15-minute architecture story routine for stakeholder conversations."
+      "When you are stuck choosing between three options, you will have a structure to decide.",
+      "When someone asks “why this way?”, you will not freeze.",
+      "You learn to model the system so anyone—from the CEO to a junior—can understand it.",
+      "When you need to document a decision, you will not be filling in an empty template."
     ],
     "instructorTitle": "About the instructor",
     "instructorImagePlaceholder": "Instructor image placeholder",

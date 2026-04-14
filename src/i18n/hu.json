@@ -229,7 +229,9 @@
       "betweenDevopsAndAdr": ", az architekturális döntéshozatal (",
       "betweenAdrAndKrisztian": ") és a pragmatikus rendszertervezés. ",
       "betweenKrisztianAndCommunity": " a ",
-      "afterCommunity": " alapítója is, ahol támogató közeget épít azért, hogy az egyének fejlődhessenek, megosszák a tudásukat, és együtt vigyék előre a szakmát."
+      "afterCommunity": " alapítója is, ahol támogató közeget épít azért, hogy az egyének fejlődhessenek, megosszák a tudásukat, és együtt vigyék előre a szakmát.",
+      "beforePodcast": " Ugyanebben a hangnemben futott a Letscode.hu podcast is: rövidebb epizódok, háttérsztorik — ",
+      "afterPodcast": "."
     },
     "instructorLinks": {
       "devopsPracticesLabel": "DevOps gyakorlatok",
@@ -239,7 +241,9 @@
       "krisztianLabel": "Krisztián",
       "krisztianUrl": "https://www.linkedin.com/in/papp-krisztian/",
       "communityLabel": "Letscode.hu közösség",
-      "communityUrl": "https://www.youtube.com/@letscodehu"
+      "communityUrl": "https://www.youtube.com/@letscodehu",
+      "soundcloudLabel": "megtalálod SoundCloudon",
+      "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "Ha ez most fontos neked, ne halogasd",
     "ctaSecondaryBody": "A helyek limitáltak: a workshop ára 99.000 Ft május 17-ig, utána 119.000 Ft. Időpont: június 11-12. (csüt-péntek).",
@@ -724,6 +728,8 @@
     "sessionizeLabel": "Konferencia sessionök (Sessionize)",
     "youtubeChannelUrl": "https://www.youtube.com/@letscodehu",
     "youtubeChannelLabel": "YouTube csatorna",
+    "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D",
+    "soundcloudLabel": "Podcast (SoundCloud)",
     "moreSessionsTitle": "További konferencia sessionök",
     "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
     "onlinePresenceTitle": "Megtalálsz még itt"

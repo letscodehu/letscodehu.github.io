@@ -97,6 +97,15 @@ const { t } = useI18n()
           >
             {{ t('about.youtubeChannelLabel') }}
           </BaseButton>
+          <BaseButton
+            as="a"
+            :href="t('about.soundcloudUrl')"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="ghost"
+          >
+            {{ t('about.soundcloudLabel') }}
+          </BaseButton>
         </div>
       </BaseCard>
     </section>

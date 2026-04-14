@@ -171,6 +171,8 @@ type InstructorBody2Parts = {
   betweenAdrAndKrisztian: string
   betweenKrisztianAndCommunity: string
   afterCommunity: string
+  beforePodcast: string
+  afterPodcast: string
 }
 
 type InstructorLinks = {
@@ -182,6 +184,8 @@ type InstructorLinks = {
   krisztianUrl: string
   communityLabel: string
   communityUrl: string
+  soundcloudLabel: string
+  soundcloudUrl: string
 }
 
 const instructorBody2Parts = computed(() => t('trainingB2cAds.instructorBody2Parts') as InstructorBody2Parts)
@@ -294,6 +298,16 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
             {{ instructorLinks.communityLabel }}
           </a>
           {{ instructorBody2Parts.afterCommunity }}
+          {{ instructorBody2Parts.beforePodcast }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.soundcloudUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.soundcloudLabel }}
+          </a>
+          {{ instructorBody2Parts.afterPodcast }}
         </p>
       </div>
     </section>

@@ -235,7 +235,9 @@
       "betweenDevopsAndAdr": ", architectural decision-making (",
       "betweenAdrAndKrisztian": "), and pragmatic system design. ",
       "betweenKrisztianAndCommunity": " is also the founder of the ",
-      "afterCommunity": ", creating a supportive environment where individuals can thrive, share their knowledge, and collectively contribute to the advancement of technology."
+      "afterCommunity": ", creating a supportive environment where individuals can thrive, share their knowledge, and collectively contribute to the advancement of technology.",
+      "beforePodcast": " The Letscode.hu podcast stays in the same lane—shorter episodes and more conversational angles—and you can ",
+      "afterPodcast": "."
     },
     "instructorLinks": {
       "devopsPracticesLabel": "DevOps practices",
@@ -245,7 +247,9 @@
       "krisztianLabel": "Krisztián",
       "krisztianUrl": "https://www.linkedin.com/in/papp-krisztian/",
       "communityLabel": "Letscode.hu community",
-      "communityUrl": "https://www.youtube.com/@letscodehu"
+      "communityUrl": "https://www.youtube.com/@letscodehu",
+      "soundcloudLabel": "tune in on SoundCloud",
+      "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "If this is relevant now, don't postpone it",
     "ctaSecondaryBody": "Seats are limited: 99,000 HUF until May 17, then 119,000 HUF. Date: June 11-12 (Thu-Fri).",
@@ -730,6 +734,8 @@
     "sessionizeLabel": "Conference sessions (Sessionize)",
     "youtubeChannelUrl": "https://www.youtube.com/@letscodehu",
     "youtubeChannelLabel": "YouTube channel",
+    "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D",
+    "soundcloudLabel": "Podcast on SoundCloud",
     "moreSessionsTitle": "More conference sessions",
     "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
     "onlinePresenceTitle": "Online presence"

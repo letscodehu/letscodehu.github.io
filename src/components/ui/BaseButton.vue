@@ -4,6 +4,8 @@ const props = withDefaults(
     variant?: 'primary' | 'ghost'
     as?: 'button' | 'a' | 'span'
     href?: string
+    target?: string
+    rel?: string
   }>(),
   {
     variant: 'primary',
@@ -17,6 +19,8 @@ const props = withDefaults(
   <component
     :is="as"
     :href="as === 'a' ? href : undefined"
+    :target="as === 'a' ? target : undefined"
+    :rel="as === 'a' ? rel : undefined"
     class="button"
     :class="[`button--${variant}`]"
   >

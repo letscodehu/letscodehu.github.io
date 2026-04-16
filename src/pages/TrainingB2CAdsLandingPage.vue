@@ -30,6 +30,7 @@ let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
 let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
+let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
 
 function syncMobileViewport() {
@@ -97,6 +98,47 @@ function teardownObservers() {
   bottomObserver = null
 }
 
+function setupSectionRevealObserver() {
+  if (typeof IntersectionObserver === 'undefined' || typeof document === 'undefined') {
+    return
+  }
+
+  const root = document.querySelector('.ads-landing')
+  if (!root) {
+    return
+  }
+
+  const elements = root.querySelectorAll('[data-section-reveal]')
+  if (elements.length === 0) {
+    return
+  }
+
+  const revealOptions: IntersectionObserverInit = {
+    root: null,
+    threshold: 0.08,
+    rootMargin: '0px 0px -8% 0px',
+  }
+
+  sectionRevealObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) {
+        continue
+      }
+      entry.target.classList.add('section-reveal--visible')
+      sectionRevealObserver?.unobserve(entry.target)
+    }
+  }, revealOptions)
+
+  for (const el of elements) {
+    sectionRevealObserver.observe(el)
+  }
+}
+
+function teardownSectionRevealObserver() {
+  sectionRevealObserver?.disconnect()
+  sectionRevealObserver = null
+}
+
 onMounted(() => {
   syncMobileViewport()
   if (typeof window !== 'undefined') {
@@ -110,11 +152,13 @@ onMounted(() => {
 
   void nextTick(() => {
     setupObservers()
+    setupSectionRevealObserver()
   })
 })
 
 onUnmounted(() => {
   teardownObservers()
+  teardownSectionRevealObserver()
   mediaQuery?.removeEventListener('change', syncMobileViewport)
   mediaQuery = null
 
@@ -231,7 +275,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <p class="checkout-note fade fade--5">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
-    <section class="proof">
+    <section class="proof section-reveal" data-section-reveal>
       <h2 class="section-title">{{ t('trainingB2cAds.proofTitle') }}</h2>
       <ul class="proof-list">
         <li v-for="point in t('trainingB2cAds.proofPoints')" :key="point">
@@ -240,7 +284,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </ul>
     </section>
 
-    <section class="outcomes">
+    <section class="outcomes section-reveal" data-section-reveal>
       <h2 class="section-title">{{ t('trainingB2cAds.outcomesTitle') }}</h2>
       <ul class="outcome-grid">
         <li v-for="item in t('trainingB2cAds.outcomes')" :key="item" class="outcome-card">
@@ -249,7 +293,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </ul>
     </section>
 
-    <section class="instructor">
+    <section class="instructor section-reveal" data-section-reveal>
       <div class="instructor-media" role="img" :aria-label="t('trainingB2cAds.instructorImagePlaceholderAria')">
         <Transition name="instructor-fade" mode="out-in">
           <img
@@ -317,7 +361,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </div>
     </section>
 
-    <section id="ads-faq" class="faq" aria-labelledby="ads-faq-title">
+    <section id="ads-faq" class="faq section-reveal" data-section-reveal aria-labelledby="ads-faq-title">
       <h2 id="ads-faq-title" class="section-title">{{ t('trainingB2cAds.faqTitle') }}</h2>
       <div class="faq-accordion">
         <template v-for="(item, faqIndex) in faqItemsList" :key="faqIndex">
@@ -350,7 +394,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </div>
     </section>
 
-    <section class="final-cta">
+    <section class="final-cta section-reveal" data-section-reveal>
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
       <div ref="middleCtaEl" class="final-cta-actions">
@@ -370,7 +414,8 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
     <section
       id="workshop-detailed-program"
-      class="detailed-program"
+      class="detailed-program section-reveal"
+      data-section-reveal
       aria-labelledby="detailed-program-title"
     >
       <h2 id="detailed-program-title" class="section-title">{{ detailedProgram.sectionTitle }}</h2>
@@ -388,7 +433,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </div>
     </section>
 
-    <section class="program-footer-cta">
+    <section class="program-footer-cta section-reveal" data-section-reveal>
       <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
       <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
       <div ref="bottomCtaEl" class="program-footer-cta-actions">
@@ -464,6 +509,19 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   --landing-instructor-bg: linear-gradient(150deg, var(--landing-accent-soft) 0%, transparent 100%),
     color-mix(in srgb, var(--color-surface-soft) 88%, black 12%);
   --landing-c4-opacity: 0.12;
+}
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 720ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.section-reveal.section-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero {
@@ -1059,6 +1117,12 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .section-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .instructor-fade-enter-active,

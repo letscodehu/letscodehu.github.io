@@ -75,3 +75,7 @@
 - Hero: removed `trainingB2cAds.heroBody`; added `heroPainTitle` / `heroPainPoints` / `heroPainClosing` and a hero `<ul>` in `TrainingB2CAdsLandingPage` for the “Ismerős?” pain bullets and closing line (no separate `heroSub` bring-your-context line in the hero).
 - Proof block (`Mit kapsz?`): `proofTitle` / `proofPoints` lists four concrete takeaways (method, justification in conflict, legible modeling, confidence under “why this way?”).
 - Outcomes: `outcomesTitle` / `outcomes` rewritten to situation-based “take home” lines (HU/EN).
+
+## Workshop Budapest meta title alignment
+
+- Updated `trainingB2cAds.pageTitle` in HU/EN i18n so the `workshop-budapest` route metadata title consistently uses Architect Mindset training naming.

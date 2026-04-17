@@ -92,3 +92,13 @@
 
 - Reworked `AppFooter` from a compact inline row to a larger two-column (desktop) / single-column (mobile) layout with grouped social and legal links.
 - Added language-aware footer business fields in `common` i18n: address line plus tax/VAT line (`Adószám` in HU, `EU VAT number` in EN), and explicit Facebook/LinkedIn links.
+
+## B2C hero trust badge
+
+- Added `trainingB2cAds.heroTrustLine` in HU/EN i18n and rendered it in the hero bottom area of `TrainingB2CAdsLandingPage`.
+- Styled the line as a skewed badge (with counter-skewed inner text) so it reads clearly while visually separating social proof from the main CTA copy.
+
+## B2C testimonials block (HU-only content)
+
+- Added `trainingB2cAds.testimonialsTitle` and `trainingB2cAds.testimonials` in HU i18n with four provided quotes; EN keeps empty fallback values so the section stays hidden outside HU.
+- Rendered a new testimonials section on `TrainingB2CAdsLandingPage` (between instructor and FAQ) with responsive quote cards.

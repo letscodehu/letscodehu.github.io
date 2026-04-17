@@ -247,6 +247,18 @@ const { t } = useI18n()
   min-width: 0;
 }
 
+@media (max-width: 640px) {
+  .presence-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .presence-buttons :deep(.button) {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}
+
 .credly-badge-section {
   text-align: center;
 }

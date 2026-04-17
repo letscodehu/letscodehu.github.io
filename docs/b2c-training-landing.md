@@ -87,3 +87,8 @@
 ## YouTube channel routing split
 
 - Updated shared `youtubeChannelUrl` keys in HU/EN i18n (`common`, `home`, `about`) to point to the new channel URL, while intentionally keeping B2C ads-specific `trainingB2cAds.instructorLinks.communityUrl` unchanged.
+
+## Footer social/contact expansion
+
+- Reworked `AppFooter` from a compact inline row to a larger two-column (desktop) / single-column (mobile) layout with grouped social and legal links.
+- Added language-aware footer business fields in `common` i18n: address line plus tax/VAT line (`Adószám` in HU, `EU VAT number` in EN), and explicit Facebook/LinkedIn links.

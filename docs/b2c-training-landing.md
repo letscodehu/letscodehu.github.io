@@ -83,3 +83,7 @@
 ## Ads landing section scroll-reveal
 
 - Post-hero sections on `TrainingB2CAdsLandingPage` use `data-section-reveal` plus a single `IntersectionObserver` to add `section-reveal--visible` once when entering the viewport; CSS transitions opacity and `translateY` (~26px). `prefers-reduced-motion: reduce` shows sections immediately without motion.
+
+## YouTube channel routing split
+
+- Updated shared `youtubeChannelUrl` keys in HU/EN i18n (`common`, `home`, `about`) to point to the new channel URL, while intentionally keeping B2C ads-specific `trainingB2cAds.instructorLinks.communityUrl` unchanged.

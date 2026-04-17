@@ -25,6 +25,12 @@
     "privacyLink": "Privacy",
     "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
     "youtubeChannelLabel": "YouTube",
+    "facebookUrl": "https://www.facebook.com/letscodehu",
+    "facebookLabel": "Facebook",
+    "linkedinUrl": "https://www.linkedin.com/company/letscode-hu",
+    "linkedinLabel": "LinkedIn",
+    "footerAddress": "Nyár utca 6, 2621 Verőce, Hungary",
+    "footerTaxLine": "EU VAT number HU32983083",
     "footerTagline": "Independent consultant and trainer for software engineering teams.",
     "brandLogoAlt": "Letscode Solutions",
     "brandTagline": "Training and consulting for engineering teams",
@@ -203,6 +209,7 @@
       "ADRs exist… but nobody reads them."
     ],
     "heroPainClosing": "Then this workshop is for you.",
+    "heroTrustLine": "100+ positive feedback on earlier materials → now in live workshop format",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99,000 HUF",
@@ -354,6 +361,8 @@
     },
     "programFooterCtaTitle": "Reserve your seat",
     "programFooterCtaBody": "If the schedule fits, book your seat—we follow up by email with practical details.",
+    "testimonialsTitle": "",
+    "testimonials": [],
     "faqTitle": "Frequently asked questions",
     "faqCancellationLead": "In short, if you cannot attend:",
     "faqCancellationPoints": [

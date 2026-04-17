@@ -192,6 +192,11 @@ const faqItemsList = computed(() => {
   return Array.isArray(raw) ? raw : []
 })
 
+const testimonialsList = computed(() => {
+  const raw = t('trainingB2cAds.testimonials')
+  return Array.isArray(raw) ? raw : []
+})
+
 const fullProgramLocation = computed(() => ({
   name: 'training-b2c-ads-en',
   params: { lang: currentLang.value },
@@ -273,6 +278,11 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </div>
       <p class="cta-seats-left fade fade--5">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
       <p class="checkout-note fade fade--5">{{ t('trainingB2cAds.checkoutNote') }}</p>
+      <div class="hero-trust-badge-wrap fade fade--5">
+        <p class="hero-trust-badge">
+          <span class="hero-trust-badge__text">{{ t('trainingB2cAds.heroTrustLine') }}</span>
+        </p>
+      </div>
     </section>
 
     <section class="proof section-reveal" data-section-reveal>
@@ -359,6 +369,15 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
           {{ instructorBody2Parts.afterPodcast }}
         </p>
       </div>
+    </section>
+
+    <section v-if="testimonialsList.length > 0" class="testimonials section-reveal" data-section-reveal>
+      <h2 class="section-title">{{ t('trainingB2cAds.testimonialsTitle') }}</h2>
+      <ul class="testimonials-grid">
+        <li v-for="(quote, quoteIndex) in testimonialsList" :key="quoteIndex" class="testimonial-card">
+          <p class="testimonial-quote">{{ quote }}</p>
+        </li>
+      </ul>
     </section>
 
     <section id="ads-faq" class="faq section-reveal" data-section-reveal aria-labelledby="ads-faq-title">
@@ -630,6 +649,35 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   color: var(--color-text);
 }
 
+.hero-trust-badge-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+  display: inline-flex;
+  max-width: min(100%, 44rem);
+}
+
+.hero-trust-badge {
+  margin: 0;
+  display: inline-flex;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 58%, var(--landing-border));
+  background: color-mix(in srgb, var(--landing-accent-soft) 78%, var(--color-surface));
+  border-radius: 0.5rem;
+  transform: skewX(-12deg);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--landing-accent) 18%, transparent);
+}
+
+.hero-trust-badge__text {
+  display: inline-block;
+  padding: 0.52rem 0.88rem;
+  transform: skewX(12deg);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
 .offer-meta {
   margin: 0.85rem 0 0;
   max-width: 60ch;
@@ -713,6 +761,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .proof,
 .outcomes,
 .instructor,
+.testimonials,
 .faq,
 .final-cta,
 .detailed-program,
@@ -806,6 +855,29 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .instructor-inline-link:hover {
   color: var(--landing-accent);
   text-decoration-color: var(--landing-accent);
+}
+
+.testimonials-grid {
+  margin: 0.95rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.testimonial-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--landing-border);
+  background: var(--landing-card-bg);
+  padding: 0.95rem;
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--color-text);
 }
 
 .faq-accordion {
@@ -1103,12 +1175,31 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     grid-template-columns: 1fr;
   }
 
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
   .instructor {
     grid-template-columns: 1fr;
   }
 
   .instructor-media {
     height: clamp(12rem, 56vw, 16rem);
+  }
+
+  .hero-trust-badge-wrap {
+    max-width: 100%;
+  }
+
+  .hero-trust-badge {
+    width: 100%;
+    transform: skewX(-8deg);
+  }
+
+  .hero-trust-badge__text {
+    transform: skewX(8deg);
+    font-size: 0.83rem;
+    padding: 0.5rem 0.72rem;
   }
 }
 

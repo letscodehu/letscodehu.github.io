@@ -25,6 +25,12 @@
     "privacyLink": "Adatkezelés",
     "youtubeChannelUrl": "https://www.youtube.com/channel/UCDLdwTyJMVaAFWbFVHJB8Bg",
     "youtubeChannelLabel": "YouTube",
+    "facebookUrl": "https://www.facebook.com/letscodehu",
+    "facebookLabel": "Facebook",
+    "linkedinUrl": "https://www.linkedin.com/company/letscode-hu",
+    "linkedinLabel": "LinkedIn",
+    "footerAddress": "Nyár utca 6, 2621 Verőce, Hungary",
+    "footerTaxLine": "Adószám: 32983083-2-13",
     "footerTagline": "Független tanácsadó és tréner szoftverfejlesztő csapatok számára.",
     "brandLogoAlt": "Letscode Solutions",
     "brandTagline": "Képzések és tanácsadás szoftverfejlesztő csapatoknak",
@@ -203,6 +209,7 @@
       "Döntések születnek… de később senki nem tudja, miért"
     ],
     "heroPainClosing": "akkor ezt a workshopot neked szánták.",
+    "heroTrustLine": "100+ pozitív visszajelzés korábbi anyagokra → most élő workshop formában",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99.000 Ft",
@@ -354,6 +361,13 @@
     },
     "programFooterCtaTitle": "Jelentkezés a workshopra",
     "programFooterCtaBody": "Ha a program passzol, foglald le a helyed—utána e-mailben küldjük a gyakorlati részleteket.",
+    "testimonialsTitle": "Rólunk mondták",
+    "testimonials": [
+      "„Érthető, jól felépített tananyagok, amelyek kezdőknek és haladóknak is hasznosak.”",
+      "„Ár-érték arányban az egyik legjobb oktatóanyag, amivel találkoztam.”",
+      "„Érthető magyarázatok, jól követhető tempó, könnyű együtt haladni az oktatóval.”",
+      "„Gyakorlati példákon keresztül tanít, nem csak elméletben.”"
+    ],
     "faqTitle": "Gyakori kérdések",
     "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
     "faqCancellationPoints": [

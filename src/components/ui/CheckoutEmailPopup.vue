@@ -110,7 +110,7 @@ async function submitAndRedirect() {
   }, CHECKOUT_EMAIL_CAPTURE_TIMEOUT_MS)
 
   try {
-    const response = await fetch(CHECKOUT_EMAIL_CAPTURE_API_URL, {
+    await fetch(CHECKOUT_EMAIL_CAPTURE_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -122,21 +122,12 @@ async function submitAndRedirect() {
     })
 
     clearPendingRequest()
-    isSubmitting.value = false
-
-    if (!response.ok) {
-      submitError.value = t('checkoutEmailPopup.errorGeneric')
-      return
-    }
-
-    redirectToStripe(email.value)
-  } catch (error) {
+  } catch {
     clearPendingRequest()
-    isSubmitting.value = false
-
-    const isAbortError = error instanceof DOMException && error.name === 'AbortError'
-    submitError.value = isAbortError ? t('checkoutEmailPopup.errorTimeout') : t('checkoutEmailPopup.errorNetwork')
   }
+
+  isSubmitting.value = false
+  redirectToStripe(email.value)
 }
 
 watch(

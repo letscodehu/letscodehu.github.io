@@ -12,7 +12,8 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
-const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/5kQ6oHbZ3ghCfGdaG7aVa00'
+const STRIPE_CHECKOUT_URL =
+  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
 
 const { t, currentLang } = useI18n()
 const instructorImages = ['/webconf.jpg', '/cldrmeetup.jpg'] as const

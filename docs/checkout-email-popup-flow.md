@@ -7,8 +7,8 @@ On the ads landing (`TrainingB2CAdsLandingPage`), each primary workshop CTA uses
 When the popup path is chosen:
 
 1. User submits email in popup.
-2. Frontend sends `POST` request to the checkout capture Function URL.
-3. On success, frontend redirects to the Stripe payment link with `prefilled_email` query param.
+2. Frontend sends `POST` request to the checkout capture Function URL (best-effort: Mailchimp/list signup).
+3. Frontend always redirects to the Stripe payment link with `prefilled_email` query param, whether the capture request succeeded, failed (non-2xx), timed out, or errored.
 
 ## Analytics (`src/tracking.ts`)
 
@@ -21,6 +21,10 @@ Consent-aware helpers (GA only if analytics accepted; FB only if marketing accep
 | Any navigation to Stripe checkout | `training_workshop_stripe_redirect` (`source`: `cta_direct` \| `email_popup`) | `InitiateCheckout` (+ params) |
 
 `placement` is one of `hero`, `middle`, `bottom`, `sticky`.
+
+## Payment link
+
+- Canonical Stripe Payment Link (direct CTA and popup redirect base): `https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD` — defined as `STRIPE_CHECKOUT_URL` in `TrainingB2CAdsLandingPage.vue`. The popup flow appends `prefilled_email` via `CheckoutEmailPopup`.
 
 ## Runtime/config impact
 

@@ -6,11 +6,26 @@ import { blogPosts } from '../data/blog-posts'
 
 const { t, currentLang } = useI18n()
 
+function formatPublishedAt(date: string, locale: string): string {
+  const m = date.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (!m) return date
+  const year = Number(m[1])
+  const month = Number(m[2])
+  const day = Number(m[3])
+  const value = new Date(Date.UTC(year, month - 1, day))
+  return new Intl.DateTimeFormat(locale === 'hu' ? 'hu-HU' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(value)
+}
+
 const postsWithLabels = computed(() =>
   blogPosts.map((post) => ({
     slug: post.slug,
     title: currentLang.value === 'en' ? post.titleEn : post.titleHu,
     excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
+    publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
   }))
 )
 </script>
@@ -40,6 +55,7 @@ const postsWithLabels = computed(() =>
           <BaseCard>
             <template #title>{{ post.title }}</template>
             <template #subtitle>{{ post.excerpt }}</template>
+            <small class="post-date">{{ t('blog.publishedOnLabel') }}: {{ post.publishedAt }}</small>
           </BaseCard>
         </RouterLink>
       </div>
@@ -80,5 +96,12 @@ const postsWithLabels = computed(() =>
 .card-link {
   text-decoration: none;
   color: inherit;
+}
+
+.post-date {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
 }
 </style>

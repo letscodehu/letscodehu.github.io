@@ -33,6 +33,22 @@ const postExcerpt = computed(() => {
   return currentLang.value === 'en' ? p.excerptEn : p.excerptHu
 })
 
+const publishedAt = computed(() => {
+  const p = post.value
+  if (!p) return ''
+  const m = p.publishedAt.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (!m) return p.publishedAt
+  const year = Number(m[1])
+  const month = Number(m[2])
+  const day = Number(m[3])
+  const value = new Date(Date.UTC(year, month - 1, day))
+  return new Intl.DateTimeFormat(currentLang.value === 'hu' ? 'hu-HU' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(value)
+})
+
 const fullTitle = computed(() => {
   const title = postTitle.value
   const brand = t('common.companyName')
@@ -200,6 +216,7 @@ watch(
         <h1 class="page-title">
           {{ postTitle }}
         </h1>
+        <p class="published-at">{{ t('blog.publishedOnLabel') }}: {{ publishedAt }}</p>
       </header>
 
       <div
@@ -336,6 +353,12 @@ watch(
 .page-title {
   margin: 0;
   font-size: 1.85rem;
+}
+
+.published-at {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
 }
 
 .video-block {

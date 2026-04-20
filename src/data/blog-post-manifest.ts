@@ -4,6 +4,7 @@
  */
 export interface BlogPostManifest {
   slug: string
+  publishedAt: string
   titleEn: string
   titleHu: string
   excerptEn: string
@@ -16,6 +17,7 @@ export interface BlogPostManifest {
 export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'ci-cd-pipeline-slower-than-your-developers',
+    publishedAt: '2026-03-20',
     titleEn: 'Your CI/CD Pipeline Is Slower Than Your Developers',
     titleHu: 'A CI/CD pipeline-od lassabb, mint a fejlesztőid',
     excerptEn:
@@ -26,6 +28,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   },
   {
     slug: 'adrs-are-useful-only-if-they-shape-the-decision',
+    publishedAt: '2026-03-08',
     titleEn: 'ADRs Are Useful Only If They Shape the Decision',
     titleHu: 'Az ADR csak akkor ér valamit, ha alakítja a döntést',
     excerptEn:
@@ -36,6 +39,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   },
   {
     slug: 'your-scaling-problem-might-be-architecture-not-kubernetes',
+    publishedAt: '2026-03-04',
     titleEn: 'Your Scaling Problem Might Be Architecture, Not Kubernetes',
     titleHu: 'Lehet, hogy nem Kubernetes kell, hanem jobb architektúra',
     excerptEn:
@@ -46,6 +50,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   },
   {
     slug: 'not-all-tech-debt-is-equal',
+    publishedAt: '2026-03-31',
     titleEn: 'Not All Tech Debt Is Equal',
     titleHu: 'Nem minden tech debt egyforma',
     excerptEn:
@@ -54,5 +59,16 @@ export const blogPostManifest: BlogPostManifest[] = [
       'Ha minden tech debtet ugyanúgy kezelsz, látszólagos haladást kapsz. A stratégiai, véletlen és architekturális tech debt teljesen más döntést igényel.',
     videoUrl: 'https://youtu.be/3mii9bxFxY8',
     ogImagePath: '/blog/tech-debt.png',
+  },
+  {
+    slug: 'worth-solving-before-architecture',
+    publishedAt: '2026-04-20',
+    titleEn: 'Before You Choose Architecture, Answer This One Question',
+    titleHu: 'Mielőtt architektúrát választasz, válaszolj erre az egy kérdésre',
+    videoUrl: 'https://youtu.be/X_S0TyXHiNs',
+    excerptEn:
+      'Teams often start with stack and architecture decisions too early. First validate whether the problem is worth solving now, then design the smallest system that proves value.',
+    excerptHu:
+      'Sok csapat túl korán ugrik architektúrára és stackre. Először azt validáld, hogy a probléma valóban most érdemes-e megoldani, és csak utána tervezhess rendszert.',
   },
 ]

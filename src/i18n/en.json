@@ -800,7 +800,8 @@
     "videoBlockTitle": "Watch as video",
     "videoBlockBody": "Same content on YouTube if you prefer video.",
     "videoWatchButton": "Watch on YouTube",
-    "videoBlockAriaLabel": "Video version of this article"
+    "videoBlockAriaLabel": "Video version of this article",
+    "publishedOnLabel": "Published"
   },
   "privacy": {
     "pageTitle": "Privacy and data processing",

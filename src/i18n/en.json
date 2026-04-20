@@ -200,43 +200,40 @@
   "trainingB2cAds": {
     "pageTitle": "Architect Mindset training — Workshop Budapest",
     "eyebrow": "2 days · Budapest · June 11-12 (Thu-Fri) · small group · in person only",
-    "heroTitle": "Become the developer who can reason at system level.",
+    "heroTitle": "Make architectural decisions you won't have to apologize for in six months.",
     "heroPainTitle": "Sound familiar?",
     "heroPainPoints": [
-      "Architecture decisions fall apart in meetings.",
-      "There is no shared language for diagrams.",
-      "It is hard to explain why you chose this direction.",
-      "ADRs exist… but nobody reads them."
+      "Meetings end without a real decision, only more questions — and you rerun the same conversation next week.",
+      "It is hard to explain why you chose this direction — and two weeks later even you cannot recall the full reasoning clearly.",
+      "Decisions are made… but later nobody remembers why."
     ],
-    "heroPainClosing": "Then this workshop is for you.",
-    "heroTrustLine": "100+ positive feedback on earlier materials → now in live workshop format",
+    "heroPainClosing": "If 2 of these feel familiar, one bad architectural decision costs more than this workshop.",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99,000 HUF",
       "earlyBirdDeadline": "until May 17",
       "regularPriceLabel": "After that",
-      "regularPrice": "119,000 HUF"
+      "regularPrice": "119,000 HUF",
+      "priceComparison": "Less than the first refactor sprint of a poorly chosen database."
     },
-    "ctaPrimary": "Reserve my seat now",
-    "ctaSeatsLeft": "Only 7 seats left",
-    "proofTitle": "What you actually get",
-    "proofPoints": [
-      "A working method so you do not make architecture decisions on gut feel alone.",
-      "Tools to defend your decisions when conversations get contentious.",
-      "Modeling practice that others understand the first time they see it.",
-      "Confidence the next time someone asks, “why this way?”"
+    "ctaPrimary": "Save my seat",
+    "ctaSeatsLeft": "Only 3 seats left",
+    "heroReassurancePoints": [
+      "Company invoice available",
+      "If the workshop is cancelled, you get a 100% refund within 3 business days",
+      "Your seat is transferable — you can send someone in your place"
     ],
-    "outcomesTitle": "What you take home",
+    "outcomesTitle": "What you leave with and use the very next day",
     "outcomes": [
-      "When you are stuck choosing between three options, you will have a structure to decide.",
-      "When someone asks “why this way?”, you will not freeze.",
-      "You learn to model the system so anyone—from the CEO to a junior—can understand it.",
-      "When you need to document a decision, you will not be filling in an empty template."
+      "An ADR template you can use to document a decision in 15 minutes, in a way that is still clear six months later.",
+      "A decision matrix (reversible / system-level / expensive) that helps you decide in 5 minutes whether a formal decision is needed at all.",
+      "You can defend your decision in tense discussions — without freezing on the “why this way?” question.",
+      "You can explain the same system to a CEO and to a junior engineer — with the same diagram, at different levels."
     ],
     "instructorTitle": "About the instructor",
     "instructorImagePlaceholder": "Instructor image placeholder",
     "instructorImagePlaceholderAria": "Krisztián during workshops",
-    "instructorBody1": "Krisztián is a software architect and consultant with over a decade of hands-on experience in designing, building, and evolving complex software systems. After years in senior engineering leadership roles, he founded his own consulting company, where he helps organizations modernize their architecture, accelerate delivery, and build sustainable engineering practices.",
+    "instructorBody1": "Krisztián is a software architect and consultant with 10+ years of hands-on experience. After senior engineering leadership roles, he founded his own consulting company and now helps teams make better architectural decisions using the same method he teaches in this workshop. He also speaks regularly at meetups and international conferences.",
     "instructorBody2Parts": {
       "beforeDevops": "He specializes in cloud transformations, ",
       "betweenDevopsAndAdr": ", architectural decision-making (",
@@ -258,9 +255,9 @@
       "soundcloudLabel": "tune in on SoundCloud",
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
-    "ctaSecondaryTitle": "If this is relevant now, don't postpone it",
-    "ctaSecondaryBody": "Seats are limited: 99,000 HUF until May 17, then 119,000 HUF. Date: June 11-12 (Thu-Fri).",
-    "checkoutNote": "After registration, you are redirected to a secure Stripe checkout page. You will receive an immediate email confirmation about successful payment and the next steps.",
+    "ctaSecondaryTitle": "Book your seat — with low risk.",
+    "ctaSecondaryBody": "2 days in Budapest, June 11-12. Early bird is 99,000 HUF until May 17. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "checkoutNote": "Secure Stripe payment. Right after payment, I send a short questionnaire so the workshop can be tailored to your own examples.",
     "ctaSecondaryButton": "Reserve my seat now",
     "fullProgramLinkLabel": "See the full program details",
     "termsLinkLabel": "Terms & Conditions",
@@ -359,10 +356,8 @@
         }
       ]
     },
-    "programFooterCtaTitle": "Reserve your seat",
-    "programFooterCtaBody": "If the schedule fits, book your seat—we follow up by email with practical details.",
-    "testimonialsTitle": "",
-    "testimonials": [],
+    "programFooterCtaTitle": "Book your seat — with low risk.",
+    "programFooterCtaBody": "2 days in Budapest, June 11-12. Early bird is 99,000 HUF until May 17. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
     "faqTitle": "Frequently asked questions",
     "faqCancellationLead": "In short, if you cannot attend:",
     "faqCancellationPoints": [

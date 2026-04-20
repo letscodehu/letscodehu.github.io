@@ -2,6 +2,7 @@ import { blogPostManifest } from './blog-post-manifest'
 
 export interface BlogPost {
   slug: string
+  publishedAt: string
   titleEn: string
   titleHu: string
   excerptEn: string
@@ -54,13 +55,15 @@ function collectBlogBodies(): Record<string, { en: string; hu: string }> {
 
 const blogBodies = collectBlogBodies()
 
-export const blogPosts: BlogPost[] = blogPostManifest.map((meta) => {
-  const body = blogBodies[meta.slug]
-  if (!body) {
-    throw new Error(`No blog markdown folder for slug "${meta.slug}" (expected content/blog/${meta.slug}/en.md and hu.md)`)
-  }
-  return { ...meta, contentEn: body.en, contentHu: body.hu }
-})
+export const blogPosts: BlogPost[] = blogPostManifest
+  .map((meta) => {
+    const body = blogBodies[meta.slug]
+    if (!body) {
+      throw new Error(`No blog markdown folder for slug "${meta.slug}" (expected content/blog/${meta.slug}/en.md and hu.md)`)
+    }
+    return { ...meta, contentEn: body.en, contentHu: body.hu }
+  })
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug)

@@ -55,4 +55,13 @@ export const blogPostManifest: BlogPostManifest[] = [
     videoUrl: 'https://youtu.be/3mii9bxFxY8',
     ogImagePath: '/blog/tech-debt.png',
   },
+  {
+    slug: 'worth-solving-before-architecture',
+    titleEn: 'Before You Choose Architecture, Answer This One Question',
+    titleHu: 'Mielőtt architektúrát választasz, válaszolj erre az egy kérdésre',
+    excerptEn:
+      'Teams often start with stack and architecture decisions too early. First validate whether the problem is worth solving now, then design the smallest system that proves value.',
+    excerptHu:
+      'Sok csapat túl korán ugrik architektúrára és stackre. Először azt validáld, hogy a probléma valóban most érdemes-e megoldani, és csak utána tervezhess rendszert.',
+  },
 ]

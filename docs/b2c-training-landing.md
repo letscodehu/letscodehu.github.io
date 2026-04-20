@@ -102,3 +102,12 @@
 
 - Added `trainingB2cAds.testimonialsTitle` and `trainingB2cAds.testimonials` in HU i18n with four provided quotes; EN keeps empty fallback values so the section stays hidden outside HU.
 - Rendered a new testimonials section on `TrainingB2CAdsLandingPage` (between instructor and FAQ) with responsive quote cards.
+
+## B2C workshop sales copy realignment
+
+- Reframed the hero promise around decision accountability (`6 hónap` horizon) and replaced generic pain copy with higher-cost, consequence-aware lines.
+- Removed hero trust badge and merged “Mit kapsz?” + “Mit viszel haza” into one outcome block focused on practical artifacts and immediately usable decision skills.
+- Added conversion-supporting reassurance near the hero CTA (`heroReassurancePoints`) and added price framing (`offerMeta.priceComparison`) under pricing.
+- Tightened instructor intro to a short method-credibility statement while keeping long-form external proof links intact.
+- Removed testimonials section and translation keys to avoid soft social-proof mismatch on a first live cohort funnel.
+- Aligned final CTA and post-program CTA to the same reassurance-heavy message (refund-on-cancel, transferable seat, company invoice).

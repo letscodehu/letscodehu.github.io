@@ -193,11 +193,6 @@ const faqItemsList = computed(() => {
   return Array.isArray(raw) ? raw : []
 })
 
-const testimonialsList = computed(() => {
-  const raw = t('trainingB2cAds.testimonials')
-  return Array.isArray(raw) ? raw : []
-})
-
 const fullProgramLocation = computed(() => ({
   name: 'training-b2c-ads-en',
   params: { lang: currentLang.value },
@@ -260,10 +255,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
           <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
           <span class="offer-meta__deadline">{{ t('trainingB2cAds.offerMeta.earlyBirdDeadline') }}</span>
         </p>
-        <p class="offer-meta__regular">
-          <span class="offer-meta__regular-label">{{ t('trainingB2cAds.offerMeta.regularPriceLabel') }}:</span>
-          <span class="offer-meta__regular-price">{{ t('trainingB2cAds.offerMeta.regularPrice') }}</span>
-        </p>
+        <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
 
       <div ref="heroCtaEl" class="hero-actions fade fade--5">
@@ -273,26 +265,18 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
-        <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
-          {{ t('trainingB2cAds.termsLinkLabel') }}
-        </RouterLink>
       </div>
       <p class="cta-seats-left fade fade--5">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
-      <p class="checkout-note fade fade--5">{{ t('trainingB2cAds.checkoutNote') }}</p>
-      <div class="hero-trust-badge-wrap fade fade--5">
-        <p class="hero-trust-badge">
-          <span class="hero-trust-badge__text">{{ t('trainingB2cAds.heroTrustLine') }}</span>
-        </p>
-      </div>
     </section>
 
-    <section class="proof section-reveal" data-section-reveal>
-      <h2 class="section-title">{{ t('trainingB2cAds.proofTitle') }}</h2>
-      <ul class="proof-list">
-        <li v-for="point in t('trainingB2cAds.proofPoints')" :key="point">
-          {{ point }}
-        </li>
+    <section class="hero-reassurance-panel section-reveal" data-section-reveal>
+      <ul class="hero-reassurance-panel__list">
+        <li v-for="point in t('trainingB2cAds.heroReassurancePoints')" :key="point">{{ point }}</li>
       </ul>
+      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
+      <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
+        {{ t('trainingB2cAds.termsLinkLabel') }}
+      </RouterLink>
     </section>
 
     <section class="outcomes section-reveal" data-section-reveal>
@@ -370,15 +354,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
           {{ instructorBody2Parts.afterPodcast }}
         </p>
       </div>
-    </section>
-
-    <section v-if="testimonialsList.length > 0" class="testimonials section-reveal" data-section-reveal>
-      <h2 class="section-title">{{ t('trainingB2cAds.testimonialsTitle') }}</h2>
-      <ul class="testimonials-grid">
-        <li v-for="(quote, quoteIndex) in testimonialsList" :key="quoteIndex" class="testimonial-card">
-          <p class="testimonial-quote">{{ quote }}</p>
-        </li>
-      </ul>
     </section>
 
     <section id="ads-faq" class="faq section-reveal" data-section-reveal aria-labelledby="ads-faq-title">
@@ -505,7 +480,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   --landing-card-bg: linear-gradient(140deg, var(--color-surface) 0%, var(--landing-accent-soft) 170%);
   --landing-instructor-bg: linear-gradient(150deg, var(--landing-accent-soft) 0%, transparent 100%),
     var(--color-surface-soft);
-  --landing-c4-opacity: 0.48;
+  --landing-c4-opacity: 0.18;
   font-family: 'IBM Plex Sans', sans-serif;
   display: grid;
   gap: 1.8rem;
@@ -731,6 +706,36 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   font-size: 0.95rem;
   text-decoration: line-through;
   text-decoration-thickness: 1.5px;
+}
+
+.offer-meta__compare {
+  margin: 0.45rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.hero-reassurance-panel {
+  border: 1px solid var(--landing-border);
+  border-radius: var(--radius-lg);
+  background: var(--landing-panel-bg);
+  padding: clamp(0.9rem, 2.2vw, 1.2rem);
+}
+
+.hero-reassurance-panel__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.32rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.hero-reassurance-panel__list li::marker {
+  content: '✓ ';
+  color: var(--landing-accent);
+  font-weight: 700;
 }
 
 .hero-actions {

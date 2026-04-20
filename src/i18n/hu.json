@@ -200,43 +200,40 @@
   "trainingB2cAds": {
     "pageTitle": "Architect Mindset tréning — Workshop Budapest",
     "eyebrow": "2 nap · Budapest · június 11-12. (csüt-péntek) · kiscsoportos, személyes workshop",
-    "heroTitle": "Fejlesztőből rendszerszinten gondolkodó mérnök.",
+    "heroTitle": "Hozz meg olyan architekturális döntéseket, amiket 6 hónap múlva sem kell szégyellned.",
     "heroPainTitle": "Ismerős?",
     "heroPainPoints": [
-      "A meetingek végére nincs valódi döntés, csak több kérdés",
-      "Nincs közös nyelv a diagramokra.",
-      "Nehéz elmagyarázni, miért ezt az irányt választottad.",
+      "A meetingek végére nincs valódi döntés, csak több kérdés — és jövő héten ugyanannak futtok neki újra.",
+      "Nehéz elmagyaráznod, miért ezt az irányt választottad — és két hét múlva már te sem emlékszel pontosan.",
       "Döntések születnek… de később senki nem tudja, miért"
     ],
-    "heroPainClosing": "akkor ezt a workshopot neked szánták.",
-    "heroTrustLine": "100+ pozitív visszajelzés korábbi anyagokra → most élő workshop formában",
+    "heroPainClosing": "Ha ebből 2 ismerős: egy rossz architekturális döntés többe kerül, mint ez a workshop.",
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99.000 Ft",
       "earlyBirdDeadline": "május 17-ig",
       "regularPriceLabel": "Utána",
-      "regularPrice": "119.000 Ft"
+      "regularPrice": "119.000 Ft",
+      "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."
     },
-    "ctaPrimary": "Jelentkezem most",
-    "ctaSeatsLeft": "Már csak 7 hely maradt",
-    "proofTitle": "Mit kapsz?",
-    "proofPoints": [
-      "Egy működő módszert, amivel nem érzésre hozol architektúrai döntéseket.",
-      "Eszközöket, hogy meg tudd indokolni a döntéseidet vitás helyzetekben.",
-      "Modellezési gyakorlatot, amit mások is elsőre értenek.",
-      "Magabiztosságot, amikor legközelebb megkérdezik: „miért így?”"
+    "ctaPrimary": "Lefoglalom a helyem",
+    "ctaSeatsLeft": "Már csak 3 hely maradt",
+    "heroReassurancePoints": [
+      "Számla cégre is kérhető",
+      "Ha elmarad a workshop, 100% vissza 3 munkanapon belül",
+      "A helyed átruházható — küldhetsz valakit magad helyett"
     ],
-    "outcomesTitle": "Mit viszel haza",
+    "outcomesTitle": "Mit viszel el, amit másnap már használsz",
     "outcomes": [
-      "Amikor 3 opció között vacilláltok, lesz egy struktúrád eldönteni.",
-      "Amikor megkérdezik „miért így?”, nem fagysz le.",
-      "Megtanulod úgy modellezni a rendszert, hogy a CEO-tól a juniorig bárki megértse.",
-      "Amikor dokumentálni kell a döntést, nem üres sablont töltögetsz."
+      "ADR-sablon, amivel 15 perc alatt leírsz egy döntést úgy, hogy fél év múlva is érthető.",
+      "Döntési mátrix (visszafordítható / rendszerszintű / drága), amivel 5 perc alatt eldöntöd, kell-e egyáltalán formális döntést hoznod.",
+      "Meg tudod védeni a döntésed vitás helyzetben is — nem fagysz le a „miért így?” kérdésnél.",
+      "Ugyanazt a rendszert elmagyarázod a CEO-nak és a juniornak — ugyanazzal az ábrával, csak más szinten."
     ],
     "instructorTitle": "Az oktatóról",
     "instructorImagePlaceholder": "Oktatói kép helye",
     "instructorImagePlaceholderAria": "Krisztián workshop közben",
-    "instructorBody1": "Krisztián szoftverarchitekt és tanácsadó, több mint tíz év gyakorlati tapasztalattal összetett szoftverrendszerek tervezésében, építésében és továbbfejlesztésében. Több senior mérnöki vezetői szerep után megalapította saját tanácsadó cégét, ahol szervezeteknek segít az architektúra modernizálásában, a szállítás gyorsításában és fenntartható mérnöki gyakorlatok kialakításában.",
+    "instructorBody1": "Krisztián szoftverarchitekt és tanácsadó, 10+ év gyakorlati tapasztalattal. Az elmúlt évek mérnöki vezetői szerepei után saját tanácsadó cégén keresztül segít csapatoknak jobb architekturális döntéseket hozni — ugyanazzal a módszerrel, amit ezen a workshopon tanít. Rendszeresen ad elő meetupokon és nemzetközi konferenciákon is.",
     "instructorBody2Parts": {
       "beforeDevops": "Szakterületei a felhőtranszformációk, a ",
       "betweenDevopsAndAdr": ", az architekturális döntéshozatal (",
@@ -258,9 +255,9 @@
       "soundcloudLabel": "megtalálod SoundCloudon",
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
-    "ctaSecondaryTitle": "Ha ez most fontos neked, ne halogasd",
-    "ctaSecondaryBody": "A helyek limitáltak: a workshop ára 99.000 Ft május 17-ig, utána 119.000 Ft. Időpont: június 11-12. (csüt-péntek).",
-    "checkoutNote": "A jelentkezés után a biztonságos Stripe fizetési oldalra irányítunk. A sikeres fizetésről és a további teendőkről azonnal visszaigazolást kapsz e-mailben.",
+    "ctaSecondaryTitle": "Foglald le a helyed — kockázat nélkül.",
+    "ctaSecondaryBody": "2 nap, Budapest, június 11-12. Early bird 99.000 Ft május 17-ig. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
+    "checkoutNote": "Biztonságos Stripe fizetés. A fizetés után azonnal küldök egy rövid kérdőívet, hogy a saját példáidra szabhassam a workshopot.",
     "ctaSecondaryButton": "Jelentkezem most",
     "fullProgramLinkLabel": "Megnézem a részletes programot",
     "termsLinkLabel": "Részvételi feltételek",
@@ -359,15 +356,8 @@
         }
       ]
     },
-    "programFooterCtaTitle": "Jelentkezés a workshopra",
-    "programFooterCtaBody": "Ha a program passzol, foglald le a helyed—utána e-mailben küldjük a gyakorlati részleteket.",
-    "testimonialsTitle": "Rólunk mondták",
-    "testimonials": [
-      "„Érthető, jól felépített tananyagok, amelyek kezdőknek és haladóknak is hasznosak.”",
-      "„Ár-érték arányban az egyik legjobb oktatóanyag, amivel találkoztam.”",
-      "„Érthető magyarázatok, jól követhető tempó, könnyű együtt haladni az oktatóval.”",
-      "„Gyakorlati példákon keresztül tanít, nem csak elméletben.”"
-    ],
+    "programFooterCtaTitle": "Foglald le a helyed — kockázat nélkül.",
+    "programFooterCtaBody": "2 nap, Budapest, június 11-12. Early bird 99.000 Ft május 17-ig. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "faqTitle": "Gyakori kérdések",
     "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
     "faqCancellationPoints": [

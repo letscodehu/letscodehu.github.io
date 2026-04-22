@@ -195,6 +195,7 @@
     "b2cCardBody": "Egyéni formátumot keresel? Két nap, Budapest, személyesen: technikai döntések, C4 és könnyű ADR-ek—ha már nem csak feladatot akarsz zárni.",
     "b2cCardCta": "Tréning megtekintése",
     "cta": "Beszéljünk a képzési igényről",
+    "prospectusCta": "Prospektus letöltése",
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "trainingB2cAds": {

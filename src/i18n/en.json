@@ -195,6 +195,7 @@
     "b2cCardBody": "Looking for an individual track? Two-day, in-person Budapest workshop: technical decisions, C4, and lightweight ADRs—for developers moving past ticket-only work.",
     "b2cCardCta": "See training",
     "cta": "Discuss a training need",
+    "prospectusCta": "Check out our Prospectus",
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "trainingB2cAds": {

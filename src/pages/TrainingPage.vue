@@ -99,12 +99,24 @@ const { t, currentLang } = useI18n()
     </section>
 
     <section class="section cta">
-      <BaseButton
-        as="a"
-        href="mailto:fejlesztes@letscode.hu"
-      >
-        {{ t('training.cta') }}
-      </BaseButton>
+      <div class="cta-actions">
+        <BaseButton
+          as="a"
+          href="mailto:fejlesztes@letscode.hu"
+        >
+          {{ t('training.cta') }}
+        </BaseButton>
+        <BaseButton
+          as="a"
+          variant="ghost"
+          href="/downloads/Letscode%20Solutions%20Prospectus.pdf"
+          target="_blank"
+          rel="noopener"
+          download
+        >
+          {{ t('training.prospectusCta') }}
+        </BaseButton>
+      </div>
       <p class="cta-note">
         {{ t('training.ctaNote') }}
       </p>
@@ -177,6 +189,12 @@ const { t, currentLang } = useI18n()
 .cta {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 

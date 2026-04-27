@@ -26,6 +26,8 @@ const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 const isCheckoutPopupOpen = ref(false)
+/** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
+const intersectionObserverSupported = ref(false)
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
@@ -44,6 +46,7 @@ function syncMobileViewport() {
 
 const showStickyWaitlistCta = computed(
   () =>
+    intersectionObserverSupported.value &&
     isMobileViewport.value &&
     !heroCtaVisible.value &&
     !middleCtaVisible.value &&
@@ -99,6 +102,17 @@ function teardownObservers() {
   bottomObserver = null
 }
 
+function applySectionRevealFallbackNoIntersectionObserver() {
+  if (typeof document === 'undefined') {
+    return
+  }
+  const root = document.querySelector('.ads-landing')
+  if (!root) {
+    return
+  }
+  root.classList.add('ads-landing--no-intersection-observer')
+}
+
 function setupSectionRevealObserver() {
   if (typeof IntersectionObserver === 'undefined' || typeof document === 'undefined') {
     return
@@ -152,6 +166,12 @@ onMounted(() => {
   }, 10000)
 
   void nextTick(() => {
+    const ioSupported = typeof IntersectionObserver !== 'undefined'
+    intersectionObserverSupported.value = ioSupported
+    if (!ioSupported) {
+      applySectionRevealFallbackNoIntersectionObserver()
+      return
+    }
     setupObservers()
     setupSectionRevealObserver()
   })
@@ -517,6 +537,12 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .section-reveal.section-reveal--visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.ads-landing--no-intersection-observer .section-reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .hero {

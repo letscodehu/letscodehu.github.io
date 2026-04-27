@@ -83,6 +83,7 @@
 ## Ads landing section scroll-reveal
 
 - Post-hero sections on `TrainingB2CAdsLandingPage` use `data-section-reveal` plus a single `IntersectionObserver` to add `section-reveal--visible` once when entering the viewport; CSS transitions opacity and `translateY` (~26px). `prefers-reduced-motion: reduce` shows sections immediately without motion.
+- If `IntersectionObserver` is missing, the root gets `ads-landing--no-intersection-observer` so `.section-reveal` blocks are visible without JS-driven reveal; mobile sticky waitlist CTA is disabled in that case because visibility tracking uses the same API.
 
 ## YouTube channel routing split
 

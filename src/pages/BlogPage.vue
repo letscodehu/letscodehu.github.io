@@ -52,7 +52,7 @@ const postsWithLabels = computed(() =>
           }"
           class="card-link"
         >
-          <BaseCard>
+          <BaseCard class="blog-post-card">
             <template #title>{{ post.title }}</template>
             <template #subtitle>{{ post.excerpt }}</template>
             <small class="post-date">{{ t('blog.publishedOnLabel') }}: {{ post.publishedAt }}</small>
@@ -91,11 +91,26 @@ const postsWithLabels = computed(() =>
 
 .grid--two {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
 }
 
 .card-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-link :deep(.blog-post-card.card) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.card-link :deep(.blog-post-card .card-body) {
+  margin-top: auto;
 }
 
 .post-date {

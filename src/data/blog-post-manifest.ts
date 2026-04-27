@@ -16,6 +16,16 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'overengineering-vs-underengineering-compliance-nightmare',
+    publishedAt: '2026-04-26',
+    titleEn: 'Overengineering vs. underengineering: a compliance near-miss',
+    titleHu: 'Overengineering vs. underengineering: majdnem compliance-rémálom',
+    excerptEn:
+      'A tenant deletion endpoint looked like five lines, but multi-region data, retention rules, and auditability turned it into a business-critical workflow design problem.',
+    excerptHu:
+      'A tenant törlése első ránézésre 5 soros endpointnak tűnt, de a több régiós adatok, a retention szabályok és az audit igények gyorsan üzletkritikus folyamattervezési problémává tették.',
+  },
+  {
     slug: 'ci-cd-pipeline-slower-than-your-developers',
     publishedAt: '2026-03-20',
     titleEn: 'Your CI/CD Pipeline Is Slower Than Your Developers',

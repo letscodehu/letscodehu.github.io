@@ -26,6 +26,7 @@ const postsWithLabels = computed(() =>
     title: currentLang.value === 'en' ? post.titleEn : post.titleHu,
     excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
     publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
+    featuredImagePath: post.featuredImagePath,
   }))
 )
 </script>
@@ -52,7 +53,18 @@ const postsWithLabels = computed(() =>
           }"
           class="card-link"
         >
-          <BaseCard>
+          <BaseCard class="blog-post-card">
+            <template #media>
+              <div v-if="post.featuredImagePath" class="post-featured-image-wrap">
+                <img
+                  :src="post.featuredImagePath"
+                  :alt="post.title"
+                  class="post-featured-image"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            </template>
             <template #title>{{ post.title }}</template>
             <template #subtitle>{{ post.excerpt }}</template>
             <small class="post-date">{{ t('blog.publishedOnLabel') }}: {{ post.publishedAt }}</small>
@@ -91,11 +103,43 @@ const postsWithLabels = computed(() =>
 
 .grid--two {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
 }
 
 .card-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-link :deep(.blog-post-card.card) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.card-link :deep(.blog-post-card .card-body) {
+  margin-top: auto;
+}
+
+.card-link :deep(.blog-post-card .post-featured-image-wrap) {
+  width: calc(100% + 3rem);
+  margin: -1.45rem -1.5rem 0.95rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+}
+
+.card-link :deep(.blog-post-card .post-featured-image) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .post-date {

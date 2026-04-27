@@ -59,7 +59,7 @@ const canonicalHref = computed(() => absoluteUrl(canonicalPathname(route.path)))
 
 const postOgImageUrl = computed(() => {
   const p = post.value
-  const path = p?.ogImagePath ?? DEFAULT_OG_IMAGE_PATH
+  const path = p?.featuredImagePath ?? DEFAULT_OG_IMAGE_PATH
   const normalized = path.startsWith('/') ? path : `/${path}`
   return absoluteUrl(normalized)
 })
@@ -80,8 +80,8 @@ const blogPostingLd = computed(() => {
     url: canonicalHref.value,
     inLanguage: currentLang.value === 'hu' ? 'hu' : 'en',
   }
-  if (p.ogImagePath) {
-    const path = p.ogImagePath.startsWith('/') ? p.ogImagePath : `/${p.ogImagePath}`
+  if (p.featuredImagePath) {
+    const path = p.featuredImagePath.startsWith('/') ? p.featuredImagePath : `/${p.featuredImagePath}`
     payload.image = absoluteUrl(path)
   }
   return JSON.stringify(payload)
@@ -207,6 +207,15 @@ watch(
   <article v-if="post" class="blog-post">
     <div class="blog-post-main">
       <header class="page-header-block">
+        <div v-if="post.featuredImagePath" class="post-featured-image-wrap">
+          <img
+            :src="post.featuredImagePath"
+            :alt="postTitle"
+            class="post-featured-image"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
         <RouterLink
           :to="{ name: 'blog-list-en', params: { lang: currentLang } }"
           class="back-link"
@@ -336,6 +345,23 @@ watch(
   border-left: 3px solid var(--color-primary);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.post-featured-image-wrap {
+  width: calc(100% + 3rem);
+  margin: -1.25rem -1.5rem 1rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post-featured-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .back-link {

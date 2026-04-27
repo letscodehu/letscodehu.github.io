@@ -10,7 +10,6 @@ That is exactly what happened in this story. The request looked harmless: **"we 
 
 Spoiler: those five lines came very close to becoming a compliance minefield.
 
----
 
 ## The Feature That Looked Like Five Lines
 
@@ -39,7 +38,6 @@ The actual system looked more like this:
 
 At that point, this is not a "delete from tenant where id = ..." problem anymore. It is a **complex business process**, where an HTTP endpoint is merely one technical tool.
 
----
 
 ## When Underengineering Starts Hurting
 
@@ -70,7 +68,7 @@ At one point someone asked the key question: _"Okay, I get that we will have an 
 
 That was the moment the underengineering risk became obvious. The problem was not thinking in terms of a REST endpoint. The problem was thinking **only** in terms of a REST endpoint.
 
----
+![](/blog/orchestration.png)
 
 ## Multi-Region, Multi-Product Is Not a Minor Detail
 
@@ -106,7 +104,6 @@ The right answer is usually in between:
 
 That is no longer five lines. But it also does not require a NASA flight control center.
 
----
 
 ## From a Compliance Lens, This Is Not Nice to Have
 
@@ -130,7 +127,6 @@ A compliance-acceptable solution needs at least:
 
 None of this starts with: **"Is HTTP Basic enough?"** Auth matters, but only after we understand _what_ we protect, _why_, _from whom_, and _inside which process_.
 
----
 
 ## Where Is the Line Between Just Enough and Too Much?
 
@@ -155,7 +151,6 @@ A practical sequence that worked in this case:
 
 The same technology can be overengineering or underengineering. The difference is what problem you are actually solving, and how well the solution fits reality.
 
----
 
 ## What Changed Compared to the Almost-Five-Line Solution?
 
@@ -179,7 +174,6 @@ This still fits normal, maintainable system complexity. We did not need twelve n
 
 But it was far from the five-line `delete where tenant_id = ...` reflex.
 
----
 
 ## Takeaway: Good Design Is Not About Looking Smart
 

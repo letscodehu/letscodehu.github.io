@@ -69,6 +69,7 @@ Egy ponton valaki feltette a kulcskérdést: _„Oké, értem, hogy lesz egy API
 
 Itt jött elő, hogy **underengineering**-be fordult az egész. Nem az volt a baj, hogy REST végpontban gondolkodtunk, hanem az, hogy **csak** abban.
 
+![](/blog/orchestration.png)
 
 ## Több régió, több termék – már nem csak technikai részlet
 

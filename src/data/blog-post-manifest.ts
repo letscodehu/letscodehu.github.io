@@ -10,8 +10,8 @@ export interface BlogPostManifest {
   excerptEn: string
   excerptHu: string
   videoUrl?: string
-  /** Path under site root for Open Graph / Twitter preview, e.g. `/blog/og/my-slug.png` (file in `public/`). */
-  ogImagePath?: string
+  /** Path under site root for featured/blog preview image, e.g. `/blog/og/my-slug.png` (file in `public/`). */
+  featuredImagePath?: string
 }
 
 export const blogPostManifest: BlogPostManifest[] = [
@@ -24,6 +24,7 @@ export const blogPostManifest: BlogPostManifest[] = [
       'A tenant deletion endpoint looked like five lines, but multi-region data, retention rules, and auditability turned it into a business-critical workflow design problem.',
     excerptHu:
       'A tenant törlése első ránézésre 5 soros endpointnak tűnt, de a több régiós adatok, a retention szabályok és az audit igények gyorsan üzletkritikus folyamattervezési problémává tették.',
+    featuredImagePath: '/blog/underengineering.png',
   },
   {
     slug: 'ci-cd-pipeline-slower-than-your-developers',
@@ -68,7 +69,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     excerptHu:
       'Ha minden tech debtet ugyanúgy kezelsz, látszólagos haladást kapsz. A stratégiai, véletlen és architekturális tech debt teljesen más döntést igényel.',
     videoUrl: 'https://youtu.be/3mii9bxFxY8',
-    ogImagePath: '/blog/tech-debt.png',
+    featuredImagePath: '/blog/tech-debt.png',
   },
   {
     slug: 'worth-solving-before-architecture',

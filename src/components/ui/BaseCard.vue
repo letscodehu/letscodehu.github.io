@@ -1,5 +1,6 @@
 <template>
   <section class="card">
+    <slot name="media" />
     <header v-if="$slots.title || $slots.subtitle" class="card-header">
       <h2 v-if="$slots.title" class="card-title">
         <slot name="title" />

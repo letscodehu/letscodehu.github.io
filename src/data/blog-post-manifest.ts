@@ -31,6 +31,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     publishedAt: '2026-03-20',
     titleEn: 'Your CI/CD Pipeline Is Slower Than Your Developers',
     titleHu: 'A CI/CD pipeline-od lassabb, mint a fejlesztőid',
+    featuredImagePath: '/blog/ci-cd.png',
     excerptEn:
       'Developers ship fast; production does not. The bottleneck is not people—it is your pipeline, process, and architecture of delivery.',
     excerptHu:
@@ -42,6 +43,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     publishedAt: '2026-03-08',
     titleEn: 'ADRs Are Useful Only If They Shape the Decision',
     titleHu: 'Az ADR csak akkor ér valamit, ha alakítja a döntést',
+    featuredImagePath: '/blog/adr.png',
     excerptEn:
       'ADRs fail when they become passive documentation. Their real value is the thinking and discussion before the decision is finalized.',
     excerptHu:
@@ -52,6 +54,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     slug: 'your-scaling-problem-might-be-architecture-not-kubernetes',
     publishedAt: '2026-03-04',
     titleEn: 'Your Scaling Problem Might Be Architecture, Not Kubernetes',
+    featuredImagePath: '/blog/no-kubernetes.png',
     titleHu: 'Lehet, hogy nem Kubernetes kell, hanem jobb architektúra',
     excerptEn:
       'Before moving to Kubernetes, verify what actually breaks first. Many scaling problems come from architecture and unclear boundaries, not missing clusters.',
@@ -77,6 +80,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     titleEn: 'Before You Choose Architecture, Answer This One Question',
     titleHu: 'Mielőtt architektúrát választasz, válaszolj erre az egy kérdésre',
     videoUrl: 'https://youtu.be/X_S0TyXHiNs',
+    featuredImagePath: '/blog/chaos.png',
     excerptEn:
       'Teams often start with stack and architecture decisions too early. First validate whether the problem is worth solving now, then design the smallest system that proves value.',
     excerptHu:

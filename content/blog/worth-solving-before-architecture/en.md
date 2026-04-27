@@ -30,7 +30,6 @@ This person maybe sends two invoices per week. There is no gated content, no sub
 
 And we have already turned a very simple process into a full architecture decision problem.
 
-![Complex system](/blog/system.png)
 
 ## What does the data say?
 

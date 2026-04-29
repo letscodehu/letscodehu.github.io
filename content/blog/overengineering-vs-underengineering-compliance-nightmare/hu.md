@@ -5,7 +5,7 @@ Na, pontosan itt tud ugyanakkorát robbanni az underengineering, mint máshol az
 
 Az egyik oldalról ismerjük a klasszik: mindent mikroservice, mindenre külön event bus, háromféle cache, ötféle proxy, mert „hátha kell egyszer”. Ez a túlgondolt, túlépített, feleslegesen bonyolult világ.
 
-A másik csapda viszont kevésbé látványos: amikor valamit _annyira_ leegyszerűtünk, hogy közben teljesen figyelmen kívül hagyjuk az üzleti, jogi, compliance vagy üzemeltetési realitásokat. És ez néha egyetlen REST végpontnál kezdődik.
+A másik csapda viszont kevésbé látványos: amikor valamit _annyira_ leegyszerűsítünk, hogy közben teljesen figyelmen kívül hagyjuk az üzleti, jogi, compliance vagy üzemeltetési realitásokat. És ez néha egyetlen REST végpontnál kezdődik.
 
 Ebben a sztoriban pontosan ez történt. Jött egy ártalmatlannak tűnő kérés: **„kell egy végpont, amivel egy tenantot lehet törölni a rendszerből”**. A csapat pedig majdnem reflexből ráugrott, hogy „oké, ez kb. 5 sor, megcsináljuk sprint közben”.
 

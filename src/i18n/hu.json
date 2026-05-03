@@ -212,7 +212,8 @@
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99.000 Ft",
-      "earlyBirdDeadline": "május 17-ig",
+      "earlyBirdCountdownDays": "Már csak {days} napig",
+      "earlyBirdCountdownLastDay": "Már csak ma éjfélig",
       "regularPriceLabel": "Utána",
       "regularPrice": "119.000 Ft",
       "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."

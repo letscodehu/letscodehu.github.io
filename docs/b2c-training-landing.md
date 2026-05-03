@@ -112,3 +112,8 @@
 - Tightened instructor intro to a short method-credibility statement while keeping long-form external proof links intact.
 - Removed testimonials section and translation keys to avoid soft social-proof mismatch on a first live cohort funnel.
 - Aligned final CTA and post-program CTA to the same reassurance-heavy message (refund-on-cancel, transferable seat, company invoice).
+
+## Early bird countdown (ads landing)
+
+- `TrainingB2CAdsLandingPage` shows a client-only early bird urgency line in the hero offer row and in the mobile sticky CTA, driven by `Europe/Budapest` calendar days until 2026-05-17; on the last day it switches to a “midnight tonight” line; after that date the urgency line is hidden (static copy that still mentions the date may remain in long-form sections).
+- i18n: `trainingB2cAds.offerMeta.earlyBirdCountdownDays` / `earlyBirdCountdownLastDay` (replaces the old static `earlyBirdDeadline` string for the live UI).

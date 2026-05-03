@@ -13,6 +13,58 @@ const MOBILE_MAX_PX = 768
 const STRIPE_CHECKOUT_URL =
   'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
 
+const EARLY_BIRD_TIME_ZONE = 'Europe/Budapest'
+const EARLY_BIRD_LAST_DAY_BUDAPEST = Object.freeze({ year: 2026, month: 5, day: 17 })
+
+type EarlyBirdUrgencyState = 'expired' | 'lastDay' | { kind: 'days'; daysLeft: number }
+
+function parseBudapestYmd(now: Date): { year: number; month: number; day: number } {
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: EARLY_BIRD_TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+  const parts = formatter.formatToParts(now)
+  const year = Number(parts.find((p) => p.type === 'year')?.value)
+  const month = Number(parts.find((p) => p.type === 'month')?.value)
+  const day = Number(parts.find((p) => p.type === 'day')?.value)
+  return { year, month, day }
+}
+
+function compareYmd(
+  a: { year: number; month: number; day: number },
+  b: { year: number; month: number; day: number },
+): number {
+  if (a.year !== b.year) {
+    return a.year - b.year
+  }
+  if (a.month !== b.month) {
+    return a.month - b.month
+  }
+  return a.day - b.day
+}
+
+function calendarDaysBetween(from: { year: number; month: number; day: number }, to: { year: number; month: number; day: number }): number {
+  const fromUtc = Date.UTC(from.year, from.month - 1, from.day, 12, 0, 0)
+  const toUtc = Date.UTC(to.year, to.month - 1, to.day, 12, 0, 0)
+  return Math.round((toUtc - fromUtc) / 86400000)
+}
+
+function resolveEarlyBirdUrgency(now: Date): EarlyBirdUrgencyState {
+  const today = parseBudapestYmd(now)
+  const last = EARLY_BIRD_LAST_DAY_BUDAPEST
+  const cmp = compareYmd(today, last)
+  if (cmp > 0) {
+    return 'expired'
+  }
+  if (cmp === 0) {
+    return 'lastDay'
+  }
+  const daysLeft = calendarDaysBetween(today, last)
+  return { kind: 'days', daysLeft }
+}
+
 const { t, currentLang } = useI18n()
 const instructorImages = ['/webconf.jpg', '/cldrmeetup.jpg'] as const
 const currentImageIndex = ref(0)
@@ -32,6 +84,11 @@ let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
+let earlyBirdCountdownIntervalId: ReturnType<typeof setInterval> | null = null
+
+/** Client-only: avoids SSR/prerender vs browser mismatch for Budapest calendar-day countdown. */
+const earlyBirdCountdownReady = ref(false)
+const earlyBirdCountdownNowMs = ref(0)
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -158,6 +215,12 @@ onMounted(() => {
     mediaQuery.addEventListener('change', syncMobileViewport)
   }
 
+  earlyBirdCountdownNowMs.value = Date.now()
+  earlyBirdCountdownReady.value = true
+  earlyBirdCountdownIntervalId = window.setInterval(() => {
+    earlyBirdCountdownNowMs.value = Date.now()
+  }, 60000)
+
   imageRotationInterval = window.setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % instructorImages.length
   }, 10000)
@@ -179,6 +242,11 @@ onUnmounted(() => {
   teardownSectionRevealObserver()
   mediaQuery?.removeEventListener('change', syncMobileViewport)
   mediaQuery = null
+
+  if (earlyBirdCountdownIntervalId != null) {
+    window.clearInterval(earlyBirdCountdownIntervalId)
+    earlyBirdCountdownIntervalId = null
+  }
 
   if (imageRotationInterval == null) {
     return
@@ -241,6 +309,27 @@ type InstructorLinks = {
 
 const instructorBody2Parts = computed(() => t('trainingB2cAds.instructorBody2Parts') as InstructorBody2Parts)
 const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as InstructorLinks)
+
+const earlyBirdUrgencyState = computed(() => {
+  if (!earlyBirdCountdownReady.value) {
+    return null
+  }
+  return resolveEarlyBirdUrgency(new Date(earlyBirdCountdownNowMs.value))
+})
+
+const earlyBirdUrgencyLine = computed(() => {
+  const state = earlyBirdUrgencyState.value
+  if (state === null || state === 'expired') {
+    return ''
+  }
+  if (state === 'lastDay') {
+    return String(t('trainingB2cAds.offerMeta.earlyBirdCountdownLastDay'))
+  }
+  const template = String(t('trainingB2cAds.offerMeta.earlyBirdCountdownDays'))
+  return template.replace(/\{days\}/g, String(state.daysLeft))
+})
+
+const showEarlyBirdUrgency = computed(() => earlyBirdUrgencyLine.value.length > 0)
 </script>
 
 <template>
@@ -259,7 +348,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="offer-meta__early">
           <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
           <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
-          <span class="offer-meta__deadline">{{ t('trainingB2cAds.offerMeta.earlyBirdDeadline') }}</span>
+          <span v-if="showEarlyBirdUrgency" class="offer-meta__deadline">{{ earlyBirdUrgencyLine }}</span>
         </p>
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
@@ -460,6 +549,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
           <BaseButton @click="handlePrimaryCtaClick('sticky')">
             {{ t('trainingB2cAds.ctaPrimary') }}
           </BaseButton>
+          <p v-if="showEarlyBirdUrgency" class="training-b2c-ads-sticky-waitlist__countdown">{{ earlyBirdUrgencyLine }}</p>
           <p class="training-b2c-ads-sticky-waitlist__seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
         </div>
       </div>
@@ -1263,7 +1353,18 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
+  }
+
+  .training-b2c-ads-sticky-waitlist__countdown {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    color: var(--color-text-muted);
+    max-width: min(22rem, 100%);
+    pointer-events: auto;
   }
 
   .training-b2c-ads-sticky-waitlist__seats-left {

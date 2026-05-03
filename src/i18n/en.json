@@ -212,7 +212,8 @@
     "offerMeta": {
       "earlyBirdLabel": "Early bird",
       "earlyBirdPrice": "99,000 HUF",
-      "earlyBirdDeadline": "until May 17",
+      "earlyBirdCountdownDays": "Only {days} days left",
+      "earlyBirdCountdownLastDay": "Only until midnight tonight",
       "regularPriceLabel": "After that",
       "regularPrice": "119,000 HUF",
       "priceComparison": "Less than the first refactor sprint of a poorly chosen database."

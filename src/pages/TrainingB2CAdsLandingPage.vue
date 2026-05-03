@@ -10,6 +10,8 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
+const EARLY_BIRD_DEADLINE_TIMESTAMP = new Date(2026, 4, 17).getTime()
+const MS_PER_DAY = 24 * 60 * 60 * 1000
 const STRIPE_CHECKOUT_URL =
   'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
 
@@ -25,6 +27,7 @@ const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
+const earlyBirdDeadlineLabel = computed(() => formatEarlyBirdDeadlineLabel(getEarlyBirdDaysLeft(Date.now()), currentLang.value))
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
@@ -32,6 +35,34 @@ let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
+
+function getLocalDayStart(timestamp: number) {
+  const date = new Date(timestamp)
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime()
+}
+
+function getEarlyBirdDaysLeft(nowTimestamp: number) {
+  const todayStart = getLocalDayStart(nowTimestamp)
+  const deadlineStart = getLocalDayStart(EARLY_BIRD_DEADLINE_TIMESTAMP)
+  return Math.ceil((deadlineStart - todayStart) / MS_PER_DAY)
+}
+
+function formatEarlyBirdDeadlineLabel(daysLeft: number, language: 'en' | 'hu') {
+  if (daysLeft < 0) {
+    return language === 'hu' ? 'Early bird lezárult' : 'Early bird ended'
+  }
+
+  if (daysLeft === 0) {
+    return language === 'hu' ? 'Már csak ma' : 'Last day'
+  }
+
+  if (language === 'hu') {
+    return `Már csak ${daysLeft} napig`
+  }
+
+  const dayLabel = daysLeft === 1 ? 'day' : 'days'
+  return `Only ${daysLeft} ${dayLabel} left`
+}
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -259,7 +290,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="offer-meta__early">
           <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
           <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
-          <span class="offer-meta__deadline">{{ t('trainingB2cAds.offerMeta.earlyBirdDeadline') }}</span>
+          <span class="offer-meta__deadline">{{ earlyBirdDeadlineLabel }}</span>
         </p>
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
@@ -1248,34 +1279,42 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    width: min(100%, var(--max-width));
+    width: 100%;
     max-width: var(--max-width);
-    z-index: 70;
+    z-index: 50;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.65rem 1.5rem;
-    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+    padding: 0 1rem;
     pointer-events: none;
   }
 
   .training-b2c-ads-sticky-waitlist__inner {
+    width: min(24rem, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
+    padding: 0.65rem 1rem;
+    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+    border: 1px solid var(--color-border);
+    border-bottom: 0;
+    border-radius: 1.25rem 1.25rem 0 0;
+    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow:
+      0 -18px 44px rgba(15, 23, 42, 0.2),
+      0 -3px 12px rgba(15, 23, 42, 0.08);
+    pointer-events: auto;
   }
 
   .training-b2c-ads-sticky-waitlist__seats-left {
     margin: 0;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--landing-accent);
-    pointer-events: auto;
+    color: var(--landing-accent, #f97316);
   }
 
   .training-b2c-ads-sticky-waitlist .button {
-    pointer-events: auto;
     width: min(22rem, 100%);
     max-width: 100%;
   }

@@ -284,6 +284,28 @@ watch(
   font-weight: 600;
 }
 
+.markdown-body :deep(pre) {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.markdown-body :deep(code) {
+  padding: 0.1rem 0.28rem;
+  background: var(--color-surface-strong);
+  border-radius: 0.35rem;
+  font-size: 0.88em;
+}
+
+.markdown-body :deep(pre code) {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
 /* Sidebar */
 .sidebar {
   position: sticky;

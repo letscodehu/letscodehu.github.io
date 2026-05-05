@@ -5,16 +5,27 @@
 export interface BlogPostManifest {
   slug: string
   publishedAt: string
-  titleEn: string
+  titleEn?: string
   titleHu: string
-  excerptEn: string
+  excerptEn?: string
   excerptHu: string
+  availableLangs?: ('en' | 'hu')[]
   videoUrl?: string
   /** Path under site root for featured/blog preview image, e.g. `/blog/og/my-slug.png` (file in `public/`). */
   featuredImagePath?: string
 }
 
 export const blogPostManifest: BlogPostManifest[] = [
+  {
+    slug: 'you-are-not-building-airplanes',
+    publishedAt: '2026-05-05',
+    titleEn: 'You Are Not Building Airplanes',
+    titleHu: 'Nem minden rendszer repülőgép',
+    featuredImagePath: '/blog/airplane.png',
+    excerptHu:
+      'A megbízhatóság nem attól nő, hogy minden bizonytalan állapotra fallbacket írunk. A kritikus pontokon kell redundancia, mindenhol máshol egyszerűség.',
+    availableLangs: ['hu'],
+  },
   {
     slug: 'overengineering-vs-underengineering-compliance-nightmare',
     publishedAt: '2026-04-26',

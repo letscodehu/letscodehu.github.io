@@ -15,22 +15,30 @@ const { t, currentLang } = useI18n()
 const slug = computed(() => route.params.slug as string)
 const post = computed(() => getBlogPostBySlug(slug.value))
 
+const postAvailableInCurrentLang = computed(() => {
+  const p = post.value
+  if (!p) return false
+  if (currentLang.value === 'hu') return true
+  if (p.availableLangs?.includes('hu') && !p.availableLangs?.includes('en')) return false
+  return typeof p.titleEn === 'string' && typeof p.excerptEn === 'string' && typeof p.contentEn === 'string'
+})
+
 const postTitle = computed(() => {
   const p = post.value
-  if (!p) return ''
-  return currentLang.value === 'en' ? p.titleEn : p.titleHu
+  if (!p || !postAvailableInCurrentLang.value) return ''
+  return currentLang.value === 'en' ? p.titleEn ?? '' : p.titleHu
 })
 
 const postContent = computed(() => {
   const p = post.value
-  if (!p) return ''
-  return currentLang.value === 'en' ? p.contentEn : p.contentHu
+  if (!p || !postAvailableInCurrentLang.value) return ''
+  return currentLang.value === 'en' ? p.contentEn ?? '' : p.contentHu
 })
 
 const postExcerpt = computed(() => {
   const p = post.value
-  if (!p) return ''
-  return currentLang.value === 'en' ? p.excerptEn : p.excerptHu
+  if (!p || !postAvailableInCurrentLang.value) return ''
+  return currentLang.value === 'en' ? p.excerptEn ?? '' : p.excerptHu
 })
 
 const publishedAt = computed(() => {
@@ -193,9 +201,9 @@ const contentHtml = computed(() => {
 })
 
 watch(
-  post,
-  (p) => {
-    if (route.name === 'blog-post-detail-en' && slug.value && !p) {
+  [post, postAvailableInCurrentLang],
+  ([p, isAvailable]) => {
+    if (route.name === 'blog-post-detail-en' && slug.value && (!p || !isAvailable)) {
       router.replace({ name: 'blog-list-en', params: { lang: currentLang.value } })
     }
   },
@@ -493,6 +501,36 @@ watch(
   margin: 0 0 0.75rem;
 }
 
+.markdown-body :deep(blockquote) {
+  position: relative;
+  margin: 1.4rem 0;
+  padding: 1.15rem 1.25rem 1.05rem 1.5rem;
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-primary-soft), var(--color-surface-soft));
+  border: 1px solid var(--color-border);
+  border-left: 0.28rem solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+.markdown-body :deep(blockquote::before) {
+  content: '"';
+  position: absolute;
+  top: -0.45rem;
+  left: 0.8rem;
+  color: var(--color-primary);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.22;
+}
+.markdown-body :deep(blockquote p) {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
 .markdown-body :deep(ul) {
   margin: 0 0 0.75rem;
   padding-left: 1.25rem;
@@ -509,6 +547,28 @@ watch(
 
 .markdown-body :deep(strong) {
   font-weight: 600;
+}
+
+.markdown-body :deep(pre) {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.markdown-body :deep(code) {
+  padding: 0.1rem 0.28rem;
+  background: var(--color-surface-strong);
+  border-radius: 0.35rem;
+  font-size: 0.88em;
+}
+
+.markdown-body :deep(pre code) {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .markdown-body :deep(a) {

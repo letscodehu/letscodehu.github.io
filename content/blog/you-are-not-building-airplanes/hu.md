@@ -1,16 +1,14 @@
 
-Sok fejlesztőcsapatban megjelenik egy mérnöki reflex:
+Sok fejlesztőcsapatban jelenik meg egy mérnöki reflex:
 
 > ha valami elromolhat, készüljünk fel rá.
 
-Külső rendszer hibás adatot küldhet, ezért validálunk.  
-Hiányzó mezőre sokszor defaultot adunk.  
+Egy külső rendszer hibás adatot küldhet, ezért validálunk.  
+Hiányzó mezőkre sokszor defaultot adunk.  
 Konfiguráció nélkül is megpróbáljuk elindítani az alkalmazást.  
 `null` esetén gyorsan bekerül még egy ág, nehogy emiatt álljon meg a folyamat.
 
-Első ránézésre ez körültekintő gondolkodás.
-
-A mérnöki megbízhatóságról gondolkodva gyakran a repülés jut eszünkbe példaként:
+A mérnöki megbízhatóságról gondolkodva gyakran a repülés (vagy éppen az űrutazás) jut eszünkbe példaként:
 
 - redundáns rendszerek,
 - backup műszerek,
@@ -21,7 +19,7 @@ A levegőben nincs gyors hotfix. Emiatt logikusnak tűnik a következtetés:
 
 > a jó rendszer minden eshetőségre felkészül.
 
-Itt szoktuk félreérteni a repülést.
+Na, pontosan itt szoktuk félreérteni a repülést.
 
 A repülésben a megbízhatóság nem puszta redundanciából születik. Legalább ennyire lényeges, hogy a mérnökök ahol csak lehet, egyszerűsítik a rendszert.
 
@@ -41,7 +39,7 @@ Egy csomó repülőmotor gyújtása nem az akkumulátorra támaszkodik úgy, min
 
 Részleges elektromos hiba, lemerült akkumulátor vagy generátorprobléma mellett a motor még mehet tovább, miközben a rádió vagy a transzponder akár le is állhat.
 
-Ez redundáns megoldás. Közben egyszerűsít is, mert kivon egy teljes függőségi láncot a kritikus működésből.
+Ez redundáns megoldás, mert nyílván itt is két gyertya és gyújtókör van. Közben egyszerűsít is, mert kivon egy teljes függőségi láncot a kritikus működésből.
 
 A repülés tanulsága így sokkal pontosabb:
 
@@ -49,17 +47,17 @@ A repülés tanulsága így sokkal pontosabb:
 
 Ez a különbség szoftverben könnyen elmosódik.
 
-Hajlamosak vagyunk azt hinni, hogy a megbízhatóság egyenlő azzal, hogy minden bizonytalanságra írunk még egy `if`-et. Sokszor épp ez termeli ki a bonyolultságot.
+Hajlamosak vagyunk azt hinni, hogy a megbízhatóság egyenlő azzal, hogy minden bizonytalanságra írunk még egy `if`-et. Sokszor épp ez termeli ki a komplexitást.
 
 ## Amikor a teszt túlképzeli a valóságot
 
-Dolgoztam egy projekten, ahol nagy acceptance tesztkészletünk volt.
+Dolgoztam egy projekten, ahol volt egy nagy acceptance tesztkészletünk.
 
-A teljes rendszer felállt. A külső integrációk előre eltárolt JSON fájlokból kapták a válaszokat, papíron pedig sok hibás állapotra fel voltunk készülve.
+Az indításukhoz a teljes rendszer felállt. A külső integrációk előre eltárolt JSON fájlokból kapták a válaszokat, papíron pedig sok hibás állapotra fel voltunk készülve.
 
 Idővel ezeket a fake válaszokat senki sem gondozta. Szépen felhalmozódtak olyan payloadok, amelyek a valós partner rendszertől gyakorlatilag nem érkezhettek volna.
 
-Például:
+Például (egy nagy marék túlzással):
 
 ```json
 {
@@ -151,11 +149,9 @@ Elsőre "robosztusnak" néz ki.
 
 Valójában olyan, mintha egy kritikus repülési rendszert rákötnénk egy csomó fölösleges elektronikára, mert attól modernebbnek tűnik.
 
-Kényelmesebb lehet. Okosabbnak látszik. Több hibalehetőséget nyit.
+Kényelmesebb lehet. Okosabbnak látszik. Cserébe több hibalehetőséget nyit.
 
-Productionben a hiányzó `DB_PASSWORD` legyen azonnali indítási hiba.
-
-A repülőmérnök is világos működési feltételeket akar a kritikus rendszerekhez. Kevés függőséget keres, és azt szeretné, hogy a hibás állapot rögtön látható legyen.
+Productionben a hiányzó `DB_HOST` legyen azonnali indítási hiba, ne pedig egy socket timeout percekkel később. 
 
 ## Redundancia és egyszerűség
 
@@ -177,7 +173,7 @@ Mindenhová ugyanazt a defensive hozzáállást viszi. Így ott is redundáns vi
 
 ## AI guideline-ba való
 
-Például egy `agents.md` részlet:
+Ha AI segítségével kódolunk, akkor jól jöhet egy hasonló `agents.md` részlet:
 
 ```md
 ## Invalid state policy
@@ -193,7 +189,7 @@ Ez azért hasznos, mert szabály nélkül az AI gyakran a "mindenre készüljün
 
 ## Automatizált szabályok
 
-Akár ArchUnit szinten is lehet ilyen gondolkodást érvényesíteni.
+Mivel az AI vagy betartja a rule-okat, vagy sem, ezért érdemes lehet akár ArchUnit szinten is ilyen gondolkodást érvényesíteni.
 
 Például tilthatjuk, hogy kritikus config defaultot kapjon:
 
@@ -217,8 +213,8 @@ A kisrepülő bizonyos pontokon azért megbízhatóbb, mert kevesebb benne az a 
 
 Szoftverben ugyanez igaz.
 
-Minden extra fallback, fölösleges default és "hátha mégis működjön" logika új állapotot hoz létre. Több tesztelési kombinációt kér, és további hibalehetőséget nyit.
+Minden extra fallback, fölösleges default és "hátha mégis működjön" logika új állapotot hoz létre. Több tesztelési kombinációra lesz szükség, és csak további hibalehetőségeket nyit.
 
-Az AI korszakban fontos mérnöki képesség lesz pontosan látni, hol kell redundanciát építeni, és hol kell egyszerűsíteni.
+Az AI korszakában fontos mérnöki képesség lesz pontosan látni, hol kell redundanciát építeni, és hol kell egyszerűsíteni.
 
 A megbízhatóság akkor nő, amikor eleve kevés dolog tud rosszul történni.

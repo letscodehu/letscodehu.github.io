@@ -5,11 +5,10 @@
 export interface BlogPostManifest {
   slug: string
   publishedAt: string
-  titleEn?: string
+  titleEn: string
   titleHu: string
-  excerptEn?: string
+  excerptEn: string
   excerptHu: string
-  availableLangs?: ('en' | 'hu')[]
   videoUrl?: string
   /** Path under site root for featured/blog preview image, e.g. `/blog/og/my-slug.png` (file in `public/`). */
   featuredImagePath?: string
@@ -22,9 +21,10 @@ export const blogPostManifest: BlogPostManifest[] = [
     titleEn: 'You Are Not Building Airplanes',
     titleHu: 'Nem minden rendszer repülőgép',
     featuredImagePath: '/blog/airplane.png',
+    excerptEn:
+      'Reliability does not improve by writing fallbacks for every uncertain state. Critical points need redundancy; everywhere else needs simplicity.',
     excerptHu:
       'A megbízhatóság nem attól nő, hogy minden bizonytalan állapotra fallbacket írunk. A kritikus pontokon kell redundancia, mindenhol máshol egyszerűség.',
-    availableLangs: ['hu'],
   },
   {
     slug: 'overengineering-vs-underengineering-compliance-nightmare',

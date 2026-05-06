@@ -21,21 +21,13 @@ function formatPublishedAt(date: string, locale: string): string {
 }
 
 const postsWithLabels = computed(() =>
-  blogPosts
-    .filter((post) => {
-      if (currentLang.value === 'en') {
-        const explicitlyHuOnly = post.availableLangs?.includes('hu') && !post.availableLangs?.includes('en')
-        return !explicitlyHuOnly && typeof post.titleEn === 'string' && typeof post.excerptEn === 'string'
-      }
-      return true
-    })
-    .map((post) => ({
-      slug: post.slug,
-      title: currentLang.value === 'en' ? post.titleEn ?? '' : post.titleHu,
-      excerpt: currentLang.value === 'en' ? post.excerptEn ?? '' : post.excerptHu,
-      publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
-      featuredImagePath: post.featuredImagePath,
-    }))
+  blogPosts.map((post) => ({
+    slug: post.slug,
+    title: currentLang.value === 'en' ? post.titleEn : post.titleHu,
+    excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
+    publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
+    featuredImagePath: post.featuredImagePath,
+  }))
 )
 </script>
 

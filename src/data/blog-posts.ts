@@ -3,13 +3,12 @@ import { blogPostManifest } from './blog-post-manifest'
 export interface BlogPost {
   slug: string
   publishedAt: string
-  titleEn?: string
+  titleEn: string
   titleHu: string
-  excerptEn?: string
+  excerptEn: string
   excerptHu: string
-  contentEn?: string
+  contentEn: string
   contentHu: string
-  availableLangs?: ('en' | 'hu')[]
   videoUrl?: string
   featuredImagePath?: string
 }
@@ -34,7 +33,7 @@ function blogMarkdownSlug(path: string): string {
   return m[1]
 }
 
-function collectBlogBodies(): Record<string, { en?: string; hu: string }> {
+function collectBlogBodies(): Record<string, { en: string; hu: string }> {
   const bySlug: Record<string, { en?: string; hu?: string }> = {}
   for (const [path, raw] of Object.entries(enMarkdownModules)) {
     const slug = blogMarkdownSlug(path)
@@ -44,12 +43,15 @@ function collectBlogBodies(): Record<string, { en?: string; hu: string }> {
     const slug = blogMarkdownSlug(path)
     bySlug[slug] = { ...bySlug[slug], hu: raw }
   }
-  const out: Record<string, { en?: string; hu: string }> = {}
+  const out: Record<string, { en: string; hu: string }> = {}
   for (const [slug, pair] of Object.entries(bySlug)) {
+    if (typeof pair.en !== 'string') {
+      throw new Error(`Blog markdown incomplete for "${slug}": need en.md`)
+    }
     if (typeof pair.hu !== 'string') {
       throw new Error(`Blog markdown incomplete for "${slug}": need hu.md`)
     }
-    out[slug] = typeof pair.en === 'string' ? { en: pair.en, hu: pair.hu } : { hu: pair.hu }
+    out[slug] = { en: pair.en, hu: pair.hu }
   }
   return out
 }

@@ -15,30 +15,22 @@ const { t, currentLang } = useI18n()
 const slug = computed(() => route.params.slug as string)
 const post = computed(() => getBlogPostBySlug(slug.value))
 
-const postAvailableInCurrentLang = computed(() => {
-  const p = post.value
-  if (!p) return false
-  if (currentLang.value === 'hu') return true
-  if (p.availableLangs?.includes('hu') && !p.availableLangs?.includes('en')) return false
-  return typeof p.titleEn === 'string' && typeof p.excerptEn === 'string' && typeof p.contentEn === 'string'
-})
-
 const postTitle = computed(() => {
   const p = post.value
-  if (!p || !postAvailableInCurrentLang.value) return ''
-  return currentLang.value === 'en' ? p.titleEn ?? '' : p.titleHu
+  if (!p) return ''
+  return currentLang.value === 'en' ? p.titleEn : p.titleHu
 })
 
 const postContent = computed(() => {
   const p = post.value
-  if (!p || !postAvailableInCurrentLang.value) return ''
-  return currentLang.value === 'en' ? p.contentEn ?? '' : p.contentHu
+  if (!p) return ''
+  return currentLang.value === 'en' ? p.contentEn : p.contentHu
 })
 
 const postExcerpt = computed(() => {
   const p = post.value
-  if (!p || !postAvailableInCurrentLang.value) return ''
-  return currentLang.value === 'en' ? p.excerptEn ?? '' : p.excerptHu
+  if (!p) return ''
+  return currentLang.value === 'en' ? p.excerptEn : p.excerptHu
 })
 
 const publishedAt = computed(() => {
@@ -201,9 +193,9 @@ const contentHtml = computed(() => {
 })
 
 watch(
-  [post, postAvailableInCurrentLang],
-  ([p, isAvailable]) => {
-    if (route.name === 'blog-post-detail-en' && slug.value && (!p || !isAvailable)) {
+  post,
+  (p) => {
+    if (route.name === 'blog-post-detail-en' && slug.value && !p) {
       router.replace({ name: 'blog-list-en', params: { lang: currentLang.value } })
     }
   },

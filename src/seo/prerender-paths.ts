@@ -57,10 +57,6 @@ export function getPrerenderPathnames(): string[] {
       paths.push(`/${lang}/case-studies/${cs.slug}`)
     }
     for (const post of blogPostManifest) {
-      if (lang === 'en') {
-        const explicitlyHuOnly = post.availableLangs?.includes('hu') && !post.availableLangs?.includes('en')
-        if (explicitlyHuOnly) continue
-      }
       paths.push(`/${lang}/blog/p/${post.slug}`)
     }
   }

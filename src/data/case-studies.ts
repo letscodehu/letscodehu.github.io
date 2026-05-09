@@ -1,17 +1,50 @@
+export type CaseStudyLang = 'en' | 'hu'
+
 export interface CaseStudy {
+  slug: string
+  titleEn: string
+  titleHu: string
+  excerptEn: string
+  excerptHu: string
+  contentEn: string
+  contentHu: string
+}
+
+export interface LocalizedCaseStudy {
   slug: string
   title: string
   excerpt: string
   content: string
 }
 
+export function localizeCaseStudy(cs: CaseStudy, lang: CaseStudyLang): LocalizedCaseStudy {
+  if (lang === 'hu') {
+    return {
+      slug: cs.slug,
+      title: cs.titleHu,
+      excerpt: cs.excerptHu,
+      content: cs.contentHu,
+    }
+  }
+  return {
+    slug: cs.slug,
+    title: cs.titleEn,
+    excerpt: cs.excerptEn,
+    content: cs.contentEn,
+  }
+}
+
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'rebuilding-engineering-trust-30k-dau-backoffice',
-    title: 'Rebuilding Engineering Trust in a 30k DAU Backoffice Platform',
-    excerpt:
+    titleEn: 'Rebuilding Engineering Trust in a 30k DAU Backoffice Platform',
+    titleHu:
+      'Mérnöki bizalom helyreállítása egy ~30 000 napi aktív felhasználós backoffice platformon',
+    excerptEn:
       'How we stabilized delivery, increased test coverage 6x, and decoupled the domain from Salesforce in a scale-up backoffice.',
-    content: `## Context
+    excerptHu:
+      'Hogyan stabilizáltuk a szállítást, hatszorosára növeltük a tesztlefedettséget, és leválasztottuk a domaint a Salesforce-ról egy növekvő backoffice környezetben.',
+    contentEn: `## Context
 
 A scale-up operating in the big data domain relied on an external backoffice platform serving ~30,000 daily active users.
 
@@ -143,6 +176,138 @@ Within 3 months:
 - Improved engineering confidence
 
 Most importantly: The system shifted from being a delivery bottleneck to a platform the organization could safely build upon.`,
+    contentHu: `## Kontextus
+
+Egy big data területen működő scale-up vállalat külső backoffice platformra támaszkodott, amelyet közel 30 000 napi aktív felhasználó használt.
+
+Az eredeti megoldás erősen a Salesforce köré épült; a végfelhasználók itt kezelték:
+
+- Fiókokat és szervezeti felhasználókat
+- Jogosultságokat
+- Licencszinteket
+- Support eseteket
+
+Idővel két fő üzleti probléma jelent meg:
+
+- Nem skálázódó licencmodell – minden Salesforce-felhasználó külön licencköltséget jelentett.
+- Bevételvesztés – a jogosultsági modell miatt a felhasználók (akár nem szándékosan is) alacsonyabb licencszinten maradhattak, mint amennyihez valójában joguk lett volna.
+
+A vállalat úgy döntött, hogy a Salesforce-központú modellt egy dedikált külső Identity Providerrel (IDP) váltja fel. A Salesforce adatforrásként megmaradt, de már nem az elsődleges „single source of truth”.
+
+Ez az átállás jelentős architekturális és üzemeltetési kihívásokat hozott.
+
+## A központi kihívások
+
+### Üzleti szintű problémák
+
+- Bevételkiesés a helytelen licenc-hozzárendelés miatt
+- Összetett domain számos szélső esettel
+- Szükség volt a licenc–jogosultság viszony helyes modellezésére
+
+### Mérnöki és DevOps problémák
+
+**Üzemeltetési instabilitás**
+
+- Negyedévente anonimizált éles adatmásolat → a staging környezet leállítása
+- ~100 fejlesztő akár egy hétig blokkolva minden negyedévben
+
+**Architektúra**
+
+- Egyetlen Maven modulú monolit
+- Szorosan összekapcsolt komponensek
+- A frontend közvetlenül a Salesforce válaszsémáitól függött
+- Nem voltak tiszta domainhatárok
+
+**Tesztelés**
+
+- 10%-os tesztlefedettség
+- Instabil tesztek (egy részük élő Salesforce tenantokat használt)
+- A QA automatizáció sosem volt teljesen zöld
+- Erős manuális tesztelésre támaszkodás
+
+**CI/CD**
+
+- ClickOps-szal felépített Jenkins példány
+- Megbízható backup stratégia nélkül
+- Hosszú várakozás a CI jobokra
+- Fizetős statikus analízis eszközök nagyrészt figyelmen kívül hagyva
+
+**Infrastruktúra**
+
+- AWS + Terraform
+- Nem volt moduláris stratégia a későbbi szolgáltatás-kiemeléshez
+
+**Eredmény:** Alacsony bizalom a mérnöki szervezet iránt, lassú kiadási ciklusok, magas kognitív terhelés és törékeny telepítések.
+
+## Beavatkozási stratégia
+
+Az első lépés nem a refaktorálás volt, hanem a prioritások rendezése és a stabilizáció.
+
+### 1. Biztonságos kiindulóállapot kialakítása
+
+Mielőtt az architektúrához nyúltunk volna:
+
+- Fokozatosan bekapcsoltuk a statikus analízis ellenőrzéseket
+- Magas szintű regressziós teszteket vezettünk be
+- Érvénytelen és félrevezető teszteket eltávolítottunk (pl. Salesforce-függő tesztek)
+- Csökkentettük a zajt, hogy a CI pipeline eredménye érthetőbb legyen
+
+Cél: olyan alapot teremteni, ahol a refaktorálás nem növeli a kockázatot.
+
+### 2. CI/CD stabilizáció
+
+- Rendszeres Jenkins backupok
+- Pluginok takarítása és frissítése
+- EC2 Spot alapú futtatók bevezetése a soridő csökkentésére
+- Később migráció GitHub Actionsre, belső EC2 Spot futtatókkal
+- Megbízhatóbb pipeline és gyorsabb visszajelzés a fejlesztőknek
+
+### 3. Architekturális refaktorálás (Clean Architecture)
+
+A monolitot átszerveztük:
+
+- Több modulra bontás egyértelmű határokkal
+- Ports & adapters bevezetése
+- A domain leválasztása a Salesforce sémáról
+- Salesforce-specifikus mezők „szivárgásának” megszüntetése a frontendről
+
+Ez lehetővé tette:
+
+- A licencek és jogosultságok független domain-modellezését
+- Külső függőségek izolálását
+- Biztonságosabb hosszú távú fejlődést
+
+### 4. Tesztelés és QA modernizáció
+
+- Tesztlefedettség 10% → 60% három hónap alatt
+- A hibák aránya ~60%-kal csökkent
+- A futási sebesség megmaradt a nagyobb lefedettség mellett is
+- BDD-stílusú vázat vezettünk be a QA számára
+- Dedikált QA pipeline
+- Fokozatos migráció a régi tesztcsomagról
+
+Eredmény: a tesztcsomag bizalomépítő eszköz lett a teherré válás helyett.
+
+### 5. Felkészülés a modularizációra
+
+- Azonosítottuk a monolitból kivehető domaineket
+- Helm chartokat készítettünk a jövőbeli szolgáltatásokhoz
+- SOPS + KMS alapú secret management
+- Infrastruktúra előkészítése kontrollált szolgáltatás-kiemeléshez
+
+## Eredmények
+
+Három hónapon belül:
+
+- Hatszoros tesztlefedettség-növekedés
+- ~60%-kal kevesebb instabil (flaky) hiba
+- Stabil CI/CD infrastruktúra
+- Rövidebb fejlesztői várakozás
+- Leválasztott domainmodell
+- Alap a szolgáltatások kivonásához
+- Erősödött mérnöki bizalom
+
+Legfontosabb: A rendszer a szállítás szűk keresztmetszetéből olyan platformmá vált, amire a szervezet biztonságosan építhet.`,
   },
 ]
 

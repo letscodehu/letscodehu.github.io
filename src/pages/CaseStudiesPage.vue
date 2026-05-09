@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
-import { caseStudies } from '../data/case-studies'
+import { caseStudies, localizeCaseStudy } from '../data/case-studies'
 
 const { t, currentLang } = useI18n()
+
+const displayedCaseStudies = computed(() =>
+  caseStudies.map((cs) => localizeCaseStudy(cs, currentLang.value))
+)
 </script>
 
 <template>
@@ -20,7 +25,7 @@ const { t, currentLang } = useI18n()
     <section class="section">
       <div class="grid grid--two">
         <RouterLink
-          v-for="cs in caseStudies"
+          v-for="cs in displayedCaseStudies"
           :key="cs.slug"
           :to="{
             name: 'case-study-detail-en',

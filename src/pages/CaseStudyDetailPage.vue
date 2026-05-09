@@ -3,7 +3,7 @@ import { computed, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n } from '../composables/useI18n'
-import { getCaseStudyBySlug } from '../data/case-studies'
+import { getCaseStudyBySlug, localizeCaseStudy } from '../data/case-studies'
 import { marked } from 'marked'
 import { absoluteUrl } from '../site'
 import { canonicalPathname } from '../seo/canonical-path'
@@ -15,8 +15,14 @@ const { t, currentLang } = useI18n()
 const slug = computed(() => route.params.slug as string)
 const caseStudy = computed(() => getCaseStudyBySlug(slug.value))
 
-const fullTitle = computed(() => {
+const localizedCaseStudy = computed(() => {
   const cs = caseStudy.value
+  if (!cs) return undefined
+  return localizeCaseStudy(cs, currentLang.value)
+})
+
+const fullTitle = computed(() => {
+  const cs = localizedCaseStudy.value
   const brand = t('common.companyName')
   return cs ? `${cs.title} | ${brand}` : brand
 })
@@ -24,7 +30,7 @@ const fullTitle = computed(() => {
 const canonicalHref = computed(() => absoluteUrl(canonicalPathname(route.path)))
 
 const articleLd = computed(() => {
-  const cs = caseStudy.value
+  const cs = localizedCaseStudy.value
   if (!cs) return ''
   return JSON.stringify({
     '@context': 'https://schema.org',
@@ -38,7 +44,7 @@ const articleLd = computed(() => {
 
 useHead(
   computed(() => {
-    const cs = caseStudy.value
+    const cs = localizedCaseStudy.value
     const excerpt = cs?.excerpt ?? ''
     const head: Record<string, unknown> = {
       title: fullTitle.value,
@@ -51,7 +57,7 @@ useHead(
         { name: 'twitter:description', content: excerpt },
       ],
     }
-    if (cs) {
+    if (localizedCaseStudy.value) {
       head.script = [
         {
           type: 'application/ld+json',
@@ -65,6 +71,8 @@ useHead(
 
 function slugify(text: string): string {
   return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
@@ -76,7 +84,7 @@ interface TocEntry {
 }
 
 const tocEntries = computed((): TocEntry[] => {
-  const content = caseStudy.value?.content
+  const content = localizedCaseStudy.value?.content
   if (!content) return []
   const matches = content.matchAll(/^## (.+)$/gm)
   const entries: TocEntry[] = []
@@ -107,7 +115,7 @@ function getMarkedOptions(h2Slugs: string[]) {
 }
 
 const contentHtml = computed(() => {
-  const content = caseStudy.value?.content
+  const content = localizedCaseStudy.value?.content
   if (!content) return ''
   const h2Slugs = tocEntries.value.map((e) => e.slug)
   return marked.parse(content, getMarkedOptions(h2Slugs)) as string
@@ -125,7 +133,7 @@ watch(
 </script>
 
 <template>
-  <article v-if="caseStudy" class="case-study">
+  <article v-if="localizedCaseStudy" class="case-study">
     <div class="case-study-main">
       <header class="page-header-block">
         <RouterLink
@@ -138,7 +146,7 @@ watch(
           {{ t('caseStudies.eyebrow') }}
         </p>
         <h1 class="page-title">
-          {{ caseStudy.title }}
+          {{ localizedCaseStudy.title }}
         </h1>
       </header>
 

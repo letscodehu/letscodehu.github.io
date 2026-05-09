@@ -75,7 +75,7 @@
       "Látható architektúra: dokumentált határok és döntések, hogy a következő ember is fel tudja venni a fonalat.",
       "Megismételhető gyakorlatok: verziózott infrastruktúra és közös konvenciók a törzsi tudás helyett.",
       "Magabiztosság a refaktorálásban: moduláris tervezés és függőségi szabályok, amelyek a változtatást kiszámíthatóvá teszik.",
-      "Megbízható szállítási visszajelzés: CI/CD, amely gyors, megbízható jeleket ad, így a release-ek nem érződnek kockázatosnak."
+      "Megbízható szállítási visszajelzés: CI/CD, amely gyors és megbízható, így a release-ek nem érződnek kockázatosnak."
     ],
     "offeringsTitle": "Képzési fókuszterületek",
     "offeringsEngineeringTitle": "Mérnöki gyakorlatok",
@@ -111,7 +111,7 @@
       "Senior fókusz: közvetlenül velem dolgoztok, nem junior tréner tartja az anyagot.",
       "Gyakorlati: valós példákon, kódon és architektúrákon dolgozunk – lehetőség szerint a ti környezetetekből.",
       "Véleményes: azt mutatom, mi működik a gyakorlatban, nem csak azt, ami jól mutat egy prezentációban.",
-      "Kontekstuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
+      "Kontextuális: a formátumot és a feladatokat a csapat érettségéhez és korlátaihoz igazítom."
     ],
     "practiceIntro": "A munka a ti kódbázisotokon, pipeline-jaitokon és architektúrátokon történik – nem általános példákon. Tipikus formátumok:",
     "practiceCardTitle": "Hogyan néz ez ki a gyakorlatban",
@@ -752,7 +752,7 @@
     "expectationsTitle": "Kiknek érdemes jelentkezni?",
     "expectations": [
       "CTO-knak, VP of Engineering szerepben lévőknek, engineering managereknek, akik csapat szintű képzést terveznek.",
-      "Tech leaddel, akik visszatérő szállítási vagy architekturális problémákat látnak, és strukturált segítséget keresnek.",
+      "Tech leadeknek, akik visszatérő szállítási vagy architekturális problémákat látnak, és strukturált segítséget keresnek.",
       "HR vagy L&D partnereknek, akik technikai képzéseket szerveznek fejlesztő csapatoknak."
     ],
     "responseTitle": "Mire számíthatsz?",

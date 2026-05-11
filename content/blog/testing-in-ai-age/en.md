@@ -210,6 +210,14 @@ The real question is whether you provide a framework where the output:
 
 Because `verify(userRepository, times(1))` on its own is not a testing strategy.
 
+As long as software has existed, test quality has often been treated as a second-class concern.
+
+Today this slips even more easily, because it is tempting to think AI will just generate tests for us anyway.
+
+The reality is that neglected tests have always slowed delivery, increased noise, and weakened confidence in change.
+
+AI does not exempt teams from that cost. At best, it makes the problem visible faster.
+
 If you want to go deeper on this topic, I will be speaking about it in a few days at [Weblica conference](https://weblica.hr).
 
 If your team needs urgent help getting its testing strategy under control, [reach out here](/en/contact).

@@ -10,3 +10,6 @@
 - Added end-of-article CTA: Weblica conference talk link and direct contact-page handoff for urgent team support.
 - Clarified testing tradeoff: solitary unit tests are valid for specific deterministic/edge-case scenarios, but not as a default strategy.
 - Translated the finalized HU article to EN with the same narrative structure, technical emphasis, and CTA flow.
+- Strengthened title alignment in HU article: framed unit-test frustration as a long-standing software design issue (coupling), with AI amplifying that structural weakness.
+- Expanded HU conclusion with historical framing: teams have long neglected test quality; AI-generated tests do not remove this cost, they expose and scale it.
+- Mirrored the same historical framing in EN conclusion to keep parity between language versions.

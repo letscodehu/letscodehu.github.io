@@ -6,7 +6,9 @@ Nemrég egy kollégával beszélgettünk a tesztelésről, és elég gyorsan kid
 
 Ezt az álláspontot könnyű megérteni, mert mindketten láttunk rossz példákat.
 
-Egy projektről részletesen beszélek a [Continuous Failure előadásban](https://vimeo.com/1102474381): ott szinte kizárólag integration tesztek voltak, egy-egy teszt futása másodpercekig tartott, és a suite a végére kifejezetten belassult.
+Szerintem itt a kulcs az, hogy amit sokan “a unit tesztek problémájának” hívnak, az valójában gyakran egy szoftvertervezési probléma: túl erős coupling a belső működéshez.
+
+Egy projektről részletesen beszélek a [Continuous Failure előadásban](https://vimeo.com/1102474381): ott ezzel szemben szinte kizárólag integration tesztek voltak, így egy-egy teszt futása másodpercekig tartott, és a suite a végére rettenetesen belassult.
 
 A másik végletet egy korábbi munkahelyen tapasztaltam. Szinte mindenre írtak unit tesztet, sokszor belső implementációs részletekre. A karbantartás rémálommá vált, és ugyanazt váltotta ki a csapatból, mint amit most a kollégám mondott: zsigeri ellenállást a tesztekkel szemben.
 
@@ -39,9 +41,13 @@ A tesztek fele mégis piros lett.
 
 Itt jön az első fontos felismerés: ezek a tesztek a belső megvalósítást fagyasztották be, a rendszer viselkedését pedig alig védték.
 
+Másképp mondva: a tesztek és az implementáció között túl erős coupling jött létre.
+
 ## Mit tanult meg az AI a tréningadatokból?
 
 Az AI nem rosszindulatú, és nem is “buta”. Egyszerűen azt adja vissza, ami a mintákban domináns.
+
+Mivel a minták jelentős része erősen coupled tesztstruktúrából áll, ezt a hibás mintát is kiválóan skálázza.
 
 A legtöbb nyilvános kódbázisban és példában azt látja, hogy a “jó unit teszt” így néz ki:
 
@@ -192,13 +198,15 @@ Ezért a “95% coverage” önmagában kevés információt ad:
 - értelmes-e a visszajelzés piros tesztnél,
 - vagy csak az internál változott.
 
-## Tanulság: az AI felnagyítja a tesztstratégiát
+## Tanulság: az AI felnagyítja a couplingot is
 
 Gyenge tesztstratégia mellett az AI gyorsabban skálázza a zajt.
 
 Erős tesztstratégia mellett ugyanilyen gyorsan skálázza az értéket.
 
 Ez a teljes történet lényege.
+
+A unit tesztekkel kapcsolatos ellenérzés gyökere sokszor nem maga a unit teszt, hanem a rossz design: túl szoros összekötés a belső implementációval.
 
 Az AI tud tesztet írni. *Kérdés nélkül.*
 
@@ -209,6 +217,14 @@ A valódi kérdés az, adunk-e neki olyan keretet, ahol a kimenet:
 - és valódi safety netet ad.
 
 Mert a `verify(userRepository, times(1))` önmagában nem tesztstratégia.
+
+Amióta szoftvert építünk, a tesztek sok csapatnál hajlamosak mostohagyerekek maradni.
+
+Most ez még könnyebben félremegy, mert kényelmes azt gondolni, hogy az AI úgyis legenerálja helyettünk.
+
+A valóság ezzel szemben az, hogy a tesztek elhanyagolása eddig is lassította a szállítást, növelte a zajt és gyengítette a bizalmat a változtatásokban.
+
+Ez alól az AI nem ad felmentést. Legfeljebb gyorsabban láthatóvá teszi a problémát.
 
 Ha mélyebben érdekel a téma, pár nap múlva erről adok elő a [Weblica konferencián](https://weblica.hr).
 

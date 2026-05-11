@@ -16,6 +16,17 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'testing-in-ai-age',
+    publishedAt: '2026-05-11',
+    titleEn: 'Tests Have Always Been Neglected. AI Made It Worse.',
+    titleHu: 'A tesztek mindig mostohagyerekek voltak. Az AI csak ráerősített erre.',
+    featuredImagePath: '/blog/ai-generated-tests.png',
+    excerptEn:
+      'AI can generate tests fast, but speed often amplifies brittle, implementation-focused test suites. The real gain comes from behavior-focused tests that survive refactors.',
+    excerptHu:
+      'Az AI gyorsan gyárt teszteket, de ezzel sokszor csak a törékeny, implementation-fókuszú mintákat skálázzuk. A tartós értéket a viselkedésközpontú tesztek adják.',
+  },
+  {
     slug: 'you-are-not-building-airplanes',
     publishedAt: '2026-05-05',
     titleEn: 'You Are Not Building Airplanes',

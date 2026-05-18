@@ -210,11 +210,7 @@
     ],
     "heroPainClosing": "If 2 of these feel familiar, one bad architectural decision costs more than this workshop.",
     "offerMeta": {
-      "earlyBirdLabel": "Early bird",
-      "earlyBirdPrice": "99,000 HUF",
-      "earlyBirdDeadline": "until May 17",
-      "regularPriceLabel": "After that",
-      "regularPrice": "119,000 HUF",
+      "price": "119,000 HUF",
       "priceComparison": "Less than the first refactor sprint of a poorly chosen database."
     },
     "ctaPrimary": "Save my seat",
@@ -257,7 +253,7 @@
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "Book your seat — with low risk.",
-    "ctaSecondaryBody": "2 days in Budapest, June 11-12. Early bird is 99,000 HUF until May 17. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "ctaSecondaryBody": "2 days in Budapest, June 11-12. 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
     "checkoutNote": "Secure Stripe payment. Right after payment, I send a short questionnaire so the workshop can be tailored to your own examples.",
     "ctaSecondaryButton": "Reserve my seat now",
     "fullProgramLinkLabel": "See the full program details",
@@ -358,7 +354,7 @@
       ]
     },
     "programFooterCtaTitle": "Book your seat — with low risk.",
-    "programFooterCtaBody": "2 days in Budapest, June 11-12. Early bird is 99,000 HUF until May 17. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "programFooterCtaBody": "2 days in Budapest, June 11-12. 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
     "faqTitle": "Frequently asked questions",
     "faqCancellationLead": "In short, if you cannot attend:",
     "faqCancellationPoints": [

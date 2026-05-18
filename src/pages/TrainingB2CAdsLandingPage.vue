@@ -10,10 +10,8 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
-const EARLY_BIRD_DEADLINE_TIMESTAMP = new Date(2026, 4, 17).getTime()
-const MS_PER_DAY = 24 * 60 * 60 * 1000
 const STRIPE_CHECKOUT_URL =
-  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
+  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02'
 
 const { t, currentLang } = useI18n()
 const instructorImages = ['/weblica.jpg', '/webconf.jpg', '/cldrmeetup.jpg'] as const
@@ -27,7 +25,6 @@ const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
-const earlyBirdDeadlineLabel = computed(() => formatEarlyBirdDeadlineLabel(getEarlyBirdDaysLeft(Date.now()), currentLang.value))
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
@@ -35,34 +32,6 @@ let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
-
-function getLocalDayStart(timestamp: number) {
-  const date = new Date(timestamp)
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime()
-}
-
-function getEarlyBirdDaysLeft(nowTimestamp: number) {
-  const todayStart = getLocalDayStart(nowTimestamp)
-  const deadlineStart = getLocalDayStart(EARLY_BIRD_DEADLINE_TIMESTAMP)
-  return Math.ceil((deadlineStart - todayStart) / MS_PER_DAY)
-}
-
-function formatEarlyBirdDeadlineLabel(daysLeft: number, language: 'en' | 'hu') {
-  if (daysLeft < 0) {
-    return language === 'hu' ? 'Early bird lezárult' : 'Early bird ended'
-  }
-
-  if (daysLeft === 0) {
-    return language === 'hu' ? 'Már csak ma' : 'Last day'
-  }
-
-  if (language === 'hu') {
-    return `Már csak ${daysLeft} napig`
-  }
-
-  const dayLabel = daysLeft === 1 ? 'day' : 'days'
-  return `Only ${daysLeft} ${dayLabel} left`
-}
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -287,11 +256,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="hero-pain-closing">{{ t('trainingB2cAds.heroPainClosing') }}</p>
       </div>
       <div class="offer-meta fade fade--4">
-        <p class="offer-meta__early">
-          <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
-          <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
-          <span class="offer-meta__deadline">{{ earlyBirdDeadlineLabel }}</span>
-        </p>
+        <p class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.price') }}</p>
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
 
@@ -697,53 +662,10 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   max-width: 60ch;
 }
 
-.offer-meta__early {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.45rem;
-}
-
-.offer-meta__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.12rem 0.5rem;
-  border: 1px solid var(--landing-border);
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
 .offer-meta__price {
+  margin: 0;
   font-size: 1.15rem;
   font-weight: 800;
-}
-
-.offer-meta__deadline {
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.offer-meta__regular {
-  margin: 0.2rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem;
-  color: var(--color-text-muted);
-}
-
-.offer-meta__regular-label {
-  font-size: 0.9rem;
-}
-
-.offer-meta__regular-price {
-  font-size: 0.95rem;
-  text-decoration: line-through;
-  text-decoration-thickness: 1.5px;
 }
 
 .offer-meta__compare {

@@ -210,11 +210,7 @@
     ],
     "heroPainClosing": "Ha ebből 2 ismerős: egy rossz architekturális döntés többe kerül, mint ez a workshop.",
     "offerMeta": {
-      "earlyBirdLabel": "Early bird",
-      "earlyBirdPrice": "99.000 Ft",
-      "earlyBirdDeadline": "május 17-ig",
-      "regularPriceLabel": "Utána",
-      "regularPrice": "119.000 Ft",
+      "price": "119.000 Ft",
       "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."
     },
     "ctaPrimary": "Lefoglalom a helyem",
@@ -257,7 +253,7 @@
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "Foglald le a helyed — kockázat nélkül.",
-    "ctaSecondaryBody": "2 nap, Budapest, június 11-12. Early bird 99.000 Ft május 17-ig. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
+    "ctaSecondaryBody": "2 nap, Budapest, június 11-12. 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "checkoutNote": "Biztonságos Stripe fizetés. A fizetés után azonnal küldök egy rövid kérdőívet, hogy a saját példáidra szabhassam a workshopot.",
     "ctaSecondaryButton": "Jelentkezem most",
     "fullProgramLinkLabel": "Megnézem a részletes programot",
@@ -358,7 +354,7 @@
       ]
     },
     "programFooterCtaTitle": "Foglald le a helyed — kockázat nélkül.",
-    "programFooterCtaBody": "2 nap, Budapest, június 11-12. Early bird 99.000 Ft május 17-ig. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
+    "programFooterCtaBody": "2 nap, Budapest, június 11-12. 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "faqTitle": "Gyakori kérdések",
     "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
     "faqCancellationPoints": [

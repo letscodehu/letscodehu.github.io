@@ -17,7 +17,7 @@ Consent-aware helpers (GA only if analytics accepted; FB only if marketing accep
 
 ## Payment link
 
-- Canonical Stripe Payment Link: `https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD` — defined as `STRIPE_CHECKOUT_URL` in `TrainingB2CAdsLandingPage.vue`.
+- Canonical Stripe Payment Link: `https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02` — defined as `STRIPE_CHECKOUT_URL` in `TrainingB2CAdsLandingPage.vue`.
 
 ## Runtime/config impact
 

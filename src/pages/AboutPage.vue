@@ -10,7 +10,7 @@ const { t } = useI18n()
 <template>
   <article>
     <header class="page-header">
-      <img src="/me.jpg" :alt="t('about.photoAlt')" class="about-photo" />
+      <img src="/weblica.jpg" :alt="t('about.photoAlt')" class="about-photo" />
       <div class="page-header-text">
         <h1 class="page-title">
           {{ t('about.pageTitle') }}
@@ -156,24 +156,25 @@ const { t } = useI18n()
 <style scoped>
 .page-header {
   margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, min(22rem, 100%)) 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 @media (max-width: 640px) {
   .page-header {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
 
 .about-photo {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
+  width: 100%;
+  height: clamp(14rem, 32vw, 22rem);
+  border-radius: var(--radius-md);
   object-fit: cover;
-  flex-shrink: 0;
+  object-position: center 25%;
   display: block;
 }
 

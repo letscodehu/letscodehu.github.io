@@ -215,6 +215,9 @@
     },
     "ctaPrimary": "Save my seat",
     "ctaSeatsLeft": "Only 3 seats left",
+    "applicationDeadlineLabel": "Application deadline",
+    "applicationDeadlineDate": "June 1",
+    "applicationDeadline": "Application deadline: June 1.",
     "heroReassurancePoints": [
       "Company invoice available",
       "If the workshop is cancelled, you get a 100% refund within 3 business days",

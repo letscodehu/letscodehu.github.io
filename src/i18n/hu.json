@@ -215,6 +215,9 @@
     },
     "ctaPrimary": "Lefoglalom a helyem",
     "ctaSeatsLeft": "Már csak 3 hely maradt",
+    "applicationDeadlineLabel": "Jelentkezési határidő",
+    "applicationDeadlineDate": "június 1.",
+    "applicationDeadline": "Jelentkezési határidő: június 1.",
     "heroReassurancePoints": [
       "Számla cégre is kérhető",
       "Ha elmarad a workshop, 100% vissza 3 munkanapon belül",

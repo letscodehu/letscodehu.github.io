@@ -260,6 +260,11 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
 
+      <div class="application-deadline-badge fade fade--5" :aria-label="t('trainingB2cAds.applicationDeadline')">
+        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.applicationDeadlineLabel') }}</span>
+        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.applicationDeadlineDate') }}</span>
+      </div>
+
       <div ref="heroCtaEl" class="hero-actions fade fade--5">
         <BaseButton @click="handlePrimaryCtaClick('hero')">
           {{ t('trainingB2cAds.ctaPrimary') }}
@@ -406,6 +411,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         </RouterLink>
       </div>
       <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
+      <p class="application-deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
       <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
@@ -442,6 +448,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         </RouterLink>
       </div>
       <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
+      <p class="application-deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
       <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
     </section>
 
@@ -457,6 +464,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
             {{ t('trainingB2cAds.ctaPrimary') }}
           </BaseButton>
           <p class="training-b2c-ads-sticky-waitlist__seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
+          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
         </div>
       </div>
     </Teleport>
@@ -628,33 +636,39 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   color: var(--color-text);
 }
 
-.hero-trust-badge-wrap {
+.application-deadline-badge {
   position: relative;
   z-index: 2;
-  margin-top: 1rem;
+  margin-top: 1.1rem;
   display: inline-flex;
-  max-width: min(100%, 44rem);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 72%, var(--landing-border));
+  border-radius: 999px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--landing-accent) 24%, transparent);
 }
 
-.hero-trust-badge {
-  margin: 0;
+.application-deadline-badge__label,
+.application-deadline-badge__date {
   display: inline-flex;
-  border: 1px solid color-mix(in srgb, var(--landing-accent) 58%, var(--landing-border));
-  background: color-mix(in srgb, var(--landing-accent-soft) 78%, var(--color-surface));
-  border-radius: 0.5rem;
-  transform: skewX(-12deg);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--landing-accent) 18%, transparent);
-}
-
-.hero-trust-badge__text {
-  display: inline-block;
-  padding: 0.52rem 0.88rem;
-  transform: skewX(12deg);
-  font-size: 0.88rem;
+  align-items: center;
+  padding: 0.5rem 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.application-deadline-badge__label {
+  background: var(--landing-accent);
+  color: #111827;
+}
+
+.application-deadline-badge__date {
+  background: color-mix(in srgb, var(--landing-accent-soft) 70%, var(--color-surface));
   color: var(--color-text);
-  letter-spacing: 0.01em;
 }
 
 .offer-meta {
@@ -1074,6 +1088,13 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   color: var(--landing-accent);
 }
 
+.application-deadline {
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 .final-cta-actions {
   margin-top: 1rem;
   display: flex;
@@ -1153,19 +1174,17 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     height: clamp(12rem, 56vw, 16rem);
   }
 
-  .hero-trust-badge-wrap {
-    max-width: 100%;
-  }
-
-  .hero-trust-badge {
+  .application-deadline-badge {
     width: 100%;
-    transform: skewX(-8deg);
+    max-width: 22rem;
   }
 
-  .hero-trust-badge__text {
-    transform: skewX(8deg);
-    font-size: 0.83rem;
-    padding: 0.5rem 0.72rem;
+  .application-deadline-badge__label,
+  .application-deadline-badge__date {
+    justify-content: center;
+    flex: 1;
+    padding-inline: 0.62rem;
+    font-size: 0.72rem;
   }
 }
 
@@ -1234,6 +1253,13 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--landing-accent, #f97316);
+  }
+
+  .training-b2c-ads-sticky-waitlist__deadline {
+    margin: -0.2rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text, #0f172a);
   }
 
   .training-b2c-ads-sticky-waitlist .button {

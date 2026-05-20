@@ -112,3 +112,7 @@
 - Tightened instructor intro to a short method-credibility statement while keeping long-form external proof links intact.
 - Removed testimonials section and translation keys to avoid soft social-proof mismatch on a first live cohort funnel.
 - Aligned final CTA and post-program CTA to the same reassurance-heavy message (refund-on-cancel, transferable seat, company invoice).
+
+## B2C application deadline
+
+- Added shared deadline copy keys in HU/EN and rendered the hero deadline as a dedicated badge, with compact reminder text beside the later workshop CTAs and mobile sticky CTA.

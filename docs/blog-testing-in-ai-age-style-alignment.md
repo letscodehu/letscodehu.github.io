@@ -13,3 +13,4 @@
 - Strengthened title alignment in HU article: framed unit-test frustration as a long-standing software design issue (coupling), with AI amplifying that structural weakness.
 - Expanded HU conclusion with historical framing: teams have long neglected test quality; AI-generated tests do not remove this cost, they expose and scale it.
 - Mirrored the same historical framing in EN conclusion to keep parity between language versions.
+- Added a follow-up sociable-test step in HU/EN: `OrderServiceFactory` centralizes wiring (`create` + `forTesting`), aligned with the article's `OrderService` / `PricingService` example domain.

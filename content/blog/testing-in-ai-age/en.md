@@ -151,6 +151,47 @@ void shouldCalculateFinalPriceForOrder() {
 
 This test style survives internal refactors much better, because it does not swear loyalty to internals.
 
+One weak spot remains: the test setup. When a new collaborator enters the `OrderService` constructor, the test still needs an update, even if business behavior stays the same.
+
+A factory class helps by keeping wiring in one place:
+
+```java
+class OrderServiceFactory {
+    @Bean
+    public OrderService create(OrderRepository repository) {
+        return new OrderService(new PricingService(), repository);
+    }
+
+    public OrderService forTesting() {
+        return create(new InMemoryOrderRepository());
+    }
+}
+```
+
+The `create` method wires `OrderService`: it receives the repository, instantiates `PricingService` alongside it, and builds `OrderService` from those parts.
+
+> The `@Bean` annotation tells Spring to produce `OrderService` from this method at runtime. In production you do not wire dependencies by hand with `new`; the framework injects the repository.
+
+`forTesting` reuses the same wiring logic with an in-memory repository meant for tests. In the test, we only depend on that entry point:
+
+```java
+@Test
+void shouldCalculateFinalPriceForOrder() {
+    OrderService service = new OrderServiceFactory().forTesting();
+
+    OrderRequest request = new OrderRequest(
+        List.of(new Item("Book", 2, Money.of(50)))
+    );
+
+    Order order = service.placeOrder(request);
+
+    assertThat(order.total())
+        .isEqualTo(Money.of(100));
+}
+```
+
+If an `AuditLogger` is added to `OrderService` later, that change stays inside the factory. The behavior-focused test can keep running unchanged.
+
 For completeness: solitary unit tests also have a place, just rarely.
 
 They are useful when you need to isolate purely algorithmic, deterministic logic, or when you are targeting a hard-to-reproduce edge case.

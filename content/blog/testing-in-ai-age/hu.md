@@ -157,6 +157,47 @@ void shouldCalculateFinalPriceForOrder() {
 
 Ez a típusú teszt sokkal jobban túléli a belső refaktorokat, mert nem az internálokra esküszik fel.
 
+Még mindig marad egy gyenge pont: a teszt setupja. Ha az `OrderService` konstruktorába új kollaborátor kerül, a tesztet is módosítani kell, még akkor is, ha az üzleti viselkedés ugyanaz marad.
+
+Itt segít egy factory class, ami egy helyen tartja az összerakást:
+
+```java
+class OrderServiceFactory {
+    @Bean
+    public OrderService create(OrderRepository repository) {
+        return new OrderService(new PricingService(), repository);
+    }
+
+    public OrderService forTesting() {
+        return create(new InMemoryOrderRepository());
+    }
+}
+```
+
+A `create` metódus összerakja az `OrderService`-t: megkapja a repository-t, mellette létrehozza a `PricingService`-t, és ezekkel példányosítja az `OrderService`-t.
+
+> A `@Bean` annotáció a Spring számára jelzi, hogy futásidőben ebből a metódusból jöjjön létre az `OrderService`. Productionben így nem kell kézzel `new`-olni a függőségeket: a keretrendszer injektálja a repository-t.
+
+A `forTesting` ugyanezt a wiring logikát használja, de tesztre szánt in-memory repositoryval. A tesztben már csak erre a belépési pontra támaszkodunk:
+
+```java
+@Test
+void shouldCalculateFinalPriceForOrder() {
+    OrderService service = new OrderServiceFactory().forTesting();
+
+    OrderRequest request = new OrderRequest(
+        List.of(new Item("Book", 2, Money.of(50)))
+    );
+
+    Order order = service.placeOrder(request);
+
+    assertThat(order.total())
+        .isEqualTo(Money.of(100));
+}
+```
+
+Ha később pl. egy `AuditLogger` is bekerül az `OrderService`-be, a változás a factoryban marad. A viselkedésfókuszú teszt változatlanul fut tovább.
+
 A képhez hozzátartozik, hogy a solitary unit tesztnek is van helye, csak ritkán.
 
 Ilyen például, amikor egy tisztán algoritmikus, determinisztikus logikát akarunk izoláltan védeni, vagy egy nehezen reprodukálható edge case-t célzunk.

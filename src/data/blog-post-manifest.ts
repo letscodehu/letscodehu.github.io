@@ -16,6 +16,16 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'problem-with-best-practices',
+    publishedAt: '2026-05-21',
+    titleEn: 'The Problem With Best Practices',
+    titleHu: 'A best practice-ek problémája',
+    excerptEn:
+      'Best practices are optimized answers to somebody else’s problems. Copy them without context and you pay in coordination, speed, and trust.',
+    excerptHu:
+      'A best practice-ek valaki más problémájára optimalizált válaszok. Kontextus nélkül átvéve koordinációs, sebességi és bizalmi költséget fizetsz.',
+  },
+  {
     slug: 'testing-in-ai-age',
     publishedAt: '2026-05-11',
     titleEn: 'Tests Have Always Been Neglected. AI Made It Worse.',

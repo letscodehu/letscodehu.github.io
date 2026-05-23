@@ -116,3 +116,7 @@
 ## B2C application deadline
 
 - Added shared deadline copy keys in HU/EN and rendered the hero deadline as a dedicated badge, with compact reminder text beside the later workshop CTAs and mobile sticky CTA.
+
+## B2C bank transfer FAQ
+
+- Added a payment FAQ item in HU/EN for bank transfer requests, directing users to `krisztian@letscode.hu` for manual coordination.

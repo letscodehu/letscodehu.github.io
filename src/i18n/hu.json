@@ -410,6 +410,12 @@
         ]
       },
       {
+        "question": "Lehet átutalással is fizetni?",
+        "paragraphs": [
+          "Igen. Ebben az esetben keress a krisztian@letscode.hu e-mail címen, és egyeztetjük a részleteket."
+        ]
+      },
+      {
         "question": "Mi történik, ha nem tudok részt venni?",
         "variant": "cancellation"
       },

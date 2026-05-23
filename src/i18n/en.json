@@ -410,6 +410,12 @@
         ]
       },
       {
+        "question": "Can I pay by bank transfer?",
+        "paragraphs": [
+          "Yes. In that case, contact us at krisztian@letscode.hu, and we will arrange the details."
+        ]
+      },
+      {
         "question": "What if I cannot attend?",
         "variant": "cancellation"
       },

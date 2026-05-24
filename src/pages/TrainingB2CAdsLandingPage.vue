@@ -248,14 +248,20 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     <section class="hero">
       <p class="eyebrow fade fade--1">{{ t('trainingB2cAds.eyebrow') }}</p>
       <h1 class="hero-title fade fade--2">{{ t('trainingB2cAds.heroTitle') }}</h1>
-      <div class="hero-pain fade fade--3">
+      <div class="hero-audience fade fade--3">
+        <p class="hero-audience__intro">{{ t('trainingB2cAds.heroAudienceIntro') }}</p>
+        <ul class="hero-audience__list">
+          <li v-for="point in t('trainingB2cAds.heroAudiencePoints')" :key="point">{{ point }}</li>
+        </ul>
+      </div>
+      <div class="hero-pain fade fade--4">
         <p class="hero-pain-title">{{ t('trainingB2cAds.heroPainTitle') }}</p>
         <ul class="hero-pain-list">
           <li v-for="point in t('trainingB2cAds.heroPainPoints')" :key="point">{{ point }}</li>
         </ul>
         <p class="hero-pain-closing">{{ t('trainingB2cAds.heroPainClosing') }}</p>
       </div>
-      <div class="offer-meta fade fade--4">
+      <div class="offer-meta fade fade--5">
         <p class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.price') }}</p>
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
@@ -286,6 +292,22 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       </RouterLink>
     </section>
 
+    <section class="instructor-snapshot section-reveal" data-section-reveal>
+      <img
+        class="instructor-snapshot__image"
+        :src="instructorImages[0]"
+        :alt="t('trainingB2cAds.instructorImagePlaceholderAria')"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="instructor-snapshot__copy">
+        <p class="instructor-snapshot__eyebrow">{{ t('trainingB2cAds.instructorSnapshotEyebrow') }}</p>
+        <h2 class="instructor-snapshot__name">{{ t('trainingB2cAds.instructorSnapshotName') }}</h2>
+        <p class="instructor-snapshot__role">{{ t('trainingB2cAds.instructorSnapshotRole') }}</p>
+        <p class="instructor-snapshot__proof">{{ t('trainingB2cAds.instructorSnapshotProof') }}</p>
+      </div>
+    </section>
+
     <section class="outcomes section-reveal" data-section-reveal>
       <h2 class="section-title">{{ t('trainingB2cAds.outcomesTitle') }}</h2>
       <ul class="outcome-grid">
@@ -293,74 +315,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
           {{ item }}
         </li>
       </ul>
-    </section>
-
-    <section class="instructor section-reveal" data-section-reveal>
-      <div class="instructor-media" role="img" :aria-label="t('trainingB2cAds.instructorImagePlaceholderAria')">
-        <Transition name="instructor-fade" mode="out-in">
-          <img
-            :key="instructorImages[currentImageIndex]"
-            class="instructor-image"
-            :src="instructorImages[currentImageIndex]"
-            :alt="t('trainingB2cAds.instructorImagePlaceholderAria')"
-            loading="lazy"
-            decoding="async"
-          />
-        </Transition>
-      </div>
-      <div class="instructor-copy">
-        <h2 class="section-title">{{ t('trainingB2cAds.instructorTitle') }}</h2>
-        <p>{{ t('trainingB2cAds.instructorBody1') }}</p>
-        <p>
-          {{ instructorBody2Parts.beforeDevops }}
-          <a
-            class="instructor-inline-link"
-            :href="instructorLinks.devopsPracticesUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ instructorLinks.devopsPracticesLabel }}
-          </a>
-          {{ instructorBody2Parts.betweenDevopsAndAdr }}
-          <a
-            class="instructor-inline-link"
-            :href="instructorLinks.adrUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ instructorLinks.adrLabel }}
-          </a>
-          {{ instructorBody2Parts.betweenAdrAndKrisztian }}
-          <a
-            class="instructor-inline-link"
-            :href="instructorLinks.krisztianUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ instructorLinks.krisztianLabel }}
-          </a>
-          {{ instructorBody2Parts.betweenKrisztianAndCommunity }}
-          <a
-            class="instructor-inline-link"
-            :href="instructorLinks.communityUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ instructorLinks.communityLabel }}
-          </a>
-          {{ instructorBody2Parts.afterCommunity }}
-          {{ instructorBody2Parts.beforePodcast }}
-          <a
-            class="instructor-inline-link"
-            :href="instructorLinks.soundcloudUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ instructorLinks.soundcloudLabel }}
-          </a>
-          {{ instructorBody2Parts.afterPodcast }}
-        </p>
-      </div>
     </section>
 
     <section id="ads-faq" class="faq section-reveal" data-section-reveal aria-labelledby="ads-faq-title">
@@ -433,6 +387,74 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="instructor section-reveal" data-section-reveal>
+      <div class="instructor-media" role="img" :aria-label="t('trainingB2cAds.instructorImagePlaceholderAria')">
+        <Transition name="instructor-fade" mode="out-in">
+          <img
+            :key="instructorImages[currentImageIndex]"
+            class="instructor-image"
+            :src="instructorImages[currentImageIndex]"
+            :alt="t('trainingB2cAds.instructorImagePlaceholderAria')"
+            loading="lazy"
+            decoding="async"
+          />
+        </Transition>
+      </div>
+      <div class="instructor-copy">
+        <h2 class="section-title">{{ t('trainingB2cAds.instructorTitle') }}</h2>
+        <p>{{ t('trainingB2cAds.instructorBody1') }}</p>
+        <p>
+          {{ instructorBody2Parts.beforeDevops }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.devopsPracticesUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.devopsPracticesLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenDevopsAndAdr }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.adrUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.adrLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenAdrAndKrisztian }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.krisztianUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.krisztianLabel }}
+          </a>
+          {{ instructorBody2Parts.betweenKrisztianAndCommunity }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.communityUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.communityLabel }}
+          </a>
+          {{ instructorBody2Parts.afterCommunity }}
+          {{ instructorBody2Parts.beforePodcast }}
+          <a
+            class="instructor-inline-link"
+            :href="instructorLinks.soundcloudUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ instructorLinks.soundcloudLabel }}
+          </a>
+          {{ instructorBody2Parts.afterPodcast }}
+        </p>
       </div>
     </section>
 
@@ -570,6 +592,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
 .eyebrow,
 .hero-title,
+.hero-audience,
 .hero-pain,
 .hero-pain-title,
 .hero-pain-closing,
@@ -596,6 +619,39 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   letter-spacing: -0.02em;
   line-height: 1.05;
   font-size: clamp(1.9rem, 6.2vw, 3.4rem);
+}
+
+.hero-audience {
+  margin: 1rem 0 0;
+  max-width: 66ch;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 34%, var(--landing-border));
+  border-radius: var(--radius-md);
+  padding: clamp(0.85rem, 2vw, 1.05rem);
+  background: color-mix(in srgb, var(--landing-accent-soft) 42%, var(--color-surface));
+}
+
+.hero-audience__intro {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1rem, 2.2vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.hero-audience__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: clamp(0.95rem, 2vw, 1.04rem);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.hero-audience__list li + li {
+  margin-top: 0.28rem;
+}
+
+.hero-audience__list li::marker {
+  color: var(--landing-accent);
 }
 
 .hero-pain {
@@ -739,6 +795,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 }
 
 .proof,
+.instructor-snapshot,
 .outcomes,
 .instructor,
 .testimonials,
@@ -757,6 +814,56 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(1.25rem, 3.6vw, 1.75rem);
   letter-spacing: -0.01em;
+}
+
+.instructor-snapshot {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(0.85rem, 2.4vw, 1.25rem);
+  align-items: center;
+  background: linear-gradient(135deg, var(--landing-panel-bg) 0%, var(--landing-accent-soft) 140%);
+}
+
+.instructor-snapshot__image {
+  width: clamp(5.5rem, 14vw, 7.5rem);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 42%, var(--landing-border));
+  border-radius: 28% 72% 62% 38% / 36% 36% 64% 64%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--landing-accent) 18%, transparent);
+}
+
+.instructor-snapshot__eyebrow {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+.instructor-snapshot__name {
+  margin: 0.18rem 0 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.instructor-snapshot__role {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.instructor-snapshot__proof {
+  margin: 0.55rem 0 0;
+  max-width: 68ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
 }
 
 .proof-list {
@@ -1159,6 +1266,10 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   }
 
   .outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-snapshot {
     grid-template-columns: 1fr;
   }
 

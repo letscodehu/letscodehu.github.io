@@ -120,3 +120,14 @@
 ## B2C bank transfer FAQ
 
 - Added a payment FAQ item in HU/EN for bank transfer requests, directing users to `krisztian@letscode.hu` for manual coordination.
+
+## B2C hero audience qualifier
+
+- Added a short audience qualifier block between the workshop hero title and the “Ismerős?” pain section on `TrainingB2CAdsLandingPage`.
+- Stored the new copy in `trainingB2cAds.heroAudienceIntro` and `trainingB2cAds.heroAudiencePoints` for both HU/EN locales.
+- Aligned the first FAQ answer (`Kinek szól ez a workshop?` / `Who is this workshop for?`) with the same audience positioning.
+
+## B2C section order refinement
+
+- Moved the instructor block below the detailed program on `TrainingB2CAdsLandingPage`, before the program footer CTA.
+- Added a compact instructor snapshot before the outcomes section, using the first instructor image and dedicated HU/EN i18n copy.

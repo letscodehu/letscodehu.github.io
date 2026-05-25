@@ -25,7 +25,6 @@ const primaryNavItems = computed(() => [
 const navItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
-  { name: t('nav.caseStudies'), to: { name: 'case-studies-en', params: { lang: currentLang.value } } },
   { name: t('nav.blog'), to: { name: 'blog-list-en', params: { lang: currentLang.value } } },
   { name: t('nav.contact'), to: { name: 'contact-en', params: { lang: currentLang.value } } },
 ])
@@ -40,8 +39,17 @@ const TRAINING_NAV_ACTIVE_NAMES = new Set([
   'workshop-en',
 ])
 
+const BLOG_NAV_ACTIVE_NAMES = new Set([
+  'blog-list-en',
+  'blog-post-detail-en',
+  'case-study-detail-en',
+])
+
 function isNavLinkActive(item: (typeof navItems)['value'][number]): boolean {
   const routeName = currentPathName.value
+  if (item.to.name === 'blog-list-en') {
+    return BLOG_NAV_ACTIVE_NAMES.has(routeName)
+  }
   return item.to.name === routeName
 }
 

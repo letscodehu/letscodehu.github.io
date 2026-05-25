@@ -8,7 +8,6 @@ import WorkshopPage from '../pages/WorkshopPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
-import CaseStudiesPage from '../pages/CaseStudiesPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import BlogPostDetailPage from '../pages/BlogPostDetailPage.vue'
@@ -81,10 +80,11 @@ const childRoutes: RouteRecordRaw[] = [
   },
   {
     path: 'case-studies',
-    name: 'case-studies-en',
-    component: CaseStudiesPage,
     alias: 'esettanulmanyok',
-    meta: { titleKey: 'caseStudies.pageTitle', descriptionKey: 'seo.descriptions.caseStudies' },
+    redirect: (to) => ({
+      name: 'blog-list-en',
+      params: { lang: to.params.lang },
+    }),
   },
   {
     path: 'case-studies/:slug',

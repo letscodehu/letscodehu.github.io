@@ -11,7 +11,6 @@ const STATIC_SEGMENTS = [
   'consulting',
   'about',
   'contact',
-  'case-studies',
   'blog',
   'privacy',
 ] as const
@@ -26,7 +25,6 @@ const HU_STATIC_ALIASES: string[] = [
   'tanacsadas',
   'rolam',
   'kapcsolat',
-  'esettanulmanyok',
   'cikkek',
 ]
 

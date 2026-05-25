@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import { blogPosts } from '../data/blog-posts'
+import { caseStudies, localizeCaseStudy } from '../data/case-studies'
 
 const { t, currentLang } = useI18n()
 
@@ -29,6 +30,10 @@ const postsWithLabels = computed(() =>
     featuredImagePath: post.featuredImagePath,
   }))
 )
+
+const displayedCaseStudies = computed(() =>
+  caseStudies.map((cs) => localizeCaseStudy(cs, currentLang.value))
+)
 </script>
 
 <template>
@@ -43,6 +48,7 @@ const postsWithLabels = computed(() =>
     </header>
 
     <section class="section">
+      <h2 class="section-title">{{ t('nav.blogArticles') }}</h2>
       <div class="grid grid--two">
         <RouterLink
           v-for="post in postsWithLabels"
@@ -72,6 +78,29 @@ const postsWithLabels = computed(() =>
         </RouterLink>
       </div>
     </section>
+
+    <section class="section">
+      <h2 class="section-title">{{ t('caseStudies.pageTitle') }}</h2>
+      <p v-if="t('caseStudies.intro')" class="section-intro">
+        {{ t('caseStudies.intro') }}
+      </p>
+      <div class="grid grid--two">
+        <RouterLink
+          v-for="cs in displayedCaseStudies"
+          :key="cs.slug"
+          :to="{
+            name: 'case-study-detail-en',
+            params: { lang: currentLang, slug: cs.slug },
+          }"
+          class="card-link"
+        >
+          <BaseCard>
+            <template #title>{{ cs.title }}</template>
+            <template #subtitle>{{ cs.excerpt }}</template>
+          </BaseCard>
+        </RouterLink>
+      </div>
+    </section>
   </article>
 </template>
 
@@ -94,6 +123,18 @@ const postsWithLabels = computed(() =>
 
 .section {
   margin-bottom: 2.6rem;
+}
+
+.section-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.section-intro {
+  margin: -0.35rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  max-width: 44rem;
 }
 
 .grid {

@@ -3,7 +3,6 @@ const HU_HEAD_ALIASES: Record<string, string> = {
   tanacsadas: 'consulting',
   rolam: 'about',
   kapcsolat: 'contact',
-  esettanulmanyok: 'case-studies',
   cikkek: 'blog',
 }
 

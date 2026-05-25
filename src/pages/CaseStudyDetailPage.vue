@@ -125,7 +125,7 @@ watch(
   caseStudy,
   (cs) => {
     if (route.name === 'case-study-detail-en' && slug.value && !cs) {
-      router.replace({ name: 'case-studies-en', params: { lang: currentLang.value } })
+      router.replace({ name: 'blog-list-en', params: { lang: currentLang.value } })
     }
   },
   { immediate: true }
@@ -137,10 +137,10 @@ watch(
     <div class="case-study-main">
       <header class="page-header-block">
         <RouterLink
-          :to="{ name: 'case-studies-en', params: { lang: currentLang } }"
+          :to="{ name: 'blog-list-en', params: { lang: currentLang } }"
           class="back-link"
         >
-          ← {{ t('caseStudies.backToList') }}
+          ← {{ t('blog.backToList') }}
         </RouterLink>
         <p class="eyebrow">
           {{ t('caseStudies.eyebrow') }}

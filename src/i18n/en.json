@@ -565,7 +565,10 @@
     "validationEmailInvalid": "Please enter a valid email address.",
     "errorGeneric": "Could not continue right now. Please try again in a minute.",
     "errorTimeout": "Request timed out. Please try again.",
-    "errorNetwork": "Network error occurred. Please try again."
+    "errorNetwork": "Network error occurred. Please try again.",
+    "redirectTitle": "Redirecting you to payment shortly",
+    "redirectBody": "On the payment page you can finalize your booking.",
+    "redirectAriaLabel": "Redirecting to payment"
   },
   "workshop": {
     "pageTitle": "ADR and requirement alignment workshop",

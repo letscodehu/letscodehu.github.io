@@ -54,7 +54,7 @@
 - Added a separate high-conversion landing page route for paid campaigns while keeping the original B2C page unchanged:
   - `/en/training/workshop-budapest`
   - `/hu/kepzes/workshop-budapest` (canonicalized to `/hu/training/workshop-budapest`)
-- Added a new standalone page component `TrainingB2CAdsLandingPage` with short-funnel structure, repeated CTA, and the existing waitlist `SignupPopup` flow.
+- Added a new standalone page component `TrainingB2CAdsLandingPage` with short-funnel structure, repeated CTA, and checkout conversion via `CheckoutEmailPopup`.
 - Added dedicated i18n namespace `trainingB2cAds` in EN/HU plus `seo.descriptions.trainingB2cAds` metadata keys.
 - Included the new route and Hungarian alias in prerender path generation so static output and sitemap include campaign URLs.
 
@@ -131,3 +131,9 @@
 
 - Moved the instructor block below the detailed program on `TrainingB2CAdsLandingPage`, before the program footer CTA.
 - Added a compact instructor snapshot before the outcomes section, using the first instructor image and dedicated HU/EN i18n copy.
+
+## B2C checkout email popup (restored)
+
+- Primary CTAs on `TrainingB2CAdsLandingPage` open `CheckoutEmailPopup` again instead of direct Stripe navigation.
+- After email capture, the popup shows a redirect message for 4 seconds, then navigates to Stripe with `prefilled_email`.
+- See `docs/checkout-email-popup-flow.md` for analytics events and runtime details.

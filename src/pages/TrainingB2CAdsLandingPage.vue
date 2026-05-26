@@ -2,10 +2,11 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
+import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
 import { useI18n } from '../composables/useI18n'
 import {
   trackTrainingWorkshopCtaClick,
-  trackTrainingWorkshopStripeRedirect,
+  trackTrainingWorkshopEmailPopupOpen,
   type TrainingWorkshopCtaPlacement,
 } from '../tracking'
 
@@ -23,6 +24,7 @@ const heroCtaVisible = ref(true)
 const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
+const isCheckoutPopupOpen = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
 
@@ -189,9 +191,13 @@ onUnmounted(() => {
 })
 
 function handlePrimaryCtaClick(placement: TrainingWorkshopCtaPlacement) {
-  trackTrainingWorkshopCtaClick({ placement, nextStep: 'stripe_checkout' })
-  trackTrainingWorkshopStripeRedirect({ source: 'cta_direct' })
-  window.location.assign(STRIPE_CHECKOUT_URL)
+  trackTrainingWorkshopCtaClick({ placement, nextStep: 'email_popup' })
+  trackTrainingWorkshopEmailPopupOpen({ placement })
+  isCheckoutPopupOpen.value = true
+}
+
+function closeCheckoutPopup() {
+  isCheckoutPopupOpen.value = false
 }
 
 const faqItemsList = computed(() => {
@@ -490,6 +496,12 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         </div>
       </div>
     </Teleport>
+
+    <CheckoutEmailPopup
+      :open="isCheckoutPopupOpen"
+      :stripe-checkout-url="STRIPE_CHECKOUT_URL"
+      @close="closeCheckoutPopup"
+    />
   </article>
 </template>
 

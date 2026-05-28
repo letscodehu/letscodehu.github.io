@@ -269,6 +269,14 @@
     "ctaSecondaryTitle": "Book your seat — with low risk.",
     "ctaSecondaryBody": "2 days in Budapest, June 11-12. 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
     "checkoutNote": "Secure Stripe payment. Right after payment, I send a short questionnaire so the workshop can be tailored to your own examples.",
+    "latebirdPopup": {
+      "eyebrow": "LATEBIRD offer",
+      "title": "Get 10% off if you book your seat now",
+      "body": "Use the LATEBIRD coupon during signup and join the Architect Mindset workshop with a 10% discount.",
+      "acceptCta": "Apply now",
+      "cancelCta": "Keep reading",
+      "closeLabel": "Close LATEBIRD offer"
+    },
     "ctaSecondaryButton": "Reserve my seat now",
     "fullProgramLinkLabel": "See the full program details",
     "termsLinkLabel": "Terms & Conditions",

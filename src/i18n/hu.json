@@ -269,6 +269,14 @@
     "ctaSecondaryTitle": "Foglald le a helyed — kockázat nélkül.",
     "ctaSecondaryBody": "2 nap, Budapest, június 11-12. 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "checkoutNote": "Biztonságos Stripe fizetés. A fizetés után azonnal küldök egy rövid kérdőívet, hogy a saját példáidra szabhassam a workshopot.",
+    "latebirdPopup": {
+      "eyebrow": "LATEBIRD ajánlat",
+      "title": "10% kedvezmény, ha most foglalod a helyed",
+      "body": "Használd a LATEBIRD kupont a jelentkezésnél, és 10% kedvezménnyel csatlakozhatsz az Architect Mindset workshophoz.",
+      "acceptCta": "Jelentkezem",
+      "cancelCta": "Még olvasok",
+      "closeLabel": "LATEBIRD ajánlat bezárása"
+    },
     "ctaSecondaryButton": "Jelentkezem most",
     "fullProgramLinkLabel": "Megnézem a részletes programot",
     "termsLinkLabel": "Részvételi feltételek",

@@ -3,6 +3,7 @@ import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
 import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
+import LatebirdOfferPopup from '../components/ui/LatebirdOfferPopup.vue'
 import { useI18n } from '../composables/useI18n'
 import {
   trackTrainingWorkshopCtaClick,
@@ -11,6 +12,9 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
+const LATEBIRD_POPUP_DELAY_MS = 50000
+const LATEBIRD_SCROLL_THRESHOLD = 0.4
+const LATEBIRD_POPUP_STORAGE_KEY = 'letscode.trainingB2cAds.latebirdPopupSeen'
 const STRIPE_CHECKOUT_URL =
   'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02'
 
@@ -25,15 +29,20 @@ const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
 const isCheckoutPopupOpen = ref(false)
+const isLatebirdOfferOpen = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
+let latebirdPopupTimer: ReturnType<typeof setTimeout> | null = null
 let heroObserver: IntersectionObserver | null = null
 let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
+let latebirdPopupShown = false
+let latebirdDelayElapsed = false
+let latebirdScrollThresholdReached = false
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -153,6 +162,121 @@ function teardownSectionRevealObserver() {
   sectionRevealObserver = null
 }
 
+function hasSeenLatebirdPopup() {
+  if (typeof window === 'undefined') {
+    return true
+  }
+
+  try {
+    return window.localStorage.getItem(LATEBIRD_POPUP_STORAGE_KEY) === 'true'
+  } catch {
+    return latebirdPopupShown
+  }
+}
+
+function markLatebirdPopupSeen() {
+  latebirdPopupShown = true
+
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  try {
+    window.localStorage.setItem(LATEBIRD_POPUP_STORAGE_KEY, 'true')
+  } catch {
+    // Private browsing and strict storage settings can reject localStorage writes.
+  }
+}
+
+function openLatebirdOfferPopup() {
+  if (hasSeenLatebirdPopup() || isLatebirdOfferOpen.value || isCheckoutPopupOpen.value) {
+    return
+  }
+
+  markLatebirdPopupSeen()
+  isLatebirdOfferOpen.value = true
+}
+
+function closeLatebirdOfferPopup() {
+  isLatebirdOfferOpen.value = false
+}
+
+async function handleLatebirdOfferAccept() {
+  isLatebirdOfferOpen.value = false
+  await nextTick()
+  handlePrimaryCtaClick('latebird_popup')
+}
+
+function evaluateLatebirdTimedScrollTrigger() {
+  if (!latebirdDelayElapsed || !latebirdScrollThresholdReached) {
+    return
+  }
+
+  openLatebirdOfferPopup()
+}
+
+function syncLatebirdScrollProgress() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return
+  }
+
+  const documentElement = document.documentElement
+  const maxScroll = documentElement.scrollHeight - window.innerHeight
+  if (maxScroll <= 0) {
+    return
+  }
+
+  const scrollProgress = window.scrollY / maxScroll
+  if (scrollProgress < LATEBIRD_SCROLL_THRESHOLD) {
+    return
+  }
+
+  latebirdScrollThresholdReached = true
+  evaluateLatebirdTimedScrollTrigger()
+}
+
+function handleLatebirdExitIntent(event: MouseEvent) {
+  if (typeof window === 'undefined' || isMobileViewport.value || event.clientY > 0) {
+    return
+  }
+
+  openLatebirdOfferPopup()
+}
+
+function clearLatebirdPopupTimer() {
+  if (latebirdPopupTimer == null) {
+    return
+  }
+
+  window.clearTimeout(latebirdPopupTimer)
+  latebirdPopupTimer = null
+}
+
+function setupLatebirdPopupTriggers() {
+  if (typeof window === 'undefined' || typeof document === 'undefined' || hasSeenLatebirdPopup()) {
+    return
+  }
+
+  latebirdPopupTimer = window.setTimeout(() => {
+    latebirdDelayElapsed = true
+    evaluateLatebirdTimedScrollTrigger()
+  }, LATEBIRD_POPUP_DELAY_MS)
+
+  window.addEventListener('scroll', syncLatebirdScrollProgress, { passive: true })
+  document.addEventListener('mouseleave', handleLatebirdExitIntent)
+  syncLatebirdScrollProgress()
+}
+
+function teardownLatebirdPopupTriggers() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return
+  }
+
+  clearLatebirdPopupTimer()
+  window.removeEventListener('scroll', syncLatebirdScrollProgress)
+  document.removeEventListener('mouseleave', handleLatebirdExitIntent)
+}
+
 onMounted(() => {
   syncMobileViewport()
   if (typeof window !== 'undefined') {
@@ -174,11 +298,14 @@ onMounted(() => {
     setupObservers()
     setupSectionRevealObserver()
   })
+
+  setupLatebirdPopupTriggers()
 })
 
 onUnmounted(() => {
   teardownObservers()
   teardownSectionRevealObserver()
+  teardownLatebirdPopupTriggers()
   mediaQuery?.removeEventListener('change', syncMobileViewport)
   mediaQuery = null
 
@@ -501,6 +628,11 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       :open="isCheckoutPopupOpen"
       :stripe-checkout-url="STRIPE_CHECKOUT_URL"
       @close="closeCheckoutPopup"
+    />
+    <LatebirdOfferPopup
+      :open="isLatebirdOfferOpen"
+      @close="closeLatebirdOfferPopup"
+      @accept="handleLatebirdOfferAccept"
     />
   </article>
 </template>

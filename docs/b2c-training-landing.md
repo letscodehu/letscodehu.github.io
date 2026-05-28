@@ -137,3 +137,9 @@
 - Primary CTAs on `TrainingB2CAdsLandingPage` open `CheckoutEmailPopup` again instead of direct Stripe navigation.
 - After email capture, the popup shows a redirect message for 4 seconds, then navigates to Stripe with `prefilled_email`.
 - See `docs/checkout-email-popup-flow.md` for analytics events and runtime details.
+
+## B2C LATEBIRD offer popup
+
+- Added `LatebirdOfferPopup` as a focused offer modal for the workshop landing, with copy sourced from `trainingB2cAds.latebirdPopup`.
+- `TrainingB2CAdsLandingPage` opens the offer once per visitor via `localStorage`, either after 50 seconds plus 40% scroll depth, or on desktop exit intent.
+- Accepting the offer uses the existing checkout email popup flow and tracks the source as `latebird_popup`.

@@ -252,7 +252,7 @@ export function trackPageView(path: string) {
   }
 }
 
-export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom' | 'sticky'
+export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom' | 'sticky' | 'latebird_popup'
 
 export type TrainingWorkshopCtaNextStep = 'email_popup' | 'stripe_checkout'
 

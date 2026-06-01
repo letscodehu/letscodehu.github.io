@@ -1,0 +1,548 @@
+order_id,order_date,customer_id,city,channel,category,product_name,quantity,unit_price,revenue,discount,returning_flag,address,loyalty_tier
+ORD-2025-00001,2025-02-02,C0169,Kecskemet,facebook,Electronics,Vezetek nelkuli eger,1,7366.97,6998.62, 5%,nem,"7284 Kecskemet, Petofi utca 95.",
+ORD-2025-00002,2025-04-15,C0154,Szeged,online,Sports,Kulacs,4,3712.41,14849.64,0%,I,"9238 Szeged, Petofi utca 10.",
+ORD-2025-00003,2025-01-16,C0012,Budapest,instagram,Beauty,Sampon,2,3170.57,6024.08, 5%,1,"4478 Budapest, Petofi utca 73.",Platinum
+ORD-2025-00004,2025-02-28,C0163,Kecskemet,online,Sports,Kulacs,2,4392.3,8345.37,5%,true,"1608 Kecskemet, Duna sor 62.",
+ORD-2025-00005,2025-05-21,C0150,Szekesfehervar ,instagram,Sports,Joga matrac,2,8306.89,16613.78,20%,nem,"8892 Szekesfehervar, Duna sor 56.",
+ORD-2025-00006,2025-06-01,C0108,,online,Sports,Joga matrac,1,9589.65,9589.65,5%,no,"4363 Ismeretlen, Duna sor 12.",
+ORD-2025-00007,2025-01-02,C0047,Budapest,facebook,Beauty,Arckrem,4,5620.16,22480.64,15%,yes,"Budapest, Petofi utca 86.",
+ORD-2025-00008,2025-06-17,C0158,Gyor,email,Home,Keramia bogre,1,3822.11,3822.11,10%,false,"8832 Gyor, Petofi utca 69.",Bronze
+ORD-2025-00009,2025-06-02,C0094,Kecskemet,store,Sports,Joga matrac,5,8752.53,43762.65,n/a,nem,"9728 Kecskemet, Piac ter 52.",
+ORD-2025-00010,2025-04-07,C0146,Miskolc,online,Home,Tarolo doboz,1,4465.57,4019.01, 5%,yes,"1865 Miskolc, Fo utca 9.",
+ORD-2025-00011,2025-03-19,C0017,Budapest,online,Beauty,Arckrem,3,5527.92,16583.76,10%, Igen ,"2325 Budapest, Rakoczi ut 85.",
+ORD-2025-00012,2025-04-29,C0184,Budapest,online,Sports,Joga matrac,3,9958.91,29876.73,5%,I,"Budapest, Kossuth Lajos utca 21.",Platinum
+ORD-2025-00013,2025-01-30,C0146,Debrecen,Online,Electronics,Vezetek nelkuli eger,2,7213.2,14426.4,10%,false,"8958 Debrecen, Fo utca 16.",
+ORD-2025-00014,2025-05-02,C0092,Gyor,online,Sports,Kulacs,1,3721.76,3163.5,10%,I,"6603 Gyor, Petofi utca 44.",
+ORD-2025-00015,2025-04-05,C0003,Miskolc,fb,Sports,Kulacs,1,3905.96,3710.66,10%,false,"4386 Miskolc, Kossuth Lajos utca 15.",
+ORD-2025-00016,2025-02-23,C0116,Budapest,Online,Home,Tarolo doboz,1,4159.9,4159.9,20%,I,"9104 Budapest, Kossuth Lajos utca 24.",
+ORD-2025-00017,2025-06-30,C0158,Gyor,facebook,Beauty,Arckrem,4,5832.11,19829.17,0%,igen,"6622 Gyor, Kossuth Lajos utca 12.",
+ORD-2025-00018,2025-02-13,C0091,Szekesfehervar ,store,Electronics,Vezetek nelkuli eger,8,6618.28,,20%,true,"8051 Szekesfehervar, Kossuth Lajos utca 65.",
+ORD-2025-00019,2025-01-14,C0062,Miskolc,web,Sports,Joga matrac,3,8775.88,26327.64,20%,igen,"6628 Miskolc, Fo utca 71.",
+ORD-2025-00020,2025-02-08,C0012,Pecs,Online,Beauty,Sampon,2,2928.23,5856.46,0%,0,"3651 Pecs, Kossuth Lajos utca 40.",
+ORD-2025-00021,2025-03-27,C0169,Kecskemet,online,Books,Adatvizualizacio jegyzet,4,7152.68,28610.72,15%,false,"Kecskemet, Rakoczi ut 12.",
+ORD-2025-00022,2025-05-26,C0052,Budapest,paid_search,Books,Python alapok konyv,2,8164.6,14696.28,10%,N,"9331 Budapest, Rakoczi ut 44.",Platinum
+ORD-2025-00023,2025-06-24,C0178,Gyor,email,Books,Adatvizualizacio jegyzet,2,6668.22,11335.97,5%,true,"8075 Gyor, Petofi utca 93.",Gold
+ORD-2025-00024,2025-05-16,C0094,Debrecen,fb,Electronics,USB-C kabel,3,2319.51,6958.53,0%, Igen ,"1269 Debrecen, Kossuth Lajos utca 55.",
+ORD-2025-00025,2025-05-30,C0009,Budapest,store,Books,Python alapok konyv,1,7523.62,7523.62, 5%,true,"Budapest, Fo utca 67.",Silver
+ORD-2025-00026,2025-06-20,C0136,Budapest,ONLINE,Books,Adatvizualizacio jegyzet,1,6639.17,6639.17,5%,yes,"1001 Budapest, Kossuth Lajos utca 35.",
+ORD-2025-00027,2025-06-30,C0166,Budapest,online,Electronics,Vezetek nelkuli eger,8,7383.5,47254.4,20%,yes,"1330 Budapest, Piac ter 44.",
+ORD-2025-00028,2025-03-12,C0098,Kecskemet,online,Home,Tarolo doboz,1,4222.57,3589.18,15%,I,"5756 Kecskemet, Kossuth Lajos utca 62.",
+ORD-2025-00029,2025-06-06,C0055,Gyor,paid_search,Beauty,Sampon,1,2937.54,2790.66,10%,false,"6547 Gyor, Fo utca 31.",
+ORD-2025-00030,2025-05-01,C0141,,email,Electronics,USB-C kabel,1,2773.7,2773.7, 5%,0,"3511 Ismeretlen, Rakoczi ut 59.",Silver
+ORD-2025-00031,2025-04-04,C0095,,online,Sports,Joga matrac,2,9798.52,19597.04,10%,false,"4899 Ismeretlen, Duna sor 69.",
+ORD-2025-00032,2025-02-17,C0170,Szekesfehervar ,web,Home,Keramia bogre,1,3656.95,3656.95,15%,nem,"4336 Szekesfehervar, Rakoczi ut 56.",
+ORD-2025-00033,2025-03-05,C0122,Budapest,Online,Sports,Joga matrac,8,9526.25,72399.5,5%,no,"2341 Budapest, Duna sor 36.",
+ORD-2025-00034,2025-04-24,C0012,Szeged,store,Electronics,Bluetooth hangszoro,12,12473.39,142196.65, 5%, Igen ,"1579 Szeged, Kossuth Lajos utca 8.",
+ORD-2025-00035,2025-04-06,C0107,Debrecen,instagram,Books,Adatvizualizacio jegyzet,3,6307.8,18923.4, 5%, Igen ,"8352 Debrecen, Petofi utca 87.",Silver
+ORD-2025-00036,2025-01-27,C0032,Budapest,paid_search,Sports,Joga matrac,8,8967.18,71737.44,10%,0,"6476 Budapest, Duna sor 73.",
+ORD-2025-00037,2025-06-19,C0012,Budapest,online,Beauty,Arckrem,1,5541.36,N/A, 5%,true,"Budapest, Rakoczi ut 61.",
+ORD-2025-00038,2025-04-04,C0005,Budapest,online,Electronics,Vezetek nelkuli eger,4,6707.49,26829.96, 5%,true,"7380 Budapest, Duna sor 22.",
+ORD-2025-00039,2025-05-26,C0079,Pecs,online,Beauty,Sampon,1,3081.26,2465.01,0%,1,"1103 Pecs, Petofi utca 95.",
+ORD-2025-00040,2025-05-08,C0160,Debrecen,store,Beauty,Arckrem,4,6359.74,24167.01,10%,I,"7952 Debrecen, Duna sor 21.",
+ORD-2025-00041,2025-05-09,C0018,,online,Home,Keramia bogre,2,3353.62,6036.52,0%,true,"4268 Ismeretlen, Petofi utca 31.",
+ORD-2025-00042,2025-03-30,C0049,Budapest,web,Books,Python alapok konyv,1,7977.48,7977.48,5%,1,"2573 Budapest, Kossuth Lajos utca 65.",
+ORD-2025-00043,2025-06-02,C0115,Szeged, online,Electronics,USB-C kabel,3,2536.49,7609.47,15%,no,"7678 Szeged, Petofi utca 43.",
+ORD-2025-00044,2025-01-26,C0114,Miskolc,Online,Home,Tarolo doboz,5,,17578.56,20%,0,"9310 Miskolc, Duna sor 89.",
+ORD-2025-00045,2025-05-01,C0025,Gyor,facebook,Books,Adatvizualizacio jegyzet,2,7023.37,14046.74,15%,N,"1068 Gyor, Rakoczi ut 65.",
+ORD-2025-00046,2025-02-03,C0079,Pecs,ONLINE,Electronics,Bluetooth hangszoro,1,12080.12,12080.12,5%,N,"5301 Pecs, Petofi utca 44.",
+ORD-2025-00047,2025-03-27,C0170,Pecs,email,Beauty,Sampon,2,2939.85,5879.7,5%,I,"7427 Pecs, Fo utca 51.",Bronze
+ORD-2025-00048,2025-01-07,C0065,Budapest,online,Books,Adatvizualizacio jegyzet,1,6109.38,6109.38,20%,igen,"9774 Budapest, Piac ter 69.",
+ORD-2025-00049,2025-01-18,C0011,, online,Books,Adatvizualizacio jegyzet,5,6683.85,26735.4,20%,true,"6783 Ismeretlen, Duna sor 92.",
+ORD-2025-00050,2025-03-09,C0069,Szekesfehervar ,facebook,Books,Adatvizualizacio jegyzet,1,6707.13,6707.13,20%,N,"8908 Szekesfehervar, Kossuth Lajos utca 17.",
+ORD-2025-00051,2025-04-08,C0039,Budapest,email,Electronics,Vezetek nelkuli eger,1,6879.99,6535.99,5%,igen,"7769 Budapest, Duna sor 87.",
+ORD-2025-00052,2025-05-20,C0052,Kecskemet,web,Books,Adatvizualizacio jegyzet,2,6843.91,12319.04,hiba,1,"8445 Kecskemet, Piac ter 49.",
+ORD-2025-00053,2025-01-31,C0004,Szekesfehervar ,fb,Home,Keramia bogre,1,3580.94,3580.94,20%,1,"3706 Szekesfehervar, Rakoczi ut 25.",
+ORD-2025-00054,2025-05-22,C0070,Kecskemet,facebook,Electronics,USB-C kabel,4,2507.8,10031.2,0%,0,"2172 Kecskemet, Petofi utca 35.",
+ORD-2025-00055,2025-06-19,C0099,Debrecen,instagram,Home,Keramia bogre,1,3340.15,2839.13, 5%, Igen ,"5209 Debrecen, Fo utca 10.",
+ORD-2025-00056,2025-05-23,C0089,,web,Electronics,Vezetek nelkuli eger,1,7575.13,7575.13,20%,true,"1586 Ismeretlen, Petofi utca 17.",
+ORD-2025-00057,2025-04-02,C0144,Budapest,online,Books,Adatvizualizacio jegyzet,1,7125.18,6768.92, 5%, Igen ,"5232 Budapest, Rakoczi ut 54.",
+ORD-2025-00058,2025-05-22,C0043,Szekesfehervar , online,Beauty,Sampon,2,2800.05,5600.1,0%,1,"2673 Szekesfehervar, Piac ter 76.",
+ORD-2025-00059,2025-01-21,C0065,Pecs,email,Books,Python alapok konyv,4,8852.12,31867.63, 5%,false,"7766 Pecs, Piac ter 1.",
+ORD-2025-00060,2025-01-30,C0181,Budapest,fb,Beauty,Arckrem,3,6418.79,19256.37,n/a,N,"7084 Budapest, Rakoczi ut 35.",
+ORD-2025-00061,2025-01-06,C0021,Budapest,store,Books,Adatvizualizacio jegyzet,8,6745.28,53962.24,n/a,nem,"1149 Budapest, Fo utca 1.",
+ORD-2025-00062,2025-04-07,C0003,Szekesfehervar ,facebook,Home,Keramia bogre,2,3414.08,6486.75,0%,igen,"6590 Szekesfehervar, Rakoczi ut 11.",
+ORD-2025-00063,2025-01-20,C0125,Pecs,online,Electronics,Bluetooth hangszoro,3,12311.65,31394.71,n/a,0,"7923 Pecs, Petofi utca 31.",
+ORD-2025-00064,2025-04-20,C0070,Debrecen,paid_search,Home,Tarolo doboz,2,4939.25,9878.5,20%,N,"4216 Debrecen, Duna sor 9.",
+ORD-2025-00065,2025-06-01,C0087,Szeged,fb,Home,Keramia bogre,1,3600.54,2880.43,0%,nem,"8194 Szeged, Piac ter 17.",
+ORD-2025-00066,2025-04-16,C0086,Szeged,online,Sports,Kulacs,3,4241.83,12725.49,0%,nem,"8467 Szeged, Kossuth Lajos utca 79.",
+ORD-2025-00067,2025-01-19,C0171,Miskolc,online,Books,Adatvizualizacio jegyzet,1,5987.45,5987.45,5%,1,"Miskolc, Duna sor 71.",
+ORD-2025-00068,2025-02-07,C0153,Gyor,store,Books,Python alapok konyv,1,7820.14,7429.13,15%,yes,"8972 Gyor, Fo utca 32.",Platinum
+ORD-2025-00069,2025-05-26,C0115,Pecs,facebook,Books,Adatvizualizacio jegyzet,1,6374.62,5737.16,5%,false,"5625 Pecs, Duna sor 25.",
+ORD-2025-00070,2025-06-08,C0066,Szeged,online,Books,Adatvizualizacio jegyzet,4,6146.26,22126.54,0%,true,"1173 Szeged, Rakoczi ut 26.",
+ORD-2025-00071,2025-03-05,C0098,Budapest,online,Home,Asztali lampa,1,12597.74,11337.97, 5%,true,"4296 Budapest, Fo utca 18.",
+ORD-2025-00072,2025-05-22,C0021,Budapest,email,Home,Keramia bogre,1,3882.09,3687.99,n/a,1,"2406 Budapest, Kossuth Lajos utca 46.",Bronze
+ORD-2025-00073,2025-04-10,C0169,Budapest,online,Home,Keramia bogre,3,3783.65,11 351 Ft,20%, Igen ,"9535 Budapest, Rakoczi ut 11.",
+ORD-2025-00074,2025-05-31,C0090,Pecs, online,Sports,Joga matrac,1,9675.24,8223.95,n/a,igen,"Pecs, Petofi utca 58.",
+ORD-2025-00075,2025-06-04,C0044,Debrecen,Online,Home,Tarolo doboz,4,4352.64,17410.56, 5%,yes,"9674 Debrecen, Petofi utca 2.",
+ORD-2025-00076,2025-03-10,C0152,Budapest,online,Home,Asztali lampa,3,11808.98,28341.55,0%,igen,"3312 Budapest, Rakoczi ut 32.",
+ORD-2025-00077,2025-06-23,C0104,Budapest,fb,Electronics,Vezetek nelkuli eger,2,6463.6,12280.84,5%,N,"4696 Budapest, Duna sor 83.",
+ORD-2025-00078,2025-04-09,C0024,,online,Books,Python alapok konyv,8,8784.11,63245.59,n/a,false,"7579 Ismeretlen, Fo utca 73.",
+ORD-2025-00079,2025-05-13,C0081,Szekesfehervar ,online,Books,Python alapok konyv,1,8513.9,8513.9,0%,yes,"9804 Szekesfehervar, Petofi utca 8.",
+ORD-2025-00080,2025-04-28,C0115,Budapest,instagram,Electronics,USB-C kabel,2,2677.32,4551.44,5%,no,"2255 Budapest, Duna sor 30.",
+ORD-2025-00081,2025-01-22,C0120,Gyor,fb,Electronics,Vezetek nelkuli eger,2,7572.68,12873.56,20%,0,"4648 Gyor, Rakoczi ut 91.",
+ORD-2025-00082,2025-05-04,C0156,Budapest,online,Electronics,USB-C kabel,4,2623.57,9444.85,0%,false,"6254 Budapest, Kossuth Lajos utca 60.",
+ORD-2025-00083,2025-02-05,C0048,,Online,Electronics,Vezetek nelkuli eger,2,6993.31,12587.96,0%,0,"9177 Ismeretlen, Duna sor 69.",
+ORD-2025-00084,2025-04-02,C0166,Pecs,web,Electronics,Bluetooth hangszoro,4,11988.97,47955.88,n/a, Igen ,"3446 Pecs, Rakoczi ut 50.",
+ORD-2025-00085,2025-05-25,C0094,Budapest,web,Sports,Joga matrac,1,8707.38,7401.27,15%,0,"Budapest, Kossuth Lajos utca 73.",
+ORD-2025-00086,2025-04-15,C0136,Debrecen,web,Sports,Joga matrac,5,8725.47,41445.98,20%,0,"3416 Debrecen, Fo utca 82.",
+ORD-2025-00087,2025-05-26,C0056,Pecs,online,Electronics,USB-C kabel,1,2488.96,2488.96,10%,false,"4098 Pecs, Kossuth Lajos utca 52.",Gold
+ORD-2025-00088,2025-01-18,C0051,Gyor,email,Books,Python alapok konyv,4,8283.2,31476.16,5%,N,"7813 Gyor, Rakoczi ut 3.",
+ORD-2025-00089,2025-06-10,C0157,Miskolc,online,Electronics,Vezetek nelkuli eger,1,6539.14,6539.14,n/a,1,"9154 Miskolc, Fo utca 43.",
+ORD-2025-00090,2025-02-08,C0169,Budapest,Online,Electronics,USB-C kabel,5,2519.84,11969.24, 5%,false,"5258 Budapest, Kossuth Lajos utca 20.",
+ORD-2025-00091,2025-05-29,C0076,Debrecen,online,Beauty,Arckrem,2,6469.37,12938.74,15%, Igen ,"7374 Debrecen, Rakoczi ut 3.",
+ORD-2025-00092,2025-06-07,C0078,Kecskemet,email,Books,Python alapok konyv,2,8921.75,15166.98,n/a,yes,"9306 Kecskemet, Duna sor 45.",Bronze
+ORD-2025-00093,2025-02-28,C0013,Budapest,email,Home,Keramia bogre,12,3836.33,46035.96,n/a,0,"1739 Budapest, Fo utca 25.",Platinum
+ORD-2025-00094,2025-02-13,C0096,Szekesfehervar ,web,Beauty,Sampon,4,2853.19,11412.76,10%,false,"6869 Szekesfehervar, Fo utca 37.",
+ORD-2025-00095,2025-01-31,C0146,Debrecen,web,Beauty,Arckrem,1,6384.4,6384.4, 5%,true,"4225 Debrecen, Petofi utca 42.",
+ORD-2025-00096,2025-02-25,C0084,,online,Sports,Joga matrac,1,9215.61,9215.61, 5%,0,"8531 Ismeretlen, Fo utca 86.",
+ORD-2025-00097,2025-01-26,C0121,Budapest,online,Sports,Joga matrac,1,8327.68,8327.68,0%,igen,"3189 Budapest, Duna sor 67.",
+ORD-2025-00098,2025-04-10,C0050,Budapest,paid_search,Books,Python alapok konyv,2,8013.68,16027.36, 5%,false,"2025 Budapest, Piac ter 12.",
+ORD-2025-00099,2025-06-07,C0116,Szekesfehervar ,paid_search,Home,Tarolo doboz,2,4196.97,7554.55,15%,N,"7670 Szekesfehervar, Rakoczi ut 56.",
+ORD-2025-00100,2025-02-27,C0011,Budapest,Online,Electronics,Bluetooth hangszoro,1,13519.89,11491.91,10%, Igen ,"1473 Budapest, Fo utca 94.",
+ORD-2025-00101,2025-05-11,C0056,Debrecen,web,Electronics,Bluetooth hangszoro,3,12624.91,37874.73,5%,yes,"1095 Debrecen, Petofi utca 27.",
+ORD-2025-00102,2025-06-26,C0140,Miskolc,ONLINE,Home,Tarolo doboz,2,4968.62,9937.24,20%,nem,"7960 Miskolc, Petofi utca 39.",
+ORD-2025-00103,2025-05-24,C0038,Budapest,facebook,Home,Asztali lampa,1,11166.48,11166.48, 5%,true,"8516 Budapest, Duna sor 21.",Gold
+ORD-2025-00104,2025-04-21,C0008,Budapest,store,Electronics,USB-C kabel,1,2762.1,2762.1,20%,false,"2918 Budapest, Fo utca 64.",
+ORD-2025-00105,2025-02-03,C0059,Budapest,store,Electronics,USB-C kabel,1,2504.32,2379.1,20%,igen,"2291 Budapest, Duna sor 75.",
+ORD-2025-00106,2025-04-13,C0093,Szeged,online,Electronics,USB-C kabel,1,2501.73,2501.73,10%,false,"2718 Szeged, Duna sor 37.",Bronze
+ORD-2025-00107,2025-06-13,C0011,Kecskemet,web,Sports,Joga matrac,3,8706.91,24814.69,15%,yes,"4567 Kecskemet, Rakoczi ut 1.",Silver
+ORD-2025-00108,2025-01-28,C0019,Szekesfehervar ,online,Books,Adatvizualizacio jegyzet,2,6395.97,12791.94,0%,yes,"1930 Szekesfehervar, Rakoczi ut 59.",
+ORD-2025-00109,2025-01-13,C0011,Szekesfehervar ,online,Home,Asztali lampa,1,12748.3,12748.3,n/a, Igen ,"5846 Szekesfehervar, Duna sor 87.",
+ORD-2025-00110,2025-06-17,C0145,Budapest, online,Books,Python alapok konyv,1,8850.35,8407.83, 5%,1,"1923 Budapest, Petofi utca 46.",Gold
+ORD-2025-00111,2025-01-24,C0028,Kecskemet,online,Beauty,Sampon,1,2982.4,2982.4,20%, Igen ,"5457 Kecskemet, Rakoczi ut 88.",
+ORD-2025-00112,2025-04-12,C0035,Gyor, online,Home,Asztali lampa,12,11825.14,134806.6,5%,yes,"6380 Gyor, Rakoczi ut 68.",
+ORD-2025-00113,2025-05-18,C0181,Budapest,web,Books,Adatvizualizacio jegyzet,4,5997.93,20392.96,n/a,no,"6038 Budapest, Petofi utca 92.",Platinum
+ORD-2025-00114,2025-04-28,C0013,Budapest,online,Books,Adatvizualizacio jegyzet,2,6639.79,13279.58,5%,1,"2525 Budapest, Duna sor 80.",
+ORD-2025-00115,2025-02-23,C0093,Budapest,instagram,Books,Adatvizualizacio jegyzet,1,6292.83,6292.83,0%,1,"7190 Budapest, Petofi utca 11.",
+ORD-2025-00116,2025-03-29,C0104,Budapest, online,Home,Asztali lampa,1,11203.86,,0%,false,"3066 Budapest, Fo utca 86.",
+ORD-2025-00117,2025-05-14,C0022, Nyiregyhaza,email,Electronics,Vezetek nelkuli eger,1,7130.62,5704.5,5%, Igen ,"7414 Nyiregyhaza, Duna sor 61.",
+ORD-2025-00118,2025-02-05,C0129,Kecskemet,email,Electronics,Bluetooth hangszoro,2,13127.03,21003.25,0%,nem,"4585 Kecskemet, Duna sor 66.",Gold
+ORD-2025-00119,2025-01-30,C0126,Pecs,paid_search,Sports,Joga matrac,2,8273.6,14892.48,n/a,nem,"1291 Pecs, Fo utca 72.",
+ORD-2025-00120,2025-03-06,C0173,Szeged,instagram,Sports,Kulacs,4,3882.01,15528.04,20%,true,"9692 Szeged, Fo utca 95.",Platinum
+ORD-2025-00121,2025-05-25,C0017,Budapest,paid_search,Beauty,Sampon,4,3078.11,12312.44,10%,nem,"2202 Budapest, Rakoczi ut 19.",
+ORD-2025-00122,2025-04-12,C0001,Szeged, online,Electronics,USB-C kabel,1,2635.9,2504.11, 5%,I,"5814 Szeged, Piac ter 72.",
+ORD-2025-00123,2025-03-21,C0053,Budapest,online,Books,Adatvizualizacio jegyzet,5,7038.99,28155.96,20%,yes,"Budapest, Rakoczi ut 93.",
+ORD-2025-00124,2025-02-06,C0085,Budapest,online,Home,Asztali lampa,2,11972.26,19155.62,n/a,1,"7324 Budapest, Kossuth Lajos utca 49.",
+ORD-2025-00125,2025-02-01,C0048,Debrecen,facebook,Home,Keramia bogre,1,3690.77,3321.69,10%,true,"1272 Debrecen, Duna sor 13.",
+ORD-2025-00126,2025-05-15,C0031,Debrecen,online,Electronics,Vezetek nelkuli eger,1,6522.29,6522.29,10%,false,"8060 Debrecen, Rakoczi ut 49.",
+ORD-2025-00127,2025-05-21,C0099,Szekesfehervar ,ONLINE,Electronics,Bluetooth hangszoro,1,12572.53,11315.28,0%,0,"9252 Szekesfehervar, Rakoczi ut 3.",
+ORD-2025-00128,2025-02-22,C0113,Budapest,email,Books,Python alapok konyv,1,8784.36,8345.14, 5%,no,"5942 Budapest, Kossuth Lajos utca 13.",
+ORD-2025-00129,2025-05-19,C0091,Gyor,online,Books,Adatvizualizacio jegyzet,1,7196.07,6116.66, 5%, Igen ,"9070 Gyor, Petofi utca 34.",
+ORD-2025-00130,2025-04-07,C0178,,Online,Electronics,Bluetooth hangszoro,12,12487.98,149855.76,0%,yes,"4306 Ismeretlen, Kossuth Lajos utca 51.",
+ORD-2025-00131,2025-06-08,C0071,Pecs,fb,Sports,Joga matrac,1,9723.61,8265.07,0%,nem,"Pecs, Kossuth Lajos utca 65.",Silver
+ORD-2025-00132,2025-06-25,C0160,Debrecen,web,Electronics,Bluetooth hangszoro,4,14180.56,56722.24,5%,true,"7875 Debrecen, Kossuth Lajos utca 78.",Platinum
+ORD-2025-00133,2025-02-12,C0126,Gyor,facebook,Home,Keramia bogre,3,3612.46,10295.51,20%,igen,"9011 Gyor, Rakoczi ut 6.",
+ORD-2025-00134,2025-04-27,C0024,Budapest,fb,Home,Asztali lampa,8,11564.73,92517.84, 5%,1,"6256 Budapest, Rakoczi ut 62.",
+ORD-2025-00135,2025-05-03,C0079,,instagram,Books,Python alapok konyv,1,8807.55,7486.42,10%,0,"2666 Ismeretlen, Kossuth Lajos utca 88.",
+ORD-2025-00136,2025-06-20,C0015,Kecskemet,online,Books,Python alapok konyv,3,7452.11,19002.88,15%,igen,"1640 Kecskemet, Fo utca 1.",
+ORD-2025-00137,2025-04-02,C0165,Budapest,online,Sports,Kulacs,3,3924.16,11772.48,20%,no,"5781 Budapest, Duna sor 12.",
+ORD-2025-00138,2025-03-27,C0006,Budapest,ONLINE,Sports,Joga matrac,4,9542.13,36260.09,5%,1,"1701 Budapest, Fo utca 27.",
+ORD-2025-00139,2025-01-07,C0046,Miskolc,online,Electronics,Bluetooth hangszoro,1,14325.47,12892.92,20%,I,"9826 Miskolc, Petofi utca 56.",
+ORD-2025-00140,2025-04-17,C0145,Budapest,online,Books,Adatvizualizacio jegyzet,4,6861.86,23330.32,0%,nem,"5558 Budapest, Fo utca 70.",
+ORD-2025-00141,2025-05-30,C0144,Szeged,store,Sports,Kulacs,1,4364.25,4364.25,0%,yes,"3670 Szeged, Fo utca 81.",Platinum
+ORD-2025-00142,2025-06-24,C0183,Gyor,web,Electronics,USB-C kabel,1,2303.37,2188.2,15%, Igen ,"6114 Gyor, Fo utca 54.",
+ORD-2025-00143,2025-04-14,C0178,Debrecen,store,Books,Python alapok konyv,1,7842.89,7842.89,5%,yes,"5716 Debrecen, Rakoczi ut 80.",Bronze
+ORD-2025-00144,2025-03-12,C0044,Szekesfehervar ,email,Sports,Joga matrac,1,8962.59,8066.33,0%,yes,"6373 Szekesfehervar, Kossuth Lajos utca 83.",
+ORD-2025-00145,2025-06-29,C0166,Pecs,Online,Electronics,Vezetek nelkuli eger,1,6957.58,6957.58,5%,igen,"6585 Pecs, Kossuth Lajos utca 88.",
+ORD-2025-00146,2025-03-26,C0142,Budapest,Online,Electronics,USB-C kabel,2,2776.15,5274.68,15%,no,"5523 Budapest, Petofi utca 19.",
+ORD-2025-00147,2025-03-04,C0087,,web,Books,Adatvizualizacio jegyzet,1,6304.89,6304.89,15%,igen,"Ismeretlen, Duna sor 11.",
+ORD-2025-00148,2025-06-15,C0047,Debrecen,fb,Beauty,Sampon,2,2966.1,5042.37,10%,yes,"3215 Debrecen, Piac ter 84.",Bronze
+ORD-2025-00149,2025-03-03,C0028,Szekesfehervar ,online,Electronics,USB-C kabel,3,2502.07,7506.21,5%,yes,"Szekesfehervar, Kossuth Lajos utca 40.",
+ORD-2025-00150,2025-04-06,C0064,Budapest,online,Home,Tarolo doboz,2,4393.84,8787.68,5%,true,"5850 Budapest, Kossuth Lajos utca 47.",
+ORD-2025-00151,2025-04-28,C0168,Szeged,paid_search,Electronics,Bluetooth hangszoro,2,12983.09,24667.87, 5%,true,"4950 Szeged, Duna sor 52.",
+ORD-2025-00152,2025-04-16,C0123,Pecs,fb,Sports,Joga matrac,2,9923.07,18853.83,20%,true,"1918 Pecs, Petofi utca 89.",
+ORD-2025-00153,2025-05-11,C0127,,facebook,Electronics,Bluetooth hangszoro,1,12720.61,10812.52,n/a,I,"3936 Ismeretlen, Fo utca 6.",Bronze
+ORD-2025-00154,2025-06-20,C0043,Budapest,store,Electronics,USB-C kabel,2,2674.66,4814.39,10%,no,"2342 Budapest, Piac ter 12.",
+ORD-2025-00155,2025-01-19,C0033,Debrecen,Online,Home,Tarolo doboz,2,4232.88,8465.76,15%,0,"Debrecen, Piac ter 90.",
+ORD-2025-00156,2025-01-28,C0067,Pecs,online,Home,Asztali lampa,3,11099.99,31634.97,15%,0,"7323 Pecs, Kossuth Lajos utca 65.",
+ORD-2025-00157,2025-04-28,C0091,Miskolc,online,Beauty,Arckrem,2,5874.84,10574.71,15%,N,"4855 Miskolc, Petofi utca 50.",Gold
+ORD-2025-00158,2025-04-20,C0008,Budapest, online,Electronics,Bluetooth hangszoro,8,12112.09,96896.72,5%,0,"Budapest, Rakoczi ut 3.",
+ORD-2025-00159,2025-03-09,C0177,Debrecen,facebook,Electronics,USB-C kabel,8,2745.28,"18667,9",10%,true,"4509 Debrecen, Duna sor 56.",
+ORD-2025-00160,2025-02-04,C0144,Budapest,paid_search,Home,Keramia bogre,1,3348.64,3348.64,20%,igen,"1125 Budapest, Petofi utca 92.",
+ORD-2025-00161,2025-01-11,C0128,Budapest,online,Home,Keramia bogre,1,3826.95,3826.95,20%,no,"9542 Budapest, Fo utca 51.",
+ORD-2025-00162,2025-04-11,C0160,Budapest,instagram,Sports,Kulacs,1,4028.77,3223.02,10%, Igen ,"5876 Budapest, Piac ter 16.",
+ORD-2025-00163,2025-01-15,C0164,Budapest,paid_search,Sports,Joga matrac,2,8795.47,17590.94,5%, Igen ,"1818 Budapest, Rakoczi ut 26.",
+ORD-2025-00164,2025-04-01,C0012,Gyor,facebook,Electronics,USB-C kabel,1,2457.24,2457.24,5%,true,"2706 Gyor, Duna sor 21.",Silver
+ORD-2025-00165,2025-04-19,C0011,Miskolc,online,Sports,Kulacs,1,4028.03,4028.03,20%,N,"6018 Miskolc, Piac ter 5.",
+ORD-2025-00166,2025-03-15,C0014,Debrecen,online,Home,Asztali lampa,1,12825.53,12825.53,5%,igen,"5767 Debrecen, Fo utca 87.",
+ORD-2025-00167,2025-01-19,C0103,Budapest,fb,Beauty,Arckrem,2,6379.0,11482.2,0%,yes,"3492 Budapest, Piac ter 8.",
+ORD-2025-00168,2025-01-27,C0115,Budapest,online,Home,Keramia bogre,2,3450.86,6901.72,20%, Igen ,"2730 Budapest, Kossuth Lajos utca 75.",Silver
+ORD-2025-00169,2025-02-08,C0152,Miskolc,online,Books,Adatvizualizacio jegyzet,5,6586.14,32930.7,20%,0,"3688 Miskolc, Duna sor 67.",
+ORD-2025-00170,2025-04-02,C0051,Budapest,paid_search,Electronics,USB-C kabel,3,2722.3,6533.52,20%,I,"6445 Budapest, Petofi utca 83.",Gold
+ORD-2025-00171,2025-06-12,C0027,Miskolc,fb,Beauty,Sampon,1,3097.2,3097.2,n/a,0,"8581 Miskolc, Petofi utca 28.",
+ORD-2025-00172,2025-05-30,C0162,,email,Electronics,USB-C kabel,2,2535.19,4816.86,10%,yes,"2415 Ismeretlen, Petofi utca 60.",
+ORD-2025-00173,2025-03-26,C0182, Nyiregyhaza,online,Home,Keramia bogre,1,3290.17,3125.66,5%,no,"6906 Nyiregyhaza, Kossuth Lajos utca 8.",
+ORD-2025-00174,2025-01-02,C0051, Nyiregyhaza,online,Beauty,Sampon,1,2902.56,2467.18, 5%, Igen ,"2865 Nyiregyhaza, Piac ter 74.",
+ORD-2025-00175,2025-06-27,C0082,Miskolc,online,Home,Asztali lampa,1,13105.8,13105.8, 5%, Igen ,"3963 Miskolc, Duna sor 8.",
+ORD-2025-00176,2025-01-05,C0070,Budapest,fb,Books,Python alapok konyv,1,8025.37,8025.37,n/a,yes,"2830 Budapest, Kossuth Lajos utca 22.",
+ORD-2025-00177,2025-06-17,C0032,Pecs,online,Home,Asztali lampa,4,11514.15,43753.77,n/a,igen,"4649 Pecs, Duna sor 45.",
+ORD-2025-00178,2025-04-11,C0040,Szeged,web,Beauty,Sampon,4,3324.87,13299.48,15%,1,"1667 Szeged, Rakoczi ut 43.",
+ORD-2025-00179,2025-02-11,C0094,Debrecen,fb,Books,Adatvizualizacio jegyzet,12,7162.54,85950.48, 5%,igen,"1550 Debrecen, Rakoczi ut 38.",
+ORD-2025-00180,2025-04-07,C0136,Szekesfehervar ,online,Electronics,Bluetooth hangszoro,2,14136.26,26858.89,10%,0,"3735 Szekesfehervar, Fo utca 95.",
+ORD-2025-00181,2025-05-02,C0184,Budapest, online,Beauty,Arckrem,2,5907.39,11814.78, 5%,0,"5285 Budapest, Rakoczi ut 54.",
+ORD-2025-00182,2025-04-08,C0078,Budapest,web,Sports,Kulacs,3,4200.72,11972.05,0%,true,"2903 Budapest, Piac ter 63.",
+ORD-2025-00183,2025-04-10,C0059,Budapest,fb,Home,Asztali lampa,1,12353.76,12353.76, 5%,nem,"9037 Budapest, Petofi utca 39.",
+ORD-2025-00184,2025-05-28,C0146,Budapest,online,Home,Keramia bogre,2,3557.79,7115.58,n/a,1,"6733 Budapest, Kossuth Lajos utca 69.",
+ORD-2025-00185,2025-03-15,C0031,Budapest,email,Books,Python alapok konyv,1,8164.21,8164.21,0%, Igen ,"1829 Budapest, Duna sor 25.",
+ORD-2025-00186,2025-05-30,C0065,Pecs,online,Sports,Kulacs,1,4457.99,4012.19,15%,1,"8200 Pecs, Duna sor 58.",Gold
+ORD-2025-00187,2025-05-06,C0083,Kecskemet,Online,Home,Asztali lampa,1,12559.42,10675.51, 5%,nem,"6741 Kecskemet, Piac ter 9.",
+ORD-2025-00188,2025-06-23,C0128,Budapest,web,Books,Python alapok konyv,4,7942.81,31771.24, 5%,yes,"7979 Budapest, Piac ter 9.",
+ORD-2025-00189,2025-04-09,C0148,Budapest,online,Home,Tarolo doboz,1,4498.29,4498.29,10%,false,"4329 Budapest, Fo utca 33.",
+ORD-2025-00190,2025-03-26,C0181,Szeged,email,Home,Tarolo doboz,4,4659.65,14910.88, 5%,I,"3948 Szeged, Rakoczi ut 94.",
+ORD-2025-00191,2025-04-09,C0151,Kecskemet,fb,Beauty,Arckrem,3,5663.76,13593.02,0%,nem,"6345 Kecskemet, Rakoczi ut 8.",
+ORD-2025-00192,2025-06-22,C0079, Nyiregyhaza,store,Books,Python alapok konyv,2,7534.24,13561.63,n/a,0,"3150 Nyiregyhaza, Duna sor 53.",
+ORD-2025-00193,2025-05-25,C0037,Pecs,paid_search,Electronics,USB-C kabel,12,2718.86,29363.69,10%,1,"3207 Pecs, Duna sor 50.",Platinum
+ORD-2025-00194,2025-05-15,C0079,Szekesfehervar ,paid_search,Electronics,Bluetooth hangszoro,1,12918.82,12918.82,5%,nem,"2916 Szekesfehervar, Duna sor 74.",Bronze
+ORD-2025-00195,2025-06-27,C0172,Budapest,online,Electronics,USB-C kabel,3,2570.27,7710.81,n/a,I,"1901 Budapest, Piac ter 23.",
+ORD-2025-00196,2025-03-21,C0076,Budapest,online,Sports,Kulacs,4,3906.98,14846.52,n/a,yes,"2879 Budapest, Petofi utca 82.",
+ORD-2025-00197,2025-03-20,C0134,Budapest,paid_search,Books,Python alapok konyv,4,7398.16,29592.64,10%,nem,"3455 Budapest, Kossuth Lajos utca 86.",
+ORD-2025-00198,2025-01-09,C0137,Budapest,email,Sports,Joga matrac,1,8435.86,8435.86,0%,no,"1992 Budapest, Piac ter 81.",
+ORD-2025-00199,2025-05-22,C0098,Budapest,store,Electronics,Vezetek nelkuli eger,2,7782.92,14787.55, 5%,I,"Budapest, Kossuth Lajos utca 93.",
+ORD-2025-00200,2025-04-20,C0003,Budapest,online,Electronics,Bluetooth hangszoro,2,14082.74,28165.48,10%,1,"5567 Budapest, Piac ter 92.",
+ORD-2025-00201,2025-05-27,C0003,Budapest,facebook,Electronics,Vezetek nelkuli eger,8,,54309.6,0%,no,"6336 Budapest, Piac ter 83.",
+ORD-2025-00202,2025-04-08,C0170,Miskolc,online,Electronics,Bluetooth hangszoro,2,14455.56,27465.56,10%,true,"3158 Miskolc, Fo utca 58.",
+ORD-2025-00203,2025-02-08,C0180,Kecskemet,online,Electronics,USB-C kabel,3,2541.76,7625.28,n/a,no,"7818 Kecskemet, Kossuth Lajos utca 45.",
+ORD-2025-00204,2025-06-05,C0125,Budapest,online,Books,Adatvizualizacio jegyzet,8,6030.22,48241.76,0%,no,"3873 Budapest, Piac ter 42.",Platinum
+ORD-2025-00205,2025-04-20,C0129,,online,Books,Python alapok konyv,2,7352.64,14705.28,n/a,igen,"6065 Ismeretlen, Duna sor 45.",
+ORD-2025-00206,2025-04-24,C0094,Debrecen,paid_search,Electronics,USB-C kabel,2,2635.89,5271.78,20%,1,"6994 Debrecen, Rakoczi ut 33.",
+ORD-2025-00207,2025-03-16,C0011,Gyor,online,Home,Keramia bogre,1,3482.0,3482.0,10%,no,"3521 Gyor, Rakoczi ut 67.",Gold
+ORD-2025-00208,2025-01-27,C0174,Budapest,email,Beauty,Sampon,4,3150.74,11342.66,5%,I,"3794 Budapest, Piac ter 89.",Platinum
+ORD-2025-00209,2025-06-27,C0155,Gyor,online,Sports,Joga matrac,2,9184.87,17451.25,15%,igen,"4617 Gyor, Rakoczi ut 10.",
+ORD-2025-00210,2025-03-29,C0056,Miskolc,online,Home,Keramia bogre,3,3368.56,10105.68, 5%,I,"4000 Miskolc, Duna sor 95.",
+ORD-2025-00211,2025-02-13,C0166,,web,Home,Tarolo doboz,3,4663.19,13290.09,0%,0,"7898 Ismeretlen, Rakoczi ut 88.",
+ORD-2025-00212,2025-03-09,C0109,Szeged,email,Beauty,Sampon,2,3294.46,6588.92,n/a,0,"6025 Szeged, Kossuth Lajos utca 76.",
+ORD-2025-00213,2025-03-26,C0164,Budapest,online,Home,Keramia bogre,5,3700.36,18501.8,0%,no,"7560 Budapest, Duna sor 26.",Silver
+ORD-2025-00214,2025-05-23,C0164,Budapest,online,Electronics,Vezetek nelkuli eger,1,7488.22,7488.22,0%,0,"9020 Budapest, Petofi utca 42.",Silver
+ORD-2025-00215,2025-03-09,C0144,Budapest,Online,Sports,Kulacs,1,4008.46,4008.46,5%,0,"3790 Budapest, Duna sor 57.",
+ORD-2025-00216,2025-04-10,C0172,Szeged,web,Books,Adatvizualizacio jegyzet,3,6903.29,20709.87,10%,I,"Szeged, Duna sor 56.",Silver
+ORD-2025-00217,2025-03-10,C0059,Budapest,web,Books,Adatvizualizacio jegyzet,1,5971.67,5971.67,15%,true,"8132 Budapest, Kossuth Lajos utca 44.",
+ORD-2025-00218,2025-02-15,C0139,Budapest,online,Books,Adatvizualizacio jegyzet,1,6686.87,6686.87,10%,false,"6829 Budapest, Kossuth Lajos utca 53.",
+ORD-2025-00219,2025-04-12,C0146,Pecs,Online,Home,Asztali lampa,3,13311.46,33944.22,20%,no,"1605 Pecs, Petofi utca 26.",Silver
+ORD-2025-00220,2025-05-07,C0074,Debrecen, online,Beauty,Sampon,1,3193.83,2714.76,20%,yes,"4359 Debrecen, Duna sor 22.",
+ORD-2025-00221,2025-03-14,C0104,Gyor,web,Sports,Joga matrac,1,9945.63,9945.63,15%,1,"2014 Gyor, Piac ter 34.",Gold
+ORD-2025-00222,2025-03-01,C0058,Szeged,paid_search,Books,Python alapok konyv,2,8382.69,16765.38,n/a,N,"2686 Szeged, Kossuth Lajos utca 20.",
+ORD-2025-00223,2025-02-04,C0167,Miskolc,online,Beauty,Arckrem,1,5591.49,4473.19,0%,I,"9744 Miskolc, Fo utca 75.",
+ORD-2025-00224,2025-03-12,C0001,Miskolc,fb,Beauty,Arckrem,2,6219.02,N/A, 5%,yes,"6479 Miskolc, Rakoczi ut 71.",
+ORD-2025-00225,2025-02-23,C0044,Budapest,store,Books,Python alapok konyv,2,7906.89,15813.78,15%,nem,"5249 Budapest, Piac ter 8.",Platinum
+ORD-2025-00226,2025-06-02,C0131,Debrecen,online,Home,Keramia bogre,1,3818.76,3627.82, 5%,true,"1988 Debrecen, Piac ter 90.",
+ORD-2025-00227,2025-04-03,C0144,Pecs,store,Electronics,Vezetek nelkuli eger,1,7331.9,7331.9,5%,0,"6607 Pecs, Fo utca 84.",Silver
+ORD-2025-00228,2025-05-07,C0159,Miskolc, online,Books,Python alapok konyv,1,8921.56,8921.56,20%,false,"2329 Miskolc, Fo utca 72.",
+ORD-2025-00229,2025-03-16,C0019,,web,Home,Asztali lampa,3,12133.88,32761.48,10%,yes,"9820 Ismeretlen, Fo utca 78.",
+ORD-2025-00230,2025-01-15,C0086, Nyiregyhaza,instagram,Books,Python alapok konyv,1,7786.7,7397.36,5%,false,"6504 Nyiregyhaza, Petofi utca 78.",
+ORD-2025-00231,2025-02-22,C0089,Budapest,online,Beauty,Sampon,12,3151.58,32146.12,5%,no,"Budapest, Rakoczi ut 22.",Platinum
+ORD-2025-00232,2025-06-10,C0066,Gyor,online,Beauty,Arckrem,3,6131.2,14714.88,10%,no,"1727 Gyor, Petofi utca 83.",
+ORD-2025-00233,2025-02-16,C0177,Miskolc,online,Beauty,Arckrem,3,6035.86,17202.2,0%,yes,"4942 Miskolc, Kossuth Lajos utca 25.",Gold
+ORD-2025-00234,2025-05-22,C0179,Gyor,instagram,Beauty,Sampon,1,2917.47,2917.47,20%,1,"4101 Gyor, Rakoczi ut 70.",
+ORD-2025-00235,2025-02-11,C0167,Pecs,online,Home,Keramia bogre,1,3367.31,3030.58,15%,0,"4291 Pecs, Duna sor 34.",
+ORD-2025-00236,2025-05-12,C0082,Budapest,online,Books,Adatvizualizacio jegyzet,1,6808.32,6467.9,15%,false,"2428 Budapest, Kossuth Lajos utca 10.",
+ORD-2025-00237,2025-01-05,C0161,,fb,Home,Keramia bogre,1,3297.9,3297.9, 5%,0,"6870 Ismeretlen, Piac ter 62.",
+ORD-2025-00238,2025-04-07,C0181,Szeged,online,Beauty,Arckrem,2,6303.99,11347.18,5%,false,"6175 Szeged, Rakoczi ut 34.",Platinum
+ORD-2025-00239,2025-03-01,C0181,Debrecen,online,Home,Tarolo doboz,4,5021.32,20085.28, 5%,yes,"6669 Debrecen, Fo utca 54.",
+ORD-2025-00240,2025-03-03,C0014,Budapest,Online,Books,Adatvizualizacio jegyzet,2,7060.94,12003.6,15%,false,"7595 Budapest, Duna sor 19.",
+ORD-2025-00241,2025-01-21,C0055,Budapest,email,Home,Asztali lampa,12,11492.99,137915.88,n/a,N,"5729 Budapest, Fo utca 93.",
+ORD-2025-00242,2025-03-21,C0125,Miskolc,fb,Beauty,Sampon,4,3301.38,13205.52,n/a,N,"9524 Miskolc, Kossuth Lajos utca 85.",Platinum
+ORD-2025-00243,2025-05-20,C0029,,online,Home,Tarolo doboz,5,4942.17,24710.85,10%,true,"5131 Ismeretlen, Piac ter 14.",
+ORD-2025-00244,2025-05-08,C0128, Nyiregyhaza,online,Electronics,USB-C kabel,3,2661.14,7983.42,5%,no,"3166 Nyiregyhaza, Duna sor 25.",
+ORD-2025-00245,2025-05-20,C0082,Budapest, online,Home,Tarolo doboz,1,4886.5,4886.5, 5%,false,"9684 Budapest, Fo utca 2.",
+ORD-2025-00246,2025-02-05,C0072,Budapest,online,Sports,Joga matrac,1,9809.78,9809.78,5%,1,"7523 Budapest, Rakoczi ut 23.",
+ORD-2025-00247,2025-04-27,C0162,Budapest,web,Electronics,Vezetek nelkuli eger,1,6597.83,6267.94,5%,yes,"7702 Budapest, Petofi utca 83.",
+ORD-2025-00248,2025-04-10,C0168,Budapest,online,Books,Adatvizualizacio jegyzet,1,6352.26,6352.26,5%,N,"9878 Budapest, Rakoczi ut 15.",Silver
+ORD-2025-00249,2025-01-07,C0122,,fb,Electronics,Bluetooth hangszoro,1,14010.62,11208.5,10%,no,"4309 Ismeretlen, Petofi utca 70.",
+ORD-2025-00250,2025-02-10,C0130,Miskolc,online,Beauty,Sampon,2,2891.02,5782.04,n/a,1,"1949 Miskolc, Fo utca 69.",
+ORD-2025-00251,2025-06-17,C0023,Budapest,fb,Home,Asztali lampa,4,13246.91,45039.49,0%,yes,"6965 Budapest, Fo utca 56.",
+ORD-2025-00252,2025-02-15,C0181,Szeged,online,Home,Asztali lampa,1,12736.46,12736.46, 5%,igen,"9068 Szeged, Kossuth Lajos utca 38.",
+ORD-2025-00253,2025-04-25,C0139,Gyor,web,Sports,Kulacs,1,4045.19,3640.67, 5%,N,"7889 Gyor, Petofi utca 87.",Platinum
+ORD-2025-00254,2025-05-18,C0102,Budapest,online,Electronics,USB-C kabel,2,2629.94,5259.88,n/a,I,"Budapest, Kossuth Lajos utca 4.",
+ORD-2025-00255,2025-02-02,C0099,Pecs,paid_search,Electronics,Vezetek nelkuli eger,1,7151.77,7151.77,n/a,igen,"5050 Pecs, Kossuth Lajos utca 31.",
+ORD-2025-00256,2025-02-06,C0108,Szeged,fb,Electronics,Bluetooth hangszoro,3,12945.72,33011.59,0%,true,"8586 Szeged, Piac ter 37.",
+ORD-2025-00257,2025-04-05,C0072,Miskolc,paid_search,Beauty,Arckrem,3,6038.17,15397.33, 5%,yes,"8002 Miskolc, Rakoczi ut 51.",Silver
+ORD-2025-00258,2025-01-07,C0122,Budapest,web,Electronics,Vezetek nelkuli eger,12,6472.4,73785.36,5%,N,"5665 Budapest, Kossuth Lajos utca 10.",
+ORD-2025-00259,2025-03-12,C0004,Budapest,online,Home,Tarolo doboz,4,4762.01,17143.24,15%,1,"3925 Budapest, Kossuth Lajos utca 64.",
+ORD-2025-00260,2025-02-11,C0086,Budapest,fb,Home,Asztali lampa,4,12564.97,50259.88,0%,1,"9245 Budapest, Duna sor 69.",
+ORD-2025-00261,2025-01-25,C0044,Szeged,facebook,Home,Asztali lampa,2,11753.57,19981.07,0%,N,"6618 Szeged, Fo utca 84.",
+ORD-2025-00262,2025-06-25,C0175,Budapest,web,Home,Asztali lampa,4,13380.61,53522.44,5%,false,"Budapest, Rakoczi ut 50.",
+ORD-2025-00263,2025-06-08,C0053,Budapest,facebook,Electronics,Vezetek nelkuli eger,3,7815.1,21100.77,5%,igen,"Budapest, Kossuth Lajos utca 39.",
+ORD-2025-00264,2025-02-14,C0083,Budapest,web,Books,Python alapok konyv,5,8801.8,44009.0, 5%,true,"1104 Budapest, Piac ter 42.",
+ORD-2025-00265,2025-03-14,C0164,Debrecen,store,Beauty,Arckrem,3,5726.74,13744.18,10%,0,"1288 Debrecen, Rakoczi ut 1.",
+ORD-2025-00266,2025-02-04,C0021,Budapest,web,Electronics,Bluetooth hangszoro,2,12702.2,25404.4,10%,0,"5054 Budapest, Duna sor 29.",
+ORD-2025-00267,2025-03-24,C0043,Budapest,email,Home,Tarolo doboz,3,4525.38,12897.33,20%,I,"1383 Budapest, Duna sor 35.",
+ORD-2025-00268,2025-06-21,C0029,,web,Electronics,Vezetek nelkuli eger,3,7545.9,22637.7,0%,true,"9661 Ismeretlen, Kossuth Lajos utca 57.",
+ORD-2025-00269,2025-02-21,C0040,Debrecen,web,Books,Adatvizualizacio jegyzet,3,6112.0,18336.0,0%,0,"5635 Debrecen, Petofi utca 64.",
+ORD-2025-00270,2025-03-24,C0076,,online,Home,Tarolo doboz,2,4778.71,9079.55, 5%,N,"4764 Ismeretlen, Piac ter 20.",
+ORD-2025-00271,2025-03-05,C0076,Debrecen,online,Sports,Kulacs,5,4302.32,21511.6,5%,igen,"2238 Debrecen, Rakoczi ut 66.",Platinum
+ORD-2025-00272,2025-04-11,C0145,Gyor,online,Electronics,Bluetooth hangszoro,4,13921.22,52900.64,20%,1,"7811 Gyor, Duna sor 13.",
+ORD-2025-00273,2025-06-03,C0145,Kecskemet,online,Beauty,Sampon,8,2852.9,20540.88, 5%,igen,"5357 Kecskemet, Duna sor 87.",
+ORD-2025-00274,2025-06-12,C0062,Budapest,online,Beauty,Arckrem,4,5701.35,21665.13,5%,0,"1428 Budapest, Piac ter 21.",
+ORD-2025-00275,2025-01-18,C0078,Szekesfehervar ,email,Home,Tarolo doboz,4,4552.81,18211.24, 5%,no,"2024 Szekesfehervar, Fo utca 18.",
+ORD-2025-00276,2025-05-31,C0040,Debrecen,online,Home,Asztali lampa,1,13386.89,13386.89,5%,yes,"5580 Debrecen, Fo utca 12.",
+ORD-2025-00277,2025-05-25,C0025,Kecskemet,email,Beauty,Arckrem,1,5905.6,5905.6,15%,yes,"4160 Kecskemet, Rakoczi ut 61.",
+ORD-2025-00278,2025-06-27,C0031,Budapest,online,Beauty,Sampon,1,2885.63,2741.35,hiba, Igen ,"3992 Budapest, Duna sor 53.",
+ORD-2025-00279,2025-02-13,C0124,Budapest,email,Electronics,Bluetooth hangszoro,1,12484.69,11236.22,5%,I,"4493 Budapest, Fo utca 54.",Platinum
+ORD-2025-00280,2025-03-18,C0122,Kecskemet,online,Beauty,Sampon,1,3106.07,2795.46,15%,yes,"3309 Kecskemet, Petofi utca 25.",
+ORD-2025-00281,2025-06-11,C0113,Gyor,instagram,Electronics,Bluetooth hangszoro,1,14139.78,14139.78,10%,nem,"Gyor, Petofi utca 60.",
+ORD-2025-00282,2025-06-16,C0136,Szekesfehervar ,Online,Electronics,USB-C kabel,1,2694.99,2560.24,5%,true,"8787 Szekesfehervar, Rakoczi ut 61.",
+ORD-2025-00283,2025-06-11,C0113,Szeged,online,Books,Python alapok konyv,2,7948.02,15101.24, 5%,0,"5168 Szeged, Rakoczi ut 45.",
+ORD-2025-00284,2025-01-15,C0123,Szeged,Online,Home,Keramia bogre,1,3315.88,3315.88, 5%,1,"Szeged, Kossuth Lajos utca 69.",
+ORD-2025-00285,2025-01-07,C0041,Pecs,facebook,Sports,Kulacs,1,3795.29,3226.0,n/a,true,"6888 Pecs, Rakoczi ut 23.",
+ORD-2025-00286,2025-05-29,C0168,,web,Home,Keramia bogre,3,3585.36,10218.28,10%,I,"5078 Ismeretlen, Duna sor 91.",Platinum
+ORD-2025-00287,2025-05-27,C0162,,web,Books,Python alapok konyv,2,8944.42,15205.51,0%,I,"5906 Ismeretlen, Rakoczi ut 21.",
+ORD-2025-00288,2025-03-01,C0011, Nyiregyhaza,web,Beauty,Arckrem,2,6241.76,12483.52,0%,true,"4393 Nyiregyhaza, Piac ter 13.",Gold
+ORD-2025-00289,2025-03-14,C0179,Szeged,paid_search,Sports,Kulacs,3,4340.81,12371.31,n/a,no,"3626 Szeged, Fo utca 74.",
+ORD-2025-00290,2025-05-28,C0051,Budapest,online,Electronics,Vezetek nelkuli eger,2,6619.91,13239.82,5%,true,"5402 Budapest, Piac ter 35.",
+ORD-2025-00291,2025-03-20,C0019,Szekesfehervar ,paid_search,Beauty,Arckrem,5,5798.91,28994.55,0%,1,"7925 Szekesfehervar, Fo utca 83.",Gold
+ORD-2025-00292,2025-03-03,C0169,Pecs,online,Electronics,Vezetek nelkuli eger,2,6837.29,13674.58,n/a,igen,"2926 Pecs, Kossuth Lajos utca 50.",Gold
+ORD-2025-00293,2025-03-15,C0091,Budapest,email,Electronics,USB-C kabel,1,2354.0,2354.0,5%,true,"3517 Budapest, Petofi utca 42.",
+ORD-2025-00294,2025-01-31,C0010, Nyiregyhaza,facebook,Home,Tarolo doboz,8,4864.77,35026.34,20%,no,"2500 Nyiregyhaza, Petofi utca 11.",
+ORD-2025-00295,2025-05-13,C0086,Pecs,instagram,Electronics,Vezetek nelkuli eger,2,6708.79,13417.58,10%,yes,"9899 Pecs, Kossuth Lajos utca 13.",
+ORD-2025-00296,2025-01-09,C0101,Budapest,store,Books,Adatvizualizacio jegyzet,2,7230.81,14461.62,5%,N,"4005 Budapest, Piac ter 22.",Bronze
+ORD-2025-00297,2025-06-20,C0108,Szekesfehervar ,web,Home,Asztali lampa,2,11462.27,22924.54,15%,false,"8491 Szekesfehervar, Piac ter 71.",
+ORD-2025-00298,2025-05-22,C0142,Szeged,online,Sports,Kulacs,2,4016.78,8033.56,15%,N,"2375 Szeged, Duna sor 18.",
+ORD-2025-00299,2025-01-10,C0024,,online,Sports,Joga matrac,1,8329.53,7913.05,0%,no,"9684 Ismeretlen, Piac ter 13.",
+ORD-2025-00300,2025-05-09,C0015,Szeged, online,Electronics,Vezetek nelkuli eger,2,7135.44,12843.79,0%,1,"8653 Szeged, Piac ter 34.",
+ORD-2025-00301,2025-02-05,C0175,Debrecen,online,Sports,Joga matrac,1,9181.37,9181.37,20%,1,"8366 Debrecen, Piac ter 52.",
+ORD-2025-00302,2025-06-20,C0056,Budapest,instagram,Electronics,USB-C kabel,1,2386.03,2266.73,0%,yes,"2041 Budapest, Piac ter 76.",
+ORD-2025-00303,2025-02-08,C0092,Pecs,Online,Sports,Kulacs,1,3825.18,3442.66,n/a,I,"8360 Pecs, Rakoczi ut 92.",
+ORD-2025-00304,2025-03-05,C0099,Budapest,email,Beauty,Sampon,1,3161.83,3161.83,15%,false,"4426 Budapest, Duna sor 48.",
+ORD-2025-00305,2025-06-08,C0086,Budapest,Online,Sports,Joga matrac,1,8495.47,,0%, Igen ,"4368 Budapest, Piac ter 44.",
+ORD-2025-00306,2025-01-24,C0142,Gyor,web,Beauty,Arckrem,3,6499.71,18524.17,n/a,yes,"5504 Gyor, Kossuth Lajos utca 80.",
+ORD-2025-00307,2025-06-27,C0172,Budapest,online,Books,Adatvizualizacio jegyzet,1,7185.67,6467.1,0%,I,"Budapest, Piac ter 71.",
+ORD-2025-00308,2025-03-18,C0099,Budapest,web,Sports,Kulacs,1,3794.85,3794.85,15%,nem,"3059 Budapest, Duna sor 72.",
+ORD-2025-00309,2025-03-07,C0062, Nyiregyhaza,fb,Sports,Kulacs,4,4252.23,15308.03,10%,no,"8945 Nyiregyhaza, Petofi utca 21.",
+ORD-2025-00310,2025-06-24,C0048,,fb,Books,Adatvizualizacio jegyzet,1,6693.15,6693.15,20%,1,"2352 Ismeretlen, Kossuth Lajos utca 14.",Gold
+ORD-2025-00311,2025-03-21,C0059,Pecs,email,Home,Keramia bogre,2,3869.64,6578.39, 5%,yes,"5115 Pecs, Petofi utca 7.",
+ORD-2025-00312,2025-02-23,C0057,Budapest,web,Home,Keramia bogre,1,3403.52,2892.99,15%,yes,"9114 Budapest, Kossuth Lajos utca 2.",
+ORD-2025-00313,2025-06-20,C0150,Szekesfehervar ,online,Home,Asztali lampa,1,13358.88,12022.99,5%,yes,"8767 Szekesfehervar, Piac ter 49.",Bronze
+ORD-2025-00314,2025-05-16,C0039,Budapest,online,Sports,Kulacs,4,4329.67,17318.68, 5%,I,"8694 Budapest, Duna sor 62.",
+ORD-2025-00315,2025-04-28,C0158,Debrecen, online,Electronics,Vezetek nelkuli eger,3,7663.15,22989.45, 5%, Igen ,"1798 Debrecen, Petofi utca 25.",Bronze
+ORD-2025-00316,2025-01-26,C0118,Debrecen,online,Electronics,Vezetek nelkuli eger,2,6497.91,12346.03,15%,N,"7989 Debrecen, Kossuth Lajos utca 5.",
+ORD-2025-00317,2025-06-10,C0004,Szeged,ONLINE,Electronics,USB-C kabel,3,2710.45,7724.78,10%,yes,"2523 Szeged, Rakoczi ut 77.",
+ORD-2025-00318,2025-04-17,C0064,Budapest,instagram,Home,Keramia bogre,1,3263.41,3263.41,15%, Igen ,"1917 Budapest, Kossuth Lajos utca 59.",Platinum
+ORD-2025-00319,2025-03-02,C0095,Szeged,online,Books,Python alapok konyv,12,8305.89,89703.61, 5%,no,"9690 Szeged, Rakoczi ut 77.",Silver
+ORD-2025-00320,2025-04-19,C0036,Pecs,web,Electronics,Bluetooth hangszoro,4,13790.33,55161.32,10%,false,"9285 Pecs, Rakoczi ut 36.",
+ORD-2025-00321,2025-06-05,C0017,Budapest,online,Books,Python alapok konyv,2,8648.43,17296.86,20%,no,"5526 Budapest, Rakoczi ut 52.",
+ORD-2025-00322,2025-04-24,C0110,Budapest,web,Home,Asztali lampa,2,11691.66,23383.32,n/a,N,"6344 Budapest, Piac ter 7.",Platinum
+ORD-2025-00323,2025-03-15,C0185,Budapest,paid_search,Home,Keramia bogre,2,3669.69,6972.41, 5%,0,"2889 Budapest, Fo utca 46.",
+ORD-2025-00324,2025-06-26,C0083,Debrecen,email,Home,Tarolo doboz,3,4745.44,13524.5,0%,I,"4858 Debrecen, Fo utca 73.",
+ORD-2025-00325,2025-06-21,C0144,Pecs,fb,Electronics,USB-C kabel,1,2343.54,2226.36,10%,I,"2401 Pecs, Rakoczi ut 90.",
+ORD-2025-00326,2025-01-02,C0172,Budapest,online,Books,Python alapok konyv,1,7674.49,7674.49,10%, Igen ,"2768 Budapest, Kossuth Lajos utca 11.",
+ORD-2025-00327,2025-04-14,C0083,Kecskemet,web,Home,Asztali lampa,1,12552.89,12552.89,15%,nem,"2927 Kecskemet, Fo utca 8.",
+ORD-2025-00328,2025-03-05,C0178,Budapest,online,Electronics,USB-C kabel,2,2428.66,4371.59, 5%,no,"3541 Budapest, Rakoczi ut 84.",
+ORD-2025-00329,2025-06-29,C0052,,online,Books,Adatvizualizacio jegyzet,1,7068.89,7068.89,5%,1,"4208 Ismeretlen, Kossuth Lajos utca 24.",
+ORD-2025-00330,2025-02-23,C0127,Pecs,Online,Home,Tarolo doboz,2,4785.29,9570.58,15%,I,"3769 Pecs, Rakoczi ut 80.",Platinum
+ORD-2025-00331,2025-06-04,C0027,Gyor,online,Home,Asztali lampa,1,12001.32,9601.06,0%,true,"7769 Gyor, Petofi utca 85.",
+ORD-2025-00332,2025-01-03,C0088,Szeged,store,Electronics,Vezetek nelkuli eger,1,6689.2,6689.2,5%,N,"5654 Szeged, Petofi utca 59.",Platinum
+ORD-2025-00333,2025-06-05,C0128, Nyiregyhaza,online,Books,Python alapok konyv,3,8305.87,24917.61,15%, Igen ,"9496 Nyiregyhaza, Petofi utca 44.",
+ORD-2025-00334,2025-06-09,C0163,Kecskemet,online,Electronics,Vezetek nelkuli eger,1,6804.19,6463.98,n/a,I,"6248 Kecskemet, Duna sor 78.",
+ORD-2025-00335,2025-02-26,C0063, Nyiregyhaza,Online,Home,Keramia bogre,4,3302.01,12547.64,n/a,false,"5461 Nyiregyhaza, Kossuth Lajos utca 81.",
+ORD-2025-00336,2025-04-07,C0144, Nyiregyhaza,online,Electronics,Bluetooth hangszoro,4,14294.5,57178.0,10%,igen,"9355 Nyiregyhaza, Petofi utca 74.",
+ORD-2025-00337,2025-02-12,C0006,Szekesfehervar ,web,Books,Python alapok konyv,1,7814.92,6642.68,10%,1,"4468 Szekesfehervar, Fo utca 8.",
+ORD-2025-00338,2025-03-15,C0135,Szeged,paid_search,Home,Keramia bogre,2,3265.69,6531.38, 5%,igen,"5001 Szeged, Petofi utca 4.",
+ORD-2025-00339,2025-03-17,C0136,Budapest,paid_search,Sports,Joga matrac,3,8874.21,26622.63,0%,igen,"4860 Budapest, Petofi utca 94.",
+ORD-2025-00340,2025-05-09,C0019,Budapest,ONLINE,Sports,Joga matrac,3,8556.52,24386.08,0%, Igen ,"4236 Budapest, Rakoczi ut 67.",
+ORD-2025-00341,2025-06-01,C0096,Debrecen,facebook,Electronics,USB-C kabel,1,2738.04,2601.14,20%, Igen ,"2066 Debrecen, Duna sor 25.",Silver
+ORD-2025-00342,2025-06-01,C0098,Miskolc,online,Electronics,Bluetooth hangszoro,4,14071.6,50657.76,10%,1,"2661 Miskolc, Kossuth Lajos utca 74.",
+ORD-2025-00343,2025-01-15,C0182,Gyor,ONLINE,Home,Keramia bogre,1,3319.53,3319.53,5%,0,"8808 Gyor, Petofi utca 14.",Bronze
+ORD-2025-00344,2025-01-25,C0062,Szeged,store,Sports,Joga matrac,2,9692.28,18415.33,5%,no,"8522 Szeged, Piac ter 18.",
+ORD-2025-00345,2025-06-09,C0065,,facebook,Beauty,Sampon,1,3019.68,3019.68, 5%,N,"7547 Ismeretlen, Piac ter 65.",
+ORD-2025-00346,2025-06-12,C0016,Szekesfehervar ,email,Books,Adatvizualizacio jegyzet,2,5973.93,11350.47,20%,igen,"1374 Szekesfehervar, Fo utca 20.",
+ORD-2025-00347,2025-04-15,C0033,Miskolc,email,Home,Asztali lampa,1,12227.09,11004.38,n/a,N,"9576 Miskolc, Duna sor 17.",
+ORD-2025-00348,2025-06-20,C0107,Budapest,store,Beauty,Arckrem,3,6514.35,19543.05,10%,igen,"1289 Budapest, Petofi utca 92.",Gold
+ORD-2025-00349,2025-01-29,C0174,Budapest,online,Electronics,Vezetek nelkuli eger,1,7321.23,7321.23,15%,N,"8962 Budapest, Petofi utca 94.",Platinum
+ORD-2025-00350,2025-05-11,C0006, Nyiregyhaza,facebook,Books,Adatvizualizacio jegyzet,1,6715.6,6715.6,5%,true,"4554 Nyiregyhaza, Duna sor 22.",
+ORD-2025-00351,2025-05-29,C0101,Debrecen,online,Home,Tarolo doboz,1,4172.04,3754.84,10%,no,"9722 Debrecen, Kossuth Lajos utca 6.",Platinum
+ORD-2025-00352,2025-03-15,C0159, Nyiregyhaza,instagram,Books,Python alapok konyv,1,7905.95,7905.95, 5%,false,"2871 Nyiregyhaza, Kossuth Lajos utca 78.",
+ORD-2025-00353,2025-03-02,C0059,Pecs, online,Home,Asztali lampa,4,11692.76,42093.94,10%,igen,"9396 Pecs, Rakoczi ut 11.",
+ORD-2025-00354,2025-06-14,C0063,,web,Home,Keramia bogre,1,3732.37,3545.75,15%,yes,"2847 Ismeretlen, Piac ter 21.",
+ORD-2025-00355,2025-03-27,C0110,Debrecen, online,Electronics,Bluetooth hangszoro,1,12510.78,11885.24,5%,nem,"8006 Debrecen, Kossuth Lajos utca 33.",
+ORD-2025-00356,2025-04-01,C0006,Budapest,online,Beauty,Arckrem,2,6704.45,10727.12,n/a,no,"7118 Budapest, Petofi utca 57.",
+ORD-2025-00357,2025-02-23,C0109,Miskolc,online,Beauty,Sampon,5,2919.39,13867.1,15%,I,"7378 Miskolc, Fo utca 5.",
+ORD-2025-00358,2025-03-16,C0152,Szeged,online,Sports,Kulacs,3,3791.13,9098.71,15%, Igen ,"6170 Szeged, Kossuth Lajos utca 23.",
+ORD-2025-00359,2025-01-23,C0173,,email,Electronics,Vezetek nelkuli eger,3,7559.26,21543.89,10%, Igen ,"3652 Ismeretlen, Kossuth Lajos utca 95.",
+ORD-2025-00360,2025-01-20,C0029,Debrecen,fb,Home,Tarolo doboz,1,4474.07,4250.37,20%,nem,"7336 Debrecen, Kossuth Lajos utca 39.",
+ORD-2025-00361,2025-01-25,C0146,Budapest,store,Electronics,USB-C kabel,1,2694.53,2694.53,5%, Igen ,"9477 Budapest, Kossuth Lajos utca 55.",
+ORD-2025-00362,2025-03-12,C0117,Budapest, online,Home,Asztali lampa,1,13267.89,13267.89,15%,1,"4998 Budapest, Kossuth Lajos utca 68.",
+ORD-2025-00363,2025-04-03,C0027,Budapest,store,Home,Keramia bogre,12,3411.45,38890.53,0%,yes,"5804 Budapest, Petofi utca 51.",
+ORD-2025-00364,2025-04-30,C0063,Budapest,online,Electronics,Vezetek nelkuli eger,2,7090.05,12053.08,20%, Igen ,"2474 Budapest, Kossuth Lajos utca 95.",
+ORD-2025-00365,2025-06-05,C0099,Budapest,online,Sports,Joga matrac,4,9690.01,38760.04,10%,nem,"7093 Budapest, Duna sor 25.",
+ORD-2025-00366,2025-05-24,C0147,Kecskemet,web,Electronics,Bluetooth hangszoro,4,12936.88,46572.77,15%,I,"3458 Kecskemet, Petofi utca 64.",
+ORD-2025-00367,2025-04-05,C0065,Debrecen,paid_search,Sports,Joga matrac,2,9230.88,18461.76,10%,nem,"4092 Debrecen, Kossuth Lajos utca 77.",
+ORD-2025-00368,2025-04-25,C0154,Gyor,online,Home,Asztali lampa,2,13352.71,26705.42,10%,0,"4752 Gyor, Petofi utca 69.",Silver
+ORD-2025-00369,2025-04-16,C0122,Szeged,email,Home,Tarolo doboz,2,4272.24,7690.03,n/a,0,"7847 Szeged, Duna sor 51.",
+ORD-2025-00370,2025-04-13,C0167,Debrecen,instagram,Home,Tarolo doboz,2,4179.91,8359.82,10%,yes,"1602 Debrecen, Kossuth Lajos utca 8.",
+ORD-2025-00371,2025-03-27,C0129,,fb,Home,Asztali lampa,3,12463.96,37391.88,10%, Igen ,"3360 Ismeretlen, Kossuth Lajos utca 30.",Silver
+ORD-2025-00372,2025-04-28,C0123,,fb,Beauty,Sampon,3,3310.55,9931.65,0%,igen,"7632 Ismeretlen, Rakoczi ut 69.",
+ORD-2025-00373,2025-06-20,C0009,,email,Home,Tarolo doboz,3,4730.73,13482.58,5%,0,"6324 Ismeretlen, Petofi utca 20.",
+ORD-2025-00374,2025-01-27,C0147,Szeged,online,Home,Asztali lampa,3,13155.65,39466.95,0%,no,"4343 Szeged, Kossuth Lajos utca 63.",
+ORD-2025-00375,2025-03-16,C0130,Pecs,email,Sports,Joga matrac,1,8639.76,6911.81,15%,I,"9497 Pecs, Petofi utca 19.",Gold
+ORD-2025-00376,2025-01-16,C0127,Budapest,store,Home,Asztali lampa,1,11127.46,10014.71,20%,false,"8789 Budapest, Rakoczi ut 74.",
+ORD-2025-00377,2025-06-24,C0051,Budapest,online,Home,Keramia bogre,2,3892.07,6616.52,10%,igen,"4271 Budapest, Petofi utca 30.",
+ORD-2025-00378,2025-02-23,C0094,Szeged,instagram,Beauty,Arckrem,3,6122.7,18368.1,15%,I,"9328 Szeged, Piac ter 55.",Bronze
+ORD-2025-00379,2025-06-16,C0021,Debrecen,instagram,Electronics,Vezetek nelkuli eger,1,6677.15,5675.58, 5%,igen,"7140 Debrecen, Piac ter 46.",
+ORD-2025-00380,2025-04-20,C0058,Budapest,paid_search,Electronics,Bluetooth hangszoro,2,14520.53,29041.06,n/a,false,"6416 Budapest, Kossuth Lajos utca 44.",
+ORD-2025-00381,2025-03-01,C0058,Budapest,online,Books,Adatvizualizacio jegyzet,12,6566.2,74854.68,n/a,true,"9647 Budapest, Rakoczi ut 37.",
+ORD-2025-00382,2025-01-25,C0101, Nyiregyhaza,Online,Electronics,Vezetek nelkuli eger,2,7278.84,13829.8,15%,0,"2018 Nyiregyhaza, Petofi utca 16.",
+ORD-2025-00383,2025-02-18,C0126,Szekesfehervar ,email,Beauty,Sampon,1,2850.52,2707.99,0%,true,"6236 Szekesfehervar, Duna sor 25.",
+ORD-2025-00384,2025-01-31,C0143,Debrecen,web,Beauty,Sampon,1,3106.85,3106.85,n/a,false,"2751 Debrecen, Duna sor 35.",
+ORD-2025-00385,2025-02-03,C0057,Szeged,ONLINE,Sports,Kulacs,2,4085.28,8170.56,0%,nem,"4534 Szeged, Rakoczi ut 25.",Platinum
+ORD-2025-00386,2025-01-19,C0068,Budapest,store,Home,Keramia bogre,3,3606.44,10819.32,0%,0,"5995 Budapest, Rakoczi ut 5.",Bronze
+ORD-2025-00387,2025-04-24,C0023,Budapest,online,Beauty,Arckrem,2,5842.44,11100.64,0%,igen,"6221 Budapest, Petofi utca 39.",
+ORD-2025-00388,2025-03-18,C0086,Budapest,paid_search,Home,Tarolo doboz,3,4619.75,13859.25,n/a, Igen ,"6289 Budapest, Rakoczi ut 76.",Bronze
+ORD-2025-00389,2025-05-13,C0056,Budapest,online,Home,Keramia bogre,1,3244.3,3244.3, 5%,nem,"3620 Budapest, Duna sor 69.",
+ORD-2025-00390,2025-05-04,C0116,,online,Electronics,Bluetooth hangszoro,2,13736.7,27473.4,5%,N,"4352 Ismeretlen, Rakoczi ut 23.",
+ORD-2025-00391,2025-03-05,C0026,,online,Sports,Joga matrac,4,8760.34,31537.22, 5%,true,"7516 Ismeretlen, Petofi utca 78.",
+ORD-2025-00392,2025-06-21,C0103,Pecs,instagram,Electronics,USB-C kabel,1,2305.42,2305.42,5%,N,"8563 Pecs, Petofi utca 77.",
+ORD-2025-00393,2025-02-02,C0133,Szeged,instagram,Home,Tarolo doboz,1,4949.36,4454.42,0%,true,"2870 Szeged, Piac ter 72.",
+ORD-2025-00394,2025-03-11,C0019,Kecskemet,email,Home,Tarolo doboz,2,5004.44,10008.88,10%,no,"4567 Kecskemet, Rakoczi ut 47.",Bronze
+ORD-2025-00395,2025-03-19,C0135,Budapest,online,Home,Tarolo doboz,3,4692.9,13374.76, 5%,yes,"8574 Budapest, Duna sor 33.",
+ORD-2025-00396,2025-03-20,C0173,,email,Electronics,Vezetek nelkuli eger,1,7103.44,6037.92, 5%,N,"Ismeretlen, Kossuth Lajos utca 73.",
+ORD-2025-00397,2025-03-05,C0082,Budapest,online,Electronics,Vezetek nelkuli eger,1,7408.12,7408.12,20%,1,"Budapest, Duna sor 26.",
+ORD-2025-00398,2025-05-30,C0183,Budapest,fb,Electronics,Vezetek nelkuli eger,1,,6908.23, 5%,no,"5171 Budapest, Piac ter 85.",
+ORD-2025-00399,2025-06-23,C0168,,ONLINE,Beauty,Sampon,1,3230.33,2745.78,10%,N,"4855 Ismeretlen, Duna sor 1.",Silver
+ORD-2025-00400,2025-05-11,C0101,Budapest,paid_search,Electronics,Bluetooth hangszoro,1,13065.81,11759.23,15%,true,"5449 Budapest, Kossuth Lajos utca 5.",
+ORD-2025-00401,2025-06-22,C0029,Pecs,facebook,Electronics,Vezetek nelkuli eger,1,6795.59,6795.59,0%,no,"5700 Pecs, Duna sor 62.",
+ORD-2025-00402,2025-06-26,C0169,Kecskemet,email,Beauty,Arckrem,1,5662.53,5662.53,n/a,true,"1479 Kecskemet, Kossuth Lajos utca 47.",Silver
+ORD-2025-00403,2025-01-31,C0049,Budapest,instagram,Beauty,Arckrem,3,6412.99,18277.02,10%, Igen ,"4699 Budapest, Duna sor 20.",Gold
+ORD-2025-00404,2025-01-02,C0073,Budapest,online,Beauty,Sampon,1,2757.14,2757.14,0%,nem,"7830 Budapest, Fo utca 37.",
+ORD-2025-00405,2025-04-23,C0052,Budapest,web,Electronics,USB-C kabel,3,2325.25,6975.75,0%,I,"2171 Budapest, Duna sor 32.",
+ORD-2025-00406,2025-02-11,C0154,Budapest,online,Beauty,Sampon,1,3331.78,2998.6,n/a,no,"2274 Budapest, Kossuth Lajos utca 67.",
+ORD-2025-00407,2025-05-23,C0014,,online,Home,Tarolo doboz,1,4464.29,4241.08,0%,I,"3553 Ismeretlen, Petofi utca 27.",
+ORD-2025-00408,2025-04-17,C0096,Kecskemet,web,Beauty,Sampon,1,2899.28,2754.32, 5%, Igen ,"8263 Kecskemet, Kossuth Lajos utca 55.",
+ORD-2025-00409,2025-04-23,C0077,Gyor,web,Beauty,Arckrem,8,6199.8,49598.4,5%, Igen ,"8156 Gyor, Rakoczi ut 65.",
+ORD-2025-00410,2025-02-01,C0139,Budapest,online,Books,Python alapok konyv,2,8554.45,14542.57,n/a,yes,"9089 Budapest, Piac ter 46.",
+ORD-2025-00411,2025-01-02,C0094,Debrecen,email,Sports,Kulacs,3,3845.2,10 959 Ft,5%,I,"3845 Debrecen, Piac ter 12.",
+ORD-2025-00412,2025-01-23,C0155,Kecskemet,facebook,Sports,Kulacs,1,4076.75,4076.75,0%,false,"7735 Kecskemet, Petofi utca 37.",
+ORD-2025-00413,2025-03-11,C0053,,web,Books,Python alapok konyv,2,7640.36,15280.72,5%,0,"5117 Ismeretlen, Petofi utca 74.",
+ORD-2025-00414,2025-06-06,C0179,Pecs,email,Electronics,USB-C kabel,1,2347.76,2230.37,0%,no,"3685 Pecs, Rakoczi ut 76.",
+ORD-2025-00415,2025-06-11,C0047,Budapest,online,Sports,Joga matrac,1,9663.91,9663.91,n/a, Igen ,"6123 Budapest, Rakoczi ut 79.",
+ORD-2025-00416,2025-05-25,C0055,Gyor,web,Books,Python alapok konyv,3,8155.1,20795.51, 5%,I,"9497 Gyor, Fo utca 93.",
+ORD-2025-00417,2025-04-01,C0145,Szekesfehervar ,email,Beauty,Sampon,1,2757.87,2482.08,10%,I,"Szekesfehervar, Fo utca 48.",
+ORD-2025-00418,2025-06-20,C0067,Budapest,fb,Home,Keramia bogre,2,3814.62,7247.78,20%,no,"9030 Budapest, Fo utca 25.",
+ORD-2025-00419,2025-04-14,C0011,Miskolc,paid_search,Beauty,Arckrem,1,5937.54,5343.79,15%,I,"6238 Miskolc, Kossuth Lajos utca 59.",
+ORD-2025-00420,2025-01-27,C0175,,paid_search,Sports,Kulacs,1,3787.09,3029.67, 5%,nem,"3837 Ismeretlen, Kossuth Lajos utca 7.",
+ORD-2025-00421,2025-03-07,C0054,,paid_search,Books,Adatvizualizacio jegyzet,2,7115.05,14230.1,10%,yes,"6236 Ismeretlen, Piac ter 49.",Bronze
+ORD-2025-00422,2025-02-27,C0137,Szekesfehervar ,fb,Electronics,Bluetooth hangszoro,2,12962.7,25925.4,20%,false,"8632 Szekesfehervar, Piac ter 58.",
+ORD-2025-00423,2025-01-11,C0171,Budapest,online,Electronics,Vezetek nelkuli eger,1,6505.81,6180.52,0%,yes,"5347 Budapest, Duna sor 32.",
+ORD-2025-00424,2025-03-16,C0179,,Online,Beauty,Arckrem,1,6208.41,5897.99,20%,0,"3554 Ismeretlen, Fo utca 61.",
+ORD-2025-00425,2025-01-28,C0121,Szeged,online,Home,Tarolo doboz,1,4924.26,4924.26,15%,true,"5726 Szeged, Kossuth Lajos utca 81.",
+ORD-2025-00426,2025-02-09,C0017,Gyor,online,Home,Tarolo doboz,1,4849.68,4607.2,n/a, Igen ,"7011 Gyor, Kossuth Lajos utca 89.",
+ORD-2025-00427,2025-01-11,C0069, Nyiregyhaza,online,Beauty,Arckrem,8,6619.3,47658.96,5%,I,"4314 Nyiregyhaza, Fo utca 63.",Gold
+ORD-2025-00428,2025-01-12,C0122,,online,Electronics,Vezetek nelkuli eger,1,6900.77,6900.77,15%,1,"9704 Ismeretlen, Fo utca 9.",
+ORD-2025-00429,2025-03-26,C0125,Szeged,email,Sports,Joga matrac,1,9726.1,9726.1,n/a,yes,"1165 Szeged, Duna sor 75.",Gold
+ORD-2025-00430,2025-01-11,C0130,Debrecen,online,Home,Tarolo doboz,2,5021.51,9540.87, 5%,N,"3085 Debrecen, Duna sor 51.",
+ORD-2025-00431,2025-06-19,C0049, Nyiregyhaza,online,Home,Asztali lampa,1,11194.02,8955.22,0%,1,"9649 Nyiregyhaza, Petofi utca 87.",
+ORD-2025-00432,2025-05-23,C0052,Budapest,email,Home,Asztali lampa,1,11535.04,11535.04,0%,no,"5878 Budapest, Petofi utca 61.",
+ORD-2025-00433,2025-06-21,C0019,Budapest,web,Sports,Kulacs,2,3731.53,7463.06,15%, Igen ,"6919 Budapest, Piac ter 3.",
+ORD-2025-00434,2025-06-04,C0173,Kecskemet,ONLINE,Beauty,Sampon,2,2784.06,5289.71,10%,yes,"9773 Kecskemet, Petofi utca 88.",
+ORD-2025-00435,2025-01-22,C0090,Szeged,online,Home,Keramia bogre,1,3685.22,3685.22,0%,N,"2485 Szeged, Fo utca 94.",Platinum
+ORD-2025-00436,2025-04-10,C0074,Budapest,web,Books,Adatvizualizacio jegyzet,1,6669.29,6002.36,15%,igen,"4812 Budapest, Piac ter 85.",
+ORD-2025-00437,2025-06-05,C0131,Gyor,online,Sports,Kulacs,8,4073.82,26072.45,20%,no,"4530 Gyor, Rakoczi ut 39.",
+ORD-2025-00438,2025-05-24,C0031,Pecs,Online,Home,Keramia bogre,1,3253.34,2928.01,0%,0,"7503 Pecs, Petofi utca 11.",
+ORD-2025-00439,2025-01-25,C0103,Budapest,email,Beauty,Sampon,8,3016.31,20510.91,10%,yes,"4728 Budapest, Rakoczi ut 62.",
+ORD-2025-00440,2025-03-19,C0058,Kecskemet,Online,Home,Asztali lampa,1,11453.22,9735.24,0%,yes,"3775 Kecskemet, Kossuth Lajos utca 5.",
+ORD-2025-00441,2025-06-30,C0050,Budapest,paid_search,Books,Python alapok konyv,2,8348.59,14192.6, 5%,igen,"1571 Budapest, Duna sor 82.",Bronze
+ORD-2025-00442,2025-06-11,C0155,,email,Electronics,Vezetek nelkuli eger,1,6479.1,6479.1,5%,1,"2075 Ismeretlen, Fo utca 44.",
+ORD-2025-00443,2025-02-19,C0039,Szeged,online,Books,Python alapok konyv,1,8502.98,8502.98,15%,no,"5557 Szeged, Petofi utca 34.",Platinum
+ORD-2025-00444,2025-05-13,C0054,,Online,Beauty,Arckrem,3,5742.2,15503.94,5%,yes,"4309 Ismeretlen, Petofi utca 8.",
+ORD-2025-00445,2025-03-25,C0163,Gyor,fb,Electronics,USB-C kabel,2,2678.3,5356.6, 5%,nem,"3664 Gyor, Rakoczi ut 26.",
+ORD-2025-00446,2025-06-28,C0149,Budapest,online,Beauty,Arckrem,1,6705.7,6705.7,20%,true,"3922 Budapest, Kossuth Lajos utca 90.",
+ORD-2025-00447,2025-04-30,C0068,Debrecen,online,Electronics,Vezetek nelkuli eger,3,6747.93,19231.6,20%,N,"3745 Debrecen, Petofi utca 33.",
+ORD-2025-00448,2025-03-17,C0066,Budapest,store,Sports,Joga matrac,2,9264.8,15750.16,20%,nem,"7912 Budapest, Piac ter 21.",
+ORD-2025-00449,2025-05-26,C0158,Szeged,ONLINE,Books,Python alapok konyv,1,7915.84,7520.05,5%,0,"2844 Szeged, Rakoczi ut 31.",
+ORD-2025-00450,2025-06-19,C0074,Kecskemet,store,Home,Keramia bogre,1,3720.78,3534.74,n/a,I,"8197 Kecskemet, Rakoczi ut 89.",Platinum
+ORD-2025-00451,2025-03-29,C0034,Budapest,instagram,Home,Keramia bogre,2,3502.41,5954.1,0%,I,"8698 Budapest, Rakoczi ut 47.",
+ORD-2025-00452,2025-02-03,C0089,Szeged,fb,Books,Python alapok konyv,2,8947.55,17000.34,10%,N,"3299 Szeged, Piac ter 64.",
+ORD-2025-00453,2025-01-25,C0099,Szekesfehervar ,store,Electronics,USB-C kabel,1,2446.57,2324.24,n/a,1,"4472 Szekesfehervar, Duna sor 83.",
+ORD-2025-00454,2025-06-18,C0176,Kecskemet,online,Beauty,Sampon,5,2757.97,13789.85,5%, Igen ,"7764 Kecskemet, Petofi utca 64.",
+ORD-2025-00455,2025-02-21,C0181,Szeged,Online,Beauty,Arckrem,1,5927.93,5631.53,0%,N,"1382 Szeged, Rakoczi ut 28.",
+ORD-2025-00456,2025-06-09,C0011,Budapest,online,Beauty,Arckrem,1,6197.51,5267.88,10%,true,"2261 Budapest, Kossuth Lajos utca 36.",Bronze
+ORD-2025-00457,2025-02-25,C0047,Debrecen,store,Electronics,Vezetek nelkuli eger,2,7510.61,15021.22,15%,no,"1832 Debrecen, Kossuth Lajos utca 28.",Platinum
+ORD-2025-00458,2025-05-09,C0135,Budapest,online,Electronics,USB-C kabel,1,2787.49,2787.49,n/a,I,"3604 Budapest, Piac ter 60.",
+ORD-2025-00459,2025-04-26,C0179,Budapest,fb,Beauty,Sampon,2,3308.94,6617.88,15%,1,"1434 Budapest, Fo utca 11.",
+ORD-2025-00460,2025-03-24,C0171,Gyor,web,Sports,Kulacs,2,4057.34,6897.48, 5%,1,"4932 Gyor, Piac ter 8.",Gold
+ORD-2025-00461,2025-01-17,C0016,Szekesfehervar ,online,Books,Python alapok konyv,1,8226.34,7815.02,20%,nem,"5746 Szekesfehervar, Fo utca 75.",
+ORD-2025-00462,2025-03-24,C0183,Budapest,store,Sports,Kulacs,3,4271.27,10251.05,10%,true,"2952 Budapest, Fo utca 58.",
+ORD-2025-00463,2025-02-01,C0050,Pecs, online,Sports,Kulacs,1,4079.59,4079.59,5%,true,"5677 Pecs, Kossuth Lajos utca 52.",
+ORD-2025-00464,2025-05-14,C0179,Szekesfehervar ,online,Sports,Joga matrac,1,9679.71,9679.71, 5%,false,"4469 Szekesfehervar, Petofi utca 33.",
+ORD-2025-00465,2025-01-17,C0139,Pecs,email,Electronics,Vezetek nelkuli eger,1,6493.04,6493.04,5%,nem,"6124 Pecs, Piac ter 70.",Silver
+ORD-2025-00466,2025-06-25,C0169,Budapest,instagram,Beauty,Arckrem,3,5932.06,16016.56, 5%,nem,"6960 Budapest, Duna sor 38.",Platinum
+ORD-2025-00467,2025-05-14,C0005,Gyor,web,Books,Adatvizualizacio jegyzet,1,7252.18,6526.96,n/a,false,"4224 Gyor, Kossuth Lajos utca 60.",
+ORD-2025-00468,2025-05-17,C0093,Gyor,online,Electronics,USB-C kabel,3,2534.09,7602.27,10%,nem,"3175 Gyor, Kossuth Lajos utca 94.",
+ORD-2025-00469,2025-01-22,C0016,Kecskemet,email,Electronics,Bluetooth hangszoro,1,12849.05,11564.15,0%,nem,"6198 Kecskemet, Piac ter 85.",
+ORD-2025-00470,2025-06-19,C0025,Budapest,store,Books,Python alapok konyv,1,7994.79,6395.83,15%,I,"4671 Budapest, Fo utca 59.",
+ORD-2025-00471,2025-02-11,C0174,,fb,Sports,Joga matrac,1,9636.8,9636.8,n/a,false,"3310 Ismeretlen, Piac ter 47.",
+ORD-2025-00472,2025-03-19,C0058,Szekesfehervar ,online,Electronics,Bluetooth hangszoro,3,13120.29,31488.7,10%,0,"Szekesfehervar, Duna sor 56.",
+ORD-2025-00473,2025-02-09,C0162,Szeged,online,Books,Adatvizualizacio jegyzet,1,6689.49,6689.49,20%,true,"9057 Szeged, Piac ter 67.",
+ORD-2025-00474,2025-01-08,C0079,Pecs,online,Books,Python alapok konyv,2,8627.19,16391.66, 5%,true,"4178 Pecs, Piac ter 12.",
+ORD-2025-00475,2025-01-14,C0013,Miskolc,instagram,Books,Adatvizualizacio jegyzet,3,6919.52,20758.56,15%,yes,"6946 Miskolc, Kossuth Lajos utca 91.",
+ORD-2025-00476,2025-01-31,C0147,Gyor,instagram,Beauty,Sampon,8,2882.08,23056.64,15%,no,"3991 Gyor, Rakoczi ut 67.",Bronze
+ORD-2025-00477,2025-06-23,C0182,Miskolc, online,Home,Tarolo doboz,1,4460.81,4460.81,n/a,igen,"1836 Miskolc, Rakoczi ut 17.",
+ORD-2025-00478,2025-02-10,C0142,Miskolc,instagram,Sports,Joga matrac,2,9397.97,18795.94,n/a,no,"2649 Miskolc, Rakoczi ut 74.",
+ORD-2025-00479,2025-01-06,C0004,Kecskemet,paid_search,Electronics,Bluetooth hangszoro,2,14256.72,28513.44,n/a,N,"7200 Kecskemet, Kossuth Lajos utca 9.",
+ORD-2025-00480,2025-01-07,C0181,Kecskemet,online,Electronics,Bluetooth hangszoro,1,12085.68,12085.68,0%,true,"4261 Kecskemet, Kossuth Lajos utca 81.",Silver
+ORD-2025-00481,2025-05-28,C0145,Budapest, online,Books,Python alapok konyv,2,8186.72,15554.77,n/a,igen,"2003 Budapest, Petofi utca 23.",
+ORD-2025-00482,2025-06-20,C0113,Szeged,online,Electronics,Bluetooth hangszoro,1,13268.8,13268.8,15%,false,"Szeged, Rakoczi ut 77.",
+ORD-2025-00483,2025-01-03,C0171,Budapest,online,Books,Python alapok konyv,1,8016.13,7615.32,20%, Igen ,"3942 Budapest, Piac ter 11.",
+ORD-2025-00484,2025-06-06,C0081,Budapest,online,Books,Adatvizualizacio jegyzet,1,6386.73,6386.73,15%,false,"3232 Budapest, Kossuth Lajos utca 51.",
+ORD-2025-00485,2025-04-19,C0146,Szeged, online,Home,Asztali lampa,1,11325.36,10192.82,15%,0,"Szeged, Kossuth Lajos utca 31.",Bronze
+ORD-2025-00486,2025-05-19,C0115,Szeged, online,Electronics,Vezetek nelkuli eger,1,7370.37,7370.37,20%,yes,"9207 Szeged, Piac ter 46.",
+ORD-2025-00487,2025-02-24,C0130,,online,Electronics,USB-C kabel,8,2691.08,"21528,6",20%,no,"3881 Ismeretlen, Fo utca 8.",Bronze
+ORD-2025-00488,2025-04-24,C0030,Miskolc,online,Home,Tarolo doboz,1,4777.9,4777.9,15%,false,"1797 Miskolc, Petofi utca 86.",Gold
+ORD-2025-00489,2025-01-23,C0003,Budapest,store,Electronics,USB-C kabel,3,2739.37,6985.39,0%, Igen ,"Budapest, Piac ter 22.",
+ORD-2025-00490,2025-04-05,C0146,Budapest,online,Beauty,Sampon,1,2839.67,2271.74,5%,0,"7311 Budapest, Kossuth Lajos utca 93.",
+ORD-2025-00491,2025-02-20,C0127,Pecs,web,Beauty,Arckrem,1,5703.17,5132.85,10%,no,"7184 Pecs, Fo utca 41.",
+ORD-2025-00492,2025-04-19,C0169,Budapest,online,Home,Keramia bogre,5,3782.05,15128.2,0%, Igen ,"7120 Budapest, Duna sor 91.",
+ORD-2025-00493,2025-01-11,C0114,Miskolc,email,Electronics,USB-C kabel,1,2654.01,2521.31,5%,I,"6958 Miskolc, Kossuth Lajos utca 65.",
+ORD-2025-00494,2025-03-01,C0139,Debrecen,online,Beauty,Arckrem,1,5888.06,4710.45,10%, Igen ,"9812 Debrecen, Kossuth Lajos utca 78.",Platinum
+ORD-2025-00495,2025-06-21,C0134,Budapest,paid_search,Beauty,Arckrem,8,6173.64,41980.75,10%,1,"3826 Budapest, Petofi utca 48.",
+ORD-2025-00496,2025-03-07,C0104,Debrecen,store,Sports,Joga matrac,2,8416.92,16833.84,10%,no,"1943 Debrecen, Petofi utca 59.",
+ORD-2025-00497,2025-01-07,C0094,,email,Books,Python alapok konyv,3,8576.61,21870.36,15%,false,"3584 Ismeretlen, Duna sor 69.",
+ORD-2025-00498,2025-05-05,C0030,Budapest,online,Books,Python alapok konyv,1,8019.4,8019.4,10%,I,"2182 Budapest, Petofi utca 82.",Silver
+ORD-2025-00499,2025-05-08,C0068,Kecskemet,fb,Home,Keramia bogre,1,3613.64,3071.59,20%,nem,"5696 Kecskemet, Rakoczi ut 89.",
+ORD-2025-00500,2025-05-28,C0143,Kecskemet,web,Books,Adatvizualizacio jegyzet,2,6598.54,13197.08,5%,I,"4141 Kecskemet, Duna sor 85.",
+ORD-2025-00501,2025-01-13,C0125,Pecs,email,Electronics,Bluetooth hangszoro,8,12488.54,99908.32,10%,true,"2977 Pecs, Piac ter 66.",Silver
+ORD-2025-00502,2025-05-10,C0033, Nyiregyhaza,online,Home,Keramia bogre,2,3668.36,7336.72,n/a,0,"4003 Nyiregyhaza, Petofi utca 24.",
+ORD-2025-00503,2025-01-01,C0108,Budapest,Online,Beauty,Sampon,3,3284.16,8374.61, 5%,igen,"1659 Budapest, Rakoczi ut 25.",Bronze
+ORD-2025-00504,2025-02-19,C0031,Debrecen,fb,Electronics,USB-C kabel,1,2649.5,2649.5,0%,false,"4189 Debrecen, Rakoczi ut 88.",
+ORD-2025-00505,2025-01-12,C0107,Miskolc,online,Beauty,Sampon,1,2888.43,2888.43,0%,nem,"4835 Miskolc, Kossuth Lajos utca 74.",
+ORD-2025-00506,2025-06-17,C0143,Szeged,online,Electronics,USB-C kabel,2,2385.12,4770.24,20%, Igen ,"7355 Szeged, Fo utca 81.",
+ORD-2025-00507,2025-03-24,C0039,Budapest,online,Books,Adatvizualizacio jegyzet,3,6790.47,20371.41,10%,I,"8141 Budapest, Piac ter 59.",
+ORD-2025-00508,2025-02-11,C0041,,online,Books,Python alapok konyv,3,8405.8,21434.79,5%, Igen ,"7361 Ismeretlen, Rakoczi ut 81.",Bronze
+ORD-2025-00509,2025-04-28,C0099,Debrecen,web,Home,Tarolo doboz,2,4533.13,9066.26,0%,I,"1791 Debrecen, Piac ter 62.",
+ORD-2025-00510,2025-05-22,C0079,Budapest,email,Home,Asztali lampa,1,11319.85,11319.85,10%,igen,"3574 Budapest, Fo utca 38.",
+ORD-2025-00511,2025-06-29,C0179,Gyor, online,Sports,Kulacs,5,4458.91,17835.64,n/a,false,"5328 Gyor, Piac ter 68.",
+ORD-2025-00512,2025-03-23,C0056,Kecskemet,web,Sports,Kulacs,1,3995.02,3395.77,20%,no,"6106 Kecskemet, Kossuth Lajos utca 80.",Bronze
+ORD-2025-00513,2025-04-07,C0178, Nyiregyhaza,store,Beauty,Sampon,2,2773.44,5546.88,n/a,yes,"5772 Nyiregyhaza, Duna sor 91.",
+ORD-2025-00514,2025-03-10,C0175,,online,Electronics,Vezetek nelkuli eger,4,6993.71,27974.84, 5%,N,"2432 Ismeretlen, Piac ter 27.",Silver
+ORD-2025-00515,2025-03-17,C0158,Kecskemet,email,Electronics,USB-C kabel,1,2609.67,2609.67, 5%,1,"8597 Kecskemet, Piac ter 31.",
+ORD-2025-00516,2025-03-18,C0174,Szeged,paid_search,Home,Asztali lampa,1,11856.16,11263.35, 5%,N,"8076 Szeged, Piac ter 92.",
+ORD-2025-00517,2025-06-29,C0173,Pecs,online,Books,Python alapok konyv,1,7399.04,7399.04,15%,nem,"7427 Pecs, Duna sor 13.",Bronze
+ORD-2025-00518,2025-01-29,C0178,Budapest,web,Books,Python alapok konyv,2,8452.98,16905.96,10%,igen,"3392 Budapest, Piac ter 59.",
+ORD-2025-00519,2025-05-14,C0177,Szekesfehervar ,online,Books,Adatvizualizacio jegyzet,1,6592.11,6262.5, 5%,true,"3046 Szekesfehervar, Fo utca 49.",
+ORD-2025-00520,2025-06-24,C0092,Budapest,online,Sports,Kulacs,2,3756.22,7136.82,n/a,nem,"7875 Budapest, Petofi utca 54.",
+ORD-2025-00521,2025-02-21,C0048,,fb,Home,Keramia bogre,3,3507.27,10521.81,10%,no,"2550 Ismeretlen, Fo utca 51.",
+ORD-2025-00522,2025-04-30,C0154,Budapest,facebook,Home,Keramia bogre,2,3589.48,7178.96,5%,0,"2250 Budapest, Petofi utca 46.",
+ORD-2025-00523,2025-05-03,C0107,,store,Beauty,Sampon,1,3161.48,2845.33,20%,no,"5164 Ismeretlen, Rakoczi ut 59.",
+ORD-2025-00524,2025-03-08,C0084,Kecskemet,online,Beauty,Arckrem,2,5738.85,10903.82,5%,true,"2820 Kecskemet, Piac ter 72.",
+ORD-2025-00525,2025-05-05,C0181,,online,Home,Asztali lampa,1,12728.05,12728.05,5%,1,"1509 Ismeretlen, Piac ter 31.",
+ORD-2025-00526,2025-04-16,C0012,Budapest,online,Electronics,USB-C kabel,3,2437.64,6581.63,15%,nem,"7441 Budapest, Piac ter 55.",Gold
+ORD-2025-00527,2025-04-24,C0046,Pecs,online,Sports,Kulacs,8,4122.29,28031.57,20%,0,"2892 Pecs, Rakoczi ut 66.",
+ORD-2025-00528,2025-04-03,C0183,Budapest,online,Beauty,Arckrem,2,6037.98,10868.36,10%,I,"6993 Budapest, Piac ter 91.",
+ORD-2025-00529,2025-03-03,C0165,Budapest,online,Electronics,USB-C kabel,1,2360.15,2360.15,5%,0,"4857 Budapest, Duna sor 71.",
+ORD-2025-00530,2025-04-20,C0067,Budapest,paid_search,Beauty,Sampon,2,3015.63,4825.01,n/a,nem,"9065 Budapest, Petofi utca 73.",Gold
+ORD-2025-00531,2025-01-27,C0072,Budapest,fb,Books,Python alapok konyv,1,7906.15,7906.15,5%, Igen ,"9034 Budapest, Duna sor 38.",Platinum
+ORD-2025-00532,2025-03-03,C0132,Budapest,instagram,Beauty,Arckrem,8,6491.64,51933.12,10%,yes,"9191 Budapest, Fo utca 64.",Platinum
+ORD-2025-00533,2025-02-16,C0152,Debrecen,paid_search,Home,Keramia bogre,1,3364.26,3196.05,10%,no,"4302 Debrecen, Rakoczi ut 95.",Silver
+ORD-2025-00534,2025-02-07,C0063,Szeged,Online,Home,Tarolo doboz,5,4761.37,22616.51,0%,1,"7087 Szeged, Fo utca 50.",
+ORD-2025-00535,2025-01-30,C0071,Budapest,web,Home,Keramia bogre,1,3654.17,3654.17,10%,0,"1694 Budapest, Rakoczi ut 24.",
+ORD-2025-00536,2025-05-29,C0128,Miskolc,online,Beauty,Sampon,5,3130.54,15652.7,20%,I,"4059 Miskolc, Rakoczi ut 75.",
+ORD-2025-00537,2025-02-15,C0083,, online,Home,Tarolo doboz,3,4834.97,14504.91, 5%,0,"2928 Ismeretlen, Duna sor 73.",Bronze
+ORD-2025-00538,2025-04-26,C0085,,online,Beauty,Arckrem,1,5582.02,4744.72, 5%,false,"8731 Ismeretlen, Piac ter 84.",
+ORD-2025-00539,2025-02-07,C0102,Kecskemet,web,Electronics,Bluetooth hangszoro,2,13587.29,27174.58,15%,yes,"2057 Kecskemet, Petofi utca 85.",Gold
+ORD-2025-00540,2025-05-10,C0155,Miskolc,online,Home,Tarolo doboz,3,4692.16,14076.48, 5%,false,"7450 Miskolc, Petofi utca 70.",
+ORD-2025-00013,2025-01-30,C0146,Debrecen,Online,Electronics,Vezetek nelkuli eger,2,7213.2,14426.4,10%,false,"8958 Debrecen, Fo utca 16.",
+ORD-2025-00146,2025-03-26,C0142,Budapest,Online,Electronics,USB-C kabel,2,2776.15,5274.68,15%,no,"5523 Budapest, Petofi utca 19.",
+ORD-2025-00320,2025-04-19,C0036,Pecs,web,Electronics,Bluetooth hangszoro,4,13790.33,55161.32,10%,false,"9285 Pecs, Rakoczi ut 36.",
+ORD-2025-00089,2025-06-30,C0157,Miskolc,online,Electronics,Vezetek nelkuli eger,1,6539.14,18990.0,0%,1,"9154 Miskolc, Fo utca 43.",
+ORD-2025-00268,2025-06-30,C0029,,web,Electronics,Vezetek nelkuli eger,3,7545.9,25980.0,0%,true,"9661 Ismeretlen, Kossuth Lajos utca 57.",
+ORD-2025-00434,2025-06-30,C0173,Kecskemet,ONLINE,Beauty,Sampon,2,2784.06,7490.0,0%,yes,"9773 Kecskemet, Petofi utca 88.",
+ORD-2025-TEST,2025-06-20,TEST001,Budapest,ONLINE,Books,Teszt termek - ne elemezd,1,6639.17,0.0,5%,yes,"1001 Budapest, Kossuth Lajos utca 35.",

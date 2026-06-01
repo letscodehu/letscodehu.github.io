@@ -544,7 +544,9 @@ watch(
 .markdown-body :deep(pre) {
   margin: 1rem 0;
   padding: 1rem;
-  overflow-x: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   background: var(--color-surface-strong);
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
@@ -561,6 +563,8 @@ watch(
   padding: 0;
   background: transparent;
   border-radius: 0;
+  white-space: inherit;
+  overflow-wrap: inherit;
 }
 
 .markdown-body :deep(a) {

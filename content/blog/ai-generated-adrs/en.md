@@ -1,61 +1,113 @@
-Many teams are already at the point where the assumption feels natural: if AI can write code, surely it can write ADRs too.
+Documenting architecture decisions used to be a mostly collaborative process.
 
-And it can.
+It might have been a meeting, an RFC, an ADR review, a long Slack thread, or a debate in front of a whiteboard. The format changed, but the essence stayed the same: several people tried to understand the same decision from different angles.
+
+With AI, that can change easily.
+
+Today it is enough to ask a model to help with a decision. A few seconds later, we get alternatives, a pros and cons list, arguments that sound professional, and a ready-made recommendation.
+
+There is an even worse version: we already decide what we want, then ask AI to write the ADR for it.
+
+This skips the uncomfortable part. The people who see different risks do not sit down together. The team does not wrestle with the fact that the decision is only acceptable under certain tradeoffs.
+
+We just get a document.
 
 That is exactly the problem.
 
-You describe the situation, ask for an Architecture Decision Record, and a few seconds later you get a clean document:
+An ADR is not about which decision *usually* works in the world. It is about why *we* made a given decision in *our* situation.
 
-- context,
-- options,
-- decision,
-- consequences,
-- sometimes even a neat table with pros and cons.
+The point of an ADR is not that a document exists somewhere. The document is only the byproduct.
 
-On a busy team, this feels like progress. The document exists. The template is filled. The decision looks explainable.
+> **Info:** An ADR, or Architecture Decision Record, gives that byproduct a concrete form: it describes the circumstances, alternatives, tradeoffs, and consequences around an architecture decision.
 
-The risk is that the hard part may have been skipped.
+The important part is the decision-making process itself: the moment when multiple parties, perspectives, and kinds of risk meet before the team commits.
 
-An ADR is not about which decision usually works in the world. It is about why this team made this decision in this situation.
+Engineering, product, security, operations, support, and even compliance can see completely different costs in the same decision. A good ADR process brings those different perspectives to the surface.
 
-If AI only turns a loose preference into polished documentation, the result can easily become a generic architecture blog post.
+Let's look at an example.
 
-## AI is very good at ADR-shaped text
+## A prompt that turns into a finished ADR
 
-Most ADR templates are simple. That is a strength when humans use them well, and a trap when they are filled mechanically.
+Suppose a team has been working in a modular monolith. Now the question comes up whether the notification functionality should be extracted into a separate service, because the system sends more and more emails, push notifications, and webhooks.
 
-AI can easily produce something like this:
+The prompt could look like this. For now, let's ignore that the prompt itself already has a problem. We will come back to that later.
 
-> We decided to use event-driven architecture because it improves scalability, decouples services, and follows modern cloud-native best practices.
+```md
+Write an ADR about extracting the notification module into a separate microservice.
 
-That sentence sounds reasonable. It also hides almost everything that matters.
+Context:
+- the system currently runs as a modular monolith
+- the notification module sends emails, push notifications, and webhooks
+- the product is expected to grow
+- we want a more scalable and loosely coupled architecture
+- the team cares about cloud-native best practices
 
-Which scalability problem do we actually have?  
-Which teams need to be decoupled?  
-Can we observe asynchronous flows well enough?  
-What happens when an event is processed twice?  
-Who will debug the incident when billing and customer state disagree?
+The ADR should include context, decision, alternatives, pros and cons, and consequences.
+```
 
-The generated ADR may contain correct words while avoiding the real decision.
+AI could easily produce something like this:
+
+```md
+# ADR: Extracting the Notification Module into a Separate Microservice
+
+## Context
+
+The current system runs as a modular monolith. The notification module is responsible for sending emails, push notifications, and webhooks. As the product grows, scalability, flexibility, and loose coupling between components become increasingly important.
+
+## Decision
+
+We will extract the notification module into a separate microservice. The monolith will publish events to a message broker, and the Notification Service will send notifications based on those events.
+
+## Alternatives
+
+1. Keep the notification module inside the monolith.
+2. Move the notification logic into a separate library.
+3. Extract the notification module into a separate microservice.
+
+## Rationale
+
+The microservice approach better supports scalability, independent deployment, and loose coupling. The notification functionality is clearly separated from the business domain, so it forms a natural service boundary. Asynchronous communication improves system resilience because core business flows are not blocked while notifications are being sent.
+
+## Consequences
+
+Positive consequences:
+- the notification component can be scaled independently
+- the team can deploy notification logic independently
+- the system aligns better with cloud-native architecture
+- the service boundary becomes cleaner
+
+Negative consequences:
+- operational complexity increases
+- a message broker is required
+- eventual consistency must be handled
+- monitoring becomes more complex
+
+## Status
+
+Accepted.
+```
+
+At first glance, this looks perfectly reasonable.
+
+There is context. There are alternatives. Consequences are named. The decision seems logical.
+
+That is why it is dangerous.
 
 ## AI loves best practices
 
-AI loves best practices because public technical writing is full of established patterns, recommendations, and industry standards.
+Almost every sentence in the generated ADR is built from familiar professional patterns:
 
-If you ask about monolith or microservices, cache or database, Kubernetes or VMs, the answer often drifts toward professional consensus.
+- microservice,
+- message broker,
+- loose coupling,
+- independent deployment,
+- scalability,
+- cloud-native architecture,
+- eventual consistency.
 
-That is understandable. Best practices are everywhere:
+These are useful concepts in many situations.
 
-- use managed services,
-- prefer asynchronous communication,
-- split by domain boundaries,
-- automate everything,
-- make the system horizontally scalable,
-- keep services loosely coupled.
-
-Many of these ideas are useful in the right situation. In ADRs, however, we often do not choose the "best" solution in an industry-wide sense.
-
-We choose the one that:
+In ADRs, however, we often do not choose the industry-wide "best" solution. We choose the one that:
 
 - fits the budget,
 - matches the team's skill level,
@@ -64,172 +116,153 @@ We choose the one that:
 
 The local optimum is often more important than the industry optimum.
 
-A best practice is usually a story that lost its context. It worked for a company at a certain scale, with a certain team, under a certain business constraint. By the time it reaches a blog post, the messy details are often gone.
+For a team of three, a clean module boundary inside the monolith may be a better decision than a separate service with its own deployment, monitoring, and incident runbook.
 
-AI sees the polished version.
+Two months before a deadline, the simplest queue-based background processing may be more valuable than introducing a full event-driven architecture.
 
-Your team lives with the messy version.
+In a low-traffic B2B product, a solution that scales to 100 million users may only bring unnecessary cost and complexity.
 
-Maybe event-driven architecture is a strong choice because order processing, fulfillment, and invoicing really need independent failure modes.
+In the ADR above, "cloud-native best practices" works like an amplifier. It makes the decision look more serious while saying very little about why it is true for this team and this system.
 
-Maybe it is premature because six people share one deployment pipeline, nobody has operated a message broker in production, and the current problem is a slow SQL query.
+Maybe the notification module really does deserve a separate service.
 
-Both situations can produce similar-looking ADRs if the model is allowed to fill in the reasoning from general patterns.
+It may also be better to clean up the boundary inside the monolith, decouple sending through a queue, and avoid creating a new deployable unit for now.
+
+The generated ADR does not examine that difference.
+
+## The decision was already made in the prompt
+
+It is worth looking at the prompt too.
+
+We did not ask what options exist. We asked it to write an ADR about extracting the module.
+
+AI will often helpfully justify the direction it was given. It gathers arguments that sound good, then writes "accepted" at the end.
+
+This bias did not arrive with AI.
+
+We have seen the same pattern in ADRs written by humans: the author clearly leans toward one solution, so the alternatives are described more weakly, and the risks of the preferred option are handled more gently.
+
+AI does not create a new problem here. It can amplify an existing one faster and with more polish.
+
+Because of that, the document looks like the result of a decision process.
+
+In reality, it may only be a preference wrapped in professional language after the fact.
+
+This is one of the biggest risks with AI-generated ADRs: the document does not record the decision, it rationalizes it.
+
+At that point, the ADR loses its purpose.
+
+The team already decided, and AI produced a document for it. The part where operations could have said there is no capacity to operate another service disappeared. Security could have asked about webhook retry and audit trail details. Product could have pointed out that the next two months are about landing a major release reliably, not scaling.
+
+That process is exactly what gives an ADR its value.
+
+When we use AI to write the finished decision document on behalf of the team, those perspectives can disappear easily. The document remains, while the quality of decision-making does not improve.
+
+## Responsibility does not move to AI
+
+This is already worth taking seriously with code.
+
+If a change written by AI causes a company to lose millions of dollars, final responsibility will not belong to the model. It stays with the developer and the team who approved it, merged it, and let it into production.
+
+"AI wrote it" may explain how the bug got there.
+
+It is not much of an excuse.
+
+The same applies to architecture decisions.
+
+If an AI-generated ADR leads us to draw the wrong service boundary, build unnecessary infrastructure, or take on an operational burden the team cannot carry, the organization lives with the consequences. On the incident call, in the migration project, and in the cost report, it no longer matters who wrote the ADR.
+
+What matters is who accepted it as a decision.
 
 ## Decision drivers are not equal
 
-An ADR is not only about the decision. It is just as much about the compromises behind it.
+An ADR is not only about the decision itself. The tradeoffs behind it matter just as much.
 
-The most important part of an ADR is often the least visible: the weight of the decision drivers.
+For example:
 
-For one team, the dominant driver may be auditability. For another, delivery speed. In a third case, reversibility matters more than performance because the domain is still unstable.
-
-Typical drivers include:
-
-- compliance and audit expectations,
-- operational complexity,
+- development speed,
+- operational cost,
+- scalability,
 - team experience,
-- cost,
-- latency,
-- data consistency,
-- migration risk,
-- reversibility,
-- time to market,
-- vendor dependency,
-- incident recovery.
+- vendor lock-in,
+- security,
+- observability,
+- incident recovery,
+- time to market.
 
-AI can list these drivers. It can even explain them clearly.
+All of these are decision drivers.
 
-The difficult question is weight.
+The ADR above lists some of them: operational complexity, message broker, eventual consistency, monitoring.
 
-The model does not know on its own that your three-person engineering team matters more than theoretical scalability to 100 million users.
+The weighting is missing.
 
-The prompt may easily leave out that the deadline is two months away, so maintainability carries less weight right now.
+Which matters more: independent deployment, or the fact that a three-person team has so far operated a single production service?
 
-A public pattern also cannot feel when compliance is legally binding, so it dominates convenience.
+What is the real notification load? Ten thousand messages a day? Ten million? Does it burst during campaigns, or arrive evenly?
 
-If the team has no operational capacity, a theoretically elegant distributed design can become a daily tax. If the product direction is uncertain, reversibility may matter more than the cleanest long-term model.
+Is there anyone who understands how the message broker works, including its retry model, dead letter queue, and idempotency concerns?
 
-How should AI weigh those drivers?
+A major release is coming in two months. Does a new service, a new CI/CD pipeline, a new dashboard, and a new incident runbook really fit right now?
 
-Based on the prompt? Based on public examples? Based on what usually appears in architecture articles?
+AI can list the drivers. That does not mean it can weigh them correctly.
 
-That is too thin for a real decision.
+The value of ADRs is precisely that they record these weights explicitly.
 
-The weighting comes from context that is often political, financial, operational, and historical. It comes from knowing which deadline is real, which incident still hurts, which legacy dependency cannot be touched this quarter, and which compliance requirement has teeth.
+## Well-written sentences hide missing evidence
 
-The value of ADRs is exactly that they make those weights explicit.
+Look at this sentence:
 
-## AI produces very convincing reasoning
+> The notification functionality is clearly separated from the business domain, so it forms a natural service boundary.
 
-This may be the most dangerous part.
+That might be true.
 
-An AI-generated ADR can look as if someone spent months thinking about the decision.
+The generated ADR just does not show why.
 
-Clean tables. Pros and cons. Elegant technical reasoning.
+Does a separate team work on it? Does it have a different release cycle? Does it scale differently from the rest of the system? Does it handle data that requires a separate authorization model?
 
-At the same time, the decision may never have been seriously weighed.
+If none of these are true, then "natural service boundary" is only a nice-sounding label.
 
-In that case, AI is not documenting the decision. It is rationalizing it after the fact.
+The same applies to asynchronous communication. It is a good goal that the main business flow should not block on sending emails.
 
-There is another subtle failure mode: someone already wants Kubernetes, microservices, Kafka, or a particular database. They ask AI to generate an ADR for that choice. The output then presents the decision as if it came from balanced analysis.
+That does not necessarily require a separate microservice. An internal queue, background processing, and a cleaner module boundary may be enough.
 
-The document may include alternatives, but they are often weakly framed:
+The generated ADR chooses the larger architecture move because it matches the words in the prompt more visibly.
 
-- option A is modern and scalable,
-- option B is simple but limited,
-- option C has operational risk.
+## How I would still use it
 
-That kind of framing can quietly choose the winner before the discussion begins.
+So far, this may have sounded as if I would exclude AI completely from ADR work.
 
-The team then reviews a polished artifact instead of the underlying assumptions. The ADR becomes a justification layer around a decision that was already emotionally made.
+That is not the point.
 
-This is especially dangerous because the text looks neutral. The bias is hidden in what the model emphasizes, what it downplays, and which consequences receive a name.
+I would not use AI to write the final ADR.
 
-## The missing responsibility
+I would treat it as one additional participant in the decision process.
 
-Architecture decisions are expensive because someone has to live with them.
+It is not the decision-maker. It is not the document factory. It is an invited perspective that asks questions, checks assumptions, looks for blind spots, and sometimes points to missing details with uncomfortable precision.
 
-AI will not be on the incident call when the queue backlog grows. It will not explain the migration plan to product leadership. It will not maintain the custom platform layer that was described as "future-proof" in the ADR.
+It can be very useful for review.
 
-Responsibility changes the quality of reasoning.
+For example, with a prompt like this:
 
-When a team owns the decision, the conversation becomes concrete:
+```md
+Review this ADR as a skeptical architect.
 
-- Can we operate this?
-- Which failure mode scares us most?
-- What would make us reverse the decision?
-- Which constraint is fixed?
-- Which assumption needs evidence before implementation?
+Do not accept the decision as given.
 
-Those questions are the real value of an ADR.
+Find:
+- which decision drivers are missing
+- where claims lack evidence
+- which alternatives the document treats too weakly
+- which operational risks should be clarified
+- which questions we must answer before deciding
+```
 
-If AI generates the final document too early, the team may lose the discomfort that produces better decisions.
+This is where AI is strong.
 
-## A better role for AI
+It can give good questions. It can notice blind spots. It can help search for alternatives.
 
-AI can still help with ADRs. It just needs the right job.
+Used this way, AI becomes a participant in the decision process.
 
-Use it before the decision hardens:
+The decision remains a human responsibility. AI can add perspective, ask useful questions, and quickly assemble what generally tends to work.
 
-> We are considering these three options. Do not choose for us. List the assumptions behind each option, missing decision drivers, likely blind spots, and questions the team should answer before deciding.
-
-Or:
-
-> Review this ADR as a skeptical architect. Which decision drivers are underspecified? Which tradeoffs are described too vaguely? What evidence would change the recommendation?
-
-These prompts ask for pressure, not permission.
-
-The output should make the decision harder in a useful way. It should reveal missing context, not smooth it over.
-
-## A practical workflow
-
-A lightweight ADR process can use AI without handing over the decision.
-
-1. **Humans write the context first.**  
-   Include the real constraint, not only the technical problem.
-
-2. **Name the decision drivers explicitly.**  
-   Add relative weight: high, medium, low, or a short explanation of what dominates.
-
-3. **Ask AI for missing drivers and assumptions.**  
-   Treat the output as review input, not as the decision.
-
-4. **Discuss the tradeoffs with the people who will live with them.**  
-   Operations, product, security, support, and engineering may see different costs.
-
-5. **Write the ADR after the decision conversation.**  
-   The final record should preserve the reasoning the team actually used.
-
-This keeps AI in the useful part of the process: expanding the thinking surface.
-
-## What a good ADR must contain
-
-A useful ADR does not need to be long. It needs to be honest.
-
-It should say:
-
-- what context made the decision necessary,
-- which options were seriously considered,
-- which decision drivers mattered most,
-- how those drivers were weighted,
-- what consequences the team accepts,
-- what evidence could make the team revisit the decision.
-
-That last point matters. A good ADR is not a declaration of certainty. It is a snapshot of judgment under known constraints.
-
-## Final thought
-
-AI can generate an ADR document.
-
-That does not mean it made an architecture decision.
-
-The decision lives in the weighing of context, constraints, risks, and consequences. That is where engineering judgment matters most.
-
-Use AI to find blind spots, sharpen alternatives, and challenge vague reasoning.
-
-Keep the decision with the people who will carry its cost.
-
-Compromises are stubborn things. They rarely appear in the best Stack Overflow answer, and they do not fit cleanly into a "best practices" list.
-
-If your team wants ADRs that improve architectural decisions instead of just documenting them, [reach out and let's design a lean decision workflow together](/en/contact).
+> It cannot know what truly matters in your context.

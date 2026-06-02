@@ -24,6 +24,7 @@ export const blogPostManifest: BlogPostManifest[] = [
       'AI can produce polished ADR-shaped text, but it cannot weigh your real decision drivers. Use it to expose assumptions and blind spots before the team owns the choice.',
     excerptHu:
       'Az AI csiszolt ADR-szerű szöveget tud írni, de nem tudja helyetted súlyozni a valódi decision drivereket. Használd feltételezések és vakfoltok felszínre hozására, mielőtt a csapat dönt.',
+    featuredImagePath: '/blog/ai-in-adr.png',
   },
   {
     slug: 'testing-in-ai-age',

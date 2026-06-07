@@ -46,6 +46,17 @@ Use a balanced style match:
 
 Do not translate mechanically. Draft the stronger source version first, then adapt the second version so it reads naturally.
 
+### Hungarian-specific writing rules
+
+These apply only to `hu.md` and are based on observed editorial corrections:
+
+- **Keep English tech terms** — do not magyarize jargon that the target audience uses in English: `agent` (not `ágens`), `edge case-k` (not `szélső esetek`), `vibe` (in quotes if needed), `spec`, `prompt`, `build`, `lead`, etc. When in doubt, keep the English term.
+- **Natural word order** — Hungarian allows and prefers time adverbs and topic phrases at the front: „Nemrég beszéltem…" not „Egy csapattal beszéltem nemrég…". Avoid translation-order sentences that follow the English structure.
+- **Link tools on first mention** — when a named tool or product appears for the first time, add a hyperlink to its homepage or official docs.
+- **Typographic emphasis** — use `_word_` italic for a single key word when the argument hinges on it (e.g. „amit egyszer, előre _kell_ megcsinálni"). Use sparingly.
+- **Be direct at transitions** — do not add softening bridge sentences (e.g. „Mindez megéri.") between a positive claim and its critique. Move straight to the limitation; the contrast is sharper without the cushion.
+- **"Ők is…" for relatability** — when the opening establishes that a team did what everyone does, lead with „Ők is ugyanazt…" rather than „Ugyanazt…" to signal shared experience.
+
 ## Implementation Workflow
 
 1. Choose a slug in lowercase kebab-case.

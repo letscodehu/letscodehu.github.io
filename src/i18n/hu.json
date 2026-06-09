@@ -221,6 +221,9 @@
       "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."
     },
     "ctaPrimary": "Lefoglalom a helyem",
+    "ctaNotify": "Értesíts a következő időpontról",
+    "registrationClosedBadge": "Jelentkezés lezárult",
+    "registrationNextDate": "Legközelebb várhatóan szeptemberben kerül megrendezésre.",
     "ctaSeatsLeft": "Már csak 3 hely maradt",
     "applicationDeadlineLabel": "Jelentkezési határidő",
     "applicationDeadlineDate": "június 1.",

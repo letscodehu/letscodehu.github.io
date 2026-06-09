@@ -221,6 +221,9 @@
       "priceComparison": "Less than the first refactor sprint of a poorly chosen database."
     },
     "ctaPrimary": "Save my seat",
+    "ctaNotify": "Notify me about the next date",
+    "registrationClosedBadge": "Registration closed",
+    "registrationNextDate": "Next date expected in September.",
     "ctaSeatsLeft": "Only 3 seats left",
     "applicationDeadlineLabel": "Application deadline",
     "applicationDeadlineDate": "June 1",

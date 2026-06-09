@@ -170,9 +170,9 @@ const { t } = useI18n()
 }
 
 .about-photo {
-  width: 100%;
-  height: clamp(14rem, 32vw, 22rem);
-  border-radius: var(--radius-md);
+  width: clamp(10rem, 22vw, 16rem);
+  aspect-ratio: 1;
+  border-radius: 28% 72% 62% 38% / 36% 36% 64% 64%;
   object-fit: cover;
   object-position: center 25%;
   display: block;

@@ -2,8 +2,7 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
-import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
-import LatebirdOfferPopup from '../components/ui/LatebirdOfferPopup.vue'
+import SignupPopup from '../components/ui/SignupPopup.vue'
 import { useI18n } from '../composables/useI18n'
 import {
   trackTrainingWorkshopCtaClick,
@@ -12,11 +11,6 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
-const LATEBIRD_POPUP_DELAY_MS = 50000
-const LATEBIRD_SCROLL_THRESHOLD = 0.4
-const LATEBIRD_POPUP_STORAGE_KEY = 'letscode.trainingB2cAds.latebirdPopupSeen'
-const STRIPE_CHECKOUT_URL =
-  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02'
 
 const { t, currentLang } = useI18n()
 const instructorImages = ['/weblica.jpg', '/webconf.jpg', '/cldrmeetup.jpg'] as const
@@ -28,21 +22,16 @@ const heroCtaVisible = ref(true)
 const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
-const isCheckoutPopupOpen = ref(false)
-const isLatebirdOfferOpen = ref(false)
+const isSignupPopupOpen = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
-let latebirdPopupTimer: ReturnType<typeof setTimeout> | null = null
 let heroObserver: IntersectionObserver | null = null
 let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
-let latebirdPopupShown = false
-let latebirdDelayElapsed = false
-let latebirdScrollThresholdReached = false
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -162,121 +151,6 @@ function teardownSectionRevealObserver() {
   sectionRevealObserver = null
 }
 
-function hasSeenLatebirdPopup() {
-  if (typeof window === 'undefined') {
-    return true
-  }
-
-  try {
-    return window.localStorage.getItem(LATEBIRD_POPUP_STORAGE_KEY) === 'true'
-  } catch {
-    return latebirdPopupShown
-  }
-}
-
-function markLatebirdPopupSeen() {
-  latebirdPopupShown = true
-
-  if (typeof window === 'undefined') {
-    return
-  }
-
-  try {
-    window.localStorage.setItem(LATEBIRD_POPUP_STORAGE_KEY, 'true')
-  } catch {
-    // Private browsing and strict storage settings can reject localStorage writes.
-  }
-}
-
-function openLatebirdOfferPopup() {
-  if (hasSeenLatebirdPopup() || isLatebirdOfferOpen.value || isCheckoutPopupOpen.value) {
-    return
-  }
-
-  markLatebirdPopupSeen()
-  isLatebirdOfferOpen.value = true
-}
-
-function closeLatebirdOfferPopup() {
-  isLatebirdOfferOpen.value = false
-}
-
-async function handleLatebirdOfferAccept() {
-  isLatebirdOfferOpen.value = false
-  await nextTick()
-  handlePrimaryCtaClick('latebird_popup')
-}
-
-function evaluateLatebirdTimedScrollTrigger() {
-  if (!latebirdDelayElapsed || !latebirdScrollThresholdReached) {
-    return
-  }
-
-  openLatebirdOfferPopup()
-}
-
-function syncLatebirdScrollProgress() {
-  if (typeof window === 'undefined' || typeof document === 'undefined') {
-    return
-  }
-
-  const documentElement = document.documentElement
-  const maxScroll = documentElement.scrollHeight - window.innerHeight
-  if (maxScroll <= 0) {
-    return
-  }
-
-  const scrollProgress = window.scrollY / maxScroll
-  if (scrollProgress < LATEBIRD_SCROLL_THRESHOLD) {
-    return
-  }
-
-  latebirdScrollThresholdReached = true
-  evaluateLatebirdTimedScrollTrigger()
-}
-
-function handleLatebirdExitIntent(event: MouseEvent) {
-  if (typeof window === 'undefined' || isMobileViewport.value || event.clientY > 0) {
-    return
-  }
-
-  openLatebirdOfferPopup()
-}
-
-function clearLatebirdPopupTimer() {
-  if (latebirdPopupTimer == null) {
-    return
-  }
-
-  window.clearTimeout(latebirdPopupTimer)
-  latebirdPopupTimer = null
-}
-
-function setupLatebirdPopupTriggers() {
-  if (typeof window === 'undefined' || typeof document === 'undefined' || hasSeenLatebirdPopup()) {
-    return
-  }
-
-  latebirdPopupTimer = window.setTimeout(() => {
-    latebirdDelayElapsed = true
-    evaluateLatebirdTimedScrollTrigger()
-  }, LATEBIRD_POPUP_DELAY_MS)
-
-  window.addEventListener('scroll', syncLatebirdScrollProgress, { passive: true })
-  document.addEventListener('mouseleave', handleLatebirdExitIntent)
-  syncLatebirdScrollProgress()
-}
-
-function teardownLatebirdPopupTriggers() {
-  if (typeof window === 'undefined' || typeof document === 'undefined') {
-    return
-  }
-
-  clearLatebirdPopupTimer()
-  window.removeEventListener('scroll', syncLatebirdScrollProgress)
-  document.removeEventListener('mouseleave', handleLatebirdExitIntent)
-}
-
 onMounted(() => {
   syncMobileViewport()
   if (typeof window !== 'undefined') {
@@ -299,13 +173,11 @@ onMounted(() => {
     setupSectionRevealObserver()
   })
 
-  setupLatebirdPopupTriggers()
 })
 
 onUnmounted(() => {
   teardownObservers()
   teardownSectionRevealObserver()
-  teardownLatebirdPopupTriggers()
   mediaQuery?.removeEventListener('change', syncMobileViewport)
   mediaQuery = null
 
@@ -317,14 +189,14 @@ onUnmounted(() => {
   imageRotationInterval = null
 })
 
-function handlePrimaryCtaClick(placement: TrainingWorkshopCtaPlacement) {
+function handleNotifyClick(placement: TrainingWorkshopCtaPlacement) {
   trackTrainingWorkshopCtaClick({ placement, nextStep: 'email_popup' })
   trackTrainingWorkshopEmailPopupOpen({ placement })
-  isCheckoutPopupOpen.value = true
+  isSignupPopupOpen.value = true
 }
 
-function closeCheckoutPopup() {
-  isCheckoutPopupOpen.value = false
+function closeSignupPopup() {
+  isSignupPopupOpen.value = false
 }
 
 const faqItemsList = computed(() => {
@@ -399,30 +271,19 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
 
-      <div class="application-deadline-badge fade fade--5" :aria-label="t('trainingB2cAds.applicationDeadline')">
-        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.applicationDeadlineLabel') }}</span>
-        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.applicationDeadlineDate') }}</span>
+      <div class="application-deadline-badge application-deadline-badge--closed fade fade--5">
+        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.registrationClosedBadge') }}</span>
+        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.registrationNextDate') }}</span>
       </div>
 
       <div ref="heroCtaEl" class="hero-actions fade fade--5">
-        <BaseButton @click="handlePrimaryCtaClick('hero')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
+        <BaseButton @click="handleNotifyClick('hero')">
+          {{ t('trainingB2cAds.ctaNotify') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
       </div>
-      <p class="cta-seats-left fade fade--5">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
-    </section>
-
-    <section class="hero-reassurance-panel section-reveal" data-section-reveal>
-      <ul class="hero-reassurance-panel__list">
-        <li v-for="point in t('trainingB2cAds.heroReassurancePoints')" :key="point">{{ point }}</li>
-      </ul>
-      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
-      <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
-        {{ t('trainingB2cAds.termsLinkLabel') }}
-      </RouterLink>
     </section>
 
     <section class="instructor-snapshot section-reveal" data-section-reveal>
@@ -487,19 +348,14 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
       <div ref="middleCtaEl" class="final-cta-actions">
-        <BaseButton @click="handlePrimaryCtaClick('middle')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
+        <BaseButton @click="handleNotifyClick('middle')">
+          {{ t('trainingB2cAds.ctaNotify') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
-        <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
-          {{ t('trainingB2cAds.termsLinkLabel') }}
-        </RouterLink>
       </div>
-      <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
-      <p class="application-deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
-      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
+      <p class="registration-next-date">{{ t('trainingB2cAds.registrationNextDate') }}</p>
     </section>
 
     <section
@@ -595,16 +451,11 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
       <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
       <div ref="bottomCtaEl" class="program-footer-cta-actions">
-        <BaseButton @click="handlePrimaryCtaClick('bottom')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
+        <BaseButton @click="handleNotifyClick('bottom')">
+          {{ t('trainingB2cAds.ctaNotify') }}
         </BaseButton>
-        <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
-          {{ t('trainingB2cAds.termsLinkLabel') }}
-        </RouterLink>
       </div>
-      <p class="cta-seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
-      <p class="application-deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
-      <p class="checkout-note">{{ t('trainingB2cAds.checkoutNote') }}</p>
+      <p class="registration-next-date">{{ t('trainingB2cAds.registrationNextDate') }}</p>
     </section>
 
     <Teleport to="body">
@@ -612,27 +463,20 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         v-show="showStickyWaitlistCta"
         class="training-b2c-ads-sticky-waitlist"
         role="region"
-        :aria-label="t('trainingB2cAds.ctaPrimary')"
+        :aria-label="t('trainingB2cAds.ctaNotify')"
       >
         <div class="training-b2c-ads-sticky-waitlist__inner">
-          <BaseButton @click="handlePrimaryCtaClick('sticky')">
-            {{ t('trainingB2cAds.ctaPrimary') }}
+          <BaseButton @click="handleNotifyClick('sticky')">
+            {{ t('trainingB2cAds.ctaNotify') }}
           </BaseButton>
-          <p class="training-b2c-ads-sticky-waitlist__seats-left">{{ t('trainingB2cAds.ctaSeatsLeft') }}</p>
-          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
+          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.registrationNextDate') }}</p>
         </div>
       </div>
     </Teleport>
 
-    <CheckoutEmailPopup
-      :open="isCheckoutPopupOpen"
-      :stripe-checkout-url="STRIPE_CHECKOUT_URL"
-      @close="closeCheckoutPopup"
-    />
-    <LatebirdOfferPopup
-      :open="isLatebirdOfferOpen"
-      @close="closeLatebirdOfferPopup"
-      @accept="handleLatebirdOfferAccept"
+    <SignupPopup
+      :open="isSignupPopupOpen"
+      @close="closeSignupPopup"
     />
   </article>
 </template>
@@ -869,6 +713,19 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .application-deadline-badge__date {
   background: color-mix(in srgb, var(--landing-accent-soft) 70%, var(--color-surface));
   color: var(--color-text);
+}
+
+.application-deadline-badge--closed .application-deadline-badge__date {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.registration-next-date {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted, var(--color-text));
+  opacity: 0.75;
 }
 
 .offer-meta {

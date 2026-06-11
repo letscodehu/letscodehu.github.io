@@ -1,6 +1,10 @@
 Nemrég beszéltem egy csapattal, amelyik hatalmas lelkesedéssel váltott spec-vezérelt fejlesztésre.
 
-Ők is ugyanazt olvasták, amit mindenki olvas mostanában. „A spec maga a prompt." Hagyd el az ad-hoc, mondatról mondatra való promptolgatást, írj előbb egy strukturált specifikációt, aztán hagyd, hogy az ágens az alapján dolgozzon. Az olyan eszközök, mint a [GitHub Spec Kit](https://github.com/github/spec-kit) és az [AWS Kiro](https://kiro.dev/), ezt egy kész munkafolyamattá alakítják: spec, terv, feladatok, implementáció.
+Ők is ugyanazt olvasták, amit mindenki olvas mostanában. 
+
+>„A spec maga a prompt." 
+
+Hagyd el az ad-hoc, mondatról mondatra való promptolgatást, írj előbb egy strukturált specifikációt, aztán hagyd, hogy az ágens az alapján dolgozzon. Az olyan eszközök, mint a [GitHub Spec Kit](https://github.com/github/spec-kit) és az [AWS Kiro](https://kiro.dev/), ezt egy kész munkafolyamattá alakítják: spec, terv, feladatok, implementáció.
 
 Leültek hát, és gondosan megírták a következő feature specifikációját. Célok, korlátok, elfogadási kritériumok, edge case-k. Az agent nekiállt, és egy délután alatt egy meglepően teljes implementációt rakott le.
 
@@ -26,7 +30,7 @@ Ez a mai piaci környezetben megbukott — mégpedig egy olyan okból, amelynek 
 
 Az egész agilis mozgalom erre volt a válasz. Szállíts valami kicsit, kapj visszajelzést, igazodj. Kezeld a tervet hipotézisként, nem pedig egyfajta szerződésként.
 
-Viszont a spec-vezérelt fejlesztés csendben visszahozhatja ezt a vízesés-folyamatot.
+> Viszont a spec-vezérelt fejlesztés csendben visszahozhatja ezt a vízesés-folyamatot.
 
 A spec részletes, verziókezelt. Ez az input, amelyet az ágens követ. Ez a tény pedig csábítóvá teszi, hogy úgy írjuk a specet, mintha már tudnánk a választ, igy aztán a fejlesztést egy lezárt döntés végrehajtásaként kezeljük.
 
@@ -72,8 +76,5 @@ Ezekhez a feladatokhoz nem kell, hogy a spec elsőre helyes legyen. Mindkettő j
 
 Annak, hogy megépíted és megnézed, mi lesz belőle, van egy harmadik haszna is — a spec feltételezéseinek tesztelésén túl azt is megmutatja, hogy az agent valóban a leírt határokon belül maradt-e. A Spec-kit kutatási lépése [dokumentáltan](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) megtalálta és pontosan le is írta egy kódbázis meglévő class-ait, majd ennek ellenére duplikátumokat generált belőlük. A spec mondott valamit, az agent meg mást épített. A határok leírása emiatt is szükséges — de még mindig nem garantálja,  hogy az agent be is tartja azokat.
 
-Tehát ha bevezeted a spec-vezérelt fejlesztést, kezeld a specet egy visszajelzési ciklus élő inputjaként. Szinte mindig azok a csapatok égetik meg magukat, amelyek egyszer megírják a specet, megbíznak benne, mert részletes, és harminc évvel később fedezik újra fel, miért hagytuk abba a szoftver ily módon való fejlesztését.
+Tehát ha bevezeted a spec-vezérelt fejlesztést, kezeld a specit egy visszajelzési ciklus élő inputjaként. Szinte mindig azok a csapatok égetik meg magukat, amelyek egyszer megírják azt, megbíznak benne, mert részletes, és harminc évvel később fedezik újra fel, miért hagytuk abba az ily módon való szoftverfejlesztést.
 
----
-
-Ha ez arra késztetett, hogy újra megnézz egy specet, amelyet egy kicsit túl magabiztosan írtál, valószínűleg a csapatod valamelyik tagjának is hasznos lesz.

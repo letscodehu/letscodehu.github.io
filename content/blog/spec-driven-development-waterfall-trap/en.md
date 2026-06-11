@@ -1,6 +1,6 @@
 A team I talked to recently switched to spec-driven development with real enthusiasm.
 
-They had read the same things everyone has read lately. "The spec is the prompt." Stop the ad-hoc back-and-forth with the model, write a structured specification first, then let the agent build against it. Tools like GitHub Spec Kit and AWS Kiro turn that into a workflow: spec, plan, tasks, implementation.
+They had read the same things everyone has read lately. "The spec is the prompt." Stop the ad-hoc back-and-forth with the model, write a structured specification first, then let the agent build against it. Tools like [GitHub Spec Kit](https://github.com/github/spec-kit) and [AWS Kiro](https://kiro.dev/) turn that into a workflow: spec, plan, tasks, implementation.
 
 So they sat down and wrote a long, careful spec for the next feature. Goals, constraints, acceptance criteria, edge cases. The agent took it and produced a remarkably complete implementation in an afternoon.
 
@@ -44,6 +44,8 @@ You can write that spec in great detail. You can specify the lead stages, the no
 
 A vague prompt that produces throwaway code at least signals its own uncertainty. A precise spec that produces a confident, complete build hides the uncertainty under a layer of structure. The team reviews the spec, the spec looks thorough, everyone moves on. The questions that should have been asked never come up, because the document already sounds like it answered them.
 
+Even when someone does push back, the format works against them. Ask the agent whether one of its assumptions actually holds, and it rarely defends it. It agrees, rewrites the section, and hands back an equally confident document built on a different guess. The questioning that should surface bad assumptions just produces another polished, untested spec.
+
 This is the same failure mode I wrote about with [AI-generated ADRs](/en/blog/p/ai-generated-adrs): a well-structured document can make a guess look like a decision.
 
 ## Iterate the spec, not just the code
@@ -69,6 +71,8 @@ A good spec makes you confront the questions early. Who is this for? What has to
 The agent needs the spec for a different reason. Left to a loose prompt, it drifts toward whatever sounds like a reasonable general solution, the same way it reaches for microservices and message brokers when you ask it about architecture. A spec is the leash. It tells the model which problem you are solving and which solutions are out of bounds.
 
 Neither of those jobs requires the spec to be right on the first try. Both of them survive iteration just fine.
+
+There is a third thing the build-and-watch loop buys you, beyond testing the spec's assumptions: it tells you whether the agent actually stayed inside the boundaries you wrote down. [Spec-kit's research step has been documented](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) finding and accurately describing a codebase's existing classes, then generating duplicates of them anyway. The spec said one thing, the agent built another. Writing the boundary down is necessary; it is not the same as the agent staying inside it.
 
 So if you adopt spec-driven development, adopt the spec as a living input to a feedback loop. The teams that get burned are the ones who write the spec once, trust it because it is detailed, and rediscover thirty years late why we stopped building software that way.
 

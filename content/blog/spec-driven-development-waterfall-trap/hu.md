@@ -42,6 +42,8 @@ Megírhatod ezt a specet nagy részletességgel. Meghatározhatod a lead-fáziso
 
 Egy homályos prompt, amely eldobható kódot produkál, legalább jelzi a saját bizonytalanságát. Egy pontos spec, amely magabiztos, teljes implementációt produkál, a struktúra egy rétege alá rejti ezt a bizonytalanságot. A csapat átnézi a specit, az pedig rendkivül alaposnak és meggyőzőnek tűnik, igy aztán mindenki halad tovább. A baj az, hogy a kérdések, amelyeket fel kellett volna tenni, soha nem merülnek fel, mert a dokumentum már úgy hangzik, mintha megválaszoltuk volna őket.
 
+Még ha valaki meg is kérdőjelez egy feltételezést, a formátum ellene dolgozik. Kérdezd meg az agentet, hogy tényleg megállja-e a helyét az egyik feltételezése, és az ritkán fogja megvédeni — inkább egyetért, átírja azt a szakaszt, és egy ugyanolyan magabiztos dokumentumot ad vissza, csak immár egy másik találgatásra építve. A kérdés, amelynek felszinre kellene hoznia a rossz feltételezéseket, csak egy másik, ugyanúgy csiszolt, ugyanúgy teszteletlen specifikációt eredményez.
+
 Ez ugyanaz a hibamód, amelyről [az AI-generált ADR-ekről szóló cikkemben](/hu/blog/p/ai-generated-adrs) írtam: egy jól strukturált dokumentum képes egy találgatást döntésnek álcázni.
 
 ## Iteráld a specet, ne csak a kódot
@@ -67,6 +69,8 @@ Egy jó spec arra kényszerít, hogy korán szembenézz a nehéz kérdésekkel. 
 Az ágensnek persze más okból van szüksége a specre. Egy laza prompt esetén az általánosan elfogadhatónak tűnő megoldás felé sodródik — ugyanúgy, ahogy microservice-ekhez és message brokerekhez nyúl, ha architektúráról kérdezed. A spec egyfajta póráz. Megmondja a modellnek, melyik problémát oldod meg, és melyik megoldások nem jönnek most szóba.
 
 Ezekhez a feladatokhoz nem kell, hogy a spec elsőre helyes legyen. Mindkettő jól bírja az iterációt.
+
+Annak, hogy megépíted és megnézed, mi lesz belőle, van egy harmadik haszna is — a spec feltételezéseinek tesztelésén túl azt is megmutatja, hogy az agent valóban a leírt határokon belül maradt-e. A Spec-kit kutatási lépése [dokumentáltan](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) megtalálta és pontosan le is írta egy kódbázis meglévő class-ait, majd ennek ellenére duplikátumokat generált belőlük. A spec mondott valamit, az agent meg mást épített. A határok leírása emiatt is szükséges — de még mindig nem garantálja,  hogy az agent be is tartja azokat.
 
 Tehát ha bevezeted a spec-vezérelt fejlesztést, kezeld a specet egy visszajelzési ciklus élő inputjaként. Szinte mindig azok a csapatok égetik meg magukat, amelyek egyszer megírják a specet, megbíznak benne, mert részletes, és harminc évvel később fedezik újra fel, miért hagytuk abba a szoftver ily módon való fejlesztését.
 

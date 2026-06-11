@@ -16,6 +16,17 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'spec-driven-development-waterfall-trap',
+    publishedAt: '2026-06-07',
+    titleEn: 'Spec-Driven Development and the Waterfall Trap',
+    titleHu: 'Spec-vezérelt fejlesztés és a vízesés-csapda',
+    featuredImagePath: '/blog/spec-driven-waterfall.png',
+    excerptEn:
+      'Spec-driven development solves real problems with vibe coding, but writing a long, confident spec up front quietly brings back the waterfall assumption. The fix is to iterate the spec, not just the code.',
+    excerptHu:
+      'A spec-vezérelt fejlesztés valódi problémát old meg a vibe codinggal szemben, de egy hosszú, magabiztos előzetes spec csendben visszahozza a vízesés-feltételezést. A megoldás: iteráld a specet, ne csak a kódot.',
+  },
+  {
     slug: 'ai-generated-adrs',
     publishedAt: '2026-06-01',
     titleEn: 'Do Not Let AI Write Your ADRs',

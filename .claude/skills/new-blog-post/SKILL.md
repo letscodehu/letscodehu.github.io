@@ -39,10 +39,11 @@ Use a balanced style match:
 - Start from a concrete situation, story, or recognizable team behavior.
 - Build the argument through consequences, tradeoffs, and useful guidance.
 - Keep paragraphs short enough for web reading, with varied sentence starts and sentence lengths.
-- Avoid anaphora, slogan-heavy repetition, exaggerated adjectives, and moralizing language.
-- Avoid mirrored contrast patterns like "not X, but Y"; state the intended point directly.
+- Avoid anaphora, slogan-heavy repetition, and moralizing language. An occasional intensifier ("hatalmas", "rendkívül", "extremely") is fine for genuine emphasis on a specific point — avoid generic, repeated, or filler intensifiers.
+- "Not X, but Y" framing and other mirrored contrasts are fine when used sparingly to sharpen one specific point — avoid using the pattern repeatedly or as a structural crutch.
 - Use examples from software delivery, architecture decisions, testing, CI/CD, scaling, product validation, or team process when relevant.
 - Keep the HU and EN versions aligned in structure and thesis, while writing idiomatically in each language.
+- The closing "share this / subscribe on YouTube / follow on LinkedIn" CTA paragraph is optional. Default to omitting it; if used, include it identically in both the EN and HU versions.
 
 Do not translate mechanically. Draft the stronger source version first, then adapt the second version so it reads naturally.
 
@@ -50,12 +51,18 @@ Do not translate mechanically. Draft the stronger source version first, then ada
 
 These apply only to `hu.md` and are based on observed editorial corrections:
 
-- **Keep English tech terms** — do not magyarize jargon that the target audience uses in English: `agent` (not `ágens`), `edge case-k` (not `szélső esetek`), `vibe` (in quotes if needed), `spec`, `prompt`, `build`, `lead`, etc. When in doubt, keep the English term.
+- **Keep English tech terms** — do not magyarize jargon that the target audience uses in English: `agent` (not `ágens`), `edge case-k` (not `szélső esetek`), `vibe` (in quotes if needed), `spec`, `prompt`, `build`, `lead`, `microservice` (not `mikroservice`), etc. When in doubt, keep the English term.
 - **Natural word order** — Hungarian allows and prefers time adverbs and topic phrases at the front: „Nemrég beszéltem…" not „Egy csapattal beszéltem nemrég…". Avoid translation-order sentences that follow the English structure.
 - **Link tools on first mention** — when a named tool or product appears for the first time, add a hyperlink to its homepage or official docs.
 - **Typographic emphasis** — use `_word_` italic for a single key word when the argument hinges on it (e.g. „amit egyszer, előre _kell_ megcsinálni"). Use sparingly.
 - **Be direct at transitions** — do not add softening bridge sentences (e.g. „Mindez megéri.") between a positive claim and its critique. Move straight to the limitation; the contrast is sharper without the cushion.
 - **"Ők is…" for relatability** — when the opening establishes that a team did what everyone does, lead with „Ők is ugyanazt…" rather than „Ugyanazt…" to signal shared experience.
+- **Contrastive sentence openers** — vary turns and reversals with „Csakhogy", „Pedig", „Viszont", „Ellenben" instead of repeating „De" or leaving the contrast implicit.
+- **"persze" for concession** — insert „persze" before a caveat or counterpoint to soften the turn and sound more like spoken Hungarian (e.g. „ez persze teljesen rendben van", "A megoldás persze nem az lesz...").
+- **One exclamation mark at most per post** — reserve „!" for the single sharpest reversal (e.g. „Pedig a kód működött!"); don't sprinkle it elsewhere.
+- **Lists for parallel advice** — when several consecutive paragraphs each state one independent rule or tip, format them as a `-` bullet list rather than separate paragraphs.
+- **Concretize vague pronouns** — replace „azt/mindegyiket/őket" referring back to an abstract noun with the explicit noun if there's any ambiguity (e.g. „amely mindegyiket védi" → „amely mindegyik feltételezést védi").
+- **Don't personify the document** — make the team/people the subject of verbs like „válaszol", „dönt", not the spec/document itself (e.g. „mintha megválaszoltuk volna őket", not „mintha megválaszolta volna őket").
 
 ## Implementation Workflow
 

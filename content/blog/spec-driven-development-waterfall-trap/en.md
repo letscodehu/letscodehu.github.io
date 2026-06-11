@@ -75,5 +75,3 @@ So if you adopt spec-driven development, adopt the spec as a living input to a f
 ---
 
 If this made you look again at a spec you wrote with a little too much confidence, it will probably help someone on your team too.
-
-Share it with the people who are reaching for spec-driven workflows right now - and if you want more hype-free thinking on delivery and architecture, subscribe to my YouTube channel or follow me on LinkedIn.

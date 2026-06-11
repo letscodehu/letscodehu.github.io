@@ -50,7 +50,7 @@ For anything uncertain or externally verifiable, use WebSearch/WebFetch to confi
 
 Compare against the style rules and recent posts:
 
-- **Voice/tone**: practical, architecture-focused, direct. No hype, slogans, anaphora, moralizing, or "not X, but Y" mirrored contrasts.
+- **Voice/tone**: practical, architecture-focused, direct. No hype, slogans, anaphora, or moralizing. Intensifiers and "not X, but Y" framing are fine occasionally if they sharpen one specific point — flag them if used repeatedly or as filler/structural crutch.
 - **Length & density**: roughly in range with recent posts — not markedly shorter or thinner.
 - **Structure**: concrete opening situation → argument via consequences/tradeoffs → useful guidance; section and paragraph rhythm comparable.
 - **Bilingual parity**: EN and HU share the same thesis and argument flow; neither reads like a mechanical translation; both idiomatic.
@@ -59,6 +59,10 @@ Compare against the style rules and recent posts:
   - Translation-order sentences that mirror the English structure instead of using natural Hungarian word order (e.g. time adverbs belong at the front in HU).
   - Missing hyperlinks: named tools and products should be linked on first mention.
   - Softening bridge sentences between a positive claim and its critique — these weaken the argument; the transition should be direct.
+  - Vague pronouns referring back to an abstract noun where the referent is ambiguous (e.g. „mindegyiket" should name what "each" refers to).
+  - The document/spec personified as the subject of verbs like „válaszol" — the team/people should be the subject instead.
+  - Misspelled English tech terms, e.g. „mikroservice" instead of „microservice".
+- **Closing CTA**: the "share this / subscribe / follow" CTA paragraph is optional, but if present in one language version it must appear (and match) in the other — flag any EN/HU mismatch.
 - **Metadata**: manifest title and excerpt match the article's actual thesis in both languages; slug is lowercase kebab-case; `featuredImagePath` resolves if set.
 
 ## 3. Originality (Not Too Similar)

@@ -7,6 +7,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  repository_dispatch:
+    types: [content-updated]
 
 permissions:
   contents: read
@@ -24,6 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch latest content
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.CONTENT_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
+          git submodule update --init --remote
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -37,14 +44,14 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -28,8 +28,9 @@ jobs:
 
       - name: Fetch latest content
         run: |
-          git config --global url."https://x-access-token:${{ secrets.CONTENT_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          git submodule update --init --remote
+          rm -rf content
+          git clone --depth 1 --branch main "https://x-access-token:${{ secrets.CONTENT_REPO_TOKEN }}@github.com/letscodehu/content.git" content
+          rm -rf content/.git
 
       - name: Setup Node
         uses: actions/setup-node@v4

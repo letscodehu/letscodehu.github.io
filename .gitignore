@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Content is fetched separately (see .github/workflows/pages.yml)
+/content
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

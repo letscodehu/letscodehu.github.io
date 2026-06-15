@@ -814,6 +814,8 @@
     "pageTitle": "Blog",
     "intro": "Cikkek a szállításról, CI/CD-ről és arról, hogyan jut el az érték a productionbe.",
     "backToList": "Vissza a bloghoz",
+    "readInEnglish": "Read this in English",
+    "readInHungarian": "Olvasd magyarul",
     "eyebrow": "Cikk",
     "tocTitle": "Ebben a cikkben",
     "tocAriaLabel": "Tartalomjegyzék",

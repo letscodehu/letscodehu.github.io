@@ -814,6 +814,8 @@
     "pageTitle": "Blog",
     "intro": "Articles on delivery, CI/CD, and how teams ship value to production.",
     "backToList": "Back to blog",
+    "readInEnglish": "Read this in English",
+    "readInHungarian": "Olvasd magyarul",
     "eyebrow": "Article",
     "tocTitle": "In this article",
     "tocAriaLabel": "Table of contents",

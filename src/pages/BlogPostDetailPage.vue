@@ -2,7 +2,7 @@
 import { computed, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { useI18n } from '../composables/useI18n'
+import { useI18n, writeStoredLanguage, type Language } from '../composables/useI18n'
 import { getBlogPostBySlug } from '../data/blog-posts'
 import { marked } from 'marked'
 import { absoluteUrl, DEFAULT_OG_IMAGE_PATH } from '../site'
@@ -14,6 +14,8 @@ const { t, currentLang } = useI18n()
 
 const slug = computed(() => route.params.slug as string)
 const post = computed(() => getBlogPostBySlug(slug.value))
+
+const otherLang = computed<Language>(() => (currentLang.value === 'en' ? 'hu' : 'en'))
 
 const postTitle = computed(() => {
   const p = post.value
@@ -216,12 +218,21 @@ watch(
             decoding="async"
           >
         </div>
-        <RouterLink
-          :to="{ name: 'blog-list-en', params: { lang: currentLang } }"
-          class="back-link"
-        >
-          ← {{ t('blog.backToList') }}
-        </RouterLink>
+        <div class="header-top-row">
+          <RouterLink
+            :to="{ name: 'blog-list-en', params: { lang: currentLang } }"
+            class="back-link"
+          >
+            ← {{ t('blog.backToList') }}
+          </RouterLink>
+          <RouterLink
+            :to="{ name: 'blog-post-detail-en', params: { lang: otherLang, slug } }"
+            class="lang-switch-link"
+            @click="writeStoredLanguage(otherLang)"
+          >
+            {{ otherLang === 'en' ? t('blog.readInEnglish') : t('blog.readInHungarian') }} →
+          </RouterLink>
+        </div>
         <h1 class="page-title">
           {{ postTitle }}
         </h1>
@@ -364,16 +375,43 @@ watch(
   object-position: center;
 }
 
+.header-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
 .back-link {
   display: inline-block;
   font-size: 0.9rem;
   color: var(--color-text-muted);
   text-decoration: none;
-  margin-bottom: 0.5rem;
 }
 
 .back-link:hover {
   color: var(--color-primary);
+}
+
+.lang-switch-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lang-switch-link:hover {
+  color: var(--color-primary-strong);
+}
+
+.lang-switch-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .page-title {

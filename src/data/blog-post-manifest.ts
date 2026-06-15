@@ -16,6 +16,16 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'ai-model-independence',
+    publishedAt: '2026-06-15',
+    titleEn: 'Your Model Can Disappear Overnight',
+    titleHu: 'A modelled egyik napról a másikra eltűnhet',
+    excerptEn:
+      'A frontier model launched, then got disabled for everyone three days later under an export-control order - including the US customers it was never aimed at. The fix is not picking a model from the right country, it is an architecture that can swap models without a rewrite.',
+    excerptHu:
+      'Egy frontier modellt elindítottak, három nappal később pedig egy exportkorlátozás miatt mindenkitől levették - beleértve azokat az amerikai ügyfeleket is, akiknek a rendelet nem is szólt. A megoldás nem az, hogy jó országból válassz modellt, hanem egy architektúra, amely átírás nélkül tud modellt váltani.',
+  },
+  {
     slug: 'spec-driven-development-waterfall-trap',
     publishedAt: '2026-06-07',
     titleEn: 'Spec-Driven Development and the Waterfall Trap',

@@ -177,7 +177,8 @@
       "DevOps gyakorlatok: CI/CD pipeline-ok, trunk-based vs. GitFlow a gyakorlatban, olyan környezetek, amelyek támogatják a biztonságos változtatásokat.",
       "ADR-ek: mikor érdemes írni, mit rögzítsünk, hogyan marad könnyű súlyú, de használható.",
       "C4 diagramok: közös vizuális nyelv a rendszer különböző szintjeinek megbeszéléséhez.",
-      "Tiszta architektúra: határok, függőségi szabályok és minták, amelyek hosszú távon is mozgásteret hagynak."
+      "Tiszta architektúra: határok, függőségi szabályok és minták, amelyek hosszú távon is mozgásteret hagynak.",
+      "AI-alapú mérnöki gyakorlatok: AI eszközök integrálása a mindennapi workflowba a technikai adósság megelőzésére, az architektúrális határok védelmére és a lightweight spec-driven fejlesztés támogatására."
     ],
     "engagementTitle": "Lehetséges együttműködési formák",
     "engagement": [
@@ -714,7 +715,7 @@
   },
   "consulting": {
     "pageTitle": "Tanácsadás, amely segít a csapatoknak workshop elveket valós rendszerekben alkalmazni",
-    "intro": "A képzés akkor ragad meg igazán, ha valós rendszereken és valós döntéseken használják. Rövid, fókuszált tanácsadási együttműködéseket vállalok, amelyek ugyanazon workshop ötletekre épülnek—ADR-ek, C4, CI/CD és deployment gyakorlatok, moduláris tervezés—így a csapatod ott tudja alkalmazni őket, ahol számít.",
+    "intro": "A képzés akkor ragad meg igazán, ha valós rendszereken és valós döntéseken használják. Rövid, fókuszált tanácsadási együttműködéseket vállalok, amelyek ugyanazon workshop ötletekre épülnek—ADR-ek, C4, CI/CD és deployment gyakorlatok, moduláris tervezés és AI-alapú mérnöki gyakorlatok—így a csapatod ott tudja alkalmazni őket, ahol számít.",
     "auditsTitle": "Architektúra- és gyakorlat-felmérés",
     "audits": [
       "A jelenlegi architektúra, deployment környezet és mérnöki gyakorlatok áttekintése, fókuszálva arra, hogy mi akadályozza a szállítást vagy teszi kockázatossá a változtatást.",
@@ -732,6 +733,17 @@
       "1:1 vagy kis csoportos mentorálás tech lead-ek és senior fejlesztők számára, ugyanazon koncepciók mentén, mint a workshopok.",
       "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban—ADR-ek, határok, CI/CD—a kódbázisban és csapatban.",
       "Visszajelzés architekturális javaslatokra, RFC-kre és implementációs tervekhez."
+    ],
+    "aiTransformationEyebrow": "Új fókuszterület",
+    "aiTransformationTitle": "AI-alapú mérnöki transzformáció",
+    "aiTransformationIntro": "Az AI eszközök azoknak a csapatoknak segítenek igazán, akiknek már szilárd mérnöki gyakorlataik vannak — a többieknél jellemzően csak gyorsítják a technikai adósság felhalmozódását. Ez a fókuszterület arról szól, hogyan vezessük be tudatosan.",
+    "aiTransformation": [
+      "AI adoption a fejlesztői workflow-ban: hogyan vezessük be úgy, hogy ne csak „van Copilotunk” szinten ragadjon meg.",
+      "Agentic / LLM-alapú munkafolyamatok: mikor működnek és mikor csak drága autocomplete.",
+      "Csapat szintű AI-használat: egységes gyakorlatok kialakítása, nem mindenki random prompt-engineer.",
+      "AI és minőség: review, tesztelés, refaktorálás támogatása, nem csak kódgenerálás.",
+      "„AI nem hozza az elvárásokat” helyzetek elemzése: hol törik el — adat, folyamat, ownership, túlzott várakozás.",
+      "AI-bevezetési anti-patternök: a proof-of-concept maraton, amiből sosem lesz production reality."
     ],
     "complementsTitle": "Hogyan egészíti ki a tanácsadás a képzéseket",
     "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk."

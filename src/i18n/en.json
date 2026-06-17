@@ -177,7 +177,8 @@
       "DevOps practices: CI/CD pipelines, trunk-based vs. GitFlow in practice, and environments that support safe change.",
       "ADRs: when to write them, what to capture, and how to keep them lightweight but useful.",
       "C4 diagrams: using a shared visual language to reason about systems at multiple levels.",
-      "Clean architecture: boundaries, dependency rules, and patterns that keep systems adaptable."
+      "Clean architecture: boundaries, dependency rules, and patterns that keep systems adaptable.",
+      "AI-assisted engineering: integrating AI tools into your workflow to prevent technical debt accumulation, protect architectural boundaries, and support lightweight spec-driven development."
     ],
     "engagementTitle": "Engagement formats",
     "engagement": [
@@ -714,7 +715,7 @@
   },
   "consulting": {
     "pageTitle": "Consulting that helps teams apply workshop principles in real systems",
-    "intro": "Training sticks when teams use it on real systems and real decisions. I offer short, focused consulting engagements that build on the same workshop ideas—ADRs, C4, CI/CD and deployment practices, modular design—so your team can apply them where it counts.",
+    "intro": "Training sticks when teams use it on real systems and real decisions. I offer short, focused consulting engagements that build on the same workshop ideas—ADRs, C4, CI/CD and deployment practices, modular design, and AI-assisted engineering practices—so your team can apply them where it counts.",
     "auditsTitle": "Architecture and practice audits",
     "audits": [
       "Review of your current architecture, deployment setup, and engineering practices, with a focus on what actually blocks delivery or makes change risky.",
@@ -732,6 +733,17 @@
       "1:1 or small-group mentoring for tech leads and senior engineers, aligned with the same concepts as the workshops.",
       "Practical discussions on introducing and sustaining workshop practices—ADRs, boundaries, CI/CD—in your codebase and team.",
       "Feedback on architecture proposals, RFCs, and rollout plans."
+    ],
+    "aiTransformationEyebrow": "New focus area",
+    "aiTransformationTitle": "AI-assisted engineering transformation",
+    "aiTransformationIntro": "AI tooling genuinely helps teams that already have solid engineering practices — and quietly accelerates technical debt for teams that don't. This focus area is about adopting it deliberately.",
+    "aiTransformation": [
+      "AI adoption in the developer workflow: introducing it so it goes beyond \"we have Copilot\" and actually changes how the team works.",
+      "Agentic and LLM-based workflows: when they genuinely help and when they are just expensive autocomplete.",
+      "Team-level AI usage: building shared practices instead of everyone improvising as a random prompt engineer.",
+      "AI and quality: supporting review, testing, and refactoring — not just generating code.",
+      "Diagnosing \"AI isn't delivering\" situations: where it actually breaks — data, process, ownership, or inflated expectations.",
+      "AI adoption anti-patterns: the proof-of-concept marathon that never becomes production reality."
     ],
     "complementsTitle": "How consulting complements training",
     "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done."

@@ -46,6 +46,19 @@ const { t } = useI18n()
     </section>
 
     <section class="section">
+      <div class="ai-highlight">
+        <p class="ai-eyebrow">{{ t('consulting.aiTransformationEyebrow') }}</p>
+        <h2 class="ai-title">{{ t('consulting.aiTransformationTitle') }}</h2>
+        <p class="ai-intro">{{ t('consulting.aiTransformationIntro') }}</p>
+        <ul class="list">
+          <li v-for="item in t('consulting.aiTransformation')" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
       <BaseCard>
         <template #title>
           {{ t('consulting.complementsTitle') }}
@@ -101,6 +114,35 @@ const { t } = useI18n()
 .body {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.ai-highlight {
+  border: 1px solid var(--color-primary-soft);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.75rem;
+}
+
+.ai-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-strong);
+}
+
+.ai-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+}
+
+.ai-intro {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 44rem;
 }
 </style>
 

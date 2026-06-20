@@ -20,6 +20,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     publishedAt: '2026-06-20',
     titleEn: 'Your Best Engineer Barely Writes Code Anymore',
     titleHu: 'A legjobb fejlesztőd már alig ír kódot',
+    featuredImagePath: '/blog/engineering-meeting.png',
     excerptEn:
       'A team lead almost put his best engineer on a performance plan for low output - until his manager asked one question. When generating code is nearly free, output stops measuring value, and judgment becomes the work no dashboard can see.',
     excerptHu:

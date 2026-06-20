@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && NODE_OPTIONS='--experimental-require-module' vite-ssg build && tsx scripts/generate-sitemap.ts",
+    "build": "vue-tsc -b && tsx scripts/generate-thumbnails.ts && NODE_OPTIONS='--experimental-require-module' vite-ssg build && tsx scripts/generate-sitemap.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,8 +17,10 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^24.10.1",
+    "@types/sharp": "^0.31.1",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vue/tsconfig": "^0.8.1",
+    "sharp": "^0.35.2",
     "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "~5.9.3",

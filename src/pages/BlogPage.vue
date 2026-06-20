@@ -28,6 +28,7 @@ const postsWithLabels = computed(() =>
     excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
     publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
     featuredImagePath: post.featuredImagePath,
+    thumbnailPath: post.featuredImagePath ? `/thumbnails/${post.slug}.webp` : undefined,
   }))
 )
 
@@ -61,9 +62,9 @@ const displayedCaseStudies = computed(() =>
         >
           <BaseCard class="blog-post-card">
             <template #media>
-              <div v-if="post.featuredImagePath" class="post-featured-image-wrap">
+              <div v-if="post.thumbnailPath" class="post-featured-image-wrap">
                 <img
-                  :src="post.featuredImagePath"
+                  :src="post.thumbnailPath"
                   :alt="post.title"
                   class="post-featured-image"
                   loading="lazy"

@@ -16,8 +16,8 @@ for (const post of posts) {
   const destPath = join(outDir, `${post.slug}.webp`)
 
   if (!existsSync(srcPath)) {
-    console.warn(`[thumbnails] source not found, skipping: ${post.featuredImagePath}`)
-    continue
+    console.error(`[thumbnails] source not found: ${post.featuredImagePath}`)
+    process.exit(1)
   }
 
   if (existsSync(destPath)) {

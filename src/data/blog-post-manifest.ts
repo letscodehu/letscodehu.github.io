@@ -16,6 +16,17 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'best-engineer-barely-writes-code',
+    publishedAt: '2026-06-20',
+    titleEn: 'Your Best Engineer Barely Writes Code Anymore',
+    titleHu: 'A legjobb fejlesztőd már alig ír kódot',
+    featuredImagePath: '/blog/engineering-meeting.png',
+    excerptEn:
+      'A team lead almost put his best engineer on a performance plan for low output - until his manager asked one question. When generating code is nearly free, output stops measuring value, and judgment becomes the work no dashboard can see.',
+    excerptHu:
+      'Egy team lead majdnem performance planre tette a legjobb fejlesztőjét gyenge output miatt - amíg a managere fel nem tett egy kérdést. Amikor a kód generálása szinte ingyen van, az output megszűnik értéket mérni, és az ítélőképesség lesz a munka, amit egyetlen dashboard sem lát.',
+  },
+  {
     slug: 'ai-model-independence',
     publishedAt: '2026-06-15',
     titleEn: 'Your Model Can Disappear Overnight',
@@ -25,6 +36,7 @@ export const blogPostManifest: BlogPostManifest[] = [
       'An export-control order disabled a frontier model for everyone - even the US customers it never targeted. The fix is not a model from the right country, but an architecture that can swap models without a rewrite.',
     excerptHu:
       'Egy exportkorlátozás mindenkitől levett egy frontier modellt - még azoktól az amerikai ügyfelektől is, akiknek nem szólt. A megoldás nem a jó országból választott modell, hanem egy architektúra, amely átírás nélkül tud modellt váltani.',
+    videoUrl: 'https://www.youtube.com/watch?v=qLfJ9uvztZE',
   },
   {
     slug: 'spec-driven-development-waterfall-trap',
@@ -80,6 +92,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     excerptHu:
       'A tenant törlése első ránézésre 5 soros endpointnak tűnt, de a több régiós adatok, a retention szabályok és az audit igények gyorsan üzletkritikus folyamattervezési problémává tették.',
     featuredImagePath: '/blog/underengineering.png',
+    videoUrl: 'https://youtu.be/ubMhBhTy10I',
   },
   {
     slug: 'ci-cd-pipeline-slower-than-your-developers',

@@ -7,3 +7,8 @@ export const CHECKOUT_EMAIL_CAPTURE_API_URL =
   'https://7srd66pnm3knkgivg4txze74zi0vtfol.lambda-url.eu-central-1.on.aws/'
 
 export const CHECKOUT_EMAIL_CAPTURE_TIMEOUT_MS = 10000
+
+export const QUIZ_SUBMIT_API_URL =
+  'https://bzupmxgbhxbaiuibquqfedblmu0nwiik.lambda-url.eu-central-1.on.aws/'
+
+export const QUIZ_SUBMIT_TIMEOUT_MS = 10000

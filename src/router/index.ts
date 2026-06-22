@@ -12,6 +12,7 @@ import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import BlogPostDetailPage from '../pages/BlogPostDetailPage.vue'
 import PrivacyPage from '../pages/PrivacyPage.vue'
+import QuizPage from '../pages/QuizPage.vue'
 
 const childRoutes: RouteRecordRaw[] = [
   {
@@ -111,6 +112,19 @@ const childRoutes: RouteRecordRaw[] = [
     component: PrivacyPage,
     alias: 'adatkezeles',
     meta: { titleKey: 'privacy.pageTitle', descriptionKey: 'seo.descriptions.privacy' },
+  },
+  {
+    path: 'quiz',
+    name: 'quiz',
+    component: QuizPage,
+    meta: { title: 'Magyar fejlesztők és az AI – 2026-os felmérés' },
+    beforeEnter: (_to, _from, next) => {
+      if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/hu/')) {
+        next({ path: '/hu/quiz' })
+      } else {
+        next()
+      }
+    },
   },
 ]
 

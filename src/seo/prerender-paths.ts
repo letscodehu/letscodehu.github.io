@@ -26,6 +26,7 @@ const HU_STATIC_ALIASES: string[] = [
   'rolam',
   'kapcsolat',
   'cikkek',
+  'quiz',
 ]
 
 /**

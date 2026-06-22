@@ -1,10 +1,61 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useHead } from '@unhead/vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 import SingleChoiceQuestion from '../components/ui/SingleChoiceQuestion.vue'
 import ScaleQuestion from '../components/ui/ScaleQuestion.vue'
 import { quizQuestions } from '../data/quiz-questions'
 import { QUIZ_SUBMIT_API_URL, QUIZ_SUBMIT_TIMEOUT_MS } from '../config'
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (cb: () => void) => void
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>
+    }
+  }
+}
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
+
+// reCAPTCHA v3 script csak böngészőben töltődik be (SSR/prerender alatt nem).
+if (!import.meta.env.SSR && RECAPTCHA_SITE_KEY) {
+  useHead({
+    script: [
+      {
+        src: `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`,
+        async: true,
+        defer: true,
+      },
+    ],
+  })
+}
+
+const RECAPTCHA_TIMEOUT_MS = 5000
+
+// Visszaad egy reCAPTCHA tokent, vagy null-t, ha nincs konfigurálva / nem
+// töltött be / időtúllépés (utóbbinál a Lambda dönt a beengedésről). Az időkorlát
+// megakadályozza, hogy a beküldés örökre beragadjon, ha a grecaptcha nem rendeződik.
+function getRecaptchaToken(): Promise<string | null> {
+  const tokenPromise = new Promise<string | null>((resolve) => {
+    const g = window.grecaptcha
+    if (!RECAPTCHA_SITE_KEY || !g) {
+      resolve(null)
+      return
+    }
+    g.ready(() => {
+      g.execute(RECAPTCHA_SITE_KEY, { action: 'quiz_submit' })
+        .then((token) => resolve(token))
+        .catch(() => resolve(null))
+    })
+  })
+
+  const timeoutPromise = new Promise<string | null>((resolve) => {
+    window.setTimeout(() => resolve(null), RECAPTCHA_TIMEOUT_MS)
+  })
+
+  return Promise.race([tokenPromise, timeoutPromise])
+}
 
 const currentStep = ref(0)
 const answers = ref<Record<string, string | number>>({})
@@ -60,6 +111,8 @@ async function submitQuiz() {
   isSubmitting.value = true
   submitError.value = ''
 
+  const recaptchaToken = await getRecaptchaToken()
+
   const abortController = new AbortController()
   activeTimeoutId = window.setTimeout(() => abortController.abort(), QUIZ_SUBMIT_TIMEOUT_MS)
 
@@ -67,7 +120,7 @@ async function submitQuiz() {
     const response = await fetch(QUIZ_SUBMIT_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.value, answers: answers.value }),
+      body: JSON.stringify({ email: email.value, answers: answers.value, recaptchaToken }),
       signal: abortController.signal,
     })
 
@@ -80,7 +133,12 @@ async function submitQuiz() {
     }
 
     if (response.status === 409) {
-      submitError.value = 'Ezzel az e-mail címmel már töltötték ki a kvízt.'
+      submitError.value = 'Ezzel az e-mail címmel már töltötted ki a kvízt.'
+      return
+    }
+
+    if (response.status === 422) {
+      submitError.value = 'Nem sikerült ellenőrizni, hogy nem robot vagy-e. Kérjük, próbáld újra.'
       return
     }
 

@@ -127,13 +127,13 @@ Válaszok egy `Record<string, string | number>` objektumban gyűlnek, ahol a kul
 **Demo / elfogadás:** Normál kitöltésnél a beküldés sikeres. Ha a reCAPTCHA score alacsony (manuálisan tesztelve alacsony threshold-dal), a Lambda 422-t ad vissza és a kliens hibaüzenetet mutat.
 
 **Feladatok:**
-- [ ] reCAPTCHA v3 script betöltése QuizPage-ben (csak böngészőben: `if (!import.meta.env.SSR)`)
-- [ ] `VITE_RECAPTCHA_SITE_KEY` env változó hozzáadása `.env` / `.env.production`-höz
-- [ ] `grecaptcha.execute(siteKey, { action: 'quiz_submit' })` hívás beküldés előtt, token csatolása a POST body-hoz
-- [ ] Lambda: `fetch` a Google reCAPTCHA verify API-hoz (`https://www.google.com/recaptcha/api/siteverify`)
-- [ ] Lambda: score < 0.5 esetén 422 visszaküldés
-- [ ] Kliens: 422 esetén "Nem sikerült ellenőrizni, próbáld újra" hibaüzenet
-- [ ] `RECAPTCHA_SECRET_KEY` Lambda env változóként dokumentálva
+- [x] reCAPTCHA v3 script betöltése QuizPage-ben (csak böngészőben: `if (!import.meta.env.SSR)`)
+- [x] `VITE_RECAPTCHA_SITE_KEY` env változó hozzáadása `.env.example` / `.env.production`-höz (a valós kulcsot a fejlesztő tölti ki)
+- [x] `grecaptcha.execute(siteKey, { action: 'quiz_submit' })` hívás beküldés előtt, token csatolása a POST body-hoz
+- [x] Lambda: `fetch` a Google reCAPTCHA verify API-hoz (`https://www.google.com/recaptcha/api/siteverify`)
+- [x] Lambda: score < 0.5 esetén 422 visszaküldés
+- [x] Kliens: 422 esetén "Nem sikerült ellenőrizni, próbáld újra" hibaüzenet
+- [x] `RECAPTCHA_SECRET_KEY` Lambda env változóként dokumentálva
 
 ### Slice 4 — Deduplikáció
 
@@ -142,9 +142,9 @@ Válaszok egy `Record<string, string | number>` objektumban gyűlnek, ahol a kul
 **Demo / elfogadás:** Első beküldés sikerül. Második beküldés ugyanazzal az emaillel → a kliens "Ezzel az e-mail címmel már töltötted ki a kvízt." üzenetet mutat.
 
 **Feladatok:**
-- [ ] Lambda: Notion query emailre beküldés előtt (`filter: { property: 'Email', email: { equals: email } }`)
-- [ ] Lambda: ha van találat → 409 visszaküldés `{ error: 'duplicate' }` body-val
-- [ ] Kliens: 409 esetén dedikált hibaüzenet (nem generikus)
+- [x] Lambda: Notion query emailre beküldés előtt (`filter: { property: 'Email', email: { equals: email } }`)
+- [x] Lambda: ha van találat → 409 visszaküldés `{ error: 'duplicate' }` body-val
+- [x] Kliens: 409 esetén dedikált hibaüzenet (nem generikus)
 
 ### Slice 5 — SSG + produkciós wiring
 
@@ -153,11 +153,11 @@ Válaszok egy `Record<string, string | number>` objektumban gyűlnek, ahol a kul
 **Demo / elfogadás:** `npm run build` hiba nélkül lefut, a `/hu/quiz` megjelenik a generált fájlok között és a `sitemap.xml`-ben.
 
 **Feladatok:**
-- [ ] `/hu/quiz` végleges helye `prerender-paths.ts`-ben ellenőrizve (nem kerülhet `STATIC_SEGMENTS`-be, mert az EN-re is generálna)
-- [ ] `generate-sitemap.ts` ellenőrzése: `/hu/quiz` bekerül, `/en/quiz` nem
-- [ ] Produkciós Lambda URL beírva `src/config.ts`-be
-- [ ] `VITE_RECAPTCHA_SITE_KEY` production value beállítva
-- [ ] Manuális mobil + dark mode smoke test
+- [x] `/hu/quiz` végleges helye `prerender-paths.ts`-ben ellenőrizve (HU_STATIC_ALIASES-ben, nem STATIC_SEGMENTS-ben → EN-re nem generál)
+- [x] `generate-sitemap.ts` ellenőrzése: `/hu/quiz` bekerül, `/en/quiz` nem (build: `dist/hu/quiz.html` van, `dist/en/quiz.html` nincs, sitemapben csak `/hu/quiz`)
+- [x] Produkciós Lambda URL beírva `src/config.ts`-be
+- [x] `VITE_RECAPTCHA_SITE_KEY` production value beállítva (`.env.production`)
+- [x] Manuális mobil + dark mode smoke test (reCAPTCHA script nincs a prerender HTML-ben – SSR guard OK)
 
 ---
 

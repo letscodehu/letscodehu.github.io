@@ -73,5 +73,14 @@ const props = withDefaults(
   outline: none;
   box-shadow: 0 0 0 3px var(--color-primary-soft);
 }
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button:disabled:hover {
+  transform: none;
+}
 </style>
 

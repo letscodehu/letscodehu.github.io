@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 import SingleChoiceQuestion from '../components/ui/SingleChoiceQuestion.vue'
+import MultiChoiceQuestion from '../components/ui/MultiChoiceQuestion.vue'
 import ScaleQuestion from '../components/ui/ScaleQuestion.vue'
 import { quizQuestions } from '../data/quiz-questions'
 import { QUIZ_SUBMIT_API_URL, QUIZ_SUBMIT_TIMEOUT_MS } from '../config'
@@ -58,7 +60,8 @@ function getRecaptchaToken(): Promise<string | null> {
 }
 
 const currentStep = ref(0)
-const answers = ref<Record<string, string | number>>({})
+type AnswerValue = string | number | string[]
+const answers = ref<Record<string, AnswerValue>>({})
 const email = ref('')
 const emailError = ref('')
 const submitError = ref('')
@@ -73,11 +76,17 @@ const currentAnswer = computed(() => {
   const q = currentQuestion.value
   return q ? answers.value[q.id] : undefined
 })
-const canGoNext = computed(() => currentAnswer.value !== undefined)
+const canGoNext = computed(() => {
+  const value = currentAnswer.value
+  if (value === undefined) return false
+  // multi-choice: legalább egy kijelölt elem kell
+  if (Array.isArray(value)) return value.length > 0
+  return true
+})
 
 let activeTimeoutId = 0
 
-function setAnswer(value: string | number) {
+function setAnswer(value: AnswerValue) {
   const q = currentQuestion.value
   if (q) answers.value = { ...answers.value, [q.id]: value }
 }
@@ -184,6 +193,15 @@ async function submitQuiz() {
           :model-value="currentAnswer as string | undefined"
           @update:model-value="setAnswer"
         />
+        <MultiChoiceQuestion
+          v-else-if="currentQuestion.type === 'multi-choice'"
+          :question-id="currentQuestion.id"
+          :text="currentQuestion.text"
+          :options="currentQuestion.options ?? []"
+          :exclusive-option="currentQuestion.exclusiveOption"
+          :model-value="currentAnswer as string[] | undefined"
+          @update:model-value="setAnswer"
+        />
         <ScaleQuestion
           v-else-if="currentQuestion.type === 'scale'"
           :question-id="currentQuestion.id"
@@ -231,8 +249,11 @@ async function submitQuiz() {
         </div>
 
         <div class="nav-actions">
-          <BaseButton variant="ghost" type="button" @click="goBack">Vissza</BaseButton>
+          <BaseButton variant="ghost" type="button" :disabled="isSubmitting" @click="goBack">
+            Vissza
+          </BaseButton>
           <BaseButton type="button" :disabled="isSubmitting" @click="submitQuiz">
+            <span v-if="isSubmitting" class="spinner" aria-hidden="true" />
             {{ isSubmitting ? 'Küldés...' : 'Eredmények kérése' }}
           </BaseButton>
         </div>
@@ -251,6 +272,12 @@ async function submitQuiz() {
       <p class="success-text">
         Ha összegyűlt elegendő kitöltés, e-mailben elküldjük a 2026-os magyar fejlesztői AI adoption benchmark riportot.
       </p>
+      <p class="success-text">
+        Amíg vársz, nézz körül a blogon – gyakorlati cikkek AI-ról, fejlesztésről és karrierről.
+      </p>
+      <RouterLink class="success-link" :to="{ name: 'blog-list-en', params: { lang: 'hu' } }">
+        Irány a blog
+      </RouterLink>
     </div>
   </article>
 </template>
@@ -322,6 +349,27 @@ async function submitQuiz() {
   justify-content: flex-end;
   gap: 0.6rem;
   flex-wrap: wrap;
+}
+
+.spinner {
+  width: 0.95em;
+  height: 0.95em;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: spinner-rotate 0.6s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.5s;
+  }
 }
 
 /* E-mail lépés */
@@ -424,6 +472,32 @@ async function submitQuiz() {
   color: var(--color-text-muted);
   line-height: 1.6;
   max-width: 30rem;
+}
+
+.success-link {
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.64rem 1.35rem;
+  border-radius: 999px;
+  background-color: var(--color-button-solid-bg);
+  color: var(--color-button-solid-fg);
+  box-shadow: var(--color-button-solid-shadow);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.success-link:hover {
+  background-color: var(--color-button-solid-bg-hover);
+  transform: translateY(-1px);
+}
+
+.success-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
 }
 
 @media (max-width: 28rem) {

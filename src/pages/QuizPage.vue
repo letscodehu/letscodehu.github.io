@@ -20,6 +20,23 @@ declare global {
 
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
+useHead({
+  title: 'Magyar fejlesztők és az AI – 2026-os felmérés | letscode.hu',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Töltsd ki a 2026-os AI adoption felmérést, és megkapod a magyar fejlesztői benchmark riportot e-mailben.',
+    },
+    { property: 'og:title', content: 'Magyar fejlesztők és az AI – 2026-os felmérés' },
+    {
+      property: 'og:description',
+      content:
+        'Töltsd ki a 2026-os AI adoption felmérést, és megkapod a magyar fejlesztői benchmark riportot e-mailben.',
+    },
+  ],
+})
+
 // reCAPTCHA v3 script csak böngészőben töltődik be (SSR/prerender alatt nem).
 if (!import.meta.env.SSR && RECAPTCHA_SITE_KEY) {
   useHead({

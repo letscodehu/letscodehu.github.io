@@ -750,12 +750,13 @@
   },
   "about": {
     "pageTitle": "Rólam",
-    "intro": "Senior tanácsadóként és trénerként dolgozom, a célom pedig az, hogy a fejlesztő csapatok megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget.",
+    "intro": "Senior tanácsadóként és trénerként dolgozom, a célom pedig az, hogy a fejlesztő csapatok megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget – ideértve azt is, hogyan vezessék be az AI eszközöket anélkül, hogy kompromisszumot kötnének.",
     "photoAlt": "Papp Krisztián előadás közben a Weblica konferencián",
     "backgroundTitle": "Háttér",
     "background": [
       "Több éves tapasztalat termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel.",
       "Hands-on munka kódbázisokon, infrastruktúrán és szállítási pipeline-okon.",
+      "Gyakorlati munka abban, hogy a csapatok úgy vezessenek be AI-támogatott fejlesztést, hogy közben ne áldozzák fel a kódminőséget és a szakmai ítélőképességet.",
       "Rendszeres előadások meetupon és konferenciákon, erős gyakorlati fókuszsal."
     ],
     "approachTitle": "Ahogyan az engineeringről és a csapatokról gondolkodom",
@@ -763,7 +764,8 @@
       "Az a gyakorlat számít, ami a hétköznapi nyomás alatt is működik. Ami csak prezentációban áll meg, az kevéssé érdekes.",
       "Az architektúra feladata, hogy mozgásteret adjon, ne pedig egy konkrét frameworkhöz vagy vendorhoz láncoljon.",
       "A dokumentáció legyen könnyű, de megbízható: olyan ADR-ek és diagramok, amelyekben a fejlesztők tényleg bíznak.",
-      "A jó csapatok közösen hoznak döntéseket, nem egyetlen „hős” fejlesztőre támaszkodnak."
+      "A jó csapatok közösen hoznak döntéseket, nem egyetlen „hős” fejlesztőre támaszkodnak.",
+      "Az AI eszköz egy multiplikátor, nem a szakmai ítélőképesség helyettesítője: a jó csapatokat gyorsítja, a gyenge folyamatok hibáit pedig felnagyítja."
     ],
     "credlyBadgeAlt": "AWS Certified Cloud Practitioner badge a Credly oldalán",
     "credlyBadgeAiAlt": "AWS Certified AI Practitioner badge a Credly oldalán",

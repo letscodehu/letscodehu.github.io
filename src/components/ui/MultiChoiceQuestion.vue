@@ -5,6 +5,8 @@ const props = defineProps<{
   questionId: string
   text: string
   options: string[]
+  /** legfeljebb ennyi opció választható egyszerre */
+  maxSelections?: number
   /** ezt választva a többi opció törlődik (pl. „Nem használok AI eszközt") */
   exclusiveOption?: string
   modelValue: string[] | undefined
@@ -20,7 +22,15 @@ function isSelected(option: string) {
   return selected.value.includes(option)
 }
 
+function isDisabled(option: string) {
+  if (isSelected(option)) return false
+  if (props.maxSelections !== undefined && selected.value.length >= props.maxSelections) return true
+  return false
+}
+
 function toggle(option: string) {
+  if (isDisabled(option)) return
+
   // Kizáró opció: ha azt választják, csak az marad; bármi más választása törli.
   if (option === props.exclusiveOption) {
     emit('update:modelValue', isSelected(option) ? [] : [option])
@@ -44,8 +54,9 @@ function toggle(option: string) {
         :key="option"
         type="button"
         class="option-btn"
-        :class="{ 'option-btn--selected': isSelected(option) }"
+        :class="{ 'option-btn--selected': isSelected(option), 'option-btn--disabled': isDisabled(option) }"
         :aria-pressed="isSelected(option)"
+        :disabled="isDisabled(option)"
         @click="toggle(option)"
       >
         <span class="checkbox" aria-hidden="true" />
@@ -116,6 +127,11 @@ function toggle(option: string) {
 .option-btn--selected .checkbox {
   border-color: var(--color-primary);
   background: var(--color-primary);
+}
+
+.option-btn--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .option-btn--selected .checkbox::after {

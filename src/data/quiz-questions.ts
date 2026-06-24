@@ -5,6 +5,8 @@ export interface QuizQuestion {
   text: string
   type: QuestionType
   options?: string[]
+  /** multi-choice: legfeljebb ennyi opció választható */
+  maxSelections?: number
   /** multi-choice: ezt választva a többi opció törlődik (kizáró opció) */
   exclusiveOption?: string
   min?: number
@@ -44,41 +46,52 @@ export const quizQuestions: QuizQuestion[] = [
     exclusiveOption: 'Nem használok AI eszközt',
   },
   {
-    id: 'q03_use_case',
-    text: 'Mire használod az AI-t a munkádban? (több is választható)',
-    type: 'multi-choice',
-    options: [
-      'Kódgenerálás / autocomplete',
-      'Kód review és refaktor',
-      'Dokumentáció és tesztek írása',
-      'Hibakeresés / magyarázat',
-      'Nem használom AI-t a munkámhoz',
-    ],
-    exclusiveOption: 'Nem használom AI-t a munkámhoz',
-  },
-  {
-    id: 'q04_time_saved',
-    text: 'Átlagosan mennyi időt spórol neked az AI eszközök használata naponta?',
+    id: 'q03_agents_autonomy',
+    text: 'Milyen mértékben delegálsz komplett, end-to-end feladatokat (pl. bug fixálása a repo elemzésétől kezdve a tesztíráson át a Pull Request nyitásáig) autonóm AI ügynököknek (pl. Devin, Cursor/GitHub Agents)?',
     type: 'single-choice',
     options: [
-      'Nem spórol időt',
-      'Kevesebbet, mint 30 percet',
-      '30 perctől 1 óráig',
-      'Több mint 1 óra',
-      'Nem használok AI eszközt',
+      'Egyáltalán nem',
+      'Csak kísérletezünk vele',
+      'Heti szinten, kisebb taskokra',
+      'Napi szinten, a workflow szerves része',
     ],
   },
   {
-    id: 'q05_trust',
-    text: 'Mennyire bízol az AI által generált kódban felülvizsgálat nélkül?',
+    id: 'q04_workflow_shift',
+    text: 'Melyik szoftverfejlesztési fázisban vette át a legnagyobb arányban a manuális munkát az AI a napi rutinodban? (Válassz maximum kettőt!)',
+    type: 'multi-choice',
+    maxSelections: 2,
+    options: [
+      'Boilerplate / Scaffolding',
+      'Unit és E2E tesztek írása',
+      'Legacy kód refaktorálása / migrálása',
+      'Dokumentáció és API specifikáció írása',
+      'Bugok és memory leak-ek izolálása',
+    ],
+  },
+  {
+    id: 'q05_ai_code_ratio',
+    text: 'Becslésed szerint a csapatod által az elmúlt hónapban élesített (production) kód hány százalékát generálta AI, emberi módosítás nélkül vagy minimális módosítással?',
+    type: 'single-choice',
+    options: [
+      '0–10%',
+      '11–30%',
+      '31–50%',
+      '51–70%',
+      '71%+',
+    ],
+  },
+  {
+    id: 'q06_hallucination_review',
+    text: "Észrevetted-e, hogy a Code Review-k során több időt vagy extra kognitív energiát vesz igénybe a logikai hibák (pl. 'hallucinált' API végpontok, nem létező könyvtári hívások) kiszűrése az AI által erősen támogatott PR-okban, mint a hagyományosan írt kódoknál?",
     type: 'scale',
     min: 1,
     max: 5,
     minLabel: 'Egyáltalán nem',
-    maxLabel: 'Teljesen megbízom',
+    maxLabel: 'Kifejezetten sok extra időt igényel',
   },
   {
-    id: 'q06_company_support',
+    id: 'q07_company_support',
     text: 'Mennyire támogatja a céged az AI eszközök használatát?',
     type: 'scale',
     min: 1,
@@ -87,7 +100,7 @@ export const quizQuestions: QuizQuestion[] = [
     maxLabel: 'Aktívan ösztönzi',
   },
   {
-    id: 'q07_company_policy',
+    id: 'q08_company_policy',
     text: 'Van-e a cégednél formális AI használati policy (szabályzat)?',
     type: 'single-choice',
     options: [
@@ -98,33 +111,53 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: 'q08_blocker',
+    id: 'q09_shadow_ai',
+    text: 'A hivatalos vállalati policy mellett (vagy annak hiányában), becslésed szerint milyen gyakran kerül szenzitív vállalati forráskód, API kulcs, vagy adatbázis-séma publikus LLM-ek (pl. webes ChatGPT, Claude) promptjaiba a fejlesztőcsapaton belül?',
+    type: 'single-choice',
+    options: [
+      'Soha, szigorúan blokkolva van',
+      'Nagyon ritkán, véletlenül',
+      "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+      'Rendszeres gyakorlat',
+      'Nincs rálátásom',
+    ],
+  },
+  {
+    id: 'q10_local_vs_cloud',
+    text: 'A vállalati adatvédelmi és biztonsági előírások miatt milyen arányban használtok lokálisan, saját hardveren futtatott LLM-eket a felhő alapú API-k helyett a kódolás támogatására?',
+    type: 'single-choice',
+    options: [
+      'Kizárólag publikus felhőt használunk',
+      'Főleg felhőt, de tesztelünk lokális modelleket',
+      'Vegyes (hibrid) használat',
+      'Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt',
+    ],
+  },
+  {
+    id: 'q11_blocker',
     text: 'Mi a legnagyobb akadálya az AI szélesebb körű használatának nálad vagy a csapatodban?',
     type: 'single-choice',
     options: [
       'Biztonsági / adatvédelmi aggályok',
       'Minőség és megbízhatóság',
-      'Költség / budget',
-      'Hiányzó tudás / tapasztalat (skill-gap)',
-      'Vezetői támogatás / kultúra hiánya',
       'Hiányzó vállalati engedély / licenc',
       'Nincs akadály, már széles körben használjuk',
+      'Szabályozói megfelelőség / EU AI Act',
     ],
   },
   {
-    id: 'q09_team_need',
-    text: 'Mi segítené leginkább a csapatod AI-használatát?',
+    id: 'q12_company_type',
+    text: 'Milyen típusú szervezetnél dolgozol?',
     type: 'single-choice',
     options: [
-      'Egységes gyakorlat / belső guideline-ok',
-      'Képzés / tréning a csapatnak',
-      'Megfelelő eszközök kiválasztása és bevezetése',
-      'Policy / governance / biztonsági keretek',
-      'Semmi, jól működik',
+      'Startup / scale-up',
+      'Nagyvállalat / enterprise',
+      'Ügynökség / szoftverház / outsourcing',
+      'Freelancer / saját vállalkozás',
     ],
   },
   {
-    id: 'q10_role',
+    id: 'q12b_role',
     text: 'Mi a szereped a fejlesztésben?',
     type: 'single-choice',
     options: [
@@ -138,25 +171,36 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: 'q11_company_type',
-    text: 'Milyen típusú szervezetnél dolgozol?',
+    id: 'q13_training',
+    text: 'Vettél-e részt AI-jal kapcsolatos tréningen vagy képzésen az elmúlt 12 hónapban?',
     type: 'single-choice',
     options: [
-      'Startup / scale-up',
-      'Nagyvállalat / enterprise',
-      'Ügynökség / szoftverház / outsourcing',
-      'Freelancer / saját vállalkozás',
+      'Igen, céges keretből',
+      'Igen, saját forrásból',
+      'Nem, de szeretnék',
+      'Nem, és nem is tervezem',
     ],
   },
   {
-    id: 'q12_team_size',
-    text: 'Hány fős fejlesztői csapatban dolgozol?',
+    id: 'q14_prompt_injection',
+    text: 'Mennyire vagytok felkészülve fejlesztői szinten az LLM-integrációkhoz kapcsolódó új típusú sebezhetőségek (pl. Prompt Injection, RAG adatmérgezés) kezelésére az általatok fejlesztett szoftverekben?',
     type: 'single-choice',
     options: [
-      'Egyedül (freelancer / solo)',
-      '2–10 fő',
-      '11–50 fő',
-      '50 fő felett',
+      'Egyáltalán nem foglalkozunk vele',
+      'Van alapszintű tudatosság, de nincsenek dedikált tesztek',
+      'Vannak beépített védelmi vonalaink',
+      'Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt',
+    ],
+  },
+  {
+    id: 'q15_future_area',
+    text: 'Melyik területen szeretnéd a legjobban fejleszteni az AI-os tudásod?',
+    type: 'single-choice',
+    options: [
+      'Prompt engineering és hatékony használat',
+      'AI-alapú szoftverarchitektúra',
+      'LLM integráció saját termékbe',
+      'AI biztonság és etika',
     ],
   },
 ]

@@ -215,6 +215,7 @@ async function submitQuiz() {
           :question-id="currentQuestion.id"
           :text="currentQuestion.text"
           :options="currentQuestion.options ?? []"
+          :max-selections="currentQuestion.maxSelections"
           :exclusive-option="currentQuestion.exclusiveOption"
           :model-value="currentAnswer as string[] | undefined"
           @update:model-value="setAnswer"

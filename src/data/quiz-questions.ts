@@ -157,6 +157,20 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
+    id: 'q12b_role',
+    text: 'Mi a szereped a fejlesztésben?',
+    type: 'single-choice',
+    options: [
+      'Junior fejlesztő',
+      'Medior fejlesztő',
+      'Senior fejlesztő',
+      'Tech lead / architect',
+      'Engineering manager / fejlesztési vezető',
+      'CTO / VP / cégtulajdonos',
+      'Egyéb (PM, QA, DevOps…)',
+    ],
+  },
+  {
     id: 'q13_training',
     text: 'Vettél-e részt AI-jal kapcsolatos tréningen vagy képzésen az elmúlt 12 hónapban?',
     type: 'single-choice',

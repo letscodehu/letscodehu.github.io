@@ -849,7 +849,7 @@
     "pageTitle": "Adatkezelési tájékoztató",
     "intro": "Ezen az oldalon összefoglaljuk, milyen adatkezelés történhet a webhely használata közben, és milyen külső szolgáltatások töltődhetnek be.",
     "lastUpdatedLabel": "Utolsó frissítés",
-    "lastUpdatedValue": "2026-03-05",
+    "lastUpdatedValue": "2026-06-24",
     "scopeTitle": "Mire terjed ki a tájékoztató",
     "scopeItems": [
       "A tájékoztató erre a webhelyre és az itt használt harmadik fél szolgáltatásokra vonatkozik.",
@@ -893,6 +893,13 @@
     "externalLinksItems": [
       "Sessionize linkek (sessionize.com): nyilvános konferencia profil.",
       "Credly linkek (credly.com): nyilvános minősítési badge oldalak."
+    ],
+    "quizTitle": "AI adoption kvíz",
+    "quizItems": [
+      "A kvíz kitöltésekor az e-mail cím és a kérdésekre adott válaszok kerülnek tárolásra.",
+      "Az adatokat a Letscode Solutions AWS Lambda alapú backendre továbbítja, és az összesített benchmark riport kiküldéséhez használja.",
+      "Az adatkezelés jogalapja a kitöltés előtt adott explicit hozzájárulás.",
+      "Az adatokat harmadik félnek nem adjuk át, kizárólag a riport elkészítéséhez és kiküldéséhez használjuk."
     ],
     "cookieControlsTitle": "Süti beállítások",
     "cookieControlsBody": "Az opcionális sütik teljes körűen elfogadhatók vagy kategóriánként állíthatók (analitika, marketing). A beállítás helyben tárolódik, így a döntésed megmarad.",

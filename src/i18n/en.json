@@ -849,7 +849,7 @@
     "pageTitle": "Privacy and data processing",
     "intro": "This page explains what data processing may happen when you use this website and when external services are loaded.",
     "lastUpdatedLabel": "Last updated",
-    "lastUpdatedValue": "2026-03-05",
+    "lastUpdatedValue": "2026-06-24",
     "scopeTitle": "What this notice covers",
     "scopeItems": [
       "This notice covers this website and the third-party services integrated in it.",
@@ -893,6 +893,13 @@
     "externalLinksItems": [
       "Sessionize links (sessionize.com): public conference sessions profile.",
       "Credly links (credly.com): public certification badges."
+    ],
+    "quizTitle": "AI adoption quiz",
+    "quizItems": [
+      "When completing the quiz, your email address and answers are stored.",
+      "Data is forwarded to a Letscode Solutions AWS Lambda backend and used to send the aggregated benchmark report.",
+      "The legal basis for processing is the explicit consent you give before submitting.",
+      "We do not share data with third parties; it is used solely for producing and sending the report."
     ],
     "cookieControlsTitle": "Cookie controls",
     "cookieControlsBody": "You can accept all optional cookies or choose categories (analytics, marketing). Preferences are stored locally so your choice is remembered.",

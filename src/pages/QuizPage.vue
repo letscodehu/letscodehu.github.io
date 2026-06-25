@@ -8,6 +8,7 @@ import MultiChoiceQuestion from '../components/ui/MultiChoiceQuestion.vue'
 import ScaleQuestion from '../components/ui/ScaleQuestion.vue'
 import { quizQuestions } from '../data/quiz-questions'
 import { QUIZ_SUBMIT_API_URL, QUIZ_SUBMIT_TIMEOUT_MS } from '../config'
+import { useI18n } from '../composables/useI18n'
 
 declare global {
   interface Window {
@@ -76,6 +77,9 @@ function getRecaptchaToken(): Promise<string | null> {
   return Promise.race([tokenPromise, timeoutPromise])
 }
 
+const { currentLang } = useI18n()
+const privacyPath = computed(() => `/${currentLang.value}/privacy`)
+
 const currentStep = ref(0)
 type AnswerValue = string | number | string[]
 const answers = ref<Record<string, AnswerValue>>({})
@@ -84,6 +88,7 @@ const emailError = ref('')
 const submitError = ref('')
 const isSubmitting = ref(false)
 const isSuccess = ref(false)
+const privacyConsent = ref(false)
 
 const totalQuestions = quizQuestions.length
 const isEmailStep = computed(() => currentStep.value === totalQuestions)
@@ -133,6 +138,7 @@ function validateEmail() {
 
 async function submitQuiz() {
   if (!validateEmail()) return
+  if (!privacyConsent.value) return
 
   isSubmitting.value = true
   submitError.value = ''
@@ -263,6 +269,19 @@ async function submitQuiz() {
             />
             <p v-if="emailError" class="field-error">{{ emailError }}</p>
           </div>
+          <div class="consent-row">
+            <input
+              id="quiz-privacy-consent"
+              v-model="privacyConsent"
+              type="checkbox"
+              class="consent-checkbox"
+            />
+            <label for="quiz-privacy-consent" class="consent-label">
+              Elolvastam és elfogadom az
+              <RouterLink :to="privacyPath" class="consent-link" target="_blank">adatkezelési tájékoztatót</RouterLink>.
+              Hozzájárulok, hogy az e-mail címemet és a kvíz válaszaimat a letscode.hu tárolja és feldolgozza.
+            </label>
+          </div>
           <p v-if="submitError" class="submit-error">{{ submitError }}</p>
         </div>
 
@@ -270,7 +289,7 @@ async function submitQuiz() {
           <BaseButton variant="ghost" type="button" :disabled="isSubmitting" @click="goBack">
             Vissza
           </BaseButton>
-          <BaseButton type="button" :disabled="isSubmitting" @click="submitQuiz">
+          <BaseButton type="button" :disabled="isSubmitting || !privacyConsent" @click="submitQuiz">
             <span v-if="isSubmitting" class="spinner" aria-hidden="true" />
             {{ isSubmitting ? 'Küldés...' : 'Eredmények kérése' }}
           </BaseButton>
@@ -445,6 +464,33 @@ async function submitQuiz() {
   margin: 0;
   font-size: 0.82rem;
   color: #dc2626;
+}
+
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.consent-checkbox {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.consent-label {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent-link {
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 
 /* Success */

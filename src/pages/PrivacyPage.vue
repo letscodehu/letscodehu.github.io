@@ -101,6 +101,15 @@ const { t } = useI18n()
             </li>
           </ul>
         </BaseCard>
+
+        <BaseCard>
+          <template #title>{{ t('privacy.quizTitle') }}</template>
+          <ul class="list">
+            <li v-for="item in t('privacy.quizItems')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </BaseCard>
       </div>
     </section>
 

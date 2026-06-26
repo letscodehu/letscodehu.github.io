@@ -61,12 +61,14 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'Melyik szoftverfejlesztési fázisban vette át a legnagyobb arányban a manuális munkát az AI a napi rutinodban? (Válassz maximum kettőt!)',
     type: 'multi-choice',
     maxSelections: 2,
+    exclusiveOption: 'Egyik fázisban sem / Nem érvényes rám',
     options: [
       'Boilerplate / Scaffolding',
       'Unit és E2E tesztek írása',
       'Legacy kód refaktorálása / migrálása',
       'Dokumentáció és API specifikáció írása',
       'Bugok és memory leak-ek izolálása',
+      'Egyik fázisban sem / Nem érvényes rám',
     ],
   },
   {
@@ -79,11 +81,12 @@ export const quizQuestions: QuizQuestion[] = [
       '31–50%',
       '51–70%',
       '71%+',
+      'Nem tudom / Nincs rálátásom',
     ],
   },
   {
     id: 'q06_hallucination_review',
-    text: "Észrevetted-e, hogy a Code Review-k során több időt vagy extra kognitív energiát vesz igénybe a logikai hibák (pl. 'hallucinált' API végpontok, nem létező könyvtári hívások) kiszűrése az AI által erősen támogatott PR-okban, mint a hagyományosan írt kódoknál?",
+    text: 'Mennyire tapasztalsz extra kognitív terhelést az AI-asszisztált PR-ok review-ja során a logikai hibák azonosításakor, a hagyományosan írt kódhoz képest?',
     type: 'scale',
     min: 1,
     max: 5,
@@ -190,6 +193,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Van alapszintű tudatosság, de nincsenek dedikált tesztek',
       'Vannak beépített védelmi vonalaink',
       'Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt',
+      'Nem fejlesztünk LLM-integrációt',
     ],
   },
   {

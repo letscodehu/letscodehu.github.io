@@ -13,6 +13,9 @@ export interface QuizQuestion {
   max?: number
   minLabel?: string
   maxLabel?: string
+  /** scale: opcionális „nem értelmezhető" gomb a skála alatt; ezt választva ez a
+   * szöveg lesz a válasz érték (szám helyett). */
+  naLabel?: string
 }
 
 export const quizQuestions: QuizQuestion[] = [
@@ -67,7 +70,9 @@ export const quizQuestions: QuizQuestion[] = [
       'Legacy kód refaktorálása / migrálása',
       'Dokumentáció és API specifikáció írása',
       'Bugok és memory leak-ek izolálása',
+      'Egyik sem / nem váltott ki manuális munkát',
     ],
+    exclusiveOption: 'Egyik sem / nem váltott ki manuális munkát',
   },
   {
     id: 'q05_ai_code_ratio',
@@ -79,6 +84,7 @@ export const quizQuestions: QuizQuestion[] = [
       '31–50%',
       '51–70%',
       '71%+',
+      'Nem tudom / nincs rálátásom',
     ],
   },
   {
@@ -98,6 +104,7 @@ export const quizQuestions: QuizQuestion[] = [
     max: 5,
     minLabel: 'Tiltja / nem tudja',
     maxLabel: 'Aktívan ösztönzi',
+    naLabel: 'Nem releváns (önállóan dolgozom)',
   },
   {
     id: 'q08_company_policy',
@@ -108,6 +115,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Van valami, de senki sem követi',
       'Nincs, de terveznek készíteni',
       'Nincs, és nem is terveznek',
+      'Egyedül dolgozom / nem releváns',
     ],
   },
   {
@@ -131,6 +139,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Főleg felhőt, de tesztelünk lokális modelleket',
       'Vegyes (hibrid) használat',
       'Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt',
+      'Nem tudom / nem releváns',
     ],
   },
   {
@@ -190,6 +199,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Van alapszintű tudatosság, de nincsenek dedikált tesztek',
       'Vannak beépített védelmi vonalaink',
       'Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt',
+      'Nem fejlesztünk LLM-integrációt',
     ],
   },
   {

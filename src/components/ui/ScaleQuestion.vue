@@ -7,13 +7,15 @@ const props = withDefaults(
     max?: number
     minLabel?: string
     maxLabel?: string
-    modelValue: number | undefined
+    /** opcionális „nem értelmezhető" gomb; ezt választva ez a szöveg a válasz */
+    naLabel?: string
+    modelValue: number | string | undefined
   }>(),
   { min: 1, max: 5 },
 )
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: number): void
+  (e: 'update:modelValue', value: number | string): void
 }>()
 
 const steps = Array.from({ length: props.max - props.min + 1 }, (_, i) => props.min + i)
@@ -40,6 +42,16 @@ const steps = Array.from({ length: props.max - props.min + 1 }, (_, i) => props.
           {{ n }}
         </button>
       </div>
+      <button
+        v-if="naLabel"
+        type="button"
+        class="na-btn"
+        :class="{ 'na-btn--selected': modelValue === naLabel }"
+        :aria-pressed="modelValue === naLabel"
+        @click="emit('update:modelValue', naLabel)"
+      >
+        {{ naLabel }}
+      </button>
     </div>
   </div>
 </template>
@@ -99,5 +111,30 @@ const steps = Array.from({ length: props.max - props.min + 1 }, (_, i) => props.
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
   color: var(--color-primary);
+}
+
+.na-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.na-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.na-btn--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 600;
 }
 </style>

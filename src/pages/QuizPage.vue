@@ -271,7 +271,8 @@ async function submitQuiz() {
           :max="currentQuestion.max"
           :min-label="currentQuestion.minLabel"
           :max-label="currentQuestion.maxLabel"
-          :model-value="currentAnswer as number | undefined"
+          :na-label="currentQuestion.naLabel"
+          :model-value="currentAnswer as number | string | undefined"
           @update:model-value="setAnswer"
         />
 

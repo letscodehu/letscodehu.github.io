@@ -53,6 +53,23 @@ if (!import.meta.env.SSR && RECAPTCHA_SITE_KEY) {
 
 const RECAPTCHA_TIMEOUT_MS = 5000
 
+const CLIENT_ID_STORAGE_KEY = 'quiz_ai_2026_client_id'
+
+// Tartós, kliensoldali azonosító a duplikált kitöltés gátlásához (anonim
+// kitöltőnél ez helyettesíti az e-mailt). localStorage-ban él; ha nem elérhető
+// (privát mód, letiltva), memóriában generálunk egyet a munkamenetre.
+function getClientId(): string {
+  try {
+    const existing = window.localStorage.getItem(CLIENT_ID_STORAGE_KEY)
+    if (existing) return existing
+    const id = crypto.randomUUID()
+    window.localStorage.setItem(CLIENT_ID_STORAGE_KEY, id)
+    return id
+  } catch {
+    return crypto.randomUUID()
+  }
+}
+
 // Visszaad egy reCAPTCHA tokent, vagy null-t, ha nincs konfigurálva / nem
 // töltött be / időtúllépés (utóbbinál a Lambda dönt a beengedésről). Az időkorlát
 // megakadályozza, hogy a beküldés örökre beragadjon, ha a grecaptcha nem rendeződik.
@@ -89,6 +106,7 @@ const submitError = ref('')
 const isSubmitting = ref(false)
 const isSuccess = ref(false)
 const privacyConsent = ref(false)
+const showNoEmailModal = ref(false)
 
 const totalQuestions = quizQuestions.length
 const isEmailStep = computed(() => currentStep.value === totalQuestions)
@@ -121,23 +139,37 @@ function goBack() {
   if (currentStep.value > 0) currentStep.value--
 }
 
+// Az e-mail opcionális: üres mező rendben van, csak a formátumot ellenőrizzük,
+// ha írtak be valamit.
 function validateEmail() {
   emailError.value = ''
   const val = email.value.trim()
   email.value = val
-  if (!val) {
-    emailError.value = 'Az e-mail cím megadása kötelező.'
-    return false
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+  if (val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
     emailError.value = 'Érvénytelen e-mail cím.'
     return false
   }
   return true
 }
 
-async function submitQuiz() {
+// Beküldés-kattintás: ha üres az e-mail, előbb megerősítő modal jön, hogy így
+// nem kap értesítést. Megadott (és érvényes) e-mailnél azonnal beküld.
+function onSubmitClick() {
   if (!validateEmail()) return
+  if (!privacyConsent.value) return
+  if (!email.value) {
+    showNoEmailModal.value = true
+    return
+  }
+  submitQuiz()
+}
+
+function confirmNoEmail() {
+  showNoEmailModal.value = false
+  submitQuiz()
+}
+
+async function submitQuiz() {
   if (!privacyConsent.value) return
 
   isSubmitting.value = true
@@ -152,7 +184,12 @@ async function submitQuiz() {
     const response = await fetch(QUIZ_SUBMIT_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.value, answers: answers.value, recaptchaToken }),
+      body: JSON.stringify({
+        email: email.value,
+        clientId: getClientId(),
+        answers: answers.value,
+        recaptchaToken,
+      }),
       signal: abortController.signal,
     })
 
@@ -165,7 +202,7 @@ async function submitQuiz() {
     }
 
     if (response.status === 409) {
-      submitError.value = 'Ezzel az e-mail címmel már töltötted ki a kvízt.'
+      submitError.value = 'Ezt a kvízt erről az eszközről (vagy ezzel az e-mail címmel) már kitöltötted.'
       return
     }
 
@@ -253,10 +290,10 @@ async function submitQuiz() {
         <div class="email-step">
           <p class="email-title">Hova küldjük el az összesített eredményeket?</p>
           <p class="email-hint">
-            Ha összegyűlt elegendő válasz, e-mailben megkapod a 2026-os magyar fejlesztői AI adoption benchmark riportot. Spam nem lesz.
+            Ha összegyűlt elegendő válasz, e-mailben megkapod a 2026-os magyar fejlesztői AI adoption benchmark riportot. Spam nem lesz. Az e-mail cím megadása opcionális – nélküle is beküldheted, de akkor nem küldünk értesítést.
           </p>
           <div class="form-row">
-            <label class="form-label" for="quiz-email">E-mail cím</label>
+            <label class="form-label" for="quiz-email">E-mail cím (opcionális)</label>
             <input
               id="quiz-email"
               v-model="email"
@@ -279,7 +316,7 @@ async function submitQuiz() {
             <label for="quiz-privacy-consent" class="consent-label">
               Elolvastam és elfogadom az
               <RouterLink :to="privacyPath" class="consent-link" target="_blank">adatkezelési tájékoztatót</RouterLink>.
-              Hozzájárulok, hogy az e-mail címemet és a kvíz válaszaimat a letscode.hu tárolja és feldolgozza.
+              Hozzájárulok, hogy a kvíz válaszaimat (és ha megadom, az e-mail címemet) a letscode.hu tárolja és feldolgozza.
             </label>
           </div>
           <p v-if="submitError" class="submit-error">{{ submitError }}</p>
@@ -289,7 +326,7 @@ async function submitQuiz() {
           <BaseButton variant="ghost" type="button" :disabled="isSubmitting" @click="goBack">
             Vissza
           </BaseButton>
-          <BaseButton type="button" :disabled="isSubmitting || !privacyConsent" @click="submitQuiz">
+          <BaseButton type="button" :disabled="isSubmitting || !privacyConsent" @click="onSubmitClick">
             <span v-if="isSubmitting" class="spinner" aria-hidden="true" />
             {{ isSubmitting ? 'Küldés...' : 'Eredmények kérése' }}
           </BaseButton>
@@ -315,6 +352,32 @@ async function submitQuiz() {
       <RouterLink class="success-link" :to="{ name: 'blog-list-en', params: { lang: 'hu' } }">
         Irány a blog
       </RouterLink>
+    </div>
+
+    <!-- Megerősítő modal e-mail nélküli beküldéshez -->
+    <div
+      v-if="showNoEmailModal"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="no-email-modal-title"
+      @click.self="showNoEmailModal = false"
+    >
+      <div class="modal-card">
+        <h2 id="no-email-modal-title" class="modal-title">Biztosan e-mail nélkül küldöd be?</h2>
+        <p class="modal-text">
+          E-mail cím nélkül nem tudunk értesítést küldeni, így nem fogod megkapni a 2026-os benchmark riportot.
+          A válaszaid így is beszámítanak a felmérésbe.
+        </p>
+        <div class="modal-actions">
+          <BaseButton variant="ghost" type="button" @click="showNoEmailModal = false">
+            Mégis megadom
+          </BaseButton>
+          <BaseButton type="button" @click="confirmNoEmail">
+            Folytatás e-mail nélkül
+          </BaseButton>
+        </div>
+      </div>
     </div>
   </article>
 </template>
@@ -491,6 +554,63 @@ async function submitQuiz() {
 .consent-link {
   color: var(--color-primary);
   text-decoration: underline;
+}
+
+/* Megerősítő modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.modal-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 28rem) {
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions :deep(.button) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Success */

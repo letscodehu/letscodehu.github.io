@@ -30,3 +30,6 @@ dist-ssr
 .cursor/*
 !.cursor/skills/
 !.cursor/skills/**
+
+# Lambda deploy artifact (built locally, not tracked)
+lambda/quiz-submit/quiz-submit.zip

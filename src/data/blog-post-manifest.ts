@@ -44,6 +44,7 @@ export const blogPostManifest: BlogPostManifest[] = [
     titleEn: 'Spec-Driven Development and the Waterfall Trap',
     titleHu: 'Spec-vezérelt fejlesztés és a vízesés-csapda',
     featuredImagePath: '/blog/spec-driven-waterfall.png',
+    videoUrl: 'https://youtu.be/-nk3exnGqBE',
     excerptEn:
       'Spec-driven development solves real problems with vibe coding, but writing a long, confident spec up front quietly brings back the waterfall assumption. The fix is to iterate the spec, not just the code.',
     excerptHu:

@@ -27,7 +27,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Egyáltalán nem',
       'Alkalmanként (havonta néhányszor)',
       'Rendszeresen (hetente többször)',
-      'Minden nap, a legtöbb feladathoz',
+      'Minden nap',
     ],
   },
   {
@@ -89,7 +89,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q06_hallucination_review',
-    text: "Észrevetted-e, hogy a Code Review-k során több időt vagy extra kognitív energiát vesz igénybe a logikai hibák (pl. 'hallucinált' API végpontok, nem létező könyvtári hívások) kiszűrése az AI által erősen támogatott PR-okban, mint a hagyományosan írt kódoknál?",
+    text: "Észrevetted-e, hogy a Code Review-k során több időt vagy extra kognitív energiát vesz igénybe a logikai hibák kiszűrése az AI által erősen támogatott PR-okban, mint a hagyományosan írt kódoknál?",
     type: 'scale',
     min: 1,
     max: 5,
@@ -210,7 +210,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Prompt engineering és hatékony használat',
       'AI-alapú szoftverarchitektúra',
       'LLM integráció saját termékbe',
-      'AI biztonság és etika',
+      'AI biztonság és etika'
     ],
   },
 ]

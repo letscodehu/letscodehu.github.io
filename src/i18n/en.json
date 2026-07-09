@@ -202,7 +202,7 @@
   },
   "trainingB2cAds": {
     "pageTitle": "Architect Mindset training — Workshop Budapest",
-    "eyebrow": "2 days · Budapest · June 11-12 (Thu-Fri) · small group · in person only",
+    "eyebrow": "2 days · Budapest · September 17-18 (Thu-Fri) · small group · in person only",
     "heroTitle": "Make architectural decisions you won't have to apologize for in six months.",
     "heroAudienceIntro": "A 2-day practical workshop for senior developers, tech leads, and engineering managers who:",
     "heroAudiencePoints": [
@@ -218,7 +218,11 @@
     ],
     "heroPainClosing": "If 2 of these feel familiar, one bad architectural decision costs more than this workshop.",
     "offerMeta": {
-      "price": "119,000 HUF",
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99,000 HUF",
+      "earlyBirdDeadline": "until August 20",
+      "regularPriceLabel": "After that",
+      "regularPrice": "119,000 HUF",
       "priceComparison": "Less than the first refactor sprint of a poorly chosen database."
     },
     "ctaPrimary": "Save my seat",
@@ -227,8 +231,8 @@
     "registrationNextDate": "Next date expected in September.",
     "ctaSeatsLeft": "Only 3 seats left",
     "applicationDeadlineLabel": "Application deadline",
-    "applicationDeadlineDate": "June 1",
-    "applicationDeadline": "Application deadline: June 1.",
+    "applicationDeadlineDate": "September 1",
+    "applicationDeadline": "Application deadline: September 1.",
     "heroReassurancePoints": [
       "Company invoice available",
       "If the workshop is cancelled, you get a 100% refund within 3 business days",
@@ -271,7 +275,7 @@
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "Book your seat — with low risk.",
-    "ctaSecondaryBody": "2 days in Budapest, June 11-12. 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "ctaSecondaryBody": "2 days in Budapest, September 17-18. Early bird is 99,000 HUF until August 20, then 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
     "checkoutNote": "Secure Stripe payment. Right after payment, I send a short questionnaire so the workshop can be tailored to your own examples.",
     "latebirdPopup": {
       "eyebrow": "LATEBIRD offer",
@@ -380,7 +384,10 @@
       ]
     },
     "programFooterCtaTitle": "Book your seat — with low risk.",
-    "programFooterCtaBody": "2 days in Budapest, June 11-12. 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "programFooterCtaBody": "2 days in Budapest, September 17-18. Early bird is 99,000 HUF until August 20, then 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
+    "companyInquiryTitle": "Booking for a team?",
+    "companyInquiryBody": "If you'd like it for several people, your whole team, or with company invoicing — the workshop is tailored to your own environment and examples. Get in touch and we'll sort out the details.",
+    "companyInquiryButton": "Contact us",
     "faqTitle": "Frequently asked questions",
     "faqCancellationLead": "In short, if you cannot attend:",
     "faqCancellationPoints": [
@@ -415,7 +422,7 @@
       {
         "question": "Where and when is it?",
         "paragraphs": [
-          "In person in Budapest (District XIII). June 11-12, 09:00-17:00.",
+          "In person in Budapest (District XIII). September 17-18, 09:00-17:00.",
           "Venue: Ruander Training Center, District XIII, Frangepán utca 3."
         ]
       },

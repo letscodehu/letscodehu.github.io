@@ -2,7 +2,7 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
-import SignupPopup from '../components/ui/SignupPopup.vue'
+import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
 import { useI18n } from '../composables/useI18n'
 import {
   trackTrainingWorkshopCtaClick,
@@ -11,6 +11,10 @@ import {
 } from '../tracking'
 
 const MOBILE_MAX_PX = 768
+const EARLY_BIRD_DEADLINE_TIMESTAMP = new Date(2026, 7, 20).getTime()
+const MS_PER_DAY = 24 * 60 * 60 * 1000
+const STRIPE_CHECKOUT_URL =
+  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
 
 const { t, currentLang } = useI18n()
 const instructorImages = ['/weblica.jpg', '/webconf.jpg', '/cldrmeetup.jpg'] as const
@@ -22,9 +26,10 @@ const heroCtaVisible = ref(true)
 const middleCtaVisible = ref(false)
 const bottomCtaVisible = ref(false)
 const isMobileViewport = ref(false)
-const isSignupPopupOpen = ref(false)
+const isCheckoutPopupOpen = ref(false)
 /** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
 const intersectionObserverSupported = ref(false)
+const earlyBirdDeadlineLabel = computed(() => formatEarlyBirdDeadlineLabel(getEarlyBirdDaysLeft(Date.now()), currentLang.value))
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
 let heroObserver: IntersectionObserver | null = null
@@ -32,6 +37,34 @@ let middleObserver: IntersectionObserver | null = null
 let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
+
+function getLocalDayStart(timestamp: number) {
+  const date = new Date(timestamp)
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime()
+}
+
+function getEarlyBirdDaysLeft(nowTimestamp: number) {
+  const todayStart = getLocalDayStart(nowTimestamp)
+  const deadlineStart = getLocalDayStart(EARLY_BIRD_DEADLINE_TIMESTAMP)
+  return Math.ceil((deadlineStart - todayStart) / MS_PER_DAY)
+}
+
+function formatEarlyBirdDeadlineLabel(daysLeft: number, language: 'en' | 'hu') {
+  if (daysLeft < 0) {
+    return language === 'hu' ? 'Early bird lezárult' : 'Early bird ended'
+  }
+
+  if (daysLeft === 0) {
+    return language === 'hu' ? 'Már csak ma' : 'Last day'
+  }
+
+  if (language === 'hu') {
+    return `Már csak ${daysLeft} napig`
+  }
+
+  const dayLabel = daysLeft === 1 ? 'day' : 'days'
+  return `Only ${daysLeft} ${dayLabel} left`
+}
 
 function syncMobileViewport() {
   if (typeof window === 'undefined') {
@@ -189,14 +222,14 @@ onUnmounted(() => {
   imageRotationInterval = null
 })
 
-function handleNotifyClick(placement: TrainingWorkshopCtaPlacement) {
+function handlePrimaryCtaClick(placement: TrainingWorkshopCtaPlacement) {
   trackTrainingWorkshopCtaClick({ placement, nextStep: 'email_popup' })
   trackTrainingWorkshopEmailPopupOpen({ placement })
-  isSignupPopupOpen.value = true
+  isCheckoutPopupOpen.value = true
 }
 
-function closeSignupPopup() {
-  isSignupPopupOpen.value = false
+function closeCheckoutPopup() {
+  isCheckoutPopupOpen.value = false
 }
 
 const faqItemsList = computed(() => {
@@ -267,18 +300,26 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         <p class="hero-pain-closing">{{ t('trainingB2cAds.heroPainClosing') }}</p>
       </div>
       <div class="offer-meta fade fade--5">
-        <p class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.price') }}</p>
+        <p class="offer-meta__early">
+          <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
+          <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
+          <span class="offer-meta__deadline">{{ earlyBirdDeadlineLabel }}</span>
+        </p>
+        <p class="offer-meta__regular">
+          <span class="offer-meta__regular-label">{{ t('trainingB2cAds.offerMeta.regularPriceLabel') }}</span>
+          <span class="offer-meta__regular-price">{{ t('trainingB2cAds.offerMeta.regularPrice') }}</span>
+        </p>
         <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
       </div>
 
-      <div class="application-deadline-badge application-deadline-badge--closed fade fade--5">
-        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.registrationClosedBadge') }}</span>
-        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.registrationNextDate') }}</span>
+      <div class="application-deadline-badge fade fade--5" :aria-label="t('trainingB2cAds.applicationDeadline')">
+        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.applicationDeadlineLabel') }}</span>
+        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.applicationDeadlineDate') }}</span>
       </div>
 
       <div ref="heroCtaEl" class="hero-actions fade fade--5">
-        <BaseButton @click="handleNotifyClick('hero')">
-          {{ t('trainingB2cAds.ctaNotify') }}
+        <BaseButton @click="handlePrimaryCtaClick('hero')">
+          {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
@@ -348,14 +389,14 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
       <div ref="middleCtaEl" class="final-cta-actions">
-        <BaseButton @click="handleNotifyClick('middle')">
-          {{ t('trainingB2cAds.ctaNotify') }}
+        <BaseButton @click="handlePrimaryCtaClick('middle')">
+          {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
       </div>
-      <p class="registration-next-date">{{ t('trainingB2cAds.registrationNextDate') }}</p>
+      <p class="registration-next-date">{{ t('trainingB2cAds.applicationDeadline') }}</p>
     </section>
 
     <section
@@ -451,11 +492,21 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
       <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
       <div ref="bottomCtaEl" class="program-footer-cta-actions">
-        <BaseButton @click="handleNotifyClick('bottom')">
-          {{ t('trainingB2cAds.ctaNotify') }}
+        <BaseButton @click="handlePrimaryCtaClick('bottom')">
+          {{ t('trainingB2cAds.ctaPrimary') }}
         </BaseButton>
       </div>
-      <p class="registration-next-date">{{ t('trainingB2cAds.registrationNextDate') }}</p>
+      <p class="registration-next-date">{{ t('trainingB2cAds.applicationDeadline') }}</p>
+    </section>
+
+    <section class="company-inquiry section-reveal" data-section-reveal>
+      <h2>{{ t('trainingB2cAds.companyInquiryTitle') }}</h2>
+      <p>{{ t('trainingB2cAds.companyInquiryBody') }}</p>
+      <div class="company-inquiry-actions">
+        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+          <BaseButton>{{ t('trainingB2cAds.companyInquiryButton') }}</BaseButton>
+        </RouterLink>
+      </div>
     </section>
 
     <Teleport to="body">
@@ -463,20 +514,21 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         v-show="showStickyWaitlistCta"
         class="training-b2c-ads-sticky-waitlist"
         role="region"
-        :aria-label="t('trainingB2cAds.ctaNotify')"
+        :aria-label="t('trainingB2cAds.ctaPrimary')"
       >
         <div class="training-b2c-ads-sticky-waitlist__inner">
-          <BaseButton @click="handleNotifyClick('sticky')">
-            {{ t('trainingB2cAds.ctaNotify') }}
+          <BaseButton @click="handlePrimaryCtaClick('sticky')">
+            {{ t('trainingB2cAds.ctaPrimary') }}
           </BaseButton>
-          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.registrationNextDate') }}</p>
+          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
         </div>
       </div>
     </Teleport>
 
-    <SignupPopup
-      :open="isSignupPopupOpen"
-      @close="closeSignupPopup"
+    <CheckoutEmailPopup
+      :open="isCheckoutPopupOpen"
+      :stripe-checkout-url="STRIPE_CHECKOUT_URL"
+      @close="closeCheckoutPopup"
     />
   </article>
 </template>
@@ -715,12 +767,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   color: var(--color-text);
 }
 
-.application-deadline-badge--closed .application-deadline-badge__date {
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 500;
-}
-
 .registration-next-date {
   margin-top: 0.5rem;
   font-size: 0.88rem;
@@ -733,10 +779,54 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   max-width: 60ch;
 }
 
+.offer-meta__early {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.offer-meta__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.5rem;
+  border: 1px solid var(--landing-border);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 .offer-meta__price {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 800;
+}
+
+.offer-meta__deadline {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.offer-meta__regular {
+  margin: 0.2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.offer-meta__regular-label {
+  font-size: 0.9rem;
+}
+
+.offer-meta__regular-price {
+  font-size: 0.95rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
 }
 
 .offer-meta__compare {
@@ -803,11 +893,33 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .faq,
 .final-cta,
 .detailed-program,
-.program-footer-cta {
+.program-footer-cta,
+.company-inquiry {
   border: 1px solid var(--landing-border);
   border-radius: var(--radius-lg);
   background: var(--landing-panel-bg);
   padding: clamp(1rem, 2.4vw, 1.45rem);
+}
+
+.company-inquiry h2 {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.5rem);
+  letter-spacing: -0.01em;
+}
+
+.company-inquiry > p {
+  margin: 0.55rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.company-inquiry-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .section-title {
@@ -1247,13 +1359,15 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
   .hero-actions,
   .final-cta-actions,
-  .program-footer-cta-actions {
+  .program-footer-cta-actions,
+  .company-inquiry-actions {
     justify-content: center;
   }
 
   .hero-actions :deep(.button),
   .final-cta-actions :deep(.button),
-  .program-footer-cta-actions :deep(.button) {
+  .program-footer-cta-actions :deep(.button),
+  .company-inquiry-actions :deep(.button) {
     width: min(22rem, 100%);
     max-width: 100%;
   }

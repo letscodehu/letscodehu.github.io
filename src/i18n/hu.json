@@ -202,7 +202,7 @@
   },
   "trainingB2cAds": {
     "pageTitle": "Architect Mindset tréning — Workshop Budapest",
-    "eyebrow": "2 nap · Budapest · június 11-12. (csüt-péntek) · kiscsoportos, személyes workshop",
+    "eyebrow": "2 nap · Budapest · szeptember 17-18. (csüt-péntek) · kiscsoportos, személyes workshop",
     "heroTitle": "Hozz meg olyan architekturális döntéseket, amiket 6 hónap múlva sem kell szégyellned.",
     "heroAudienceIntro": "2 napos gyakorlati workshop senior fejlesztőknek, tech leadeknek és engineering managereknek, akik:",
     "heroAudiencePoints": [
@@ -218,7 +218,11 @@
     ],
     "heroPainClosing": "Ha ebből 2 ismerős: egy rossz architekturális döntés többe kerül, mint ez a workshop.",
     "offerMeta": {
-      "price": "119.000 Ft",
+      "earlyBirdLabel": "Early bird",
+      "earlyBirdPrice": "99.000 Ft",
+      "earlyBirdDeadline": "augusztus 20-ig",
+      "regularPriceLabel": "Utána",
+      "regularPrice": "119.000 Ft",
       "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."
     },
     "ctaPrimary": "Lefoglalom a helyem",
@@ -227,8 +231,8 @@
     "registrationNextDate": "Legközelebb várhatóan szeptemberben kerül megrendezésre.",
     "ctaSeatsLeft": "Már csak 3 hely maradt",
     "applicationDeadlineLabel": "Jelentkezési határidő",
-    "applicationDeadlineDate": "június 1.",
-    "applicationDeadline": "Jelentkezési határidő: június 1.",
+    "applicationDeadlineDate": "szeptember 1.",
+    "applicationDeadline": "Jelentkezési határidő: szeptember 1.",
     "heroReassurancePoints": [
       "Számla cégre is kérhető",
       "Ha elmarad a workshop, 100% vissza 3 munkanapon belül",
@@ -271,7 +275,7 @@
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
     "ctaSecondaryTitle": "Foglald le a helyed — kockázat nélkül.",
-    "ctaSecondaryBody": "2 nap, Budapest, június 11-12. 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
+    "ctaSecondaryBody": "2 nap, Budapest, szeptember 17-18. Early bird 99.000 Ft augusztus 20-ig, utána 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "checkoutNote": "Biztonságos Stripe fizetés. A fizetés után azonnal küldök egy rövid kérdőívet, hogy a saját példáidra szabhassam a workshopot.",
     "latebirdPopup": {
       "eyebrow": "LATEBIRD ajánlat",
@@ -380,7 +384,7 @@
       ]
     },
     "programFooterCtaTitle": "Foglald le a helyed — kockázat nélkül.",
-    "programFooterCtaBody": "2 nap, Budapest, június 11-12. 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
+    "programFooterCtaBody": "2 nap, Budapest, szeptember 17-18. Early bird 99.000 Ft augusztus 20-ig, utána 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
     "faqTitle": "Gyakori kérdések",
     "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
     "faqCancellationPoints": [
@@ -415,7 +419,7 @@
       {
         "question": "Hol és mikor lesz a workshop?",
         "paragraphs": [
-          "Offline kerül megrendezésre Budapesten, a XIII. kerületben. Időpont: június 11–12., 09:00–17:00.",
+          "Offline kerül megrendezésre Budapesten, a XIII. kerületben. Időpont: szeptember 17–18., 09:00–17:00.",
           "Helyszín: Ruander Oktatóközpont, XIII. kerület, Frangepán utca 3."
         ]
       },

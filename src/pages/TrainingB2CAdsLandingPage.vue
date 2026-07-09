@@ -499,6 +499,16 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
       <p class="registration-next-date">{{ t('trainingB2cAds.applicationDeadline') }}</p>
     </section>
 
+    <section class="company-inquiry section-reveal" data-section-reveal>
+      <h2>{{ t('trainingB2cAds.companyInquiryTitle') }}</h2>
+      <p>{{ t('trainingB2cAds.companyInquiryBody') }}</p>
+      <div class="company-inquiry-actions">
+        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+          <BaseButton>{{ t('trainingB2cAds.companyInquiryButton') }}</BaseButton>
+        </RouterLink>
+      </div>
+    </section>
+
     <Teleport to="body">
       <div
         v-show="showStickyWaitlistCta"
@@ -883,11 +893,33 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .faq,
 .final-cta,
 .detailed-program,
-.program-footer-cta {
+.program-footer-cta,
+.company-inquiry {
   border: 1px solid var(--landing-border);
   border-radius: var(--radius-lg);
   background: var(--landing-panel-bg);
   padding: clamp(1rem, 2.4vw, 1.45rem);
+}
+
+.company-inquiry h2 {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.5rem);
+  letter-spacing: -0.01em;
+}
+
+.company-inquiry > p {
+  margin: 0.55rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.company-inquiry-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .section-title {
@@ -1327,13 +1359,15 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
   .hero-actions,
   .final-cta-actions,
-  .program-footer-cta-actions {
+  .program-footer-cta-actions,
+  .company-inquiry-actions {
     justify-content: center;
   }
 
   .hero-actions :deep(.button),
   .final-cta-actions :deep(.button),
-  .program-footer-cta-actions :deep(.button) {
+  .program-footer-cta-actions :deep(.button),
+  .company-inquiry-actions :deep(.button) {
     width: min(22rem, 100%);
     max-width: 100%;
   }

@@ -299,6 +299,20 @@ export function trackTrainingWorkshopEmailPopupOpen(args: {
   }
 }
 
+export function trackSlackJoinClick() {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'slack_join_click')
+  }
+
+  if (loaded.fb && window.fbq) {
+    window.fbq('trackCustom', 'SlackJoinClick')
+  }
+}
+
 export type TrainingWorkshopStripeSource = 'cta_direct' | 'email_popup'
 
 export function trackTrainingWorkshopStripeRedirect(args: {

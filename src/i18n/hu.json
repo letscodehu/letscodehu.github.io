@@ -913,6 +913,24 @@
     "contactTitle": "Kérdések",
     "contactBody": "Ha kérdésed van az oldalon történő adatkezeléssel kapcsolatban, kérlek használd a Kapcsolat oldalt."
   },
+  "slack": {
+    "pageTitle": "Csatlakozz a letscode.hu Slack közösséghez",
+    "intro": "A letscode.hu fejlesztői közössége. Csatlakozz — vagy előbb nézz körül az oldalon.",
+    "socialProof": "1000+ fejlesztő már csatlakozott.",
+    "joinCta": "Csatlakozom a Slackhez",
+    "joinNote": "Ingyenes. Nincs spam, csak beszélgetések.",
+    "exploreTitle": "Ha már itt vagy, nézz körül",
+    "exploreIntro": "A közösség az oldal mögötti munkából nőtt ki: workshopok, tanácsadás és cikkek fejlesztői csapatoknak.",
+    "exploreTrainingTitle": "Workshopok és képzések",
+    "exploreTrainingBody": "Gyakorlatorientált workshopok tapasztalt csapatoknak: architektúra döntések, ADR-ek, C4, CI/CD.",
+    "exploreTrainingCta": "Workshopok megnézése →",
+    "exploreConsultingTitle": "Tanácsadás",
+    "exploreConsultingBody": "Rövid, fókuszált együttműködések, hogy ezek a gyakorlatok a saját rendszereitekben is működjenek.",
+    "exploreConsultingCta": "Miben tudok segíteni →",
+    "exploreBlogTitle": "Blog",
+    "exploreBlogBody": "Cikkek szállítási szűk keresztmetszetekről, architekturális döntésekről és AI-alapú fejlesztésről.",
+    "exploreBlogCta": "Cikkek olvasása →"
+  },
   "seo": {
     "defaultOgImageAlt": "Letscode Solutions — képzés és tanácsadás fejlesztői csapatoknak",
     "descriptions": {
@@ -926,7 +944,8 @@
       "contact": "Lépj kapcsolatba a Letscode Solutionsszel képzés, workshop vagy tanácsadás egyeztetéséhez.",
       "caseStudies": "Esettanulmányok valós képzési és tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
       "blog": "Cikkek CI/CD-ről, szállítási szűk keresztmetszetekről, architekturális döntésekről és a production felé vezető útról.",
-      "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások."
+      "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások.",
+      "slack": "Csatlakozz a letscode.hu Slack közösséghez: beszélgetések architektúráról, CI/CD-ről és AI-alapú fejlesztésről fejlesztők között."
     }
   }
 }

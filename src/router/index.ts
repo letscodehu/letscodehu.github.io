@@ -13,6 +13,7 @@ import BlogPage from '../pages/BlogPage.vue'
 import BlogPostDetailPage from '../pages/BlogPostDetailPage.vue'
 import PrivacyPage from '../pages/PrivacyPage.vue'
 import QuizPage from '../pages/QuizPage.vue'
+import SlackPage from '../pages/SlackPage.vue'
 
 const childRoutes: RouteRecordRaw[] = [
   {
@@ -105,6 +106,19 @@ const childRoutes: RouteRecordRaw[] = [
     name: 'blog-post-detail-en',
     component: BlogPostDetailPage,
     meta: { titleKey: 'blog.pageTitle', useChildTitle: true },
+  },
+  {
+    path: 'slack',
+    name: 'slack',
+    component: SlackPage,
+    meta: { titleKey: 'slack.pageTitle', descriptionKey: 'seo.descriptions.slack' },
+    beforeEnter: (_to, _from, next) => {
+      if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/hu/')) {
+        next({ path: '/hu/slack' })
+      } else {
+        next()
+      }
+    },
   },
   {
     path: 'privacy',

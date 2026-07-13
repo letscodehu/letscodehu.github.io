@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import BaseButton from '../components/ui/BaseButton.vue'
@@ -131,12 +131,28 @@ function setAnswer(value: AnswerValue) {
   if (q) answers.value = { ...answers.value, [q.id]: value }
 }
 
+const cardEl = ref<HTMLElement | null>(null)
+
+// Lépésváltásnál a kártya tetejére görgetünk, különben mobilon a legörgetett
+// pozíció megmarad, és a user a footert látja az új kérdés helyett. nextTick
+// kell, mert sikeres beküldésnél a kártya elem is kicserélődik.
+async function scrollToCardTop() {
+  await nextTick()
+  cardEl.value?.scrollIntoView({ block: 'start' })
+}
+
 function goNext() {
-  if (!isEmailStep.value) currentStep.value++
+  if (!isEmailStep.value) {
+    currentStep.value++
+    scrollToCardTop()
+  }
 }
 
 function goBack() {
-  if (currentStep.value > 0) currentStep.value--
+  if (currentStep.value > 0) {
+    currentStep.value--
+    scrollToCardTop()
+  }
 }
 
 // Az e-mail opcionális: üres mező rendben van, csak a formátumot ellenőrizzük,
@@ -198,6 +214,7 @@ async function submitQuiz() {
 
     if (response.ok) {
       isSuccess.value = true
+      scrollToCardTop()
       return
     }
 
@@ -226,7 +243,7 @@ async function submitQuiz() {
 
 <template>
   <article class="quiz-page">
-    <div v-if="!isSuccess" class="quiz-card">
+    <div v-if="!isSuccess" ref="cardEl" class="quiz-card">
       <header class="quiz-header">
         <h1 class="quiz-title">Magyar fejlesztők és az AI – 2026-os felmérés</h1>
         <div class="quiz-meta">
@@ -336,7 +353,7 @@ async function submitQuiz() {
     </div>
 
     <!-- Köszönő képernyő -->
-    <div v-else class="success-card">
+    <div v-else ref="cardEl" class="success-card">
       <div class="success-icon" aria-hidden="true">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle class="check-bg" cx="24" cy="24" r="22" stroke-width="1.5" />

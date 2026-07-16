@@ -147,6 +147,17 @@ const { t } = useI18n()
               class="credly-badge-image"
             />
           </a>
+          <a
+            href="https://www.credly.com/badges/146e44d2-967f-412a-9e60-2a21b5d73373/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/claude-certified-architect-foundations.png"
+              :alt="t('about.credlyBadgeClaudeArchitectAlt')"
+              class="credly-badge-image"
+            />
+          </a>
         </div>
       </BaseCard>
     </section>

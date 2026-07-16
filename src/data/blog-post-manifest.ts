@@ -16,6 +16,16 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'architect-wont-be-here-when-bill-comes-due',
+    publishedAt: '2026-07-14',
+    titleEn: "The Architect Won't Be Here When the Bill Comes Due",
+    titleHu: 'Az architektet már nem találod ott, mikor megjön a számla',
+    excerptEn:
+      'The person who mandates "everything serverless" is systematically the one least exposed to the consequences. The decision outlives the decider, and the misalignment between who decides and who pays is the real defect - not the tech.',
+    excerptHu:
+      'Aki kimondja, hogy „minden legyen serverless", rendszerint az van a legkevésbé kitéve a következményeknek. A döntés túléli a döntéshozót, és a valódi hiba nem a technológia, hanem az elcsúszás aközött, hogy ki dönt és ki fizet.',
+  },
+  {
     slug: 'best-engineer-barely-writes-code',
     publishedAt: '2026-06-20',
     titleEn: 'Your Best Engineer Barely Writes Code Anymore',

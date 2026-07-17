@@ -25,6 +25,7 @@ export const blogPostManifest: BlogPostManifest[] = [
       'The person who mandates "everything serverless" is systematically the one least exposed to the consequences. The decision outlives the decider, and the misalignment between who decides and who pays is the real defect - not the tech.',
     excerptHu:
       'Aki kimondja, hogy „minden legyen serverless", rendszerint az van a legkevésbé kitéve a következményeknek. A döntés túléli a döntéshozót, és a valódi hiba nem a technológia, hanem az elcsúszás aközött, hogy ki dönt és ki fizet.',
+    videoUrl: 'https://www.youtube.com/watch?v=cHAQ23lY_PE',
   },
   {
     slug: 'best-engineer-barely-writes-code',

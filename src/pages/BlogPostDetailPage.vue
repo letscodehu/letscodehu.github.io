@@ -305,6 +305,18 @@ watch(
         </nav>
       </div>
 
+      <!-- A felmérés csak magyarul érhető el. -->
+      <div v-if="currentLang === 'hu'" class="sidebar-block sidebar-quiz-cta">
+        <h2 class="sidebar-cta-title">Magyar fejlesztők és az AI – 2026</h2>
+        <p class="sidebar-cta-body">
+          Töltsd ki az AI adoption felmérést, és e-mailben megkapod a magyar fejlesztői benchmark
+          riportot.
+        </p>
+        <RouterLink :to="{ name: 'quiz', params: { lang: 'hu' } }" class="sidebar-cta-button">
+          Kitöltöm
+        </RouterLink>
+      </div>
+
       <div class="sidebar-block sidebar-cta">
         <h2 class="sidebar-cta-title">{{ t('blog.sidebarCtaTitle') }}</h2>
         <p class="sidebar-cta-body">{{ t('blog.sidebarCtaBody') }}</p>
@@ -676,6 +688,10 @@ watch(
 }
 
 .sidebar-b2c-cta {
+  border-left: 3px solid var(--color-border-strong);
+}
+
+.sidebar-quiz-cta {
   border-left: 3px solid var(--color-border-strong);
 }
 

@@ -3,6 +3,7 @@ import { useI18n } from '../composables/useI18n'
 import BaseButton from '../components/ui/BaseButton.vue'
 import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
+import QuizPromoBanner from '../components/ui/QuizPromoBanner.vue'
 
 const { t, currentLang } = useI18n()
 </script>
@@ -34,6 +35,8 @@ const { t, currentLang } = useI18n()
       </div>
     </div>
   </section>
+
+  <QuizPromoBanner class="section" />
 
   <section class="section">
     <header class="section-header">

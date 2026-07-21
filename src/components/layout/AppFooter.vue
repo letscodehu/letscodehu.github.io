@@ -45,6 +45,14 @@ const { t, currentLang } = useI18n()
           </div>
 
           <div class="footer-link-group">
+            <!-- A felmérés csak magyarul érhető el. -->
+            <RouterLink
+              v-if="currentLang === 'hu'"
+              :to="{ name: 'quiz', params: { lang: 'hu' } }"
+              class="footer-link"
+            >
+              AI felmérés 2026
+            </RouterLink>
             <RouterLink :to="{ name: 'privacy-en', params: { lang: currentLang } }" class="footer-link">
               {{ t('common.privacyLink') }}
             </RouterLink>

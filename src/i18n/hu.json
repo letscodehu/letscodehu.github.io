@@ -801,6 +801,8 @@
   "contact": {
     "pageTitle": "Kapcsolat",
     "intro": "Ha engineering csapatokért felelsz, és felmerült a képzés vagy fókuszált tanácsadási együttműködés gondolata, foglalj egy rövid egyeztetést.",
+    "emailIntro": "Inkább írnál e-mailt? Írj közvetlenül ide:",
+    "email": "fejlesztes@letscode.hu",
     "expectationsTitle": "Kiknek érdemes jelentkezni?",
     "expectations": [
       "CTO-knak, VP of Engineering szerepben lévőknek, engineering managereknek, akik csapat szintű képzést terveznek.",

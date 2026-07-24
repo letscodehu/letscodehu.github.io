@@ -15,6 +15,10 @@ const { t } = useI18n()
       <p class="page-intro">
         {{ t('contact.intro') }}
       </p>
+      <p class="page-intro">
+        {{ t('contact.emailIntro') }}
+        <a class="email-link" :href="`mailto:${t('contact.email')}`">{{ t('contact.email') }}</a>
+      </p>
     </header>
 
     <section class="section grid grid--two">
@@ -62,6 +66,15 @@ const { t } = useI18n()
   font-size: 0.95rem;
   color: var(--color-text-muted);
   max-width: 44rem;
+}
+
+.page-intro + .page-intro {
+  margin-top: 0.6rem;
+}
+
+.email-link {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .section {

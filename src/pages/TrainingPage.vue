@@ -100,12 +100,11 @@ const { t, currentLang } = useI18n()
 
     <section class="section cta">
       <div class="cta-actions">
-        <BaseButton
-          as="a"
-          href="mailto:fejlesztes@letscode.hu"
-        >
-          {{ t('training.cta') }}
-        </BaseButton>
+        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+          <BaseButton>
+            {{ t('training.cta') }}
+          </BaseButton>
+        </RouterLink>
         <BaseButton
           as="a"
           variant="ghost"

@@ -801,6 +801,8 @@
   "contact": {
     "pageTitle": "Contact",
     "intro": "If you are responsible for engineering teams and want to explore training or focused consulting support, book a short discovery call.",
+    "emailIntro": "Prefer email? Reach me directly at",
+    "email": "fejlesztes@letscode.hu",
     "expectationsTitle": "Who should get in touch",
     "expectations": [
       "CTOs, VPs of Engineering, and engineering managers planning team-wide training.",

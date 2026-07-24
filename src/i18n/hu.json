@@ -853,7 +853,9 @@
     "videoBlockBody": "Ugyanez a tartalom YouTube-on is elérhető angolul, ha inkább videóban hallanád.",
     "videoWatchButton": "Megnézem YouTube-on",
     "videoBlockAriaLabel": "A cikk videó változata",
-    "publishedOnLabel": "Közzétéve"
+    "publishedOnLabel": "Közzétéve",
+    "filterAllLabel": "Összes",
+    "filterByTagAriaLabel": "Cikkek szűrése téma szerint"
   },
   "privacy": {
     "pageTitle": "Adatkezelési tájékoztató",

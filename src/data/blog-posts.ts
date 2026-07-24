@@ -11,6 +11,7 @@ export interface BlogPost {
   contentHu: string
   videoUrl?: string
   featuredImagePath?: string
+  tags: string[]
 }
 
 const enMarkdownModules = import.meta.glob<string>('../../content/blog/*/en.md', {

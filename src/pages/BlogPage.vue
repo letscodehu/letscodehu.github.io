@@ -1,11 +1,35 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import { blogPosts } from '../data/blog-posts'
+import { blogTags, getBlogTagLabel } from '../data/blog-tags'
 import { caseStudies, localizeCaseStudy } from '../data/case-studies'
 
 const { t, currentLang } = useI18n()
+const route = useRoute()
+const router = useRouter()
+
+const selectedTag = computed(() => {
+  const tag = route.query.tag
+  return typeof tag === 'string' ? tag : null
+})
+
+const usedTags = computed(() => {
+  const usedSlugs = new Set(blogPosts.flatMap((post) => post.tags))
+  return blogTags.filter((tag) => usedSlugs.has(tag.slug))
+})
+
+function selectTag(tag: string | null): void {
+  const query = { ...route.query }
+  if (tag) {
+    query.tag = tag
+  } else {
+    delete query.tag
+  }
+  router.push({ name: route.name ?? undefined, params: route.params, query })
+}
 
 function formatPublishedAt(date: string, locale: string): string {
   const m = date.match(/^(\d{4})-(\d{2})-(\d{2})$/)
@@ -22,14 +46,17 @@ function formatPublishedAt(date: string, locale: string): string {
 }
 
 const postsWithLabels = computed(() =>
-  blogPosts.map((post) => ({
-    slug: post.slug,
-    title: currentLang.value === 'en' ? post.titleEn : post.titleHu,
-    excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
-    publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
-    featuredImagePath: post.featuredImagePath,
-    thumbnailPath: post.featuredImagePath ? `/thumbnails/${post.slug}.webp` : undefined,
-  }))
+  blogPosts
+    .filter((post) => !selectedTag.value || post.tags.includes(selectedTag.value))
+    .map((post) => ({
+      slug: post.slug,
+      title: currentLang.value === 'en' ? post.titleEn : post.titleHu,
+      excerpt: currentLang.value === 'en' ? post.excerptEn : post.excerptHu,
+      publishedAt: formatPublishedAt(post.publishedAt, currentLang.value),
+      featuredImagePath: post.featuredImagePath,
+      thumbnailPath: post.featuredImagePath ? `/thumbnails/${post.slug}.webp` : undefined,
+      tags: post.tags.map((slug) => ({ slug, label: getBlogTagLabel(slug, currentLang.value) })),
+    }))
 )
 
 const displayedCaseStudies = computed(() =>
@@ -50,6 +77,26 @@ const displayedCaseStudies = computed(() =>
 
     <section class="section">
       <h2 class="section-title">{{ t('nav.blogArticles') }}</h2>
+      <nav class="tag-filter" :aria-label="t('blog.filterByTagAriaLabel')">
+        <button
+          type="button"
+          class="tag-filter-pill"
+          :class="{ 'tag-filter-pill--active': !selectedTag }"
+          @click="selectTag(null)"
+        >
+          {{ t('blog.filterAllLabel') }}
+        </button>
+        <button
+          v-for="tag in usedTags"
+          :key="tag.slug"
+          type="button"
+          class="tag-filter-pill"
+          :class="{ 'tag-filter-pill--active': selectedTag === tag.slug }"
+          @click="selectTag(tag.slug)"
+        >
+          {{ currentLang === 'en' ? tag.labelEn : tag.labelHu }}
+        </button>
+      </nav>
       <div class="grid grid--two">
         <RouterLink
           v-for="post in postsWithLabels"
@@ -75,6 +122,9 @@ const displayedCaseStudies = computed(() =>
             <template #title>{{ post.title }}</template>
             <template #subtitle>{{ post.excerpt }}</template>
             <small class="post-date">{{ t('blog.publishedOnLabel') }}: {{ post.publishedAt }}</small>
+            <div v-if="post.tags.length" class="post-tags">
+              <span v-for="tag in post.tags" :key="tag.slug" class="post-tag-badge">{{ tag.label }}</span>
+            </div>
           </BaseCard>
         </RouterLink>
       </div>
@@ -138,13 +188,43 @@ const displayedCaseStudies = computed(() =>
   max-width: 44rem;
 }
 
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.35rem;
+}
+
+.tag-filter-pill {
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease, background-color 0.16s ease;
+}
+
+.tag-filter-pill:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.tag-filter-pill--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-button-solid-fg);
+}
+
 .grid {
   display: grid;
   gap: 1.35rem;
 }
 
 .grid--two {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   align-items: stretch;
 }
 
@@ -189,5 +269,22 @@ const displayedCaseStudies = computed(() =>
   margin-top: 0.3rem;
   font-size: 0.82rem;
   color: var(--color-text-muted);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.post-tag-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
 }
 </style>

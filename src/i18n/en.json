@@ -853,7 +853,9 @@
     "videoBlockBody": "Same content on YouTube if you prefer video.",
     "videoWatchButton": "Watch on YouTube",
     "videoBlockAriaLabel": "Video version of this article",
-    "publishedOnLabel": "Published"
+    "publishedOnLabel": "Published",
+    "filterAllLabel": "All",
+    "filterByTagAriaLabel": "Filter articles by topic"
   },
   "privacy": {
     "pageTitle": "Privacy and data processing",

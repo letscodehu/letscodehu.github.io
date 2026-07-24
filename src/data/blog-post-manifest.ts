@@ -12,12 +12,15 @@ export interface BlogPostManifest {
   videoUrl?: string
   /** Path under site root for featured/blog preview image, e.g. `/blog/og/my-slug.png` (file in `public/`). */
   featuredImagePath?: string
+  /** Tag slugs, must match entries in `blog-tags.ts`. */
+  tags: string[]
 }
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'architect-wont-be-here-when-bill-comes-due',
     publishedAt: '2026-07-14',
+    tags: ['architecture', 'decision-making'],
     titleEn: "The Architect Won't Be Here When the Bill Comes Due",
     titleHu: 'Az architektet már nem találod ott, mikor megjön a számla',
     featuredImagePath: '/blog/serverless-strategy.png',
@@ -30,6 +33,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'best-engineer-barely-writes-code',
     publishedAt: '2026-06-20',
+    tags: ['ai', 'leadership'],
     titleEn: 'Your Best Engineer Barely Writes Code Anymore',
     titleHu: 'A legjobb fejlesztőd már alig ír kódot',
     featuredImagePath: '/blog/engineering-meeting.png',
@@ -41,6 +45,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'ai-model-independence',
     publishedAt: '2026-06-15',
+    tags: ['ai', 'architecture'],
     titleEn: 'Your Model Can Disappear Overnight',
     titleHu: 'A modelled egyik napról a másikra eltűnhet',
     featuredImagePath: '/blog/ai-model-independence.png',
@@ -53,6 +58,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'spec-driven-development-waterfall-trap',
     publishedAt: '2026-06-07',
+    tags: ['ai', 'decision-making'],
     titleEn: 'Spec-Driven Development and the Waterfall Trap',
     titleHu: 'Spec-vezérelt fejlesztés és a vízesés-csapda',
     featuredImagePath: '/blog/spec-driven-waterfall.png',
@@ -65,6 +71,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'ai-generated-adrs',
     publishedAt: '2026-06-01',
+    tags: ['ai', 'decision-making'],
     titleEn: 'Do Not Let AI Write Your ADRs',
     titleHu: 'Ne az AI írja meg helyetted az ADR-t',
     excerptEn:
@@ -76,6 +83,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'testing-in-ai-age',
     publishedAt: '2026-05-11',
+    tags: ['ai', 'testing'],
     titleEn: 'Tests Have Always Been Neglected. AI Made It Worse.',
     titleHu: 'A tesztek mindig mostohagyerekek voltak. Az AI csak ráerősített erre.',
     featuredImagePath: '/blog/ai-generated-tests.png',
@@ -87,6 +95,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'you-are-not-building-airplanes',
     publishedAt: '2026-05-05',
+    tags: ['architecture'],
     titleEn: 'You Are Not Building Airplanes',
     titleHu: 'Nem minden rendszer repülőgép',
     featuredImagePath: '/blog/airplane.png',
@@ -98,6 +107,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'overengineering-vs-underengineering-compliance-nightmare',
     publishedAt: '2026-04-26',
+    tags: ['architecture', 'compliance'],
     titleEn: 'Overengineering vs. underengineering: a compliance near-miss',
     titleHu: 'Overengineering vs. underengineering: majdnem compliance-rémálom',
     excerptEn:
@@ -110,6 +120,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'ci-cd-pipeline-slower-than-your-developers',
     publishedAt: '2026-03-20',
+    tags: ['ci-cd'],
     titleEn: 'Your CI/CD Pipeline Is Slower Than Your Developers',
     titleHu: 'A CI/CD pipeline-od lassabb, mint a fejlesztőid',
     featuredImagePath: '/blog/ci-cd.png',
@@ -122,6 +133,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'adrs-are-useful-only-if-they-shape-the-decision',
     publishedAt: '2026-03-08',
+    tags: ['decision-making'],
     titleEn: 'ADRs Are Useful Only If They Shape the Decision',
     titleHu: 'Az ADR csak akkor ér valamit, ha alakítja a döntést',
     featuredImagePath: '/blog/adr.png',
@@ -134,6 +146,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'your-scaling-problem-might-be-architecture-not-kubernetes',
     publishedAt: '2026-03-04',
+    tags: ['architecture', 'scaling'],
     titleEn: 'Your Scaling Problem Might Be Architecture, Not Kubernetes',
     featuredImagePath: '/blog/no-kubernetes.png',
     titleHu: 'Lehet, hogy nem Kubernetes kell, hanem jobb architektúra',
@@ -146,6 +159,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'not-all-tech-debt-is-equal',
     publishedAt: '2026-03-31',
+    tags: ['tech-debt', 'architecture'],
     titleEn: 'Not All Tech Debt Is Equal',
     titleHu: 'Nem minden tech debt egyforma',
     excerptEn:
@@ -158,6 +172,7 @@ export const blogPostManifest: BlogPostManifest[] = [
   {
     slug: 'worth-solving-before-architecture',
     publishedAt: '2026-04-20',
+    tags: ['architecture', 'decision-making'],
     titleEn: 'Before You Choose Architecture, Answer This One Question',
     titleHu: 'Mielőtt architektúrát választasz, válaszolj erre az egy kérdésre',
     videoUrl: 'https://youtu.be/X_S0TyXHiNs',

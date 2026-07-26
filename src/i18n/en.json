@@ -146,8 +146,8 @@
       "Ongoing advisory: periodic sessions to support decision-making, rollout of new practices, or course-correction as you change.",
       "Longer-term partnership: multi-phase work when you want sustained support for a broader transformation, with scope and rhythm agreed up front."
     ],
-    "ctaPrimary": "Request training",
-    "ctaSecondary": "Discuss a training need"
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "See the trainings"
   },
   "training": {
     "pageTitle": "Classroom training for experienced engineering teams",
@@ -753,7 +753,9 @@
       "AI adoption anti-patterns: the proof-of-concept marathon that never becomes production reality."
     ],
     "complementsTitle": "How consulting complements training",
-    "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done."
+    "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done.",
+    "cta": "Book a call",
+    "ctaNote": "For consulting engagements, a short note about your current systems and challenges helps more than a long brief."
   },
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",

@@ -146,8 +146,8 @@
       "Folyamatos tanácsadás: rendszeres sessionök a döntéshozatal, új gyakorlatok bevezetése vagy irányváltás támogatására változás közben.",
       "Hosszabb távú partnerség: többfázisú munka, amikor szélesebb átalakuláshoz folyamatos támogatásra van szükség, előre egyeztetett hatáskörrel és ritmussal."
     ],
-    "ctaPrimary": "Képzés ajánlatkérés",
-    "ctaSecondary": "Beszéljünk a képzési igényről"
+    "ctaPrimary": "Foglalj időpontot",
+    "ctaSecondary": "Nézd meg a képzéseket"
   },
   "training": {
     "pageTitle": "Terem- és online képzések tapasztalt fejlesztői csapatoknak",
@@ -753,7 +753,9 @@
       "AI-bevezetési anti-patternök: a proof-of-concept maraton, amiből sosem lesz production reality."
     ],
     "complementsTitle": "Hogyan egészíti ki a tanácsadás a képzéseket",
-    "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk."
+    "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk.",
+    "cta": "Foglalj időpontot",
+    "ctaNote": "Tanácsadási igény esetén többet segít egy rövid leírás a jelenlegi rendszereitekről és kihívásaitokról, mint egy hosszú brief."
   },
   "about": {
     "pageTitle": "Rólam",

@@ -16,6 +16,11 @@ const { t, currentLang } = useI18n()
       <p class="page-intro">
         {{ t('training.intro') }}
       </p>
+      <RouterLink class="page-intro-cta" :to="{ name: 'contact-en', params: { lang: currentLang } }">
+        <BaseButton variant="ghost">
+          {{ t('training.cta') }}
+        </BaseButton>
+      </RouterLink>
     </header>
 
     <section class="section">
@@ -146,10 +151,14 @@ const { t, currentLang } = useI18n()
 }
 
 .page-intro {
-  margin: 0;
+  margin: 0 0 1.1rem;
   font-size: 0.96rem;
   color: var(--color-text-muted);
   max-width: 48rem;
+}
+
+.page-intro-cta {
+  display: inline-block;
 }
 
 .section {

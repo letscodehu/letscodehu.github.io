@@ -17,7 +17,7 @@ const { currentLang } = useI18n()
       </p>
     </div>
     <RouterLink :to="{ name: 'quiz', params: { lang: 'hu' } }" class="quiz-promo-cta">
-      <BaseButton>Kitöltöm</BaseButton>
+      <BaseButton variant="ghost">Kitöltöm</BaseButton>
     </RouterLink>
   </section>
 </template>
@@ -29,12 +29,10 @@ const { currentLang } = useI18n()
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 1.4rem 1.5rem;
-  border: 1px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--color-border);
   border-radius: var(--radius-lg);
-  background: radial-gradient(circle at top right, var(--color-gradient-start) 0%, var(--color-gradient-end) 55%);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface-soft);
 }
 
 .quiz-promo-text {
@@ -42,16 +40,16 @@ const { currentLang } = useI18n()
 }
 
 .quiz-promo-eyebrow {
-  margin: 0 0 0.4rem;
-  font-size: 0.8rem;
+  margin: 0 0 0.3rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-text-muted);
 }
 
 .quiz-promo-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.35rem;
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
 }
 
 .quiz-promo-body {

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
+import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
 </script>
 
 <template>
@@ -14,6 +15,11 @@ const { t } = useI18n()
       <p class="page-intro">
         {{ t('consulting.intro') }}
       </p>
+      <RouterLink class="page-intro-cta" :to="{ name: 'contact-en', params: { lang: currentLang } }">
+        <BaseButton variant="ghost">
+          {{ t('consulting.cta') }}
+        </BaseButton>
+      </RouterLink>
     </header>
 
     <section class="section grid grid--three">
@@ -68,6 +74,19 @@ const { t } = useI18n()
         </p>
       </BaseCard>
     </section>
+
+    <section class="section cta">
+      <div class="cta-actions">
+        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+          <BaseButton>
+            {{ t('consulting.cta') }}
+          </BaseButton>
+        </RouterLink>
+      </div>
+      <p class="cta-note">
+        {{ t('consulting.ctaNote') }}
+      </p>
+    </section>
   </article>
 </template>
 
@@ -82,14 +101,36 @@ const { t } = useI18n()
 }
 
 .page-intro {
-  margin: 0;
+  margin: 0 0 1.1rem;
   font-size: 0.95rem;
   color: var(--color-text-muted);
   max-width: 44rem;
 }
 
+.page-intro-cta {
+  display: inline-block;
+}
+
 .section {
   margin-bottom: 2rem;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
 }
 
 .grid {

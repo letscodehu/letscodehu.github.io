@@ -105,6 +105,19 @@ const { t, currentLang } = useI18n()
   </section>
 
   <section class="section">
+    <div class="ai-highlight">
+      <p class="ai-eyebrow">{{ t('home.aiEyebrow') }}</p>
+      <h2 class="ai-title">{{ t('home.aiTitle') }}</h2>
+      <p class="ai-body">{{ t('home.aiBody') }}</p>
+      <RouterLink :to="{ name: 'ai-consulting-en', params: { lang: currentLang } }">
+        <BaseButton>
+          {{ t('home.aiCta') }}
+        </BaseButton>
+      </RouterLink>
+    </div>
+  </section>
+
+  <section class="section">
     <header class="section-header">
       <h2>{{ t('home.whyDifferentTitle') }}</h2>
     </header>
@@ -241,6 +254,35 @@ const { t, currentLang } = useI18n()
   margin: 0;
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+.ai-highlight {
+  border: 1px solid var(--color-primary-soft);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.75rem;
+}
+
+.ai-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-strong);
+}
+
+.ai-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.45rem;
+}
+
+.ai-body {
+  margin: 0 0 1.2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 44rem;
 }
 
 .grid {

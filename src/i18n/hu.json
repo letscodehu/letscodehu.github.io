@@ -6,6 +6,7 @@
     "trainingGeneral": "Képzések cégeknek",
     "trainingArchitectMindset": "Architect Mindset képzés",
     "consulting": "Tanácsadás",
+    "aiConsulting": "AI tanácsadás",
     "about": "Rólam",
     "contact": "Kapcsolat",
     "caseStudies": "Esettanulmányok",
@@ -107,6 +108,10 @@
       "Tiszta architektúra: függőségi szabályok és határok, amelyek az üzleti logikát elválasztják a frameworköktől és infrastruktúrától.",
       "Rendszerek strukturálása úgy, hogy a jövőbeli változtatások ne igényeljenek újraírást vagy hőstetteket."
     ],
+    "aiEyebrow": "Önálló fókuszterület",
+    "aiTitle": "AI: eldöntjük, hol segít nálatok és hol nem",
+    "aiBody": "Az AI körüli nyomás nagyobb, mint a bizonyíték. Kívülről segítek eldönteni, mire érdemes nálatok AI-t használni, mire nem, és mi az, amihez előbb más kell — ugyanazzal a trade-off gondolkodással, mint bármelyik architekturális döntésnél.",
+    "aiCta": "AI tanácsadás részletei",
     "whyDifferentTitle": "Miért más ez a képzés?",
     "whyDifferent": [
       "Senior fókusz: közvetlenül velem dolgoztok, nem junior tréner adja át az anyagot.",
@@ -741,21 +746,14 @@
       "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban—ADR-ek, határok, CI/CD—a kódbázisban és csapatban.",
       "Visszajelzés architekturális javaslatokra, RFC-kre és implementációs tervekhez."
     ],
-    "aiTransformationEyebrow": "Új fókuszterület",
+    "aiTransformationEyebrow": "Önálló fókuszterület",
     "aiTransformationTitle": "AI-alapú mérnöki transzformáció",
-    "aiTransformationIntro": "Az AI eszközök azoknak a csapatoknak segítenek igazán, akiknek már szilárd mérnöki gyakorlataik vannak — a többieknél jellemzően csak gyorsítják a technikai adósság felhalmozódását. Ez a fókuszterület arról szól, hogyan vezessük be tudatosan.",
-    "aiTransformation": [
-      "AI adoption a fejlesztői workflow-ban: hogyan vezessük be úgy, hogy ne csak „van Copilotunk” szinten ragadjon meg.",
-      "Agentic / LLM-alapú munkafolyamatok: mikor működnek és mikor csak drága autocomplete.",
-      "Csapat szintű AI-használat: egységes gyakorlatok kialakítása, nem mindenki random prompt-engineer.",
-      "AI és minőség: review, tesztelés, refaktorálás támogatása, nem csak kódgenerálás.",
-      "„AI nem hozza az elvárásokat” helyzetek elemzése: hol törik el — adat, folyamat, ownership, túlzott várakozás.",
-      "AI-bevezetési anti-patternök: a proof-of-concept maraton, amiből sosem lesz production reality."
-    ],
+    "aiTransformationIntro": "Az AI eszközök azoknak a csapatoknak segítenek igazán, akiknek már szilárd mérnöki gyakorlataik vannak — a többieknél jellemzően csak gyorsítják a technikai adósság felhalmozódását. Ez külön fókuszterület: AI readiness assessment, döntéstámogatás konkrét AI-döntésekben és csapat szintű gyakorlatok.",
     "complementsTitle": "Hogyan egészíti ki a tanácsadás a képzéseket",
     "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk.",
     "cta": "Foglalj időpontot",
-    "ctaNote": "Tanácsadási igény esetén többet segít egy rövid leírás a jelenlegi rendszereitekről és kihívásaitokról, mint egy hosszú brief."
+    "ctaNote": "Tanácsadási igény esetén többet segít egy rövid leírás a jelenlegi rendszereitekről és kihívásaitokról, mint egy hosszú brief.",
+    "aiTransformationCta": "AI tanácsadás részletei"
   },
   "about": {
     "pageTitle": "Rólam",
@@ -952,7 +950,64 @@
       "caseStudies": "Esettanulmányok valós képzési és tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
       "blog": "Cikkek CI/CD-ről, szállítási szűk keresztmetszetekről, architekturális döntésekről és a production felé vezető útról.",
       "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások.",
-      "slack": "Csatlakozz a letscode.hu Slack közösséghez: beszélgetések architektúráról, CI/CD-ről és AI-alapú fejlesztésről fejlesztők között."
+      "slack": "Csatlakozz a letscode.hu Slack közösséghez: beszélgetések architektúráról, CI/CD-ről és AI-alapú fejlesztésről fejlesztők között.",
+      "aiConsulting": "Független AI tanácsadás fejlesztői csapatoknak: AI readiness assessment, döntéstámogatás és csapat szintű gyakorlatok — hol segít az AI és hol nem."
     }
+  },
+  "aiConsulting": {
+    "pageTitle": "AI tanácsadás: eldöntjük, hol segít nálatok, és hol lesz tőle csak drágább minden",
+    "intro": "Az AI körüli nyomás nagyobb, mint a bizonyíték. A legtöbb csapatnál nem az a kérdés, hogyan vezessünk be AI-t, hanem hogy egyáltalán hol éri meg — és hol az, hogy egy meglévő folyamati vagy architekturális problémát próbáltok modellel elfedni. Kívülről segítek ezt eldönteni: mi az, ami nálatok valóban működni fog, mi az, ami nem, és mi az, amihez előbb más kell.",
+    "cta": "Foglalj időpontot",
+    "ctaNote": "Ha AI-döntés előtt álltok, a legtöbbet az segít, ha leírod, mit próbáltatok eddig és hol akadtatok el — ez többet ér egy hosszú briefnél.",
+    "problemsTitle": "Amit tipikusan látok",
+    "problemsCardTitle": "Ismerős helyzetek",
+    "problems": [
+      "Fentről jön a nyomás, hogy „csináljunk valamit az AI-jal”, de senki nem mondta meg, mi lenne a siker.",
+      "Van Copilot-licenc mindenkinél, és ennyiben ki is merül az AI-stratégia.",
+      "Elkészült három proof of concept, egyik sem ment production közelébe.",
+      "Mindenki máshogy használja: van, aki review nélkül merge-öli a generált kódot, van, aki hozzá sem nyúl.",
+      "A generált kód mennyisége nő, a review kapacitás nem — a technikai adósság gyorsabban gyűlik, mint korábban.",
+      "Egyetlen vendor egyetlen modelljére épült egy feature, és senki nem gondolta végig, mi lesz, ha az eltűnik.",
+      "Az AI-ra költött összegről senki nem tudja megmondani, megtérült-e."
+    ],
+    "assessmentTitle": "AI readiness assessment",
+    "assessment": [
+      "A jelenlegi fejlesztői workflow, kódbázis és folyamatok áttekintése abból a szempontból, hol hoz az AI valódi gyorsulást és hol csak zajt.",
+      "Annak azonosítása, mi hátráltat igazán — adat, folyamat, ownership vagy irreális elvárás —, mert az AI ezeken nem segít, csak felnagyítja őket.",
+      "Írásos összefoglaló és priorizált next steps, amire a vezetés és a csapat is tud építeni."
+    ],
+    "decisionsTitle": "Döntéstámogatás konkrét AI-döntésekben",
+    "decisions": [
+      "„Érdemes ezt AI-jal megoldani?” — végigvesszük a trade-offokat úgy, ahogy bármelyik másik architekturális döntést, ADR-be rögzítve.",
+      "Build vs. buy vs. sehogy: mikor éri meg saját megoldást építeni, mikor elég egy termék, és mikor az a helyes válasz, hogy nem csináljuk.",
+      "Modellfüggőség és lock-in: hogyan maradjon a rendszer mozgásképes, ha a modell, az ár vagy a vendor változik.",
+      "Second opinion arra, amit a csapat vagy egy szállító javasol — kívülről, érdek nélkül."
+    ],
+    "practicesTitle": "Csapat szintű AI-gyakorlatok",
+    "practices": [
+      "Egységes használat kialakítása: ne mindenki külön kísérletezzen, és ne is legyen tiltólista indoklás nélkül.",
+      "Review, tesztelés és minőségi kapuk igazítása ahhoz, hogy több kód készül kevesebb idő alatt.",
+      "Agentic és LLM-alapú munkafolyamatok: mikor működnek, és mikor csak drága autocomplete.",
+      "Mérés: mihez képest lett jobb, és miből látjátok — az „érzésre gyorsabb” nem elég a következő budget-kérésnél."
+    ],
+    "offerEyebrow": "Belépő együttműködés",
+    "offerTitle": "AI readiness assessment",
+    "offerBody": "Rövid, fix scope-ú felmérés. Végigmegyünk azon, hol tartotok, mit próbáltatok, mi működött és mi nem. A végén kapsz egy írásos anyagot arról, hogy nálatok mire érdemes AI-t használni, mire nem, és milyen sorrendben érdemes hozzányúlni.",
+    "offerBodySecondary": "Nem AI-stratégiai prezentáció készül belőle. Olyan anyag, amit a következő tervezési körben ténylegesen elő tudsz venni — és amiben ott vannak a nemek is.",
+    "noTitle": "Mire mondok nemet",
+    "noIntro": "A legtöbb AI-tanácsadás abban érdekelt, hogy legyen AI-projekt. Én nem.",
+    "no": [
+      "Nem vezetek be AI-t oda, ahol a valódi probléma a hiányzó teszt, a kétnapos CI vagy a tisztázatlan ownership. Előbb azt kell megjavítani.",
+      "Nem építek AI-feature-t azért, mert jól hangzik a board előtt.",
+      "Nem ígérem, hogy a fejlesztői létszám csökkenthető lesz tőle.",
+      "Nem szállítok olyan megoldást, ami egyetlen vendor egyetlen modelljéhez láncol titeket, ha ez nem tudatos döntés."
+    ],
+    "credibilityTitle": "Miért tőlem",
+    "credibilityBody": "AWS Certified AI Practitioner és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
+    "leadershipTitle": "Amit fel tudsz mutatni a vezetésnek",
+    "leadershipBody": "Ha felülről jön a nyomás, a legnehezebb az, hogy kimondd: ez nekünk most nem éri meg — anélkül, hogy maradinak tűnnél. Az assessment írásos anyaga pontosan ezt támasztja alá: mit vizsgáltunk meg, mi a döntés, és mi az indoklás. Ugyanaz a logika, mint egy ADR-nél, csak üzleti olvasónak.",
+    "readingTitle": "Olvasnivaló",
+    "readingIntro": "Ha előbb meg akarod nézni, hogyan gondolkodom erről:",
+    "readingAllTag": "Összes AI-cikk"
   }
 }

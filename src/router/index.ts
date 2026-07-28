@@ -6,6 +6,7 @@ import TrainingB2CAdsLandingPage from '../pages/TrainingB2CAdsLandingPage.vue'
 import TrainingB2CTermsPage from '../pages/TrainingB2CTermsPage.vue'
 import WorkshopPage from '../pages/WorkshopPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
+import AiConsultingPage from '../pages/AiConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
@@ -65,6 +66,13 @@ const childRoutes: RouteRecordRaw[] = [
     component: ConsultingPage,
     alias: 'tanacsadas',
     meta: { titleKey: 'consulting.pageTitle', descriptionKey: 'seo.descriptions.consulting' },
+  },
+  {
+    path: 'ai-consulting',
+    name: 'ai-consulting-en',
+    component: AiConsultingPage,
+    alias: 'ai-tanacsadas',
+    meta: { titleKey: 'aiConsulting.pageTitle', descriptionKey: 'seo.descriptions.aiConsulting' },
   },
   {
     path: 'about',

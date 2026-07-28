@@ -24,6 +24,10 @@ const primaryNavItems = computed(() => [
 
 const navItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
+  {
+    name: t('nav.aiConsulting'),
+    to: { name: 'ai-consulting-en', params: { lang: currentLang.value } },
+  },
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
   { name: t('nav.blog'), to: { name: 'blog-list-en', params: { lang: currentLang.value } } },
   { name: t('nav.contact'), to: { name: 'contact-en', params: { lang: currentLang.value } } },
@@ -373,6 +377,7 @@ onUnmounted(() => {
   font-size: 0.9rem;
   color: var(--color-text-muted);
   text-decoration: none;
+  white-space: nowrap;
   padding-bottom: 0.2rem;
   border-bottom: 2px solid transparent;
   transition: color 0.16s ease, border-color 0.16s ease;
@@ -474,7 +479,8 @@ onUnmounted(() => {
   color: var(--color-text-muted);
 }
 
-@media (max-width: 768px) {
+/* Row layout needs ~1050px for the full nav; below that it collapses to the hamburger. */
+@media (max-width: 1024px) {
   .header-inner {
     flex-direction: row;
     align-items: center;

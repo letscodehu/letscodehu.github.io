@@ -6,6 +6,7 @@
     "trainingGeneral": "General training",
     "trainingArchitectMindset": "Architect Mindset",
     "consulting": "Consulting",
+    "aiConsulting": "AI Consulting",
     "about": "About",
     "contact": "Contact",
     "caseStudies": "Case studies",
@@ -107,6 +108,10 @@
       "Clean architecture: dependency rules and boundaries that keep business logic decoupled from frameworks and infrastructure.",
       "Structuring systems so that future changes don't require rewrites or heroics."
     ],
+    "aiEyebrow": "A separate focus area",
+    "aiTitle": "AI: deciding where it helps you and where it does not",
+    "aiBody": "The pressure around AI is bigger than the evidence. I help you decide from the outside where AI is actually worth using, where it is not, and what needs fixing first — with the same trade-off thinking as any other architectural decision.",
+    "aiCta": "See AI consulting",
     "whyDifferentTitle": "Why this training is different",
     "whyDifferent": [
       "Senior-led: you work directly with me, not with a junior trainer reading from slides.",
@@ -741,21 +746,14 @@
       "Practical discussions on introducing and sustaining workshop practices—ADRs, boundaries, CI/CD—in your codebase and team.",
       "Feedback on architecture proposals, RFCs, and rollout plans."
     ],
-    "aiTransformationEyebrow": "New focus area",
+    "aiTransformationEyebrow": "A separate focus area",
     "aiTransformationTitle": "AI-assisted engineering transformation",
-    "aiTransformationIntro": "AI tooling genuinely helps teams that already have solid engineering practices — and quietly accelerates technical debt for teams that don't. This focus area is about adopting it deliberately.",
-    "aiTransformation": [
-      "AI adoption in the developer workflow: introducing it so it goes beyond \"we have Copilot\" and actually changes how the team works.",
-      "Agentic and LLM-based workflows: when they genuinely help and when they are just expensive autocomplete.",
-      "Team-level AI usage: building shared practices instead of everyone improvising as a random prompt engineer.",
-      "AI and quality: supporting review, testing, and refactoring — not just generating code.",
-      "Diagnosing \"AI isn't delivering\" situations: where it actually breaks — data, process, ownership, or inflated expectations.",
-      "AI adoption anti-patterns: the proof-of-concept marathon that never becomes production reality."
-    ],
+    "aiTransformationIntro": "AI tools really help teams that already have solid engineering practices — for everyone else they typically just accelerate the accumulation of technical debt. This is a separate focus area: AI readiness assessment, decision support on concrete AI decisions, and team-level practices.",
     "complementsTitle": "How consulting complements training",
     "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done.",
     "cta": "Book a call",
-    "ctaNote": "For consulting engagements, a short note about your current systems and challenges helps more than a long brief."
+    "ctaNote": "For consulting engagements, a short note about your current systems and challenges helps more than a long brief.",
+    "aiTransformationCta": "See AI consulting"
   },
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",
@@ -933,7 +931,64 @@
       "contact": "Contact Letscode Solutions to discuss training, workshops, or consulting for your engineering team.",
       "caseStudies": "Case studies from real training and consulting work: delivery, testing, architecture, and platform modernization.",
       "blog": "Articles on CI/CD, delivery bottlenecks, architecture decisions, and how engineering teams ship to production.",
-      "privacy": "How this site processes data, which third-party services may load, and how cookie preferences work."
+      "privacy": "How this site processes data, which third-party services may load, and how cookie preferences work.",
+      "aiConsulting": "Independent AI consulting for engineering teams: AI readiness assessment, decision support and team-level practices — where AI helps and where it does not."
     }
+  },
+  "aiConsulting": {
+    "pageTitle": "AI consulting: deciding where AI helps you, and where it just makes everything more expensive",
+    "intro": "The pressure around AI is bigger than the evidence. For most teams the question is not how to adopt AI, but whether it is worth it at all — and whether you are using a model to paper over an existing process or architecture problem. I help you decide that from the outside: what will actually work for you, what will not, and what needs fixing first.",
+    "cta": "Book a call",
+    "ctaNote": "If you are facing an AI decision, a short note about what you have tried and where you got stuck helps more than a long brief.",
+    "problemsTitle": "What I typically see",
+    "problemsCardTitle": "Familiar situations",
+    "problems": [
+      "Pressure comes from above to \"do something with AI\", but nobody defined what success would look like.",
+      "Everyone has a Copilot licence, and that is the whole AI strategy.",
+      "Three proofs of concept were built, none of them got anywhere near production.",
+      "Everyone uses it differently: some merge generated code without review, others will not touch it.",
+      "The volume of generated code grows, review capacity does not — technical debt accumulates faster than before.",
+      "A feature was built on one model from one vendor, and nobody thought through what happens when it disappears.",
+      "Nobody can say whether the money spent on AI paid off."
+    ],
+    "assessmentTitle": "AI readiness assessment",
+    "assessment": [
+      "A review of your current developer workflow, codebase and processes, focused on where AI brings real speed-up and where it only brings noise.",
+      "Identifying what actually holds you back — data, process, ownership or unrealistic expectations — because AI does not fix those, it amplifies them.",
+      "A written summary and prioritised next steps that both leadership and the team can build on."
+    ],
+    "decisionsTitle": "Decision support on concrete AI decisions",
+    "decisions": [
+      "\"Is this worth solving with AI?\" — we work through the trade-offs the way we would any architectural decision, captured in an ADR.",
+      "Build vs. buy vs. neither: when building your own is worth it, when a product is enough, and when the right answer is not to do it.",
+      "Model dependency and lock-in: how to keep the system able to move when the model, the price or the vendor changes.",
+      "A second opinion on what your team or a vendor is proposing — from the outside, with no stake in the outcome."
+    ],
+    "practicesTitle": "Team-level AI practices",
+    "practices": [
+      "Consistent usage across the team: no everyone-experiments-alone, and no blanket ban without a reason.",
+      "Adapting review, testing and quality gates to the fact that more code is produced in less time.",
+      "Agentic and LLM-based workflows: when they work, and when they are just expensive autocomplete.",
+      "Measurement: better compared to what, and how you can see it — \"feels faster\" will not hold up at the next budget request."
+    ],
+    "offerEyebrow": "Entry engagement",
+    "offerTitle": "AI readiness assessment",
+    "offerBody": "A short, fixed-scope review. We go through where you are, what you tried, what worked and what did not. You get a written document on what is worth using AI for in your context, what is not, and in what order to approach it.",
+    "offerBodySecondary": "It is not an AI strategy deck. It is something you can actually pull out in the next planning round — including the parts that say no.",
+    "noTitle": "What I say no to",
+    "noIntro": "Most AI consulting has an interest in there being an AI project. I do not.",
+    "no": [
+      "I will not introduce AI where the real problem is missing tests, a two-day CI or unclear ownership. That has to be fixed first.",
+      "I will not build an AI feature because it sounds good in front of the board.",
+      "I will not promise it lets you cut headcount.",
+      "I will not ship something that chains you to one model from one vendor, unless that is a deliberate decision."
+    ],
+    "credibilityTitle": "Why me",
+    "credibilityBody": "AWS Certified AI Practitioner and Claude Certified Architect – Foundations. At a governance SaaS company I was involved in AI-based development from the start, hands-on in the early phase. Beyond that, I have been designing systems for fifteen years — AI is the latest technology that the same trade-off thinking applies to, just like all the ones before it.",
+    "leadershipTitle": "Something you can show your leadership",
+    "leadershipBody": "When the pressure comes from above, the hardest thing is to say this is not worth it for us right now — without looking like you are behind the times. The written output of the assessment backs exactly that up: what we examined, what the decision is, and why. The same logic as an ADR, written for a business reader.",
+    "readingTitle": "Further reading",
+    "readingIntro": "If you want to see how I think about this first:",
+    "readingAllTag": "All AI articles"
   }
 }

@@ -56,11 +56,11 @@ const { t, currentLang } = useI18n()
         <p class="ai-eyebrow">{{ t('consulting.aiTransformationEyebrow') }}</p>
         <h2 class="ai-title">{{ t('consulting.aiTransformationTitle') }}</h2>
         <p class="ai-intro">{{ t('consulting.aiTransformationIntro') }}</p>
-        <ul class="list">
-          <li v-for="item in t('consulting.aiTransformation')" :key="item">
-            {{ item }}
-          </li>
-        </ul>
+        <RouterLink :to="{ name: 'ai-consulting-en', params: { lang: currentLang } }">
+          <BaseButton>
+            {{ t('consulting.aiTransformationCta') }}
+          </BaseButton>
+        </RouterLink>
       </div>
     </section>
 
@@ -180,7 +180,7 @@ const { t, currentLang } = useI18n()
 }
 
 .ai-intro {
-  margin: 0 0 1rem;
+  margin: 0 0 1.2rem;
   font-size: 0.95rem;
   color: var(--color-text-muted);
   max-width: 44rem;

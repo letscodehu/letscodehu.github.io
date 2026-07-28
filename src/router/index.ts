@@ -6,6 +6,7 @@ import TrainingB2CAdsLandingPage from '../pages/TrainingB2CAdsLandingPage.vue'
 import TrainingB2CTermsPage from '../pages/TrainingB2CTermsPage.vue'
 import WorkshopPage from '../pages/WorkshopPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
+import AiConsultingPage from '../pages/AiConsultingPage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
@@ -67,6 +68,13 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'consulting.pageTitle', descriptionKey: 'seo.descriptions.consulting' },
   },
   {
+    path: 'ai-consulting',
+    name: 'ai-consulting-en',
+    component: AiConsultingPage,
+    alias: 'ai-tanacsadas',
+    meta: { titleKey: 'aiConsulting.pageTitle', descriptionKey: 'seo.descriptions.aiConsulting' },
+  },
+  {
     path: 'about',
     name: 'about-en',
     component: AboutPage,
@@ -79,6 +87,15 @@ const childRoutes: RouteRecordRaw[] = [
     component: ContactPage,
     alias: 'kapcsolat',
     meta: { titleKey: 'contact.pageTitle', descriptionKey: 'seo.descriptions.contact' },
+  },
+  {
+    // Same page and same calendar as `contact`, AI-specific copy. Own route (not a query
+    // param) so the AI framing is prerendered rather than swapped in after hydration.
+    path: 'contact/ai',
+    name: 'contact-ai-en',
+    component: ContactPage,
+    alias: 'kapcsolat/ai',
+    meta: { titleKey: 'contact.aiPageTitle', descriptionKey: 'seo.descriptions.aiContact' },
   },
   {
     path: 'case-studies',

@@ -18,10 +18,7 @@ const trainingSubItems = computed(() => [
   },
 ])
 
-const primaryNavItems = computed(() => [
-  { name: t('nav.home'), to: { name: 'home', params: { lang: currentLang.value } } },
-])
-
+/** No "Home" item — the brand logo on the left already links to the home page. */
 const navItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   {
@@ -55,10 +52,6 @@ function isNavLinkActive(item: (typeof navItems)['value'][number]): boolean {
     return BLOG_NAV_ACTIVE_NAMES.has(routeName)
   }
   return item.to.name === routeName
-}
-
-function isPrimaryNavLinkActive(item: (typeof primaryNavItems)['value'][number]): boolean {
-  return item.to.name === currentPathName.value
 }
 
 const isTrainingParentActive = computed(() => TRAINING_NAV_ACTIVE_NAMES.has(currentPathName.value))
@@ -147,17 +140,6 @@ onUnmounted(() => {
         :class="{ 'nav-wrapper--open': menuOpen }"
       >
         <nav class="nav" :aria-label="t('common.mainNavigationAriaLabel')">
-          <RouterLink
-            v-for="item in primaryNavItems"
-            :key="item.name"
-            :to="item.to"
-            class="nav-link"
-            :class="{ 'nav-link--active': isPrimaryNavLinkActive(item) }"
-            @click="closeMenu"
-          >
-            {{ item.name }}
-          </RouterLink>
-
           <div
             class="nav-group"
             :class="{
@@ -479,8 +461,9 @@ onUnmounted(() => {
   color: var(--color-text-muted);
 }
 
-/* Row layout needs ~1050px for the full nav; below that it collapses to the hamburger. */
-@media (max-width: 1024px) {
+/* Row layout stays intact down to ~840px (measured: brand box 64px at 840, 83px at 830);
+   860 keeps a margin for font loading and the longer EN labels. Below that, hamburger. */
+@media (max-width: 860px) {
   .header-inner {
     flex-direction: row;
     align-items: center;

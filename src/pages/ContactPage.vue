@@ -1,19 +1,37 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import CalendlyInlineWidget from '../components/ui/CalendlyInlineWidget.vue'
 
 const { t } = useI18n()
+const route = useRoute()
+
+/**
+ * Visitors arriving from the AI consulting page get AI-specific copy instead of the
+ * training-oriented default, so the CTA promise carries over into the booking step.
+ * Same component and same calendar — only the framing changes.
+ */
+const isAiTopic = computed(() => route.name === 'contact-ai-en')
+
+function topicKey(base: string): string {
+  if (!isAiTopic.value) {
+    return `contact.${base}`
+  }
+
+  return `contact.ai${base.charAt(0).toUpperCase()}${base.slice(1)}`
+}
 </script>
 
 <template>
   <article>
     <header class="page-header">
       <h1 class="page-title">
-        {{ t('contact.pageTitle') }}
+        {{ t(topicKey('pageTitle')) }}
       </h1>
       <p class="page-intro">
-        {{ t('contact.intro') }}
+        {{ t(topicKey('intro')) }}
       </p>
       <p class="page-intro">
         {{ t('contact.emailIntro') }}
@@ -23,17 +41,17 @@ const { t } = useI18n()
 
     <section class="section grid grid--two">
       <BaseCard>
-        <template #title>{{ t('contact.expectationsTitle') }}</template>
+        <template #title>{{ t(topicKey('expectationsTitle')) }}</template>
         <ul class="list">
-          <li v-for="item in t('contact.expectations')" :key="item">
+          <li v-for="item in t(topicKey('expectations'))" :key="item">
             {{ item }}
           </li>
         </ul>
       </BaseCard>
       <BaseCard>
-        <template #title>{{ t('contact.responseTitle') }}</template>
+        <template #title>{{ t(topicKey('responseTitle')) }}</template>
         <ul class="list">
-          <li v-for="item in t('contact.response')" :key="item">
+          <li v-for="item in t(topicKey('response'))" :key="item">
             {{ item }}
           </li>
         </ul>
@@ -42,7 +60,7 @@ const { t } = useI18n()
 
     <section class="section">
       <header class="section-header">
-        <h2>{{ t('contact.formTitle') }}</h2>
+        <h2>{{ t(topicKey('formTitle')) }}</h2>
       </header>
       <BaseCard>
         <CalendlyInlineWidget url="https://calendly.com/fejlesztes-letscode/30min" />

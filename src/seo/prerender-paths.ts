@@ -12,6 +12,7 @@ const STATIC_SEGMENTS = [
   'ai-consulting',
   'about',
   'contact',
+  'contact/ai',
   'blog',
   'privacy',
 ] as const
@@ -27,6 +28,7 @@ const HU_STATIC_ALIASES: string[] = [
   'ai-tanacsadas',
   'rolam',
   'kapcsolat',
+  'kapcsolat/ai',
   'cikkek',
   'quiz',
   'slack',

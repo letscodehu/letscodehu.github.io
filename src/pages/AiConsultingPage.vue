@@ -16,6 +16,15 @@ const aiPosts = computed(() =>
       title: currentLang.value === 'hu' ? post.titleHu : post.titleEn,
     }))
 )
+
+/** AI-framed variant of the contact page, so the booking step matches what was promised here. */
+const contactRoute = computed(() => ({
+  name: 'contact-ai-en',
+  params: { lang: currentLang.value },
+}))
+
+/** The quiz is Hungarian-only, so the secondary CTA only makes sense on the HU page. */
+const showQuizCta = computed(() => currentLang.value === 'hu')
 </script>
 
 <template>
@@ -27,8 +36,8 @@ const aiPosts = computed(() =>
       <p class="page-intro">
         {{ t('aiConsulting.intro') }}
       </p>
-      <RouterLink class="page-intro-cta" :to="{ name: 'contact-en', params: { lang: currentLang } }">
-        <BaseButton variant="ghost">
+      <RouterLink class="page-intro-cta" :to="contactRoute">
+        <BaseButton>
           {{ t('aiConsulting.cta') }}
         </BaseButton>
       </RouterLink>
@@ -83,7 +92,7 @@ const aiPosts = computed(() =>
         <h2 class="ai-title">{{ t('aiConsulting.offerTitle') }}</h2>
         <p class="ai-intro">{{ t('aiConsulting.offerBody') }}</p>
         <p class="ai-intro ai-intro--last">{{ t('aiConsulting.offerBodySecondary') }}</p>
-        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+        <RouterLink :to="contactRoute">
           <BaseButton>
             {{ t('aiConsulting.cta') }}
           </BaseButton>
@@ -101,6 +110,20 @@ const aiPosts = computed(() =>
           </li>
         </ul>
       </BaseCard>
+    </section>
+
+    <section v-if="showQuizCta" class="section">
+      <div class="quiz-cta">
+        <div class="quiz-cta-copy">
+          <h2 class="quiz-cta-title">{{ t('aiConsulting.quizTitle') }}</h2>
+          <p class="quiz-cta-body">{{ t('aiConsulting.quizBody') }}</p>
+        </div>
+        <RouterLink class="quiz-cta-link" :to="{ name: 'quiz', params: { lang: currentLang } }">
+          <BaseButton variant="ghost">
+            {{ t('aiConsulting.quizCta') }}
+          </BaseButton>
+        </RouterLink>
+      </div>
     </section>
 
     <section class="section grid grid--two">
@@ -140,37 +163,9 @@ const aiPosts = computed(() =>
       </BaseCard>
     </section>
 
-    <section class="section">
-      <header class="section-header">
-        <h2>{{ t('aiConsulting.readingTitle') }}</h2>
-        <p class="section-intro">{{ t('aiConsulting.readingIntro') }}</p>
-      </header>
-      <BaseCard>
-        <ul class="list">
-          <li v-for="post in aiPosts" :key="post.slug">
-            <RouterLink
-              class="reading-link"
-              :to="{
-                name: 'blog-post-detail-en',
-                params: { lang: currentLang, slug: post.slug },
-              }"
-            >
-              {{ post.title }}
-            </RouterLink>
-          </li>
-        </ul>
-        <RouterLink
-          class="reading-all"
-          :to="{ name: 'blog-list-en', params: { lang: currentLang }, query: { tag: 'ai' } }"
-        >
-          {{ t('aiConsulting.readingAllTag') }}
-        </RouterLink>
-      </BaseCard>
-    </section>
-
     <section class="section cta">
       <div class="cta-actions">
-        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
+        <RouterLink :to="contactRoute">
           <BaseButton>
             {{ t('aiConsulting.cta') }}
           </BaseButton>
@@ -184,6 +179,40 @@ const aiPosts = computed(() =>
       <p class="cta-note">
         {{ t('aiConsulting.ctaNote') }}
       </p>
+    </section>
+
+    <!-- Reading list sits after the CTA on purpose: these links lead away from the funnel,
+         so they open in a new tab and never stand between the reader and the booking step. -->
+    <section class="section">
+      <header class="section-header">
+        <h2>{{ t('aiConsulting.readingTitle') }}</h2>
+        <p class="section-intro">{{ t('aiConsulting.readingIntro') }}</p>
+      </header>
+      <BaseCard>
+        <ul class="list">
+          <li v-for="post in aiPosts" :key="post.slug">
+            <RouterLink
+              class="reading-link"
+              target="_blank"
+              rel="noopener"
+              :to="{
+                name: 'blog-post-detail-en',
+                params: { lang: currentLang, slug: post.slug },
+              }"
+            >
+              {{ post.title }}
+            </RouterLink>
+          </li>
+        </ul>
+        <RouterLink
+          class="reading-all"
+          target="_blank"
+          rel="noopener"
+          :to="{ name: 'blog-list-en', params: { lang: currentLang }, query: { tag: 'ai' } }"
+        >
+          {{ t('aiConsulting.readingAllTag') }}
+        </RouterLink>
+      </BaseCard>
     </section>
   </article>
 </template>
@@ -337,5 +366,36 @@ const aiPosts = computed(() =>
 
 .ai-intro--last {
   margin-bottom: 1.2rem;
+}
+
+.quiz-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.6rem;
+}
+
+.quiz-cta-copy {
+  flex: 1 1 22rem;
+}
+
+.quiz-cta-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.quiz-cta-body {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  max-width: 40rem;
+}
+
+.quiz-cta-link {
+  display: inline-block;
 }
 </style>

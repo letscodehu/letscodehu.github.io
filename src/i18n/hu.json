@@ -815,6 +815,23 @@
       "A beszélgetés rövid, kötetlen egyeztetés.",
       "Ha nem én vagyok a megfelelő választás, ezt egyenesen meg fogom írni."
     ],
+    "aiPageTitle": "AI tanácsadás — időpontfoglalás",
+    "aiIntro": "AI-döntés előtt álltok: bevezetés, build vs. buy, vagy csak annak eldöntése, hogy egyáltalán megéri-e. Foglalj egy rövid egyeztetést, és átbeszéljük, hol tartotok.",
+    "aiExpectationsTitle": "Kikkel szoktam AI-ról beszélni?",
+    "aiExpectations": [
+      "CTO-kkal és VP of Engineeringekel, akikre felülről jön a nyomás, hogy „csináljunk valamit az AI-jal”.",
+      "Engineering managerekkel, akiknél a csapat már használ AI-t, csak épp mindenki máshogy.",
+      "Tech leadekkel, akik egy konkrét AI-döntés előtt állnak, és másodvélemény kell rá kívülről."
+    ],
+    "aiResponseTitle": "Mire számíthatsz?",
+    "aiResponse": [
+      "Válassz egy megfelelő időpontot az alábbi naptárban.",
+      "Ez a beszélgetés ingyenes, és ennyiben ki is merül: átbeszéljük a kérdéseidet, és kiderül, van-e fit.",
+      "Az elején arról beszélünk, mit próbáltatok eddig és hol akadtatok el — nem prezentációval kezdünk.",
+      "Időről és pénzről csak ezután beszélünk, akkor, ha mindkettőnknek van értelme folytatni.",
+      "Ha az jön ki, hogy nálatok most nem az AI a következő lépés, ezt egyenesen meg fogom mondani."
+    ],
+    "aiFormTitle": "Ingyenes 30 perces beszélgetés foglalása",
     "formTitle": "30 perces beszélgetés foglalása",
     "nameLabel": "Név",
     "emailLabel": "Munkahelyi e-mail",
@@ -947,6 +964,7 @@
       "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
       "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",
       "contact": "Lépj kapcsolatba a Letscode Solutionsszel képzés, workshop vagy tanácsadás egyeztetéséhez.",
+      "aiContact": "Foglalj egy rövid egyeztetést AI tanácsadásról: AI readiness assessment, build vs. buy és konkrét AI-döntések fejlesztői csapatoknak.",
       "caseStudies": "Esettanulmányok valós képzési és tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
       "blog": "Cikkek CI/CD-ről, szállítási szűk keresztmetszetekről, architekturális döntésekről és a production felé vezető útról.",
       "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások.",
@@ -956,7 +974,7 @@
   },
   "aiConsulting": {
     "pageTitle": "AI tanácsadás: eldöntjük, hol segít nálatok, és hol lesz tőle csak drágább minden",
-    "intro": "Az AI körüli nyomás nagyobb, mint a bizonyíték. A legtöbb csapatnál nem az a kérdés, hogyan vezessünk be AI-t, hanem hogy egyáltalán hol éri meg — és hol az, hogy egy meglévő folyamati vagy architekturális problémát próbáltok modellel elfedni. Kívülről segítek ezt eldönteni: mi az, ami nálatok valóban működni fog, mi az, ami nem, és mi az, amihez előbb más kell.",
+    "intro": "Az AI körüli nyomás nagyobb, mint a bizonyíték. A legtöbb csapatnál nem az a kérdés, hogyan vezessünk be AI-t, hanem hogy egyáltalán hol éri meg — és hol próbáltok meg elfedni egy modellel egy meglévő folyamati vagy architekturális problémát. Kívülről segítek ezt eldönteni: mi az, ami nálatok valóban működni fog, mi az, ami nem, és mi az, amihez előbb más kell.",
     "cta": "Foglalj időpontot",
     "ctaNote": "Ha AI-döntés előtt álltok, a legtöbbet az segít, ha leírod, mit próbáltatok eddig és hol akadtatok el — ez többet ér egy hosszú briefnél.",
     "problemsTitle": "Amit tipikusan látok",
@@ -964,9 +982,9 @@
     "problems": [
       "Fentről jön a nyomás, hogy „csináljunk valamit az AI-jal”, de senki nem mondta meg, mi lenne a siker.",
       "Van Copilot-licenc mindenkinél, és ennyiben ki is merül az AI-stratégia.",
-      "Elkészült három proof of concept, egyik sem ment production közelébe.",
+      "Elkészült három proof of concept, de egyik sem ment production közelébe.",
       "Mindenki máshogy használja: van, aki review nélkül merge-öli a generált kódot, van, aki hozzá sem nyúl.",
-      "A generált kód mennyisége nő, a review kapacitás nem — a technikai adósság gyorsabban gyűlik, mint korábban.",
+      "A generált kód mennyisége nő, a review kapacitás nem — a tech dept gyorsabban gyűlik, mint korábban.",
       "Egyetlen vendor egyetlen modelljére épült egy feature, és senki nem gondolta végig, mi lesz, ha az eltűnik.",
       "Az AI-ra költött összegről senki nem tudja megmondani, megtérült-e."
     ],
@@ -1002,6 +1020,9 @@
       "Nem ígérem, hogy a fejlesztői létszám csökkenthető lesz tőle.",
       "Nem szállítok olyan megoldást, ami egyetlen vendor egyetlen modelljéhez láncol titeket, ha ez nem tudatos döntés."
     ],
+    "quizTitle": "Még nem tartotok ott, hogy beszéljünk?",
+    "quizBody": "Töltsd ki az AI adoption felmérést: 16 kérdés arról, hogyan használjátok ma az AI-t — eszközök, policy, production kód, biztonság. Cserébe megkapod az összesített eredményt, vagyis azt, hogy a többi magyar fejlesztőcsapathoz képest hol tartotok.",
+    "quizCta": "Kitöltöm a felmérést",
     "credibilityTitle": "Miért tőlem",
     "credibilityBody": "AWS Certified AI Practitioner és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
     "leadershipTitle": "Amit fel tudsz mutatni a vezetésnek",

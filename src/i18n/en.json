@@ -815,6 +815,23 @@
       "The call is a short, no-pressure discovery conversation.",
       "If I am not the right fit, I will say so directly."
     ],
+    "aiPageTitle": "AI consulting — book a call",
+    "aiIntro": "You are facing an AI decision: adoption, build vs. buy, or simply whether it is worth it at all. Book a short call and we will go through where you stand.",
+    "aiExpectationsTitle": "Who I talk to about AI",
+    "aiExpectations": [
+      "CTOs and VPs of Engineering under pressure from above to \"do something with AI\".",
+      "Engineering managers whose teams already use AI, just everyone in a different way.",
+      "Tech leads facing a specific AI decision who want an outside second opinion."
+    ],
+    "aiResponseTitle": "What to expect",
+    "aiResponse": [
+      "Pick a suitable time in the calendar widget below.",
+      "This call is free, and that is all it is: we go through your questions and work out whether there is a fit.",
+      "We start with what you have tried so far and where you got stuck — not with a presentation.",
+      "Time and money come up only after that, and only if it makes sense for both of us to continue.",
+      "If it turns out AI is not your next step right now, I will say so directly."
+    ],
+    "aiFormTitle": "Book a free 30-minute call",
     "formTitle": "Book a 30-minute call",
     "nameLabel": "Name",
     "emailLabel": "Work email",
@@ -929,6 +946,7 @@
       "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
       "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",
       "contact": "Contact Letscode Solutions to discuss training, workshops, or consulting for your engineering team.",
+      "aiContact": "Book a short call about AI consulting: AI readiness assessment, build vs. buy, and concrete AI decisions for engineering teams.",
       "caseStudies": "Case studies from real training and consulting work: delivery, testing, architecture, and platform modernization.",
       "blog": "Articles on CI/CD, delivery bottlenecks, architecture decisions, and how engineering teams ship to production.",
       "privacy": "How this site processes data, which third-party services may load, and how cookie preferences work.",

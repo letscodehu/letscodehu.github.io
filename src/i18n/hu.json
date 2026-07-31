@@ -1024,7 +1024,7 @@
     "quizBody": "Töltsd ki az AI adoption felmérést: 16 kérdés arról, hogyan használjátok ma az AI-t — eszközök, policy, production kód, biztonság. Cserébe megkapod az összesített eredményt, vagyis azt, hogy a többi magyar fejlesztőcsapathoz képest hol tartotok.",
     "quizCta": "Kitöltöm a felmérést",
     "credibilityTitle": "Miért tőlem",
-    "credibilityBody": "AWS Certified AI Practitioner és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
+    "credibilityBody": "AWS Certified Solutions Architect – Associate és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
     "leadershipTitle": "Amit fel tudsz mutatni a vezetésnek",
     "leadershipBody": "Ha felülről jön a nyomás, a legnehezebb az, hogy kimondd: ez nekünk most nem éri meg — anélkül, hogy maradinak tűnnél. Az assessment írásos anyaga pontosan ezt támasztja alá: mit vizsgáltunk meg, mi a döntés, és mi az indoklás. Ugyanaz a logika, mint egy ADR-nél, csak üzleti olvasónak.",
     "readingTitle": "Olvasnivaló",

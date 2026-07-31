@@ -133,13 +133,13 @@ const showQuizCta = computed(() => currentLang.value === 'hu')
         <!-- Badge images live in public/; update files and hrefs if credentials change. -->
         <div class="credly-badge-list">
           <a
-            href="https://www.credly.com/badges/c984d7f3-bf75-4cef-8ab2-3e7d738c7e0d/public_url"
+            href="https://www.credly.com/badges/b7004ded-799d-44cc-9bd0-c98456f28c4a/public_url"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
-              src="/aws-certified-ai-practitioner.png"
-              :alt="t('about.credlyBadgeAiAlt')"
+              src="/aws-certified-solutions-architect-associate.png"
+              :alt="t('about.credlyBadgeSaaAlt')"
               class="credly-badge-image"
             />
           </a>

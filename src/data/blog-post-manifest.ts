@@ -242,18 +242,18 @@ export const blogPostManifest: BlogPostManifest[] = [
   //   excerptHu:
   //     'Úgy néz ki, mintha ugyanannak a munkának lenne új címkéje, de az ML és az AI engineering más előfeltevésből indul - saját modellt tréningezni saját adaton, versus egy olyan foundation modellre építeni, amit nem te tréningeztél. Ez a különbség formálja a toolokat, a skilleket, és azt is, mit jelent egyáltalán az „ops".',
   // },
-  // {
-  //   slug: 'context-engineering-in-practice',
-  //   publishedAt: '2025-12-03',
-  //   tags: ['ai', 'architecture'],
-  //   titleEn: 'Context Engineering in Practice: Building Agents That Remember Just Enough',
-  //   titleHu: 'Context engineering a gyakorlatban: agentek, amik pont eleget emlékeznek',
-  //   featuredImagePath: '/blog/context-engineering-in-practice.png',
-  //   excerptEn:
-  //     "Most failing agents aren't held back by a weak model - they're drowning in tool results that quietly re-inject the same 2,500-word document into every turn. The fix isn't a bigger context window; it's giving the model exactly what it needs for the current step, and nothing else.",
-  //   excerptHu:
-  //     'A legtöbb elbukó agentet nem egy gyenge modell fogja vissza - egy olyan tool eredmény fullasztja meg, ami csendben ugyanazt a 2500 szavas dokumentumot injektálja vissza minden turnban. A megoldás nem egy nagyobb context window, hanem hogy pontosan azt adod a modellnek, ami az aktuális lépéshez kell, és semmi mást.',
-  // },
+  {
+    slug: 'context-engineering-in-practice',
+    publishedAt: '2025-12-03',
+    tags: ['ai', 'architecture'],
+    titleEn: 'Context Engineering in Practice: Building Agents That Remember Just Enough',
+    titleHu: 'Context engineering a gyakorlatban: agentek, amik pont eleget emlékeznek',
+    featuredImagePath: '/blog/context-engineering-in-practice.png',
+    excerptEn:
+      "Most failing agents aren't held back by a weak model - they're drowning in tool results that quietly re-inject the same 2,500-word document into every turn. The fix isn't a bigger context window; it's giving the model exactly what it needs for the current step, and nothing else.",
+    excerptHu:
+      'A legtöbb elbukó agentet nem egy gyenge modell fogja vissza - egy olyan tool eredmény fullasztja meg, ami csendben ugyanazt a 2500 szavas dokumentumot injektálja vissza minden turnban. A megoldás nem egy nagyobb context window, hanem hogy pontosan azt adod a modellnek, ami az aktuális lépéshez kell, és semmi mást.',
+  },
   // {
   //   slug: 'chain-of-thought-reasoning-models',
   //   publishedAt: '2025-12-16',

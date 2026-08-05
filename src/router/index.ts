@@ -89,8 +89,9 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'contact.pageTitle', descriptionKey: 'seo.descriptions.contact' },
   },
   {
-    // Same page and same calendar as `contact`, AI-specific copy. Own route (not a query
-    // param) so the AI framing is prerendered rather than swapped in after hydration.
+    // Same page as `contact`, AI-specific copy and its own Google Calendar booking widget.
+    // Own route (not a query param) so the AI framing is prerendered rather than swapped
+    // in after hydration.
     path: 'contact/ai',
     name: 'contact-ai-en',
     component: ContactPage,

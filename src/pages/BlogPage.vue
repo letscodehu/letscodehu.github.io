@@ -130,6 +130,18 @@ const displayedCaseStudies = computed(() =>
       </div>
     </section>
 
+    <section v-if="currentLang === 'hu'" class="section">
+      <RouterLink :to="{ name: 'archive-list', params: { lang: 'hu' } }" class="archive-banner-link">
+        <BaseCard class="archive-banner">
+          <template #title>Archívum</template>
+          <template #subtitle>
+            A letscode.hu korábbi verziójából visszahozott, régebbi bejegyzések - csak
+            magyarul, változatlan tartalommal.
+          </template>
+        </BaseCard>
+      </RouterLink>
+    </section>
+
     <section class="section">
       <h2 class="section-title">{{ t('caseStudies.pageTitle') }}</h2>
       <p v-if="t('caseStudies.intro')" class="section-intro">
@@ -286,5 +298,15 @@ const displayedCaseStudies = computed(() =>
   color: var(--color-text-muted);
   font-size: 0.76rem;
   font-weight: 600;
+}
+
+.archive-banner-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.archive-banner-link :deep(.card) {
+  border-left: 3px solid var(--color-border-strong);
 }
 </style>

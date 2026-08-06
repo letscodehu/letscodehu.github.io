@@ -1,10 +1,10 @@
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { SITE_ORIGIN } from '../src/site'
-import { getPrerenderPathnames } from '../src/seo/prerender-paths'
+import { getSitemapPathnames } from '../src/seo/prerender-paths'
 
 const distDir = resolve(import.meta.dirname, '..', 'dist')
-const urls = getPrerenderPathnames()
+const urls = getSitemapPathnames()
 
 const body = urls
   .map((pathname) => `  <url><loc>${SITE_ORIGIN}${pathname}</loc></url>`)

@@ -46,6 +46,13 @@ export const createApp = ViteSSG(
       }
     }
 
+    // Bare (non-lang-prefixed) legacy Jekyll permalinks resolve to their own top-level
+    // redirect route (see legacyArchiveRedirectRoutes in router/index.ts) and must not be
+    // forced under /en or /hu.
+    if (to.matched.some((record) => record.meta.archiveSlug)) {
+      return true
+    }
+
     const languagePathMatch = to.path.match(/^\/(en|hu)(?:\/|$)/)
     if (languagePathMatch) {
       const languageFromPath: Language = languagePathMatch[1] === 'hu' ? 'hu' : 'en'

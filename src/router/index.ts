@@ -12,9 +12,13 @@ import ContactPage from '../pages/ContactPage.vue'
 import CaseStudyDetailPage from '../pages/CaseStudyDetailPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import BlogPostDetailPage from '../pages/BlogPostDetailPage.vue'
+import ArchivePage from '../pages/ArchivePage.vue'
+import ArchivePostDetailPage from '../pages/ArchivePostDetailPage.vue'
+import ArchiveRedirectPage from '../pages/ArchiveRedirectPage.vue'
 import PrivacyPage from '../pages/PrivacyPage.vue'
 import QuizPage from '../pages/QuizPage.vue'
 import SlackPage from '../pages/SlackPage.vue'
+import { archiveRedirects } from '../data/archive-redirects'
 
 const childRoutes: RouteRecordRaw[] = [
   {
@@ -126,6 +130,34 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'blog.pageTitle', useChildTitle: true },
   },
   {
+    path: 'blog/archiv',
+    name: 'archive-list',
+    component: ArchivePage,
+    meta: { useChildTitle: true },
+    beforeEnter: (to, _from, next) => {
+      // `to.path` (not window.location, which only updates once navigation commits) avoids
+      // re-triggering this guard's own redirect target on the next pass.
+      if (!to.path.startsWith('/hu/')) {
+        next({ path: '/hu/blog/archiv' })
+      } else {
+        next()
+      }
+    },
+  },
+  {
+    path: 'blog/archiv/:slug',
+    name: 'archive-detail',
+    component: ArchivePostDetailPage,
+    meta: { useChildTitle: true },
+    beforeEnter: (to, _from, next) => {
+      if (!to.path.startsWith('/hu/')) {
+        next({ path: `/hu/blog/archiv/${to.params.slug}` })
+      } else {
+        next()
+      }
+    },
+  },
+  {
     path: 'slack',
     name: 'slack',
     component: SlackPage,
@@ -160,6 +192,17 @@ const childRoutes: RouteRecordRaw[] = [
   },
 ]
 
+/**
+ * Old Jekyll blog permalinks (already indexed by Google), each rendering a static
+ * meta-refresh + canonical redirect to its post's new archive URL. Bare top-level paths
+ * (no /en|hu prefix) because that's where the old site put them.
+ */
+const legacyArchiveRedirectRoutes: RouteRecordRaw[] = archiveRedirects.map((redirect) => ({
+  path: `/${redirect.path}`,
+  component: ArchiveRedirectPage,
+  meta: { archiveSlug: redirect.slug },
+}))
+
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -170,4 +213,5 @@ export const routes: RouteRecordRaw[] = [
     component: AppLayout,
     children: childRoutes,
   },
+  ...legacyArchiveRedirectRoutes,
 ]

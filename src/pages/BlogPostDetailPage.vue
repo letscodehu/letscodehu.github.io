@@ -4,7 +4,7 @@ import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n, writeStoredLanguage, type Language } from '../composables/useI18n'
 import { getBlogPostBySlug } from '../data/blog-posts'
-import { marked } from 'marked'
+import { useMarkdownContent } from '../composables/useMarkdownContent'
 import { absoluteUrl, DEFAULT_OG_IMAGE_PATH } from '../site'
 import { canonicalPathname } from '../seo/canonical-path'
 
@@ -119,80 +119,7 @@ useHead(
   })
 )
 
-const HUNGARIAN_CHAR_MAP: Record<string, string> = {
-  á: 'a',
-  é: 'e',
-  í: 'i',
-  ó: 'o',
-  ö: 'o',
-  ő: 'o',
-  ú: 'u',
-  ü: 'u',
-  ű: 'u',
-  Á: 'a',
-  É: 'e',
-  Í: 'i',
-  Ó: 'o',
-  Ö: 'o',
-  Ő: 'o',
-  Ú: 'u',
-  Ü: 'u',
-  Ű: 'u',
-}
-
-function slugify(text: string): string {
-  let s = text
-  for (const [from, to] of Object.entries(HUNGARIAN_CHAR_MAP)) {
-    s = s.split(from).join(to)
-  }
-  return s
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
-}
-
-interface TocEntry {
-  slug: string
-  text: string
-}
-
-const tocEntries = computed((): TocEntry[] => {
-  const content = postContent.value
-  if (!content) return []
-  const matches = content.matchAll(/^## (.+)$/gm)
-  const entries: TocEntry[] = []
-  for (const m of matches) {
-    const raw = m[1]
-    if (raw != null) {
-      const text = raw.trim()
-      entries.push({ slug: slugify(text), text })
-    }
-  }
-  return entries
-})
-
-function getMarkedOptions(h2Slugs: string[]) {
-  let h2Index = 0
-  const renderer = new marked.Renderer()
-  const originalHeading = renderer.heading.bind(renderer)
-  renderer.heading = (token) => {
-    const html = originalHeading(token as Parameters<typeof originalHeading>[0])
-    if (token.depth === 2) {
-      const id = h2Slugs[h2Index]
-      h2Index += 1
-      if (id) return html.replace(/^<h2>/, `<h2 id="${id}">`)
-    }
-    return html
-  }
-  return { gfm: true, renderer }
-}
-
-const contentHtml = computed(() => {
-  const content = postContent.value
-  if (!content) return ''
-  const h2Slugs = tocEntries.value.map((e) => e.slug)
-  return marked.parse(content, getMarkedOptions(h2Slugs)) as string
-})
+const { tocEntries, contentHtml } = useMarkdownContent(postContent)
 
 watch(
   post,

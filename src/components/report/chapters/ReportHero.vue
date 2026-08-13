@@ -1,9 +1,40 @@
 <script setup>
+import { computed } from 'vue'
 import { CHAPTERS, anchor } from '../chapters.js'
 import { useReport } from '../useReport.js'
 import ContentWrap from '../ui/ContentWrap.vue'
 
-const { D, heroStats } = useReport()
+const { H, heroStats } = useReport()
+
+const SAMPLE_SIZE = 350
+
+const MONTHS = [
+  'január',
+  'február',
+  'március',
+  'április',
+  'május',
+  'június',
+  'július',
+  'augusztus',
+  'szeptember',
+  'október',
+  'november',
+  'december',
+]
+
+/**
+ * „2026. június 24. – július 30.” — az évet és az azonos hónapot nem ismételjük.
+ * Kézzel formázunk, nem `Intl`-lel: a prerenderelés Node-ban fut, a hidratálás
+ * böngészőben — eltérő ICU esetén a kettő szövege elválna egymástól.
+ */
+const collectionPeriod = computed(() => {
+  const [y1, m1, d1] = H.value.date_first.split('-').map(Number)
+  const [y2, m2, d2] = H.value.date_last.split('-').map(Number)
+  const from = `${y1}. ${MONTHS[m1 - 1]} ${d1}.`
+  const to = y1 === y2 ? (m1 === m2 ? `${d2}.` : `${MONTHS[m2 - 1]} ${d2}.`) : `${y2}. ${MONTHS[m2 - 1]} ${d2}.`
+  return `${from} – ${to}`
+})
 
 // A görgetést a gyökérkomponens végzi: neki van referenciája a riport
 // gyökérelemére, amin belül a horgonyt keresni kell.
@@ -15,6 +46,10 @@ const emit = defineEmits(['navigate'])
     <ContentWrap>
       <div class="font-mono text-[12.5px] font-semibold uppercase tracking-[0.18em] text-accent">
         Magyar fejlesztői körkép · 2026
+      </div>
+
+      <div class="mt-[10px] font-mono text-[12px] leading-[1.5] tracking-[0.02em] text-muted">
+        n={{ SAMPLE_SIZE }} · adatgyűjtés: {{ collectionPeriod }}
       </div>
 
       <h1

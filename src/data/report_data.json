@@ -2571,8 +2571,8 @@
   "sec_no_test": 70,
   "sec_redteam": 10,
   "builders_n": 133,
-  "date_first": "July 10, 2026 10:13 PM (GMT+2)",
-  "date_last": "June 30, 2026 9:11 AM (GMT+2)"
+  "date_first": "2026-06-24",
+  "date_last": "2026-07-30"
  },
  "role_agent_daily": {
   "Junior fejlesztő": {

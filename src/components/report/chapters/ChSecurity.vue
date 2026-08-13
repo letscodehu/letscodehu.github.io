@@ -20,10 +20,10 @@ const { D, H, pct, hu, cell } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="Szenzitív adat publikus LLM-be (shadow AI)" meta="q09 · forráskód / kulcs / séma szivárgása">
+      <ChartCard title="Szenzitív adat publikus LLM-be (shadow AI)" meta="shadow AI (q09) · forráskód / kulcs / séma szivárgása">
         <div data-bar="q09_shadow_ai"></div>
       </ChartCard>
-      <ChartCard title="Shadow AI archetípusonként" meta="soronként 100% · archetípus × q09">
+      <ChartCard title="Shadow AI archetípusonként" meta="soronként 100% · archetípus × shadow AI (q09)">
         <div data-stack="arch_x_shadow"></div>
       </ChartCard>
     </CardGrid>
@@ -36,7 +36,7 @@ const { D, H, pct, hu, cell } = useReport()
       modellbe. A kitettség nem a lemaradóknál koncentrálódik.
     </InsightBox>
 
-    <ChartCard title="Visszafogja-e a szabályzat a szivárgást?" meta="soronként 100% · q08 × q09">
+    <ChartCard title="Visszafogja-e a szabályzat a szivárgást?" meta="soronként 100% · AI-policy × shadow AI (q08 × q09)">
       <div data-stack="policy_x_shadow"></div>
     </ChartCard>
 
@@ -59,7 +59,10 @@ const { D, H, pct, hu, cell } = useReport()
       <ChartCard title="Felkészültség LLM-sebezhetőségekre" meta="csak az LLM-integrációt fejlesztők">
         <div data-chart="secdist"></div>
       </ChartCard>
-      <ChartCard title="Biztonsági érettség cégtípusonként" meta="soronként 100% · q12 × q14 · a teljes minta">
+      <ChartCard
+        title="Biztonsági érettség cégtípusonként"
+        meta="soronként 100% · cégtípus × LLM-biztonsági felkészültség (q12 × q14) · a teljes minta"
+      >
         <div data-stack="companytype_x_security"></div>
       </ChartCard>
     </CardGrid>
@@ -96,10 +99,13 @@ const { D, H, pct, hu, cell } = useReport()
     </InsightBox>
 
     <CardGrid>
-      <ChartCard title="Lokális vs. felhő LLM-ek" meta="q10 · adatvédelmi megfontolás">
+      <ChartCard title="Lokális vs. felhő LLM-ek" meta="lokális vs. felhő (q10) · adatvédelmi megfontolás">
         <div data-bar="q10_local_vs_cloud"></div>
       </ChartCard>
-      <ChartCard title="Biztonsági érettség archetípusonként" meta="soronként 100% · archetípus × q14">
+      <ChartCard
+        title="Biztonsági érettség archetípusonként"
+        meta="soronként 100% · archetípus × LLM-biztonsági felkészültség (q14)"
+      >
         <div data-stack="arch_x_security"></div>
       </ChartCard>
     </CardGrid>

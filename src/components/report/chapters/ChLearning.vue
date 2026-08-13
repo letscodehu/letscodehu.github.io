@@ -17,10 +17,10 @@ const { pct, cell, archDef, archVal } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="Hol fejlesztené az AI-tudását" meta="q15 · a teljes minta">
+      <ChartCard title="Hol fejlesztené az AI-tudását" meta="tanulási igény (q15) · a teljes minta">
         <div data-bar="q15_future_area"></div>
       </ChartCard>
-      <ChartCard title="Tanulási igény archetípusonként" meta="soronként 100% · archetípus × q15">
+      <ChartCard title="Tanulási igény archetípusonként" meta="soronként 100% · archetípus × tanulási igény (q15)">
         <div data-stack="arch_x_learning"></div>
       </ChartCard>
     </CardGrid>
@@ -37,7 +37,11 @@ const { pct, cell, archDef, archVal } = useReport()
       kérdés már rendszerszintű.
     </InsightBox>
 
-    <ChartCard class="print-hide" title="Tanulási igény szerepkörönként" meta="soronként 100% · q12b × q15">
+    <ChartCard
+      class="print-hide"
+      title="Tanulási igény szerepkörönként"
+      meta="soronként 100% · szerepkör × tanulási igény (q12b × q15)"
+    >
       <div data-stack="role_x_learning"></div>
       <template #note>A kis létszámú szerepkörök arányai zajosak — irányadók, nem pontos mérőszámok.</template>
     </ChartCard>

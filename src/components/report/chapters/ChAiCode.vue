@@ -21,10 +21,10 @@ const { D, H, pct, rhoTxt, rho, archVal } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="AI-generált kód aránya" meta="q05 · a válaszadók megoszlása">
+      <ChartCard title="AI-generált kód aránya" meta="AI-kódarány (q05) · a válaszadók megoszlása">
         <div data-bar="q05_ai_code_ratio"></div>
       </ChartCard>
-      <ChartCard title="AI-kódarány archetípusonként" meta="soronként 100% · archetípus × q05">
+      <ChartCard title="AI-kódarány archetípusonként" meta="soronként 100% · archetípus × AI-kódarány (q05)">
         <div data-stack="arch_x_ratio"></div>
       </ChartCard>
     </CardGrid>
@@ -38,7 +38,7 @@ const { D, H, pct, rhoTxt, rho, archVal } = useReport()
       >) — aki komplett feladatokat delegál, annál a kód is nagyobb részben gépi.
     </InsightBox>
 
-    <ChartCard title="AI-kódarány cégtípusonként" meta="soronként 100% · q12 × q05">
+    <ChartCard title="AI-kódarány cégtípusonként" meta="soronként 100% · cégtípus × AI-kódarány (q12 × q05)">
       <div data-stack="companytype_x_ratio"></div>
     </ChartCard>
 
@@ -49,7 +49,7 @@ const { D, H, pct, rhoTxt, rho, archVal } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="Átvett munkafázisok" meta="q04 · max. 2 válasz · a válaszadók %-a">
+      <ChartCard title="Átvett munkafázisok" meta="átvett munkafázisok (q04) · max. 2 válasz · a válaszadók %-a">
         <div data-multibar="q04_workflow_shift"></div>
       </ChartCard>
       <ChartCard title="Munkafázisok archetípusonként" meta="a csoport hány %-a jelölte · több válasz lehetséges">

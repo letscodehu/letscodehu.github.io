@@ -63,17 +63,17 @@ const { D, H, pct, hu, rho, rhoTxt, gap, quad } = useReport()
       <ChartCard
         title="Céges támogatottság"
         :pill="`átlag ${hu(D.scales.q07_company_support.mean)}/5`"
-        meta="q07 · 1: tiltja · 5: aktívan ösztönzi"
+        meta="céges támogatás (q07) · 1: tiltja · 5: aktívan ösztönzi"
       >
         <div data-chart="lik-q07"></div>
       </ChartCard>
-      <ChartCard title="Van-e formális AI-policy?" meta="q08 · szabályzat státusza">
+      <ChartCard title="Van-e formális AI-policy?" meta="AI-policy (q08) · a szabályzat státusza">
         <div data-bar="q08_company_policy"></div>
       </ChartCard>
-      <ChartCard title="AI-képzés az elmúlt 12 hónapban" meta="q13 · formális képzés">
+      <ChartCard title="AI-képzés az elmúlt 12 hónapban" meta="kapott képzés (q13) · formális képzés">
         <div data-bar="q13_training"></div>
       </ChartCard>
-      <ChartCard title="Céges támogatás a képzési státusz szerint" meta="átlagos q07-érték (1–5) csoportonként">
+      <ChartCard title="Céges támogatás a képzési státusz szerint" meta="átlagos céges támogatás (q07, 1–5) csoportonként">
         <div data-chart="trainsup"></div>
       </ChartCard>
     </CardGrid>

@@ -18,13 +18,13 @@ const { D, pct, hu, az, cell, archVal, archDef, reviewArch } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="Review-teher archetípusonként" meta="q06 átlaga · 1: nem több · 5: sok extra idő">
+      <ChartCard title="Review-teher archetípusonként" meta="review-teher (q06) átlaga · 1: nem több · 5: sok extra idő">
         <div data-chart="review-arch"></div>
       </ChartCard>
       <ChartCard
         title="Review-teher eloszlása"
         :pill="`átlag ${hu(D.scales.q06_hallucination_review.mean)}/5`"
-        meta="q06 · a teljes minta"
+        meta="review-teher (q06) · a teljes minta"
       >
         <div data-chart="lik-q06"></div>
       </ChartCard>
@@ -42,7 +42,7 @@ const { D, pct, hu, az, cell, archVal, archDef, reviewArch } = useReport()
 
     <ChartCard
       title="Review-teher az AI-kódarány mentén"
-      meta="q06 átlaga a q05 sávjai szerint · a „nincs rálátás” kihagyva"
+      meta="review-teher (q06) átlaga az AI-kódarány (q05) sávjai szerint · a „nincs rálátás” kihagyva"
     >
       <div data-chart="review-ratio"></div>
     </ChartCard>
@@ -57,7 +57,7 @@ const { D, pct, hu, az, cell, archVal, archDef, reviewArch } = useReport()
       </p>
     </PlainBox>
 
-    <ChartCard title="Mi a fő akadály a szélesebb használatban" meta="soronként 100% · archetípus × q11">
+    <ChartCard title="Mi a fő akadály a szélesebb használatban" meta="soronként 100% · archetípus × fő akadály (q11)">
       <div data-stack="arch_x_blocker"></div>
     </ChartCard>
 

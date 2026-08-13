@@ -27,13 +27,13 @@ const { D, H, pct, hu, roleAgent } = useReport()
     </InsightBox>
 
     <CardGrid>
-      <ChartCard title="Agent-autonómia szerepkörönként" meta="soronként 100% · q12b × q03">
+      <ChartCard title="Agent-autonómia szerepkörönként" meta="soronként 100% · szerepkör × agent-autonómia (q12b × q03)">
         <div data-stack="role_x_autonomy"></div>
         <template #note>
           A kis szerepkör-cellák (junior, eng. manager) a trendet mutatják, a pontos %-ot ne.
         </template>
       </ChartCard>
-      <ChartCard title="Agent-autonómia cégtípusonként" meta="soronként 100% · q12 × q03">
+      <ChartCard title="Agent-autonómia cégtípusonként" meta="soronként 100% · cégtípus × agent-autonómia (q12 × q03)">
         <div data-stack="companytype_x_autonomy"></div>
       </ChartCard>
     </CardGrid>

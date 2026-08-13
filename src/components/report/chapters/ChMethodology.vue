@@ -20,10 +20,10 @@ const { D, rho, rhoTxt } = useReport()
     </LeadText>
 
     <CardGrid>
-      <ChartCard title="Cégtípus" meta="q12 · a válaszadók megoszlása">
+      <ChartCard title="Cégtípus" meta="cégtípus (q12) · a válaszadók megoszlása">
         <div data-bar="q12_company_type"></div>
       </ChartCard>
-      <ChartCard title="Szerepkör" meta="q12b · a válaszadók megoszlása">
+      <ChartCard title="Szerepkör" meta="szerepkör (q12b) · a válaszadók megoszlása">
         <div data-bar="q12b_role"></div>
       </ChartCard>
     </CardGrid>

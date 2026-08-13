@@ -1,3 +1,11 @@
+/**
+ * Legacy first segments kept alive for already-indexed URLs (both languages).
+ * They resolve to the same page, but canonicalize to the current segment.
+ */
+const LEGACY_HEAD_ALIASES: Record<string, string> = {
+  quiz: 'ai-survey',
+}
+
 const HU_HEAD_ALIASES: Record<string, string> = {
   kepzes: 'training',
   tanacsadas: 'consulting',
@@ -37,7 +45,9 @@ export function canonicalPathname(pathname: string): string {
   }
 
   const head = rest[0]
-  if (lang === 'hu' && head != null && HU_HEAD_ALIASES[head] != null) {
+  if (head != null && LEGACY_HEAD_ALIASES[head] != null) {
+    rest = [LEGACY_HEAD_ALIASES[head], ...rest.slice(1)]
+  } else if (lang === 'hu' && head != null && HU_HEAD_ALIASES[head] != null) {
     rest = [HU_HEAD_ALIASES[head], ...rest.slice(1)]
   }
 

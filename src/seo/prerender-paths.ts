@@ -32,10 +32,17 @@ const HU_STATIC_ALIASES: string[] = [
   'kapcsolat',
   'kapcsolat/ai',
   'cikkek',
-  'quiz',
+  'ai-survey',
   'slack',
   'blog/archiv',
 ]
+
+/**
+ * Legacy pathnames that still resolve (route aliases) so already-indexed URLs and
+ * outbound links don't break. Prerendered, but kept out of the sitemap: their
+ * canonical points at the current URL (see seo/canonical-path.ts).
+ */
+const LEGACY_ALIAS_PATHNAMES: string[] = ['/hu/quiz']
 
 /**
  * Indexable pathnames: prerendered (vite-ssg) and listed in the sitemap.
@@ -85,7 +92,9 @@ function getLegacyRedirectPathnames(): string[] {
   return archiveRedirects.map((redirect) => `/${redirect.path}`)
 }
 
-/** All pathnames to prerender (vite-ssg): sitemap pages plus legacy redirect stubs. */
+/** All pathnames to prerender (vite-ssg): sitemap pages, legacy aliases, and redirect stubs. */
 export function getPrerenderPathnames(): string[] {
-  return [...new Set([...getSitemapPathnames(), ...getLegacyRedirectPathnames()])].sort()
+  return [
+    ...new Set([...getSitemapPathnames(), ...LEGACY_ALIAS_PATHNAMES, ...getLegacyRedirectPathnames()]),
+  ].sort()
 }

@@ -178,22 +178,24 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'privacy.pageTitle', descriptionKey: 'seo.descriptions.privacy' },
   },
   {
-    // A 2026-os AI-felmérés eredményriportja. A `quiz` útvonal a megszűnt
-    // kérdőívtől örökölt — a hivatkozások és a Google-találatok oda mutatnak,
-    // ezért az URL marad, csak a tartalom lett a riport.
-    path: 'quiz',
+    // A 2026-os AI-felmérés eredményriportja. A `quiz` alias a megszűnt
+    // kérdőívtől örökölt: a régi hivatkozások és a Google-találatok oda
+    // mutatnak, ezért az útvonal élve marad — de a kanonikus URL az
+    // `ai-survey` (lásd seo/canonical-path.ts).
+    path: 'ai-survey',
+    alias: 'quiz',
     name: 'ai-report',
     component: ReportPage,
     // A riport a teljes szélességet használja: nem a site tartalomsávjában,
     // hanem közvetlenül a <main>-ben renderel (lásd AppLayout.vue).
     meta: { useChildTitle: true, fullBleed: true },
-    // A riport magyar nyelvű, ezért /en/quiz átirányít. `to.path`-ból, nem
+    // A riport magyar nyelvű, ezért /en/ai-survey átirányít. `to.path`-ból, nem
     // window.location-ből: az utóbbi csak a navigáció véglegesítésekor
     // frissül, így a guard a saját célpontján újra lefutna — végtelen
     // átirányítás. (Ugyanez a minta a blog/archiv route-oknál is.)
     beforeEnter: (to, _from, next) => {
       if (!to.path.startsWith('/hu/')) {
-        next({ path: '/hu/quiz' })
+        next({ path: '/hu/ai-survey' })
       } else {
         next()
       }

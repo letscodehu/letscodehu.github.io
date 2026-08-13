@@ -8,6 +8,7 @@ import { useDarkMode } from '../composables/useDarkMode'
 import { absoluteUrl } from '../site'
 
 const PDF_PATH = '/state-of-ai-dev-2026.pdf'
+const OG_IMAGE_PATH = '/ai-dev.png'
 
 const route = useRoute()
 const router = useRouter()
@@ -44,6 +45,8 @@ const title = 'State of AI Dev 2026 – magyar fejlesztői körkép | letscode.h
 const description =
   'Mennyit ír már a gép, mit vett át az agent, ki ellenőrzi, és mennyi governance van mögötte? ' +
   'Magyar fejlesztők és mérnöki vezetők válaszai alapján.'
+const ogImageUrl = absoluteUrl(OG_IMAGE_PATH)
+const ogImageAlt = 'State of AI Dev 2026 – magyar fejlesztői körkép'
 
 useHead({
   title,
@@ -52,8 +55,13 @@ useHead({
     { property: 'og:type', content: 'article' },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
+    // A riportnak saját borítója van: felülírja az AppLayout alapértelmezett
+    // og:image-ét (a unhead property szerint deduplikál, a mélyebb komponens nyer).
+    { property: 'og:image', content: ogImageUrl },
+    { property: 'og:image:alt', content: ogImageAlt },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: ogImageUrl },
   ],
   link: [{ rel: 'alternate', type: 'application/pdf', href: absoluteUrl(PDF_PATH) }],
 })

@@ -1,0 +1,710 @@
+/* ===================================================================
+   State of AI Dev 2026 — riport stíluslap
+   ===================================================================
+   A riport minden vizuális döntése Tailwind utility-osztályokból áll elő
+   a komponensek template-jeiben. Ez a fájl csak azt tartalmazza, amit
+   utility-vel nem lehet kifejezni:
+
+     1. a téma-változókat (a komponens gyökerén, nem a :root-on)
+     2. a charts.js által futásidőben generált SVG belsejét
+     3. a görgetéses megjelenést
+     4. a nyomtatási/PDF-réteget
+
+   A befogadó projektnek Tailwind v4 kell; ezt a fájlt kell importálnia:
+       import '@/components/report/report.css'
+   =================================================================== */
+
+/* -------------------------------------------------------------------
+   Tailwind — Preflight nélkül
+
+   A befogadó oldal (letscode.hu) kézzel írt CSS-t használ, Tailwind nélkül.
+   A `@import 'tailwindcss'` a Preflightot is behozná, ami globális reset:
+   nullázna minden margót, címsor-méretet és border-t az oldal MINDEN
+   aloldalán, nem csak itt. Ezért a rétegeket egyenként importáljuk, a
+   preflight.css-t kihagyva — a riportnak viszont kell a reset, azt lentebb
+   `.ai-report`-ra szűkítve megismételjük.
+
+   `source(none)` + `@source '.'`: a Tailwind csak a riport fájljaiban keressen
+   osztályneveket. Automatikus detektálással az egész projektet átolvasná, és a
+   site saját osztályneveivel egyező utility-ket is generálna.
+   ------------------------------------------------------------------- */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
+
+@source '.';
+
+/* -------------------------------------------------------------------
+   Token-leképzés
+
+   `inline`, mert a --plane, --surface stb. változók a komponens
+   gyökerén élnek, nem a :root-on. Enélkül a Tailwind a :root-on
+   próbálná feloldani őket, ahol nincsenek definiálva, és a
+   `bg-surface`-féle utility-k érvénytelen értéket kapnának.
+   Így viszont a `bg-surface` közvetlenül `var(--surface)`-re fordul,
+   ami a használat helyén oldódik fel — vagyis a téma váltása
+   (OS-beállítás vagy `theme` prop) mindent automatikusan visz magával.
+
+   A --s1…--s8, --a1…--a4, --o1…--o5 sorozatszíneket a charts.js
+   használja közvetlenül, ezért azok neve nem változhat.
+   ------------------------------------------------------------------- */
+@theme inline {
+  --color-plane: var(--plane);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-muted: var(--muted);
+  --color-grid: var(--grid);
+  --color-axis: var(--axis);
+  --color-brd: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-a1: var(--a1);
+  --color-a2: var(--a2);
+  --color-a3: var(--a3);
+  --color-a4: var(--a4);
+
+  --font-mono: var(--mono);
+}
+
+@layer base {
+  /* -----------------------------------------------------------------
+     Preflight, `.ai-report`-ra szűkítve
+
+     A Tailwind saját preflight.css-e globális; ez ugyanaz, csak a riport
+     fatörzsére korlátozva. Ami kimaradt: a `html`-re vonatkozó szabályok
+     (a font-családot és a line-height-ot a `.ai-report` úgyis megadja),
+     és a form-elemek finomhangolása a riportban nem szereplő input-
+     típusokra. A riport élő elemkészlete: p, b, code, h1–h3, ol/li,
+     details/summary, button, a, div/span, svg.
+     ----------------------------------------------------------------- */
+  .ai-report,
+  .ai-report *,
+  .ai-report ::before,
+  .ai-report ::after,
+  .ai-report ::backdrop {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  .ai-report h1,
+  .ai-report h2,
+  .ai-report h3,
+  .ai-report h4,
+  .ai-report h5,
+  .ai-report h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    /* A site style.css-e globálisan ad a címsoroknak line-height-ot és
+       letter-spacinget; a riport ezeket utility-ből kapja. Mivel az a szabály
+       is a base rétegben van, itt a nagyobb specificitás dönt. */
+    line-height: inherit;
+    letter-spacing: normal;
+  }
+
+  .ai-report a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .ai-report b,
+  .ai-report strong {
+    font-weight: bolder;
+  }
+
+  .ai-report code,
+  .ai-report kbd,
+  .ai-report samp,
+  .ai-report pre {
+    font-family: var(--mono);
+    font-size: 1em;
+  }
+
+  .ai-report small {
+    font-size: 80%;
+  }
+
+  .ai-report sub,
+  .ai-report sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  .ai-report sub {
+    bottom: -0.25em;
+  }
+  .ai-report sup {
+    top: -0.5em;
+  }
+
+  .ai-report hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+
+  .ai-report table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+
+  .ai-report summary {
+    display: list-item;
+  }
+
+  .ai-report ol,
+  .ai-report ul,
+  .ai-report menu {
+    list-style: none;
+  }
+
+  .ai-report img,
+  .ai-report svg,
+  .ai-report video,
+  .ai-report canvas {
+    display: block;
+    vertical-align: middle;
+  }
+  .ai-report img,
+  .ai-report video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ai-report button,
+  .ai-report input,
+  .ai-report select,
+  .ai-report textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  .ai-report button {
+    appearance: button;
+  }
+
+  .ai-report [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+
+  /* A téma-változók a komponens gyökerén élnek, nem a :root-on — így semmi
+     nem szivárog ki a befogadó oldalra, és a `theme` prop felülírhatja az
+     OS-beállítást. */
+  /* -----------------------------------------------------------------
+     Névütközés a befogadó oldal változóival
+
+     A Tailwind a saját téma-tokenjeit a `theme` rétegben teszi a :root-ra,
+     a site viszont réteg nélkül — és a réteg nélküli deklaráció mindig nyer.
+     Ahol a két névtér fedi egymást, ott a `rounded-lg` a site 1.25rem-jét
+     kapná a Tailwind 0.5rem-je helyett. Itt, a riport gyökerén árnyékoljuk
+     őket, hogy a utility-k a saját skálájukon maradjanak.
+
+     Ha a site style.css-ébe új változó kerül, aminek Tailwind-token neve is
+     van (--spacing, --font-weight-*, --color-white, --default-transition-*),
+     azt is ide kell felvenni.
+     ----------------------------------------------------------------- */
+  .ai-report {
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+  }
+
+  .ai-report {
+    --plane: #f3f5f8;
+    --surface: #ffffff;
+    --ink: #0c1015;
+    --ink2: #3f4956;
+    --muted: #79828f;
+    --grid: #e3e7ec;
+    --axis: #c4cbd4;
+    --border: rgba(12, 16, 21, 0.11);
+    --accent: #2f6ae0;
+    --accent-soft: rgba(47, 106, 224, 0.1);
+    --s1: #2a78d6;
+    --s2: #008300;
+    --s3: #e87ba4;
+    --s4: #eda100;
+    --s5: #1baf7a;
+    --s6: #eb6834;
+    --s7: #4a3aa7;
+    --s8: #e34948;
+    /* archetípus-paletta: végig ugyanaz a négy szín */
+    --a1: #8d97a5;
+    --a2: #2a78d6;
+    --a3: #1baf7a;
+    --a4: #4a3aa7;
+    --o1: #a9cbf3;
+    --o2: #6da7ec;
+    --o3: #3987e5;
+    --o4: #256abf;
+    --o5: #184f95;
+    --pos: #2a78d6;
+    --neg: #e34948;
+    --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, 'Cascadia Code', 'Roboto Mono', monospace;
+    color-scheme: light;
+
+    background: var(--plane);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* auto: az OS sötét témáját követi, hacsak a prop nem kényszerít világosat */
+  @media (prefers-color-scheme: dark) {
+    .ai-report:not([data-theme='light']) {
+      --plane: #090b0f;
+      --surface: #14181f;
+      --ink: #eef1f6;
+      --ink2: #aeb8c6;
+      --muted: #727c8b;
+      --grid: #252a33;
+      --axis: #333a45;
+      --border: rgba(255, 255, 255, 0.11);
+      --accent: #5c9bff;
+      --accent-soft: rgba(92, 155, 255, 0.14);
+      --s1: #3987e5;
+      --s2: #008300;
+      --s3: #d55181;
+      --s4: #c98500;
+      --s5: #199e70;
+      --s6: #d95926;
+      --s7: #9085e9;
+      --s8: #e66767;
+      --a1: #79838f;
+      --a2: #3987e5;
+      --a3: #199e70;
+      --a4: #9085e9;
+      --o1: #9ec5f4;
+      --pos: #3987e5;
+      --neg: #e66767;
+      color-scheme: dark;
+    }
+  }
+
+  /* kényszerített sötét — a media query-t is felülírja */
+  .ai-report[data-theme='dark'] {
+    --plane: #090b0f;
+    --surface: #14181f;
+    --ink: #eef1f6;
+    --ink2: #aeb8c6;
+    --muted: #727c8b;
+    --grid: #252a33;
+    --axis: #333a45;
+    --border: rgba(255, 255, 255, 0.11);
+    --accent: #5c9bff;
+    --accent-soft: rgba(92, 155, 255, 0.14);
+    --s1: #3987e5;
+    --s2: #008300;
+    --s3: #d55181;
+    --s4: #c98500;
+    --s5: #199e70;
+    --s6: #d95926;
+    --s7: #9085e9;
+    --s8: #e66767;
+    --a1: #79838f;
+    --a2: #3987e5;
+    --a3: #199e70;
+    --a4: #9085e9;
+    --o1: #9ec5f4;
+    --pos: #3987e5;
+    --neg: #e66767;
+    color-scheme: dark;
+  }
+
+  .ai-report h1,
+  .ai-report h2 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* ---- a charts.js futásidőben épített SVG-belsői ----
+     Ezekre nem lehet utility-t húzni: a markupot JS generálja. */
+  .ai-report svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .ai-report .lbl {
+    fill: var(--ink);
+    font-size: 13px;
+  }
+  .ai-report .val {
+    fill: var(--ink);
+    font-size: 12.5px;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+  .ai-report .axk {
+    fill: var(--muted);
+    font-size: 11px;
+  }
+  .ai-report .barbg {
+    fill: var(--grid);
+    opacity: 0.5;
+  }
+  .ai-report .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 15px;
+    margin: 4px 0 14px;
+    font-size: 12.5px;
+    color: var(--ink2);
+  }
+  .ai-report .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ai-report .legend i {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  /* „teljes minta” plakett. A useCharts.js teszi ki azokra az ábrákra, amik a
+     választott szegmenst nem tudják mutatni — így nincs olyan ábra, ami
+     magyarázat nélkül nem reagál a választásra. */
+  .ai-report .rp-fullsample {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* a natív <details> nyíl elrejtése — a chevront magunk rajzoljuk */
+  .ai-report .rp-method > summary {
+    list-style: none;
+  }
+  .ai-report .rp-method > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* görgetéses megjelenés — JS nélkül / reduced motion mellett minden látszik */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-on .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    .reveal-on .reveal.in {
+      opacity: 1;
+      transform: none;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+  }
+}
+
+/* ===================================================================
+   NYOMTATÁS
+
+   Szándékosan réteg (`@layer`) nélkül: a réteg nélküli szabályok a
+   kaszkádban minden rétegezett szabály fölött állnak, így felülírják a
+   template-ekben lévő utility-osztályokat is. A print-elrendezés ezért
+   egyben marad ebben a blokkban, nem szóródik szét ~40 template-be.
+
+   A `.print-mode` osztály és a `@media print` ugyanazt a réteget kapja,
+   hogy a PDF-generálás fejléc nélküli headless Chrome-mal is
+   determinisztikus legyen.
+   =================================================================== */
+
+.ai-report .print-only {
+  display: none;
+}
+.ai-report.print-mode .print-only {
+  display: block;
+}
+.ai-report.print-mode .print-hide {
+  display: none;
+}
+
+@media print {
+  .ai-report .print-only {
+    display: block;
+  }
+  .ai-report .no-print {
+    display: none !important;
+  }
+}
+
+.ai-report.print-mode,
+.ai-report.print-mode .rp-card,
+.ai-report.print-mode .rp-finding {
+  background: #fff;
+}
+.ai-report.print-mode {
+  --plane: #fff;
+  --surface: #fff;
+  font-size: 12px;
+  line-height: 1.47;
+}
+.ai-report.print-mode .rp-wrap {
+  max-width: none;
+  padding: 0;
+}
+.ai-report.print-mode .rp-hero {
+  padding: 46mm 0 0;
+  min-height: 220mm;
+}
+.ai-report.print-mode .rp-h1 {
+  font-size: 62px;
+}
+.ai-report.print-mode .rp-deck {
+  font-size: 17px;
+  max-width: 46ch;
+}
+.ai-report.print-mode .rp-herostats {
+  margin-top: 34mm;
+}
+.ai-report.print-mode .rp-hstat-n {
+  font-size: 40px;
+}
+.ai-report.print-mode .rp-toc-page {
+  padding-top: 8mm;
+}
+.ai-report.print-mode .rp-toc-h {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+.ai-report.print-mode .rp-toc {
+  list-style: none;
+  counter-reset: tc;
+  padding: 0;
+  margin: 0 0 24px;
+  max-width: 380px;
+}
+.ai-report.print-mode .rp-toc li {
+  counter-increment: tc;
+  border-bottom: 1px solid var(--border);
+  padding: 9px 0;
+  font-size: 14px;
+  color: var(--ink2);
+  display: flex;
+  gap: 12px;
+}
+.ai-report.print-mode .rp-toc li::before {
+  content: counter(tc, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 3px;
+}
+.ai-report.print-mode .rp-toc-note {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 62ch;
+}
+.ai-report.print-mode .rp-chapter {
+  padding: 5mm 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 5mm;
+}
+.ai-report.print-mode .rp-chapter:first-of-type {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+.ai-report.print-mode .rp-h2 {
+  font-size: 26px;
+  margin-bottom: 7px;
+}
+.ai-report.print-mode .rp-subhead {
+  font-size: 18px;
+  margin: 20px 0 3px;
+}
+.ai-report.print-mode .rp-lead {
+  font-size: 13px;
+  max-width: 74ch;
+}
+.ai-report.print-mode .rp-insight,
+.ai-report.print-mode .rp-plain {
+  font-size: 11.5px;
+  max-width: none;
+  padding: 9px 13px;
+  margin: 11px 0 0;
+}
+.ai-report.print-mode .rp-summary {
+  gap: 8px;
+  margin: 16px 0 4px;
+}
+.ai-report.print-mode .rp-summary li {
+  font-size: 12.5px;
+}
+.ai-report.print-mode .rp-finding {
+  padding: 12px 14px;
+  gap: 12px;
+}
+.ai-report.print-mode .rp-finding p {
+  font-size: 11px;
+}
+.ai-report.print-mode .rp-finding-h {
+  font-size: 13px;
+}
+.ai-report.print-mode .rp-finding-n {
+  font-size: 20px;
+}
+.ai-report.print-mode .rp-card {
+  margin-top: 11px;
+  padding: 11px 12px 8px;
+  border-radius: 9px;
+}
+.ai-report.print-mode .rp-card-h {
+  font-size: 13.5px;
+}
+.ai-report.print-mode .rp-card-q {
+  margin-bottom: 9px;
+}
+.ai-report.print-mode .rp-grid2 {
+  gap: 11px;
+}
+.ai-report.print-mode .rp-findings {
+  gap: 8px;
+  margin-top: 14px;
+}
+.ai-report.print-mode .rp-chaptag {
+  font-size: 10.5px;
+  margin-bottom: 8px;
+}
+.ai-report.print-mode .rp-method {
+  background: #fafbfc;
+  margin-top: 12px;
+}
+.ai-report.print-mode .rp-method > summary {
+  display: none;
+}
+.ai-report.print-mode .rp-method-body {
+  padding: 11px 13px 12px;
+  font-size: 10.8px;
+  line-height: 1.55;
+}
+.ai-report.print-mode .rp-mh {
+  margin-top: 11px;
+}
+.ai-report.print-mode .rp-foot {
+  padding: 10px 0 0;
+  font-size: 9.5px;
+  break-before: avoid;
+}
+.ai-report.print-mode .rp-note {
+  font-size: 10px;
+  margin-top: 8px;
+}
+.ai-report.print-mode .legend {
+  font-size: 10.5px;
+  gap: 5px 11px;
+  margin-bottom: 9px;
+}
+.ai-report.print-mode .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* A4-en a teljes szélességű ábrák aránya miatt magasak lennének; a közel
+   négyzetes diagramokat szűkebb sávba fogjuk, hogy ne vigyenek el egy egész
+   oldalt. A viewBox miatt az arány megmarad, csak kisebb lesz. */
+.ai-report.print-mode [data-chart='corr'],
+.ai-report.print-mode [data-chart='cooc'],
+.ai-report.print-mode [data-chart='quadrant'] {
+  max-width: 96mm;
+  margin: 0 auto;
+}
+.ai-report.print-mode [data-chart='funnel'],
+.ai-report.print-mode [data-chart='gap'],
+.ai-report.print-mode [data-chart='archgrid'],
+.ai-report.print-mode [data-chart='risk'],
+.ai-report.print-mode [data-group] {
+  max-width: 150mm;
+  margin: 0 auto;
+}
+.ai-report.print-mode [data-chart='review-arch'],
+.ai-report.print-mode [data-chart='review-ratio'] {
+  max-width: 120mm;
+  margin: 0 auto;
+}
+
+/* Az A4 szélessége (~794px) a mobil-töréspontok alá esik, ezért nyomtatásban a
+   rácsok egyoszloposra esnének szét. Itt visszakényszerítjük az asztali
+   elrendezést. */
+.ai-report.print-mode .rp-grid2,
+.ai-report.print-mode .rp-findings {
+  grid-template-columns: 1fr 1fr;
+}
+.ai-report.print-mode .rp-archcards {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 16px 0 0;
+}
+.ai-report.print-mode .rp-archcard {
+  padding: 10px 11px 12px;
+}
+.ai-report.print-mode .rp-arch-pct {
+  font-size: 20px;
+}
+.ai-report.print-mode .rp-arch-tag {
+  font-size: 11.5px;
+}
+.ai-report.print-mode .rp-arch-rule {
+  font-size: 9.5px;
+}
+
+@page {
+  size: A4;
+  margin: 14mm 13mm;
+}
+
+@media print {
+  /* A borító és a tartalomjegyzék önálló oldal; a fejezetek utána folyamatosan
+     tördelődnek. A fejezetenkénti kényszerített oldaltörés fél-üres oldalakat
+     hagyna, ezért helyette árva- és fattyúsor-védelemre támaszkodunk. */
+  .ai-report .rp-hero {
+    break-after: page;
+  }
+  .ai-report .rp-chapter {
+    break-inside: auto;
+  }
+  /* A PDF a web szerkesztett változata: néhány másodlagos, a fő narratívát nem
+     vivő ábra kimarad belőle, hogy a terjedelem kezelhető maradjon. */
+  .ai-report .print-hide {
+    display: none !important;
+  }
+  /* Ábra és a hozzá tartozó cím ne szakadjon szét. */
+  .ai-report .rp-card,
+  .ai-report .rp-finding,
+  .ai-report .rp-archcard,
+  .ai-report .rp-insight,
+  .ai-report .rp-plain,
+  .ai-report .rp-method {
+    break-inside: avoid;
+  }
+  .ai-report .rp-h2,
+  .ai-report .rp-subhead {
+    break-after: avoid;
+  }
+  .ai-report .rp-lead {
+    break-before: avoid;
+  }
+}

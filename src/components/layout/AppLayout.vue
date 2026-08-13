@@ -20,6 +20,9 @@ const isBlogPostDetail = computed(() => route.name === 'blog-post-detail-en')
 
 const useChildTitle = computed(() => Boolean(route.meta.useChildTitle))
 
+/** Pages that bring their own width and spacing skip the shared content column. */
+const isFullBleed = computed(() => Boolean(route.meta.fullBleed))
+
 const pageTitle = computed(() => {
   const titleKey = typeof route.meta.titleKey === 'string' ? route.meta.titleKey : undefined
   const brand = t('common.companyName')
@@ -114,7 +117,8 @@ useHead(
   <div class="layout" contenteditable="false">
     <AppHeader />
     <main class="main">
-      <div class="main-inner">
+      <RouterView v-if="isFullBleed" />
+      <div v-else class="main-inner">
         <RouterView />
       </div>
     </main>

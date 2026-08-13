@@ -1020,9 +1020,9 @@
       "Nem ígérem, hogy a fejlesztői létszám csökkenthető lesz tőle.",
       "Nem szállítok olyan megoldást, ami egyetlen vendor egyetlen modelljéhez láncol titeket, ha ez nem tudatos döntés."
     ],
-    "quizTitle": "Még nem tartotok ott, hogy beszéljünk?",
-    "quizBody": "Töltsd ki az AI adoption felmérést: 16 kérdés arról, hogyan használjátok ma az AI-t — eszközök, policy, production kód, biztonság. Cserébe megkapod az összesített eredményt, vagyis azt, hogy a többi magyar fejlesztőcsapathoz képest hol tartotok.",
-    "quizCta": "Kitöltöm a felmérést",
+    "reportTitle": "Még nem tartotok ott, hogy beszéljünk?",
+    "reportBody": "Nézd meg a State of AI Dev 2026 riportot: magyar fejlesztők és mérnöki vezetők válaszai arról, mennyit ír már a gép, mit vett át az agent, ki ellenőrzi, és mennyi governance van mögötte. Jó kiindulás ahhoz, hogy lássátok, hol tartotok a többiekhez képest.",
+    "reportCta": "Elolvasom a riportot",
     "credibilityTitle": "Miért tőlem",
     "credibilityBody": "AWS Certified Solutions Architect – Associate és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
     "leadershipTitle": "Amit fel tudsz mutatni a vezetésnek",

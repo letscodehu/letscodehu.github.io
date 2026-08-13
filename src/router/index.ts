@@ -16,7 +16,7 @@ import ArchivePage from '../pages/ArchivePage.vue'
 import ArchivePostDetailPage from '../pages/ArchivePostDetailPage.vue'
 import ArchiveRedirectPage from '../pages/ArchiveRedirectPage.vue'
 import PrivacyPage from '../pages/PrivacyPage.vue'
-import QuizPage from '../pages/QuizPage.vue'
+import ReportPage from '../pages/ReportPage.vue'
 import SlackPage from '../pages/SlackPage.vue'
 import { archiveRedirects } from '../data/archive-redirects'
 
@@ -178,12 +178,21 @@ const childRoutes: RouteRecordRaw[] = [
     meta: { titleKey: 'privacy.pageTitle', descriptionKey: 'seo.descriptions.privacy' },
   },
   {
+    // A 2026-os AI-felmérés eredményriportja. A `quiz` útvonal a megszűnt
+    // kérdőívtől örökölt — a hivatkozások és a Google-találatok oda mutatnak,
+    // ezért az URL marad, csak a tartalom lett a riport.
     path: 'quiz',
-    name: 'quiz',
-    component: QuizPage,
-    meta: { title: 'Magyar fejlesztők és az AI – 2026-os felmérés' },
-    beforeEnter: (_to, _from, next) => {
-      if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/hu/')) {
+    name: 'ai-report',
+    component: ReportPage,
+    // A riport a teljes szélességet használja: nem a site tartalomsávjában,
+    // hanem közvetlenül a <main>-ben renderel (lásd AppLayout.vue).
+    meta: { useChildTitle: true, fullBleed: true },
+    // A riport magyar nyelvű, ezért /en/quiz átirányít. `to.path`-ból, nem
+    // window.location-ből: az utóbbi csak a navigáció véglegesítésekor
+    // frissül, így a guard a saját célpontján újra lefutna — végtelen
+    // átirányítás. (Ugyanez a minta a blog/archiv route-oknál is.)
+    beforeEnter: (to, _from, next) => {
+      if (!to.path.startsWith('/hu/')) {
         next({ path: '/hu/quiz' })
       } else {
         next()

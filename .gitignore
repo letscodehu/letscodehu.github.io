@@ -31,5 +31,7 @@ dist-ssr
 !.cursor/skills/
 !.cursor/skills/**
 
-# Lambda deploy artifact (built locally, not tracked)
-lambda/quiz-submit/quiz-submit.zip
+# The report's authoring workspace: notebook, compute.py and the raw survey export
+# (all.csv holds respondent names and e-mail addresses). Only the generated output
+# lives in the repo — src/components/report/, src/data/report_data.json and the PDF.
+/ai-quiz

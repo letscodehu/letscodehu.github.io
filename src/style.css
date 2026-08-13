@@ -1,3 +1,9 @@
+/* A rétegsorrend itt dől el, mert ez a legelső betöltött stíluslap (main.ts).
+   A site saját CSS-e réteg nélküli, tehát mindent felülír — kivéve azt a néhány
+   globális elem-szabályt lentebb, amit szándékosan a `base` rétegbe teszünk,
+   hogy a riport (src/components/report/) Tailwind-utility-jei felülírhassák. */
+@layer theme, base, components, utilities;
+
 :root {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-width: 1120px;
@@ -135,11 +141,16 @@ main {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+/* Rétegben, hogy a riport címsorai a saját `leading-*` / `tracking-*`
+   utility-jeiket használhassák. A site komponenseinek scoped CSS-e réteg
+   nélküli, azt tehát ez után is felülírja. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
 }
 
 .sr-only {

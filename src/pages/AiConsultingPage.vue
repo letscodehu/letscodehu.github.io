@@ -23,8 +23,8 @@ const contactRoute = computed(() => ({
   params: { lang: currentLang.value },
 }))
 
-/** The quiz is Hungarian-only, so the secondary CTA only makes sense on the HU page. */
-const showQuizCta = computed(() => currentLang.value === 'hu')
+/** The report is Hungarian-only, so the secondary CTA only makes sense on the HU page. */
+const showReportCta = computed(() => currentLang.value === 'hu')
 </script>
 
 <template>
@@ -112,15 +112,15 @@ const showQuizCta = computed(() => currentLang.value === 'hu')
       </BaseCard>
     </section>
 
-    <section v-if="showQuizCta" class="section">
-      <div class="quiz-cta">
-        <div class="quiz-cta-copy">
-          <h2 class="quiz-cta-title">{{ t('aiConsulting.quizTitle') }}</h2>
-          <p class="quiz-cta-body">{{ t('aiConsulting.quizBody') }}</p>
+    <section v-if="showReportCta" class="section">
+      <div class="report-cta">
+        <div class="report-cta-copy">
+          <h2 class="report-cta-title">{{ t('aiConsulting.reportTitle') }}</h2>
+          <p class="report-cta-body">{{ t('aiConsulting.reportBody') }}</p>
         </div>
-        <RouterLink class="quiz-cta-link" :to="{ name: 'quiz', params: { lang: currentLang } }">
+        <RouterLink class="report-cta-link" :to="{ name: 'ai-report', params: { lang: 'hu' } }">
           <BaseButton variant="ghost">
-            {{ t('aiConsulting.quizCta') }}
+            {{ t('aiConsulting.reportCta') }}
           </BaseButton>
         </RouterLink>
       </div>
@@ -368,7 +368,7 @@ const showQuizCta = computed(() => currentLang.value === 'hu')
   margin-bottom: 1.2rem;
 }
 
-.quiz-cta {
+.report-cta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -379,23 +379,24 @@ const showQuizCta = computed(() => currentLang.value === 'hu')
   padding: 1.4rem 1.6rem;
 }
 
-.quiz-cta-copy {
+.report-cta-copy {
   flex: 1 1 22rem;
 }
 
-.quiz-cta-title {
+.report-cta-title {
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
 }
 
-.quiz-cta-body {
+.report-cta-body {
   margin: 0;
   font-size: 0.9rem;
   color: var(--color-text-muted);
   max-width: 40rem;
 }
 
-.quiz-cta-link {
+.report-cta-link {
   display: inline-block;
 }
+
 </style>

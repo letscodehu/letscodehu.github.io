@@ -1,13 +1,5 @@
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
-  readonly VITE_RECAPTCHA_SITE_KEY: string
-}
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv
-}
-
 import 'vue-router'
 
 declare module 'vue-router' {
@@ -15,6 +7,8 @@ declare module 'vue-router' {
     titleKey?: string
     descriptionKey?: string
     useChildTitle?: boolean
+    /** Render the page directly in <main>, outside the shared content column. */
+    fullBleed?: boolean
   }
 }
 

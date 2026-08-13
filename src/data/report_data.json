@@ -1,0 +1,9506 @@
+{
+ "N": 175,
+ "distributions": {
+  "q01_usage_frequency": [
+   {
+    "label": "Egyáltalán nem",
+    "full": "Egyáltalán nem",
+    "n": 13,
+    "pct": 7.4
+   },
+   {
+    "label": "Alkalmanként",
+    "full": "Alkalmanként (havonta néhányszor)",
+    "n": 13,
+    "pct": 7.4
+   },
+   {
+    "label": "Rendszeresen (heti)",
+    "full": "Rendszeresen (hetente többször)",
+    "n": 35,
+    "pct": 20.0
+   },
+   {
+    "label": "Minden nap",
+    "full": "Minden nap",
+    "n": 46,
+    "pct": 26.3
+   },
+   {
+    "label": "Minden nap (legtöbb feladat)",
+    "full": "Minden nap, a legtöbb feladathoz",
+    "n": 68,
+    "pct": 38.9
+   }
+  ],
+  "q03_agents_autonomy": [
+   {
+    "label": "Egyáltalán nem",
+    "full": "Egyáltalán nem",
+    "n": 55,
+    "pct": 31.4
+   },
+   {
+    "label": "Csak kísérletezés",
+    "full": "Csak kísérletezünk vele",
+    "n": 23,
+    "pct": 13.1
+   },
+   {
+    "label": "Heti, kisebb taskok",
+    "full": "Heti szinten, kisebb taskokra",
+    "n": 29,
+    "pct": 16.6
+   },
+   {
+    "label": "Napi, workflow-része",
+    "full": "Napi szinten, a workflow szerves része",
+    "n": 68,
+    "pct": 38.9
+   }
+  ],
+  "q05_ai_code_ratio": [
+   {
+    "label": "0–10%",
+    "full": "0–10%",
+    "n": 23,
+    "pct": 13.1
+   },
+   {
+    "label": "11–30%",
+    "full": "11–30%",
+    "n": 23,
+    "pct": 13.1
+   },
+   {
+    "label": "31–50%",
+    "full": "31–50%",
+    "n": 29,
+    "pct": 16.6
+   },
+   {
+    "label": "51–70%",
+    "full": "51–70%",
+    "n": 34,
+    "pct": 19.4
+   },
+   {
+    "label": "71%+",
+    "full": "71%+",
+    "n": 50,
+    "pct": 28.6
+   },
+   {
+    "label": "Nincs rálátás",
+    "full": "Nem tudom / nincs rálátásom",
+    "n": 16,
+    "pct": 9.1
+   }
+  ],
+  "q08_company_policy": [
+   {
+    "label": "Van, és betartják",
+    "full": "Igen, és betartják",
+    "n": 75,
+    "pct": 42.9
+   },
+   {
+    "label": "Van, de nem követik",
+    "full": "Van valami, de senki sem követi",
+    "n": 20,
+    "pct": 11.4
+   },
+   {
+    "label": "Nincs, de terveznek",
+    "full": "Nincs, de terveznek készíteni",
+    "n": 22,
+    "pct": 12.6
+   },
+   {
+    "label": "Nincs, nem is terveznek",
+    "full": "Nincs, és nem is terveznek",
+    "n": 40,
+    "pct": 22.9
+   },
+   {
+    "label": "Egyedül / n.r.",
+    "full": "Egyedül dolgozom / nem releváns",
+    "n": 18,
+    "pct": 10.3
+   }
+  ],
+  "q09_shadow_ai": [
+   {
+    "label": "Soha, blokkolva",
+    "full": "Soha, szigorúan blokkolva van",
+    "n": 36,
+    "pct": 20.6
+   },
+   {
+    "label": "Nagyon ritkán",
+    "full": "Nagyon ritkán, véletlenül",
+    "n": 50,
+    "pct": 28.6
+   },
+   {
+    "label": "Előfordul („megoldjuk okosban”)",
+    "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+    "n": 37,
+    "pct": 21.1
+   },
+   {
+    "label": "Rendszeres gyakorlat",
+    "full": "Rendszeres gyakorlat",
+    "n": 16,
+    "pct": 9.1
+   },
+   {
+    "label": "Nincs rálátás",
+    "full": "Nincs rálátásom",
+    "n": 36,
+    "pct": 20.6
+   }
+  ],
+  "q10_local_vs_cloud": [
+   {
+    "label": "Kizárólag publikus felhő",
+    "full": "Kizárólag publikus felhőt használunk",
+    "n": 77,
+    "pct": 44.0
+   },
+   {
+    "label": "Főleg felhő, lokál teszt",
+    "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+    "n": 39,
+    "pct": 22.3
+   },
+   {
+    "label": "Vegyes / hibrid",
+    "full": "Vegyes (hibrid) használat",
+    "n": 29,
+    "pct": 16.6
+   },
+   {
+    "label": "Főként lokális modellek",
+    "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+    "n": 7,
+    "pct": 4.0
+   },
+   {
+    "label": "Nem tudom / n.r.",
+    "full": "Nem tudom / nem releváns",
+    "n": 23,
+    "pct": 13.1
+   }
+  ],
+  "q11_blocker": [
+   {
+    "label": "Nincs akadály",
+    "full": "Nincs akadály, már széles körben használjuk",
+    "n": 79,
+    "pct": 45.1
+   },
+   {
+    "label": "Minőség / megbízhatóság",
+    "full": "Minőség és megbízhatóság",
+    "n": 46,
+    "pct": 26.3
+   },
+   {
+    "label": "Biztonság / adatvédelem",
+    "full": "Biztonsági / adatvédelmi aggályok",
+    "n": 20,
+    "pct": 11.4
+   },
+   {
+    "label": "Hiányzó engedély / licenc",
+    "full": "Hiányzó vállalati engedély / licenc",
+    "n": 16,
+    "pct": 9.1
+   },
+   {
+    "label": "Szabályozás / EU AI Act",
+    "full": "Szabályozói megfelelőség / EU AI Act",
+    "n": 14,
+    "pct": 8.0
+   }
+  ],
+  "q12_company_type": [
+   {
+    "label": "Nagyvállalat",
+    "full": "Nagyvállalat / enterprise",
+    "n": 66,
+    "pct": 37.7
+   },
+   {
+    "label": "Startup / scale-up",
+    "full": "Startup / scale-up",
+    "n": 48,
+    "pct": 27.4
+   },
+   {
+    "label": "Ügynökség / szoftverház",
+    "full": "Ügynökség / szoftverház / outsourcing",
+    "n": 32,
+    "pct": 18.3
+   },
+   {
+    "label": "Freelancer",
+    "full": "Freelancer / saját vállalkozás",
+    "n": 29,
+    "pct": 16.6
+   }
+  ],
+  "q12b_role": [
+   {
+    "label": "Junior fejlesztő",
+    "full": "Junior fejlesztő",
+    "n": 8,
+    "pct": 4.6
+   },
+   {
+    "label": "Medior fejlesztő",
+    "full": "Medior fejlesztő",
+    "n": 18,
+    "pct": 10.3
+   },
+   {
+    "label": "Senior fejlesztő",
+    "full": "Senior fejlesztő",
+    "n": 68,
+    "pct": 38.9
+   },
+   {
+    "label": "Tech lead / architect",
+    "full": "Tech lead / architect",
+    "n": 34,
+    "pct": 19.4
+   },
+   {
+    "label": "Eng. manager",
+    "full": "Engineering manager / fejlesztési vezető",
+    "n": 12,
+    "pct": 6.9
+   },
+   {
+    "label": "CTO / VP / tulaj",
+    "full": "CTO / VP / cégtulajdonos",
+    "n": 16,
+    "pct": 9.1
+   },
+   {
+    "label": "Egyéb (PM/QA/DevOps)",
+    "full": "Egyéb (PM, QA, DevOps…)",
+    "n": 19,
+    "pct": 10.9
+   }
+  ],
+  "q13_training": [
+   {
+    "label": "Igen, céges",
+    "full": "Igen, céges keretből",
+    "n": 54,
+    "pct": 30.9
+   },
+   {
+    "label": "Igen, saját",
+    "full": "Igen, saját forrásból",
+    "n": 19,
+    "pct": 10.9
+   },
+   {
+    "label": "Nem, de szeretne",
+    "full": "Nem, de szeretnék",
+    "n": 33,
+    "pct": 18.9
+   },
+   {
+    "label": "Nem, nem is tervez",
+    "full": "Nem, és nem is tervezem",
+    "n": 69,
+    "pct": 39.4
+   }
+  ],
+  "q14_prompt_injection": [
+   {
+    "label": "Red teaming a release előtt",
+    "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+    "n": 13,
+    "pct": 7.4
+   },
+   {
+    "label": "Beépített védelem",
+    "full": "Vannak beépített védelmi vonalaink",
+    "n": 27,
+    "pct": 15.4
+   },
+   {
+    "label": "Alap tudatosság, nincs teszt",
+    "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+    "n": 57,
+    "pct": 32.6
+   },
+   {
+    "label": "Nem foglalkoznak vele",
+    "full": "Egyáltalán nem foglalkozunk vele",
+    "n": 36,
+    "pct": 20.6
+   },
+   {
+    "label": "Nem fejleszt LLM-integrációt",
+    "full": "Nem fejlesztünk LLM-integrációt",
+    "n": 42,
+    "pct": 24.0
+   }
+  ],
+  "q15_future_area": [
+   {
+    "label": "Prompt engineering",
+    "full": "Prompt engineering és hatékony használat",
+    "n": 50,
+    "pct": 28.6
+   },
+   {
+    "label": "AI-alapú architektúra",
+    "full": "AI-alapú szoftverarchitektúra",
+    "n": 36,
+    "pct": 20.6
+   },
+   {
+    "label": "LLM-integráció termékbe",
+    "full": "LLM integráció saját termékbe",
+    "n": 37,
+    "pct": 21.1
+   },
+   {
+    "label": "AI biztonság & etika",
+    "full": "AI biztonság és etika",
+    "n": 52,
+    "pct": 29.7
+   }
+  ]
+ },
+ "multi": {
+  "q02_tools": [
+   {
+    "label": "Claude Code",
+    "full": "Claude Code",
+    "n": 90,
+    "pct": 51.4
+   },
+   {
+    "label": "Chat-asszisztens (ChatGPT/Claude…)",
+    "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+    "n": 87,
+    "pct": 49.7
+   },
+   {
+    "label": "GitHub Copilot",
+    "full": "GitHub Copilot",
+    "n": 49,
+    "pct": 28.0
+   },
+   {
+    "label": "Codex (OpenAI)",
+    "full": "Codex (OpenAI)",
+    "n": 35,
+    "pct": 20.0
+   },
+   {
+    "label": "Egyéb agent / eszköz",
+    "full": "Egyéb agent / kódoló eszköz",
+    "n": 34,
+    "pct": 19.4
+   },
+   {
+    "label": "Cursor",
+    "full": "Cursor",
+    "n": 21,
+    "pct": 12.0
+   },
+   {
+    "label": "Gemini CLI",
+    "full": "Gemini CLI",
+    "n": 13,
+    "pct": 7.4
+   },
+   {
+    "label": "Nem használ AI-t",
+    "full": "Nem használok AI eszközt",
+    "n": 13,
+    "pct": 7.4
+   },
+   {
+    "label": "Windsurf",
+    "full": "Windsurf",
+    "n": 3,
+    "pct": 1.7
+   },
+   {
+    "label": "Kiro",
+    "full": "Kiro",
+    "n": 3,
+    "pct": 1.7
+   }
+  ],
+  "q04_workflow_shift": [
+   {
+    "label": "Boilerplate / Scaffolding",
+    "full": "Boilerplate / Scaffolding",
+    "n": 65,
+    "pct": 37.1
+   },
+   {
+    "label": "Dokumentáció & API-spec",
+    "full": "Dokumentáció és API specifikáció írása",
+    "n": 64,
+    "pct": 36.6
+   },
+   {
+    "label": "Unit & E2E tesztek",
+    "full": "Unit és E2E tesztek írása",
+    "n": 61,
+    "pct": 34.9
+   },
+   {
+    "label": "Legacy refaktor / migráció",
+    "full": "Legacy kód refaktorálása / migrálása",
+    "n": 51,
+    "pct": 29.1
+   },
+   {
+    "label": "Bug- & leak-izolálás",
+    "full": "Bugok és memory leak-ek izolálása",
+    "n": 35,
+    "pct": 20.0
+   },
+   {
+    "label": "Egyik sem",
+    "full": "Egyik sem / nem váltott ki manuális munkát",
+    "n": 26,
+    "pct": 14.9
+   }
+  ]
+ },
+ "scales": {
+  "q06_hallucination_review": {
+   "counts": [
+    36,
+    39,
+    44,
+    35,
+    21
+   ],
+   "mean": 2.81,
+   "na": 0
+  },
+  "q07_company_support": {
+   "counts": [
+    5,
+    9,
+    20,
+    29,
+    103
+   ],
+   "mean": 4.3,
+   "na": 9
+  }
+ },
+ "tools_per_person": {
+  "mean": 1.91,
+  "hist": {
+   "0": 13,
+   "1": 53,
+   "2": 60,
+   "3": 37,
+   "4": 10,
+   "5": 1,
+   "6": 1
+  }
+ },
+ "funnel": [
+  {
+   "label": "Használ AI-t a munkájában",
+   "n": 162,
+   "pct": 92.6
+  },
+  {
+   "label": "Legalább hetente használja",
+   "n": 149,
+   "pct": 85.1
+  },
+  {
+   "label": "Minden nap használja",
+   "n": 114,
+   "pct": 65.1
+  },
+  {
+   "label": "…és delegál is agentnek",
+   "n": 94,
+   "pct": 53.7
+  },
+  {
+   "label": "…hetente ad ki agent-taskot",
+   "n": 81,
+   "pct": 46.3
+  },
+  {
+   "label": "…naponta, a workflow részeként",
+   "n": 62,
+   "pct": 35.4
+  },
+  {
+   "label": "…és a kódja 50%+-a AI-generált",
+   "n": 55,
+   "pct": 31.4
+  }
+ ],
+ "archetypes": {
+  "order": [
+   "outsider",
+   "assistant",
+   "explorer",
+   "native"
+  ],
+  "defs": [
+   {
+    "key": "outsider",
+    "name": "Kívülálló",
+    "tagline": "Ritkán vagy egyáltalán nem nyúl AI-hoz",
+    "rule": "legfeljebb havi néhány alkalommal használ AI-t",
+    "n": 26,
+    "pct": 14.9
+   },
+   {
+    "key": "assistant",
+    "name": "Asszisztens-használó",
+    "tagline": "Heti/napi AI, de a kód az ő kezében marad",
+    "rule": "legalább hetente használ AI-t, de agentnek nem ad ki feladatot (vagy csak kísérletezik)",
+    "n": 56,
+    "pct": 32.0
+   },
+   {
+    "key": "explorer",
+    "name": "Agent-kísérletező",
+    "tagline": "Heti szinten delegál kisebb taskokat",
+    "rule": "heti szinten ad ki kisebb taskokat autonóm agentnek",
+    "n": 28,
+    "pct": 16.0
+   },
+   {
+    "key": "native",
+    "name": "AI-native",
+    "tagline": "Az agent a workflow szerves része",
+    "rule": "napi szinten delegál end-to-end feladatot autonóm agentnek",
+    "n": 65,
+    "pct": 37.1
+   }
+  ],
+  "profile": {
+   "metrics": [
+    {
+     "key": "daily",
+     "label": "Naponta használ AI-t",
+     "fmt": "pct"
+    },
+    {
+     "key": "ratio50",
+     "label": "A kód 50%+-a AI-generált",
+     "fmt": "pct"
+    },
+    {
+     "key": "tools",
+     "label": "Eszköz / fő",
+     "fmt": "num"
+    },
+    {
+     "key": "review",
+     "label": "Review-teher (1–5)",
+     "fmt": "num"
+    },
+    {
+     "key": "noblocker",
+     "label": "Szerinte nincs akadály",
+     "fmt": "pct"
+    },
+    {
+     "key": "support",
+     "label": "Céges támogatás (1–5)",
+     "fmt": "num"
+    },
+    {
+     "key": "policy",
+     "label": "Van működő AI-policy",
+     "fmt": "pct"
+    },
+    {
+     "key": "training",
+     "label": "Kapott AI-képzést",
+     "fmt": "pct"
+    },
+    {
+     "key": "shadow",
+     "label": "Előfordul shadow AI",
+     "fmt": "pct"
+    },
+    {
+     "key": "secgap",
+     "label": "Nincs LLM-biztonsági teszt",
+     "fmt": "pct"
+    }
+   ],
+   "rows": [
+    {
+     "key": "outsider",
+     "label": "Kívülálló",
+     "n": 26,
+     "values": [
+      0.0,
+      11.5,
+      0.8,
+      2.6,
+      7.7,
+      3.1,
+      26.9,
+      23.1,
+      26.9,
+      50.0
+     ]
+    },
+    {
+     "key": "assistant",
+     "label": "Asszisztens-használó",
+     "n": 56,
+     "values": [
+      58.9,
+      26.8,
+      2.0,
+      3.1,
+      23.2,
+      4.2,
+      41.1,
+      42.9,
+      33.9,
+      58.9
+     ]
+    },
+    {
+     "key": "explorer",
+     "label": "Agent-kísérletező",
+     "n": 28,
+     "values": [
+      67.9,
+      28.6,
+      2.2,
+      3.1,
+      46.4,
+      4.5,
+      53.6,
+      57.1,
+      25.0,
+      67.9
+     ]
+    },
+    {
+     "key": "native",
+     "label": "AI-native",
+     "n": 65,
+     "values": [
+      95.4,
+      89.2,
+      2.2,
+      2.5,
+      78.5,
+      4.8,
+      46.2,
+      41.5,
+      30.8,
+      43.1
+     ]
+    }
+   ]
+  },
+  "index": [
+   {
+    "label": "Kívülálló",
+    "n": 26,
+    "maturity": 17.8,
+    "governance": 28.7
+   },
+   {
+    "label": "Asszisztens-használó",
+    "n": 56,
+    "maturity": 42.4,
+    "governance": 41.0
+   },
+   {
+    "label": "Agent-kísérletező",
+    "n": 28,
+    "maturity": 64.5,
+    "governance": 53.8
+   },
+   {
+    "label": "AI-native",
+    "n": 65,
+    "maturity": 92.8,
+    "governance": 49.3
+   }
+  ]
+ },
+ "crosstabs": {
+  "arch_x_ratio": {
+   "series": [
+    "0–10%",
+    "11–30%",
+    "31–50%",
+    "51–70%",
+    "71%+",
+    "Nincs rálátás"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      38.5,
+      3.8,
+      15.4,
+      7.7,
+      3.8,
+      30.8
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      17.9,
+      25.0,
+      23.2,
+      19.6,
+      7.1,
+      7.1
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      10.7,
+      28.6,
+      25.0,
+      14.3,
+      14.3,
+      7.1
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      0.0,
+      0.0,
+      7.7,
+      26.2,
+      63.1,
+      3.1
+     ]
+    }
+   ]
+  },
+  "arch_x_policy": {
+   "series": [
+    "Van, és betartják",
+    "Van, de nem követik",
+    "Nincs, de terveznek",
+    "Nincs, nem is terveznek",
+    "Egyedül / n.r."
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      26.9,
+      7.7,
+      7.7,
+      26.9,
+      30.8
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      41.1,
+      12.5,
+      10.7,
+      28.6,
+      7.1
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      53.6,
+      14.3,
+      10.7,
+      14.3,
+      7.1
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      46.2,
+      10.8,
+      16.9,
+      20.0,
+      6.2
+     ]
+    }
+   ]
+  },
+  "arch_x_shadow": {
+   "series": [
+    "Soha, blokkolva",
+    "Nagyon ritkán",
+    "Előfordul („megoldjuk okosban”)",
+    "Rendszeres gyakorlat",
+    "Nincs rálátás"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      19.2,
+      11.5,
+      19.2,
+      7.7,
+      42.3
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      16.1,
+      28.6,
+      30.4,
+      3.6,
+      21.4
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      21.4,
+      42.9,
+      17.9,
+      7.1,
+      10.7
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      24.6,
+      29.2,
+      15.4,
+      15.4,
+      15.4
+     ]
+    }
+   ]
+  },
+  "arch_x_security": {
+   "series": [
+    "Red teaming a release előtt",
+    "Beépített védelem",
+    "Alap tudatosság, nincs teszt",
+    "Nem foglalkoznak vele",
+    "Nem fejleszt LLM-integrációt"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      11.5,
+      0.0,
+      26.9,
+      23.1,
+      38.5
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      0.0,
+      14.3,
+      25.0,
+      33.9,
+      26.8
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      7.1,
+      14.3,
+      57.1,
+      10.7,
+      10.7
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      12.3,
+      23.1,
+      30.8,
+      12.3,
+      21.5
+     ]
+    }
+   ]
+  },
+  "arch_x_learning": {
+   "series": [
+    "Prompt engineering",
+    "AI-alapú architektúra",
+    "LLM-integráció termékbe",
+    "AI biztonság & etika"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      15.4,
+      7.7,
+      23.1,
+      53.8
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      39.3,
+      16.1,
+      16.1,
+      28.6
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      28.6,
+      17.9,
+      21.4,
+      32.1
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      24.6,
+      30.8,
+      24.6,
+      20.0
+     ]
+    }
+   ]
+  },
+  "arch_x_blocker": {
+   "series": [
+    "Nincs akadály",
+    "Minőség / megbízhatóság",
+    "Biztonság / adatvédelem",
+    "Hiányzó engedély / licenc",
+    "Szabályozás / EU AI Act"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      7.7,
+      34.6,
+      7.7,
+      15.4,
+      34.6
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      23.2,
+      46.4,
+      12.5,
+      12.5,
+      5.4
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      46.4,
+      21.4,
+      17.9,
+      10.7,
+      3.6
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      78.5,
+      7.7,
+      9.2,
+      3.1,
+      1.5
+     ]
+    }
+   ]
+  },
+  "companytype_x_arch": {
+   "series": [
+    "Kívülálló",
+    "Asszisztens-használó",
+    "Agent-kísérletező",
+    "AI-native"
+   ],
+   "rows": [
+    {
+     "label": "Nagyvállalat",
+     "total": 66,
+     "pct": [
+      9.1,
+      37.9,
+      19.7,
+      33.3
+     ]
+    },
+    {
+     "label": "Startup / scale-up",
+     "total": 48,
+     "pct": [
+      10.4,
+      29.2,
+      8.3,
+      52.1
+     ]
+    },
+    {
+     "label": "Ügynökség / szoftverház",
+     "total": 32,
+     "pct": [
+      6.2,
+      37.5,
+      21.9,
+      34.4
+     ]
+    },
+    {
+     "label": "Freelancer",
+     "total": 29,
+     "pct": [
+      44.8,
+      17.2,
+      13.8,
+      24.1
+     ]
+    }
+   ]
+  },
+  "companytype_x_ratio": {
+   "series": [
+    "0–10%",
+    "11–30%",
+    "31–50%",
+    "51–70%",
+    "71%+",
+    "Nincs rálátás"
+   ],
+   "rows": [
+    {
+     "label": "Nagyvállalat",
+     "total": 66,
+     "pct": [
+      21.2,
+      18.2,
+      16.7,
+      15.2,
+      24.2,
+      4.5
+     ]
+    },
+    {
+     "label": "Startup / scale-up",
+     "total": 48,
+     "pct": [
+      4.2,
+      8.3,
+      16.7,
+      20.8,
+      39.6,
+      10.4
+     ]
+    },
+    {
+     "label": "Ügynökség / szoftverház",
+     "total": 32,
+     "pct": [
+      6.2,
+      15.6,
+      21.9,
+      25.0,
+      28.1,
+      3.1
+     ]
+    },
+    {
+     "label": "Freelancer",
+     "total": 29,
+     "pct": [
+      17.2,
+      6.9,
+      10.3,
+      20.7,
+      20.7,
+      24.1
+     ]
+    }
+   ]
+  },
+  "companytype_x_autonomy": {
+   "series": [
+    "Egyáltalán nem",
+    "Csak kísérletezés",
+    "Heti, kisebb taskok",
+    "Napi, workflow-része"
+   ],
+   "rows": [
+    {
+     "label": "Nagyvállalat",
+     "total": 66,
+     "pct": [
+      28.8,
+      18.2,
+      19.7,
+      33.3
+     ]
+    },
+    {
+     "label": "Startup / scale-up",
+     "total": 48,
+     "pct": [
+      31.2,
+      6.2,
+      8.3,
+      54.2
+     ]
+    },
+    {
+     "label": "Ügynökség / szoftverház",
+     "total": 32,
+     "pct": [
+      34.4,
+      9.4,
+      21.9,
+      34.4
+     ]
+    },
+    {
+     "label": "Freelancer",
+     "total": 29,
+     "pct": [
+      34.5,
+      17.2,
+      17.2,
+      31.0
+     ]
+    }
+   ]
+  },
+  "companytype_x_security": {
+   "series": [
+    "Red teaming a release előtt",
+    "Beépített védelem",
+    "Alap tudatosság, nincs teszt",
+    "Nem foglalkoznak vele",
+    "Nem fejleszt LLM-integrációt"
+   ],
+   "rows": [
+    {
+     "label": "Nagyvállalat",
+     "total": 66,
+     "pct": [
+      9.1,
+      19.7,
+      25.8,
+      18.2,
+      27.3
+     ]
+    },
+    {
+     "label": "Startup / scale-up",
+     "total": 48,
+     "pct": [
+      4.2,
+      16.7,
+      43.8,
+      18.8,
+      16.7
+     ]
+    },
+    {
+     "label": "Ügynökség / szoftverház",
+     "total": 32,
+     "pct": [
+      3.1,
+      15.6,
+      40.6,
+      18.8,
+      21.9
+     ]
+    },
+    {
+     "label": "Freelancer",
+     "total": 29,
+     "pct": [
+      13.8,
+      3.4,
+      20.7,
+      31.0,
+      31.0
+     ]
+    }
+   ]
+  },
+  "role_x_autonomy": {
+   "series": [
+    "Egyáltalán nem",
+    "Csak kísérletezés",
+    "Heti, kisebb taskok",
+    "Napi, workflow-része"
+   ],
+   "rows": [
+    {
+     "label": "Junior fejlesztő",
+     "total": 8,
+     "pct": [
+      50.0,
+      0.0,
+      37.5,
+      12.5
+     ]
+    },
+    {
+     "label": "Medior fejlesztő",
+     "total": 18,
+     "pct": [
+      33.3,
+      27.8,
+      11.1,
+      27.8
+     ]
+    },
+    {
+     "label": "Senior fejlesztő",
+     "total": 68,
+     "pct": [
+      30.9,
+      14.7,
+      8.8,
+      45.6
+     ]
+    },
+    {
+     "label": "Tech lead / architect",
+     "total": 34,
+     "pct": [
+      17.6,
+      5.9,
+      20.6,
+      55.9
+     ]
+    },
+    {
+     "label": "Eng. manager",
+     "total": 12,
+     "pct": [
+      33.3,
+      16.7,
+      33.3,
+      16.7
+     ]
+    },
+    {
+     "label": "CTO / VP / tulaj",
+     "total": 16,
+     "pct": [
+      25.0,
+      0.0,
+      25.0,
+      50.0
+     ]
+    },
+    {
+     "label": "Egyéb (PM/QA/DevOps)",
+     "total": 19,
+     "pct": [
+      52.6,
+      21.1,
+      15.8,
+      10.5
+     ]
+    }
+   ]
+  },
+  "role_x_learning": {
+   "series": [
+    "Prompt engineering",
+    "AI-alapú architektúra",
+    "LLM-integráció termékbe",
+    "AI biztonság & etika"
+   ],
+   "rows": [
+    {
+     "label": "Junior fejlesztő",
+     "total": 8,
+     "pct": [
+      37.5,
+      12.5,
+      12.5,
+      37.5
+     ]
+    },
+    {
+     "label": "Medior fejlesztő",
+     "total": 18,
+     "pct": [
+      22.2,
+      11.1,
+      38.9,
+      27.8
+     ]
+    },
+    {
+     "label": "Senior fejlesztő",
+     "total": 68,
+     "pct": [
+      36.8,
+      19.1,
+      25.0,
+      19.1
+     ]
+    },
+    {
+     "label": "Tech lead / architect",
+     "total": 34,
+     "pct": [
+      20.6,
+      38.2,
+      14.7,
+      26.5
+     ]
+    },
+    {
+     "label": "Eng. manager",
+     "total": 12,
+     "pct": [
+      33.3,
+      25.0,
+      25.0,
+      16.7
+     ]
+    },
+    {
+     "label": "CTO / VP / tulaj",
+     "total": 16,
+     "pct": [
+      25.0,
+      18.8,
+      18.8,
+      37.5
+     ]
+    },
+    {
+     "label": "Egyéb (PM/QA/DevOps)",
+     "total": 19,
+     "pct": [
+      15.8,
+      5.3,
+      5.3,
+      73.7
+     ]
+    }
+   ]
+  },
+  "policy_x_shadow": {
+   "series": [
+    "Soha, blokkolva",
+    "Nagyon ritkán",
+    "Előfordul („megoldjuk okosban”)",
+    "Rendszeres gyakorlat",
+    "Nincs rálátás"
+   ],
+   "rows": [
+    {
+     "label": "Van, és betartják",
+     "total": 75,
+     "pct": [
+      29.3,
+      28.0,
+      20.0,
+      8.0,
+      14.7
+     ]
+    },
+    {
+     "label": "Van, de nem követik",
+     "total": 20,
+     "pct": [
+      15.0,
+      35.0,
+      20.0,
+      5.0,
+      25.0
+     ]
+    },
+    {
+     "label": "Nincs, de terveznek",
+     "total": 22,
+     "pct": [
+      9.1,
+      36.4,
+      18.2,
+      13.6,
+      22.7
+     ]
+    },
+    {
+     "label": "Nincs, nem is terveznek",
+     "total": 40,
+     "pct": [
+      15.0,
+      25.0,
+      30.0,
+      12.5,
+      17.5
+     ]
+    },
+    {
+     "label": "Egyedül / n.r.",
+     "total": 18,
+     "pct": [
+      16.7,
+      22.2,
+      11.1,
+      5.6,
+      44.4
+     ]
+    }
+   ]
+  },
+  "usage_x_blocker": {
+   "series": [
+    "Nincs akadály",
+    "Minőség / megbízhatóság",
+    "Biztonság / adatvédelem",
+    "Hiányzó engedély / licenc",
+    "Szabályozás / EU AI Act"
+   ],
+   "rows": [
+    {
+     "label": "Egyáltalán nem",
+     "total": 13,
+     "pct": [
+      0.0,
+      30.8,
+      7.7,
+      15.4,
+      46.2
+     ]
+    },
+    {
+     "label": "Alkalmanként",
+     "total": 13,
+     "pct": [
+      15.4,
+      38.5,
+      7.7,
+      15.4,
+      23.1
+     ]
+    },
+    {
+     "label": "Rendszeresen (heti)",
+     "total": 35,
+     "pct": [
+      14.3,
+      57.1,
+      17.1,
+      11.4,
+      0.0
+     ]
+    },
+    {
+     "label": "Minden nap",
+     "total": 46,
+     "pct": [
+      65.2,
+      15.2,
+      8.7,
+      6.5,
+      4.3
+     ]
+    },
+    {
+     "label": "Minden nap (legtöbb feladat)",
+     "total": 68,
+     "pct": [
+      61.8,
+      14.7,
+      11.8,
+      7.4,
+      4.4
+     ]
+    }
+   ]
+  }
+ },
+ "review": {
+  "by_ratio": [
+   {
+    "label": "0–10%",
+    "mean": 3.61,
+    "n": 23
+   },
+   {
+    "label": "11–30%",
+    "mean": 3.17,
+    "n": 23
+   },
+   {
+    "label": "31–50%",
+    "mean": 2.62,
+    "n": 29
+   },
+   {
+    "label": "51–70%",
+    "mean": 2.85,
+    "n": 34
+   },
+   {
+    "label": "71%+",
+    "mean": 2.5,
+    "n": 50
+   },
+   {
+    "label": "Nincs rálátás",
+    "mean": 2.31,
+    "n": 16
+   }
+  ],
+  "by_arch": [
+   {
+    "label": "Kívülálló",
+    "mean": 2.62,
+    "n": 26
+   },
+   {
+    "label": "Asszisztens-használó",
+    "mean": 3.11,
+    "n": 56
+   },
+   {
+    "label": "Agent-kísérletező",
+    "mean": 3.11,
+    "n": 28
+   },
+   {
+    "label": "AI-native",
+    "mean": 2.49,
+    "n": 65
+   }
+  ],
+  "by_agent": [
+   {
+    "label": "Egyáltalán nem",
+    "mean": 2.98,
+    "n": 55
+   },
+   {
+    "label": "Csak kísérletezés",
+    "mean": 2.91,
+    "n": 23
+   },
+   {
+    "label": "Heti, kisebb taskok",
+    "mean": 3.17,
+    "n": 29
+   },
+   {
+    "label": "Napi, workflow-része",
+    "mean": 2.47,
+    "n": 68
+   }
+  ]
+ },
+ "workflow_by_arch": {
+  "series": [
+   "Boilerplate / Scaffolding",
+   "Unit & E2E tesztek",
+   "Legacy refaktor / migráció",
+   "Dokumentáció & API-spec",
+   "Bug- & leak-izolálás",
+   "Egyik sem"
+  ],
+  "rows": [
+   {
+    "label": "Kívülálló",
+    "n": 26,
+    "pct": [
+     11.5,
+     3.8,
+     7.7,
+     7.7,
+     3.8,
+     69.2
+    ]
+   },
+   {
+    "label": "Asszisztens-használó",
+    "n": 56,
+    "pct": [
+     37.5,
+     39.3,
+     30.4,
+     37.5,
+     14.3,
+     12.5
+    ]
+   },
+   {
+    "label": "Agent-kísérletező",
+    "n": 28,
+    "pct": [
+     39.3,
+     39.3,
+     32.1,
+     46.4,
+     28.6,
+     3.6
+    ]
+   },
+   {
+    "label": "AI-native",
+    "n": 65,
+    "pct": [
+     46.2,
+     41.5,
+     35.4,
+     43.1,
+     27.7,
+     0.0
+    ]
+   }
+  ]
+ },
+ "tool_cooccurrence": {
+  "tools": [
+   "Claude Code",
+   "Chat-asszisztens (ChatGPT/Claude…)",
+   "GitHub Copilot",
+   "Codex (OpenAI)",
+   "Egyéb agent / eszköz",
+   "Cursor",
+   "Gemini CLI"
+  ],
+  "rows": [
+   {
+    "tool": "Claude Code",
+    "n": 90,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 48,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 28,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 26,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 18,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 10,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 9,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+    "n": 87,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 49,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 32,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 15,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 17,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 10,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 7,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "GitHub Copilot",
+    "n": 49,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 51,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 57,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 14,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 16,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 4,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 6,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "Codex (OpenAI)",
+    "n": 35,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 66,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 37,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 20,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 20,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 11,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 20,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "Egyéb agent / eszköz",
+    "n": 34,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 47,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 44,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 24,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 21,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "Cursor",
+      "pct": 12,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 12,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "Cursor",
+    "n": 21,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 43,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 43,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 10,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 19,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 19,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 100,
+      "self": true
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 10,
+      "self": false
+     }
+    ]
+   },
+   {
+    "tool": "Gemini CLI",
+    "n": 13,
+    "cells": [
+     {
+      "tool": "Claude Code",
+      "pct": 62,
+      "self": false
+     },
+     {
+      "tool": "Chat-asszisztens (ChatGPT/Claude…)",
+      "pct": 46,
+      "self": false
+     },
+     {
+      "tool": "GitHub Copilot",
+      "pct": 23,
+      "self": false
+     },
+     {
+      "tool": "Codex (OpenAI)",
+      "pct": 54,
+      "self": false
+     },
+     {
+      "tool": "Egyéb agent / eszköz",
+      "pct": 31,
+      "self": false
+     },
+     {
+      "tool": "Cursor",
+      "pct": 15,
+      "self": false
+     },
+     {
+      "tool": "Gemini CLI",
+      "pct": 100,
+      "self": true
+     }
+    ]
+   }
+  ]
+ },
+ "tools_by_arch": {
+  "series": [
+   "Claude Code",
+   "Chat-asszisztens (ChatGPT/Claude…)",
+   "GitHub Copilot",
+   "Codex (OpenAI)",
+   "Cursor"
+  ],
+  "rows": [
+   {
+    "label": "Kívülálló",
+    "n": 26,
+    "pct": [
+     0.0,
+     38.5,
+     23.1,
+     0.0,
+     3.8
+    ]
+   },
+   {
+    "label": "Asszisztens-használó",
+    "n": 56,
+    "pct": [
+     42.9,
+     62.5,
+     33.9,
+     23.2,
+     7.1
+    ]
+   },
+   {
+    "label": "Agent-kísérletező",
+    "n": 28,
+    "pct": [
+     60.7,
+     67.9,
+     39.3,
+     10.7,
+     17.9
+    ]
+   },
+   {
+    "label": "AI-native",
+    "n": 65,
+    "pct": [
+     75.4,
+     35.4,
+     20.0,
+     29.2,
+     16.9
+    ]
+   }
+  ]
+ },
+ "tools_by_segment": {
+  "series": [
+   "Claude Code",
+   "Chat-asszisztens (ChatGPT/Claude…)",
+   "GitHub Copilot",
+   "Codex (OpenAI)",
+   "Egyéb agent / eszköz"
+  ],
+  "rows": [
+   {
+    "label": "Nagyvállalat",
+    "n": 66,
+    "pct": [
+     56.1,
+     53.0,
+     47.0,
+     21.2,
+     22.7
+    ]
+   },
+   {
+    "label": "Startup / scale-up",
+    "n": 48,
+    "pct": [
+     64.6,
+     39.6,
+     14.6,
+     16.7,
+     20.8
+    ]
+   },
+   {
+    "label": "Ügynökség / szoftverház",
+    "n": 32,
+    "pct": [
+     56.2,
+     53.1,
+     15.6,
+     28.1,
+     21.9
+    ]
+   },
+   {
+    "label": "Freelancer",
+    "n": 29,
+    "pct": [
+     13.8,
+     55.2,
+     20.7,
+     13.8,
+     6.9
+    ]
+   }
+  ]
+ },
+ "gap": {
+  "adoption": [
+   {
+    "label": "Naponta használ AI-t",
+    "pct": 65.1
+   },
+   {
+    "label": "Naponta delegál agentnek",
+    "pct": 38.9
+   },
+   {
+    "label": "A kód 50%+-a AI-generált",
+    "pct": 48.0
+   },
+   {
+    "label": "Cége aktívan ösztönzi (4–5)",
+    "pct": 75.4
+   }
+  ],
+  "governance": [
+   {
+    "label": "Van működő AI-policy",
+    "pct": 42.9
+   },
+   {
+    "label": "Kapott céges AI-képzést",
+    "pct": 30.9
+   },
+   {
+    "label": "Van LLM-biztonsági védelme",
+    "pct": 22.9
+   },
+   {
+    "label": "Nem kizárólag publikus felhő",
+    "pct": 56.0
+   }
+  ]
+ },
+ "quadrant": {
+  "mean_maturity": 61.0,
+  "mean_governance": 44.3,
+  "company": [
+   {
+    "label": "Nagyvállalat",
+    "n": 66,
+    "x": 59.6,
+    "y": 66.6
+   },
+   {
+    "label": "Startup / scale-up",
+    "n": 48,
+    "x": 68.3,
+    "y": 31.4
+   },
+   {
+    "label": "Ügynökség / szoftverház",
+    "n": 32,
+    "x": 65.1,
+    "y": 39.7
+   },
+   {
+    "label": "Freelancer",
+    "n": 29,
+    "x": 47.6,
+    "y": 20.0
+   }
+  ],
+  "arch": [
+   {
+    "label": "Kívülálló",
+    "n": 26,
+    "x": 17.8,
+    "y": 28.7
+   },
+   {
+    "label": "Asszisztens-használó",
+    "n": 56,
+    "x": 42.4,
+    "y": 41.0
+   },
+   {
+    "label": "Agent-kísérletező",
+    "n": 28,
+    "x": 64.5,
+    "y": 53.8
+   },
+   {
+    "label": "AI-native",
+    "n": 65,
+    "x": 92.8,
+    "y": 49.3
+   }
+  ]
+ },
+ "security": {
+  "builders_n": 133,
+  "builders_pct": 76,
+  "no_test_pct": 70,
+  "no_test_n": 93,
+  "none_pct": 27,
+  "redteam_pct": 10,
+  "redteam_n": 13,
+  "builders_dist": [
+   {
+    "label": "Red teaming a release előtt",
+    "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+    "n": 13,
+    "pct": 9.8
+   },
+   {
+    "label": "Beépített védelem",
+    "full": "Vannak beépített védelmi vonalaink",
+    "n": 27,
+    "pct": 20.3
+   },
+   {
+    "label": "Alap tudatosság, nincs teszt",
+    "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+    "n": 57,
+    "pct": 42.9
+   },
+   {
+    "label": "Nem foglalkoznak vele",
+    "full": "Egyáltalán nem foglalkozunk vele",
+    "n": 36,
+    "pct": 27.1
+   }
+  ]
+ },
+ "learning": {
+  "overall": [
+   {
+    "label": "Prompt engineering",
+    "full": "Prompt engineering és hatékony használat",
+    "n": 50,
+    "pct": 28.6
+   },
+   {
+    "label": "AI-alapú architektúra",
+    "full": "AI-alapú szoftverarchitektúra",
+    "n": 36,
+    "pct": 20.6
+   },
+   {
+    "label": "LLM-integráció termékbe",
+    "full": "LLM integráció saját termékbe",
+    "n": 37,
+    "pct": 21.1
+   },
+   {
+    "label": "AI biztonság & etika",
+    "full": "AI biztonság és etika",
+    "n": 52,
+    "pct": 29.7
+   }
+  ],
+  "by_arch": {
+   "series": [
+    "Prompt engineering",
+    "AI-alapú architektúra",
+    "LLM-integráció termékbe",
+    "AI biztonság & etika"
+   ],
+   "rows": [
+    {
+     "label": "Kívülálló",
+     "total": 26,
+     "pct": [
+      15.4,
+      7.7,
+      23.1,
+      53.8
+     ]
+    },
+    {
+     "label": "Asszisztens-használó",
+     "total": 56,
+     "pct": [
+      39.3,
+      16.1,
+      16.1,
+      28.6
+     ]
+    },
+    {
+     "label": "Agent-kísérletező",
+     "total": 28,
+     "pct": [
+      28.6,
+      17.9,
+      21.4,
+      32.1
+     ]
+    },
+    {
+     "label": "AI-native",
+     "total": 65,
+     "pct": [
+      24.6,
+      30.8,
+      24.6,
+      20.0
+     ]
+    }
+   ]
+  },
+  "training_x_support": [
+   {
+    "label": "Igen, céges",
+    "mean": 4.62,
+    "n": 52
+   },
+   {
+    "label": "Igen, saját",
+    "mean": 4.32,
+    "n": 19
+   },
+   {
+    "label": "Nem, de szeretne",
+    "mean": 4.16,
+    "n": 32
+   },
+   {
+    "label": "Nem, nem is tervez",
+    "mean": 4.11,
+    "n": 63
+   }
+  ]
+ },
+ "training_x_support": [
+  {
+   "label": "Igen, céges",
+   "mean": 4.62,
+   "n": 52
+  },
+  {
+   "label": "Igen, saját",
+   "mean": 4.32,
+   "n": 19
+  },
+  {
+   "label": "Nem, de szeretne",
+   "mean": 4.16,
+   "n": 32
+  },
+  {
+   "label": "Nem, nem is tervez",
+   "mean": 4.11,
+   "n": 63
+  }
+ ],
+ "corr": {
+  "labels": [
+   "Használati gyak.",
+   "Agent-autonómia",
+   "AI-kódarány",
+   "Eszközök száma",
+   "Céges támogatás",
+   "Governance-index",
+   "Review-teher"
+  ],
+  "matrix": [
+   [
+    1.0,
+    0.44,
+    0.5,
+    0.41,
+    0.38,
+    0.16,
+    -0.14
+   ],
+   [
+    0.44,
+    1.0,
+    0.67,
+    0.24,
+    0.4,
+    0.15,
+    -0.16
+   ],
+   [
+    0.5,
+    0.67,
+    1.0,
+    0.13,
+    0.36,
+    0.02,
+    -0.26
+   ],
+   [
+    0.41,
+    0.24,
+    0.13,
+    1.0,
+    0.2,
+    0.28,
+    0.09
+   ],
+   [
+    0.38,
+    0.4,
+    0.36,
+    0.2,
+    1.0,
+    0.36,
+    -0.02
+   ],
+   [
+    0.16,
+    0.15,
+    0.02,
+    0.28,
+    0.36,
+    1.0,
+    0.11
+   ],
+   [
+    -0.14,
+    -0.16,
+    -0.26,
+    0.09,
+    -0.02,
+    0.11,
+    1.0
+   ]
+  ]
+ },
+ "corr_maturity_governance": 0.16,
+ "risk": {
+  "dims": [
+   "Shadow-AI szivárgás",
+   "Policy-hiány",
+   "Publikus-felhő kitettség",
+   "LLM-biztonsági rés",
+   "Képzéshiány"
+  ],
+  "rows": [
+   {
+    "segment": "Startup / scale-up",
+    "n": 48,
+    "parts": [
+     9.7,
+     10.9,
+     17.0,
+     10.9,
+     15.0
+    ],
+    "total": 63.5
+   },
+   {
+    "segment": "Freelancer",
+    "n": 29,
+    "parts": [
+     10.3,
+     10.6,
+     10.7,
+     9.3,
+     16.6
+    ],
+    "total": 57.5
+   },
+   {
+    "segment": "Ügynökség / szoftverház",
+    "n": 32,
+    "parts": [
+     8.2,
+     11.4,
+     14.0,
+     10.4,
+     11.8
+    ],
+    "total": 55.8
+   },
+   {
+    "segment": "Nagyvállalat",
+    "n": 66,
+    "parts": [
+     7.2,
+     4.5,
+     13.5,
+     8.4,
+     5.7
+    ],
+    "total": 39.3
+   }
+  ],
+  "overall": {
+   "parts": [
+    8.6,
+    8.5,
+    14.1,
+    9.6,
+    11.2
+   ],
+   "total": 52.0
+  }
+ },
+ "headline": {
+  "N": 175,
+  "any_ai": 93,
+  "weekly_plus": 85,
+  "daily": 65,
+  "high_ratio": 48,
+  "very_high_ratio": 29,
+  "agent_daily": 39,
+  "agent_any": 69,
+  "agent_weekly": 55,
+  "top_tool": {
+   "label": "Claude Code",
+   "full": "Claude Code",
+   "n": 90,
+   "pct": 51.4
+  },
+  "support_mean": 4.3,
+  "support_high": 75,
+  "review_mean": 2.81,
+  "no_policy": 47,
+  "policy_ok": 43,
+  "shadow": 30,
+  "no_secprep": 53,
+  "cloud_only": 44,
+  "no_training": 58,
+  "company_training": 31,
+  "tools_per_person": 1.91,
+  "native_pct": 37,
+  "native_n": 65,
+  "outsider_pct": 15,
+  "native_shadow": 31,
+  "native_shadow_regular": 15,
+  "native_no_policy": 48,
+  "native_support": 4.8,
+  "mean_maturity": 61.0,
+  "mean_governance": 44.3,
+  "corr_mat_gov": 0.16,
+  "sec_no_test": 70,
+  "sec_redteam": 10,
+  "builders_n": 133,
+  "date_first": "July 10, 2026 10:13 PM (GMT+2)",
+  "date_last": "June 30, 2026 9:11 AM (GMT+2)"
+ },
+ "role_agent_daily": {
+  "Junior fejlesztő": {
+   "pct": 12,
+   "n": 8
+  },
+  "Medior fejlesztő": {
+   "pct": 28,
+   "n": 18
+  },
+  "Senior fejlesztő": {
+   "pct": 46,
+   "n": 68
+  },
+  "Tech lead / architect": {
+   "pct": 56,
+   "n": 34
+  },
+  "Eng. manager": {
+   "pct": 17,
+   "n": 12
+  },
+  "CTO / VP / tulaj": {
+   "pct": 50,
+   "n": 16
+  },
+  "Egyéb (PM/QA/DevOps)": {
+   "pct": 11,
+   "n": 19
+  }
+ },
+ "segments": {
+  "dims": [
+   {
+    "key": "companytype",
+    "options": [
+     {
+      "key": "Nagyvállalat",
+      "label": "Nagyvállalat",
+      "full": "Nagyvállalat / enterprise",
+      "n": 66,
+      "rows": [
+       "Nagyvállalat"
+      ]
+     },
+     {
+      "key": "Startup / scale-up",
+      "label": "Startup / scale-up",
+      "full": "Startup / scale-up",
+      "n": 48,
+      "rows": [
+       "Startup / scale-up"
+      ]
+     },
+     {
+      "key": "Ügynökség / szoftverház",
+      "label": "Ügynökség / szoftverház",
+      "full": "Ügynökség / szoftverház / outsourcing",
+      "n": 32,
+      "rows": [
+       "Ügynökség / szoftverház"
+      ]
+     },
+     {
+      "key": "Freelancer",
+      "label": "Freelancer",
+      "full": "Freelancer / saját vállalkozás",
+      "n": 29,
+      "rows": [
+       "Freelancer"
+      ]
+     }
+    ]
+   },
+   {
+    "key": "arch",
+    "options": [
+     {
+      "key": "Kívülálló",
+      "label": "Kívülálló",
+      "full": "Kívülálló — Ritkán vagy egyáltalán nem nyúl AI-hoz",
+      "n": 26,
+      "rows": [
+       "Kívülálló"
+      ]
+     },
+     {
+      "key": "Asszisztens-használó",
+      "label": "Asszisztens-használó",
+      "full": "Asszisztens-használó — Heti/napi AI, de a kód az ő kezében marad",
+      "n": 56,
+      "rows": [
+       "Asszisztens-használó"
+      ]
+     },
+     {
+      "key": "Agent-kísérletező",
+      "label": "Agent-kísérletező",
+      "full": "Agent-kísérletező — Heti szinten delegál kisebb taskokat",
+      "n": 28,
+      "rows": [
+       "Agent-kísérletező"
+      ]
+     },
+     {
+      "key": "AI-native",
+      "label": "AI-native",
+      "full": "AI-native — Az agent a workflow szerves része",
+      "n": 65,
+      "rows": [
+       "AI-native"
+      ]
+     }
+    ]
+   },
+   {
+    "key": "role",
+    "options": [
+     {
+      "key": "Junior / medior",
+      "label": "Junior / medior",
+      "full": "Junior fejlesztő · Medior fejlesztő",
+      "n": 26,
+      "rows": [
+       "Junior fejlesztő",
+       "Medior fejlesztő"
+      ]
+     },
+     {
+      "key": "Senior",
+      "label": "Senior",
+      "full": "Senior fejlesztő",
+      "n": 68,
+      "rows": [
+       "Senior fejlesztő"
+      ]
+     },
+     {
+      "key": "Tech lead / architect",
+      "label": "Tech lead / architect",
+      "full": "Tech lead / architect",
+      "n": 34,
+      "rows": [
+       "Tech lead / architect"
+      ]
+     },
+     {
+      "key": "Vezetők",
+      "label": "Vezetők",
+      "full": "Eng. manager · CTO / VP / tulaj",
+      "n": 28,
+      "rows": [
+       "Eng. manager",
+       "CTO / VP / tulaj"
+      ]
+     }
+    ]
+   }
+  ],
+  "data": {
+   "companytype:Nagyvállalat": {
+    "n": 66,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 2,
+       "pct": 3.0
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 4,
+       "pct": 6.1
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 16,
+       "pct": 24.2
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 20,
+       "pct": 30.3
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 24,
+       "pct": 36.4
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 19,
+       "pct": 28.8
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 12,
+       "pct": 18.2
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 13,
+       "pct": 19.7
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 22,
+       "pct": 33.3
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 14,
+       "pct": 21.2
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 12,
+       "pct": 18.2
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 11,
+       "pct": 16.7
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 10,
+       "pct": 15.2
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 16,
+       "pct": 24.2
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 3,
+       "pct": 4.5
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 47,
+       "pct": 71.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 9,
+       "pct": 13.6
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 4,
+       "pct": 6.1
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 5,
+       "pct": 7.6
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 1,
+       "pct": 1.5
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 22,
+       "pct": 33.3
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 16,
+       "pct": 24.2
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 12,
+       "pct": 18.2
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 5,
+       "pct": 7.6
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 11,
+       "pct": 16.7
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 26,
+       "pct": 39.4
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 16,
+       "pct": 24.2
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 14,
+       "pct": 21.2
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 3,
+       "pct": 4.5
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 7,
+       "pct": 10.6
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 28,
+       "pct": 42.4
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 19,
+       "pct": 28.8
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 8,
+       "pct": 12.1
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 8,
+       "pct": 12.1
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 3,
+       "pct": 4.5
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 66,
+       "pct": 100.0
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 4,
+       "pct": 6.1
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 10,
+       "pct": 15.2
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 28,
+       "pct": 42.4
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 16,
+       "pct": 24.2
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 4,
+       "pct": 6.1
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 4,
+       "pct": 6.1
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 38,
+       "pct": 57.6
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 10,
+       "pct": 15.2
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 7,
+       "pct": 10.6
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 11,
+       "pct": 16.7
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 6,
+       "pct": 9.1
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 13,
+       "pct": 19.7
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 17,
+       "pct": 25.8
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 12,
+       "pct": 18.2
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 18,
+       "pct": 27.3
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 18,
+       "pct": 27.3
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 17,
+       "pct": 25.8
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 17,
+       "pct": 25.8
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 14,
+       "pct": 21.2
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 37,
+       "pct": 56.1
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 35,
+       "pct": 53.0
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 31,
+       "pct": 47.0
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 15,
+       "pct": 22.7
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 14,
+       "pct": 21.2
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 6,
+       "pct": 9.1
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 4,
+       "pct": 6.1
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 2,
+       "pct": 3.0
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 2,
+       "pct": 3.0
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 2,
+       "pct": 3.0
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 32,
+       "pct": 48.5
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 26,
+       "pct": 39.4
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 25,
+       "pct": 37.9
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 18,
+       "pct": 27.3
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 12,
+       "pct": 18.2
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 4,
+       "pct": 6.1
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 64,
+      "pct": 97.0
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 60,
+      "pct": 90.9
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 44,
+      "pct": 66.7
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 36,
+      "pct": 54.5
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 28,
+      "pct": 42.4
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 21,
+      "pct": 31.8
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 17,
+      "pct": 25.8
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 66.7
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 33.3
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 39.4
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 86.4
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 71.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 57.6
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 28.8
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 60.6
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       11,
+       11,
+       21,
+       14,
+       9
+      ],
+      "mean": 2.98
+     },
+     "q07_company_support": {
+      "counts": [
+       1,
+       3,
+       5,
+       10,
+       47
+      ],
+      "mean": 4.5
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 6,
+      "pct": 12.5
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 13,
+      "pct": 27.1
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 17,
+      "pct": 35.4
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 12,
+      "pct": 25.0
+     }
+    ]
+   },
+   "companytype:Startup / scale-up": {
+    "n": 48,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 3,
+       "pct": 6.2
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 9,
+       "pct": 18.8
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 12,
+       "pct": 25.0
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 22,
+       "pct": 45.8
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 15,
+       "pct": 31.2
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 3,
+       "pct": 6.2
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 4,
+       "pct": 8.3
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 26,
+       "pct": 54.2
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 4,
+       "pct": 8.3
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 8,
+       "pct": 16.7
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 10,
+       "pct": 20.8
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 19,
+       "pct": 39.6
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 5,
+       "pct": 10.4
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 15,
+       "pct": 31.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 4,
+       "pct": 8.3
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 8,
+       "pct": 16.7
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 17,
+       "pct": 35.4
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 4,
+       "pct": 8.3
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 7,
+       "pct": 14.6
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 14,
+       "pct": 29.2
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 10,
+       "pct": 20.8
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 7,
+       "pct": 14.6
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 10,
+       "pct": 20.8
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 32,
+       "pct": 66.7
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 11,
+       "pct": 22.9
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 3,
+       "pct": 6.2
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 27,
+       "pct": 56.2
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 11,
+       "pct": 22.9
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 7,
+       "pct": 14.6
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 1,
+       "pct": 2.1
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 48,
+       "pct": 100.0
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 3,
+       "pct": 6.2
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 23,
+       "pct": 47.9
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 10,
+       "pct": 20.8
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 3,
+       "pct": 6.2
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 4,
+       "pct": 8.3
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 3,
+       "pct": 6.2
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 4,
+       "pct": 8.3
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 5,
+       "pct": 10.4
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 15,
+       "pct": 31.2
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 24,
+       "pct": 50.0
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 2,
+       "pct": 4.2
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 8,
+       "pct": 16.7
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 21,
+       "pct": 43.8
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 9,
+       "pct": 18.8
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 8,
+       "pct": 16.7
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 15,
+       "pct": 31.2
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 11,
+       "pct": 22.9
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 6,
+       "pct": 12.5
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 16,
+       "pct": 33.3
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 31,
+       "pct": 64.6
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 19,
+       "pct": 39.6
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 10,
+       "pct": 20.8
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 8,
+       "pct": 16.7
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 8,
+       "pct": 16.7
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 7,
+       "pct": 14.6
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 3,
+       "pct": 6.2
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 3,
+       "pct": 6.2
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 25,
+       "pct": 52.1
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 17,
+       "pct": 35.4
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 14,
+       "pct": 29.2
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 13,
+       "pct": 27.1
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 11,
+       "pct": 22.9
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 7,
+       "pct": 14.6
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 45,
+      "pct": 93.8
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 43,
+      "pct": 89.6
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 34,
+      "pct": 70.8
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 29,
+      "pct": 60.4
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 28,
+      "pct": 58.3
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 24,
+      "pct": 50.0
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 23,
+      "pct": 47.9
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 70.8
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 54.2
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 60.4
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 72.9
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 31.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 8.3
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 20.8
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 33.3
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       15,
+       14,
+       5,
+       10,
+       4
+      ],
+      "mean": 2.46
+     },
+     "q07_company_support": {
+      "counts": [
+       1,
+       3,
+       6,
+       7,
+       28
+      ],
+      "mean": 4.29
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 2,
+      "pct": 5.0
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 8,
+      "pct": 20.0
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 21,
+      "pct": 52.5
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 9,
+      "pct": 22.5
+     }
+    ]
+   },
+   "companytype:Ügynökség / szoftverház": {
+    "n": 32,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 8,
+       "pct": 25.0
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 17,
+       "pct": 53.1
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 11,
+       "pct": 34.4
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 3,
+       "pct": 9.4
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 11,
+       "pct": 34.4
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 2,
+       "pct": 6.2
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 8,
+       "pct": 25.0
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 9,
+       "pct": 28.1
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 1,
+       "pct": 3.1
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 10,
+       "pct": 31.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 6,
+       "pct": 18.8
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 9,
+       "pct": 28.1
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 4,
+       "pct": 12.5
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 15,
+       "pct": 46.9
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 8,
+       "pct": 25.0
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 4,
+       "pct": 12.5
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 14,
+       "pct": 43.8
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 8,
+       "pct": 25.0
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 2,
+       "pct": 6.2
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 14,
+       "pct": 43.8
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 3,
+       "pct": 9.4
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 6,
+       "pct": 18.8
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 2,
+       "pct": 6.2
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 32,
+       "pct": 100.0
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 2,
+       "pct": 6.2
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 12,
+       "pct": 37.5
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 6,
+       "pct": 18.8
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 1,
+       "pct": 3.1
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 9,
+       "pct": 28.1
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 3,
+       "pct": 9.4
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 13,
+       "pct": 40.6
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 13,
+       "pct": 40.6
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 6,
+       "pct": 18.8
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 7,
+       "pct": 21.9
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 12,
+       "pct": 37.5
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 6,
+       "pct": 18.8
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 9,
+       "pct": 28.1
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 18,
+       "pct": 56.2
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 17,
+       "pct": 53.1
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 9,
+       "pct": 28.1
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 5,
+       "pct": 15.6
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 1,
+       "pct": 3.1
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 1,
+       "pct": 3.1
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 15,
+       "pct": 46.9
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 12,
+       "pct": 37.5
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 11,
+       "pct": 34.4
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 10,
+       "pct": 31.2
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 7,
+       "pct": 21.9
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 3,
+       "pct": 9.4
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 31,
+      "pct": 96.9
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 30,
+      "pct": 93.8
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 25,
+      "pct": 78.1
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 19,
+      "pct": 59.4
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 17,
+      "pct": 53.1
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 11,
+      "pct": 34.4
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 10,
+      "pct": 31.2
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 78.1
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 34.4
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 53.1
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 84.4
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 31.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 28.1
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 18.8
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 56.2
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       4,
+       7,
+       12,
+       6,
+       3
+      ],
+      "mean": 2.91
+     },
+     "q07_company_support": {
+      "counts": [
+       0,
+       1,
+       4,
+       8,
+       19
+      ],
+      "mean": 4.41
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 1,
+      "pct": 4.0
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 5,
+      "pct": 20.0
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 13,
+      "pct": 52.0
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 6,
+      "pct": 24.0
+     }
+    ]
+   },
+   "companytype:Freelancer": {
+    "n": 29,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 7,
+       "pct": 24.1
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 5,
+       "pct": 17.2
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 10,
+       "pct": 34.5
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 9,
+       "pct": 31.0
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 2,
+       "pct": 6.9
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 7,
+       "pct": 24.1
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 9,
+       "pct": 31.0
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 13,
+       "pct": 44.8
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 7,
+       "pct": 24.1
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 11,
+       "pct": 37.9
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 11,
+       "pct": 37.9
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 10,
+       "pct": 34.5
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 9,
+       "pct": 31.0
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 2,
+       "pct": 6.9
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 8,
+       "pct": 27.6
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 29,
+       "pct": 100.0
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 11,
+       "pct": 37.9
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 1,
+       "pct": 3.4
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 21,
+       "pct": 72.4
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 1,
+       "pct": 3.4
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 9,
+       "pct": 31.0
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 9,
+       "pct": 31.0
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 8,
+       "pct": 27.6
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 13,
+       "pct": 44.8
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 16,
+       "pct": 55.2
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 7,
+       "pct": 24.1
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 6,
+       "pct": 20.7
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 4,
+       "pct": 13.8
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 2,
+       "pct": 6.9
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 2,
+       "pct": 6.9
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 1,
+       "pct": 3.4
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 12,
+       "pct": 41.4
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 9,
+       "pct": 31.0
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 9,
+       "pct": 31.0
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 5,
+       "pct": 17.2
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 3,
+       "pct": 10.3
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 2,
+       "pct": 6.9
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 22,
+      "pct": 75.9
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 16,
+      "pct": 55.2
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 11,
+      "pct": 37.9
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 10,
+      "pct": 34.5
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 8,
+      "pct": 27.6
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 6,
+      "pct": 20.7
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 5,
+      "pct": 17.2
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 37.9
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 31.0
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 41.4
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 44.8
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 10.3
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 10.3
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 17.2
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 82.8
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       6,
+       7,
+       6,
+       5,
+       5
+      ],
+      "mean": 2.86
+     },
+     "q07_company_support": {
+      "counts": [
+       3,
+       2,
+       5,
+       4,
+       9
+      ],
+      "mean": 3.61
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 4,
+      "pct": 20.0
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 1,
+      "pct": 5.0
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 6,
+      "pct": 30.0
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 9,
+      "pct": 45.0
+     }
+    ]
+   },
+   "arch:Kívülálló": {
+    "n": 26,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 13,
+       "pct": 50.0
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 13,
+       "pct": 50.0
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 18,
+       "pct": 69.2
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 3,
+       "pct": 11.5
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 10,
+       "pct": 38.5
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 8,
+       "pct": 30.8
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 8,
+       "pct": 30.8
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 11,
+       "pct": 42.3
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 11,
+       "pct": 42.3
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 9,
+       "pct": 34.6
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 9,
+       "pct": 34.6
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 13,
+       "pct": 50.0
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 12,
+       "pct": 46.2
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 16,
+       "pct": 61.5
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 10,
+       "pct": 38.5
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 14,
+       "pct": 53.8
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 11,
+       "pct": 42.3
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 10,
+       "pct": 38.5
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 1,
+       "pct": 3.8
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 18,
+       "pct": 69.2
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 1,
+       "pct": 3.8
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 13,
+      "pct": 50.0
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 0,
+      "pct": 0.0
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 0.0
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 11.5
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 11.5
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 30.8
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 26.9
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 15.4
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 11.5
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 76.9
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       10,
+       4,
+       3,
+       4,
+       5
+      ],
+      "mean": 2.62
+     },
+     "q07_company_support": {
+      "counts": [
+       4,
+       4,
+       7,
+       2,
+       6
+      ],
+      "mean": 3.09
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 3,
+      "pct": 18.8
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 7,
+      "pct": 43.8
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 6,
+      "pct": 37.5
+     }
+    ]
+   },
+   "arch:Asszisztens-használó": {
+    "n": 56,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 23,
+       "pct": 41.1
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 12,
+       "pct": 21.4
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 21,
+       "pct": 37.5
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 37,
+       "pct": 66.1
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 19,
+       "pct": 33.9
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 10,
+       "pct": 17.9
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 14,
+       "pct": 25.0
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 13,
+       "pct": 23.2
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 11,
+       "pct": 19.6
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 4,
+       "pct": 7.1
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 4,
+       "pct": 7.1
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 23,
+       "pct": 41.1
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 7,
+       "pct": 12.5
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 6,
+       "pct": 10.7
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 16,
+       "pct": 28.6
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 4,
+       "pct": 7.1
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 9,
+       "pct": 16.1
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 16,
+       "pct": 28.6
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 17,
+       "pct": 30.4
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 2,
+       "pct": 3.6
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 12,
+       "pct": 21.4
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 30,
+       "pct": 53.6
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 9,
+       "pct": 16.1
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 9,
+       "pct": 16.1
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 1,
+       "pct": 1.8
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 7,
+       "pct": 12.5
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 13,
+       "pct": 23.2
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 26,
+       "pct": 46.4
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 7,
+       "pct": 12.5
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 7,
+       "pct": 12.5
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 3,
+       "pct": 5.4
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 25,
+       "pct": 44.6
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 14,
+       "pct": 25.0
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 12,
+       "pct": 21.4
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 5,
+       "pct": 8.9
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 4,
+       "pct": 7.1
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 10,
+       "pct": 17.9
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 24,
+       "pct": 42.9
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 7,
+       "pct": 12.5
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 6,
+       "pct": 10.7
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 1,
+       "pct": 1.8
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 4,
+       "pct": 7.1
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 18,
+       "pct": 32.1
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 6,
+       "pct": 10.7
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 12,
+       "pct": 21.4
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 20,
+       "pct": 35.7
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 8,
+       "pct": 14.3
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 14,
+       "pct": 25.0
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 19,
+       "pct": 33.9
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 15,
+       "pct": 26.8
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 22,
+       "pct": 39.3
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 9,
+       "pct": 16.1
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 9,
+       "pct": 16.1
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 16,
+       "pct": 28.6
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 35,
+       "pct": 62.5
+      },
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 24,
+       "pct": 42.9
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 19,
+       "pct": 33.9
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 13,
+       "pct": 23.2
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 10,
+       "pct": 17.9
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 4,
+       "pct": 7.1
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 4,
+       "pct": 7.1
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 1,
+       "pct": 1.8
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 1,
+       "pct": 1.8
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 22,
+       "pct": 39.3
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 21,
+       "pct": 37.5
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 21,
+       "pct": 37.5
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 17,
+       "pct": 30.4
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 8,
+       "pct": 14.3
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 7,
+       "pct": 12.5
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 56,
+      "pct": 100.0
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 56,
+      "pct": 100.0
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 33,
+      "pct": 58.9
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 13,
+      "pct": 23.2
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 0,
+      "pct": 0.0
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 58.9
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 0.0
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 26.8
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 73.2
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 41.1
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 32.1
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 14.3
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 46.4
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       9,
+       8,
+       15,
+       16,
+       8
+      ],
+      "mean": 3.11
+     },
+     "q07_company_support": {
+      "counts": [
+       1,
+       5,
+       6,
+       14,
+       27
+      ],
+      "mean": 4.15
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 8,
+      "pct": 19.5
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 14,
+      "pct": 34.1
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 19,
+      "pct": 46.3
+     }
+    ]
+   },
+   "arch:Agent-kísérletező": {
+    "n": 28,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 9,
+       "pct": 32.1
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 10,
+       "pct": 35.7
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 9,
+       "pct": 32.1
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 28,
+       "pct": 100.0
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 2,
+       "pct": 7.1
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 15,
+       "pct": 53.6
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 2,
+       "pct": 7.1
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 12,
+       "pct": 42.9
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 3,
+       "pct": 10.7
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 2,
+       "pct": 7.1
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 13,
+       "pct": 46.4
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 1,
+       "pct": 3.6
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 13,
+       "pct": 46.4
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 4,
+       "pct": 14.3
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Egyéb (PM/QA/DevOps)",
+       "full": "Egyéb (PM, QA, DevOps…)",
+       "n": 3,
+       "pct": 10.7
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 12,
+       "pct": 42.9
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 8,
+       "pct": 28.6
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 16,
+       "pct": 57.1
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 3,
+       "pct": 10.7
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 9,
+       "pct": 32.1
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 19,
+       "pct": 67.9
+      },
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 17,
+       "pct": 60.7
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 1,
+       "pct": 3.6
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 1,
+       "pct": 3.6
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 13,
+       "pct": 46.4
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 9,
+       "pct": 32.1
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 1,
+       "pct": 3.6
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 28,
+      "pct": 100.0
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 28,
+      "pct": 100.0
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 19,
+      "pct": 67.9
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 19,
+      "pct": 67.9
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 19,
+      "pct": 67.9
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 0,
+      "pct": 0.0
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 0,
+      "pct": 0.0
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 67.9
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 0.0
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 28.6
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 78.6
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 53.6
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 42.9
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 21.4
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 60.7
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       3,
+       5,
+       10,
+       6,
+       4
+      ],
+      "mean": 3.11
+     },
+     "q07_company_support": {
+      "counts": [
+       0,
+       0,
+       4,
+       6,
+       16
+      ],
+      "mean": 4.46
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 2,
+      "pct": 8.0
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 4,
+      "pct": 16.0
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 16,
+      "pct": 64.0
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 3,
+      "pct": 12.0
+     }
+    ]
+   },
+   "arch:AI-native": {
+    "n": 65,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 3,
+       "pct": 4.6
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 24,
+       "pct": 36.9
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 38,
+       "pct": 58.5
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 65,
+       "pct": 100.0
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 5,
+       "pct": 7.7
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 17,
+       "pct": 26.2
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 41,
+       "pct": 63.1
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 2,
+       "pct": 3.1
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 30,
+       "pct": 46.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 7,
+       "pct": 10.8
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 11,
+       "pct": 16.9
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 13,
+       "pct": 20.0
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 4,
+       "pct": 6.2
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 16,
+       "pct": 24.6
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 19,
+       "pct": 29.2
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 10,
+       "pct": 15.4
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 10,
+       "pct": 15.4
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 10,
+       "pct": 15.4
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 30,
+       "pct": 46.2
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 21,
+       "pct": 32.3
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 8,
+       "pct": 12.3
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 3,
+       "pct": 4.6
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 3,
+       "pct": 4.6
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 51,
+       "pct": 78.5
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 5,
+       "pct": 7.7
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 6,
+       "pct": 9.2
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 2,
+       "pct": 3.1
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 1,
+       "pct": 1.5
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 22,
+       "pct": 33.8
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 25,
+       "pct": 38.5
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 11,
+       "pct": 16.9
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 7,
+       "pct": 10.8
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 5,
+       "pct": 7.7
+      },
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 31,
+       "pct": 47.7
+      },
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 19,
+       "pct": 29.2
+      },
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 2,
+       "pct": 3.1
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 8,
+       "pct": 12.3
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 20,
+       "pct": 30.8
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 7,
+       "pct": 10.8
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 13,
+       "pct": 20.0
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 25,
+       "pct": 38.5
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 8,
+       "pct": 12.3
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 15,
+       "pct": 23.1
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 20,
+       "pct": 30.8
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 8,
+       "pct": 12.3
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 14,
+       "pct": 21.5
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 16,
+       "pct": 24.6
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 20,
+       "pct": 30.8
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 16,
+       "pct": 24.6
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 13,
+       "pct": 20.0
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 49,
+       "pct": 75.4
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 23,
+       "pct": 35.4
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 19,
+       "pct": 29.2
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 17,
+       "pct": 26.2
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 13,
+       "pct": 20.0
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 11,
+       "pct": 16.9
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 7,
+       "pct": 10.8
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 2,
+       "pct": 3.1
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 1,
+       "pct": 1.5
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 1,
+       "pct": 1.5
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 30,
+       "pct": 46.2
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 28,
+       "pct": 43.1
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 27,
+       "pct": 41.5
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 23,
+       "pct": 35.4
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 18,
+       "pct": 27.7
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 65,
+      "pct": 100.0
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 65,
+      "pct": 100.0
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 62,
+      "pct": 95.4
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 62,
+      "pct": 95.4
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 62,
+      "pct": 95.4
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 62,
+      "pct": 95.4
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 55,
+      "pct": 84.6
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 95.4
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 100.0
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 89.2
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 93.8
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 46.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 30.8
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 35.4
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 53.8
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       14,
+       22,
+       16,
+       9,
+       4
+      ],
+      "mean": 2.49
+     },
+     "q07_company_support": {
+      "counts": [
+       0,
+       0,
+       3,
+       7,
+       54
+      ],
+      "mean": 4.8
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 8,
+      "pct": 15.7
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 15,
+      "pct": 29.4
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 20,
+      "pct": 39.2
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 8,
+      "pct": 15.7
+     }
+    ]
+   },
+   "role:Junior / medior": {
+    "n": 26,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 9,
+       "pct": 34.6
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 8,
+       "pct": 30.8
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 10,
+       "pct": 38.5
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 6,
+       "pct": 23.1
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 3,
+       "pct": 11.5
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 12,
+       "pct": 46.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 2,
+       "pct": 7.7
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 8,
+       "pct": 30.8
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 7,
+       "pct": 26.9
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 12,
+       "pct": 46.2
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 3,
+       "pct": 11.5
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 10,
+       "pct": 38.5
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 1,
+       "pct": 3.8
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 14,
+       "pct": 53.8
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 7,
+       "pct": 26.9
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Junior fejlesztő",
+       "full": "Junior fejlesztő",
+       "n": 8,
+       "pct": 30.8
+      },
+      {
+       "label": "Medior fejlesztő",
+       "full": "Medior fejlesztő",
+       "n": 18,
+       "pct": 69.2
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 15,
+       "pct": 57.7
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 1,
+       "pct": 3.8
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 5,
+       "pct": 19.2
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 8,
+       "pct": 30.8
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 4,
+       "pct": 15.4
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 8,
+       "pct": 30.8
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 8,
+       "pct": 30.8
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 12,
+       "pct": 46.2
+      },
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 9,
+       "pct": 34.6
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 7,
+       "pct": 26.9
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 6,
+       "pct": 23.1
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 4,
+       "pct": 15.4
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 2,
+       "pct": 7.7
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 1,
+       "pct": 3.8
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 13,
+       "pct": 50.0
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 9,
+       "pct": 34.6
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 8,
+       "pct": 30.8
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 5,
+       "pct": 19.2
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 3,
+       "pct": 11.5
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 3,
+       "pct": 11.5
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 25,
+      "pct": 96.2
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 24,
+      "pct": 92.3
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 15,
+      "pct": 57.7
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 12,
+      "pct": 46.2
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 8,
+      "pct": 30.8
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 5,
+      "pct": 19.2
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 5,
+      "pct": 19.2
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 57.7
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 23.1
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 34.6
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 80.8
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 46.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 57.7
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 26.9
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 53.8
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       6,
+       6,
+       5,
+       5,
+       4
+      ],
+      "mean": 2.81
+     },
+     "q07_company_support": {
+      "counts": [
+       0,
+       1,
+       1,
+       5,
+       16
+      ],
+      "mean": 4.57
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 7,
+      "pct": 31.8
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 8,
+      "pct": 36.4
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 7,
+      "pct": 31.8
+     }
+    ]
+   },
+   "role:Senior": {
+    "n": 68,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 1,
+       "pct": 1.5
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 6,
+       "pct": 8.8
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 11,
+       "pct": 16.2
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 21,
+       "pct": 30.9
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 29,
+       "pct": 42.6
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 21,
+       "pct": 30.9
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 10,
+       "pct": 14.7
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 6,
+       "pct": 8.8
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 31,
+       "pct": 45.6
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 7,
+       "pct": 10.3
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 8,
+       "pct": 11.8
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 16,
+       "pct": 23.5
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 10,
+       "pct": 14.7
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 23,
+       "pct": 33.8
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 4,
+       "pct": 5.9
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 35,
+       "pct": 51.5
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 6,
+       "pct": 8.8
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 9,
+       "pct": 13.2
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 16,
+       "pct": 23.5
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 2,
+       "pct": 2.9
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 16,
+       "pct": 23.5
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 17,
+       "pct": 25.0
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 15,
+       "pct": 22.1
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 8,
+       "pct": 11.8
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 12,
+       "pct": 17.6
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 34,
+       "pct": 50.0
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 15,
+       "pct": 22.1
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 12,
+       "pct": 17.6
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 1,
+       "pct": 1.5
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 6,
+       "pct": 8.8
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 32,
+       "pct": 47.1
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 18,
+       "pct": 26.5
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 8,
+       "pct": 11.8
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 7,
+       "pct": 10.3
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 3,
+       "pct": 4.4
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 28,
+       "pct": 41.2
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 23,
+       "pct": 33.8
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 12,
+       "pct": 17.6
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 5,
+       "pct": 7.4
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Senior fejlesztő",
+       "full": "Senior fejlesztő",
+       "n": 68,
+       "pct": 100.0
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 20,
+       "pct": 29.4
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 11,
+       "pct": 16.2
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 15,
+       "pct": 22.1
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 22,
+       "pct": 32.4
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 7,
+       "pct": 10.3
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 7,
+       "pct": 10.3
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 23,
+       "pct": 33.8
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 12,
+       "pct": 17.6
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 19,
+       "pct": 27.9
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 25,
+       "pct": 36.8
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 13,
+       "pct": 19.1
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 17,
+       "pct": 25.0
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 13,
+       "pct": 19.1
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 38,
+       "pct": 55.9
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 32,
+       "pct": 47.1
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 24,
+       "pct": 35.3
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 17,
+       "pct": 25.0
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 14,
+       "pct": 20.6
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 7,
+       "pct": 10.3
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 5,
+       "pct": 7.4
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 2,
+       "pct": 2.9
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 1,
+       "pct": 1.5
+      },
+      {
+       "label": "Kiro",
+       "full": "Kiro",
+       "n": 1,
+       "pct": 1.5
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 31,
+       "pct": 45.6
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 25,
+       "pct": 36.8
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 23,
+       "pct": 33.8
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 21,
+       "pct": 30.9
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 18,
+       "pct": 26.5
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 5,
+       "pct": 7.4
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 67,
+      "pct": 98.5
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 61,
+      "pct": 89.7
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 50,
+      "pct": 73.5
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 40,
+      "pct": 58.8
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 34,
+      "pct": 50.0
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 30,
+      "pct": 44.1
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 25,
+      "pct": 36.8
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 73.5
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 45.6
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 48.5
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 85.3
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 51.5
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 29.4
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 20.6
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 50.0
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       13,
+       13,
+       15,
+       19,
+       8
+      ],
+      "mean": 2.94
+     },
+     "q07_company_support": {
+      "counts": [
+       0,
+       5,
+       4,
+       10,
+       48
+      ],
+      "mean": 4.51
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 7,
+      "pct": 14.3
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 7,
+      "pct": 14.3
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 23,
+      "pct": 46.9
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 12,
+      "pct": 24.5
+     }
+    ]
+   },
+   "role:Tech lead / architect": {
+    "n": 34,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 1,
+       "pct": 2.9
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 3,
+       "pct": 8.8
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 10,
+       "pct": 29.4
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 20,
+       "pct": 58.8
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 6,
+       "pct": 17.6
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 19,
+       "pct": 55.9
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 3,
+       "pct": 8.8
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 5,
+       "pct": 14.7
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 11,
+       "pct": 32.4
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 12,
+       "pct": 35.3
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 1,
+       "pct": 2.9
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 14,
+       "pct": 41.2
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 6,
+       "pct": 17.6
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 6,
+       "pct": 17.6
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 8,
+       "pct": 23.5
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 8,
+       "pct": 23.5
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 8,
+       "pct": 23.5
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 5,
+       "pct": 14.7
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 4,
+       "pct": 11.8
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 17,
+       "pct": 50.0
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 11,
+       "pct": 32.4
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 2,
+       "pct": 5.9
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 21,
+       "pct": 61.8
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Hiányzó engedély / licenc",
+       "full": "Hiányzó vállalati engedély / licenc",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 2,
+       "pct": 5.9
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 16,
+       "pct": 47.1
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 10,
+       "pct": 29.4
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 5,
+       "pct": 14.7
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 3,
+       "pct": 8.8
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Tech lead / architect",
+       "full": "Tech lead / architect",
+       "n": 34,
+       "pct": 100.0
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 4,
+       "pct": 11.8
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 6,
+       "pct": 17.6
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 15,
+       "pct": 44.1
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 4,
+       "pct": 11.8
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 10,
+       "pct": 29.4
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 4,
+       "pct": 11.8
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 13,
+       "pct": 38.2
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 5,
+       "pct": 14.7
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 9,
+       "pct": 26.5
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 24,
+       "pct": 70.6
+      },
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 18,
+       "pct": 52.9
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 8,
+       "pct": 23.5
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 7,
+       "pct": 20.6
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 2,
+       "pct": 5.9
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 1,
+       "pct": 2.9
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 1,
+       "pct": 2.9
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 16,
+       "pct": 47.1
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 15,
+       "pct": 44.1
+      },
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 15,
+       "pct": 44.1
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 9,
+       "pct": 26.5
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 1,
+       "pct": 2.9
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 33,
+      "pct": 97.1
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 33,
+      "pct": 97.1
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 30,
+      "pct": 88.2
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 27,
+      "pct": 79.4
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 26,
+      "pct": 76.5
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 19,
+      "pct": 55.9
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 17,
+      "pct": 50.0
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 88.2
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 55.9
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 67.6
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 85.3
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 41.2
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 26.5
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 32.4
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 50.0
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       6,
+       9,
+       10,
+       4,
+       5
+      ],
+      "mean": 2.79
+     },
+     "q07_company_support": {
+      "counts": [
+       1,
+       0,
+       4,
+       7,
+       22
+      ],
+      "mean": 4.44
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 4,
+      "pct": 13.3
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 7,
+      "pct": 23.3
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 9,
+      "pct": 30.0
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 10,
+      "pct": 33.3
+     }
+    ]
+   },
+   "role:Vezetők": {
+    "n": 28,
+    "distributions": {
+     "q01_usage_frequency": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Alkalmanként",
+       "full": "Alkalmanként (havonta néhányszor)",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Rendszeresen (heti)",
+       "full": "Rendszeresen (hetente többször)",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Minden nap",
+       "full": "Minden nap",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Minden nap (legtöbb feladat)",
+       "full": "Minden nap, a legtöbb feladathoz",
+       "n": 10,
+       "pct": 35.7
+      }
+     ],
+     "q03_agents_autonomy": [
+      {
+       "label": "Egyáltalán nem",
+       "full": "Egyáltalán nem",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Csak kísérletezés",
+       "full": "Csak kísérletezünk vele",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Heti, kisebb taskok",
+       "full": "Heti szinten, kisebb taskokra",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Napi, workflow-része",
+       "full": "Napi szinten, a workflow szerves része",
+       "n": 10,
+       "pct": 35.7
+      }
+     ],
+     "q05_ai_code_ratio": [
+      {
+       "label": "0–10%",
+       "full": "0–10%",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "11–30%",
+       "full": "11–30%",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "31–50%",
+       "full": "31–50%",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "51–70%",
+       "full": "51–70%",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "71%+",
+       "full": "71%+",
+       "n": 10,
+       "pct": 35.7
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nem tudom / nincs rálátásom",
+       "n": 1,
+       "pct": 3.6
+      }
+     ],
+     "q08_company_policy": [
+      {
+       "label": "Van, és betartják",
+       "full": "Igen, és betartják",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Van, de nem követik",
+       "full": "Van valami, de senki sem követi",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Nincs, de terveznek",
+       "full": "Nincs, de terveznek készíteni",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nincs, nem is terveznek",
+       "full": "Nincs, és nem is terveznek",
+       "n": 9,
+       "pct": 32.1
+      },
+      {
+       "label": "Egyedül / n.r.",
+       "full": "Egyedül dolgozom / nem releváns",
+       "n": 5,
+       "pct": 17.9
+      }
+     ],
+     "q09_shadow_ai": [
+      {
+       "label": "Soha, blokkolva",
+       "full": "Soha, szigorúan blokkolva van",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Nagyon ritkán",
+       "full": "Nagyon ritkán, véletlenül",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Előfordul („megoldjuk okosban”)",
+       "full": "Előfordul, „megoldjuk okosban\" a gyorsaság miatt",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Rendszeres gyakorlat",
+       "full": "Rendszeres gyakorlat",
+       "n": 1,
+       "pct": 3.6
+      },
+      {
+       "label": "Nincs rálátás",
+       "full": "Nincs rálátásom",
+       "n": 3,
+       "pct": 10.7
+      }
+     ],
+     "q10_local_vs_cloud": [
+      {
+       "label": "Kizárólag publikus felhő",
+       "full": "Kizárólag publikus felhőt használunk",
+       "n": 10,
+       "pct": 35.7
+      },
+      {
+       "label": "Főleg felhő, lokál teszt",
+       "full": "Főleg felhőt, de tesztelünk lokális modelleket",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Vegyes / hibrid",
+       "full": "Vegyes (hibrid) használat",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "Főként lokális modellek",
+       "full": "Főként lokális modelleket futtatunk (pl. Llama, Mistral) a kód titkossága miatt",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Nem tudom / n.r.",
+       "full": "Nem tudom / nem releváns",
+       "n": 1,
+       "pct": 3.6
+      }
+     ],
+     "q11_blocker": [
+      {
+       "label": "Nincs akadály",
+       "full": "Nincs akadály, már széles körben használjuk",
+       "n": 14,
+       "pct": 50.0
+      },
+      {
+       "label": "Minőség / megbízhatóság",
+       "full": "Minőség és megbízhatóság",
+       "n": 10,
+       "pct": 35.7
+      },
+      {
+       "label": "Biztonság / adatvédelem",
+       "full": "Biztonsági / adatvédelmi aggályok",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Szabályozás / EU AI Act",
+       "full": "Szabályozói megfelelőség / EU AI Act",
+       "n": 2,
+       "pct": 7.1
+      }
+     ],
+     "q12_company_type": [
+      {
+       "label": "Nagyvállalat",
+       "full": "Nagyvállalat / enterprise",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Startup / scale-up",
+       "full": "Startup / scale-up",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Ügynökség / szoftverház",
+       "full": "Ügynökség / szoftverház / outsourcing",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Freelancer",
+       "full": "Freelancer / saját vállalkozás",
+       "n": 10,
+       "pct": 35.7
+      }
+     ],
+     "q12b_role": [
+      {
+       "label": "Eng. manager",
+       "full": "Engineering manager / fejlesztési vezető",
+       "n": 12,
+       "pct": 42.9
+      },
+      {
+       "label": "CTO / VP / tulaj",
+       "full": "CTO / VP / cégtulajdonos",
+       "n": 16,
+       "pct": 57.1
+      }
+     ],
+     "q13_training": [
+      {
+       "label": "Igen, céges",
+       "full": "Igen, céges keretből",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Igen, saját",
+       "full": "Igen, saját forrásból",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Nem, de szeretne",
+       "full": "Nem, de szeretnék",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nem, nem is tervez",
+       "full": "Nem, és nem is tervezem",
+       "n": 15,
+       "pct": 53.6
+      }
+     ],
+     "q14_prompt_injection": [
+      {
+       "label": "Red teaming a release előtt",
+       "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Beépített védelem",
+       "full": "Vannak beépített védelmi vonalaink",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Alap tudatosság, nincs teszt",
+       "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+       "n": 12,
+       "pct": 42.9
+      },
+      {
+       "label": "Nem foglalkoznak vele",
+       "full": "Egyáltalán nem foglalkozunk vele",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Nem fejleszt LLM-integrációt",
+       "full": "Nem fejlesztünk LLM-integrációt",
+       "n": 4,
+       "pct": 14.3
+      }
+     ],
+     "q15_future_area": [
+      {
+       "label": "Prompt engineering",
+       "full": "Prompt engineering és hatékony használat",
+       "n": 8,
+       "pct": 28.6
+      },
+      {
+       "label": "AI-alapú architektúra",
+       "full": "AI-alapú szoftverarchitektúra",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "LLM-integráció termékbe",
+       "full": "LLM integráció saját termékbe",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "AI biztonság & etika",
+       "full": "AI biztonság és etika",
+       "n": 8,
+       "pct": 28.6
+      }
+     ]
+    },
+    "multi": {
+     "q02_tools": [
+      {
+       "label": "Chat-asszisztens (ChatGPT/Claude…)",
+       "full": "Chat-alapú asszisztens (ChatGPT, Claude, Gemini)",
+       "n": 17,
+       "pct": 60.7
+      },
+      {
+       "label": "Claude Code",
+       "full": "Claude Code",
+       "n": 15,
+       "pct": 53.6
+      },
+      {
+       "label": "Codex (OpenAI)",
+       "full": "Codex (OpenAI)",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "Egyéb agent / eszköz",
+       "full": "Egyéb agent / kódoló eszköz",
+       "n": 7,
+       "pct": 25.0
+      },
+      {
+       "label": "GitHub Copilot",
+       "full": "GitHub Copilot",
+       "n": 6,
+       "pct": 21.4
+      },
+      {
+       "label": "Gemini CLI",
+       "full": "Gemini CLI",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Cursor",
+       "full": "Cursor",
+       "n": 3,
+       "pct": 10.7
+      },
+      {
+       "label": "Nem használ AI-t",
+       "full": "Nem használok AI eszközt",
+       "n": 2,
+       "pct": 7.1
+      },
+      {
+       "label": "Windsurf",
+       "full": "Windsurf",
+       "n": 1,
+       "pct": 3.6
+      }
+     ],
+     "q04_workflow_shift": [
+      {
+       "label": "Dokumentáció & API-spec",
+       "full": "Dokumentáció és API specifikáció írása",
+       "n": 15,
+       "pct": 53.6
+      },
+      {
+       "label": "Legacy refaktor / migráció",
+       "full": "Legacy kód refaktorálása / migrálása",
+       "n": 13,
+       "pct": 46.4
+      },
+      {
+       "label": "Boilerplate / Scaffolding",
+       "full": "Boilerplate / Scaffolding",
+       "n": 11,
+       "pct": 39.3
+      },
+      {
+       "label": "Unit & E2E tesztek",
+       "full": "Unit és E2E tesztek írása",
+       "n": 5,
+       "pct": 17.9
+      },
+      {
+       "label": "Bug- & leak-izolálás",
+       "full": "Bugok és memory leak-ek izolálása",
+       "n": 4,
+       "pct": 14.3
+      },
+      {
+       "label": "Egyik sem",
+       "full": "Egyik sem / nem váltott ki manuális munkát",
+       "n": 2,
+       "pct": 7.1
+      }
+     ]
+    },
+    "funnel": [
+     {
+      "label": "Használ AI-t a munkájában",
+      "n": 26,
+      "pct": 92.9
+     },
+     {
+      "label": "Legalább hetente használja",
+      "n": 24,
+      "pct": 85.7
+     },
+     {
+      "label": "Minden nap használja",
+      "n": 17,
+      "pct": 60.7
+     },
+     {
+      "label": "…és delegál is agentnek",
+      "n": 13,
+      "pct": 46.4
+     },
+     {
+      "label": "…hetente ad ki agent-taskot",
+      "n": 12,
+      "pct": 42.9
+     },
+     {
+      "label": "…naponta, a workflow részeként",
+      "n": 8,
+      "pct": 28.6
+     },
+     {
+      "label": "…és a kódja 50%+-a AI-generált",
+      "n": 8,
+      "pct": 28.6
+     }
+    ],
+    "gap": {
+     "adoption": [
+      {
+       "label": "Naponta használ AI-t",
+       "pct": 60.7
+      },
+      {
+       "label": "Naponta delegál agentnek",
+       "pct": 35.7
+      },
+      {
+       "label": "A kód 50%+-a AI-generált",
+       "pct": 57.1
+      },
+      {
+       "label": "Cége aktívan ösztönzi (4–5)",
+       "pct": 67.9
+      }
+     ],
+     "governance": [
+      {
+       "label": "Van működő AI-policy",
+       "pct": 28.6
+      },
+      {
+       "label": "Kapott céges AI-képzést",
+       "pct": 25.0
+      },
+      {
+       "label": "Van LLM-biztonsági védelme",
+       "pct": 28.6
+      },
+      {
+       "label": "Nem kizárólag publikus felhő",
+       "pct": 64.3
+      }
+     ]
+    },
+    "scales": {
+     "q06_hallucination_review": {
+      "counts": [
+       4,
+       7,
+       8,
+       5,
+       4
+      ],
+      "mean": 2.93
+     },
+     "q07_company_support": {
+      "counts": [
+       1,
+       1,
+       5,
+       4,
+       15
+      ],
+      "mean": 4.19
+     }
+    },
+    "builders_dist": [
+     {
+      "label": "Red teaming a release előtt",
+      "full": "Szigorúan teszteljük (Red Teaming) ezeket a vektorokat a release előtt",
+      "n": 2,
+      "pct": 8.3
+     },
+     {
+      "label": "Beépített védelem",
+      "full": "Vannak beépített védelmi vonalaink",
+      "n": 6,
+      "pct": 25.0
+     },
+     {
+      "label": "Alap tudatosság, nincs teszt",
+      "full": "Van alapszintű tudatosság, de nincsenek dedikált tesztek",
+      "n": 12,
+      "pct": 50.0
+     },
+     {
+      "label": "Nem foglalkoznak vele",
+      "full": "Egyáltalán nem foglalkozunk vele",
+      "n": 4,
+      "pct": 16.7
+     }
+    ]
+   }
+  }
+ }
+}

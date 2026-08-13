@@ -232,15 +232,15 @@ watch(
         </nav>
       </div>
 
-      <!-- A felmérés csak magyarul érhető el. -->
-      <div v-if="currentLang === 'hu'" class="sidebar-block sidebar-quiz-cta">
-        <h2 class="sidebar-cta-title">Magyar fejlesztők és az AI – 2026</h2>
+      <!-- A riport magyar nyelvű. -->
+      <div v-if="currentLang === 'hu'" class="sidebar-block sidebar-report-cta">
+        <h2 class="sidebar-cta-title">State of AI Dev 2026</h2>
         <p class="sidebar-cta-body">
-          Töltsd ki az AI adoption felmérést, és e-mailben megkapod a magyar fejlesztői benchmark
-          riportot.
+          Magyar fejlesztők és mérnöki vezetők válaszai arról, mennyit ír már a gép, mit vett át az
+          agent, és ki ellenőrzi.
         </p>
-        <RouterLink :to="{ name: 'quiz', params: { lang: 'hu' } }" class="sidebar-cta-button">
-          Kitöltöm
+        <RouterLink :to="{ name: 'ai-report', params: { lang: 'hu' } }" class="sidebar-cta-button">
+          Elolvasom
         </RouterLink>
       </div>
 
@@ -618,7 +618,7 @@ watch(
   border-left: 3px solid var(--color-border-strong);
 }
 
-.sidebar-quiz-cta {
+.sidebar-report-cta {
   border-left: 3px solid var(--color-border-strong);
 }
 

@@ -1,5 +1,7 @@
 import { computed, type Ref } from 'vue'
 import { marked } from 'marked'
+import { renderHighlightedCode } from './useCodeHighlight'
+import { renderMermaidPlaceholder } from './useMermaidDiagrams'
 
 const HUNGARIAN_CHAR_MAP: Record<string, string> = {
   á: 'a',
@@ -50,6 +52,11 @@ function getMarkedOptions(h2Slugs: string[]) {
       if (id) return html.replace(/^<h2>/, `<h2 id="${id}">`)
     }
     return html
+  }
+  renderer.code = (token) => {
+    const lang = (token.lang ?? '').trim().split(/\s+/)[0] ?? ''
+    if (lang === 'mermaid') return renderMermaidPlaceholder(token.text)
+    return renderHighlightedCode(token.text, token.lang)
   }
   return { gfm: true, renderer }
 }

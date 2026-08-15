@@ -1,0 +1,114 @@
+/* highlight.js token colors, expressed as tokens so the palette flips with the
+   site theme (see .theme-dark in style.css). Global rather than component-scoped
+   because the markup comes from v-html in several page components. */
+
+:root {
+  --hl-comment: #57606a;
+  --hl-keyword: #cf222e;
+  --hl-string: #0a3069;
+  --hl-number: #0550ae;
+  --hl-function: #8250df;
+  --hl-type: #953800;
+  --hl-variable: #953800;
+  --hl-tag: #116329;
+  --hl-meta: #0550ae;
+  --hl-addition: #116329;
+  --hl-deletion: #82071e;
+}
+
+.theme-dark {
+  --hl-comment: #8b949e;
+  --hl-keyword: #ff7b72;
+  --hl-string: #a5d6ff;
+  --hl-number: #79c0ff;
+  --hl-function: #d2a8ff;
+  --hl-type: #ffa657;
+  --hl-variable: #ffa657;
+  --hl-tag: #7ee787;
+  --hl-meta: #79c0ff;
+  --hl-addition: #7ee787;
+  --hl-deletion: #ffa198;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--hl-comment);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag {
+  color: var(--hl-keyword);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-char.escape_ {
+  color: var(--hl-string);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-operator,
+.hljs-meta .hljs-keyword {
+  color: var(--hl-number);
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section,
+.hljs-built_in {
+  color: var(--hl-function);
+}
+
+.hljs-type,
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--hl-type);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-property,
+.hljs-params {
+  color: var(--hl-variable);
+}
+
+.hljs-name,
+.hljs-tag,
+.hljs-selector-id {
+  color: var(--hl-tag);
+}
+
+.hljs-meta,
+.hljs-meta .hljs-string {
+  color: var(--hl-meta);
+}
+
+.hljs-addition {
+  color: var(--hl-addition);
+}
+
+.hljs-deletion {
+  color: var(--hl-deletion);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 600;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}

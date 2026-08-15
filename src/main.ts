@@ -1,5 +1,6 @@
 import { ViteSSG } from 'vite-ssg'
 import './style.css'
+import './highlight-theme.css'
 import App from './App.vue'
 import { routes } from './router'
 import type { Language } from './composables/useI18n'

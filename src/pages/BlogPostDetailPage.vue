@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n, writeStoredLanguage, type Language } from '../composables/useI18n'
 import { getBlogPostBySlug } from '../data/blog-posts'
 import { useMarkdownContent } from '../composables/useMarkdownContent'
+import { useMermaidRender } from '../composables/useMermaidDiagrams'
 import { absoluteUrl, DEFAULT_OG_IMAGE_PATH } from '../site'
 import { canonicalPathname } from '../seo/canonical-path'
 
@@ -121,6 +122,9 @@ useHead(
 
 const { tocEntries, contentHtml } = useMarkdownContent(postContent)
 
+const markdownBodyRef = ref<HTMLElement | null>(null)
+useMermaidRender(markdownBodyRef, contentHtml)
+
 watch(
   post,
   (p) => {
@@ -216,7 +220,7 @@ watch(
       </div>
 
       <div class="content-card">
-        <div class="markdown-body" v-html="contentHtml" />
+        <div ref="markdownBodyRef" class="markdown-body" v-html="contentHtml" />
       </div>
     </div>
 
@@ -518,6 +522,31 @@ watch(
   font-weight: 600;
 }
 
+.markdown-body :deep(table) {
+  display: block;
+  margin: 1rem 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.markdown-body :deep(th),
+.markdown-body :deep(td) {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown-body :deep(th) {
+  background: var(--color-surface-strong);
+  font-weight: 600;
+}
+
+.markdown-body :deep(tbody tr:nth-child(even)) {
+  background: var(--color-surface-soft);
+}
+
 .markdown-body :deep(pre) {
   margin: 1rem 0;
   padding: 1rem;
@@ -542,6 +571,22 @@ watch(
   border-radius: 0;
   white-space: inherit;
   overflow-wrap: inherit;
+}
+
+.markdown-body :deep(.mermaid-diagram) {
+  margin: 1.25rem 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.markdown-body :deep(.mermaid-diagram svg) {
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown-body :deep(.mermaid-diagram--zoomable) {
+  cursor: zoom-in;
 }
 
 .markdown-body :deep(a) {

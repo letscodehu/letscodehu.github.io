@@ -18,12 +18,26 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'you-dont-need-an-agent-for-that',
+    publishedAt: '2026-08-11',
+    tags: ['ai', 'decision-making'],
+    titleEn: "You Don't Need an Agent for That",
+    titleHu: 'Nem kell hozzá agent',
+    featuredImagePath: '/blog/hammers.jpg',
+    videoUrl: 'https://youtu.be/kh1prG_vE_4',
+    excerptEn:
+      'A team spent three weeks building an agent to triage support tickets, then replaced it with a text classifier - faster, cheaper, more predictable. Most agent-shaped ideas are tasks with a mapping already sitting in the data, waiting to be learned instead of reasoned about turn by turn.',
+    excerptHu:
+      'Egy csapat három hetet töltött egy agent építésével support ticketek triázsolására, majd lecserélte egy szövegklasszifikálóra - gyorsabb, olcsóbb, kiszámíthatóbb lett. A legtöbb agent-formájú ötlet valójában olyan task, aminek a leképezése már ott van az adatban, csak meg kell tanulni, nem újra végiggondolni minden alkalommal.',
+  },
+  {
     slug: 'ai-didnt-make-you-5x-faster',
     publishedAt: '2026-07-30',
     tags: ['ai', 'ci-cd'],
     titleEn: "AI Didn't Make You 5x Faster. It Moved the Bottleneck.",
     titleHu: 'Az AI nem tett 5x gyorsabbá. Csak arrébb tolta a szűk keresztmetszetet.',
     featuredImagePath: '/blog/5x-faster.png',
+    videoUrl: 'https://youtu.be/jfzbIeOuwZg',
     excerptEn:
       "An agent generated a feature in minutes, then sat idle waiting for CI runners. AI made writing code cheap, but that was never the same as making software cheap - and the gap is where the promised 5x disappears.",
     excerptHu:

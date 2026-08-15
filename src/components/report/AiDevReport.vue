@@ -27,6 +27,7 @@ import ChSecurity from './chapters/ChSecurity.vue'
 import ChLearning from './chapters/ChLearning.vue'
 import ChMethodology from './chapters/ChMethodology.vue'
 import ReportPdfCta from './chapters/ReportPdfCta.vue'
+import ReportConsultCta from './chapters/ReportConsultCta.vue'
 import ReportFooter from './chapters/ReportFooter.vue'
 
 const props = defineProps({
@@ -102,10 +103,11 @@ function scrollToChapter(id) {
     <ChAiCode />
     <ChReview />
     <ChGovernance />
+    <ReportConsultCta />
     <ChSecurity />
+    <ReportConsultCta />
     <ChLearning />
     <ChMethodology />
-
     <ReportPdfCta v-if="pdfUrl" :href="pdfUrl" />
     <ReportFooter />
   </div>

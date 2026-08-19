@@ -3,19 +3,23 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
-import CalendlyInlineWidget from '../components/ui/CalendlyInlineWidget.vue'
 import GoogleCalendarAppointmentWidget from '../components/ui/GoogleCalendarAppointmentWidget.vue'
+import { resolveBookingSchedule } from '../config'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
 const route = useRoute()
 
 /**
  * Visitors arriving from the AI consulting page get AI-specific copy instead of the
- * training-oriented default, so the CTA promise carries over into the booking step.
- * The AI topic also books into its own Google Calendar appointment schedule instead
- * of the shared Calendly calendar.
+ * default, so the CTA promise carries over into the booking step. Each topic books
+ * into its own appointment schedule.
  */
 const isAiTopic = computed(() => route.name === 'contact-ai-en')
+
+/** Calendars are per topic and per language — see BOOKING_SCHEDULES in config.ts. */
+const schedule = computed(() =>
+  resolveBookingSchedule(isAiTopic.value ? 'ai' : 'general', currentLang.value)
+)
 
 function topicKey(base: string): string {
   if (!isAiTopic.value) {
@@ -66,10 +70,10 @@ function topicKey(base: string): string {
       </header>
       <BaseCard>
         <GoogleCalendarAppointmentWidget
-          v-if="isAiTopic"
-          url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EslzHDztIPtBvv1wOLhyuB9_Er95qrLEzAcMDTq5i5C3k08iXtYY132GTqPaAqAI-p9gXCDgl?gv=true"
+          :embed-url="schedule.embedUrl"
+          :booking-url="schedule.bookingUrl"
+          :button-label="t('contact.bookingButtonLabel')"
         />
-        <CalendlyInlineWidget v-else url="https://calendly.com/fejlesztes-letscode/30min" />
       </BaseCard>
     </section>
   </article>

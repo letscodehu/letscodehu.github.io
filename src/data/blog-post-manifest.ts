@@ -208,18 +208,18 @@ export const blogPostManifest: BlogPostManifest[] = [
     excerptHu:
       'Sok csapat túl korán ugrik architektúrára és stackre. Először azt validáld, hogy a probléma valóban most érdemes-e megoldani, és csak utána tervezhess rendszert.',
   },
-  // {
-  //   slug: 'structured-output-without-asking-nicely',
-  //   publishedAt: '2025-10-21',
-  //   tags: ['ai', 'architecture'],
-  //   titleEn: 'Structured Output Without Asking Nicely',
-  //   titleHu: 'Strukturált kimenet anélkül, hogy szépen megkérnéd a modellt',
-  //   featuredImagePath: '/blog/structured-output-without-asking-nicely.png',
-  //   excerptEn:
-  //     "Asking an LLM nicely for a specific output shape works until it doesn't - a few calls out of a hundred drift out of format and break a parser. Constraining the token generation itself, through tool calling or schema enforcement, is what actually makes the shape non-negotiable.",
-  //   excerptHu:
-  //     'Ha csak megkéred az LLM-et, hogy egy adott formában válaszoljon, az addig működik, amíg nem - száz hívásból néhány kicsúszik a formátumból, és eltör egy parsert. Ami tényleg nem alkuképessé teszi a formát, az a token-generálás megkötése magával a schemával, tool callingen keresztül.',
-  // },
+  {
+    slug: 'structured-output-without-asking-nicely',
+    publishedAt: '2025-10-21',
+    tags: ['ai', 'architecture'],
+    titleEn: 'Structured Output Without Asking Nicely',
+    titleHu: 'Strukturált kimenet anélkül, hogy szépen megkérnéd a modellt',
+    featuredImagePath: '/blog/structured-output-without-asking-nicely.png',
+    excerptEn:
+      "Asking an LLM nicely for a specific output shape works until it doesn't - a few calls out of a hundred drift out of format and break a parser. Constraining the token generation itself, through tool calling or schema enforcement, is what actually makes the shape non-negotiable.",
+    excerptHu:
+      'Ha csak megkéred az LLM-et, hogy egy adott formában válaszoljon, az addig működik, amíg nem - száz hívásból néhány kicsúszik a formátumból, és eltör egy parsert. Ami tényleg nem alkuképessé teszi a formát, az a token-generálás megkötése magával a schemával, tool callingen keresztül.',
+  },
   // {
   //   slug: 'what-is-bm25',
   //   publishedAt: '2025-10-28',

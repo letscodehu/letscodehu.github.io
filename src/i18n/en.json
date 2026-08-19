@@ -35,7 +35,7 @@
     "footerTaxLine": "EU VAT number HU32983083",
     "footerTagline": "Independent consultant and trainer for software engineering teams.",
     "brandLogoAlt": "Letscode Solutions",
-    "brandTagline": "Training and consulting for engineering teams",
+    "brandTagline": "Consulting and training for engineering teams",
     "menuAriaLabel": "Menu",
     "mainNavigationAriaLabel": "Main navigation"
   },
@@ -59,8 +59,8 @@
   },
   "home": {
     "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",
-    "heroSubtitle": "I work with mid–senior teams on DevOps, architecture, and everyday practices that reduce friction instead of adding process overhead.",
-    "heroEyebrow": "Classroom training and consulting for software engineering teams.",
+    "heroSubtitle": "I look at your system, your pipeline, and your decisions from the outside, then tell you what to fix first. I work remotely: video sessions with a shared screen on your codebase, and a written deliverable at the end.",
+    "heroEyebrow": "Consulting and training for engineering teams.",
     "problemsTitle": "Typical problems I see in engineering teams",
     "problemsCardTitle": "What usually goes wrong",
     "problems": [
@@ -70,7 +70,7 @@
       "Infrastructure and deployment scripts are tribal knowledge instead of shared practice.",
       "People \"know\" good practices in theory, but they don’t apply them consistently under pressure."
     ],
-    "focusCardTitle": "What we focus on",
+    "focusCardTitle": "What we work on together",
     "focusOn": [
       "Safer changes: tests and pipelines that catch problems before production instead of after.",
       "Faster delivery: fewer bottlenecks, clearer handoffs, and less rework from inconsistent practices.",
@@ -79,7 +79,7 @@
       "Confidence in refactoring: modular design and dependency rules that make change predictable.",
       "Delivery feedback you can trust: CI/CD that gives fast, reliable signals so releases stop feeling risky."
     ],
-    "offeringsTitle": "Training focus areas",
+    "offeringsTitle": "Focus areas",
     "offeringsEngineeringTitle": "Engineering practices",
     "offeringsDevOpsTitle": "DevOps and delivery",
     "offeringsArchitectureTitle": "Architecture: ADR, C4, clean architecture",
@@ -112,7 +112,7 @@
     "aiTitle": "AI: deciding where it helps you and where it does not",
     "aiBody": "The pressure around AI is bigger than the evidence. I help you decide from the outside where AI is actually worth using, where it is not, and what needs fixing first — with the same trade-off thinking as any other architectural decision.",
     "aiCta": "See AI consulting",
-    "whyDifferentTitle": "Why this training is different",
+    "whyDifferentTitle": "Why work with me",
     "whyDifferent": [
       "Senior-led: you work directly with me, not with a junior trainer reading from slides.",
       "Hands-on: we work through real examples, code, and architecture from your world.",
@@ -143,16 +143,17 @@
     "youtubeChannelLabel": "YouTube channel",
     "moreSessionsTitle": "More conference sessions",
     "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
-    "engagementModelsTitle": "Engagement models",
-    "engagementModelsIntro": "Formats are adapted to your goals and team maturity. Common options:",
+    "engagementModelsTitle": "Ways to work together",
+    "engagementModelsIntro": "The format follows your goals and the team's maturity. Common options:",
     "engagementModels": [
-      "1–2 day focused workshops: sharpen one or two areas (e.g. ADRs and C4, or CI/CD and safe release) with an experienced team.",
-      "Short diagnostic engagements: review architecture and practices, identify high-impact improvements, and hand over a clear summary and next steps.",
-      "Ongoing advisory: periodic sessions to support decision-making, rollout of new practices, or course-correction as you change.",
-      "Longer-term partnership: multi-phase work when you want sustained support for a broader transformation, with scope and rhythm agreed up front."
+      "Review: 2–3 weeks, three sessions, ending in a written document on what slows delivery down and what to tackle first. This is the usual way in.",
+      "Ongoing consulting: a monthly arrangement with regular sessions — for decisions, for rolling out new practices, or for support while direction changes.",
+      "Decision support on one specific question: comparing architecture options and capturing them as an ADR, or a second opinion on what your team or a vendor proposes.",
+      "1–2 day focused workshops: going deep on one or two areas (e.g. ADRs and C4, or CI/CD and safe releases) with experienced teams."
     ],
     "ctaPrimary": "Book a call",
-    "ctaSecondary": "See the trainings"
+    "ctaSecondary": "How I work",
+    "engagementModelsCta": "See consulting"
   },
   "training": {
     "pageTitle": "Classroom training for experienced engineering teams",
@@ -726,34 +727,70 @@
     }
   },
   "consulting": {
-    "pageTitle": "Consulting that helps teams apply workshop principles in real systems",
-    "intro": "Training sticks when teams use it on real systems and real decisions. I offer short, focused consulting engagements that build on the same workshop ideas—ADRs, C4, CI/CD and deployment practices, modular design, and AI-assisted engineering practices—so your team can apply them where it counts.",
-    "auditsTitle": "Architecture and practice audits",
+    "pageTitle": "An outside look at what slows your delivery down — and what to fix first",
+    "intro": "As the codebase and the team grow, delivery slows, releases start to feel risky, and nobody can say with confidence which change would pay off most. What helps at that point is not another internal opinion, but someone who looks at the system, the pipeline, and the decisions from the outside. I work remotely: video sessions with a shared screen on your codebase, and a written deliverable at the end.",
+    "cta": "Book a call",
+    "problemsTitle": "What I typically see",
+    "problemsCardTitle": "Familiar situations",
+    "problems": [
+      "Releases feel riskier, so they happen less often — which makes them riskier still.",
+      "Everyone knows CI is slow, but nobody can say where the time actually goes.",
+      "Architectural decisions were never written down, and the people who made them have left — newcomers reverse-engineer intent from the code.",
+      "Two teams follow two different sets of conventions, and code review is where it gets decided which one wins.",
+      "There is a refactoring plan that hasn't started in two years, because the right moment never comes.",
+      "Leadership expects feature velocity, the team wants to pay down technical debt first — and there is no shared language to settle it.",
+      "Infrastructure and deployment rest on tribal knowledge: one person knows how a release actually goes out."
+    ],
+    "auditsTitle": "Delivery and architecture review",
     "audits": [
-      "Review of your current architecture, deployment setup, and engineering practices, with a focus on what actually blocks delivery or makes change risky.",
-      "Identification of delivery bottlenecks and high-leverage improvement areas so you know where to act first.",
-      "Written summary and concrete next steps that your teams and leadership can use without requiring ongoing external support."
+      "We walk through your current architecture, deployment setup, and engineering practices — focused on what actually blocks delivery and what makes change risky.",
+      "We identify the bottlenecks and the places where a small change buys a large improvement, so you know where to act first.",
+      "A written summary and concrete, prioritized next steps your team and your leadership can both work from."
     ],
     "decisionsTitle": "Decision support",
     "decisions": [
-      "Facilitated sessions to capture key technical decisions as ADRs so the rationale outlives the current team.",
-      "Support in comparing architecture options against explicit trade-offs so choices are defensible and repeatable.",
-      "Help teams articulate risks and constraints so non-technical stakeholders can participate in trade-offs."
+      "Facilitated sessions to capture technical decisions as ADRs, so the rationale outlives the current team.",
+      "Help comparing architecture options against explicit trade-offs — not on instinct, but in a way that still holds up six months later.",
+      "A second opinion on what your team or a vendor is proposing: from the outside, with no stake in the outcome.",
+      "Help articulating risks and constraints so non-technical stakeholders can take part in the trade-off."
     ],
-    "mentoringTitle": "Mentoring for leads",
+    "mentoringTitle": "Mentoring for tech leads",
     "mentoring": [
-      "1:1 or small-group mentoring for tech leads and senior engineers, aligned with the same concepts as the workshops.",
-      "Practical discussions on introducing and sustaining workshop practices—ADRs, boundaries, CI/CD—in your codebase and team.",
-      "Feedback on architecture proposals, RFCs, and rollout plans."
+      "1:1 or small-group mentoring for tech leads and senior engineers — on whatever is actually on their desk, not on theory.",
+      "Practical discussions on how to introduce and sustain new practices: ADRs, boundaries, CI/CD — in your codebase, with your team.",
+      "Feedback on architecture proposals, RFCs, and rollout plans, before production reveals what was missing from them."
     ],
+    "offerEyebrow": "Entry engagement",
+    "offerTitle": "Review — 2–3 weeks, with a written deliverable",
+    "offerBody": "Three 90-minute video sessions. In the first we go through where you stand and what hurts. In the second we walk the codebase, the pipeline, and the architecture together — not slides, your actual systems. In the third I hand over what to fix and in what order. Between sessions I am available in writing.",
+    "offerBodySecondary": "At the end you get a written document: what slows delivery down, what to tackle first, and what to leave alone for now. In a form you can put in front of leadership — the same logic as an ADR, written for a business reader.",
+    "offerContinuationTitle": "If you still want an outside view afterwards",
+    "offerContinuationBody": "The review stands on its own: it does not end with you halfway through and holding a proposal. Where rolling the changes out does call for a continuing outside view, we carry on with a monthly arrangement — two sessions a month, with written availability in between. Nothing depends on it, and it is decided after the review, not before.",
+    "noTitle": "What I say no to",
+    "noIntro": "In consulting, the good business is the one that lasts as long as possible. That is not what I am after.",
+    "no": [
+      "I don't write strategy documents that nobody opens in the next planning round.",
+      "I don't propose a rewrite when the existing system can be fixed — a rewrite is the most expensive answer to most questions.",
+      "I don't introduce a process just because it worked at a larger company. I adapt it to your constraints, or I leave it alone.",
+      "I don't take your decisions away from you. I help you make them and write them down, but the system stays yours.",
+      "If it turns out that what you need right now is a hire, a tool, or simply time rather than consulting, I will say so plainly."
+    ],
+    "remoteTitle": "How remote work looks in practice",
+    "remoteBody": "Every session runs as a video call with a shared screen. Where you allow it, I also look into the codebase, the CI config, and the deployment scripts — read-only access is plenty. Between sessions I am reachable by email, and on a shared Slack channel if that suits the team better. Nobody has to travel, and no full day has to be cut out of the team's calendar.",
+    "credibilityTitle": "Why me",
+    "credibilityBody": "I'm Krisztián Papp. I have been designing and building systems for fifteen years — hands-on, in codebases, pipelines, and architectures, not in slide decks. I speak regularly at conferences and meetups about ADRs and what it costs when decisions go unwritten. You work with me directly: there is no team behind me that the work gets handed to.",
+    "caseStudyEyebrow": "Case study",
+    "caseStudyTitle": "Rebuilding engineering trust in a platform with ~30,000 daily active users",
+    "caseStudyBody": "How we stabilized delivery, increased test coverage sixfold, and decoupled the domain from Salesforce in a growing backoffice environment.",
+    "caseStudyCta": "Read the case study",
     "aiTransformationEyebrow": "A separate focus area",
     "aiTransformationTitle": "AI-assisted engineering transformation",
     "aiTransformationIntro": "AI tools really help teams that already have solid engineering practices — for everyone else they typically just accelerate the accumulation of technical debt. This is a separate focus area: AI readiness assessment, decision support on concrete AI decisions, and team-level practices.",
-    "complementsTitle": "How consulting complements training",
-    "complementsBody": "Engagements are short and focused. The aim is knowledge transfer and team autonomy: your people learn to run ADR sessions, maintain diagrams, and improve pipelines themselves. The goal is not ongoing dependency—it's enabling your team to own the practices and decisions after we're done.",
-    "cta": "Book a call",
-    "ctaNote": "For consulting engagements, a short note about your current systems and challenges helps more than a long brief.",
-    "aiTransformationCta": "See AI consulting"
+    "aiTransformationCta": "See AI consulting",
+    "ctaNote": "A short note about your current systems and where you got stuck helps more than a long brief.",
+    "trainingNoteTitle": "What if training is the better fit?",
+    "trainingNoteBody": "If what the team needs is not an outside view but shared practice on a specific topic, there are separate workshops for that.",
+    "trainingNoteCta": "See the training"
   },
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",
@@ -838,7 +875,8 @@
     "companyLabel": "Company",
     "messageLabel": "Short description of your context",
     "submitLabel": "Send",
-    "formPlaceholderHint": "This is a placeholder form. In production, wire it to your preferred contact channel."
+    "formPlaceholderHint": "This is a placeholder form. In production, wire it to your preferred contact channel.",
+    "bookingButtonLabel": "Book a time"
   },
   "caseStudies": {
     "pageTitle": "Case studies",
@@ -863,9 +901,9 @@
     "sidebarCtaTitle": "Book a call",
     "sidebarCtaBody": "If your pipeline is the bottleneck, we can map the gaps and build a leaner path to production.",
     "sidebarCtaLabel": "Get in touch",
-    "b2cCtaTitle": "Architect Mindset training",
-    "b2cCtaBody": "A two-day, in-person Budapest training on technical decisions, C4, and lightweight ADRs for developers.",
-    "b2cCtaLabel": "View program",
+    "consultingCtaTitle": "Is delivery stuck?",
+    "consultingCtaBody": "An outside look at your system, pipeline, and decisions — 2–3 weeks, ending in a written document on what to fix first.",
+    "consultingCtaLabel": "See consulting",
     "videoBlockTitle": "Watch as video",
     "videoBlockBody": "Same content on YouTube if you prefer video.",
     "videoWatchButton": "Watch on YouTube",
@@ -895,11 +933,11 @@
     "servicesIntro": "These providers may receive technical metadata (for example IP address, browser details, and interaction events) when enabled or used.",
     "schedulingTitle": "Scheduling",
     "schedulingItems": [
-      "Calendly (calendly.com, assets.calendly.com): used on the contact page to book calls."
+      "Google Calendar (calendar.google.com, calendar.app.google): used on the contact pages to book calls."
     ],
     "newsletterTitle": "Newsletter / waitlist signup",
     "newsletterItems": [
-      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): used for the training waitlist signup form. Email and first name are sent in a JSON request when you subscribe.",
+      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): used for the training waitlist signup form and for requesting the PDF edition of the State of AI Dev report. Email and first name are sent in a JSON request when you subscribe.",
       "Signup data is processed by a backend workflow operated by Letscode Solutions."
     ],
     "analyticsTitle": "Analytics",
@@ -943,7 +981,7 @@
       "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
       "trainingB2cTerms": "Participation and purchase terms for the Budapest B2C workshop.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
-      "consulting": "Consulting to apply architecture and delivery practices in your real systems—reviews, ADR sessions, CI/CD redesign, and guided change.",
+      "consulting": "An outside view on what slows delivery down: architecture and pipeline review, ADRs, decision support. Remote, over video sessions, with a written deliverable at the end.",
       "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",
       "contact": "Contact Letscode Solutions to discuss training, workshops, or consulting for your engineering team.",
       "aiContact": "Book a short call about AI consulting: AI readiness assessment, build vs. buy, and concrete AI decisions for engineering teams.",
@@ -1002,7 +1040,7 @@
       "I will not ship something that chains you to one model from one vendor, unless that is a deliberate decision."
     ],
     "credibilityTitle": "Why me",
-    "credibilityBody": "AWS Certified Solutions Architect – Associate and Claude Certified Architect – Foundations. At a governance SaaS company I was involved in AI-based development from the start, hands-on in the early phase. Beyond that, I have been designing systems for fifteen years — AI is the latest technology that the same trade-off thinking applies to, just like all the ones before it.",
+    "credibilityBody": "At a governance SaaS company I was involved in AI-based development from the start, hands-on in the early phase. Beyond that, I have been designing systems for fifteen years — AI is the latest technology that the same trade-off thinking applies to, just like all the ones before it.",
     "leadershipTitle": "Something you can show your leadership",
     "leadershipBody": "When the pressure comes from above, the hardest thing is to say this is not worth it for us right now — without looking like you are behind the times. The written output of the assessment backs exactly that up: what we examined, what the decision is, and why. The same logic as an ADR, written for a business reader.",
     "readingTitle": "Further reading",

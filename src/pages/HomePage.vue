@@ -27,7 +27,7 @@ const { t, currentLang } = useI18n()
             {{ t('home.ctaPrimary') }}
           </BaseButton>
         </RouterLink>
-        <RouterLink :to="{ name: 'training-en', params: { lang: currentLang } }">
+        <RouterLink :to="{ name: 'consulting-en', params: { lang: currentLang } }">
           <BaseButton variant="ghost">
             {{ t('home.ctaSecondary') }}
           </BaseButton>
@@ -64,6 +64,32 @@ const { t, currentLang } = useI18n()
         </ul>
       </BaseCard>
     </div>
+  </section>
+
+  <!-- Directly after the problems: the formats that answer them, with a way through
+       to the consulting page. This section used to sit near the bottom with no CTA. -->
+  <section class="section">
+    <header class="section-header">
+      <h2>{{ t('home.engagementModelsTitle') }}</h2>
+      <p class="section-intro">
+        {{ t('home.engagementModelsIntro') }}
+      </p>
+    </header>
+    <BaseCard>
+      <ul class="list">
+        <li v-for="item in t('home.engagementModels')" :key="item">
+          {{ item }}
+        </li>
+      </ul>
+      <RouterLink
+        class="engagement-cta"
+        :to="{ name: 'consulting-en', params: { lang: currentLang } }"
+      >
+        <BaseButton>
+          {{ t('home.engagementModelsCta') }}
+        </BaseButton>
+      </RouterLink>
+    </BaseCard>
   </section>
 
   <section class="section">
@@ -138,24 +164,6 @@ const { t, currentLang } = useI18n()
         </p>
         <ul class="list">
           <li v-for="item in t('home.practiceExamples')" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </BaseCard>
-    </div>
-  </section>
-
-  <section class="section">
-    <header class="section-header">
-      <h2>{{ t('home.engagementModelsTitle') }}</h2>
-      <p class="section-intro">
-        {{ t('home.engagementModelsIntro') }}
-      </p>
-    </header>
-    <div class="grid grid--two">
-      <BaseCard>
-        <ul class="list">
-          <li v-for="item in t('home.engagementModels')" :key="item">
             {{ item }}
           </li>
         </ul>
@@ -310,6 +318,11 @@ const { t, currentLang } = useI18n()
   margin-top: 0.4rem;
 }
 
+.engagement-cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
 .body {
   margin: 0;
   font-size: 0.92rem;
@@ -324,8 +337,30 @@ const { t, currentLang } = useI18n()
 }
 
 @media (max-width: 600px) {
+  /* On a 375px-wide phone the hero content column is only ~268px, so the title
+     runs to seven lines and pushes the CTAs off a 667px-tall screen. Tightening
+     the type and the padding is what keeps the primary CTA in the first view. */
+  .hero {
+    padding: 1rem 1rem 1.6rem;
+    margin-bottom: 1.75rem;
+  }
+
   .hero-title {
-    font-size: 1.78rem;
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  /* The eyebrow repeats the brand tagline verbatim, and on a phone that tagline
+     sits ~40px above it in the header. Two lines of duplicate text is not worth
+     pushing the CTA behind the cookie banner for. */
+  .eyebrow {
+    display: none;
+  }
+
+  .hero-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.45;
+    margin-bottom: 1rem;
   }
 }
 </style>

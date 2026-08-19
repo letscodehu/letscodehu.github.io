@@ -18,17 +18,26 @@ const trainingSubItems = computed(() => [
   },
 ])
 
-/** No "Home" item — the brand logo on the left already links to the home page. */
-const navItems = computed(() => [
+/**
+ * No "Home" item — the brand logo on the left already links to the home page.
+ * Split in two so the Training dropdown can sit between them: the offers we lead
+ * with come first, training after them, then the informational items.
+ */
+const leadingNavItems = computed(() => [
   { name: t('nav.consulting'), to: { name: 'consulting-en', params: { lang: currentLang.value } } },
   {
     name: t('nav.aiConsulting'),
     to: { name: 'ai-consulting-en', params: { lang: currentLang.value } },
   },
+])
+
+const trailingNavItems = computed(() => [
   { name: t('nav.about'), to: { name: 'about-en', params: { lang: currentLang.value } } },
   { name: t('nav.blog'), to: { name: 'blog-list-en', params: { lang: currentLang.value } } },
   { name: t('nav.contact'), to: { name: 'contact-en', params: { lang: currentLang.value } } },
 ])
+
+const navItems = computed(() => [...leadingNavItems.value, ...trailingNavItems.value])
 
 const currentPathName = computed(() => (route.name as string) || 'home')
 
@@ -140,6 +149,17 @@ onUnmounted(() => {
         :class="{ 'nav-wrapper--open': menuOpen }"
       >
         <nav class="nav" :aria-label="t('common.mainNavigationAriaLabel')">
+          <RouterLink
+            v-for="item in leadingNavItems"
+            :key="item.name"
+            :to="item.to"
+            class="nav-link"
+            :class="{ 'nav-link--active': isNavLinkActive(item) }"
+            @click="closeMenu"
+          >
+            {{ item.name }}
+          </RouterLink>
+
           <div
             class="nav-group"
             :class="{
@@ -167,7 +187,7 @@ onUnmounted(() => {
           </div>
 
           <RouterLink
-            v-for="item in navItems"
+            v-for="item in trailingNavItems"
             :key="item.name"
             :to="item.to"
             class="nav-link"

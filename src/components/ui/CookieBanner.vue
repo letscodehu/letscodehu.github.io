@@ -227,5 +227,35 @@ onMounted(() => {
     width: auto;
     bottom: 0.75rem;
   }
+
+  /* The banner is a fixed overlay over the lower third of a phone screen, which
+     is exactly where the hero CTAs land. Keeping it compact is what stops it
+     from sitting on top of the buttons before anyone has decided about cookies. */
+  .cookie-banner {
+    padding: 0.7rem 0.8rem 0.65rem;
+  }
+
+  .cookie-banner .cookie-title {
+    font-size: 0.9rem;
+  }
+
+  .cookie-banner .cookie-text {
+    margin: 0.3rem 0 0.55rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .cookie-banner .cookie-actions {
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    margin-top: 0;
+  }
+
+  .cookie-banner .cookie-btn {
+    flex: 1 1 0;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
 }
 </style>

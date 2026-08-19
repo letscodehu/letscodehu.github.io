@@ -259,14 +259,14 @@ watch(
         </RouterLink>
       </div>
 
-      <div class="sidebar-block sidebar-b2c-cta">
-        <h2 class="sidebar-cta-title">{{ t('blog.b2cCtaTitle') }}</h2>
-        <p class="sidebar-cta-body">{{ t('blog.b2cCtaBody') }}</p>
+      <div class="sidebar-block sidebar-consulting-cta">
+        <h2 class="sidebar-cta-title">{{ t('blog.consultingCtaTitle') }}</h2>
+        <p class="sidebar-cta-body">{{ t('blog.consultingCtaBody') }}</p>
         <RouterLink
-          :to="{ name: 'training-b2c-ads-en', params: { lang: currentLang } }"
+          :to="{ name: 'consulting-en', params: { lang: currentLang } }"
           class="sidebar-cta-button"
         >
-          {{ t('blog.b2cCtaLabel') }}
+          {{ t('blog.consultingCtaLabel') }}
         </RouterLink>
       </div>
     </aside>
@@ -659,7 +659,7 @@ watch(
   border-left: 3px solid var(--color-primary);
 }
 
-.sidebar-b2c-cta {
+.sidebar-consulting-cta {
   border-left: 3px solid var(--color-border-strong);
 }
 

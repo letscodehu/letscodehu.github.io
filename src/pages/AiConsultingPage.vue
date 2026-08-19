@@ -130,31 +130,6 @@ const showReportCta = computed(() => currentLang.value === 'hu')
       <BaseCard>
         <template #title>{{ t('aiConsulting.credibilityTitle') }}</template>
         <p class="body">{{ t('aiConsulting.credibilityBody') }}</p>
-        <!-- Badge images live in public/; update files and hrefs if credentials change. -->
-        <div class="credly-badge-list">
-          <a
-            href="https://www.credly.com/badges/b7004ded-799d-44cc-9bd0-c98456f28c4a/public_url"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/aws-certified-solutions-architect-associate.png"
-              :alt="t('about.credlyBadgeSaaAlt')"
-              class="credly-badge-image"
-            />
-          </a>
-          <a
-            href="https://www.credly.com/badges/146e44d2-967f-412a-9e60-2a21b5d73373/public_url"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/claude-certified-architect-foundations.png"
-              :alt="t('about.credlyBadgeClaudeArchitectAlt')"
-              class="credly-badge-image"
-            />
-          </a>
-        </div>
       </BaseCard>
 
       <BaseCard>
@@ -319,20 +294,6 @@ const showReportCta = computed(() => currentLang.value === 'hu')
   margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--color-text-muted);
-}
-
-.credly-badge-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.1rem;
-}
-
-.credly-badge-image {
-  width: 5.5rem;
-  height: auto;
-  display: block;
 }
 
 .ai-highlight {

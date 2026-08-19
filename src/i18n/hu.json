@@ -35,7 +35,7 @@
     "footerTaxLine": "Adószám: 32983083-2-13",
     "footerTagline": "Független tanácsadó és tréner szoftverfejlesztő csapatok számára.",
     "brandLogoAlt": "Letscode Solutions",
-    "brandTagline": "Képzések és tanácsadás szoftverfejlesztő csapatoknak",
+    "brandTagline": "Tanácsadás és képzés szoftverfejlesztő csapatoknak",
     "menuAriaLabel": "Menü",
     "mainNavigationAriaLabel": "Fő navigáció"
   },
@@ -59,8 +59,8 @@
   },
   "home": {
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
-    "heroSubtitle": "Mid- és senior fejlesztői csapatokkal dolgozom DevOps, architektúra és mindennapi gyakorlatok témákban – úgy, hogy azok a mindennapi nyomás mellett is működjenek.",
-    "heroEyebrow": "Képzések és tanácsadás szoftverfejlesztő csapatoknak.",
+    "heroSubtitle": "Kívülről nézem meg a rendszert, a pipeline-t és a döntéseket, majd megmondom, mit érdemes először javítani. Távolról dolgozom: videóhívások közös képernyővel a ti kódbázisotokon, a végén írásos anyaggal.",
+    "heroEyebrow": "Tanácsadás és képzés szoftverfejlesztő csapatoknak.",
     "problemsTitle": "Tipikus problémák, amikkel találkozom",
     "problemsCardTitle": "Ami jellemzően félrecsúszik",
     "problems": [
@@ -70,7 +70,7 @@
       "Az infrastruktúra és a deployment szkriptek törzsi tudáson alapulnak, nem közös gyakorlaton.",
       "A csapat tudja, „mi lenne a jó gyakorlat”, de nyomás alatt mégsem ez valósul meg."
     ],
-    "focusCardTitle": "A fókusz a képzéseken",
+    "focusCardTitle": "Amin együtt dolgozunk",
     "focusOn": [
       "Biztonságosabb változtatások: tesztek és pipeline-ok, amelyek a problémákat élesítés előtt, nem utána észlelik.",
       "Gyorsabb szállítás: kevesebb szűk keresztmetszet, világosabb átadások, kevesebb újramunka az inkonzisztens gyakorlatok miatt.",
@@ -79,7 +79,7 @@
       "Magabiztosság a refaktorálásban: moduláris tervezés és függőségi szabályok, amelyek a változtatást kiszámíthatóvá teszik.",
       "Megbízható szállítási: CI/CD, amely gyors és megbízható, így a release-ek nem érződnek kockázatosnak."
     ],
-    "offeringsTitle": "Képzési fókuszterületek",
+    "offeringsTitle": "Fókuszterületek",
     "offeringsEngineeringTitle": "Mérnöki gyakorlatok",
     "offeringsDevOpsTitle": "DevOps és szállítás",
     "offeringsArchitectureTitle": "Architektúra: ADR, C4, tiszta architektúra",
@@ -112,7 +112,7 @@
     "aiTitle": "AI: eldöntjük, hol segít nálatok és hol nem",
     "aiBody": "Az AI körüli nyomás nagyobb, mint a bizonyíték. Kívülről segítek eldönteni, mire érdemes nálatok AI-t használni, mire nem, és mi az, amihez előbb más kell — ugyanazzal a trade-off gondolkodással, mint bármelyik architekturális döntésnél.",
     "aiCta": "AI tanácsadás részletei",
-    "whyDifferentTitle": "Miért más ez a képzés?",
+    "whyDifferentTitle": "Miért velem",
     "whyDifferent": [
       "Senior fókusz: közvetlenül velem dolgoztok, nem junior tréner adja át az anyagot.",
       "Gyakorlati: valós példákon, kódon és architektúrákon dolgozunk – lehetőség szerint a ti környezetetekből.",
@@ -146,13 +146,14 @@
     "engagementModelsTitle": "Együttműködési formátumok",
     "engagementModelsIntro": "A formátumok a céljaitokhoz és a csapat érettségéhez igazodnak. Gyakori lehetőségek:",
     "engagementModels": [
-      "1–2 napos fókuszált workshopok: egy-két terület elmélyítése (pl. ADR és C4, vagy CI/CD és biztonságos release) tapasztalt csapatokkal.",
-      "Rövid diagnosztikai együttműködések: architektúra és gyakorlatok áttekintése, nagy hatású fejlesztések azonosítása, világos összefoglaló és következő lépések átadása.",
-      "Folyamatos tanácsadás: rendszeres sessionök a döntéshozatal, új gyakorlatok bevezetése vagy irányváltás támogatására változás közben.",
-      "Hosszabb távú partnerség: többfázisú munka, amikor szélesebb átalakuláshoz folyamatos támogatásra van szükség, előre egyeztetett hatáskörrel és ritmussal."
+      "Felmérés: 2–3 hét, három session, a végén írásos anyag arról, mi lassítja a szállítást és mit érdemes először megfogni. Ez a szokásos belépő.",
+      "Folyamatos tanácsadás: havi keret rendszeres sessionökkel — döntésekhez, új gyakorlatok bevezetéséhez vagy irányváltás közbeni támogatáshoz.",
+      "Döntéstámogatás egy konkrét kérdésre: architekturális opciók összevetése, ADR-be rögzítve, vagy second opinion arra, amit a csapat vagy egy szállító javasol.",
+      "1–2 napos fókuszált workshopok: egy-két terület elmélyítése (pl. ADR és C4, vagy CI/CD és biztonságos release) tapasztalt csapatokkal."
     ],
     "ctaPrimary": "Foglalj időpontot",
-    "ctaSecondary": "Nézd meg a képzéseket"
+    "ctaSecondary": "Hogyan dolgozom",
+    "engagementModelsCta": "Tanácsadás részletei"
   },
   "training": {
     "pageTitle": "Terem- és online képzések tapasztalt fejlesztői csapatoknak",
@@ -726,34 +727,70 @@
     }
   },
   "consulting": {
-    "pageTitle": "Tanácsadás, amely segít a csapatoknak workshop elveket valós rendszerekben alkalmazni",
-    "intro": "A képzés akkor ragad meg igazán, ha valós rendszereken és valós döntéseken használják. Rövid, fókuszált tanácsadási együttműködéseket vállalok, amelyek ugyanazon workshop ötletekre épülnek—ADR-ek, C4, CI/CD és deployment gyakorlatok, moduláris tervezés és AI-alapú mérnöki gyakorlatok—így a csapatod ott tudja alkalmazni őket, ahol számít.",
-    "auditsTitle": "Architektúra- és gyakorlat-felmérés",
+    "pageTitle": "Kívülről megnézem, mi lassítja a szállítást — és megmondom, mit javítsatok először",
+    "intro": "Ahogy nő a kódbázis és a csapat, a szállítás lassul, a release-ek kockázatosnak érződnek, és senki nem tudja biztosan megmondani, melyik változtatás hozná a legtöbbet. Ilyenkor nem újabb belső vélemény kell, hanem valaki, aki kívülről nézi meg a rendszert, a pipeline-t és a döntéseket. Távolról dolgozom: videóhívások közös képernyővel a ti kódbázisotokon, a végén írásos anyaggal.",
+    "cta": "Foglalj időpontot",
+    "problemsTitle": "Amit tipikusan látok",
+    "problemsCardTitle": "Ismerős helyzetek",
+    "problems": [
+      "A release-ek egyre kockázatosabbak, ezért egyre ritkábbak — és ettől még kockázatosabbak.",
+      "Mindenki tudja, hogy lassú a CI, de senki nem tudja megmondani, pontosan hol megy el az idő.",
+      "Az architekturális döntések nincsenek leírva, aki meghozta őket, már nincs a csapatban — az újaknak a kódból kell visszafejteniük a szándékot.",
+      "Két csapat két külön konvenciót követ, és a review-n dől el, melyik nyer.",
+      "Van egy refaktorálási terv, ami két éve nem indult el, mert sosem jön el a jó pillanat.",
+      "A vezetés fejlesztési ütemet vár, a csapat előbb technikai adósságot törlesztene — és nincs közös nyelv, amin ezt el lehetne dönteni.",
+      "Az infrastruktúra és a deployment törzsi tudáson múlik: egy ember tudja, hogyan megy ki élesbe."
+    ],
+    "auditsTitle": "Szállítási és architektúra-felmérés",
     "audits": [
-      "A jelenlegi architektúra, deployment környezet és mérnöki gyakorlatok áttekintése, fókuszálva arra, hogy mi akadályozza a szállítást vagy teszi kockázatossá a változtatást.",
-      "A szállítási szűk keresztmetszetek és nagy hatású, de kis változtatással elérhető fejlesztési területek azonosítása, hogy tudjátok, hol kell először cselekedni.",
-      "Írásos összefoglaló és konkrét következő lépések, amelyekre a vezetés és a csapat is tud építeni."
+      "Végigmegyünk a jelenlegi architektúrán, a deployment környezeten és a mérnöki gyakorlatokon — arra fókuszálva, mi akadályozza ténylegesen a szállítást, és mitől kockázatos a változtatás.",
+      "Azonosítjuk a szűk keresztmetszeteket és azokat a pontokat, ahol kis változtatás nagy hatást hoz, hogy tudjátok, hol kell először cselekedni.",
+      "Írásos összefoglaló és konkrét, sorrendbe rakott következő lépések, amelyekre a csapat és a vezetés is tud építeni."
     ],
     "decisionsTitle": "Döntéstámogatás",
     "decisions": [
       "Facilitált sessionök technikai döntések strukturált rögzítésére ADR-ek formájában, hogy az indoklás túlélje a jelenlegi csapatot.",
-      "Segítség architekturális opciók összevetésében, világos trade-offok mentén, nem csak megérzés alapján.",
-      "Segítség a csapatoknak abban, hogy a kockázatokat és korlátokat olyan módon fogalmazzanak meg, amely a nem technikai érintettek számára is érthető."
+      "Segítség architekturális opciók összevetésében, kimondott trade-offok mentén — nem megérzés alapján, hanem úgy, hogy fél év múlva is védhető legyen.",
+      "Second opinion arra, amit a csapat vagy egy szállító javasol: kívülről, érdek nélkül.",
+      "Segítség abban, hogy a kockázatokat és korlátokat a nem technikai érintettek is érteni tudják."
     ],
-    "mentoringTitle": "Mentorálás leadeknek",
+    "mentoringTitle": "Mentorálás tech leadeknek",
     "mentoring": [
-      "1:1 vagy kis csoportos mentorálás tech lead-ek és senior fejlesztők számára, ugyanazon koncepciók mentén, mint a workshopok.",
-      "Gyakorlati beszélgetések arról, hogyan lehet ténylegesen bevezetni és fenntartani új gyakorlatokat valós csapatokban—ADR-ek, határok, CI/CD—a kódbázisban és csapatban.",
-      "Visszajelzés architekturális javaslatokra, RFC-kre és implementációs tervekhez."
+      "1:1 vagy kis csoportos mentorálás tech lead-eknek és senior fejlesztőknek — arról, ami éppen a kezükben van, nem elméleti anyagból.",
+      "Gyakorlati beszélgetések arról, hogyan lehet új gyakorlatokat valóban bevezetni és fenntartani: ADR-ek, határok, CI/CD — a ti kódbázisotokban, a ti csapatotokban.",
+      "Visszajelzés architekturális javaslatokra, RFC-kre és bevezetési tervekre, mielőtt élesben derül ki, mi hiányzott belőlük."
     ],
+    "offerEyebrow": "Belépő együttműködés",
+    "offerTitle": "Felmérés — 2–3 hét, a végén írásos anyag",
+    "offerBody": "Három darab 90 perces videóhívás. Az elsőn átbeszéljük, hol tartotok és mi fáj. A másodikon közösen végigmegyünk a kódbázison, a pipeline-on és az architektúrán — nem prezentációt nézünk, hanem a ti rendszereteket. A harmadikon átadom, mit érdemes javítani és milyen sorrendben. A hívások között írásban elérhető vagyok.",
+    "offerBodySecondary": "A végén kapsz egy írásos anyagot: mi lassítja a szállítást, mit érdemes először megfogni, és mi az, amihez most ne nyúljatok. Vezetőségnek is bemutatható formában — ugyanaz a logika, mint egy ADR-nél, csak üzleti olvasónak.",
+    "offerContinuationTitle": "Ha ezután is kell külső nézőpont",
+    "offerContinuationBody": "A felmérés önmagában is kerek: a végén nem maradtok félbehagyva egy ajánlattal. Ahol viszont a bevezetés folyamatos külső szemet igényel, ott havi kerettel dolgozunk tovább — havi két session, köztük írásos elérhetőséggel. Ez nem feltétele semminek, és a felmérés után dől el, van-e értelme.",
+    "noTitle": "Mire mondok nemet",
+    "noIntro": "A tanácsadásban az a jó üzlet, ha minél tovább tart. Nálam nem ez a cél.",
+    "no": [
+      "Nem írok stratégiai anyagot, amit a következő tervezési körben senki nem vesz elő.",
+      "Nem javaslok újraírást, ha a meglévő rendszer megjavítható — az újraírás a legdrágább válasz a legtöbb kérdésre.",
+      "Nem viszek be folyamatot csak azért, mert egy nagyobb cégnél működött. A ti korlátaitokhoz igazítom, vagy nem csinálom.",
+      "Nem veszem át a döntéseiteket. Segítek meghozni és leírni őket, de a rendszer a tiétek marad.",
+      "Ha az jön ki, hogy nálatok most nem tanácsadás kell, hanem egy felvétel, egy eszköz vagy egyszerűen idő, ezt egyenesen megmondom."
+    ],
+    "remoteTitle": "Hogyan dolgozom távolról",
+    "remoteBody": "Minden session videóhíváson zajlik, közös képernyővel. Ahol engeditek, belenézek a kódbázisba, a CI-konfigba és a deployment scriptekbe is — read-only hozzáférés bőven elég hozzá. A sessionök között e-mailben elérhető vagyok, és ha a csapatnak úgy kényelmesebb, közös Slack csatornán is. Nem kell utaznotok, és nem kell egy teljes napot kiszakítani a csapat naptárából.",
+    "credibilityTitle": "Miért tőlem",
+    "credibilityBody": "Papp Krisztián vagyok. Tizenöt éve tervezek és építek rendszereket — kódbázisokon, pipeline-okon és architektúrákon, hands-on, nem prezentációkban. Konferenciákon és meetupokon rendszeresen beszélek ADR-ekről és arról, mibe kerül, ha a döntések nincsenek leírva. Közvetlenül velem dolgoztok: nincs mögöttem csapat, akire a munkát leadom.",
+    "caseStudyEyebrow": "Esettanulmány",
+    "caseStudyTitle": "Mérnöki bizalom helyreállítása egy ~30 000 napi aktív felhasználós platformon",
+    "caseStudyBody": "Hogyan stabilizáltuk a szállítást, hatszorosára növeltük a tesztlefedettséget, és leválasztottuk a domaint a Salesforce-ról egy növekvő backoffice környezetben.",
+    "caseStudyCta": "Elolvasom az esettanulmányt",
     "aiTransformationEyebrow": "Önálló fókuszterület",
     "aiTransformationTitle": "AI-alapú mérnöki transzformáció",
     "aiTransformationIntro": "Az AI eszközök azoknak a csapatoknak segítenek igazán, akiknek már szilárd mérnöki gyakorlataik vannak — a többieknél jellemzően csak gyorsítják a technikai adósság felhalmozódását. Ez külön fókuszterület: AI readiness assessment, döntéstámogatás konkrét AI-döntésekben és csapat szintű gyakorlatok.",
-    "complementsTitle": "Hogyan egészíti ki a tanácsadás a képzéseket",
-    "complementsBody": "Az együttműködések rövidek és fókuszáltak. A cél a tudásátadás és csapat autonómia: az embereitek megtanulják az ADR sessionök vezetését, a diagramok karbantartását és a pipeline-ok fejlesztését maguk. A cél nem tartós függés—az, hogy a csapatod birtokolhassa a gyakorlatokat és döntéseket után, hogy készen vagyunk.",
-    "cta": "Foglalj időpontot",
-    "ctaNote": "Tanácsadási igény esetén többet segít egy rövid leírás a jelenlegi rendszereitekről és kihívásaitokról, mint egy hosszú brief.",
-    "aiTransformationCta": "AI tanácsadás részletei"
+    "aiTransformationCta": "AI tanácsadás részletei",
+    "ctaNote": "Többet segít egy rövid leírás a jelenlegi rendszereitekről és arról, hol akadtatok el, mint egy hosszú brief.",
+    "trainingNoteTitle": "És ha inkább képzés kell?",
+    "trainingNoteBody": "Ha a csapatnak nem külső nézőpont kell, hanem közös gyakorlás egy konkrét témán, arra külön workshopok vannak.",
+    "trainingNoteCta": "Képzések megtekintése"
   },
   "about": {
     "pageTitle": "Rólam",
@@ -838,7 +875,8 @@
     "companyLabel": "Cég",
     "messageLabel": "Röviden a helyzetről",
     "submitLabel": "Küldés",
-    "formPlaceholderHint": "Ez egy helykitöltő űrlap. Éles használatban saját kapcsolatfelvételi csatornához érdemes kötni."
+    "formPlaceholderHint": "Ez egy helykitöltő űrlap. Éles használatban saját kapcsolatfelvételi csatornához érdemes kötni.",
+    "bookingButtonLabel": "Időpont foglalása"
   },
   "caseStudies": {
     "pageTitle": "Esettanulmányok",
@@ -863,9 +901,9 @@
     "sidebarCtaTitle": "Foglalj egy hívást",
     "sidebarCtaBody": "Ha a pipeline a szűk keresztmetszet, feltérképezzük a hiányokat, és egy karcsúbb utat építünk a production felé.",
     "sidebarCtaLabel": "Beszéljünk",
-    "b2cCtaTitle": "Architect Mindset képzés",
-    "b2cCtaBody": "Két napos, budapesti, személyes tréning technikai döntésekről, C4-ről és ADR-ekről fejlesztőknek.",
-    "b2cCtaLabel": "Program megtekintése",
+    "consultingCtaTitle": "Elakadt a szállítás?",
+    "consultingCtaBody": "Kívülről megnézem a rendszert, a pipeline-t és a döntéseket — 2–3 hét, a végén írásos anyag arról, mit javítsatok először.",
+    "consultingCtaLabel": "Tanácsadás részletei",
     "videoBlockTitle": "Nézd meg videón",
     "videoBlockBody": "Ugyanez a tartalom YouTube-on is elérhető angolul, ha inkább videóban hallanád.",
     "videoWatchButton": "Megnézem YouTube-on",
@@ -895,11 +933,11 @@
     "servicesIntro": "Ezek a szolgáltatók használat vagy engedélyezés esetén technikai adatokat (pl. IP-cím, böngésző adatok, interakciós események) kaphatnak.",
     "schedulingTitle": "Időpontfoglalás",
     "schedulingItems": [
-      "Calendly (calendly.com, assets.calendly.com): a kapcsolat oldalon időpontfoglaláshoz."
+      "Google Calendar (calendar.google.com, calendar.app.google): a kapcsolat oldalakon időpontfoglaláshoz."
     ],
     "newsletterTitle": "Hírlevél / várólista feliratkozás",
     "newsletterItems": [
-      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): a tréning várólista feliratkozási űrlaphoz. Az e-mail és név a feliratkozáskor JSON kérésben kerül továbbításra.",
+      "AWS Lambda Function URL (lambda-url.eu-central-1.on.aws): a tréning várólista feliratkozási űrlaphoz, valamint a State of AI Dev riport PDF-változatának igényléséhez. Az e-mail és név a feliratkozáskor JSON kérésben kerül továbbításra.",
       "A feliratkozási adatok feldolgozása a Letscode Solutions által üzemeltetett backend folyamatban történik."
     ],
     "analyticsTitle": "Analitika",
@@ -961,7 +999,7 @@
       "trainingB2cAds": "Konverzióra optimalizált, két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és ADR-ek, hogy hétfőn már rendszerben kommunikálj.",
       "trainingB2cTerms": "A budapesti B2C workshop részvételi és vásárlási feltételei.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
-      "consulting": "Tanácsadás, hogy az architektúra és szállítási gyakorlatok a valós rendszereitekben is működjenek—áttekintések, ADR sessionök, CI/CD.",
+      "consulting": "Külső nézőpont arra, mi lassítja a szállítást: architektúra- és pipeline-felmérés, ADR-ek, döntéstámogatás. Távolról, videóhívásokkal, a végén írásos anyaggal.",
       "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",
       "contact": "Lépj kapcsolatba a Letscode Solutionsszel képzés, workshop vagy tanácsadás egyeztetéséhez.",
       "aiContact": "Foglalj egy rövid egyeztetést AI tanácsadásról: AI readiness assessment, build vs. buy és konkrét AI-döntések fejlesztői csapatoknak.",
@@ -1024,7 +1062,7 @@
     "reportBody": "Nézd meg a State of AI Dev 2026 riportot: magyar fejlesztők és mérnöki vezetők válaszai arról, mennyit ír már a gép, mit vett át az agent, ki ellenőrzi, és mennyi governance van mögötte. Jó kiindulás ahhoz, hogy lássátok, hol tartotok a többiekhez képest.",
     "reportCta": "Elolvasom a riportot",
     "credibilityTitle": "Miért tőlem",
-    "credibilityBody": "AWS Certified Solutions Architect – Associate és Claude Certified Architect – Foundations. Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve rendszereket tervezek — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
+    "credibilityBody": "Egy governance SaaS-nál a kezdetektől benne voltam az AI-alapú fejlesztésekben, az elején hands-on. Emellett tizenöt éve tervezek rendszereket — az AI a legutóbbi technológia, amire ugyanaz a trade-off gondolkodás vonatkozik, mint az összes előzőre.",
     "leadershipTitle": "Amit fel tudsz mutatni a vezetésnek",
     "leadershipBody": "Ha felülről jön a nyomás, a legnehezebb az, hogy kimondd: ez nekünk most nem éri meg — anélkül, hogy maradinak tűnnél. Az assessment írásos anyaga pontosan ezt támasztja alá: mit vizsgáltunk meg, mi a döntés, és mi az indoklás. Ugyanaz a logika, mint egy ADR-nél, csak üzleti olvasónak.",
     "readingTitle": "Olvasnivaló",

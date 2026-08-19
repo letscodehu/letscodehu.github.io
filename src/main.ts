@@ -16,12 +16,17 @@ export const createApp = ViteSSG(
   App,
   {
     routes,
-    scrollBehavior(to, _from, savedPosition) {
+    scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
       }
       if (to.hash) {
         return { el: to.hash }
+      }
+      // Same page, only query changed (e.g. AI survey segment picker) — don't
+      // jerk the scroll position around, the user is mid-interaction.
+      if (to.path === from.path) {
+        return false
       }
       return { left: 0, top: 0 }
     },

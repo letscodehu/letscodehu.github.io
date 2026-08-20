@@ -44,6 +44,21 @@ withDefaults(
   background-color: var(--color-surface);
 }
 
+/*
+  Google renders its own white page inside the frame and gives us no way to theme
+  it, so in dark mode a bright plate cuts straight into the dark card. Layered
+  shadows fade that edge outwards instead: a thin rim, a wider soft ring, then a
+  broad halo that dissolves into the card. Phones never see this — the frame is
+  display:none there and the button takes over.
+*/
+.theme-dark .google-calendar-host {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.2),
+    0 0 18px 8px rgba(255, 255, 255, 0.12),
+    0 0 50px 18px rgba(255, 255, 255, 0.1);
+}
+
 .google-calendar-button {
   display: none;
 }

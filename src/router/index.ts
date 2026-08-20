@@ -25,7 +25,7 @@ const childRoutes: RouteRecordRaw[] = [
     path: '',
     name: 'home',
     component: HomePage,
-    meta: { titleKey: 'nav.home', descriptionKey: 'seo.descriptions.home' },
+    meta: { titleKey: 'home.pageTitle', descriptionKey: 'seo.descriptions.home' },
   },
   {
     path: 'training',

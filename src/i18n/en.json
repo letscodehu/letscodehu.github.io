@@ -58,6 +58,7 @@
     "closeLabel": "Close cookie settings"
   },
   "home": {
+    "pageTitle": "Consulting for software engineering teams — an outside view on delivery",
     "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",
     "heroSubtitle": "I look at your system, your pipeline, and your decisions from the outside, then tell you what to fix first. I work remotely: video sessions with a shared screen on your codebase, and a written deliverable at the end.",
     "heroEyebrow": "Consulting and training for engineering teams.",
@@ -794,11 +795,11 @@
   },
   "about": {
     "pageTitle": "About Letscode Solutions and my work with teams",
-    "intro": "I work as a senior consultant and trainer focused on helping software engineering teams deliver reliably without losing sight of technical quality — including how they adopt AI tooling without cutting corners.",
+    "intro": "I am Krisztián Papp. I have been designing and building systems for fifteen years, and today I work as a consultant with software engineering teams: helping them deliver reliably without losing sight of technical quality — including how they adopt AI tooling without cutting corners.",
     "photoAlt": "Krisztián Papp speaking at the Weblica conference",
     "backgroundTitle": "Background",
     "background": [
-      "Years of experience working with product development teams and engineering organizations.",
+      "Fifteen years with product development teams and engineering organizations — from startup scale to multi-team organizations.",
       "Hands-on work across codebases, infrastructure, and delivery pipelines.",
       "Practical work helping teams introduce AI-assisted development without sacrificing code quality or judgment.",
       "Regular speaker at meetups and conferences, with a focus on practical, experience-based talks."
@@ -833,24 +834,30 @@
     "soundcloudLabel": "Podcast on SoundCloud",
     "moreSessionsTitle": "More conference sessions",
     "moreSessionsBody": "See upcoming events and full session history on my public Sessionize profile.",
-    "onlinePresenceTitle": "Online presence"
+    "onlinePresenceTitle": "Online presence",
+    "ctaTitle": "Let's talk about where you stand",
+    "ctaBody": "If you have a recurring delivery or architecture problem, a short call usually makes it clear whether an outside perspective is worth it.",
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "How I work"
   },
   "contact": {
     "pageTitle": "Contact",
-    "intro": "If you are responsible for engineering teams and want to explore training or focused consulting support, book a short discovery call.",
+    "intro": "Delivery is slowing down, releases feel risky, or you are facing an architecture decision. Book a short call and we will go through where you stand.",
     "emailIntro": "Prefer email? Reach me directly at",
     "email": "fejlesztes@letscode.hu",
     "expectationsTitle": "Who should get in touch",
     "expectations": [
-      "CTOs, VPs of Engineering, and engineering managers planning team-wide training.",
+      "CTOs and VPs of Engineering who can see delivery slowing down but cannot tell which change would pay off most.",
       "Tech leads who see recurring delivery or architecture issues and want structured help to address them.",
-      "HR or L&D partners who coordinate technical training for engineering teams."
+      "Engineering managers facing a specific decision who want an outside second opinion."
     ],
     "responseTitle": "What to expect",
     "response": [
       "Pick a suitable time in the calendar widget below.",
-      "The call is a short, no-pressure discovery conversation.",
-      "If I am not the right fit, I will say so directly."
+      "This call is free, and that is all it is: we go through your questions and work out whether there is a fit.",
+      "We start with what you have tried so far and where you got stuck — not with a presentation.",
+      "Time and money come up only after that, and only if it makes sense for both of us to continue.",
+      "If it turns out you do not need an outside consultant right now, I will say so directly."
     ],
     "aiPageTitle": "AI consulting — book a call",
     "aiIntro": "You are facing an AI decision: adoption, build vs. buy, or simply whether it is worth it at all. Book a short call and we will go through where you stand.",
@@ -869,7 +876,7 @@
       "If it turns out AI is not your next step right now, I will say so directly."
     ],
     "aiFormTitle": "Book a free 30-minute call",
-    "formTitle": "Book a 30-minute call",
+    "formTitle": "Book a free 30-minute call",
     "nameLabel": "Name",
     "emailLabel": "Work email",
     "companyLabel": "Company",
@@ -974,18 +981,18 @@
     "contactBody": "If you have questions about data processing on this site, please use the Contact page."
   },
   "seo": {
-    "defaultOgImageAlt": "Letscode Solutions — training and consulting for software engineering teams",
+    "defaultOgImageAlt": "Letscode Solutions — consulting and training for software engineering teams",
     "descriptions": {
-      "home": "Classroom training and consulting for mid–senior software teams: DevOps, architecture, ADRs, C4, CI/CD, and practices that make delivery safer and faster.",
+      "home": "An outside view on what slows delivery down: architecture and pipeline review, ADRs, decision support. Remote, over video sessions, with a written deliverable at the end.",
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
       "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
       "trainingB2cTerms": "Participation and purchase terms for the Budapest B2C workshop.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
       "consulting": "An outside view on what slows delivery down: architecture and pipeline review, ADRs, decision support. Remote, over video sessions, with a written deliverable at the end.",
-      "about": "About Letscode Solutions: independent training and consulting for software teams, conference talks, and practical engineering focus.",
-      "contact": "Contact Letscode Solutions to discuss training, workshops, or consulting for your engineering team.",
+      "about": "Krisztián Papp, independent consultant: fifteen years designing and building systems, conference talks, and a practical focus on engineering teams.",
+      "contact": "Book a free 30-minute call: delivery bottlenecks, architecture decisions, and an outside view for software engineering teams.",
       "aiContact": "Book a short call about AI consulting: AI readiness assessment, build vs. buy, and concrete AI decisions for engineering teams.",
-      "caseStudies": "Case studies from real training and consulting work: delivery, testing, architecture, and platform modernization.",
+      "caseStudies": "Case studies from real consulting work: delivery, testing, architecture, and platform modernization.",
       "blog": "Articles on CI/CD, delivery bottlenecks, architecture decisions, and how engineering teams ship to production.",
       "privacy": "How this site processes data, which third-party services may load, and how cookie preferences work.",
       "aiConsulting": "Independent AI consulting for engineering teams: AI readiness assessment, decision support and team-level practices — where AI helps and where it does not."

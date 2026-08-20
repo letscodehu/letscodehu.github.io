@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>letscode.hu</title>
+
+    <!--
+      Only page-independent tags belong here. Everything that varies per route or
+      language — title, description, canonical, hreflang, og:title/description/image,
+      JSON-LD — is set by useHead() in AppLayout.vue and baked in per page by
+      vite-ssg. Duplicating any of it here would ship two conflicting values.
+
+      theme-color follows the system preference, which is also the site's default.
+      A visitor who flips the in-page toggle keeps the browser chrome of their
+      system theme; there is no static-markup way to follow a runtime class.
+    -->
+    <meta property="og:site_name" content="Letscode Solutions Kft" />
+    <meta name="theme-color" content="#f3f6fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#04050a" media="(prefers-color-scheme: dark)" />
+
+    <!-- Replaced per page by useHead(); this is the pre-hydration fallback only. -->
+    <title>Letscode Solutions Kft</title>
     <script>
       (function () {
         var STORAGE_KEY = 'dark-mode-preference'

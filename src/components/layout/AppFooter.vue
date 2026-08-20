@@ -3,6 +3,13 @@ import { useI18n } from '../../composables/useI18n'
 import { openCookieSettings } from '../../cookieConsent'
 
 const { t, currentLang } = useI18n()
+
+/**
+ * The one published case study. There is no case-studies index — that path
+ * redirects to the blog — so the footer links straight at the study itself,
+ * the same way the consulting page does.
+ */
+const CASE_STUDY_SLUG = 'rebuilding-engineering-trust-30k-dau-backoffice'
 </script>
 
 <template>
@@ -45,6 +52,15 @@ const { t, currentLang } = useI18n()
           </div>
 
           <div class="footer-link-group">
+            <RouterLink
+              :to="{
+                name: 'case-study-detail-en',
+                params: { lang: currentLang, slug: CASE_STUDY_SLUG },
+              }"
+              class="footer-link"
+            >
+              {{ t('nav.caseStudies') }}
+            </RouterLink>
             <!-- A riport magyar nyelvű. -->
             <RouterLink
               v-if="currentLang === 'hu'"

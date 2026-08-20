@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
+import ReportPromoBanner from '../components/ui/ReportPromoBanner.vue'
 
 const { t, currentLang } = useI18n()
 
@@ -112,6 +113,10 @@ const CASE_STUDY_SLUG = 'rebuilding-engineering-trust-30k-dau-backoffice'
         </ul>
       </BaseCard>
     </section>
+
+    <!-- A lower-threshold step for visitors not ready to put a stranger in their
+         calendar: without it the only way off this page is a booked call. -->
+    <ReportPromoBanner class="section" />
 
     <section class="section">
       <BaseCard>

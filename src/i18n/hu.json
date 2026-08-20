@@ -58,6 +58,7 @@
     "closeLabel": "Süti beállítások bezárása"
   },
   "home": {
+    "pageTitle": "Tanácsadás szoftverfejlesztő csapatoknak — külső nézőpont a szállításra",
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",
     "heroSubtitle": "Kívülről nézem meg a rendszert, a pipeline-t és a döntéseket, majd megmondom, mit érdemes először javítani. Távolról dolgozom: videóhívások közös képernyővel a ti kódbázisotokon, a végén írásos anyaggal.",
     "heroEyebrow": "Tanácsadás és képzés szoftverfejlesztő csapatoknak.",
@@ -77,7 +78,7 @@
       "Látható architektúra: dokumentált határok és döntések, hogy a következő ember is fel tudja venni a fonalat.",
       "Megismételhető gyakorlatok: verziózott infrastruktúra és közös konvenciók.",
       "Magabiztosság a refaktorálásban: moduláris tervezés és függőségi szabályok, amelyek a változtatást kiszámíthatóvá teszik.",
-      "Megbízható szállítási: CI/CD, amely gyors és megbízható, így a release-ek nem érződnek kockázatosnak."
+      "Megbízható szállítás: CI/CD, amely gyors és kiszámítható visszajelzést ad, így a release-ek nem érződnek kockázatosnak."
     ],
     "offeringsTitle": "Fókuszterületek",
     "offeringsEngineeringTitle": "Mérnöki gyakorlatok",
@@ -794,11 +795,11 @@
   },
   "about": {
     "pageTitle": "Rólam",
-    "intro": "Senior tanácsadóként és trénerként dolgozom, a célom pedig az, hogy a fejlesztő csapatok megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget – ideértve azt is, hogyan vezessék be az AI eszközöket anélkül, hogy kompromisszumot kötnének.",
+    "intro": "Papp Krisztián vagyok. Tizenöt éve tervezek és építek rendszereket, ma pedig tanácsadóként dolgozom fejlesztő csapatokkal: hogy megbízhatóan tudjanak szállítani anélkül, hogy közben felélnék a technikai minőséget – ideértve azt is, hogyan vezessék be az AI eszközöket anélkül, hogy kompromisszumot kötnének.",
     "photoAlt": "Papp Krisztián előadás közben a Weblica konferencián",
     "backgroundTitle": "Háttér",
     "background": [
-      "Több éves tapasztalat termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel.",
+      "Tizenöt év termékfejlesztő csapatokkal és nagyobb engineering szervezetekkel — startup méretűtől a több csapatos szervezetig.",
       "Hands-on munka kódbázisokon, infrastruktúrán és szállítási pipeline-okon.",
       "Gyakorlati munka abban, hogy a csapatok úgy vezessenek be AI-támogatott fejlesztést, hogy közben ne áldozzák fel a kódminőséget és a szakmai ítélőképességet.",
       "Rendszeres előadások meetupon és konferenciákon, erős gyakorlati fókuszsal."
@@ -833,24 +834,30 @@
     "soundcloudLabel": "Podcast (SoundCloud)",
     "moreSessionsTitle": "További konferencia sessionök",
     "moreSessionsBody": "Nézd meg a közelgő és korábbi előadásokat a nyilvános Sessionize profilomon.",
-    "onlinePresenceTitle": "Megtalálsz még itt"
+    "onlinePresenceTitle": "Megtalálsz még itt",
+    "ctaTitle": "Beszéljünk arról, hol tartotok",
+    "ctaBody": "Ha van egy visszatérő szállítási vagy architekturális problémátok, egy rövid hívásból általában kiderül, érdemes-e külső nézőponttal nekimenni.",
+    "ctaPrimary": "Foglalj időpontot",
+    "ctaSecondary": "Hogyan dolgozom"
   },
   "contact": {
     "pageTitle": "Kapcsolat",
-    "intro": "Ha engineering csapatokért felelsz, és felmerült a képzés vagy fókuszált tanácsadási együttműködés gondolata, foglalj egy rövid egyeztetést.",
+    "intro": "Lassul a szállítás, kockázatosnak érződnek a release-ek, vagy egy architekturális döntés előtt álltok. Foglalj egy rövid egyeztetést, és átbeszéljük, hol tartotok.",
     "emailIntro": "Inkább írnál e-mailt? Írj közvetlenül ide:",
     "email": "fejlesztes@letscode.hu",
     "expectationsTitle": "Kiknek érdemes jelentkezni?",
     "expectations": [
-      "CTO-knak, VP of Engineering szerepben lévőknek, engineering managereknek, akik csapat szintű képzést terveznek.",
-      "Tech leaddel, akik visszatérő szállítási vagy architekturális problémákat látnak, és strukturált segítséget keresnek.",
-      "HR vagy L&D partnereknek, akik technikai képzéseket szerveznek fejlesztő csapatoknak."
+      "CTO-knak és VP of Engineering szerepben lévőknek, akik látják, hogy lassul a szállítás, de nem tudják, melyik változtatás hozná a legtöbbet.",
+      "Tech leadeknek, akik visszatérő szállítási vagy architekturális problémákat látnak, és strukturált segítséget keresnek.",
+      "Engineering managereknek, akik egy konkrét döntés előtt állnak, és másodvélemény kell rá kívülről."
     ],
     "responseTitle": "Mire számíthatsz?",
     "response": [
       "Válassz egy megfelelő időpontot az alábbi naptárban.",
-      "A beszélgetés rövid, kötetlen egyeztetés.",
-      "Ha nem én vagyok a megfelelő választás, ezt egyenesen meg fogom írni."
+      "Ez a beszélgetés ingyenes, és ennyiben ki is merül: átbeszéljük a kérdéseidet, és kiderül, van-e fit.",
+      "Az elején arról beszélünk, mit próbáltatok eddig és hol akadtatok el — nem prezentációval kezdünk.",
+      "Időről és pénzről csak ezután beszélünk, akkor, ha mindkettőnknek van értelme folytatni.",
+      "Ha az jön ki, hogy nálatok most nem külső tanácsadó kell, ezt egyenesen meg fogom mondani."
     ],
     "aiPageTitle": "AI tanácsadás — időpontfoglalás",
     "aiIntro": "AI-döntés előtt álltok: bevezetés, build vs. buy, vagy csak annak eldöntése, hogy egyáltalán megéri-e. Foglalj egy rövid egyeztetést, és átbeszéljük, hol tartotok.",
@@ -869,7 +876,7 @@
       "Ha az jön ki, hogy nálatok most nem az AI a következő lépés, ezt egyenesen meg fogom mondani."
     ],
     "aiFormTitle": "Ingyenes 30 perces beszélgetés foglalása",
-    "formTitle": "30 perces beszélgetés foglalása",
+    "formTitle": "Ingyenes 30 perces beszélgetés foglalása",
     "nameLabel": "Név",
     "emailLabel": "Munkahelyi e-mail",
     "companyLabel": "Cég",
@@ -992,18 +999,18 @@
     "exploreBlogCta": "Cikkek olvasása →"
   },
   "seo": {
-    "defaultOgImageAlt": "Letscode Solutions — képzés és tanácsadás fejlesztői csapatoknak",
+    "defaultOgImageAlt": "Letscode Solutions — tanácsadás és képzés fejlesztői csapatoknak",
     "descriptions": {
-      "home": "Terem- és online képzés, valamint tanácsadás tapasztalt fejlesztői csapatoknak: DevOps, architektúra, ADR, C4, CI/CD és biztonságosabb szállítás.",
+      "home": "Külső nézőpont arra, mi lassítja a szállítást: architektúra- és pipeline-felmérés, ADR-ek, döntéstámogatás. Távolról, videóhívásokkal, a végén írásos anyaggal.",
       "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
       "trainingB2cAds": "Konverzióra optimalizált, két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és ADR-ek, hogy hétfőn már rendszerben kommunikálj.",
       "trainingB2cTerms": "A budapesti B2C workshop részvételi és vásárlási feltételei.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
       "consulting": "Külső nézőpont arra, mi lassítja a szállítást: architektúra- és pipeline-felmérés, ADR-ek, döntéstámogatás. Távolról, videóhívásokkal, a végén írásos anyaggal.",
-      "about": "A Letscode Solutionsról: független képzés és tanácsadás szoftveres csapatoknak, konferencia előadások, gyakorlati fókusz.",
-      "contact": "Lépj kapcsolatba a Letscode Solutionsszel képzés, workshop vagy tanácsadás egyeztetéséhez.",
+      "about": "Papp Krisztián, független tanácsadó: tizenöt év rendszertervezés és -építés, konferencia-előadások, gyakorlati fókusz fejlesztő csapatokkal.",
+      "contact": "Foglalj egy ingyenes 30 perces egyeztetést: szállítási szűk keresztmetszetek, architekturális döntések és külső nézőpont fejlesztő csapatoknak.",
       "aiContact": "Foglalj egy rövid egyeztetést AI tanácsadásról: AI readiness assessment, build vs. buy és konkrét AI-döntések fejlesztői csapatoknak.",
-      "caseStudies": "Esettanulmányok valós képzési és tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
+      "caseStudies": "Esettanulmányok valós tanácsadási munkából: szállítás, tesztelés, architektúra és platformmodernizáció.",
       "blog": "Cikkek CI/CD-ről, szállítási szűk keresztmetszetekről, architekturális döntésekről és a production felé vezető útról.",
       "privacy": "Hogyan történhet adatkezelés ezen a webhelyen, milyen külső szolgáltatások tölthetők be, és hogyan működnek a süti beállítások.",
       "slack": "Csatlakozz a letscode.hu Slack közösséghez: beszélgetések architektúráról, CI/CD-ről és AI-alapú fejlesztésről fejlesztők között.",

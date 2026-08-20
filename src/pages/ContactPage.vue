@@ -45,7 +45,7 @@ function topicKey(base: string): string {
       </p>
     </header>
 
-    <section class="section grid grid--two">
+    <section class="section grid grid--two contact-details">
       <BaseCard>
         <template #title>{{ t(topicKey('expectationsTitle')) }}</template>
         <ul class="list">
@@ -64,7 +64,7 @@ function topicKey(base: string): string {
       </BaseCard>
     </section>
 
-    <section class="section">
+    <section class="section booking">
       <header class="section-header">
         <h2>{{ t(topicKey('formTitle')) }}</h2>
       </header>
@@ -122,6 +122,30 @@ function topicKey(base: string): string {
   margin: 0;
   padding-left: 1.25rem;
   font-size: 0.92rem;
+}
+
+/*
+  On a phone the two text cards pushed the booking step more than a full screen
+  down. The warmest visitor should reach it without hunting, so on narrow screens
+  booking comes first and the supporting copy moves below it.
+*/
+@media (max-width: 640px) {
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header {
+    order: 1;
+  }
+
+  .booking {
+    order: 2;
+  }
+
+  .contact-details {
+    order: 3;
+  }
 }
 
 .list li + li {

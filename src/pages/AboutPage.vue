@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 
-const { t } = useI18n()
+const { t, currentLang } = useI18n()
+
+const contactRoute = computed(() => ({
+  name: 'contact-en',
+  params: { lang: currentLang.value },
+}))
+
+const consultingRoute = computed(() => ({
+  name: 'consulting-en',
+  params: { lang: currentLang.value },
+}))
 </script>
 
 <template>
@@ -161,6 +172,24 @@ const { t } = useI18n()
         </div>
       </BaseCard>
     </section>
+
+    <!-- Until this block the page had no route onward; the visitor read the bio and left. -->
+    <section class="section cta">
+      <h2 class="cta-title">{{ t('about.ctaTitle') }}</h2>
+      <p class="cta-body">{{ t('about.ctaBody') }}</p>
+      <div class="cta-actions">
+        <RouterLink :to="contactRoute">
+          <BaseButton>
+            {{ t('about.ctaPrimary') }}
+          </BaseButton>
+        </RouterLink>
+        <RouterLink :to="consultingRoute">
+          <BaseButton variant="ghost">
+            {{ t('about.ctaSecondary') }}
+          </BaseButton>
+        </RouterLink>
+      </div>
+    </section>
   </article>
 </template>
 
@@ -288,5 +317,33 @@ const { t } = useI18n()
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cta-title {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.cta-body {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .cta-actions :deep(.button) {
+    width: 100%;
+  }
 }
 </style>

@@ -45,7 +45,6 @@ const currentPathName = computed(() => (route.name as string) || 'home')
 const TRAINING_NAV_ACTIVE_NAMES = new Set([
   'training-en',
   'training-b2c-ads-en',
-  'training-b2c-terms-en',
   'workshop-en',
 ])
 

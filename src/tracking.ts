@@ -252,14 +252,9 @@ export function trackPageView(path: string) {
   }
 }
 
-export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom' | 'sticky' | 'latebird_popup'
+export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom'
 
-export type TrainingWorkshopCtaNextStep = 'email_popup' | 'stripe_checkout'
-
-export function trackTrainingWorkshopCtaClick(args: {
-  placement: TrainingWorkshopCtaPlacement
-  nextStep: TrainingWorkshopCtaNextStep
-}) {
+export function trackTrainingWorkshopCtaClick(args: { placement: TrainingWorkshopCtaPlacement }) {
   if (typeof window === 'undefined') {
     return
   }
@@ -267,33 +262,11 @@ export function trackTrainingWorkshopCtaClick(args: {
   if (loaded.ga && window.gtag) {
     window.gtag('event', 'training_workshop_cta_click', {
       placement: args.placement,
-      next_step: args.nextStep,
     })
   }
 
   if (loaded.fb && window.fbq) {
     window.fbq('trackCustom', 'TrainingWorkshopCtaClick', {
-      placement: args.placement,
-      next_step: args.nextStep,
-    })
-  }
-}
-
-export function trackTrainingWorkshopEmailPopupOpen(args: {
-  placement: TrainingWorkshopCtaPlacement
-}) {
-  if (typeof window === 'undefined') {
-    return
-  }
-
-  if (loaded.ga && window.gtag) {
-    window.gtag('event', 'training_workshop_email_popup_open', {
-      placement: args.placement,
-    })
-  }
-
-  if (loaded.fb && window.fbq) {
-    window.fbq('trackCustom', 'TrainingWorkshopEmailPopupOpen', {
       placement: args.placement,
     })
   }

@@ -200,61 +200,41 @@
       "Kiszámíthatóbb szállítás, mert a gyakorlatok nem egyénenként különböznek.",
       "Konkrét, kontextushoz illeszkedő következő lépések."
     ],
-    "b2cCardTitle": "Architect Mindset képzés",
-    "b2cCardBody": "Egyéni formátumot keresel? Két nap, Budapest, személyesen: technikai döntések, C4 és könnyű ADR-ek—ha már nem csak ticketeket akarsz zárni.",
-    "b2cCardCta": "Tréning megtekintése",
+    "b2cCardTitle": "Architect Mindset workshop",
+    "b2cCardBody": "Kifejezetten döntéshozatalra és architektúrára fókuszáló workshop csapatoknak: technikai döntések, C4 és könnyű ADR-ek — ha a csapat már nem csak ticketeket akar zárni.",
+    "b2cCardCta": "Workshop megtekintése",
     "cta": "Beszéljünk a képzési igényről",
     "prospectusCta": "Prospektus letöltése",
     "ctaNote": "Képzési igény esetén többet segít egy rövid leírás a csapatról, stackről és a jelenlegi kihívásokról, mint egy hosszú RFP."
   },
   "trainingB2cAds": {
-    "pageTitle": "Architect Mindset tréning — Workshop Budapest",
-    "eyebrow": "2 nap · Budapest · szeptember 17-18. (csüt-péntek) · kiscsoportos, személyes workshop",
-    "heroTitle": "Hozz meg olyan architekturális döntéseket, amiket 6 hónap múlva sem kell szégyellned.",
-    "heroAudienceIntro": "2 napos gyakorlati workshop senior fejlesztőknek, tech leadeknek és engineering managereknek, akik:",
+    "pageTitle": "Architect Mindset tréning csapatoknak",
+    "eyebrow": "2 napos gyakorlati workshop · csapatoknak, cégeknek · helyszínen vagy online",
+    "heroTitle": "Hozzatok meg olyan architekturális döntéseket, amiket 6 hónap múlva sem kell megvédenetek újra.",
+    "heroAudienceIntro": "Gyakorlati workshop mérnökcsapatoknak, tech leadeknek és engineering managereknek, akiknél:",
     "heroAudiencePoints": [
-      "rendszeresen technikai kompromisszumokról döntenek,",
-      "legacy és modern rendszerek között egyensúlyoznak,",
-      "és szeretnék, hogy a döntéseik 6 hónap múlva is védhetők legyenek."
+      "rendszeresen technikai kompromisszumokról kell dönteni,",
+      "legacy és modern rendszerek között kell egyensúlyozni,",
+      "és fontos, hogy a döntések 6 hónap múlva is védhetők legyenek."
     ],
-    "heroPainTitle": "Ismerős?",
+    "heroPainTitle": "Ismerős a csapatodban?",
     "heroPainPoints": [
-      "A meetingek végére nincs valódi döntés, csak több kérdés — és jövő héten ugyanannak futtok neki újra.",
-      "Nehéz elmagyaráznod, miért ezt az irányt választottad — és két hét múlva már te sem emlékszel pontosan.",
-      "Döntések születnek… de később senki nem tudja, miért"
+      "A meetingek végére nincs valódi döntés, csak több kérdés — és jövő héten ugyanannak fut neki mindenki újra.",
+      "Nehéz elmagyarázni, miért az adott irány mellett döntöttetek — és két hét múlva már senki nem emlékszik pontosan.",
+      "Döntések születnek, de később senki nem tudja, miért."
     ],
-    "heroPainClosing": "Ha ebből 2 ismerős: egy rossz architekturális döntés többe kerül, mint ez a workshop.",
-    "offerMeta": {
-      "earlyBirdLabel": "Early bird",
-      "earlyBirdPrice": "99.000 Ft",
-      "earlyBirdDeadline": "augusztus 20-ig",
-      "regularPriceLabel": "Utána",
-      "regularPrice": "119.000 Ft",
-      "priceComparison": "Kevesebb, mint egy rosszul megválasztott DB első refaktor-sprintje."
-    },
-    "ctaPrimary": "Lefoglalom a helyem",
-    "ctaNotify": "Értesíts a következő időpontról",
-    "registrationClosedBadge": "Jelentkezés lezárult",
-    "registrationNextDate": "Legközelebb várhatóan szeptemberben kerül megrendezésre.",
-    "ctaSeatsLeft": "Már csak 3 hely maradt",
-    "applicationDeadlineLabel": "Jelentkezési határidő",
-    "applicationDeadlineDate": "szeptember 1.",
-    "applicationDeadline": "Jelentkezési határidő: szeptember 1.",
-    "heroReassurancePoints": [
-      "Számla cégre is kérhető",
-      "Ha elmarad a workshop, 100% vissza 3 munkanapon belül",
-      "A helyed átruházható — küldhetsz valakit magad helyett"
-    ],
+    "heroPainClosing": "Ha ebből 2 ismerős, egy rossz architekturális döntés a csapatodnak többe kerül, mint ez a workshop.",
+    "ctaPrimary": "Beszéljünk a workshopról",
     "instructorSnapshotEyebrow": "A workshopot tartja",
     "instructorSnapshotName": "Krisztián Papp",
     "instructorSnapshotRole": "Software architect & consultant",
     "instructorSnapshotProof": "10+ év gyakorlati tapasztalat · nemzetközi konferencia előadó · DevOps / architecture / cloud fókusz · kis csoportos gyakorlati workshop",
-    "outcomesTitle": "Mit viszel el, amit másnap már használsz",
+    "outcomesTitle": "Mit visz el a csapatod, amit másnap már használ",
     "outcomes": [
-      "ADR-sablon, amivel 15 perc alatt leírsz egy döntést úgy, hogy fél év múlva is érthető.",
-      "Döntési mátrix (visszafordítható / rendszerszintű / drága), amivel 5 perc alatt eldöntöd, kell-e egyáltalán formális döntést hoznod.",
-      "Meg tudod védeni a döntésed vitás helyzetben is — nem fagysz le a „miért így?” kérdésnél.",
-      "Ugyanazt a rendszert elmagyarázod a CEO-nak és a juniornak — ugyanazzal az ábrával, csak más szinten."
+      "ADR-sablon, amivel 15 perc alatt leírtok egy döntést úgy, hogy fél év múlva is érthető legyen.",
+      "Döntési mátrix (visszafordítható / rendszerszintű / drága), amivel 5 perc alatt eldönthető, kell-e egyáltalán formális döntést hozni.",
+      "A csapat meg tudja védeni a döntéseit vitás helyzetben is — nem fagynak le a „miért így?” kérdésnél.",
+      "Ugyanazt a rendszert el tudjátok magyarázni a vezetőségnek és a junior kollégának is — ugyanazzal az ábrával, csak más szinten."
     ],
     "instructorTitle": "Az oktatóról",
     "instructorImagePlaceholder": "Oktatói kép helye",
@@ -281,22 +261,11 @@
       "soundcloudLabel": "megtalálod SoundCloudon",
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
-    "ctaSecondaryTitle": "Foglald le a helyed — kockázat nélkül.",
-    "ctaSecondaryBody": "2 nap, Budapest, szeptember 17-18. Early bird 99.000 Ft augusztus 20-ig, utána 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
-    "checkoutNote": "Biztonságos Stripe fizetés. A fizetés után azonnal küldök egy rövid kérdőívet, hogy a saját példáidra szabhassam a workshopot.",
-    "latebirdPopup": {
-      "eyebrow": "LATEBIRD ajánlat",
-      "title": "10% kedvezmény, ha most foglalod a helyed",
-      "body": "Használd a LATEBIRD kupont a jelentkezésnél, és 10% kedvezménnyel csatlakozhatsz az Architect Mindset workshophoz.",
-      "acceptCta": "Jelentkezem",
-      "cancelCta": "Még olvasok",
-      "closeLabel": "LATEBIRD ajánlat bezárása"
-    },
-    "ctaSecondaryButton": "Jelentkezem most",
+    "ctaSecondaryTitle": "Szervezzük meg a csapatodnak",
+    "ctaSecondaryBody": "Testreszabjuk a workshopot a ti stackre, rendszereitekre és aktuális kihívásaitokra — helyszínen nálatok vagy online, a csapat méretéhez és időbeosztásához igazítva.",
     "fullProgramLinkLabel": "Megnézem a részletes programot",
-    "termsLinkLabel": "Részvételi feltételek",
     "detailedProgram": {
-      "sectionTitle": "Részletes program",
+      "sectionTitle": "Minta program (testreszabható)",
       "days": [
         {
           "title": "1. nap – Döntések és ADR",
@@ -390,174 +359,60 @@
         }
       ]
     },
-    "programFooterCtaTitle": "Foglald le a helyed — kockázat nélkül.",
-    "programFooterCtaBody": "2 nap, Budapest, szeptember 17-18. Early bird 99.000 Ft augusztus 20-ig, utána 119.000 Ft. Ha a workshop elmarad, 100% vissza 3 munkanapon belül. A helyed átruházható, és számlát cégre is kérhetsz.",
-    "companyInquiryTitle": "Céges csapatnak szerveznéd?",
-    "companyInquiryBody": "Ha több főnek, a csapatodnak vagy céges számlázással szeretnéd — a workshopot a saját környezetetekre és példáitokra szabjuk. Vedd fel a kapcsolatot, és egyeztetjük a részleteket.",
-    "companyInquiryButton": "Kapcsolatfelvétel",
+    "programFooterCtaTitle": "Szervezzük meg a csapatodnak",
+    "programFooterCtaBody": "Alakítsuk a workshopot a ti stackre és kihívásaitokra — helyszínen nálatok vagy online. Vegyük fel a kapcsolatot, és egyeztetjük a részleteket.",
     "faqTitle": "Gyakori kérdések",
-    "faqCancellationLead": "Ha nem tudsz részt venni, ezek a fő szabályok érvényesek:",
-    "faqCancellationPoints": [
-      "Ha az esemény előtt több mint 10 nappal mondod le, a díj 100%-át visszatérítjük.",
-      "Ha 7 és 10 nappal az esemény előtt mondod le, 50% visszatérítés jár.",
-      "Ha az esemény előtt 7 napon belül mondod le, vagy nem jelensz meg, nincs visszatérítés.",
-      "A jegy átruházható, késés esetén a kimaradt részre nem jár részleges visszatérítés."
-    ],
-    "faqTermsLinkIntro": "A teljes szöveg és minden pont:",
     "faqItems": [
       {
         "question": "Kinek szól ez a workshop?",
         "paragraphs": [
-          "Senior fejlesztőknek, tech leadeknek és engineering managereknek szól, akik rendszeresen technikai kompromisszumokról döntenek.",
-          "Akkor neked való, ha legacy és modern rendszerek között egyensúlyozol, és szeretnéd, hogy a döntéseid 6 hónap múlva is védhetők legyenek."
+          "Mérnökcsapatoknak, tech leadeknek és engineering managereknek szól, akik rendszeresen technikai kompromisszumokról döntenek.",
+          "Akkor jó választás, ha a csapat legacy és modern rendszerek között egyensúlyoz, és fontos, hogy a döntések 6 hónap múlva is védhetők legyenek."
         ]
       },
       {
-        "question": "Kell előképzettség?",
+        "question": "Kell előképzettség a csapatnak?",
         "paragraphs": [
-          "Igen, alap fejlesztői tapasztalat szükséges.",
-          "Nem kezdőknek szól, viszont nem is kell seniornak lenned. A lényeg, hogy már találkoztál valós problémákkal, nem csak tutorialokkal."
+          "Alap fejlesztői tapasztalat szükséges a résztvevőknek.",
+          "Nem kezdőknek szól, de nem is csak senioroknak — a lényeg, hogy a csapat már találkozott valós architekturális problémákkal, nem csak tutorialokkal."
         ]
       },
       {
-        "question": "Hány fő vehet részt?",
+        "question": "Hány fős csapatnak ajánlott?",
         "paragraphs": [
-          "Minimum 6, maximum 10 fő.",
-          "Kis csoportban dolgozunk, hogy tényleg lehessen kérdezni, beszélgetni, nem csak passzívan ülni."
+          "Kis csoportban dolgozunk, hogy tényleg lehessen kérdezni és beszélgetni, nem csak passzívan ülni.",
+          "Az ideális létszámot az egyeztetés során nézzük meg együtt — ha nagyobb a csapat, több kisebb csoportra bontjuk a gyakorlati részt."
         ]
       },
       {
-        "question": "Hol és mikor lesz a workshop?",
+        "question": "Nálunk tartjátok, vagy online?",
         "paragraphs": [
-          "Offline kerül megrendezésre Budapesten, a XIII. kerületben. Időpont: szeptember 17–18., 09:00–17:00.",
-          "Helyszín: Ruander Oktatóközpont, XIII. kerület, Frangepán utca 3."
+          "Mindkettő megoldható: a csapatotoknál a helyszínen, vagy online, a csapat elhelyezkedésétől és igényeitől függően.",
+          "Az időpontot és a formátumot az egyeztetés során beszéljük meg."
         ]
       },
       {
-        "question": "Mi történik a fizetés után?",
+        "question": "Mennyibe kerül?",
         "paragraphs": [
-          "A fizetés után azonnal kapsz egy kérdőívet, ahol felteszünk pár kérdést, hogy még jobban testre tudjuk szabni a workshop tartalmát.",
-          "Ha bármi változik, az e-mail címeden keresztül értesítünk."
-        ]
-      },
-      {
-        "question": "Kaphatok számlát cégre?",
-        "paragraphs": [
-          "Igen. A fizetés során meg tudod adni a szükséges adatokat, és ennek megfelelő számlát állítunk ki."
-        ]
-      },
-      {
-        "question": "Lehet átutalással is fizetni?",
-        "paragraphs": [
-          "Igen. Ebben az esetben keress a krisztian@letscode.hu e-mail címen, és egyeztetjük a részleteket."
-        ]
-      },
-      {
-        "question": "Mi történik, ha nem tudok részt venni?",
-        "variant": "cancellation"
-      },
-      {
-        "question": "Mi van, ha elmarad a workshop?",
-        "paragraphs": [
-          "Ha nem jön össze a minimum létszám, a workshopot áthelyezzük vagy visszatérítjük a teljes összeget."
+          "Az ár a csapat méretétől, a formátumtól (helyszínen vagy online) és az esetleges testreszabás mértékétől függ.",
+          "Írj nekünk a részletekkel, és pontos ajánlatot küldünk."
         ]
       },
       {
         "question": "Lesz felvétel?",
         "paragraphs": [
-          "Nem. Ez egy interaktív, offline workshop, nem előadás.",
-          "Pont ez adja az értékét."
+          "Alapból nem — ez egy interaktív workshop, nem előadás, és pont ez adja az értékét.",
+          "Ha a csapatnak fontos a rögzítés, ezt is meg tudjuk beszélni az egyeztetés során."
         ]
       },
       {
-        "question": "Mit fogok konkrétan tanulni?",
+        "question": "Mit fogtok konkrétan tanulni?",
         "paragraphs": [
-          "Valós példákon keresztül dolgozunk: rendszertervezési döntések, trade-offok megértése, tipikus hibák és hogyan kerüld el őket.",
-          "Nem elméleti előadás, hanem gondolkodásmód fejlesztés."
+          "Valós példákon dolgozunk: rendszertervezési döntések, trade-offok megértése, tipikus hibák és azok elkerülése — a saját rendszereitekre szabva.",
+          "Nem elméleti előadás, hanem gondolkodásmód-fejlesztés."
         ]
       }
     ]
-  },
-  "trainingB2cTerms": {
-    "backLabel": "Vissza a workshophoz",
-    "pageTitle": "Részvételi Feltételek és Lemondási Szabályzat",
-    "eyebrow": "B2C workshop · Részvételi feltételek",
-    "intro": "Szeretném, ha a workshop minden résztvevő számára minőségi és inspiráló élmény lenne. A közös munka tervezhetősége érdekében az alábbi szabályok érvényesek a jelentkezésedre.",
-    "sections": {
-      "registration": {
-        "title": "1. Jelentkezés és fizetés",
-        "points": [
-          "A workshopra való jelentkezés a regisztrációs űrlap kitöltésével és a részvételi díj befizetésével válik véglegessé.",
-          "A helyek biztosítása a befizetések sorrendjében történik. Amíg a díj nem érkezik meg, a helyedet nem tudom garantálni."
-        ]
-      },
-      "viability": {
-        "title": "2. A workshop megvalósulása",
-        "intro": "Hogy a legjobb minőséget tudjam nyújtani, a workshop megtartásához minimum 6 fő szükséges.",
-        "decisionDeadlineLabel": "Döntési határidő",
-        "decisionDeadlineValue": "Legkésőbb a workshop kezdése előtt 7 naptári nappal döntök arról, hogy a létszám alapján megvalósul-e az esemény, és ekkor küldöm ki a pontos helyszínt is.",
-        "ifCancelledLabel": "Ha elmarad",
-        "ifCancelledOptions": [
-          "Ilyenkor két lehetőséged van: vagy a befizetett összeget 100%-ban visszautalom 3 munkanapon belül,",
-          "vagy a jelentkezésedet átrakjuk a következő meghirdetett időpontra."
-        ]
-      },
-      "participantCancellation": {
-        "title": "3. Lemondási feltételek a résztvevő részéről",
-        "intro": "Tudom, hogy bármi közbejöhet, de a terembérlés és az előkészületek miatt nekem is kalkulálnom kell a költségekkel.",
-        "bandsTitle": "Lemondás időpontja és visszatérítés mértéke",
-        "bands": [
-          {
-            "window": "Több mint 10 nappal az esemény előtt",
-            "refund": "100% visszajár"
-          },
-          {
-            "window": "7 és 10 nap között",
-            "refund": "50% visszajár"
-          },
-          {
-            "window": "7 napon belül",
-            "refund": "Nincs visszatérítés"
-          }
-        ],
-        "transferNote": "Fontos: A jegyed bármikor átruházható. Ha mégsem tudsz eljönni, küldhetsz magad helyett valakit. Kérlek, ebben az esetben e-mailben jelezd az új résztvevő nevét és elérhetőségét."
-      },
-      "noShowAndLate": {
-        "title": "4. Meg nem jelenés és késés",
-        "points": [
-          "Meg nem jelenés: Amennyiben nem jelensz meg a workshopon, és ezt előzetesen (a fenti határidőkig) nem jelezted, a részvételi díjat nem áll módomban visszatéríteni, és más időpontra sem beszámítható.",
-          "Késés: A workshop a meghirdetett időpontban pontosan kezdődik. Kérlek, érkezz 10-15 perccel korábban. Késés esetén a már elhangzott információkat a csoport haladása érdekében nincs módomban megismételni. A késés miatt kiesett időért részleges visszatérítés nem jár."
-        ]
-      },
-      "conductAndLiability": {
-        "title": "5. Viselkedési szabályok és felelősség",
-        "points": [
-          "A workshopon mindenki saját felelősségére vesz részt.",
-          "Amennyiben a résztvevő viselkedésével (pl. agresszió, ittas állapot, folyamatos zavarás) akadályozza a szakmai munkát vagy zavarja a többi résztvevőt, a szervező jogosult őt az eseményről eltávolítani. Ebben az esetben visszatérítés nem jár."
-        ]
-      },
-      "mediaConsent": {
-        "title": "6. Fotó és videó",
-        "points": [
-          "Az eseményen dokumentációs és marketing céllal fotók vagy rövid videók készülhetnek.",
-          "A jelentkezéssel hozzájárulsz ezek használatához. Amennyiben nem szeretnél szerepelni a felvételeken, kérlek, jelezd nekem még a workshop megkezdése előtt."
-        ]
-      },
-      "forceMajeure": {
-        "title": "7. Vis maior és egyebek",
-        "points": [
-          "Amennyiben a workshop az én hibámból (pl. betegség) marad el, a teljes részvételi díj visszajár, vagy egy későbbi időpontban használható fel (döntésed szerint).",
-          "A workshopon mindenki saját felelősségére vesz részt.",
-          "A szervező fenntartja a jogot a helyszín módosítására (hasonló kategóriájú és megközelíthetőségű helyszínre), amiről e-mailben értesíti a résztvevőket."
-        ]
-      },
-      "contact": {
-        "title": "Kérdésed van?",
-        "intro": "Keress bizalommal az alábbi elérhetőségen:",
-        "emailLabel": "E-mail",
-        "email": "fejlesztes@letscode.hu"
-      }
-    }
   },
   "signupPopup": {
     "title": "Ne csak a ticketeket pörgesd — emelkedj rendszer-szintre.",
@@ -1003,8 +858,7 @@
     "descriptions": {
       "home": "Külső nézőpont arra, mi lassítja a szállítást: architektúra- és pipeline-felmérés, ADR-ek, döntéstámogatás. Távolról, videóhívásokkal, a végén írásos anyaggal.",
       "training": "Workshopok tapasztalt mérnöki csapatoknak: code review, CI/CD, ADR, C4 diagramok és tiszta architektúra—személyesen vagy online.",
-      "trainingB2cAds": "Konverzióra optimalizált, két napos budapesti workshop fejlesztőknek: technikai döntések, C4 és ADR-ek, hogy hétfőn már rendszerben kommunikálj.",
-      "trainingB2cTerms": "A budapesti B2C workshop részvételi és vásárlási feltételei.",
+      "trainingB2cAds": "Architect Mindset workshop csapatoknak: technikai döntések, C4 és ADR-ek, hogy a csapat magabiztosan kommunikálja az architektúrát. Helyszínen vagy online, igény szerint testreszabva.",
       "workshop": "Gyakorlatorientált ADR és követelmény-illesztés workshop közös döntésekhez és világosabb határokhoz.",
       "consulting": "Külső nézőpont arra, mi lassítja a szállítást: architektúra- és pipeline-felmérés, ADR-ek, döntéstámogatás. Távolról, videóhívásokkal, a végén írásos anyaggal.",
       "about": "Papp Krisztián, független tanácsadó: tizenöt év rendszertervezés és -építés, konferencia-előadások, gyakorlati fókusz fejlesztő csapatokkal.",

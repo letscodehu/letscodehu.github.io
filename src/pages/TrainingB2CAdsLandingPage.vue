@@ -2,135 +2,15 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseButton from '../components/ui/BaseButton.vue'
-import CheckoutEmailPopup from '../components/ui/CheckoutEmailPopup.vue'
 import { useI18n } from '../composables/useI18n'
-import {
-  trackTrainingWorkshopCtaClick,
-  trackTrainingWorkshopEmailPopupOpen,
-  type TrainingWorkshopCtaPlacement,
-} from '../tracking'
-
-const MOBILE_MAX_PX = 768
-const EARLY_BIRD_DEADLINE_TIMESTAMP = new Date(2026, 7, 20).getTime()
-const MS_PER_DAY = 24 * 60 * 60 * 1000
-const STRIPE_CHECKOUT_URL =
-  'https://buy.stripe.com/8x2eVde7b9Te3Xv7tVaVa02?prefilled_promo_code=EARLYBIRD'
+import { trackTrainingWorkshopCtaClick, type TrainingWorkshopCtaPlacement } from '../tracking'
 
 const { t, currentLang } = useI18n()
 const instructorImages = ['/weblica.jpg', '/webconf.jpg', '/cldrmeetup.jpg'] as const
 const currentImageIndex = ref(0)
-const heroCtaEl = ref<HTMLElement | null>(null)
-const middleCtaEl = ref<HTMLElement | null>(null)
-const bottomCtaEl = ref<HTMLElement | null>(null)
-const heroCtaVisible = ref(true)
-const middleCtaVisible = ref(false)
-const bottomCtaVisible = ref(false)
-const isMobileViewport = ref(false)
-const isCheckoutPopupOpen = ref(false)
-/** Set in onMounted after feature detection; sticky CTA visibility relies on IntersectionObserver. */
-const intersectionObserverSupported = ref(false)
-const earlyBirdDeadlineLabel = computed(() => formatEarlyBirdDeadlineLabel(getEarlyBirdDaysLeft(Date.now()), currentLang.value))
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null
-let heroObserver: IntersectionObserver | null = null
-let middleObserver: IntersectionObserver | null = null
-let bottomObserver: IntersectionObserver | null = null
 let sectionRevealObserver: IntersectionObserver | null = null
-let mediaQuery: MediaQueryList | null = null
-
-function getLocalDayStart(timestamp: number) {
-  const date = new Date(timestamp)
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime()
-}
-
-function getEarlyBirdDaysLeft(nowTimestamp: number) {
-  const todayStart = getLocalDayStart(nowTimestamp)
-  const deadlineStart = getLocalDayStart(EARLY_BIRD_DEADLINE_TIMESTAMP)
-  return Math.ceil((deadlineStart - todayStart) / MS_PER_DAY)
-}
-
-function formatEarlyBirdDeadlineLabel(daysLeft: number, language: 'en' | 'hu') {
-  if (daysLeft < 0) {
-    return language === 'hu' ? 'Early bird lezárult' : 'Early bird ended'
-  }
-
-  if (daysLeft === 0) {
-    return language === 'hu' ? 'Már csak ma' : 'Last day'
-  }
-
-  if (language === 'hu') {
-    return `Már csak ${daysLeft} napig`
-  }
-
-  const dayLabel = daysLeft === 1 ? 'day' : 'days'
-  return `Only ${daysLeft} ${dayLabel} left`
-}
-
-function syncMobileViewport() {
-  if (typeof window === 'undefined') {
-    return
-  }
-
-  isMobileViewport.value = window.matchMedia(`(max-width: ${MOBILE_MAX_PX}px)`).matches
-}
-
-const showStickyWaitlistCta = computed(
-  () =>
-    intersectionObserverSupported.value &&
-    isMobileViewport.value &&
-    !heroCtaVisible.value &&
-    !middleCtaVisible.value &&
-    !bottomCtaVisible.value
-)
-
-function setupObservers() {
-  if (typeof IntersectionObserver === 'undefined') {
-    return
-  }
-
-  const options: IntersectionObserverInit = {
-    root: null,
-    threshold: 0,
-    rootMargin: '0px',
-  }
-
-  heroObserver = new IntersectionObserver((entries) => {
-    const entry = entries[0]
-    heroCtaVisible.value = entry ? entry.isIntersecting : false
-  }, options)
-
-  middleObserver = new IntersectionObserver((entries) => {
-    const entry = entries[0]
-    middleCtaVisible.value = entry ? entry.isIntersecting : false
-  }, options)
-
-  bottomObserver = new IntersectionObserver((entries) => {
-    const entry = entries[0]
-    bottomCtaVisible.value = entry ? entry.isIntersecting : false
-  }, options)
-
-  const heroEl = heroCtaEl.value
-  const middleEl = middleCtaEl.value
-  const bottomEl = bottomCtaEl.value
-  if (heroEl) {
-    heroObserver.observe(heroEl)
-  }
-  if (middleEl) {
-    middleObserver.observe(middleEl)
-  }
-  if (bottomEl) {
-    bottomObserver.observe(bottomEl)
-  }
-}
-
-function teardownObservers() {
-  heroObserver?.disconnect()
-  middleObserver?.disconnect()
-  bottomObserver?.disconnect()
-  heroObserver = null
-  middleObserver = null
-  bottomObserver = null
-}
 
 function applySectionRevealFallbackNoIntersectionObserver() {
   if (typeof document === 'undefined') {
@@ -185,34 +65,21 @@ function teardownSectionRevealObserver() {
 }
 
 onMounted(() => {
-  syncMobileViewport()
-  if (typeof window !== 'undefined') {
-    mediaQuery = window.matchMedia(`(max-width: ${MOBILE_MAX_PX}px)`)
-    mediaQuery.addEventListener('change', syncMobileViewport)
-  }
-
   imageRotationInterval = window.setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % instructorImages.length
   }, 10000)
 
   void nextTick(() => {
-    const ioSupported = typeof IntersectionObserver !== 'undefined'
-    intersectionObserverSupported.value = ioSupported
-    if (!ioSupported) {
+    if (typeof IntersectionObserver === 'undefined') {
       applySectionRevealFallbackNoIntersectionObserver()
       return
     }
-    setupObservers()
     setupSectionRevealObserver()
   })
-
 })
 
 onUnmounted(() => {
-  teardownObservers()
   teardownSectionRevealObserver()
-  mediaQuery?.removeEventListener('change', syncMobileViewport)
-  mediaQuery = null
 
   if (imageRotationInterval == null) {
     return
@@ -223,14 +90,10 @@ onUnmounted(() => {
 })
 
 function handlePrimaryCtaClick(placement: TrainingWorkshopCtaPlacement) {
-  trackTrainingWorkshopCtaClick({ placement, nextStep: 'email_popup' })
-  trackTrainingWorkshopEmailPopupOpen({ placement })
-  isCheckoutPopupOpen.value = true
+  trackTrainingWorkshopCtaClick({ placement })
 }
 
-function closeCheckoutPopup() {
-  isCheckoutPopupOpen.value = false
-}
+const contactLocation = computed(() => ({ name: 'contact-en', params: { lang: currentLang.value } }))
 
 const faqItemsList = computed(() => {
   const raw = t('trainingB2cAds.faqItems')
@@ -299,28 +162,13 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
         </ul>
         <p class="hero-pain-closing">{{ t('trainingB2cAds.heroPainClosing') }}</p>
       </div>
-      <div class="offer-meta fade fade--5">
-        <p class="offer-meta__early">
-          <span class="offer-meta__badge">{{ t('trainingB2cAds.offerMeta.earlyBirdLabel') }}</span>
-          <strong class="offer-meta__price">{{ t('trainingB2cAds.offerMeta.earlyBirdPrice') }}</strong>
-          <span class="offer-meta__deadline">{{ earlyBirdDeadlineLabel }}</span>
-        </p>
-        <p class="offer-meta__regular">
-          <span class="offer-meta__regular-label">{{ t('trainingB2cAds.offerMeta.regularPriceLabel') }}</span>
-          <span class="offer-meta__regular-price">{{ t('trainingB2cAds.offerMeta.regularPrice') }}</span>
-        </p>
-        <p class="offer-meta__compare">{{ t('trainingB2cAds.offerMeta.priceComparison') }}</p>
-      </div>
 
-      <div class="application-deadline-badge fade fade--5" :aria-label="t('trainingB2cAds.applicationDeadline')">
-        <span class="application-deadline-badge__label">{{ t('trainingB2cAds.applicationDeadlineLabel') }}</span>
-        <span class="application-deadline-badge__date">{{ t('trainingB2cAds.applicationDeadlineDate') }}</span>
-      </div>
-
-      <div ref="heroCtaEl" class="hero-actions fade fade--5">
-        <BaseButton @click="handlePrimaryCtaClick('hero')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
-        </BaseButton>
+      <div class="hero-actions fade fade--5">
+        <RouterLink :to="contactLocation">
+          <BaseButton @click="handlePrimaryCtaClick('hero')">
+            {{ t('trainingB2cAds.ctaPrimary') }}
+          </BaseButton>
+        </RouterLink>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
@@ -355,48 +203,30 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     <section id="ads-faq" class="faq section-reveal" data-section-reveal aria-labelledby="ads-faq-title">
       <h2 id="ads-faq-title" class="section-title">{{ t('trainingB2cAds.faqTitle') }}</h2>
       <div class="faq-accordion">
-        <template v-for="(item, faqIndex) in faqItemsList" :key="faqIndex">
-          <details v-if="item.variant !== 'cancellation'" class="faq-item">
-            <summary class="faq-summary">
-              <span class="faq-summary__text">{{ item.question }}</span>
-            </summary>
-            <div class="faq-panel">
-              <p v-for="(para, pIdx) in item.paragraphs" :key="pIdx" class="faq-p">{{ para }}</p>
-            </div>
-          </details>
-          <details v-else class="faq-item">
-            <summary class="faq-summary">
-              <span class="faq-summary__text">{{ item.question }}</span>
-            </summary>
-            <div class="faq-panel">
-              <p class="faq-p">{{ t('trainingB2cAds.faqCancellationLead') }}</p>
-              <p v-for="(point, pointIndex) in t('trainingB2cAds.faqCancellationPoints')" :key="pointIndex" class="faq-p">
-                {{ point }}
-              </p>
-              <p class="faq-p faq-terms-link-wrap">
-                {{ t('trainingB2cAds.faqTermsLinkIntro') }}
-                <RouterLink class="terms-link" :to="{ name: 'training-b2c-terms-en', params: { lang: currentLang } }">
-                  {{ t('trainingB2cAds.termsLinkLabel') }}
-                </RouterLink>
-              </p>
-            </div>
-          </details>
-        </template>
+        <details v-for="(item, faqIndex) in faqItemsList" :key="faqIndex" class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-summary__text">{{ item.question }}</span>
+          </summary>
+          <div class="faq-panel">
+            <p v-for="(para, pIdx) in item.paragraphs" :key="pIdx" class="faq-p">{{ para }}</p>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="final-cta section-reveal" data-section-reveal>
       <h2>{{ t('trainingB2cAds.ctaSecondaryTitle') }}</h2>
       <p>{{ t('trainingB2cAds.ctaSecondaryBody') }}</p>
-      <div ref="middleCtaEl" class="final-cta-actions">
-        <BaseButton @click="handlePrimaryCtaClick('middle')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
-        </BaseButton>
+      <div class="final-cta-actions">
+        <RouterLink :to="contactLocation">
+          <BaseButton @click="handlePrimaryCtaClick('middle')">
+            {{ t('trainingB2cAds.ctaPrimary') }}
+          </BaseButton>
+        </RouterLink>
         <RouterLink class="full-program-link" :to="fullProgramLocation">
           {{ t('trainingB2cAds.fullProgramLinkLabel') }}
         </RouterLink>
       </div>
-      <p class="registration-next-date">{{ t('trainingB2cAds.applicationDeadline') }}</p>
     </section>
 
     <section
@@ -491,45 +321,14 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     <section class="program-footer-cta section-reveal" data-section-reveal>
       <h2>{{ t('trainingB2cAds.programFooterCtaTitle') }}</h2>
       <p>{{ t('trainingB2cAds.programFooterCtaBody') }}</p>
-      <div ref="bottomCtaEl" class="program-footer-cta-actions">
-        <BaseButton @click="handlePrimaryCtaClick('bottom')">
-          {{ t('trainingB2cAds.ctaPrimary') }}
-        </BaseButton>
-      </div>
-      <p class="registration-next-date">{{ t('trainingB2cAds.applicationDeadline') }}</p>
-    </section>
-
-    <section class="company-inquiry section-reveal" data-section-reveal>
-      <h2>{{ t('trainingB2cAds.companyInquiryTitle') }}</h2>
-      <p>{{ t('trainingB2cAds.companyInquiryBody') }}</p>
-      <div class="company-inquiry-actions">
-        <RouterLink :to="{ name: 'contact-en', params: { lang: currentLang } }">
-          <BaseButton>{{ t('trainingB2cAds.companyInquiryButton') }}</BaseButton>
+      <div class="program-footer-cta-actions">
+        <RouterLink :to="contactLocation">
+          <BaseButton @click="handlePrimaryCtaClick('bottom')">
+            {{ t('trainingB2cAds.ctaPrimary') }}
+          </BaseButton>
         </RouterLink>
       </div>
     </section>
-
-    <Teleport to="body">
-      <div
-        v-show="showStickyWaitlistCta"
-        class="training-b2c-ads-sticky-waitlist"
-        role="region"
-        :aria-label="t('trainingB2cAds.ctaPrimary')"
-      >
-        <div class="training-b2c-ads-sticky-waitlist__inner">
-          <BaseButton @click="handlePrimaryCtaClick('sticky')">
-            {{ t('trainingB2cAds.ctaPrimary') }}
-          </BaseButton>
-          <p class="training-b2c-ads-sticky-waitlist__deadline">{{ t('trainingB2cAds.applicationDeadline') }}</p>
-        </div>
-      </div>
-    </Teleport>
-
-    <CheckoutEmailPopup
-      :open="isCheckoutPopupOpen"
-      :stripe-checkout-url="STRIPE_CHECKOUT_URL"
-      @close="closeCheckoutPopup"
-    />
   </article>
 </template>
 
@@ -732,133 +531,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   color: var(--color-text);
 }
 
-.application-deadline-badge {
-  position: relative;
-  z-index: 2;
-  margin-top: 1.1rem;
-  display: inline-flex;
-  align-items: stretch;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--landing-accent) 72%, var(--landing-border));
-  border-radius: 999px;
-  background: var(--color-surface);
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--landing-accent) 24%, transparent);
-}
-
-.application-deadline-badge__label,
-.application-deadline-badge__date {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 0.82rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.application-deadline-badge__label {
-  background: var(--landing-accent);
-  color: #111827;
-}
-
-.application-deadline-badge__date {
-  background: color-mix(in srgb, var(--landing-accent-soft) 70%, var(--color-surface));
-  color: var(--color-text);
-}
-
-.registration-next-date {
-  margin-top: 0.5rem;
-  font-size: 0.88rem;
-  color: var(--color-text-muted, var(--color-text));
-  opacity: 0.75;
-}
-
-.offer-meta {
-  margin: 0.85rem 0 0;
-  max-width: 60ch;
-}
-
-.offer-meta__early {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.45rem;
-}
-
-.offer-meta__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.12rem 0.5rem;
-  border: 1px solid var(--landing-border);
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.offer-meta__price {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-}
-
-.offer-meta__deadline {
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.offer-meta__regular {
-  margin: 0.2rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem;
-  color: var(--color-text-muted);
-}
-
-.offer-meta__regular-label {
-  font-size: 0.9rem;
-}
-
-.offer-meta__regular-price {
-  font-size: 0.95rem;
-  text-decoration: line-through;
-  text-decoration-thickness: 1.5px;
-}
-
-.offer-meta__compare {
-  margin: 0.45rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--color-text-muted);
-}
-
-.hero-reassurance-panel {
-  border: 1px solid var(--landing-border);
-  border-radius: var(--radius-lg);
-  background: var(--landing-panel-bg);
-  padding: clamp(0.9rem, 2.2vw, 1.2rem);
-}
-
-.hero-reassurance-panel__list {
-  margin: 0;
-  padding-left: 1.25rem;
-  display: grid;
-  gap: 0.32rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--color-text-muted);
-}
-
-.hero-reassurance-panel__list li::marker {
-  content: '✓ ';
-  color: var(--landing-accent);
-  font-weight: 700;
-}
-
 .hero-actions {
   position: relative;
   z-index: 2;
@@ -869,8 +541,7 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   gap: 0.8rem;
 }
 
-.full-program-link,
-.terms-link {
+.full-program-link {
   font-weight: 600;
   color: var(--color-primary-strong);
   text-decoration: underline;
@@ -879,47 +550,22 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
-.full-program-link:hover,
-.terms-link:hover {
+.full-program-link:hover {
   color: var(--landing-accent);
   text-decoration-color: var(--landing-accent);
 }
 
-.proof,
 .instructor-snapshot,
 .outcomes,
 .instructor,
-.testimonials,
 .faq,
 .final-cta,
 .detailed-program,
-.program-footer-cta,
-.company-inquiry {
+.program-footer-cta {
   border: 1px solid var(--landing-border);
   border-radius: var(--radius-lg);
   background: var(--landing-panel-bg);
   padding: clamp(1rem, 2.4vw, 1.45rem);
-}
-
-.company-inquiry h2 {
-  margin: 0;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(1.15rem, 3.2vw, 1.5rem);
-  letter-spacing: -0.01em;
-}
-
-.company-inquiry > p {
-  margin: 0.55rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--color-text-muted);
-}
-
-.company-inquiry-actions {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
 }
 
 .section-title {
@@ -977,17 +623,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--color-text-muted);
-}
-
-.proof-list {
-  margin: 0.95rem 0 0;
-  padding-left: 1.2rem;
-  display: grid;
-  gap: 0.65rem;
-}
-
-.proof-list li::marker {
-  color: var(--landing-accent);
 }
 
 .outcome-grid {
@@ -1055,29 +690,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 .instructor-inline-link:hover {
   color: var(--landing-accent);
   text-decoration-color: var(--landing-accent);
-}
-
-.testimonials-grid {
-  margin: 0.95rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.testimonial-card {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--landing-border);
-  background: var(--landing-card-bg);
-  padding: 0.95rem;
-}
-
-.testimonial-quote {
-  margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.55;
-  color: var(--color-text);
 }
 
 .faq-accordion {
@@ -1164,26 +776,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
 .faq-p:first-child {
   margin-top: 0.75rem;
-}
-
-.faq-p--strong {
-  font-weight: 600;
-  color: var(--color-text);
-}
-
-.faq-ul {
-  margin: 0.45rem 0 0;
-  padding-left: 1.15rem;
-  font-size: 0.93rem;
-  line-height: 1.55;
-}
-
-.faq-ul li + li {
-  margin-top: 0.35rem;
-}
-
-.faq-terms-link-wrap {
-  margin-top: 0.85rem;
 }
 
 .detailed-program {
@@ -1294,27 +886,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
   max-width: 65ch;
 }
 
-.checkout-note {
-  margin: 0.75rem 0 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--color-text-muted);
-}
-
-.cta-seats-left {
-  margin: 0.6rem 0 0;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--landing-accent);
-}
-
-.application-deadline {
-  margin: 0.25rem 0 0;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
 .final-cta-actions {
   margin-top: 1rem;
   display: flex;
@@ -1353,21 +924,15 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 }
 
 @media (max-width: 46rem) {
-  .ads-landing {
-    padding-bottom: 5rem;
-  }
-
   .hero-actions,
   .final-cta-actions,
-  .program-footer-cta-actions,
-  .company-inquiry-actions {
+  .program-footer-cta-actions {
     justify-content: center;
   }
 
   .hero-actions :deep(.button),
   .final-cta-actions :deep(.button),
-  .program-footer-cta-actions :deep(.button),
-  .company-inquiry-actions :deep(.button) {
+  .program-footer-cta-actions :deep(.button) {
     width: min(22rem, 100%);
     max-width: 100%;
   }
@@ -1388,29 +953,12 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
     grid-template-columns: 1fr;
   }
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
   .instructor {
     grid-template-columns: 1fr;
   }
 
   .instructor-media {
     height: clamp(12rem, 56vw, 16rem);
-  }
-
-  .application-deadline-badge {
-    width: 100%;
-    max-width: 22rem;
-  }
-
-  .application-deadline-badge__label,
-  .application-deadline-badge__date {
-    justify-content: center;
-    flex: 1;
-    padding-inline: 0.62rem;
-    font-size: 0.72rem;
   }
 }
 
@@ -1434,63 +982,6 @@ const instructorLinks = computed(() => t('trainingB2cAds.instructorLinks') as In
 
   .full-program-link {
     transition: none;
-  }
-}
-</style>
-
-<style>
-@media (max-width: 768px) {
-  .training-b2c-ads-sticky-waitlist {
-    box-sizing: border-box;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100%;
-    max-width: var(--max-width);
-    z-index: 50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    pointer-events: none;
-  }
-
-  .training-b2c-ads-sticky-waitlist__inner {
-    width: min(24rem, 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.65rem 1rem;
-    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
-    border: 1px solid var(--color-border);
-    border-bottom: 0;
-    border-radius: 1.25rem 1.25rem 0 0;
-    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
-    box-shadow:
-      0 -18px 44px rgba(15, 23, 42, 0.2),
-      0 -3px 12px rgba(15, 23, 42, 0.08);
-    pointer-events: auto;
-  }
-
-  .training-b2c-ads-sticky-waitlist__seats-left {
-    margin: 0;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--landing-accent, #f97316);
-  }
-
-  .training-b2c-ads-sticky-waitlist__deadline {
-    margin: -0.2rem 0 0;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--color-text, #0f172a);
-  }
-
-  .training-b2c-ads-sticky-waitlist .button {
-    width: min(22rem, 100%);
-    max-width: 100%;
   }
 }
 </style>

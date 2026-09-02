@@ -200,61 +200,41 @@
       "More predictable delivery because practices are consistent, not reinvented per feature.",
       "Concrete next steps tailored to your context, not a generic checklist."
     ],
-    "b2cCardTitle": "Architect Mindset training",
-    "b2cCardBody": "Looking for an individual track? Two-day, in-person Budapest workshop: technical decisions, C4, and lightweight ADRs—for developers moving past ticket-only work.",
-    "b2cCardCta": "See training",
+    "b2cCardTitle": "Architect Mindset workshop",
+    "b2cCardBody": "A workshop focused specifically on decision-making and architecture, for teams: technical decisions, C4, and lightweight ADRs — for teams moving past ticket-only work.",
+    "b2cCardCta": "See the workshop",
     "cta": "Discuss a training need",
     "prospectusCta": "Check out our Prospectus",
     "ctaNote": "For training requests, a short description of your team, stack, and current challenges is more useful than a long RFP."
   },
   "trainingB2cAds": {
-    "pageTitle": "Architect Mindset training — Workshop Budapest",
-    "eyebrow": "2 days · Budapest · September 17-18 (Thu-Fri) · small group · in person only",
-    "heroTitle": "Make architectural decisions you won't have to apologize for in six months.",
-    "heroAudienceIntro": "A 2-day practical workshop for senior developers, tech leads, and engineering managers who:",
+    "pageTitle": "Architect Mindset training for teams",
+    "eyebrow": "2-day practical workshop · for teams and companies · on-site or remote",
+    "heroTitle": "Make architectural decisions your team won't have to defend all over again in six months.",
+    "heroAudienceIntro": "A practical workshop for engineering teams, tech leads, and engineering managers where:",
     "heroAudiencePoints": [
-      "regularly make technical trade-off decisions,",
-      "balance legacy and modern systems,",
-      "want their decisions to remain defensible six months later."
+      "technical trade-off decisions happen regularly,",
+      "legacy and modern systems have to be balanced,",
+      "and decisions need to stay defensible six months later."
     ],
-    "heroPainTitle": "Sound familiar?",
+    "heroPainTitle": "Sound familiar on your team?",
     "heroPainPoints": [
-      "Meetings end without a real decision, only more questions — and you rerun the same conversation next week.",
-      "It is hard to explain why you chose this direction — and two weeks later even you cannot recall the full reasoning clearly.",
-      "Decisions are made… but later nobody remembers why."
+      "Meetings end without a real decision, only more questions — and next week everyone runs into the same wall again.",
+      "It's hard to explain why you chose a direction — and two weeks later nobody remembers the full reasoning.",
+      "Decisions get made, but later nobody remembers why."
     ],
-    "heroPainClosing": "If 2 of these feel familiar, one bad architectural decision costs more than this workshop.",
-    "offerMeta": {
-      "earlyBirdLabel": "Early bird",
-      "earlyBirdPrice": "99,000 HUF",
-      "earlyBirdDeadline": "until August 20",
-      "regularPriceLabel": "After that",
-      "regularPrice": "119,000 HUF",
-      "priceComparison": "Less than the first refactor sprint of a poorly chosen database."
-    },
-    "ctaPrimary": "Save my seat",
-    "ctaNotify": "Notify me about the next date",
-    "registrationClosedBadge": "Registration closed",
-    "registrationNextDate": "Next date expected in September.",
-    "ctaSeatsLeft": "Only 3 seats left",
-    "applicationDeadlineLabel": "Application deadline",
-    "applicationDeadlineDate": "September 1",
-    "applicationDeadline": "Application deadline: September 1.",
-    "heroReassurancePoints": [
-      "Company invoice available",
-      "If the workshop is cancelled, you get a 100% refund within 3 business days",
-      "Your seat is transferable — you can send someone in your place"
-    ],
+    "heroPainClosing": "If 2 of these sound familiar, one bad architectural decision costs your team more than this workshop.",
+    "ctaPrimary": "Let's talk about the workshop",
     "instructorSnapshotEyebrow": "Workshop led by",
     "instructorSnapshotName": "Krisztián Papp",
     "instructorSnapshotRole": "Software architect & consultant",
     "instructorSnapshotProof": "10+ years of hands-on experience · international conference speaker · DevOps / architecture / cloud focus · small-group practical workshop",
-    "outcomesTitle": "What you leave with and use the very next day",
+    "outcomesTitle": "What your team leaves with and uses the very next day",
     "outcomes": [
-      "An ADR template you can use to document a decision in 15 minutes, in a way that is still clear six months later.",
-      "A decision matrix (reversible / system-level / expensive) that helps you decide in 5 minutes whether a formal decision is needed at all.",
-      "You can defend your decision in tense discussions — without freezing on the “why this way?” question.",
-      "You can explain the same system to a CEO and to a junior engineer — with the same diagram, at different levels."
+      "An ADR template your team can use to document a decision in 15 minutes, still clear six months later.",
+      "A decision matrix (reversible / system-level / expensive) that helps decide in 5 minutes whether a formal decision is needed at all.",
+      "Your team can defend its decisions in tense discussions — without freezing on the “why this way?” question.",
+      "You can explain the same system to leadership and to a junior engineer — with the same diagram, at different levels."
     ],
     "instructorTitle": "About the instructor",
     "instructorImagePlaceholder": "Instructor image placeholder",
@@ -281,22 +261,11 @@
       "soundcloudLabel": "tune in on SoundCloud",
       "soundcloudUrl": "https://on.soundcloud.com/o7rMOmV3NfsPKPPC1D"
     },
-    "ctaSecondaryTitle": "Book your seat — with low risk.",
-    "ctaSecondaryBody": "2 days in Budapest, September 17-18. Early bird is 99,000 HUF until August 20, then 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
-    "checkoutNote": "Secure Stripe payment. Right after payment, I send a short questionnaire so the workshop can be tailored to your own examples.",
-    "latebirdPopup": {
-      "eyebrow": "LATEBIRD offer",
-      "title": "Get 10% off if you book your seat now",
-      "body": "Use the LATEBIRD coupon during signup and join the Architect Mindset workshop with a 10% discount.",
-      "acceptCta": "Apply now",
-      "cancelCta": "Keep reading",
-      "closeLabel": "Close LATEBIRD offer"
-    },
-    "ctaSecondaryButton": "Reserve my seat now",
+    "ctaSecondaryTitle": "Let's set this up for your team",
+    "ctaSecondaryBody": "We tailor the workshop to your stack, your systems, and your current challenges — on-site or remote, matched to your team's size and schedule.",
     "fullProgramLinkLabel": "See the full program details",
-    "termsLinkLabel": "Terms & Conditions",
     "detailedProgram": {
-      "sectionTitle": "Detailed schedule",
+      "sectionTitle": "Example program (customizable)",
       "days": [
         {
           "title": "Day 1 — Decisions and ADRs",
@@ -390,174 +359,60 @@
         }
       ]
     },
-    "programFooterCtaTitle": "Book your seat — with low risk.",
-    "programFooterCtaBody": "2 days in Budapest, September 17-18. Early bird is 99,000 HUF until August 20, then 119,000 HUF. If the workshop is cancelled, you get a 100% refund within 3 business days. Your seat is transferable, and company invoicing is available.",
-    "companyInquiryTitle": "Booking for a team?",
-    "companyInquiryBody": "If you'd like it for several people, your whole team, or with company invoicing — the workshop is tailored to your own environment and examples. Get in touch and we'll sort out the details.",
-    "companyInquiryButton": "Contact us",
+    "programFooterCtaTitle": "Let's set this up for your team",
+    "programFooterCtaBody": "Let's tailor the workshop to your stack and challenges — on-site or remote. Get in touch and we'll sort out the details.",
     "faqTitle": "Frequently asked questions",
-    "faqCancellationLead": "In short, if you cannot attend:",
-    "faqCancellationPoints": [
-      "More than 10 days before the event: 100% refund.",
-      "Between 7 and 10 days before the event: 50% refund.",
-      "Within 7 days or in case of no-show: no refund.",
-      "Your ticket is transferable, and late arrival does not qualify for partial refund."
-    ],
-    "faqTermsLinkIntro": "Full text and all clauses:",
     "faqItems": [
       {
         "question": "Who is this workshop for?",
         "paragraphs": [
-          "It is for senior developers, tech leads, and engineering managers who regularly make technical trade-off decisions.",
-          "It fits you if you balance legacy and modern systems, and you want your decisions to remain defensible six months later."
+          "It's for engineering teams, tech leads, and engineering managers who regularly make technical trade-off decisions.",
+          "It's a good fit if your team balances legacy and modern systems, and you want your decisions to stay defensible six months later."
         ]
       },
       {
-        "question": "Do I need prior experience?",
+        "question": "Does the team need prior experience?",
         "paragraphs": [
-          "Yes—basic professional development experience is required.",
-          "It is not for absolute beginners, but you do not need to be senior. What matters is that you have faced real problems, not only tutorials."
+          "Yes — participants need basic professional development experience.",
+          "It's not for absolute beginners, but not only for seniors either — what matters is that the team has faced real architectural problems, not just tutorials."
         ]
       },
       {
-        "question": "How many people can attend?",
+        "question": "What team size does this work for?",
         "paragraphs": [
-          "Minimum 6, maximum 10 participants.",
-          "We keep the group small so you can ask questions and discuss—not only listen passively."
+          "We keep the hands-on groups small so people can actually ask questions and discuss, not just sit and listen.",
+          "We figure out the right group size together during the consultation — for larger teams, we split the hands-on work into smaller groups."
         ]
       },
       {
-        "question": "Where and when is it?",
+        "question": "On-site or remote?",
         "paragraphs": [
-          "In person in Budapest (District XIII). September 17-18, 09:00-17:00.",
-          "Venue: Ruander Training Center, District XIII, Frangepán utca 3."
+          "Both work: at your office, or remote, depending on where your team is and what fits best.",
+          "We settle on the date and format during the consultation."
         ]
       },
       {
-        "question": "What happens after payment?",
+        "question": "What does it cost?",
         "paragraphs": [
-          "Right after payment you receive a short questionnaire so we can tailor the content even better.",
-          "If anything changes, we will notify you via email."
-        ]
-      },
-      {
-        "question": "Can I get an invoice for my company?",
-        "paragraphs": [
-          "Yes. During checkout you can enter the required billing details, and we will issue the invoice accordingly."
-        ]
-      },
-      {
-        "question": "Can I pay by bank transfer?",
-        "paragraphs": [
-          "Yes. In that case, contact us at krisztian@letscode.hu, and we will arrange the details."
-        ]
-      },
-      {
-        "question": "What if I cannot attend?",
-        "variant": "cancellation"
-      },
-      {
-        "question": "What if the workshop is cancelled?",
-        "paragraphs": [
-          "If we do not reach the minimum headcount, we reschedule the workshop or refund the full amount."
+          "Price depends on team size, format (on-site or remote), and how much customization you need.",
+          "Send us the details and we'll put together an exact quote."
         ]
       },
       {
         "question": "Will there be a recording?",
         "paragraphs": [
-          "No. This is an interactive, in-person workshop—not a lecture.",
-          "That interaction is where most of the value comes from."
+          "Not by default — this is an interactive workshop, not a lecture, and that's where most of the value comes from.",
+          "If a recording matters to your team, we can discuss that during the consultation."
         ]
       },
       {
-        "question": "What will I learn in practice?",
+        "question": "What will the team actually learn?",
         "paragraphs": [
-          "We work through real examples: system design decisions, understanding trade-offs, typical pitfalls and how to avoid them.",
-          "It is not a theory-only talk—it trains how you think."
+          "We work through real examples: system design decisions, understanding trade-offs, typical pitfalls and how to avoid them — tailored to your own systems.",
+          "It's not a theory-only talk — it trains how the team thinks."
         ]
       }
     ]
-  },
-  "trainingB2cTerms": {
-    "backLabel": "Back to the workshop",
-    "pageTitle": "Participation Terms and Cancellation Policy",
-    "eyebrow": "B2C workshop · Participation terms",
-    "intro": "I want the workshop to be a high-quality and inspiring experience for every participant. To keep the collaboration predictable for everyone, the following rules apply to your registration.",
-    "sections": {
-      "registration": {
-        "title": "1. Registration and payment",
-        "points": [
-          "Your registration becomes final after you submit the registration form and pay the participation fee.",
-          "Seats are secured in the order payments are received. Until the fee arrives, I cannot guarantee your seat."
-        ]
-      },
-      "viability": {
-        "title": "2. Workshop viability",
-        "intro": "To provide the best possible quality, the workshop requires at least 6 participants.",
-        "decisionDeadlineLabel": "Decision deadline",
-        "decisionDeadlineValue": "No later than 7 calendar days before the workshop starts, I decide whether the event goes ahead based on the participant count, and I also share the exact venue at that time.",
-        "ifCancelledLabel": "If the event is canceled",
-        "ifCancelledOptions": [
-          "In this case, you have two options: either I refund 100% of the paid amount within 3 business days,",
-          "or your registration can be moved to the next announced date."
-        ]
-      },
-      "participantCancellation": {
-        "title": "3. Cancellation terms by the participant",
-        "intro": "I understand that plans can change, but due to venue and preparation costs I also need a clear framework.",
-        "bandsTitle": "Cancellation timing and refund rate",
-        "bands": [
-          {
-            "window": "More than 10 days before the event",
-            "refund": "100% refund"
-          },
-          {
-            "window": "Between 7 and 10 days before the event",
-            "refund": "50% refund"
-          },
-          {
-            "window": "Within 7 days of the event",
-            "refund": "No refund"
-          }
-        ],
-        "transferNote": "Important: Your ticket can be transferred at any time. If you cannot attend, you may send someone else in your place. In this case, please email the new participant's name and contact details."
-      },
-      "noShowAndLate": {
-        "title": "4. No-show and late arrival",
-        "points": [
-          "No-show: If you do not attend the workshop and did not notify me in advance (within the deadlines above), I cannot refund the participation fee, and it cannot be applied to another date.",
-          "Late arrival: The workshop starts exactly at the announced time. Please arrive 10-15 minutes earlier. In case of delay, I cannot repeat already covered content to avoid disrupting the group's progress. No partial refund is provided for time missed due to lateness."
-        ]
-      },
-      "conductAndLiability": {
-        "title": "5. Code of conduct and responsibility",
-        "points": [
-          "All participants attend the workshop at their own responsibility.",
-          "If a participant's behavior (for example aggression, intoxication, or continuous disruption) blocks the professional work or disturbs other participants, the organizer has the right to remove that participant from the event. In this case, no refund is provided."
-        ]
-      },
-      "mediaConsent": {
-        "title": "6. Photo and video",
-        "points": [
-          "Photos or short videos may be recorded during the event for documentation and marketing purposes.",
-          "By registering, you consent to the use of these recordings. If you do not want to appear in photos or videos, please let me know before the workshop starts."
-        ]
-      },
-      "forceMajeure": {
-        "title": "7. Force majeure and other terms",
-        "points": [
-          "If the workshop is canceled due to my side (for example illness), the full participation fee is refunded, or you can use it for a later date (your choice).",
-          "Each participant attends the workshop at their own responsibility.",
-          "The organizer reserves the right to change the venue (to a similar category and accessibility), and participants will be informed by email."
-        ]
-      },
-      "contact": {
-        "title": "Have a question?",
-        "intro": "Feel free to contact me at:",
-        "emailLabel": "Email",
-        "email": "fejlesztes@letscode.hu"
-      }
-    }
   },
   "signupPopup": {
     "title": "Don’t just churn tickets—level up to systems thinking.",
@@ -985,8 +840,7 @@
     "descriptions": {
       "home": "An outside view on what slows delivery down: architecture and pipeline review, ADRs, decision support. Remote, over video sessions, with a written deliverable at the end.",
       "training": "Focused workshops for experienced engineering teams on code review, CI/CD, ADRs, C4 diagrams, and clean architecture—on-site or remote.",
-      "trainingB2cAds": "Conversion-focused two-day Budapest workshop for developers on technical decisions, C4, and ADRs so you can communicate architecture and trade-offs with confidence.",
-      "trainingB2cTerms": "Participation and purchase terms for the Budapest B2C workshop.",
+      "trainingB2cAds": "Architect Mindset workshop for teams: technical decisions, C4, and ADRs so your team can communicate architecture and trade-offs with confidence. On-site or remote, tailored to your needs.",
       "workshop": "Hands-on ADR and requirements alignment workshop for teams who need shared decisions and clearer boundaries.",
       "consulting": "An outside view on what slows delivery down: architecture and pipeline review, ADRs, decision support. Remote, over video sessions, with a written deliverable at the end.",
       "about": "Krisztián Papp, independent consultant: fifteen years designing and building systems, conference talks, and a practical focus on engineering teams.",

@@ -3,7 +3,6 @@ import AppLayout from '../components/layout/AppLayout.vue'
 import HomePage from '../pages/HomePage.vue'
 import TrainingPage from '../pages/TrainingPage.vue'
 import TrainingB2CAdsLandingPage from '../pages/TrainingB2CAdsLandingPage.vue'
-import TrainingB2CTermsPage from '../pages/TrainingB2CTermsPage.vue'
 import WorkshopPage from '../pages/WorkshopPage.vue'
 import ConsultingPage from '../pages/ConsultingPage.vue'
 import AiConsultingPage from '../pages/AiConsultingPage.vue'
@@ -49,13 +48,6 @@ const childRoutes: RouteRecordRaw[] = [
     component: TrainingB2CAdsLandingPage,
     alias: 'kepzes/workshop-budapest',
     meta: { titleKey: 'trainingB2cAds.pageTitle', descriptionKey: 'seo.descriptions.trainingB2cAds' },
-  },
-  {
-    path: 'training/workshop-terms',
-    name: 'training-b2c-terms-en',
-    component: TrainingB2CTermsPage,
-    alias: 'kepzes/workshop-terms',
-    meta: { titleKey: 'trainingB2cTerms.pageTitle', descriptionKey: 'seo.descriptions.trainingB2cTerms' },
   },
   {
     path: 'training/workshop-adr',

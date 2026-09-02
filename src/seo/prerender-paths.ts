@@ -8,7 +8,6 @@ const LANGS = ['en', 'hu'] as const
 const STATIC_SEGMENTS = [
   'training',
   'training/workshop-budapest',
-  'training/workshop-terms',
   'training/workshop-adr',
   'consulting',
   'ai-consulting',
@@ -24,7 +23,6 @@ const STATIC_SEGMENTS = [
 const HU_STATIC_ALIASES: string[] = [
   'kepzes',
   'kepzes/workshop-budapest',
-  'kepzes/workshop-terms',
   'kepzes/workshop-adr',
   'tanacsadas',
   'ai-tanacsadas',

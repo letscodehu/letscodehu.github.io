@@ -31,17 +31,6 @@ export const blogPostManifest: BlogPostManifest[] = [
       'Egy architektúra diagram két opciót ad: öt speciális rendszer, vagy egy Postgres, ami mind az ötöt ellátja. A Postgres tényleg elviszi a queue-t, a keresést, a vektorokat, a cront és az event logot - amíg a connection pressure, a vacuum lag vagy a buffer cache contention valódi, mért okot nem ad az egyik leválasztására.',
   },
   {
-    slug: 'most-dangerous-person-is-the-optimist',
-    publishedAt: '2026-08-20',
-    tags: ['leadership', 'decision-making'],
-    titleEn: 'The Most Dangerous Person in Your Office Is the Optimist',
-    titleHu: 'Az irodád legveszélyesebb embere az optimista',
-    excerptEn:
-      'An engineer flags an untested risk two weeks before launch, and the manager says "we\'ll be fine." The sentence isn\'t a lie, which is exactly the problem: optimism as a filter on information teaches a team to stop bringing bad news, and a calm status report stops being evidence of anything.',
-    excerptHu:
-      'Egy fejlesztő két héttel a launch előtt jelez egy leteszteletlen kockázatot, a manager pedig azt mondja: „megleszünk". A mondat nem hazugság, és pont ez a baj: az optimizmus mint információszűrő leszoktatja a csapatot a rossz hírekről, a zöld státuszriport pedig megszűnik bármit is bizonyítani.',
-  },
-  {
     slug: 'you-dont-need-an-agent-for-that',
     publishedAt: '2026-08-11',
     tags: ['ai', 'decision-making'],

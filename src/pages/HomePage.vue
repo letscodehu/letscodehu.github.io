@@ -4,6 +4,7 @@ import BaseButton from '../components/ui/BaseButton.vue'
 import BaseCard from '../components/ui/BaseCard.vue'
 import VideoEmbed from '../components/ui/VideoEmbed.vue'
 import ReportPromoBanner from '../components/ui/ReportPromoBanner.vue'
+import WorkshopPhoto from '../components/ui/WorkshopPhoto.vue'
 
 const { t, currentLang } = useI18n()
 </script>
@@ -169,6 +170,10 @@ const { t, currentLang } = useI18n()
         </ul>
       </BaseCard>
     </div>
+  </section>
+
+  <section class="section">
+    <WorkshopPhoto />
   </section>
 
   <section class="section">

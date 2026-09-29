@@ -57,6 +57,10 @@
     "settingsLink": "Cookie settings",
     "closeLabel": "Close cookie settings"
   },
+  "workshopPhoto": {
+    "alt": "Engineers at a whiteboard sketching a system architecture during an on-site workshop",
+    "caption": "On-site architecture workshop with an enterprise engineering team."
+  },
   "home": {
     "pageTitle": "Consulting for software engineering teams — an outside view on delivery",
     "heroTitle": "I help software engineering teams ship faster with consistent engineering practices.",

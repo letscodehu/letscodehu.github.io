@@ -57,6 +57,10 @@
     "settingsLink": "Süti beállítások",
     "closeLabel": "Süti beállítások bezárása"
   },
+  "workshopPhoto": {
+    "alt": "Fejlesztők egy whiteboardnál rajzolnak rendszerarchitektúrát egy helyszíni workshopon",
+    "caption": "Helyszíni architektúra workshop egy nagyvállalati fejlesztőcsapattal."
+  },
   "home": {
     "pageTitle": "Tanácsadás szoftverfejlesztő csapatoknak — külső nézőpont a szállításra",
     "heroTitle": "Szoftverfejlesztő csapatoknak segítek gyorsabban és következetesebben szállítani.",

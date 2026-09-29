@@ -3,6 +3,7 @@ import { useI18n } from '../composables/useI18n'
 import { RouterLink } from 'vue-router'
 import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
+import WorkshopPhoto from '../components/ui/WorkshopPhoto.vue'
 
 const { t, currentLang } = useI18n()
 </script>
@@ -34,6 +35,10 @@ const { t, currentLang } = useI18n()
           </li>
         </ul>
       </BaseCard>
+    </section>
+
+    <section class="section">
+      <WorkshopPhoto />
     </section>
 
     <section class="section grid grid--two">

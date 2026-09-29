@@ -456,6 +456,15 @@
     "eyebrow": "2 napos, helyszíni workshop tech csapatoknak",
     "onSiteHighlight": "A fő cél: csapatként jó architekturális döntéseket hozni",
     "exerciseLabel": "Gyakorlat",
+    "gallery": {
+      "title": "Képek a teremből",
+      "caption": "Fotók a legutóbbi helyszíni Architect Mindset workshopról.",
+      "alt": {
+        "photo1": "A résztvevők közösen dolgoznak az Architect Mindset workshopon",
+        "photo2": "Architekturális döntésekkel teli tábla az Architect Mindset workshopon",
+        "photo3": "Csoportos beszélgetés az Architect Mindset workshop közben"
+      }
+    },
     "title": "ADR-ek és requirement tisztázás – azt szállítsuk, amire az ügyfélnek valóban szüksége van",
     "subtitle": "Az ADR itt nem adminisztráció, hanem melléktermék: a lényeg, hogy a csapat közösen, tudatosan és következetesen hozzon architekturális döntéseket.",
     "day1": {

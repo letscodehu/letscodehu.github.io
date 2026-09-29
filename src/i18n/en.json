@@ -456,6 +456,15 @@
     "eyebrow": "2-day on-site workshop for engineering teams",
     "onSiteHighlight": "Primary goal: learn to make strong architecture decisions as a team",
     "exerciseLabel": "Exercise",
+    "gallery": {
+      "title": "From the room",
+      "caption": "Photos from our latest on-site Architect Mindset workshop.",
+      "alt": {
+        "photo1": "Participants working together at the Architect Mindset workshop",
+        "photo2": "Whiteboard full of architecture decisions at the Architect Mindset workshop",
+        "photo3": "Group discussion during the Architect Mindset workshop"
+      }
+    },
     "title": "ADRs and requirement clarity – deliver what the customer actually needs",
     "subtitle": "ADRs are not the end goal here; they are a byproduct. The core outcome is a team that can make clear, aligned architecture decisions together.",
     "day1": {

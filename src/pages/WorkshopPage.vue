@@ -4,6 +4,11 @@ import BaseCard from '../components/ui/BaseCard.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 
 const { t, currentLang } = useI18n()
+
+// Photos from the latest on-site Architect Mindset workshop, served from public/workshop/.
+// Add entries as { src: '/workshop/<file>.jpg', altKey: 'photoN' } (alt text lives in workshop.gallery.alt.*).
+// With no entries the gallery renders nothing.
+const photos: { src: string; altKey: string }[] = []
 </script>
 
 <template>
@@ -15,6 +20,8 @@ const { t, currentLang } = useI18n()
       <p class="hero-subtitle">{{ t('workshop.subtitle') }}</p>
     </header>
 
+    <div class="layout" :class="{ 'has-gallery': photos.length > 0 }">
+    <div class="main">
     <section class="section">
       <header class="section-header">
         <h2>{{ t('workshop.day1.title') }}</h2>
@@ -68,6 +75,25 @@ const { t, currentLang } = useI18n()
         </ul>
       </BaseCard>
     </section>
+    </div>
+
+    <aside v-if="photos.length" class="gallery" :aria-label="t('workshop.gallery.title')">
+      <h2 class="gallery-title">{{ t('workshop.gallery.title') }}</h2>
+      <p class="gallery-caption">{{ t('workshop.gallery.caption') }}</p>
+      <ul class="gallery-list">
+        <li v-for="photo in photos" :key="photo.src">
+          <img
+            :src="photo.src"
+            :alt="t(`workshop.gallery.alt.${photo.altKey}`)"
+            width="600"
+            height="450"
+            loading="lazy"
+            decoding="async"
+          />
+        </li>
+      </ul>
+    </aside>
+    </div>
 
     <section class="section cta">
       <BaseCard>
@@ -164,6 +190,66 @@ const { t, currentLang } = useI18n()
 
 .cta {
   margin-bottom: 0;
+}
+
+.layout {
+  display: block;
+}
+
+.main {
+  min-width: 0;
+}
+
+.gallery {
+  margin-bottom: 2rem;
+}
+
+.gallery-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.gallery-caption {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.gallery-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+
+.gallery-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 1100px) {
+  .layout.has-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .gallery {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .gallery-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {

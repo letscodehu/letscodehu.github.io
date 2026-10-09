@@ -18,6 +18,18 @@ export interface BlogPostManifest {
 
 export const blogPostManifest: BlogPostManifest[] = [
   {
+    slug: 'your-architecture-diagram-makes-no-sense',
+    publishedAt: '2026-10-09',
+    tags: ['architecture', 'decision-making'],
+    videoUrl: 'https://youtu.be/tyjcHQ8QVoM',
+    titleEn: 'Your Architecture Diagram Makes No Sense',
+    titleHu: 'Az architektúra diagramod értelmetlen',
+    excerptEn:
+      'A new hire asked where an order goes after the customer clicks pay, and two senior engineers needed twenty minutes to answer from a forty-box diagram. One question, one audience, one level of detail and labeled arrows turned it into nine boxes anyone could follow.',
+    excerptHu:
+      'Egy új fejlesztő megkérdezte, hová megy a rendelés a fizetés után, és két senior fejlesztőnek húsz percbe telt válaszolni egy negyvendobozos diagram alapján. Egy kérdés, egy közönség, egy részletességi szint és feliratozott nyilak kilenc dobozra szűkítették, amit bárki követni tud.',
+  },
+  {
     slug: 'you-dont-need-five-databases',
     publishedAt: '2026-08-26',
     tags: ['architecture', 'scaling'],

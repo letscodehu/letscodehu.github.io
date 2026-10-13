@@ -6,7 +6,7 @@ import { useI18n } from '../composables/useI18n'
 import { trackTrainingWorkshopCtaClick, type TrainingWorkshopCtaPlacement } from '../tracking'
 
 const { t, currentLang } = useI18n()
-const instructorImages = ['/weblica.jpg', '/webconf.jpg', '/cldrmeetup.jpg'] as const
+const instructorImages = ['/weblica.jpg', '/Z8A_0641-Edit.jpg', '/cldrmeetup.jpg', '/workshop-team.jpg'] as const
 const currentImageIndex = ref(0)
 
 let imageRotationInterval: ReturnType<typeof setInterval> | null = null

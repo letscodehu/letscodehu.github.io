@@ -341,6 +341,23 @@ const { t, currentLang } = useI18n()
   margin-top: 1.15rem;
 }
 
+/* Keep the talk videos level even when one card's title or description wraps
+   to more lines: the cards stretch to equal height, so pin the video to the bottom. */
+.talks > :deep(.card) {
+  display: flex;
+  flex-direction: column;
+}
+
+.talks :deep(.card-body) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.talks :deep(.video) {
+  margin-top: auto;
+}
+
 @media (max-width: 600px) {
   /* On a 375px-wide phone the hero content column is only ~268px, so the title
      runs to seven lines and pushes the CTAs off a 667px-tall screen. Tightening

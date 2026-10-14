@@ -13,7 +13,7 @@ export function useReveal(rootEl, enabled) {
   function setup() {
     observer?.disconnect()
     observer = null
-    const els = [...rootEl.value.querySelectorAll('.reveal')]
+    const els = [...rootEl.value.querySelectorAll('.reveal:not(.in)')]
     if (!enabled.value || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
       els.forEach((e) => e.classList.add('in'))
       return

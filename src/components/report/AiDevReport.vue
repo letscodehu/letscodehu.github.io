@@ -5,13 +5,14 @@
 //
 // A fejezetek az adatot nem propként kapják, hanem a provideReport()-tal
 // átadott, számított API-ból (useReport()).
-import { computed, ref, toRef, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, toRef, watch } from 'vue'
 import './report.css'
 import { anchor } from './chapters.js'
 import { provideReport } from './useReport.js'
 import { provideSegment } from './useSegment.js'
 import { useCharts } from './useCharts.js'
 import { useReveal } from './useReveal.js'
+import { restoreSubscription, useSubscribed } from './useReportSubscription.js'
 
 import SegmentPicker from './ui/SegmentPicker.vue'
 import ReportHero from './chapters/ReportHero.vue'
@@ -26,6 +27,7 @@ import ChGovernance from './chapters/ChGovernance.vue'
 import ChSecurity from './chapters/ChSecurity.vue'
 import ChLearning from './chapters/ChLearning.vue'
 import ChMethodology from './chapters/ChMethodology.vue'
+import ReportGate from './chapters/ReportGate.vue'
 import ReportPdfCta from './chapters/ReportPdfCta.vue'
 import ReportConsultCta from './chapters/ReportConsultCta.vue'
 import ReportFooter from './chapters/ReportFooter.vue'
@@ -65,14 +67,42 @@ const segEnabled = computed(() => !props.printMode)
 
 provideReport(toRef(props, 'data'))
 const segment = provideSegment(toRef(props, 'data'), segEnabled)
-useCharts(rootEl, tipEl, toRef(props, 'data'), segment)
+const charts = useCharts(rootEl, tipEl, toRef(props, 'data'), segment)
 
 watch(() => props.segment, (v) => segment.setFromString(v), { immediate: true })
 watch(segment.asString, (v) => emit('update:segment', v))
-useReveal(rootEl, effReveal)
+const reveal = useReveal(rootEl, effReveal)
+
+// E-mail-gate: a ChSummary utáni fejezetek csak feliratkozás után kerülnek a
+// DOM-ba (`v-if`, nem CSS) — a prerenderelt HTML-be sem. Nyomtatási módban
+// nincs gate, a PDF a teljes riportot tartalmazza.
+const subscribed = useSubscribed()
+const unlocked = computed(() => props.printMode || subscribed.value)
+
+// A useCharts/useReveal mountkor egyszer fut végig a DOM-on; a később
+// beillesztett fejezetekre újra kell, miután a DOM frissült.
+watch(
+  unlocked,
+  (v) => {
+    if (!v) return
+    charts.render()
+    reveal.setup()
+  },
+  { flush: 'post' }
+)
+
+onMounted(() => {
+  restoreSubscription()
+  // Visszatérő olvasónál a zárolt fejezetre mutató horgony (#ai-report-…) a
+  // router görgetésekor még nem létezett: kinyitás után odaugrunk.
+  if (subscribed.value && location.hash.startsWith('#ai-report-')) {
+    nextTick(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' }))
+  }
+})
 
 function scrollToChapter(id) {
-  const node = rootEl.value?.querySelector(`#${anchor(id)}`)
+  // Zárolt fejezet helyett az e-mail-bekérőhöz görgetünk.
+  const node = rootEl.value?.querySelector(`#${anchor(id)}`) ?? rootEl.value?.querySelector('.rp-gate')
   if (!node) return
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
   node.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' })
@@ -97,18 +127,21 @@ function scrollToChapter(id) {
     <ReportToc />
 
     <ChSummary />
-    <ChFindings />
-    <ChArchetypes />
-    <ChAgentic />
-    <ChAiCode />
-    <ChReview />
-    <ChGovernance />
-    <ReportConsultCta />
-    <ChSecurity />
-    <ReportConsultCta />
-    <ChLearning />
-    <ChMethodology />
-    <ReportPdfCta v-if="pdfUrl" :href="pdfUrl" />
+    <template v-if="unlocked">
+      <ChFindings />
+      <ChArchetypes />
+      <ChAgentic />
+      <ChAiCode />
+      <ChReview />
+      <ChGovernance />
+      <ReportConsultCta />
+      <ChSecurity />
+      <ReportConsultCta />
+      <ChLearning />
+      <ChMethodology />
+      <ReportPdfCta v-if="pdfUrl" :href="pdfUrl" />
+    </template>
+    <ReportGate v-else />
     <ReportFooter />
   </div>
 </template>

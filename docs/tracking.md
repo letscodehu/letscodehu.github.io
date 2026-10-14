@@ -1,10 +1,16 @@
 # Frontend measurement (`src/tracking.ts`)
 
-- **Analytics consent:** GA4 (`G-LMBD4YXBD9`), Hotjar.
-- **Marketing consent:** Google Ads tag (`AW-939032288` via `gtag('config', …)`), Meta Pixel, LinkedIn Insight.
+- **Analytics consent:** GA4 (`G-LMBD4YXBD9`, GA4 stream `G-C9P1PFP0PH`), Hotjar.
+- **Marketing consent:** Meta Pixel, LinkedIn Insight (skipped while `LINKEDIN_PARTNER_ID` is empty or the `'0000000'` placeholder).
 
-Consent Mode v2: `gtag('consent', 'default')` denies all four storage types; `applyTrackingConsent` sends `consent update` (analytics → `analytics_storage`, marketing → `ad_storage`/`ad_user_data`/`ad_personalization`) before any config. Needed because the Google tag `G-LMBD4YXBD9` (GA4 stream `G-C9P1PFP0PH`) and `AW-939032288` are linked on Google's side, so loading one fires the other.
+There is no Google Ads tag (`AW-…`) on the site. Conversions are imported into Google Ads from GA4 and remarketing audiences are shared through the GA4 → Google Ads link.
 
-Google Ads shares the same `gtag.js` / `#ga-script` loader as GA4 when both run; if only marketing is accepted, `gtag/js?id=AW-939032288` loads first, then GA4 can attach when analytics is enabled later.
+Consent Mode v2: `gtag('consent', 'default')` denies all four storage types; `applyTrackingConsent` sends `consent update` (analytics → `analytics_storage`, marketing → `ad_storage`/`ad_user_data`/`ad_personalization`) before GA4 is configured, and again on every later change (including revocation). The `ad_*` signals still follow marketing consent because the GA4 → Ads audience sharing depends on them.
 
-`trackPageView` updates `page_path` on both configured IDs when each respective consent flag has loaded that tag.
+## Page views
+
+- GA4 is configured exactly once, with `send_page_view: false`; the `gtag.js` script has no `onload` re-config (it processes the queued `dataLayer` itself).
+- Page views are only sent as an explicit `gtag('event', 'page_view', { page_location, page_title })`, where `page_location` is the full URL.
+- `router.afterEach` (`src/main.ts`) calls `trackPageView()` for every completed navigation; it does nothing until GA4 is loaded.
+- When consent arrives after the first navigation (banner decision, or stored consent applied on mount), `initGoogleAnalytics()` sends one page_view for the current page.
+- Both paths go through `sendPageView()`, which runs after the route renders and unhead flushes the title, and skips the send if the current URL was the last one reported — so the router hook and a late init never double-count a page.

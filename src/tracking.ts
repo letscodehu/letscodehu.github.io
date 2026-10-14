@@ -1,10 +1,11 @@
+import { nextTick } from 'vue'
 import type { CookieConsentState } from './cookieConsent'
 import type { BookingTopic } from './config'
 
 const GA_MEASUREMENT_ID = 'G-LMBD4YXBD9'
-const GOOGLE_ADS_ID = 'AW-939032288'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '0000000'
+const LINKEDIN_PLACEHOLDER_PARTNER_ID = '0000000'
 const HOTJAR_SITE_ID = 6649868
 const HOTJAR_SNIPPET_VERSION = 6
 
@@ -24,7 +25,6 @@ declare global {
 
 const loaded = {
   ga: false,
-  ads: false,
   fb: false,
   linkedin: false,
   hotjar: false,
@@ -49,8 +49,8 @@ function injectScriptOnce(id: string, src: string, async = true): boolean {
 
 /**
  * Sets up dataLayer and the gtag queue. The first call also sets Consent Mode v2 defaults to denied.
- * This matters because G-LMBD4YXBD9 and AW-939032288 are linked to each other on Google's side.
- * Without consent signals, loading one tag would also fire the other product.
+ * There is no Google Ads tag on the site: conversions and remarketing audiences reach Ads through the
+ * GA4 → Google Ads link, which relies on the ad_* consent signals, so all four are still sent.
  */
 function ensureGtag(): (...args: unknown[]) => void {
   window.dataLayer = window.dataLayer || []
@@ -87,6 +87,33 @@ function updateGoogleConsent(consent: CookieConsentState) {
   })
 }
 
+// href of the last page_view sent, so the router hook and a late consent never report the same page twice
+let lastPageViewHref: string | null = null
+
+function sendPageView() {
+  if (!loaded.ga || !window.gtag) {
+    return
+  }
+
+  const href = window.location.href
+  if (href === lastPageViewHref) {
+    return
+  }
+
+  lastPageViewHref = href
+  window.gtag('event', 'page_view', {
+    page_location: href,
+    page_title: document.title,
+  })
+}
+
+/** Waits for the new route to render and unhead to flush the title (it renders in a setTimeout). */
+function schedulePageView() {
+  void nextTick(() => {
+    setTimeout(sendPageView, 0)
+  })
+}
+
 function initGoogleAnalytics() {
   if (loaded.ga || typeof window === 'undefined') {
     return
@@ -94,42 +121,17 @@ function initGoogleAnalytics() {
 
   const gtag = ensureGtag()
 
-  const existingScript = document.getElementById('ga-script')
-
-  // Call gtag('js') and gtag('config') - these will be queued
-  if (!existingScript) {
-    gtag('js', new Date())
-  }
-
+  // Queued before gtag.js loads; the library processes the dataLayer on its own, so no onload re-config.
+  gtag('js', new Date())
   gtag('config', GA_MEASUREMENT_ID, {
-    page_path: window.location.pathname,
+    send_page_view: false,
   })
 
-  // Inject the script tag (skip if Google Ads or another tag already loaded gtag.js)
-  const scriptInjected = injectScriptOnce(
-    'ga-script',
-    `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
-  )
+  injectScriptOnce('ga-script', `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`)
+  loaded.ga = true
 
-  if (scriptInjected) {
-    loaded.ga = true
-
-    const scriptElement = document.getElementById('ga-script') as HTMLScriptElement
-    if (scriptElement) {
-      scriptElement.onload = () => {
-        if (window.gtag) {
-          window.gtag('config', GA_MEASUREMENT_ID, {
-            page_path: window.location.pathname,
-          })
-          if (loaded.ads) {
-            window.gtag('config', GOOGLE_ADS_ID)
-          }
-        }
-      }
-    }
-  } else if (existingScript != null) {
-    loaded.ga = true
-  }
+  // Consent usually arrives after the first navigation, so report the current page once.
+  schedulePageView()
 }
 
 function initFacebookPixel() {
@@ -166,6 +168,11 @@ function initLinkedInInsight() {
     return
   }
 
+  // Never load the Insight tag with an empty or placeholder partner ID.
+  if (!LINKEDIN_PARTNER_ID || LINKEDIN_PARTNER_ID === LINKEDIN_PLACEHOLDER_PARTNER_ID) {
+    return
+  }
+
   window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []
   window._linkedin_data_partner_ids.push(LINKEDIN_PARTNER_ID)
   injectScriptOnce('linkedin-insight-script', 'https://snap.licdn.com/li.lms-analytics/insight.min.js')
@@ -196,48 +203,6 @@ function initHotjar() {
   loaded.hotjar = true
 }
 
-/** Google Ads gtag (AW-); uses the same gtag.js queue as GA4 when analytics already ran. */
-function initGoogleAdsTag() {
-  if (loaded.ads || typeof window === 'undefined') {
-    return
-  }
-
-  if (window.gtag && loaded.ga) {
-    window.gtag('config', GOOGLE_ADS_ID)
-    loaded.ads = true
-    return
-  }
-
-  const gtag = ensureGtag()
-
-  gtag('js', new Date())
-  gtag('config', GOOGLE_ADS_ID)
-
-  const scriptInjected = injectScriptOnce(
-    'ga-script',
-    `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`,
-  )
-
-  if (scriptInjected) {
-    loaded.ads = true
-    const scriptElement = document.getElementById('ga-script') as HTMLScriptElement
-    if (scriptElement) {
-      scriptElement.onload = () => {
-        if (window.gtag) {
-          window.gtag('config', GOOGLE_ADS_ID)
-          if (loaded.ga) {
-            window.gtag('config', GA_MEASUREMENT_ID, {
-              page_path: window.location.pathname,
-            })
-          }
-        }
-      }
-    }
-  } else if (document.getElementById('ga-script') != null) {
-    loaded.ads = true
-  }
-}
-
 export function applyTrackingConsent(consent: CookieConsentState) {
   if (!consent.decided || typeof window === 'undefined') {
     return
@@ -254,32 +219,18 @@ export function applyTrackingConsent(consent: CookieConsentState) {
   }
 
   if (consent.marketing) {
-    initGoogleAdsTag()
     initFacebookPixel()
     initLinkedInInsight()
   }
 }
 
-export function trackPageView(path: string) {
-  if (typeof window === 'undefined' || !window.gtag) {
+/** Called from router.afterEach; sends exactly one GA4 page_view per navigation once GA4 is loaded. */
+export function trackPageView() {
+  if (typeof window === 'undefined' || !loaded.ga) {
     return
   }
 
-  if (loaded.ga) {
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: path,
-    })
-  }
-
-  if (loaded.ads) {
-    window.gtag('config', GOOGLE_ADS_ID, {
-      page_path: path,
-    })
-  }
-
-  if (!loaded.ga && !loaded.ads) {
-    return
-  }
+  schedulePageView()
 }
 
 export type TrainingWorkshopCtaPlacement = 'hero' | 'middle' | 'bottom'

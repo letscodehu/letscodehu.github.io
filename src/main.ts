@@ -75,9 +75,11 @@ export const createApp = ViteSSG(
     }
   })
 
-  router.afterEach((to) => {
-    // Track page view for Google Analytics
-    trackPageView(to.fullPath)
+  router.afterEach((_to, _from, failure) => {
+    // One GA4 page_view per completed navigation (aborted/duplicated navigations are skipped)
+    if (!failure) {
+      trackPageView()
+    }
   })
   },
 )

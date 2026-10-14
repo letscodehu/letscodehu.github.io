@@ -38,7 +38,7 @@ Detected from system preference and togglable by the user. State is persisted in
 
 ### Analytics & Consent
 
-GA4, Google Ads, Facebook Pixel, LinkedIn, and Hotjar are loaded conditionally on cookie consent. All tracking is wired to the cookie consent banner — do not initialize trackers outside that flow.
+GA4 and Hotjar (analytics consent) and Facebook Pixel and LinkedIn Insight (marketing consent) are loaded conditionally on cookie consent. There is no Google Ads tag — Ads gets conversions and audiences via the GA4 → Google Ads link, with Consent Mode v2 signals still sent. GA4 page views are explicit `page_view` events from `router.afterEach` (see `docs/tracking.md`). All tracking is wired to the cookie consent banner — do not initialize trackers outside that flow.
 
 ### API
 

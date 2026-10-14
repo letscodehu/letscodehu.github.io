@@ -1,6 +1,6 @@
 # Frontend measurement (`src/tracking.ts`)
 
-- **Analytics consent:** GA4 (`G-LMBD4YXBD9`, GA4 stream `G-C9P1PFP0PH`), Hotjar.
+- **Analytics consent:** GA4 (`G-R6KWGC5Y5M`), Hotjar.
 - **Marketing consent:** Meta Pixel, LinkedIn Insight (skipped while `LINKEDIN_PARTNER_ID` is empty or the `'0000000'` placeholder).
 
 There is no Google Ads tag (`AW-…`) on the site. Conversions are imported into Google Ads from GA4 and remarketing audiences are shared through the GA4 → Google Ads link.

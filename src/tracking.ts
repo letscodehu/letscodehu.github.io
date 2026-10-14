@@ -2,7 +2,7 @@ import { nextTick } from 'vue'
 import type { CookieConsentState } from './cookieConsent'
 import type { BookingTopic } from './config'
 
-const GA_MEASUREMENT_ID = 'G-LMBD4YXBD9'
+const GA_MEASUREMENT_ID = 'G-R6KWGC5Y5M'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '0000000'
 const LINKEDIN_PLACEHOLDER_PARTNER_ID = '0000000'

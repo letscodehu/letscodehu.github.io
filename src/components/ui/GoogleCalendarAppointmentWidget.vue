@@ -1,5 +1,8 @@
 <script setup lang="ts">
-withDefaults(
+import type { BookingTopic } from '../../config'
+import { trackBookingIntent } from '../../tracking'
+
+const props = withDefaults(
   defineProps<{
     /** The `?gv=true` schedule URL — the only form Google allows in a frame. */
     embedUrl: string
@@ -7,12 +10,28 @@ withDefaults(
     bookingUrl: string
     /** Label for the phone button. */
     buttonLabel: string
+    /** Sent with the `booking_intent` GA event. */
+    topic: BookingTopic
     height?: number
   }>(),
   {
     height: 600,
   },
 )
+
+// Hovering the frame (desktop) or tapping the button (phone) is the closest signal
+// to booking intent we get — the frame swallows everything after that. The frame's
+// own mouseenter still fires in the parent document. Once per page view.
+let bookingIntentSent = false
+
+function sendBookingIntent() {
+  if (bookingIntentSent) {
+    return
+  }
+
+  bookingIntentSent = true
+  trackBookingIntent({ topic: props.topic })
+}
 </script>
 
 <template>
@@ -28,9 +47,16 @@ withDefaults(
     :style="{ height: `${height}px` }"
     loading="lazy"
     frameborder="0"
+    @mouseenter="sendBookingIntent"
   />
 
-  <a class="google-calendar-button" :href="bookingUrl" target="_blank" rel="noopener noreferrer">
+  <a
+    class="google-calendar-button"
+    :href="bookingUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+    @click="sendBookingIntent"
+  >
     {{ buttonLabel }}
   </a>
 </template>

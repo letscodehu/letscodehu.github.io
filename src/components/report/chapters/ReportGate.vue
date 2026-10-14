@@ -6,7 +6,7 @@
 import ContentWrap from '../ui/ContentWrap.vue'
 import { useReportSubscription } from '../useReportSubscription.js'
 
-const { email, errorMessage, isSubmitting, submit } = useReportSubscription()
+const { email, errorMessage, isSubmitting, submit } = useReportSubscription({ placement: 'gate' })
 </script>
 
 <template>

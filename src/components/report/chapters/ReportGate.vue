@@ -54,10 +54,6 @@ const { email, errorMessage, isSubmitting, submit } = useReportSubscription()
             </button>
           </form>
         </div>
-
-        <p class="mt-3.5 text-[13px] leading-[1.5] opacity-[0.6]">
-          Az e-mail-címet csak a riporthoz és a következő kiadáshoz használom, tovább nem adom.
-        </p>
       </div>
     </ContentWrap>
   </div>

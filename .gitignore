@@ -27,6 +27,7 @@ dist-ssr
 *.sw?
 
 .codex/
+.playwright-mcp/
 .cursor/*
 !.cursor/skills/
 !.cursor/skills/**

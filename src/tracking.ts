@@ -46,31 +46,61 @@ function injectScriptOnce(id: string, src: string, async = true): boolean {
   return true
 }
 
+/**
+ * Sets up dataLayer and the gtag queue. The first call also sets Consent Mode v2 defaults to denied.
+ * This matters because G-LMBD4YXBD9 and AW-939032288 are linked to each other on Google's side.
+ * Without consent signals, loading one tag would also fire the other product.
+ */
+function ensureGtag(): (...args: unknown[]) => void {
+  window.dataLayer = window.dataLayer || []
+
+  if (window.gtag) {
+    return window.gtag
+  }
+
+  // Use arguments object (not array) to match Google's official snippet format
+  window.gtag = function gtag() {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push(arguments)
+  }
+
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  })
+  return window.gtag
+}
+
+function updateGoogleConsent(consent: CookieConsentState) {
+  const gtag = ensureGtag()
+
+  const analytics = consent.analytics ? 'granted' : 'denied'
+  const marketing = consent.marketing ? 'granted' : 'denied'
+  gtag('consent', 'update', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+  })
+}
+
 function initGoogleAnalytics() {
   if (loaded.ga || typeof window === 'undefined') {
     return
   }
 
-  // Initialize dataLayer first
-  window.dataLayer = window.dataLayer || []
-
-  // Define gtag function that queues calls until script loads
-  // Use arguments object (not array) to match Google's official snippet format
-  window.gtag =
-    window.gtag ||
-    function gtag() {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push(arguments)
-    }
+  const gtag = ensureGtag()
 
   const existingScript = document.getElementById('ga-script')
 
   // Call gtag('js') and gtag('config') - these will be queued
   if (!existingScript) {
-    window.gtag('js', new Date())
+    gtag('js', new Date())
   }
 
-  window.gtag('config', GA_MEASUREMENT_ID, {
+  gtag('config', GA_MEASUREMENT_ID, {
     page_path: window.location.pathname,
   })
 
@@ -177,16 +207,10 @@ function initGoogleAdsTag() {
     return
   }
 
-  window.dataLayer = window.dataLayer || []
-  window.gtag =
-    window.gtag ||
-    function gtag() {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push(arguments)
-    }
+  const gtag = ensureGtag()
 
-  window.gtag('js', new Date())
-  window.gtag('config', GOOGLE_ADS_ID)
+  gtag('js', new Date())
+  gtag('config', GOOGLE_ADS_ID)
 
   const scriptInjected = injectScriptOnce(
     'ga-script',
@@ -214,8 +238,13 @@ function initGoogleAdsTag() {
 }
 
 export function applyTrackingConsent(consent: CookieConsentState) {
-  if (!consent.decided) {
+  if (!consent.decided || typeof window === 'undefined') {
     return
+  }
+
+  // Send consent before any config call. If gtag already exists, this also handles a later revocation.
+  if (consent.analytics || consent.marketing || window.gtag) {
+    updateGoogleConsent(consent)
   }
 
   if (consent.analytics) {

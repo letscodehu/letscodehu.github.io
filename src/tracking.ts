@@ -1,4 +1,5 @@
 import type { CookieConsentState } from './cookieConsent'
+import type { BookingTopic } from './config'
 
 const GA_MEASUREMENT_ID = 'G-LMBD4YXBD9'
 const GOOGLE_ADS_ID = 'AW-939032288'
@@ -334,6 +335,32 @@ export function trackTrainingWorkshopStripeRedirect(args: {
     window.fbq('track', 'InitiateCheckout', {
       content_name: 'training_workshop',
       source: args.source,
+    })
+  }
+}
+
+export type AiBenchmarkDownloadPlacement = 'gate' | 'pdf_cta'
+
+export function trackAiBenchmarkDownload(args: { placement: AiBenchmarkDownloadPlacement }) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'ai_benchmark_download', {
+      placement: args.placement,
+    })
+  }
+}
+
+export function trackBookingIntent(args: { topic: BookingTopic }) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (loaded.ga && window.gtag) {
+    window.gtag('event', 'booking_intent', {
+      topic: args.topic,
     })
   }
 }

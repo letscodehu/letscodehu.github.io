@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import BaseCard from '../components/ui/BaseCard.vue'
 import GoogleCalendarAppointmentWidget from '../components/ui/GoogleCalendarAppointmentWidget.vue'
-import { resolveBookingSchedule } from '../config'
+import { resolveBookingSchedule, type BookingTopic } from '../config'
 
 const { t, currentLang } = useI18n()
 const route = useRoute()
@@ -16,10 +16,10 @@ const route = useRoute()
  */
 const isAiTopic = computed(() => route.name === 'contact-ai-en')
 
+const topic = computed<BookingTopic>(() => (isAiTopic.value ? 'ai' : 'general'))
+
 /** Calendars are per topic and per language — see BOOKING_SCHEDULES in config.ts. */
-const schedule = computed(() =>
-  resolveBookingSchedule(isAiTopic.value ? 'ai' : 'general', currentLang.value)
-)
+const schedule = computed(() => resolveBookingSchedule(topic.value, currentLang.value))
 
 function topicKey(base: string): string {
   if (!isAiTopic.value) {
@@ -73,6 +73,7 @@ function topicKey(base: string): string {
           :embed-url="schedule.embedUrl"
           :booking-url="schedule.bookingUrl"
           :button-label="t('contact.bookingButtonLabel')"
+          :topic="topic"
         />
       </BaseCard>
     </section>

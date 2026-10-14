@@ -7,6 +7,7 @@
 // kliens HTML-je elválna egymástól.
 import { onUnmounted, readonly, ref } from 'vue'
 import { WAITLIST_SIGNUP_API_URL, WAITLIST_SIGNUP_TIMEOUT_MS } from '../../config'
+import { trackAiBenchmarkDownload } from '../../tracking'
 
 const STORAGE_KEY = 'letscode.aiReport.subscribed'
 
@@ -30,7 +31,10 @@ function markSubscribed() {
   }
 }
 
-export function useReportSubscription() {
+/**
+ * @param {{ placement: 'gate' | 'pdf_cta' }} options  honnan jött a feliratkozás (GA-paraméter)
+ */
+export function useReportSubscription({ placement }) {
   const email = ref('')
   const errorMessage = ref('')
   const isSubmitting = ref(false)
@@ -64,6 +68,10 @@ export function useReportSubscription() {
     }
 
     isSubmitting.value = true
+    // A kérés indulásakor küldjük, nem a válasz után: a már feliratkozott címre
+    // adott szerverhiba se veszítse el az eseményt. Az isSubmitting-őr fent
+    // biztosítja, hogy beküldésenként csak egyszer menjen ki.
+    trackAiBenchmarkDownload({ placement })
 
     const abortController = new AbortController()
     activeAbortController = abortController

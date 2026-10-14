@@ -59,7 +59,18 @@ const consultingRoute = computed(() => ({
           {{ t('about.talksIntro') }}
         </p>
       </header>
-      <div class="grid grid--two">
+      <div class="grid grid--three">
+        <BaseCard>
+          <template #title>{{ t('about.talk3Title') }}</template>
+          <p class="body">
+            {{ t('about.talk3Description') }}
+          </p>
+          <VideoEmbed
+            :url="t('about.talk3Url')"
+            :title="t('about.talk3Title')"
+            :link-label="t('about.talk3Label')"
+          />
+        </BaseCard>
         <BaseCard>
           <template #title>{{ t('about.talk1Title') }}</template>
           <p class="body">

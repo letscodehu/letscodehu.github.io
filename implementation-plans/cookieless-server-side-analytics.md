@@ -76,7 +76,7 @@ készül. GA4-ben két admin-beállítás kell:
 
 ### Feltételezések
 
-- A GA4 measurement ID a meglévő `G-R6KWGC5Y5M` (tracking.ts), ugyanaz a property/stream.
+- A GA4 measurement ID a meglévő `G-LMBD4YXBD9` (tracking.ts), ugyanaz a property/stream.
 - Az MP API secret és a custom dimension GA4 admin-oldali létrehozása megtörténik
   (manuális, egyszeri lépés a 2. slice előtt).
 - A GDPR-anonimitás jogi jóváhagyása a felhasználó oldalán van; itt a technikai
@@ -105,7 +105,7 @@ egy `page_view` megjelenik a GA4 Realtime nézetben. Ha elfogadom a sütiket, a
 beacon NEM megy el (a hálózati fülön nincs hívás az új endpointra).
 
 **Tasks (a teljes stacken át):**
-- [ ] GA4 admin: MP API secret létrehozása a meglévő `G-R6KWGC5Y5M` streamhez.
+- [ ] GA4 admin: MP API secret létrehozása a meglévő `G-LMBD4YXBD9` streamhez.
 - [ ] Új Lambda (waitlist Lambda mintájára): Function URL, POST JSON fogadása,
       továbbítás a GA4 MP `/mp/collect`-re `page_view` eseménnyel; `client_id`
       egyelőre fix/egyszerű; `session_id` + `engagement_time_msec` paraméterek

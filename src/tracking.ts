@@ -1,6 +1,6 @@
 import type { CookieConsentState } from './cookieConsent'
 
-const GA_MEASUREMENT_ID = 'G-R6KWGC5Y5M'
+const GA_MEASUREMENT_ID = 'G-LMBD4YXBD9'
 const GOOGLE_ADS_ID = 'AW-939032288'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '0000000'

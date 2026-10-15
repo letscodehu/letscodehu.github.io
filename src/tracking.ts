@@ -5,7 +5,6 @@ import type { BookingTopic } from './config'
 const GA_MEASUREMENT_ID = 'G-R6KWGC5Y5M'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '11104257'
-const LINKEDIN_PLACEHOLDER_PARTNER_ID = '0000000'
 const HOTJAR_SITE_ID = 6649868
 const HOTJAR_SNIPPET_VERSION = 6
 
@@ -165,11 +164,6 @@ function initFacebookPixel() {
 
 function initLinkedInInsight() {
   if (loaded.linkedin || typeof window === 'undefined') {
-    return
-  }
-
-  // Never load the Insight tag with an empty or placeholder partner ID.
-  if (!LINKEDIN_PARTNER_ID || LINKEDIN_PARTNER_ID === LINKEDIN_PLACEHOLDER_PARTNER_ID) {
     return
   }
 

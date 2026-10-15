@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeUnmount } from 'vue'
 import type { BookingTopic } from '../../config'
 import { trackBookingIntent } from '../../tracking'
 
@@ -10,7 +11,7 @@ const props = withDefaults(
     bookingUrl: string
     /** Label for the phone button. */
     buttonLabel: string
-    /** Sent with the `booking_intent` GA event. */
+    /** Sent with the `booking_intent` GA event (the LinkedIn conversion goes out alongside it). */
     topic: BookingTopic
     height?: number
   }>(),
@@ -19,19 +20,64 @@ const props = withDefaults(
   },
 )
 
-// Hovering the frame (desktop) or tapping the button (phone) is the closest signal
+// Staying on the frame (desktop) or tapping the button (phone) is the closest signal
 // to booking intent we get — the frame swallows everything after that. The frame's
-// own mouseenter still fires in the parent document. Once per page view.
+// own mouseenter/mouseleave still fire in the parent document, and a Playwright test
+// (Chromium, Firefox, WebKit; see PR for #122) showed mouseleave only fires when the
+// pointer actually leaves the frame, not on entering, moving or clicking inside it.
+// So on desktop we wait for BOOKING_INTENT_DWELL_MS of uninterrupted hover.
+const BOOKING_INTENT_DWELL_MS = 180_000
+const BOOKING_INTENT_STORAGE_KEY = 'letscode.bookingIntentSent'
+
+// Fallback when sessionStorage is unavailable: once per page load instead of per session.
 let bookingIntentSent = false
 
+function hasSentBookingIntent(): boolean {
+  try {
+    return bookingIntentSent || window.sessionStorage.getItem(BOOKING_INTENT_STORAGE_KEY) === '1'
+  } catch {
+    return bookingIntentSent
+  }
+}
+
+function markBookingIntentSent() {
+  bookingIntentSent = true
+  try {
+    window.sessionStorage.setItem(BOOKING_INTENT_STORAGE_KEY, '1')
+  } catch {
+    // Module flag above still limits it to once per page load.
+  }
+}
+
 function sendBookingIntent() {
-  if (bookingIntentSent) {
+  if (hasSentBookingIntent()) {
     return
   }
 
-  bookingIntentSent = true
+  markBookingIntentSent()
   trackBookingIntent({ topic: props.topic })
 }
+
+let dwellTimer: ReturnType<typeof setTimeout> | undefined
+
+function cancelDwell() {
+  clearTimeout(dwellTimer)
+  dwellTimer = undefined
+}
+
+function startDwell() {
+  if (hasSentBookingIntent()) {
+    return
+  }
+
+  cancelDwell()
+  dwellTimer = setTimeout(() => {
+    dwellTimer = undefined
+    sendBookingIntent()
+  }, BOOKING_INTENT_DWELL_MS)
+}
+
+onBeforeUnmount(cancelDwell)
 </script>
 
 <template>
@@ -47,7 +93,8 @@ function sendBookingIntent() {
     :style="{ height: `${height}px` }"
     loading="lazy"
     frameborder="0"
-    @mouseenter="sendBookingIntent"
+    @mouseenter="startDwell"
+    @mouseleave="cancelDwell"
   />
 
   <a

@@ -5,6 +5,7 @@ import type { BookingTopic } from './config'
 const GA_MEASUREMENT_ID = 'G-R6KWGC5Y5M'
 const FB_PIXEL_ID = '2095258311315842'
 const LINKEDIN_PARTNER_ID = '11104257'
+const LINKEDIN_BOOKING_CONVERSION_ID = 31848553
 const HOTJAR_SITE_ID = 6649868
 const HOTJAR_SNIPPET_VERSION = 6
 
@@ -14,6 +15,7 @@ declare global {
     gtag?: (...args: unknown[]) => void
     fbq?: (...args: unknown[]) => void
     _linkedin_data_partner_ids?: string[]
+    lintrk?: ((action: string, data: unknown) => void) & { q?: unknown[] }
     hj?: (...args: unknown[]) => void
     _hjSettings?: {
       hjid: number
@@ -169,6 +171,19 @@ function initLinkedInInsight() {
 
   window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []
   window._linkedin_data_partner_ids.push(LINKEDIN_PARTNER_ID)
+
+  // Queue stub from LinkedIn's official snippet, so a track call made before insight.min.js loads is not lost.
+  if (!window.lintrk) {
+    const queue: unknown[] = []
+    const lintrk = Object.assign(
+      function lintrk(action: string, data: unknown) {
+        queue.push([action, data])
+      },
+      { q: queue },
+    )
+    window.lintrk = lintrk
+  }
+
   injectScriptOnce('linkedin-insight-script', 'https://snap.licdn.com/li.lms-analytics/insight.min.js')
   loaded.linkedin = true
 }
@@ -307,5 +322,9 @@ export function trackBookingIntent(args: { topic: BookingTopic }) {
     window.gtag('event', 'booking_intent', {
       topic: args.topic,
     })
+  }
+
+  if (loaded.linkedin && window.lintrk) {
+    window.lintrk('track', { conversion_id: LINKEDIN_BOOKING_CONVERSION_ID })
   }
 }
